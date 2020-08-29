@@ -1,0 +1,7 @@
+---
+BugID: WICKET-3197
+Summary: getMarkupId() can be used only if the component's markup is attached
+Description: |
+  With change r1037139 Component#getMarkupImpl() first tries to get the markup id from the component's markup.
+  If the markup is not available/attached yet for this component the call ends with :
+  org.apache.wicket.markup.MarkupException: Can not determine Markup. Component is not yet connected to a parent. [Component id = label]

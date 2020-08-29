@@ -1,0 +1,16 @@
+---
+BugID: OAK-3367
+Summary: Boosting fields not working as expected
+Description: "When the boost support was added the intention was to support a usecase
+  like \n\n{quote}\nFor the fulltext search on a node where the fulltext content is
+  derived from multiple field it should be possible to boost specific text contributed
+  by individual field. Meaning that if a title field is boosted more than description,
+  the title (part) in the fulltext field will mean more than the description (part)
+  in the fulltext field.\n{quote}\n\nThis would enable a user to perform a search
+  like _/jcr:root/content/geometrixx-outdoors/en//element(*, cq:Page)\\[jcr:contains(.,
+  'Keyword')\\]_ and get a result where pages having 'Keyword' in title come above
+  in search result compared to those where Keyword is found in description.\n\nCurrent
+  implementation just sets the boost while add the field value to fulltext field with
+  the intention that Lucene would use the boost as explained above. However it does
+  not work like that and boost value gets multiplies with other field and hence boosting
+  does not work as expected"

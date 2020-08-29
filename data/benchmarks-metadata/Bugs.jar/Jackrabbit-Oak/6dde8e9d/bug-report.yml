@@ -1,0 +1,8 @@
+---
+BugID: OAK-2249
+Summary: 'XPath: Query with mixed full-text, "and", "or" conditions fails'
+Description: "When performing a query like \n\n{noformat}\n        //element(*, test:Asset)[\n
+  \           (\n                jcr:contains(., 'summer')\n                or\n                jcr:content/metadata/@tags
+  = 'namespace:season/summer'\n            ) and\n                jcr:contains(jcr:content/metadata/@format,
+  'image')\n            ]\n\n{noformat}\n\nThe Lucene/Aggregate returns as well nodes
+  that does not match all the\ncriterias.\n\n"

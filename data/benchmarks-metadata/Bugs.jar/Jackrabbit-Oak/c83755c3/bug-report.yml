@@ -1,0 +1,16 @@
+---
+BugID: OAK-3396
+Summary: NPE during syncAllExternalUsers in LdapIdentityProvider.createUser
+Description: |-
+  When executing the JMX method syncAllExternalUsers the following NPE has been encountered. This likely indicates that - for a particular user - there is no attribute '{{uid}}':
+
+  {code}
+  java.lang.NullPointerException
+  at org.apache.jackrabbit.oak.security.authentication.ldap.impl.LdapIdentityProvider.createUser(LdapIdentityProvider.java:667)
+  at org.apache.jackrabbit.oak.security.authentication.ldap.impl.LdapIdentityProvider.access$000(LdapIdentityProvider.java:88)
+  at org.apache.jackrabbit.oak.security.authentication.ldap.impl.LdapIdentityProvider$1.getNext(LdapIdentityProvider.java:281)
+  at org.apache.jackrabbit.oak.security.authentication.ldap.impl.LdapIdentityProvider$1.getNext(LdapIdentityProvider.java:273)
+  at org.apache.jackrabbit.commons.iterator.AbstractLazyIterator.hasNext(AbstractLazyIterator.java:39)
+  at org.apache.jackrabbit.oak.spi.security.authentication.external.impl.jmx.SyncMBeanImpl$Delegatee.syncAllExternalUsers(SyncMBeanImpl.java:245)
+  at org.apache.jackrabbit.oak.spi.security.authentication.external.impl.jmx.SyncMBeanImpl.syncAllExternalUsers(SyncMBeanImpl.java:426)
+  {code}

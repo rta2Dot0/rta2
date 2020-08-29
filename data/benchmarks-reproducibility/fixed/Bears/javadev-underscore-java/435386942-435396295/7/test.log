@@ -1,0 +1,160 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building java port of Underscore.js 1.37-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (checkstyle) @ underscore ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (prepare-agent) @ underscore ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ underscore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_javadev-underscore-java_435386942-435396295_java-7/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ underscore ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ underscore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_javadev-underscore-java_435386942-435396295_java-7/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ underscore ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ underscore ---
+[INFO] Surefire report directory: /bam/scratch/tmp-rta/Bears_javadev-underscore-java_435386942-435396295_java-7/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 5.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 157 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 1.4 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running com.github.underscore.FunctionsTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.91 sec
+Running com.github.underscore.ChainingTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running com.github.underscore.lodash.Base32Test
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.github.underscore.lodash.MathTest
+Underscore-java is a java port of Underscore.js.
+
+In addition to porting Underscore's functionality, Underscore-java includes matching unit tests.
+
+For docs, license, tests, and downloads, see: http://javadev.github.io/underscore-java
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.github.underscore.lodash.StringTest
+Underscore-java is a java port of Underscore.js.
+
+In addition to porting Underscore's functionality, Underscore-java includes matching unit tests.
+
+For docs, license, tests, and downloads, see: http://javadev.github.io/underscore-java
+Tests run: 133, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 sec
+Running com.github.underscore.lodash.LodashTest
+Tests run: 40, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.007 sec <<< FAILURE!
+fetchGetHttps(com.github.underscore.lodash.LodashTest)  Time elapsed: 0.038 sec  <<< ERROR!
+java.lang.UnsupportedOperationException: javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at com.github.underscore.lodash.U.fetch(U.java:1571)
+	at com.github.underscore.lodash.U.fetch(U.java:1422)
+	at com.github.underscore.lodash.LodashTest.fetchGetHttps(LodashTest.java:519)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:1979)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1086)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1332)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1359)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1343)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1301)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:468)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:338)
+	at com.github.underscore.lodash.U.fetch(U.java:1554)
+	... 31 more
+
+Running com.github.underscore.ObjectsTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.github.underscore.CollectionsTest
+Tests run: 61, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+Running com.github.underscore.ArraysTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running com.github.underscore.UtilityTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running com.github.underscore.UnderscoreTest
+Underscore-java is a java port of Underscore.js.
+
+In addition to porting Underscore's functionality, Underscore-java includes matching unit tests.
+
+For docs, license, tests, and downloads, see: http://javadev.github.io/underscore-java
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+
+Results :
+
+Tests in error: 
+  fetchGetHttps(com.github.underscore.lodash.LodashTest): javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+
+Tests run: 405, Failures: 0, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 24.862 s
+[INFO] Finished at: 2020-03-12T10:38:34-07:00
+[INFO] Final Memory: 20M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project underscore: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /bam/scratch/tmp-rta/Bears_javadev-underscore-java_435386942-435396295_java-7/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

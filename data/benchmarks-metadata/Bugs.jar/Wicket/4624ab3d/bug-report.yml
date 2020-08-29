@@ -1,0 +1,19 @@
+---
+BugID: WICKET-4116
+Summary: Ajax link reports weird error when session is expired
+Description: "Reproducing steps:\n\n1. Put below simple page into a Wicket application
+  and get it mounted:\n\nTestPage.java:\n\nimport org.apache.wicket.ajax.AjaxRequestTarget;\nimport
+  org.apache.wicket.ajax.markup.html.AjaxLink;\nimport org.apache.wicket.markup.html.WebPage;\n\n@SuppressWarnings(\"serial\")\npublic
+  class TestPage extends WebPage {\n\t\n\tpublic TestPage() {\n\t\t\n\t\tadd(new AjaxLink<Void>(\"test\")
+  {\n\n\t\t\t@Override\n\t\t\tpublic void onClick(AjaxRequestTarget target) {\n\t\t\t}\n\t\t\t\n\t\t});\n\t\t\n\t}\n\t\n}\n\nTestPage.html:\n\n<!DOCTYPE
+  html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<?xml
+  version=\"1.0\" encoding=\"UTF-8\"?>\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<head>\n\t\t<title>Test
+  Page</title>\n\t</head>\n\t<body>\n\t\t<a wicket:id=\"test\">test</a>\n\t</body>\n</html>\n\n2.
+  Access the page in browser via mounted url, the page will display a link. \n\n3.
+  Wait until current session is expired (do not refresh the page or click the link
+  while waiting). \n\n4. Hit the link and below exception will be thrown:\nMessage:
+  Cannot find behavior with id: 0 on component: [ [Component id = test]]. Perhaps
+  the behavior did not properly implement getStatelessHint() and returned 'true' to
+  indicate that it is stateless instead of returning 'false' to indicate that it is
+  stateful.\n\n5. In wicket 1.5.0, this results in a PageExpiredException which is
+  more comprehensive. \n\n"

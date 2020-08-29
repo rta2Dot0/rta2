@@ -1,0 +1,8 @@
+---
+BugID: OAK-3817
+Summary: Hidden properties (one prefixed with ':') in lucene's analyzer configuration
+  fail to construct analyzers
+Description: This is similar to OAK-2524 in the sense that lucene doesn't like extra
+  arguments sent its way while constructing analyzers. In some cases (like node move
+  adds {{:source-path}}) we have hidden properties added to index definition nodes
+  and they get passed along to lucene analyzer factories which complaint and fail.

@@ -1,0 +1,9 @@
+---
+BugID: MATH-1089
+Summary: Precision.round() returns different results when provided negative zero as
+  double or float
+Description: |-
+  Precision.round(-0.0d, x) = 0.0
+  Precision.round(-0.0f, x) = -0.0
+
+  After discussion on the mailinglist, the result should always be -0.0.

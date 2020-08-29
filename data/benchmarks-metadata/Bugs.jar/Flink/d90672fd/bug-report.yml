@@ -1,0 +1,7 @@
+---
+BugID: FLINK-3513
+Summary: Fix interplay of automatic Operator UID and Changing name of WindowOperator
+Description: |-
+  WindowOperator can have a changing name because it has the TypeSerializer .toString() output in it's name. For some type serializers that don't implement toString() this means that the name changes.
+
+  This means that savepoint restore does not work for the automatically generated UID.

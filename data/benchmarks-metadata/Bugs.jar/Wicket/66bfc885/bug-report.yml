@@ -1,0 +1,36 @@
+---
+BugID: WICKET-4816
+Summary: Handling of semicolons in form action URLs
+Description: |-
+  What I expect to happen when there is no semicolon support in Wicket is that a
+  URL in a form like below stays intact and will not be cut off at the position of
+  the first semicolon:
+
+  <form action="http://localhost:8080/dor/abc_1234:56;023:456_def_78;90.html"
+  method="post"><input type="submit" value="Submit" /></form>
+
+  In my application the part abc_1234:56;023:456_def_78;90.html is "named1" in the
+  mapping below:
+
+  mount(new MountedMapper("dor/#{named1}", TestPage.class, new
+  MyPageParametersEncoder()));
+
+  and parsed in MyPageParametersEncoder.
+
+  The officially intended use of semicolons in URLs seems to be specified in "RFC
+  1808 - Relative Uniform Resource Locators, 2.4.5."
+  (http://www.faqs.org/rfcs/rfc1808.html). But that´s not what I´m looking for.
+
+  If I had not some pages running on this syntax, I could easily swap the
+  semicolon with another symbol. Nevertheless and if I´m correctly informed, I
+  think those URLs should not be cut off.
+
+  (Quotation from the mailing list)
+
+  The quickstart can be tested with the following URLs:
+
+  http://localhost:8080/dor/abc_1234:56;023:456_def_78;90.html
+  http://localhost:8080/dor/abc_1234:56%3B023:456_def_78%3B90.html
+  http://localhost:8080/dor/?abc=1234:56%3B023:456&def=78%3B90
+
+  The crucial part is the action attribute in the form in the page´s source code, which contains i.e. "./abc_1234:56?-1.IFormSubmitListener-form".

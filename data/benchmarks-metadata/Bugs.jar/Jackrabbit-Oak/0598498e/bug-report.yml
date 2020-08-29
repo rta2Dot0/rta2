@@ -1,0 +1,5 @@
+---
+BugID: OAK-2695
+Summary: DocumentNodeStore.dispatch() may pass null to NodeStateDiff
+Description: This is a regression introduced by OAK-2562. The dispatch method passes
+  a null state if the node does not exist at a given revision.

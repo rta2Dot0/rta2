@@ -1,0 +1,8 @@
+---
+BugID: WICKET-5784
+Summary: arraycopy with bad length in AbstractRequestLogger:172
+Description: "When clicking on DebugBar org.apache.wicket.devutils.inspector.LiveSessionsPage
+  NullPointerException is thrown.\nAfter investigating the reason I think AbstractRequestLogger:172
+  arraycopy params cause it. \n{{arraycopy(requestWindow, 0, copy, requestWindow.length
+  - oldestPos, indexInWindow);}}\nShould be changed to:\n{{arraycopy(requestWindow,
+  0, copy, requestWindow.length - oldestPos, oldestPos);}}"

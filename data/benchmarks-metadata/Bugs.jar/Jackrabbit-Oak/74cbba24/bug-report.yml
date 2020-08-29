@@ -1,0 +1,11 @@
+---
+BugID: OAK-4358
+Summary: Stale cluster ids can potentially lead to lots of previous docs traversal
+  in NodeDocument.getNewestRevision
+Description: |-
+  When some (actual test case and conditions still being investigated) of the following conditions are met:
+  * There are property value changes from different cluster id
+  * There are very old and stale cluster id (probably older incarnations of current node itself)
+  * A parallel background split removes all _commitRoot, _revision entries such that the latest one (which is less that baseRev) is very old
+
+  , finding newest revision traverses a lot of previous docs. Since root document gets split a lot and is a very common commitRoot (thus participating during checkConflicts in lot of commits), the issue can slow down commits by a lot

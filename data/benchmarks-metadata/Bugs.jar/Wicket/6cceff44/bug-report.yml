@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5505
+Summary: DefaultPropertyResolver does not respect JavaBean conventions
+Description: "The property name code should handle the isPropertyName pattern\n\nif(getterName.startsWith(\"get\"))
+  {\n\tname = getterName.substring(3, 4).toLowerCase() + getterName.substring(4);\n}
+  else {\n\tname = getterName.substring(2, 3).toLowerCase() + getterName.substring(3);\n}\n\nWorkaround:
+  providing my own property resolver."

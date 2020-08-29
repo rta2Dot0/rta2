@@ -1,0 +1,14 @@
+---
+BugID: OAK-2929
+Summary: Parent of unseen children must not be removable
+Description: |-
+  With OAK-2673, it's now possible to have hidden intermediate nodes created concurrently.
+  So, a scenario like:
+  {noformat}
+  start -> /:hidden
+  N1 creates /:hiddent/parent/node1
+  N2 creates /:hidden/parent/node2
+  {noformat}
+  is allowed.
+
+  But, if N2's creation of {{parent}} got persisted later than that on N1, then N2 is currently able to delete {{parent}} even though there's {{node1}}.

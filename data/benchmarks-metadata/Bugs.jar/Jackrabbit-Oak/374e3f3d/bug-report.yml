@@ -1,0 +1,8 @@
+---
+BugID: OAK-4166
+Summary: Simple versionable nodes are invalid after migration
+Description: 'OAK-3836 introduces a support for migrating {{mix:simpleVersionable}}
+  nodes from JCR2 to {{mix:versionable}} nodes in Oak. It changes the mixin type,
+  however it doesn''t add required properties: {{jcr:versionHistory}}, {{jcr:baseVersion}}
+  and {{jcr:predecessors}}. As a result, versioning-related methods invoked on such
+  nodes doesn''t work correctly.'

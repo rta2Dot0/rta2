@@ -1,0 +1,7 @@
+---
+BugID: OAK-2465
+Summary: Long overflow in PermissionEntryProviderImpl
+Description: |-
+  PermissionEntryProviderImpl#init can end up in a Long overflow if the underlying implementation does not know the exact value of the number children, and the child node count is higher than maxSize.
+
+  I will attach a patch with a test case

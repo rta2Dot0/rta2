@@ -1,0 +1,7 @@
+---
+BugID: OAK-3903
+Summary: Commit fails even though change made it to the DocumentStore
+Description: |-
+  In some rare cases it may happen that the DocumentNodeStore considers a commit as failed even though the changes were applied entirely to the DocumentStore. The issue happens when the update of the commit root is applied to the storage of a DocumentStore but then shortly after the communication between Oak the the storage system fails. On the Oak side the call will be considered as failed, but the change was actually applied.
+
+  The issue can be reproduced with the test attached to OAK-1641 and a replica-set with 3 nodes. Killing the primary node and restarting it a after a while in a loop will eventually lead to a commit that conflicts itself.

@@ -1,0 +1,7 @@
+---
+BugID: OAK-1270
+Summary: 'Revisit full-text queries in case of multiple tokens '
+Description: |-
+  There's still an issue with tokenizing the search terms when trying for example to search for a fulltext term that will split into 2 actual terms because of the analyzer.
+
+  Taking 'hello-world*' this will break into 2 tokens 'hello' and 'world*' which when treated as a PhraseQuery will not work, so I want to change this into a MutiPhraseQuery based on the simple tokens provided and all the existing tokens that match the wildchar character.

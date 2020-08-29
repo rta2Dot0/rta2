@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-218
+Summary: Mock Accumulo Inverts order of mutations w/ same timestamp
+Description: Mock accumulo has different behavior than real accumulo when the same
+  key is updated in the same millisecond.  The hidden in memory map counter in mock
+  accumulo needs to sort descending.

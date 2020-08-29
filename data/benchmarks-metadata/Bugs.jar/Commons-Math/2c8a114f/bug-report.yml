@@ -1,0 +1,15 @@
+---
+BugID: MATH-294
+Summary: RandomDataImpl.nextPoisson fails for means in range 6.0 - 19.99
+Description: "math.random.RandomDataImpl.nextPoisson(double mean) fails frequently
+  (but not always) for values of mean between 6.0 and 19.99 inclusive. For values
+  below 6.0 (where I see there is a branch in the logic) and above 20.0 it seems to
+  be okay (though I've only randomly sampled the space and run a million trials for
+  the values I've tried)\n\nWhen it fails, the exception is as follows (this for a
+  mean of 6.0)\n\norg.apache.commons.math.MathRuntimeException$4: must have n >= 0
+  for n!, got n = -2\n\tat org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(MathRuntimeException.java:282)\n\tat
+  org.apache.commons.math.util.MathUtils.factorialLog(MathUtils.java:561)\n\tat org.apache.commons.math.random.RandomDataImpl.nextPoisson(RandomDataImpl.java:434)
+  \n\nie MathUtils.factorialLog is being called with a negative input\n\nTo reproduce:\n\n
+  \   JDKRandomGenerator random = new JDKRandomGenerator();\n    random.setSeed(123456);\n
+  \   RandomData randomData = new RandomDataImpl(random);\n\n    for (int i=0; i<
+  1000000; i++){\n        randomData.nextPoisson(6.0);\n    }\n"

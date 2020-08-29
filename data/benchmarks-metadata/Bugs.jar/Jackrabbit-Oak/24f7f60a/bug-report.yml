@@ -1,0 +1,14 @@
+---
+BugID: OAK-3517
+Summary: Node.addNode(String, String) may check nt-mgt-permission against the wrong
+  node
+Description: |-
+  While I was troubleshooting an issue we're having in AEM 6.1, I've noticed an "impossible" access denied exception in the logs: the user had permission to add nodes under the node in question but still got an error.
+
+  Some testing narrowed the issue down to a difference in behavior between the following two invocations:
+  {{someNode.getNode("child").addNode("grandchild", "nt:unstructured");}}
+  {{someNode.addNode("child/grandchild", "nt:unstructured");}}
+
+  As far as I can tell, both should behave identically per the JCR spec, but the second one fails if the user doesn't have node type management permission to someNode, even if they have that permission to someNode/child.
+
+  I believe the issue is in line 283 of [NodeImpl|https://svn.apache.org/repos/asf/jackrabbit/oak/trunk/oak-jcr/src/main/java/org/apache/jackrabbit/oak/jcr/session/NodeImpl.java]: it is checking permissions against dlg.getTree(), but it should really check against parent.getTree(), or if possible, the path of the node that's about to be created (so glob restrictions can be evaluated).

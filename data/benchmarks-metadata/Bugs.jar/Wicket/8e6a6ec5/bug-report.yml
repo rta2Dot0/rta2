@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5060
+Summary: Fragment and Component with same id fail with misleading exception
+Description: |-
+  A page having a component from inherited markup *and* fragment with the *same* id fails with misleading exception message.
+
+  Exception message:
+  The component(s) below failed to render. Possible reasons could be that: 1) you have added a component in code but forgot to reference it in the markup (thus the component will never be rendered), 2) if your components were added in a parent container then make sure the markup for the child container includes them in <wicket:extend> ... and list of component id's from fragment multiplied by amount of rows in DataTable
+
+  Cause: The markup of the component is used by the fragment.

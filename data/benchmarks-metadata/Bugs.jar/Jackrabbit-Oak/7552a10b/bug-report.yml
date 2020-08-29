@@ -1,0 +1,12 @@
+---
+BugID: OAK-3053
+Summary: Locking issues seen with CopyOnWrite mode enabled
+Description: "When CopyOnWrite mode is enabled and incremental mode is enabled i.e.
+  {{indexPath}} property set then failure in any indexing cycle would prevent further
+  indexing from progressing. For e.g. if any indexing cycle fails then subsequent
+  indexing cycle would fail with Lucene locking related exception\n\n{noformat}\nCaused
+  by: org.apache.lucene.store.LockObtainFailedException: Lock obtain timed out: NativeFSLock@/tmp/junit8067118705344013640/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae/1/write.lock\n\tat
+  org.apache.lucene.store.Lock.obtain(Lock.java:89)\n\tat org.apache.lucene.index.IndexWriter.<init>(IndexWriter.java:707)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexEditorContext.getWriter(LuceneIndexEditorContext.java:169)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexEditor.addOrUpdate(LuceneIndexEditor.java:293)\n\t...
+  37 more\n{noformat}\n\nAny further indexing would continue to fail with this exception"

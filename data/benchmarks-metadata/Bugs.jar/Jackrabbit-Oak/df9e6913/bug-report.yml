@@ -1,0 +1,15 @@
+---
+BugID: OAK-612
+Summary: Calling addNode on a node that has orderable child nodes violates specification
+Description: "it seems to me that the current behavior of Node.addNode for a node
+  that \nhas orderable child nodes violates the specification (section 23.3):\n\n{quote}\n23.3
+  Adding a New Child Node\nWhen a child node is added to a node that has orderable
+  child nodes\nit is added to the end of the list.\n{quote}\n\nhowever, the following
+  test will fail:\n\n{code}\n@Test\n    public void testAddNode() throws Exception
+  {\n        new TestContentLoader().loadTestContent(getAdminSession());\n\n        Session
+  session = getAdminSession();\n        Node test = session.getRootNode().addNode(\"test\",
+  \"test:orderableFolder\");\n        assertTrue(test.getPrimaryNodeType().hasOrderableChildNodes());\n\n
+  \       Node n1 = test.addNode(\"a\");\n        Node n2 = test.addNode(\"b\");\n
+  \       session.save();\n\n        NodeIterator it = test.getNodes();\n        assertEquals(\"a\",
+  it.nextNode().getName());\n        assertEquals(\"b\", it.nextNode().getName());\n
+  \   }\n{code}"

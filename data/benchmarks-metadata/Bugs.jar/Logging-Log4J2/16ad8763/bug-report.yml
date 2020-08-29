@@ -1,0 +1,7 @@
+---
+BugID: LOG4J2-964
+Summary: StringFormattedMessage serialization is incorrect
+Description: |-
+  The method {{writeObject(final ObjectOutputStream out)}} of the class {{org.apache.logging.log4j.message.StringFormattedMessage}} does not write the stringArgs array into the output stream. This causes {{readObject(final ObjectInputStream in)}} to throw an {{EOFException}} when trying to deserialize.
+
+  There is another bug in the same method. The line {{stringArgs[i] = obj.toString();}} throws a {{NullPointerException}} when obj is null.

@@ -1,0 +1,13 @@
+---
+BugID: WICKET-3764
+Summary: Ajax behaviors are failing in stateless pages
+Description: "Stateless ajax behaviors are not working in stateless pages in 1.5-RC4.2.
+  I verified it with the stateless demo project of Martin Grigorov (https://github.com/martin-g/wicket-stateless),
+  when changing the dropdown on the start page an exception is thrown (clicking the
+  increment link causes a similar exception): \n\norg.apache.wicket.behavior.InvalidBehaviorIdException:
+  Cannot find behavior with id: 0 on component: [DropDownChoice [Component id = c]]\n\nAt
+  first glance the reason may be located in org.apache.wicket.Behaviors.getBehaviorById()
+  which does not create the ID list if missing (getBehaviorsIdList(false) in line
+  286 instead of getBehaviorsIdList(true)), because this error does not occur when
+  getBehaviorId() was manually called in the page constructor to force creation of
+  the list."

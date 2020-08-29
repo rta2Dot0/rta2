@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-7767
+Summary: Mock - Defining assertion on message doest work if using convertTo
+Description: |-
+  See
+  http://www.manning-sandbox.com/thread.jspa?threadID=41025&tstart=0
+
+
+  The reason is when you use a method in the fluent builder that returns a ValueBuilder then that didn't detect the predicate.

@@ -1,0 +1,29 @@
+---
+BugID: LOG4J2-464
+Summary: 'JSON Syntax: LoggerConfig - multiple AppenderRef entries'
+Description: "How does one assign multiple AppenderRef entries to a logger when using
+  JSON syntax? I've tried numerous formats but none of them appear to work. Exampe
+  below.\n\n\"loggers\": {\n        \"logger\": [\n            {\n                \"name\":
+  \"helloWorld\",\n                \"level\": \"info\",\n                \"additivity\":
+  \"true\",\n                \"AppenderRef\": [\n                    {\n                        \"ref\":
+  \"File Routing Appender\"\n                    },\n                    {\n                        \"ref\":
+  \"Database Routing Appender\"\n                    }\n                ]\n            }\n
+  \       ],\n        \"root\": {\n            \"level\": \"info\",\n            \"AppenderRef\":
+  {\n                \"ref\": \"Console Appender\"\n            }\n        }\n    }\n\n2013-12-11
+  08:32:07,012 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig
+  for element logger with params(additivity=\"true\", level=\"info\", name=\"helloWorld\",
+  includeLocation=\"null\", AppenderRef={}, Properties={}, Configuration(Hello World
+  Config), null)\n\nThe only way I've been able to hack this (up to a maximum of two
+  AppenderRefs) is to use the appender-ref alias in conjunction with AppenderRef e.g.:\n\"loggers\":
+  {\n            \"logger\": [\n                \n                {\n                    \"name\":
+  \"helloWorld\",\n                    \"level\": \"info\",\n                    \"additivity\":
+  \"true\",\n                    \"AppenderRef\": {\n                    \t\"ref\":\"File
+  Routing Appender\"\n                    },\n                    \"appender-ref\":
+  {\n                    \t\"ref\":\"Database Routing Appender\"\n                    }\n
+  \               }\n            ],\n            \"root\": {\n                \"level\":
+  \"info\",\n                \"AppenderRef\": {\n                    \"ref\": \"Console
+  Appender\"\n                }\n            }\n   \t\t}\n2013-12-11 08:51:54,977
+  DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig
+  for element logger with params(additivity=\"true\", level=\"info\", name=\"helloWorld\",
+  includeLocation=\"null\", AppenderRef={File Routing Appender, Database Routing Appender},
+  Properties={}, Configuration(Hello World Config), null)"

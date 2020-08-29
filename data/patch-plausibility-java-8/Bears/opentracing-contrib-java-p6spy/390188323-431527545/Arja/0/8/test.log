@@ -1,0 +1,209 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/rjust/projects/calling-bs/repair-them-all/RepairThemAll/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.132-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building io.opentracing.contrib:opentracing-p6spy 0.2.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.1:prepare-agent (prepare-agent) @ opentracing-p6spy ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ opentracing-p6spy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Arja_Bears_opentracing-contrib-java-p6spy_390188323-431527545/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ opentracing-p6spy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ opentracing-p6spy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ opentracing-p6spy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ opentracing-p6spy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ opentracing-p6spy ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.pom (3.3 kB at 8.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.20.1/surefire-providers-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.20.1/surefire-providers-2.20.1.pom (2.6 kB at 176 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.jar (82 kB at 1.5 MB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.opentracing.contrib.p6spy.SpringTest
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.016 s <<< FAILURE! - in io.opentracing.contrib.p6spy.SpringTest
+[ERROR] test(io.opentracing.contrib.p6spy.SpringTest)  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: expected:<java-p6spy> but was:<null>
+	at io.opentracing.contrib.p6spy.SpringTest.test(SpringTest.java:60)
+
+[INFO] Running io.opentracing.contrib.p6spy.JdbcTest
+[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.834 s <<< FAILURE! - in io.opentracing.contrib.p6spy.JdbcTest
+[ERROR] should_not_report_span_with_sql_exception(io.opentracing.contrib.p6spy.JdbcTest)  Time elapsed: 1.71 s  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+	at io.opentracing.contrib.p6spy.JdbcTest.should_not_report_span_with_sql_exception(JdbcTest.java:107)
+
+[INFO] Running io.opentracing.contrib.p6spy.HibernateTest
+Aug 21, 2019 1:12:50 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {5.3.6.Final}
+Aug 21, 2019 1:12:50 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+Aug 21, 2019 1:12:50 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+Aug 21, 2019 1:12:50 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+Aug 21, 2019 1:12:50 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [null] at URL [jdbc:p6spy:hsqldb:mem:hibernate;traceWithActiveSpanOnly=true]
+Aug 21, 2019 1:12:50 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=sa, password=****}
+Aug 21, 2019 1:12:50 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+Aug 21, 2019 1:12:50 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH000115: Hibernate connection pool size: 10 (min=1)
+2019-08-21T13:12:51.440-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:52.539-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:52.542-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:52.605-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:52.607-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:52.656-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:52.658-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+2019-08-21T13:12:52.682-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:52.683-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+2019-08-21T13:12:52.684-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: create table Employee (id bigint not null, primary key (id))
+2019-08-21T13:12:52.684-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: call next value for hibernate_sequence
+2019-08-21T13:12:52.689-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: insert into Employee (id) values (?)
+2019-08-21T13:12:52.690-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: drop table Employee if exists
+2019-08-21T13:12:52.691-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:52.692-0700  WARNING  jdbc url contains contradictory traceWithActiveSpanOnly=true and traceWithActiveSpanOnly=false options. Defaulting to no options
+2019-08-21T13:12:52.945-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.046-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.049-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+2019-08-21T13:12:53.102-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.105-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+2019-08-21T13:12:53.145-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.147-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:53.189-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.191-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:53.278-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.281-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+2019-08-21T13:12:53.333-0700  WARN  HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-08-21T13:12:53.335-0700  WARN  HHH000431: Unable to determine H2 database version, certain features may not work
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table Employee (id bigint not null, primary key (id))
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Employee (id) values (?)
+Hibernate: drop table Employee if exists
+Hibernate: drop sequence if exists hibernate_sequence
+[ERROR] Tests run: 11, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 3.196 s <<< FAILURE! - in io.opentracing.contrib.p6spy.HibernateTest
+[ERROR] hibernate(io.opentracing.contrib.p6spy.HibernateTest)  Time elapsed: 0.072 s  <<< FAILURE!
+java.lang.AssertionError: expected:<java-p6spy> but was:<null>
+	at io.opentracing.contrib.p6spy.HibernateTest.hibernate(HibernateTest.java:140)
+
+[ERROR] jpa(io.opentracing.contrib.p6spy.HibernateTest)  Time elapsed: 0.336 s  <<< FAILURE!
+java.lang.AssertionError: expected:<java-p6spy> but was:<null>
+	at io.opentracing.contrib.p6spy.HibernateTest.jpa(HibernateTest.java:78)
+
+[ERROR] withPeerNameInUrl(io.opentracing.contrib.p6spy.HibernateTest)  Time elapsed: 0.082 s  <<< FAILURE!
+java.lang.AssertionError: expected:<java-p6spy> but was:<null>
+	at io.opentracing.contrib.p6spy.HibernateTest.withPeerNameInUrl(HibernateTest.java:159)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   HibernateTest.hibernate:140 expected:<java-p6spy> but was:<null>
+[ERROR]   HibernateTest.jpa:78 expected:<java-p6spy> but was:<null>
+[ERROR]   HibernateTest.withPeerNameInUrl:159 expected:<java-p6spy> but was:<null>
+[ERROR]   JdbcTest.should_not_report_span_with_sql_exception:107 expected:<0> but was:<1>
+[ERROR]   SpringTest.test:60 expected:<java-p6spy> but was:<null>
+[INFO] 
+[ERROR] Tests run: 19, Failures: 5, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12.895 s
+[INFO] Finished at: 2019-08-21T13:12:53-07:00
+[INFO] Final Memory: 26M/1148M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (default-test) on project opentracing-p6spy: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /tmp/Arja_Bears_opentracing-contrib-java-p6spy_390188323-431527545/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

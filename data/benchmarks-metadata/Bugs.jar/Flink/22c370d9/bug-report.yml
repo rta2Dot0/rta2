@@ -1,0 +1,25 @@
+---
+BugID: FLINK-1145
+Summary: POJO Type extractor bug with type variables
+Description: "The following program incorrectly states that there are duplicate getters/setters.\n\n{code}\n\tpublic
+  static class Vertex<K, V> {\n\t\t\n\t\tprivate K key1;\n\t\tprivate K key2;\n\t\tprivate
+  V value;\n\t\t\n\t\tpublic Vertex() {}\n\t\t\n\t\tpublic Vertex(K key, V value)
+  {\n\t\t\tthis.key1 = key;\n\t\t\tthis.key2 = key;\n\t\t\tthis.value = value;\n\t\t}\n\t\t\n\t\tpublic
+  Vertex(K key1, K key2, V value) {\n\t\t\tthis.key1 = key1;\n\t\t\tthis.key2 = key2;\n\t\t\tthis.value
+  = value;\n\t\t}\n\n\t\tpublic void setKey1(K key1) {\n\t\t\tthis.key1 = key1;\n\t\t}\n\t\t\n\t\tpublic
+  void setKey2(K key2) {\n\t\t\tthis.key2 = key2;\n\t\t}\n\t\t\n\t\tpublic K getKey1()
+  {\n\t\t\treturn key1;\n\t\t}\n\t\t\n\t\tpublic K getKey2() {\n\t\t\treturn key2;\n\t\t}\n\t\t\n\t\tpublic
+  void setValue(V value) {\n\t\t\tthis.value = value;\n\t\t}\n\t\t\n\t\tpublic V getValue()
+  {\n\t\t\treturn value;\n\t\t}\n\t}\n\t\n\tpublic static void main(String[] args)
+  throws Exception {\n\t\tExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();\n\t\t\n\t\tDataSet<Vertex<Long,
+  Double>> set = env.fromElements(new Vertex<Long, Double>(0L, 3.0), new Vertex<Long,
+  Double>(1L, 1.0));\n\t\t\n\t\tset.print();\n\t\t\n\t\tenv.execute();\n\t}\n{code}\n\nThe
+  exception is\n{code}\nException in thread \"main\" java.lang.IllegalStateException:
+  Detected more than one getters\n\tat org.apache.flink.api.java.typeutils.TypeExtractor.isValidPojoField(TypeExtractor.java:981)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.analyzePojo(TypeExtractor.java:1025)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.privateGetForClass(TypeExtractor.java:937)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.privateGetForClass(TypeExtractor.java:863)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.privateGetForObject(TypeExtractor.java:1146)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.getForObject(TypeExtractor.java:1116)\n\tat
+  org.apache.flink.api.java.ExecutionEnvironment.fromElements(ExecutionEnvironment.java:466)\n\tat
+  test.Test.main(Test.java:74)\n\n{code}"

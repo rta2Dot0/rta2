@@ -1,0 +1,13 @@
+---
+BugID: OAK-1215
+Summary: Wildcards in relative property paths don't work in search expressions
+Description: |-
+  A search XPath of the form:
+  {code}
+  /jcr:root/etc/commerce/products//*[@size='M' or */@size='M']
+  {code}
+  returns:
+  {code}
+  Invalid path: *
+  {code}
+  (This works fine in Jackrabbit.)

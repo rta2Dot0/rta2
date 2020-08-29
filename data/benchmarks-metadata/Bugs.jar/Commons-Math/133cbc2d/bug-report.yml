@@ -1,0 +1,57 @@
+---
+BugID: MATH-434
+Summary: SimplexSolver returns unfeasible solution
+Description: "The SimplexSolver is returning an unfeasible solution:\n\nimport java.util.ArrayList;\nimport
+  java.text.DecimalFormat;\nimport org.apache.commons.math.linear.ArrayRealVector;\nimport
+  org.apache.commons.math.optimization.GoalType;\nimport org.apache.commons.math.optimization.OptimizationException;\nimport
+  org.apache.commons.math.optimization.linear.*;\n\npublic class SimplexSolverBug
+  {\n    \n    public static void main(String[] args) throws OptimizationException
+  {\n        \n        LinearObjectiveFunction c = new LinearObjectiveFunction(new
+  double[]{0.0d, 1.0d, 1.0d, 0.0d, 0.0d, 0.0d, 0.0d}, 0.0d);\n        \n        ArrayList<LinearConstraint>
+  cnsts = new ArrayList<LinearConstraint>(5);\n        LinearConstraint cnst;\n        cnst
+  = new LinearConstraint(new double[] {1.0d, -0.1d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d},
+  Relationship.EQ, -0.1d);\n        cnsts.add(cnst);\n        cnst = new LinearConstraint(new
+  double[] {1.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d}, Relationship.GEQ, -1e-18d);\n
+  \       cnsts.add(cnst);\n        cnst = new LinearConstraint(new double[] {0.0d,
+  1.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d}, Relationship.GEQ, 0.0d);\n        cnsts.add(cnst);\n
+  \       cnst = new LinearConstraint(new double[] {0.0d, 0.0d, 0.0d, 1.0d, 0.0d,
+  -0.0128588d, 1e-5d}, Relationship.EQ, 0.0d);\n        cnsts.add(cnst);\n        cnst
+  = new LinearConstraint(new double[] {0.0d, 0.0d, 0.0d, 0.0d, 1.0d, 1e-5d, -0.0128586d},
+  Relationship.EQ, 1e-10d);\n        cnsts.add(cnst);\n        cnst = new LinearConstraint(new
+  double[] {0.0d, 0.0d, 1.0d, -1.0d, 0.0d, 0.0d, 0.0d}, Relationship.GEQ, 0.0d);\n
+  \       cnsts.add(cnst);\n        cnst = new LinearConstraint(new double[] {0.0d,
+  0.0d, 1.0d, 1.0d, 0.0d, 0.0d, 0.0d}, Relationship.GEQ, 0.0d);\n        cnsts.add(cnst);\n
+  \       cnst = new LinearConstraint(new double[] {0.0d, 0.0d, 1.0d, 0.0d, -1.0d,
+  0.0d, 0.0d}, Relationship.GEQ, 0.0d);\n        cnsts.add(cnst);\n        cnst =
+  new LinearConstraint(new double[] {0.0d, 0.0d, 1.0d, 0.0d, 1.0d, 0.0d, 0.0d}, Relationship.GEQ,
+  0.0d);\n        cnsts.add(cnst);\n                \n        DecimalFormat df = new
+  java.text.DecimalFormat(\"0.#####E0\");\n        \n        System.out.println(\"Constraints:\");\n
+  \       for(LinearConstraint con : cnsts) {\n            for (int i = 0; i < con.getCoefficients().getDimension();
+  ++i)\n                System.out.print(df.format(con.getCoefficients().getData()[i])
+  + \" \");\n            System.out.println(con.getRelationship() + \" \" + con.getValue());\n
+  \       }\n        \n        SimplexSolver simplex = new SimplexSolver(1e-7);\n
+  \       double[] sol = simplex.optimize(c, cnsts, GoalType.MINIMIZE, false).getPointRef();\n
+  \       System.out.println(\"Solution:\\n\" + new ArrayRealVector(sol));\n        System.out.println(\"Second
+  constraint is violated!\");\n    }\n}\n\n\nIt's an odd problem, but something I
+  ran across.  I tracked the problem to the getPivotRow routine in SimplexSolver.
+  \ It was choosing a pivot that resulted in a negative right-hand-side.  I recommend
+  a fix by replacing\n                ...\n                if (MathUtils.equals(ratio,
+  minRatio, epsilon)) {\n                ...\nwith\n                ...\n                if
+  (MathUtils.equals(ratio, minRatio, Math.abs(epsilon/entry))) {\n                ...\n\nI
+  believe this would be more appropriate (and at least resolves this particular problem).\n\nAlso,
+  you may want to consider making a change in getPivotColumn to replace\n            ...\n
+  \           if (MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon) <
+  0) {\n            ...\nwith\n            ...\n            if (tableau.getEntry(0,
+  i) < minValue) \n            ...\nbecause I don't see the point of biasing earlier
+  columns when multiple entries are within epsilon of each other.  Why not pick the
+  absolute smallest.  I don't know that any problem can result from doing it the other
+  way, but the latter may be a safer bet.\n\nVERY IMPORTANT: I discovered another
+  bug that occurs when not restricting to non-negatives.  In SimplexTableu::getSolution(),
+  \n          ...          \n          if (basicRows.contains(basicRow)) \n              //
+  if multiple variables can take a given value\n              // then we choose the
+  first and set the rest equal to 0\n              coefficients[i] = 0;\n          ...\nshould
+  be\n          ...          \n          if (basicRows.contains(basicRow)) {\n              //
+  if multiple variables can take a given value\n              // then we choose the
+  first and set the rest equal to 0\n              coefficients[i] = (restrictToNonNegative
+  ? 0 : -mostNegative);\n          ...\nIf necessary, I can give an example of where
+  this bug causes a problem, but it should be fairly obvious why this was wrong.\n"

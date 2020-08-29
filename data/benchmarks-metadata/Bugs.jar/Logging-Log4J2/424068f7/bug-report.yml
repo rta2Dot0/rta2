@@ -1,0 +1,32 @@
+---
+BugID: LOG4J2-1251
+Summary: JUL bridge broken
+Description: |-
+  org.apache.logging.log4j.jul.ApiLogger doesnt behave the same depending where we come from (logger.info() vs logger.log() typically)
+
+  The main difference is the message factory used.
+
+  for this statement:
+
+  {code}
+  logger.info("{foo}");
+  {code}
+
+  a SimpleMessage will be emitted but for
+
+  {code}
+  logger.log(recordWithSameContent);
+  {code}
+
+  a MessageFormatMessage will be emitted making the log statement failling.
+
+  org.apache.logging.log4j.jul.ApiLogger#log(java.util.logging.LogRecord) should be reworked to handle such a case.
+
+  Here how to reproduce it:
+
+  {code}
+  Logger.getLogger("foo").info("{test}");
+  Logger.getLogger("foo").log(new LogRecord(Level.INFO, "{test}"));
+  {code}
+
+  The fix is as simple as testing org.apache.logging.log4j.jul.ApiLogger#log(java.util.logging.LogRecord) and if null don't call logger.getMessageFactory().newMessage(record.getMessage(), record.getParameters()) but logger.getMessageFactory().newMessage(record.getMessage())

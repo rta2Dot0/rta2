@@ -1,0 +1,44 @@
+diff --git a/wicket-core/src/main/java/org/apache/wicket/protocol/http/servlet/ServletWebRequest.java b/wicket-core/src/main/java/org/apache/wicket/protocol/http/servlet/ServletWebRequest.java
+index 68f263b..576f44c 100644
+--- a/wicket-core/src/main/java/org/apache/wicket/protocol/http/servlet/ServletWebRequest.java
++++ b/wicket-core/src/main/java/org/apache/wicket/protocol/http/servlet/ServletWebRequest.java
+@@ -66,6 +66,8 @@ public class ServletWebRequest extends WebRequest
+ 
+ 	private final ErrorAttributes errorAttributes;
+ 
++	private final ForwardAttributes forwardAttributes;
++
+ 	/**
+ 	 * Construct.
+ 	 * 
+@@ -96,6 +98,8 @@ public class ServletWebRequest extends WebRequest
+ 
+ 		errorAttributes = ErrorAttributes.of(httpServletRequest);
+ 
++		forwardAttributes = ForwardAttributes.of(httpServletRequest);
++
+ 		if (url != null)
+ 		{
+ 			this.url = url;
+@@ -129,6 +133,12 @@ public class ServletWebRequest extends WebRequest
+ 				.toString();
+ 			return getContextRelativeUrl(problematicURI, filterPrefix);
+ 		}
++		else if (forwardAttributes != null && !Strings.isEmpty(forwardAttributes.getRequestUri()))
++		{
++			String forwardURI = Url.parse(forwardAttributes.getRequestUri(), getCharset())
++				.toString();
++			return getContextRelativeUrl(forwardURI, filterPrefix);
++		}
+ 		else if (!isAjax())
+ 		{
+ 			return getContextRelativeUrl(httpServletRequest.getRequestURI(), filterPrefix);
+@@ -456,6 +466,7 @@ public class ServletWebRequest extends WebRequest
+ 	@Override
+ 	public boolean shouldPreserveClientUrl()
+ 	{
+-		return errorAttributes != null && !Strings.isEmpty(errorAttributes.getRequestUri());
++		return (errorAttributes != null && !Strings.isEmpty(errorAttributes.getRequestUri()) || forwardAttributes != null &&
++			!Strings.isEmpty(forwardAttributes.getRequestUri()));
+ 	}
+ }

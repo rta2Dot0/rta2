@@ -1,0 +1,12 @@
+---
+BugID: WICKET-4715
+Summary: WebApplication doesn't recognize if an incoming request is multipart.
+Description: "Thanks to the mail at http://apache-wicket.1842946.n4.nabble.com/Read-POST-based-request-from-external-site-td4651269.html
+  we have spotted a problem with method  newWebRequest of class WebApplication. \nIt
+  seems that this method doesn't test if the original request is multipart and doing
+  so post parameters go lost. \nWe should create a  MultipartServletWebRequestImpl
+  when such a type of request is being served. I attach a possible patch but I'm not
+  100% about two things:\n- which is the best way to determinate if a HttpServletRequest
+  is multipart?\n- in order to build a MultipartServletWebRequestImpl we need to provide
+  a string identifier for the upload.   How can we generate it (in my patch it's a
+  constant value)?\n"

@@ -1,0 +1,46 @@
+---
+BugID: WICKET-5466
+Summary: ListenerInterfaceRequestHandler#respond throws ComponentNotFoundException
+  as a side-effect
+Description: "The following exception occurs instead of a generic WicketRuntimeException:\n\n16:27:56.181
+  WARN  (RequestCycle.java:343) Handling the following exception [qtp9826071-207]\norg.apache.wicket.core.request.handler.ComponentNotFoundException:
+  Could not find component 'xyz' on page 'class MyPage’\n       at org.apache.wicket.core.request.handler.PageAndComponentProvider.getComponent(PageAndComponentProvider.java:182)
+  ~[org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.core.request.handler.ListenerInterfaceRequestHandler.getComponent(ListenerInterfaceRequestHandler.java:90)
+  ~[org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.core.request.handler.ListenerInterfaceRequestHandler.respond(ListenerInterfaceRequestHandler.java:231)
+  ~[org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:861)
+  ~[org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:64)
+  ~[org.apache.wicket.request_6.12.0.jar:6.12.0]\n       at org.apache.wicket.request.cycle.RequestCycle.execute(RequestCycle.java:261)
+  [org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:218)
+  [org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:289)
+  [org.apache.wicket.core_6.12.0.jar:6.12.0]\n       at org.apache.wicket.protocol.http.WicketFilter.processRequestCycle(WicketFilter.java:259)
+  [org.apache.wicket.core_6.12.0.jar:6.12.0]\n\nin fact, this is a side effect, if
+  you look at the code:\n\n       @Override\n       public void respond(final IRequestCycle
+  requestCycle)\n       {\n             final IRequestablePage page = getPage();\n
+  \            final boolean freshPage = pageComponentProvider.isPageInstanceFresh();\n
+  \            final boolean isAjax = ((WebRequest)requestCycle.getRequest()).isAjax();\n
+  \            IRequestableComponent component = null;\n             try\n             {\n
+  \                   component = getComponent();\n             }\n             catch
+  (ComponentNotFoundException e)\n             {\n                    // either the
+  page is stateless and the component we are looking for is not added in the\n                    //
+  constructor\n                    // or the page is stateful+stale and a new instances
+  was created by pageprovider\n                    // we denote this by setting component
+  to null\n                    component = null;\n             }\n             if
+  ((component == null && freshPage) ||\n\n                    (component != null &&
+  getComponent().getPage() == page))\n\n             {\n             [....]\n             }\n\n
+  \            else\n\n             {\n\n                    throw new WicketRuntimeException(\"Component
+  \" + getComponent() +\n\n                          \" has been removed from page.\");\n\n
+  \            }\n\n       }\n\nYou see that getComponent() is called twice.\n\n1)
+  Once guarded by a catch \n - and -\n2) once unguarded\n\nSo if the component can't
+  be found AND freshPage is false, as a sideeffect instead of the WicketRuntimeException
+  with the removed message a componentnotfound exception is raised as a side effect.\n\nI
+  see two possible solutions for this\n\na) either it is intentional that a ComponentNotFoundException
+  is thrown, then it should be thrown from the catch block like\n\n             catch
+  (ComponentNotFoundException e)\n             {\n                    if (!freshPage)
+  {\n                       throw e;\n                    }\n             }\n\nb)
+  if it is unintentionall in the else case ther should be a simple check like this\n\n
+  if (component == null) {\n                        throw new WicketRuntimeException(\"Component
+  for path \" + getPath() +\n                          \" and page \"+page.getClass().getName()+\"
+  has been removed from page.\");\n                    } else {\n                       throw
+  new WicketRuntimeException(\"Component \" + component +\n                          \"
+  has been removed from page.\");\n                    }\n\n\nBeside this: it would
+  be a good idea to mention at least the page class in either case.\n"

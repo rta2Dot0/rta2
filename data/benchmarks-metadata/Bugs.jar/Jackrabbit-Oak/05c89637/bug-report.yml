@@ -1,0 +1,6 @@
+---
+BugID: OAK-1364
+Summary: CacheLIRS concurrency issue
+Description: "Some of the methods of the cache can throw a NullPointerException when
+  the cache is used concurrently. Example stack trace:\n\n{code}\njava.lang.NullPointerException:
+  null\norg.apache.jackrabbit.oak.cache.CacheLIRS.values(CacheLIRS.java:470) \norg.apache.jackrabbit.oak.cache.CacheLIRS$1.values(CacheLIRS.java:1432)\norg.apache.jackrabbit.oak.plugins.segment.file.FileStore.flush(FileStore.java:205)\n{code}\n"

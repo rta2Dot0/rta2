@@ -1,0 +1,82 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cloudtrace 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ cloudtrace ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ cloudtrace ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2:exec (generate-thrift) @ cloudtrace ---
+****************************************************
+*** thrift is not available
+***   expecting 'thrift -version' to return 0.6
+*** generated code will not be updated
+****************************************************
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ cloudtrace ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ cloudtrace ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_28294266_java-7/src/trace/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ cloudtrace ---
+[INFO] log4j-1.2.16.jar already exists in destination.
+[INFO] libthrift-0.6.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ cloudtrace ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ cloudtrace ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_28294266_java-7/src/trace/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ cloudtrace ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ cloudtrace ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Accumulo_28294266_java-7/src/trace/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.pom (2.6 kB at 5.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.9/surefire-providers-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.9/surefire-providers-2.9.pom (2.3 kB at 151 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.jar (33 kB at 1.1 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.accumulo.cloudtrace.instrument.TracerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.369 sec
+Running org.apache.accumulo.cloudtrace.instrument.PerformanceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.accumulo.cloudtrace.instrument.CountSamplerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.033 s
+[INFO] Finished at: 2020-03-12T06:45:58-07:00
+[INFO] Final Memory: 31M/1238M
+[INFO] ------------------------------------------------------------------------

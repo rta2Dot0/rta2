@@ -1,0 +1,13 @@
+---
+BugID: LOG4J2-1099
+Summary: AbstractStringLayout implements Serializable, but is not Serializable
+Description: "{{org.apache.logging.log4j.core.layout.AbstractLayout}} line 34 :\n{code}\n
+  \   // TODO: Charset is not serializable. Implement read/writeObject() ?\n    private
+  final Charset charset;\n{code}\n\nThe developer has recognised that this class claims
+  to be serializable, but is not actually serializable.\n\nThis actually has wide
+  impact due to the fact that the Logger is holding onto the Layout via the {{org.apache.logging.log4j.core.Logger.PrivateConfig#config}}
+  (XML in my case). Many projects, including Spring, do not use static Loggers and
+  prefer getClass type approaches off of their abstract classes, i.e.:\n{code}\nprotected
+  final Log logger = LogFactory.getLog(getClass());\n{code} \nThis actually can lead
+  to use of spring session beans, which are serialized with the session, trying to
+  serialize the logger also and failing due to this bug."

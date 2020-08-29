@@ -1,0 +1,28 @@
+---
+BugID: OAK-1817
+Summary: NPE in MarkSweepGarbageCollector.saveBatchToFile during Datastore GC with
+  FileDataStore
+Description: "During running a datastore garbage collection on a Jackrabbit 2 FileDataStore
+  (org.apache.jackrabbit.oak.plugins.blob.datastore.FileDataStore, see http://jackrabbit.apache.org/oak/docs/osgi_config.html)
+  an NPE is thrown\n{code}\n13.05.2014 17:50:16.944 *ERROR* [qtp1416657193-147] org.apache.jackrabbit.oak.management.ManagementOperation
+  Blob garbage collection failed\njava.lang.RuntimeException: Error in retrieving
+  references\n\tat org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector$1.addReference(MarkSweepGarbageCollector.java:395)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.Segment.collectBlobReferences(Segment.java:248)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.SegmentTracker.collectBlobReferences(SegmentTracker.java:178)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.SegmentBlobReferenceRetriever.collectReferences(SegmentBlobReferenceRetriever.java:38)\n\tat
+  org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector.iterateNodeTree(MarkSweepGarbageCollector.java:361)\n\tat
+  org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector.mark(MarkSweepGarbageCollector.java:201)\n\tat
+  org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector.markAndSweep(MarkSweepGarbageCollector.java:173)\n\tat
+  org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector.collectGarbage(MarkSweepGarbageCollector.java:149)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService$2.collectGarbage(SegmentNodeStoreService.java:185)\n\tat
+  org.apache.jackrabbit.oak.plugins.blob.BlobGC$1.call(BlobGC.java:68)\n\tat org.apache.jackrabbit.oak.plugins.blob.BlobGC$1.call(BlobGC.java:64)\n\tat
+  java.util.concurrent.FutureTask.run(FutureTask.java:262)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)\n\tat
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)\n\tat
+  java.lang.Thread.run(Thread.java:745)\nCaused by: java.lang.NullPointerException:
+  null\n\tat com.google.common.base.Preconditions.checkNotNull(Preconditions.java:192)\n\tat
+  com.google.common.base.Joiner.toString(Joiner.java:436)\n\tat com.google.common.base.Joiner.appendTo(Joiner.java:108)\n\tat
+  com.google.common.base.Joiner.appendTo(Joiner.java:152)\n\tat com.google.common.base.Joiner.join(Joiner.java:193)\n\tat
+  com.google.common.base.Joiner.join(Joiner.java:183)\n\tat org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector.saveBatchToFile(MarkSweepGarbageCollector.java:317)\n\tat
+  org.apache.jackrabbit.oak.plugins.blob.MarkSweepGarbageCollector$1.addReference(MarkSweepGarbageCollector.java:391)\n\t...
+  14 common frames omitted\n{code}\n\nAttached you find the OSGi config for both the
+  nodestore and the datastore."

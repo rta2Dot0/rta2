@@ -1,0 +1,12 @@
+---
+BugID: WICKET-3931
+Summary: Component markup caching inconsistencies
+Description: "In WICKET-3891 we found that Component#markup field is not being reset
+  between requests. The problem is that this field is transient and it is null-ified
+  only when the page is read from the second level page cache (see https://cwiki.apache.org/confluence/x/qIaoAQ).
+  If the page instance is read from first level cache (http session) then its non-serialized
+  version is used and the markup field value is still non-null.\n\nIn WICKET-3891
+  this looked like a minor issue with the markup caching in development mode but actually
+  this problem is valid even in production mode.\nSee the attached application. When
+  the panel's variation is changed every MarkupContainer inside still uses its old
+  markup. "

@@ -1,0 +1,15 @@
+---
+BugID: OAK-4351
+Summary: Non-root lucene index throws exception if query constraints match root of
+  sub-tree
+Description: |-
+  LucenePropetyIndexProvider returns incorrect (normalized) path for root of sub-tree if index is defined on the sub-tree. e.g.
+  {{/jcr:root/test//element(*, nt:base)\[@foo='bar']}} would fail with following defn
+  {noformat}
+  + /test
+      - foo="bar"
+      + test1
+            - foo="bar"
+      + oak:index
+             - indexRules/nt:base/properties/foo/propertyIndex="true"
+  {noformat}

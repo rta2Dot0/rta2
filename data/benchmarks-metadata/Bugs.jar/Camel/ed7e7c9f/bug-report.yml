@@ -1,0 +1,14 @@
+---
+BugID: CAMEL-6610
+Summary: Always got IndexOutOfBoundsException when customized id of wireTap component
+Description: "when I'm tring to execute below route:\n{code}\nfrom(\"timer:foo\").wireTap(\"direct:a\").id(\"wiretap_1\").to(\"log:a\");\nfrom(\"direct:a\").to(\"log:b\");\n{code}\nI
+  always got IndexOutOfBoundsException:\n{color:red}\nException in thread \"main\"
+  java.lang.IndexOutOfBoundsException: Index: -1\n\tat java.util.Collections$EmptyList.get(Collections.java:3212)\n\tat
+  org.apache.camel.model.ProcessorDefinition.id(ProcessorDefinition.java:1025)\n\tat
+  org.talend.esb.liugang.camel.wiretap.TestWiretap$1.configure(TestWiretap.java:14)\n\tat
+  org.apache.camel.builder.RouteBuilder.checkInitialized(RouteBuilder.java:322)\n\tat
+  org.apache.camel.builder.RouteBuilder.configureRoutes(RouteBuilder.java:276)\n\tat
+  org.apache.camel.builder.RouteBuilder.addRoutesToCamelContext(RouteBuilder.java:262)\n\tat
+  org.apache.camel.impl.DefaultCamelContext.addRoutes(DefaultCamelContext.java:650)\n\tat
+  org.talend.esb.liugang.camel.wiretap.TestWiretap.main(TestWiretap.java:10)\n{color}\nI
+  tried on 2.11.1, 2.11.2-SNAPSHOT, both of them have the same problem (not sure 2.12-SNAPSHOT)."

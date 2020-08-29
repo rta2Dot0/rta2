@@ -1,0 +1,10 @@
+---
+BugID: OAK-3249
+Summary: Some version copy settings conflicts with the earlyShutdown
+Description: |-
+  The {{RepositoryUpgrade#earlyShutdown}} property causes the source CRX2 repository to shutdown right after copying the content, before the first commit hook is launched. However, the {{VersionableEditor}} hook sometimes needs access to the source repository, to read the version histories that hasn't been copied yet (as the version histories are copied in two stages). As a result, the {{earlyShutdown}} may cause the upgrade process to fail.
+
+  {{earlyShutdown}} should be overriden for all cases in which the source repository is still needed in the commit hook phase. In particular, it should be set to {{false}} if:
+
+  * orphaned version histories are not copied,
+  * orphaned version histories are copied, but the copyOrphanedVersion date is set after the copyVersion date.

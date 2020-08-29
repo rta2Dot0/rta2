@@ -1,0 +1,28 @@
+---
+BugID: OAK-1287
+Summary: java.lang.IllegalArgumentException when running FlatTreeWithAceForSamePrincipalTest
+Description: "Running \n{code}\njava -jar oak-run*.jar benchmark FlatTreeWithAceForSamePrincipalTest
+  Oak-Tar\n{code}\nwill end with\n{code}\njava.lang.IllegalArgumentException\n\tat
+  com.google.common.base.Preconditions.checkArgument(Preconditions.java:77)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.ListRecord.<init>(ListRecord.java:37)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.ListRecord.getEntries(ListRecord.java:80)\n\tat
+  org.apache.jackrabbit.oak.plugins.segment.SegmentPropertyState.getValue(SegmentPropertyState.java:130)\n\tat
+  org.apache.jackrabbit.oak.util.PropertyBuilder.assignFrom(PropertyBuilder.java:225)\n\tat
+  org.apache.jackrabbit.oak.util.PropertyBuilder.copy(PropertyBuilder.java:136)\n\tat
+  org.apache.jackrabbit.oak.core.MutableTree.addChild(MutableTree.java:216)\n\tat
+  org.apache.jackrabbit.oak.util.TreeUtil.addChild(TreeUtil.java:190)\n\tat org.apache.jackrabbit.oak.jcr.delegate.NodeDelegate.internalAddChild(NodeDelegate.java:841)\n\tat
+  org.apache.jackrabbit.oak.jcr.delegate.NodeDelegate.addChild(NodeDelegate.java:684)\n\tat
+  org.apache.jackrabbit.oak.jcr.session.NodeImpl$5.perform(NodeImpl.java:288)\n\tat
+  org.apache.jackrabbit.oak.jcr.session.NodeImpl$5.perform(NodeImpl.java:253)\n\tat
+  org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.perform(SessionDelegate.java:125)\n\tat
+  org.apache.jackrabbit.oak.jcr.session.ItemImpl.perform(ItemImpl.java:111)\n\tat
+  org.apache.jackrabbit.oak.jcr.session.NodeImpl.addNode(NodeImpl.java:253)\n\tat
+  org.apache.jackrabbit.oak.jcr.session.NodeImpl.addNode(NodeImpl.java:238)\n\tat
+  org.apache.jackrabbit.oak.benchmark.FlatTreeWithAceForSamePrincipalTest.beforeSuite(FlatTreeWithAceForSamePrincipalTest.java:56)\n\tat
+  org.apache.jackrabbit.oak.benchmark.AbstractTest.setUp(AbstractTest.java:113)\n\tat
+  org.apache.jackrabbit.oak.benchmark.FlatTreeWithAceForSamePrincipalTest.setUp(FlatTreeWithAceForSamePrincipalTest.java:31)\n\tat
+  org.apache.jackrabbit.oak.benchmark.AbstractTest.runTest(AbstractTest.java:151)\n\tat
+  org.apache.jackrabbit.oak.benchmark.AbstractTest.run(AbstractTest.java:138)\n\tat
+  org.apache.jackrabbit.oak.benchmark.FlatTreeWithAceForSamePrincipalTest.run(FlatTreeWithAceForSamePrincipalTest.java:31)\n\tat
+  org.apache.jackrabbit.oak.benchmark.BenchmarkRunner.main(BenchmarkRunner.java:195)\n\tat
+  org.apache.jackrabbit.oak.run.Main.main(Main.java:81)\n\n{code}"

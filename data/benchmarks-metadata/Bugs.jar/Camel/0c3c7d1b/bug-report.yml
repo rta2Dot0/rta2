@@ -1,0 +1,22 @@
+---
+BugID: CAMEL-5683
+Summary: JMS connection leak with request/reply producer on temporary queues
+Description: |+
+  Over time I see the number of temporary queues in ActiveMQ slowly climb. Using JMX information and memory dumps in MAT, I believe the cause is a connection leak in Apache Camel.
+
+  My environment contains 2 ActiveMQ brokers in a network of brokers configuration. There are about 15 separate applications which use Apache Camel to connect to the broker using the ActiveMQ/JMS component. The various applications have different load profiles and route configurations.
+
+  In the more active client applications, I found that ActiveMQ was listing 300+ consumers when, based on my configuration, I would expect no more than 75. The vast majority of the consumers are sitting on a temporary queue. Over time, the 300 number increments by one or two over about a 4 hour period.
+
+  I did a memory dump on one of the more active client applications and found about 275 DefaultMessageListenerContainers. Using MAT, I can see that some of the containers are referenced by JmsProducers in the ProducerCache; however I can also see a large number of listener containers that are no longer being referenced at all. I was also able to match up a soft-references producer/listener endpoint with an unreferenced listener which means a second producer was created at some point.
+
+  Looking through the ProducerCache code, it looks like the LRU cache uses soft-references to producers, in my case a JmsProducer. This seems problematic for two reasons:
+  - If memory gets constrained and the GC cleans up a producer, it is never properly stopped.
+  - If the cache gets full and the map removes the LRU producer, it is never properly stopped.
+
+  What I believe is happening, is that my application is sending a few request/reply messages to a JmsProducer. The producer creates a TemporaryReplyManager which creates a DefaultMessageListenerContainer. At some point, the JmsProducer is claimed by the GC (either via the soft-reference or because the cache is full) and the reply manager is never stopped. This causes the listener container to continue to listen on the temporary queue, consuming local resources and more importantly, consuming resources on the JMS broker.
+
+  I haven't had a chance to write an application to reproduce this behavior, but I will attach one of my route configurations and a screenshot of the MAT analysis looking at DefaultMessageListenerContainers. If needed, I could provide the entire memory dump for analysis (although I rather not post it publicly). The leak depends on memory usage or producer count in the client application because the ProducerCache must have some churn. Like I said, in our production system we see about 12 temporary queues abandoned per client per day.
+
+  Unless I'm missing something, it looks like the producer cache would need to be much smarter to support stopping a producer when the soft-reference is reclaimed or a member of the cache is ejected from the LRU list.
+

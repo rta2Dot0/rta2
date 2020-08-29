@@ -1,0 +1,27 @@
+---
+BugID: CAMEL-5570
+Summary: maximumRedeliveries is inherited for other exceptions thrown while redelivering
+  with maximumRedeliveries(-1)
+Description: |-
+  Given a route:
+
+  {code}
+  from("direct:source")
+     .onException(FirstException.class)
+           .handled(true)
+           .maximumRedeliveries(-1)
+      .end()
+      .onException(SecondException.class)
+          .handled(true)
+          .to("direct:error")
+      .end()
+      .to("direct:destination");
+  {code}
+
+  If the consumer of direct:destination throws a FirstException, the message will be redelivered. Now if a SecondException is thrown while redelivering the message to direct:destination, it does NOT go to direct:error, as you would expect, but is redelivered again; using the same RedeliveryPolicy as for FirstException.
+
+  I have attached a test that illustrates this.
+
+  In OnExceptionDefinition.createRedeliveryPolicy, maximumRedeliveries is set to 0 if the OnExceptionDefinition has outputs and the parent RedeliveryPolicy has explicitly set maximumRedeliveries > 0. The latter check fails when maximumRedeliveries is -1 (infinite retries), and the parent RedeliveryPolicy is returned.
+
+  I have attached a patch that ensures that we don't inherit the parent maximumRedeliveries even if it is set to -1.

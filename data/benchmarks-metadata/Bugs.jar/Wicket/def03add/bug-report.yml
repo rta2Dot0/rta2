@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5916
+Summary: StackOverflowError when calling getObject() from load() in LDM
+Description: The fix for WICKET-5772 caused an infinite loop when calling getObject()
+  from inside load() in LoadableDetachableModel. While of course unwise to do so and
+  nobody in their right mind would do so directly, such a cycle can be triggered through
+  a series of unrelated calls emanating from load().

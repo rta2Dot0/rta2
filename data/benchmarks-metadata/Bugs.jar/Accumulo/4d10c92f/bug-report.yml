@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-1358
+Summary: Shell's setiter is not informative when using a bad class name
+Description: In the shell, I did setiter using a class that wasn't found. Rather then
+  a message about it not being found, I just get told that I have an invalid argument.
+  Even turning on debug, I had to use the stack trace to figure out why it was erroring.

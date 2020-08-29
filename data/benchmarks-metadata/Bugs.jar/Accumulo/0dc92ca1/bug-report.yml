@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-2494
+Summary: Stat calculation of STDEV may be inaccurate
+Description: |-
+  The math is sound, but it is susceptible to rounding errors. We should address that.
+
+  See http://www.strchr.com/standard_deviation_in_one_pass and http://www.cs.berkeley.edu/~mhoemmen/cs194/Tutorials/variance.pdf

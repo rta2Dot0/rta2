@@ -1,0 +1,8 @@
+---
+BugID: OAK-1648
+Summary: Creating multiple checkpoint on same head revision overwrites previous entries
+Description: |+
+  Currently when a checkpoint is created in DocumentNodeStore then it is saved in form of currentHeadRev=>expiryTime. Now if multiple checkpoints are created where head revision has not changed then only the last one would be saved and previous entries would be overridden as revision is used as key
+
+  One fix would be to change the expiry time only if the new expiry time is greater than previous entry. However doing that safely in a cluster (check then save) is currently not possible with DocumentStore API as the modCount check if only supported for Nodes.
+

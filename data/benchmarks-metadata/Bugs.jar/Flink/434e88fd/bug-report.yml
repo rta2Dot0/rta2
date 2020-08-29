@@ -1,0 +1,14 @@
+---
+BugID: FLINK-3566
+Summary: Input type validation often fails on custom TypeInfo implementations
+Description: "Input type validation often fails when used with custom type infos.
+  One example of this behaviour can be reproduced by creating a custom type info with
+  our own field type:\n\nStreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();\n\nenv.generateSequence(1,
+  10).map(new MapFunction<Long, Tuple1<Optional<Long>>>() {\n\t\t\t@Override\n\t\t\tpublic
+  Tuple1<Optional<Long>> map(Long value) throws Exception {\n\t\t\t\treturn Tuple1.of(Optional.of(value));\n\t\t\t}\n\t\t}).returns(new
+  TupleTypeInfo<>(new OptionTypeInfo<Long>(BasicTypeInfo.LONG_TYPE_INFO)))\n\t\t\t\t.keyBy(new
+  KeySelector<Tuple1<Optional<Long>>, Optional<Long>>() {\n\n\t\t\t\t\t@Override\n\t\t\t\t\tpublic
+  Optional<Long> getKey(Tuple1<Optional<Long>> value) throws Exception {\n\t\t\t\t\t\treturn
+  value.f0;\n\t\t\t\t\t}\n\t\t\t\t});\n\nThis will fail on Input type validation at
+  the KeySelector (or any other function for example a mapper) with the following
+  exception:\n\nInput mismatch: Basic type expected."

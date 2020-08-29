@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-8125
+Summary: PropertyInject gives NullPointerException
+Description: "Using the annotation @PropertyInject on a field of the RouteBuilder
+  class gives a NullPointerException\n\npublic class RouteBuilder extends SpringRouteBuilder
+  {\n\t\n\t@PropertyInject(\"foo.bar\")\n\tprivate String fooBar;\n        ...\n}\n\nUsing
+  the {{ }} notation in endpoint URIs is working though.\n\n\t\n\n\n"

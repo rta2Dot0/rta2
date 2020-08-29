@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-5224
+Summary: The done file got deleted, when using the file component even if noop property
+  set to true
+Description: |
+  We are consuming a feed from a mounted windows network drive, where we have rw access.
+  During the download we shouldn't touch anything so other users see the directory intact.
+
+  However even if we turn noop=true the done file got deleted after successfull conumptions

@@ -1,0 +1,21 @@
+---
+BugID: OAK-2933
+Summary: AccessDenied when modifying transiently moved item with too many ACEs
+Description: |
+  If at least the following preconditions are fulfilled, saving a moved item fails with access denied:
+
+  1. there are more PermissionEntries in the PermissionEntryCache than the configured EagerCacheSize
+  2. an node is moved to a location where the user has write access through a group membership
+  3. a property is added to the transiently moved item
+
+  For example:
+  1. set the *eagerCacheSize* to '0'
+  2. create new group *testgroup* and user *testuser*
+  3. make *testuser* member of *testgroup*
+  4. create nodes {{/testroot/a}} and {{/testroot/a/b}} and {{/testroot/a/c}}
+  5. allow *testgroup* {{rep:write}} on {{/testroot/a}}
+  6. as *testuser* create {{/testroot/a/b/item}} (to verify that the user has write access)
+  7. as *testuser* move {{/testroot/a/b/item}} to {{/testroot/a/c/item}}
+  8. {{save()}} -> works
+  9. as *testuser* move {{/testroot/a/c/item}} back to {{/testroot/a/b/item}} AND add new property to the transient {{/testroot/a/b/item}}
+  10. {{save()}} -> access denied

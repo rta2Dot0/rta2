@@ -1,0 +1,10 @@
+---
+BugID: ACCUMULO-4113
+Summary: Fix incorrect usage of ByteBuffer
+Description: |+
+  While working on ACCUMULO-4098 I found one place where ByteBuffer was being used incorrectly.   Looking around the code, I have found other places that are using ByteBuffer incorrectly.  Some of the problems I found are as follows :
+
+   * Calling {{ByteBuffer.array()}} without calling {{ByteBuffer.hasArray()}}.
+   * Using {{ByteBuffer.position()}} or {{ByteBuffer.limit()}} without adding {{ByteBuffer.arrayOffset()}} when dealing with an array returned by {{ByteBuffer.array()}}.
+   * Using {{ByteBuffer.arrayOffset()}} without adding {{ByteBuffer.position()}} when dealing with an array returned by {{ByteBuffer.array()}}.
+

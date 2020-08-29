@@ -1,0 +1,511 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/rjust/projects/calling-bs/repair-them-all/RepairThemAll/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.132-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building flink-streaming-core 0.10-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.10-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.10-SNAPSHOT/flink-core-0.10-20160531.185430-394.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.10-SNAPSHOT/flink-core-0.10-20160531.185430-394.pom (4.4 kB at 13 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/0.10-SNAPSHOT/maven-metadata.xml (1.2 kB at 3.4 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/0.10-SNAPSHOT/flink-shaded-hadoop2-0.10-20160531.185148-183.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/0.10-SNAPSHOT/flink-shaded-hadoop2-0.10-20160531.185148-183.pom (8.2 kB at 24 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.10-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.9 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.10-SNAPSHOT/flink-runtime-0.10-20160531.190002-393.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.10-SNAPSHOT/flink-runtime-0.10-20160531.190002-393.pom (16 kB at 37 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.10-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.10-SNAPSHOT/flink-java-0.10-20160531.185545-394.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.10-SNAPSHOT/flink-java-0.10-20160531.185545-394.pom (5.5 kB at 17 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-clients/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-clients/0.10-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-clients/0.10-SNAPSHOT/flink-clients-0.10-20160531.190111-390.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-clients/0.10-SNAPSHOT/flink-clients-0.10-20160531.190111-390.pom (8.6 kB at 25 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-optimizer/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-optimizer/0.10-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.9 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-optimizer/0.10-SNAPSHOT/flink-optimizer-0.10-20160531.190046-392.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-optimizer/0.10-SNAPSHOT/flink-optimizer-0.10-20160531.190046-392.pom (4.1 kB at 12 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-test-utils/0.10-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-test-utils/0.10-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.9 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-test-utils/0.10-SNAPSHOT/flink-test-utils-0.10-20160531.190151-390.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-test-utils/0.10-SNAPSHOT/flink-test-utils-0.10-20160531.190151-390.pom (8.6 kB at 26 kB/s)
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.16:check (validate) @ flink-streaming-core ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ flink-streaming-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ flink-streaming-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flink-streaming-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ flink-streaming-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 224 source files to /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/datastream/DataStream.java:[175,53] Possible heap pollution from parameterized vararg type org.apache.flink.streaming.api.datastream.DataStream<T>
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/datastream/KeyedStream.java:[98,79] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<T,R>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<R>
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/datastream/CoGroupedStreams.java:[247,47] unchecked generic array creation for varargs parameter of type org.apache.flink.streaming.api.datastream.DataStream<org.apache.flink.streaming.api.datastream.CoGroupedStreams.TaggedUnion<T1,T2>>[]
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/datastream/CoGroupedStreams.java:[341,32] unchecked conversion
+  required: java.lang.Class<org.apache.flink.streaming.api.datastream.CoGroupedStreams.TaggedUnion<T1,T2>>
+  found:    java.lang.Class
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/operators/windowing/EvictingWindowOperator.java:[97,49] unchecked conversion
+  required: java.lang.Iterable<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<capture#1 of ? super IN>>
+  found:    java.lang.Iterable
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/operators/windowing/EvictingNonKeyedWindowOperator.java:[83,49] unchecked conversion
+  required: java.lang.Iterable<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<capture#2 of ? super IN>>
+  found:    java.lang.Iterable
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/collector/selector/DirectedOutputSelectorWrapper.java:[57,77] unchecked cast
+  required: org.apache.flink.util.Collector<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<OUT>>
+  found:    org.apache.flink.util.Collector
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/collector/selector/DirectedOutputSelectorWrapper.java:[63,104] unchecked cast
+  required: org.apache.flink.util.Collector<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<OUT>>
+  found:    org.apache.flink.util.Collector
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/collector/selector/DirectedOutputSelectorWrapper.java:[66,112] unchecked cast
+  required: org.apache.flink.util.Collector<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<OUT>>
+  found:    org.apache.flink.util.Collector
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/util/FieldAccessor.java:[125,107] unchecked conversion
+  required: java.lang.Class<X>
+  found:    java.lang.Class
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/util/FieldAccessor.java:[125,66] unchecked method invocation: method getInfoFor in class org.apache.flink.api.common.typeinfo.BasicTypeInfo is applied to given types
+  required: java.lang.Class<X>
+  found: java.lang.Class
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/io/CollectorWrapper.java:[44,32] unchecked conversion
+  required: org.apache.flink.streaming.api.operators.Output<OUT>
+  found:    org.apache.flink.streaming.api.operators.Output
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/functions/source/FromElementsFunction.java:[66,55] Possible heap pollution from parameterized vararg type T
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/collector/selector/BroadcastOutputSelectorWrapper.java:[40,60] unchecked cast
+  required: org.apache.flink.util.Collector<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<OUT>>
+  found:    org.apache.flink.util.Collector
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/util/keys/KeySelectorUtil.java:[150,32] unchecked conversion
+  required: org.apache.flink.api.common.typeinfo.TypeInformation<org.apache.flink.api.java.tuple.Tuple>
+  found:    org.apache.flink.api.java.typeutils.TupleTypeInfo
+[INFO] 15 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStateStore.java:[25,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStateStore.java:[53,30] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: interface org.apache.flink.streaming.api.state.PartitionedStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[33,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[39,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[26,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[28,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[26,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[29,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[55,23] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[40,38] cannot find symbol
+  symbol:   class FileStateHandle
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[43,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[67,25] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[102,16] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[109,62] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[46,19] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[47,25] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[53,36] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[53,74] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[59,36] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[91,16] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[95,37] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[99,19] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[61,47] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[62,25] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[70,47] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[172,37] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[30,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[420,17] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.runtime.tasks.StreamTask<OUT,O>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[413,44] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.graph.StreamConfig
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[422,20] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.graph.StreamConfig
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[48,38] cannot find symbol
+  symbol:   class FileStateHandle
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[49,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[131,19] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[375,66] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[387,16] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[46,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/operators/AbstractUdfStreamOperator.java:[32,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[96,17] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.graph.StreamGraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[148,44] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.graph.StreamGraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[152,16] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.graph.StreamGraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[23,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[25,43] cannot find symbol
+  symbol: class StateCheckpointer
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[27,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[29,38] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[33,17] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[34,23] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[39,32] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[39,70] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[96,37] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[21,41] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[40,49] cannot find symbol
+  symbol: class StateCheckpointer
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[79,34] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[107,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[121,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[55,34] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[60,23] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[72,23] cannot find symbol
+  symbol:   class StateCheckpointer
+  location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[421,17] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.runtime.tasks.StreamTask<OUT,O>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[440,68] cannot find symbol
+  symbol:   class LocalStateHandleProvider
+  location: class org.apache.flink.runtime.state.LocalStateHandle
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[442,101] cannot find symbol
+  symbol:   variable STATE_BACKEND_FS_DIR
+  location: class org.apache.flink.configuration.ConfigConstants
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[446,56] cannot find symbol
+  symbol:   variable FileStateHandle
+  location: class org.apache.flink.streaming.runtime.tasks.StreamTask<OUT,O>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[424,33] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.graph.StreamConfig
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/operators/AbstractUdfStreamOperator.java:[167,25] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator<OUT,F>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/functions/source/StatefulSequenceSource.java:[79,48] cannot find symbol
+  symbol:   method getOperatorState(java.lang.String,long,boolean)
+  location: interface org.apache.flink.api.common.functions.RuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/WrapperStateHandle.java:[43,21] discardState() in org.apache.flink.streaming.api.state.WrapperStateHandle cannot override discardState() in org.apache.flink.runtime.state.LocalStateHandle
+  overridden method does not throw java.lang.Exception
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[27,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[32,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[41,34] cannot find symbol
+  symbol:   class StateHandleProvider
+  location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[50,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[66,9] method does not override or implement a method from a supertype
+[INFO] 70 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 15.636 s
+[INFO] Finished at: 2019-08-21T00:26:23-07:00
+[INFO] Final Memory: 36M/1427M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project flink-streaming-core: Compilation failure: Compilation failure: 
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStateStore.java:[25,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStateStore.java:[53,30] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: interface org.apache.flink.streaming.api.state.PartitionedStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[33,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[39,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[26,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[28,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[26,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[29,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[55,23] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[40,38] cannot find symbol
+[ERROR]   symbol:   class FileStateHandle
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[43,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[67,25] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[102,16] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[109,62] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[46,19] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[47,25] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[53,36] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[53,74] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[59,36] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[91,16] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[95,37] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[99,19] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[61,47] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[62,25] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[70,47] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[172,37] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[30,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[420,17] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamTask<OUT,O>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[413,44] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.graph.StreamConfig
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[422,20] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.graph.StreamConfig
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[48,38] cannot find symbol
+[ERROR]   symbol:   class FileStateHandle
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[49,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[131,19] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[375,66] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java:[387,16] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[46,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/operators/AbstractUdfStreamOperator.java:[32,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[96,17] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.graph.StreamGraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[148,44] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.graph.StreamGraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamGraph.java:[152,16] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.graph.StreamGraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[23,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[25,43] cannot find symbol
+[ERROR]   symbol: class StateCheckpointer
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[27,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[29,38] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: package org.apache.flink.runtime.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[33,17] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[34,23] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[39,32] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[39,70] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[96,37] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[21,41] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: package org.apache.flink.api.common.state
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[40,49] cannot find symbol
+[ERROR]   symbol: class StateCheckpointer
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[79,34] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamingRuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[107,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamingRuntimeContext.java:[121,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[55,34] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/StreamOperatorState.java:[60,23] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.StreamOperatorState<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/PartitionedStreamOperatorState.java:[72,23] cannot find symbol
+[ERROR]   symbol:   class StateCheckpointer
+[ERROR]   location: class org.apache.flink.streaming.api.state.PartitionedStreamOperatorState<IN,S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[421,17] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamTask<OUT,O>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[440,68] cannot find symbol
+[ERROR]   symbol:   class LocalStateHandleProvider
+[ERROR]   location: class org.apache.flink.runtime.state.LocalStateHandle
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[442,101] cannot find symbol
+[ERROR]   symbol:   variable STATE_BACKEND_FS_DIR
+[ERROR]   location: class org.apache.flink.configuration.ConfigConstants
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java:[446,56] cannot find symbol
+[ERROR]   symbol:   variable FileStateHandle
+[ERROR]   location: class org.apache.flink.streaming.runtime.tasks.StreamTask<OUT,O>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/graph/StreamConfig.java:[424,33] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.graph.StreamConfig
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/operators/AbstractUdfStreamOperator.java:[167,25] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator<OUT,F>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/functions/source/StatefulSequenceSource.java:[79,48] cannot find symbol
+[ERROR]   symbol:   method getOperatorState(java.lang.String,long,boolean)
+[ERROR]   location: interface org.apache.flink.api.common.functions.RuntimeContext
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/WrapperStateHandle.java:[43,21] discardState() in org.apache.flink.streaming.api.state.WrapperStateHandle cannot override discardState() in org.apache.flink.runtime.state.LocalStateHandle
+[ERROR]   overridden method does not throw java.lang.Exception
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[27,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/BasicCheckpointer.java:[32,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/EagerStateStore.java:[41,34] cannot find symbol
+[ERROR]   symbol:   class StateHandleProvider
+[ERROR]   location: class org.apache.flink.streaming.api.state.EagerStateStore<S,C>
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[50,9] method does not override or implement a method from a supertype
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_5dfc897b/flink-staging/flink-streaming/flink-streaming-core/src/main/java/org/apache/flink/streaming/api/state/KVMapCheckpointer.java:[66,9] method does not override or implement a method from a supertype
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

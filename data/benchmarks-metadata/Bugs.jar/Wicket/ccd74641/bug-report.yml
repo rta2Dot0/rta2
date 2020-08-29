@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4659
+Summary: The default exception mapper is replying cacheable exceptional responses
+Description: The problem is that some common URLs in the application like to a page
+  instance are responding the cached exception page rather than hitting the server
+  for the page instance being requested. It happens because at some moment in the
+  past a exception page were replied and cached for a request in this URL.

@@ -1,0 +1,65 @@
+---
+BugID: CAMEL-9217
+Summary: URI validation verifies usage of & char incorrectly
+Description: |-
+  Hello Camel team,
+
+  I have faced a URI validation issue that does not allow me to use a correct file producer URI if it does not contain parameters. My file endpoint URI looks like this:
+  {code}
+  raw form:             file:D:\camel_test\test&run
+  in encoded format:  file:D%3A%5Ccamel_test%5Ctest%26run
+  {code}
+
+  As you can see this is a simple file endpoint URI which does not contain any parameters, please note that the target folder name contains '&' char.
+
+  When I try to start a route for this endpoint I get the following error:
+  {code}
+  Caused by: org.apache.camel.ResolveEndpointFailedException: Failed to resolve endpoint: file://D:%5Ccamel_test%5Ctest&run due to: Failed to resolve endpoint: file://D:%5Ccamel_test%5Ctest&run due to: Invalid uri syntax: no ? marker however the uri has & parameter separators. Check the uri if its missing a ? marker.
+  at org.apache.camel.impl.DefaultCamelContext.getEndpoint(DefaultCamelContext.java:547)
+  at org.apache.camel.util.CamelContextHelper.getMandatoryEndpoint(CamelContextHelper.java:72)
+  at org.apache.camel.model.RouteDefinition.resolveEndpoint(RouteDefinition.java:202)
+  at org.apache.camel.impl.DefaultRouteContext.resolveEndpoint(DefaultRouteContext.java:107)
+  at org.apache.camel.impl.DefaultRouteContext.resolveEndpoint(DefaultRouteContext.java:113)
+  at org.apache.camel.model.SendDefinition.resolveEndpoint(SendDefinition.java:61)
+  at org.apache.camel.model.SendDefinition.createProcessor(SendDefinition.java:55)
+  at org.apache.camel.model.ProcessorDefinition.makeProcessor(ProcessorDefinition.java:500)
+  at org.apache.camel.model.ProcessorDefinition.addRoutes(ProcessorDefinition.java:213)
+  at org.apache.camel.model.RouteDefinition.addRoutes(RouteDefinition.java:942)
+  Caused by: org.apache.camel.ResolveEndpointFailedException: Failed to resolve endpoint: file://D:%5Ccamel_test%5Ctest&run due to: Invalid uri syntax: no ? marker however the uri has & parameter separators. Check the uri if its missing a ? marker.
+  at org.apache.camel.impl.DefaultComponent.validateURI(DefaultComponent.java:210)
+  at org.apache.camel.impl.DefaultComponent.createEndpoint(DefaultComponent.java:115)
+  at org.apache.camel.impl.DefaultCamelContext.getEndpoint(DefaultCamelContext.java:527)
+  {code}
+
+  The issue is that I have an '&' char in my folder path and do not have URI parameters. As a result the DefaultComponent.validateURI() function throws the exception at this point:
+  {code}
+  if (uri.contains("&") && !uri.contains("?")) {
+              throw new ResolveEndpointFailedException(uri, "Invalid uri syntax: no ? marker however the uri "
+                  + "has & parameter separators. Check the uri if its missing a ? marker.");
+          }
+  {code}
+
+  I think the issue is that for some reason & char at this point is in decoded form which is incorrect because it should be URI encoded here. I know that Camel has issues with + and & chars and in case of URI parameters we can use RAW() wrapper as a workaround. But as far as I can see we cannot do the same in base endpoint URI.
+
+  Please note that if I add an URI parameter (any parameter works) the issue disappears and the event target works fine.
+  For example:
+  {code}
+  raw form:             file:D:\camel_test\test&run?forceWrites=true
+  in encoded format:  file:D%3A%5Ccamel_test%5Ctest%26run?forceWrites=true
+  {code}
+
+  I also found that Camel cannot normally handle URIs with ? char in base URI string. For example in case of File endpoint it tries to handle the second part of the base URI (which follows the ? char) as a parameter which is incorrect because ? char was correctly encoded and should not be used as the point where parameters string starts. If I try to use ? char in bucket name for S3 endpoint the part after ? is simply ignored.
+  For example the following URI produces an error:
+  {code}
+  raw form:             file:D:\camel_test\test?run?forceWrites=true
+  in encoded format:  file:D%3A%5Ccamel_test%5Ctest%3Frun?forceWrites=true
+  {code}
+  Error:
+  {code}
+  2015-10-13 13:26:38,285 INFO [com.informatica.saas.infaagentv3.agentcore.TomcatManager] - Caused by: org.apache.camel.ResolveEndpointFailedException: Failed to resolve endpoint: file://D:%5Ccamel_test%5Ctest?run%3FforceWrites=true due to: There are 1 parameters that couldn't be set on the endpoint. Check the uri if the parameters are spelt correctly and that they are properties of the endpoint. Unknown parameters=[{run?forceWrites=true}]
+  at org.apache.camel.impl.DefaultComponent.validateParameters(DefaultComponent.java:192)
+  at org.apache.camel.impl.DefaultComponent.createEndpoint(DefaultComponent.java:137)
+  at org.apache.camel.impl.DefaultCamelContext.getEndpoint(DefaultCamelContext.java:527)
+  {code}
+
+  And yes I know that ? char in a file path is not the best idea, I used the above example to illustrate a global camel issue.

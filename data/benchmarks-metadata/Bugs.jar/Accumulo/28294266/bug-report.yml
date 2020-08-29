@@ -1,0 +1,14 @@
+---
+BugID: ACCUMULO-2390
+Summary: TraceProxy.trace should not throw InvocationTargetException
+Description: |-
+  In {{TraceProxy.trace}} there is the following code snippet:
+  {code}
+          try {
+            return method.invoke(instance, args);
+          } catch (Throwable ex) {
+            ex.printStackTrace();
+            throw ex;
+          }
+  {code}
+  When this is an InvocationTargetException, it can really mess with the calling code's exception handling logic.

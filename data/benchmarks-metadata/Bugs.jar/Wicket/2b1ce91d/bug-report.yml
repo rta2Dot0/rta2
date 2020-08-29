@@ -1,0 +1,11 @@
+---
+BugID: WICKET-5043
+Summary: Page not mounted with WebApplication#mountPackage
+Description: |-
+  A bookmarkable page FormPage is mounted via WebApplication#mountPackage().
+
+  If this page is opened via IModel model; setResponsePage(new FormPage(IModel model)); then the URL is /wicket/page?0 which is not mounted.
+
+  If the page is mounted via WebApplication#mountPage() then the URL is mounted as expected.
+
+  If the page is not mounted then the users get PageExpiredException which in this case is unrecoverable.

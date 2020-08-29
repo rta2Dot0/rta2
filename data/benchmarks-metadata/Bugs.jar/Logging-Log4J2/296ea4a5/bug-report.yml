@@ -1,0 +1,53 @@
+---
+BugID: LOG4J2-359
+Summary: Log4jServletContextListener does not work on Weblogic 12.1.1 (12c) with web-app
+  version "2.5"
+Description: "I have Weblogic 12c running. My web-app is version \"2.5\".\n\nFollowing
+  is a snippet from my web.xml \n\n{code:xml}\n<web-app xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txmlns=\"http://java.sun.com/xml/ns/javaee\"\n\txsi:schemaLocation=\"http://java.sun.com/xml/ns/javaee
+  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd\"\n\tid=\"WebApp_ID\" version=\"2.5\">\n\t<display-name>pec-service</display-name>\n\t<context-param>\n\t\t<param-name>log4jConfiguration</param-name>\n\t\t<param-value>file:/C:/log4j/dev.log4j.xml</param-value>\n\t</context-param>\n\n\t<listener>
+  \n\t\t<listener-class>org.apache.logging.log4j.core.web.Log4jServletContextListener</listener-class>
+  \n\t</listener>\t\n\n\t<filter>\n\t\t<filter-name>log4jServletFilter</filter-name>\n\t\t<filter-class>org.apache.logging.log4j.core.web.Log4jServletFilter</filter-class>
+  \n\t</filter>\n\t<filter-mapping>\n\t\t<filter-name>log4jServletFilter</filter-name>
+  \n\t\t<url-pattern>/*</url-pattern>\n\t\t<dispatcher>REQUEST</dispatcher>\n\t\t<dispatcher>FORWARD</dispatcher>
+  \n\t\t<dispatcher>INCLUDE</dispatcher>\n\t\t<dispatcher>ERROR</dispatcher>\n\t</filter-mapping>\n\t\n</web-app>\n{code}\n\nHowever,
+  on my server startup I am getting the following error - \n{code}\n<Aug 16, 2013
+  3:12:32 PM PDT> <Warning> <HTTP> <BEA-101162> <User defined listener org.apache.logging.log4j.core.web.Log4jServletContextListener
+  failed: java.lang.IllegalStateException: Context destroyed before it was initialized..\njava.lang.IllegalStateException:
+  Context destroyed before it was initialized.\n\tat org.apache.logging.log4j.core.web.Log4jServletContextListener.contextDestroyed(Log4jServletContextListener.java:51)\n\tat
+  weblogic.servlet.internal.EventsManager$FireContextListenerAction.run(EventsManager.java:583)\n\tat
+  weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)\n\tat
+  weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)\n\tat
+  weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:57)\n\tTruncated.
+  see log file for complete stacktrace\n> \n<Aug 16, 2013 3:12:32 PM PDT> <Error>
+  <Deployer> <BEA-149265> <Failure occurred in the execution of deployment request
+  with ID \"1376691143681\" for task \"2\". Error is: \"weblogic.application.ModuleException\"\nweblogic.application.ModuleException\n\tat
+  weblogic.servlet.internal.WebAppModule.startContexts(WebAppModule.java:1708)\n\tat
+  weblogic.servlet.internal.WebAppModule.start(WebAppModule.java:781)\n\tat weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:213)\n\tat
+  weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:208)\n\tat
+  weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:35)\n\tTruncated.
+  see log file for complete stacktrace\nCaused By: java.lang.NullPointerException\n\tat
+  org.apache.logging.log4j.core.web.Log4jServletContainerInitializer.onStartup(Log4jServletContainerInitializer.java:44)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.initContainerInitializer(WebAppServletContext.java:1271)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.initContainerInitializers(WebAppServletContext.java:1229)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.preloadResources(WebAppServletContext.java:1726)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.start(WebAppServletContext.java:2740)\n\tTruncated.
+  see log file for complete stacktrace\n> \n<Aug 16, 2013 3:12:32 PM PDT> <Error>
+  <Deployer> <BEA-149202> <Encountered an exception while attempting to commit the
+  7 task for the application \"_auto_generated_ear_\".> \n<Aug 16, 2013 3:12:32 PM
+  PDT> <Warning> <Deployer> <BEA-149004> <Failures were detected while initiating
+  start task for application \"_auto_generated_ear_\".> \n<Aug 16, 2013 3:12:32 PM
+  PDT> <Warning> <Deployer> <BEA-149078> <Stack trace for message 149004\nweblogic.application.ModuleException\n\tat
+  weblogic.servlet.internal.WebAppModule.startContexts(WebAppModule.java:1708)\n\tat
+  weblogic.servlet.internal.WebAppModule.start(WebAppModule.java:781)\n\tat weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:213)\n\tat
+  weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:208)\n\tat
+  weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:35)\n\tTruncated.
+  see log file for complete stacktrace\nCaused By: java.lang.NullPointerException\n\tat
+  org.apache.logging.log4j.core.web.Log4jServletContainerInitializer.onStartup(Log4jServletContainerInitializer.java:44)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.initContainerInitializer(WebAppServletContext.java:1271)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.initContainerInitializers(WebAppServletContext.java:1229)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.preloadResources(WebAppServletContext.java:1726)\n\tat
+  weblogic.servlet.internal.WebAppServletContext.start(WebAppServletContext.java:2740)\n\tTruncated.
+  see log file for complete stacktrace\n{code}\n\nIf I remove the listener & the filter,
+  it works fine.\n\n{color:red}\nI did some research and found that even though the
+  web-app is version \"2.5\", the {code}Log4jServletContainerInitializer{code} is
+  getting invoked. \n{color}"

@@ -1,0 +1,29 @@
+---
+BugID: CAMEL-5187
+Summary: JMX issues on WebSphere
+Description: "While setting up a Camel web application for WebSphere (7) I encountered
+  two issues\n\n1. Documentation: the Camel JMX docs proposes the following settings
+  for WebSphere:\n{code}\n<camel:jmxAgent id=\"agent\" createConnector=\"true\" mbeanObjectDomainName=\"org.yourname\"
+  mbeanServerDefaultDomain=\"WebSphere\"/>\n{code}\n\nThis registers the beans with
+  the PlatformMbeanServer instead of the WebSphere MBean server. The following setup
+  works better:\n{code}\n<camel:jmxAgent id=\"agent\" createConnector=\"false\" mbeanObjectDomainName=\"org.yourname\"
+  usePlatformMBeanServer=\"false\" mbeanServerDefaultDomain=\"WebSphere\"/>\n{code}\n\n2.
+  For each Camel route, the same Tracer and DefaultErrorHandler MBeans are tried to
+  be registered over and over again. Because WebSphere changes the ObjectNames on
+  registration, \n\n{{server.isRegistered(name);}} in {{DefaultManagementAgent#registerMBeanWithServer}}
+  always returns false, which causes the MBean to be re-registered, which again cause
+  Exceptions, e.g.\n\n{code}\n14:35:48,198 [WebContainer : 4] [] WARN  - DefaultManagementLifecycleStrategy.onErrorHandlerAdd(485)
+  | Could not register error handler builder: ErrorHandlerBuilderRef[CamelDefaultErrorHandlerBuilder]
+  as ErrorHandler MBean.\njavax.management.InstanceAlreadyExistsException: org.apache.camel:cell=wdf-lap-0319Node01Cell,name=\"DefaultErrorHandlerBuilder(ref:CamelDefaultErrorHandlerBuilder)\",context=wdf-lap-0319/camelContext,type=errorhandlers,node=wdf-lap-0319Node01,process=server1\n\tat
+  com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:465)\n\tat com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.internal_addObject(DefaultMBeanServerInterceptor.java:1496)\n\tat
+  com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:975)\n\tat
+  com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:929)\n\tat
+  com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)\n\tat
+  com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:494)\n\tat
+  com.ibm.ws.management.PlatformMBeanServer.registerMBean(PlatformMBeanServer.java:484)\n\tat
+  org.apache.camel.management.DefaultManagementAgent.registerMBeanWithServer(DefaultManagementAgent.java:320)\n\tat
+  org.apache.camel.management.DefaultManagementAgent.register(DefaultManagementAgent.java:236)\n...\n{code}\n\nThe
+  web application starts up, but with a lot of exceptions in the log.\n\nProposal:\nInstead
+  of using a Set<ObjectName> for mbeansRegistered, use a Map<ObjectName, ObjectName>
+  where the key is the \"Camel\" ObjectName and the value is the actually deployed
+  ObjectName.\n\nI will provide a patch that illustrates the idea.\n"

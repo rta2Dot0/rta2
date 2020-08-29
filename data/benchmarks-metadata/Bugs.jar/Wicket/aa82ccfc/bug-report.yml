@@ -1,0 +1,13 @@
+---
+BugID: WICKET-5560
+Summary: A 404 error occurs when using a CryptoMapper
+Description: "Under certain prerequisites a 404 error occurs.\n\nThe prerequisites
+  are:\n- A _CryptoMapper_ is used as _RequestMapper_\n- _SecuritySettings.enforceMounts_
+  is set to true\n- Class _SomePage_ is *not* annotated with _@MountPath_\n\nReason:\nIn
+  _BookmarkableMapper.parseRequest_ (called indirectly by _CryptoMapper.mapRequest_)
+  the method _matches_ returns _false_,\nas _reverseUrl_ is the *encrypted URL* (_rootRequestMapper_
+  is a _CryptoMapper_) but _BookmarkableMapper.matches_ expects a *decrypted URL*.\n\n_BookmarkableMapper_
+  - lines 132 ff.:\n{code}\nUrl reverseUrl = application.getRootRequestMapper().mapHandler(\n\tnew
+  RenderPageRequestHandler(new PageProvider(pageClass)));\nif (!matches(request.cloneWithUrl(reverseUrl)))\n{\n\treturn
+  null;\n}\n{code}\n\t\nAs a result _BookmarkableMapper.mapRequest_ and hence _CryptoMapper.mapRequest_
+  returns _null_ resulting in a 404 error.\n"

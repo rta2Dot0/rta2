@@ -1,0 +1,13 @@
+---
+BugID: CAMEL-3276
+Summary: Multicast with pipeline may cause wrong aggregated exchange
+Description: |+
+  This is a problem when using 2 set of nested pipeline and doing a transform as the first processor in that pipeline
+  {code}
+                  from("direct:start").multicast(new SumAggregateBean())
+                      .pipeline().transform(bean(IncreaseOne.class)).bean(new IncreaseTwo()).to("log:foo").end()
+                      .pipeline().transform(bean(IncreaseOne.class)).bean(new IncreaseTwo()).to("log:bar").end()
+                  .end()
+                  .to("mock:result");
+  {code}
+

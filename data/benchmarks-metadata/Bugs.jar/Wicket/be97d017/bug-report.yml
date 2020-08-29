@@ -1,0 +1,20 @@
+---
+BugID: WICKET-3420
+Summary: javascript with a less than character ("<") fails to execute when added through
+  a header contribution in ajax response
+Description: "This is adapted from a wicket users post I made (links are to the same
+  thread in two archive systems):\n\nhttp://markmail.org/search/?q=wicket%20users%20wicket-ajax.js#query:wicket%20users%20wicket-ajax.js+page:1+mid:rfts3ar3upffhbbt+state:results\n\nhttp://mail-archives.apache.org/mod_mbox/wicket-users/201102.mbox/%3CAANLkTi=EkmTA0RnA+GyJE-CQWmkCxRLsjp+z8jwv-Aw9@mail.gmail.com%3E\n\nThe
+  problem:  I have a panel with this:\n\n    <wicket:head>\n\t<script>\n\t\tif (someVariable
+  < 0) {\n\t\t\tsomeVariable = 0;\t\t\n\t\t}\n\t</script>\n    </wicket:head>\n\nThis
+  script fails to execute when the panel is loaded by ajax.  If I replace the less
+  than character \"<\" with equals \"==\", then it executes (but of course, this is
+  not what I need).\n\nI tested this in Firefox 4.0b10 and Chrome 8.\n\nAfter some
+  debugging, it seems to me that this needs to be corrected in wicket-ajax.js. The
+  header contribution is sent to the browser inside of a CDATA section so the \"<\"
+  character arrives to javascript intact. However, in parsing the script tag, the
+  \"<\" seems to signal the beginning of an HTML tag that then is considered malformed.\n\n\nPossible
+  workarounds for apps:\n\n - Invert the logic so a greater-than is used. In my example,
+  this would be: \"if (0 > someVariable) {\"\n - Put the code into a separate JS file
+  (the downside is it requires another network hop from the browser)\n - Embed the
+  script in <wicket:panel> rather than <wicket:head> (the disadvantage is the script
+  will be re-sent with the panel content when the panel is re-used on the same page)\n\n"

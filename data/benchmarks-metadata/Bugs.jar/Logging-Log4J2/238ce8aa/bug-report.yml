@@ -1,0 +1,15 @@
+---
+BugID: LOG4J2-430
+Summary: RFC5424Layout not working with parametrized messages
+Description: "Syslog (i.e RFC5424Layout) does not work with parametrized messages.
+  If I do something like this:\n{code}\nlogger.info(\"Hello {}\", \"World\");\n{code}\n\nI
+  get this at the syslog server: \n{code}\nOct 16 18:24:33 10.0.0.3 myApp Hello {}\n{code}\n\nThis
+  is the config file I'm using:\n{code:xml:title=log4j2.xml}\n<?xml version=\"1.0\"
+  encoding=\"UTF-8\"?>\n<Configuration>\n  <Appenders>\n    <Console name=\"STDOUT\"
+  target=\"SYSTEM_OUT\">\n      <PatternLayout pattern=\"%d{ISO8601}: %-5p [%t-%c{2}]
+  - %m%n\"/>\n    </Console>\n    <Syslog name=\"syslog\" format=\"RFC5424\" host=\"10.0.0.1\"
+  port=\"514\" protocol=\"TCP\" appName=\"myApp\" facility=\"LOCAL0\" newLine=\"true\"
+  includeMDC=\"true\" id=\"App\" reconnectionDelay=\"1000\"/>\n  </Appenders>\n  <Loggers>\n
+  \   <Root level=\"debug\">\n      <AppenderRef ref=\"STDOUT\"/>\n      <AppenderRef
+  ref=\"syslog\"/>\n    </Root>\n  </Loggers>\n</Configuration>\n{code}\n\nThe log
+  to stdout is ok though.\n\nAttached you find my patch for this bug."

@@ -1,0 +1,8 @@
+---
+BugID: WICKET-3715
+Summary: FileUpload writeToTempFile() method throws NPE for sessionless requests
+Description: "I have created stateless page with stateless form containing FileUploadField,
+  however when I tried to post file to it, NPE was thrown.\n\nThe issue is caused
+  by method FileUpload#writeToTempFile() method trying to use session id as temp file
+  prefix. \n\nWorkaround: create temp file manually and use method FileUpload#writeToFile(
+  myTempFile)"

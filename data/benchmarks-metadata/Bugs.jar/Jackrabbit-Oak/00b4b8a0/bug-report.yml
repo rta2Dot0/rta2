@@ -1,0 +1,7 @@
+---
+BugID: OAK-621
+Summary: Moving or deleting tree instances with status NEW doesn't change its status
+  to DISCONNECTED
+Description: "Further fall out from OAK-606:\n\n{code}\n        Tree t = tree.addChild(\"new\");\n\n
+  \       root.move(\"/x\", \"/y/x\");\n        assertEquals(Status.DISCONNECTED,
+  t.getStatus());\n{code}\n\nThe assertion fails. "

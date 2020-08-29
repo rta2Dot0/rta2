@@ -1,0 +1,15 @@
+---
+BugID: WICKET-5883
+Summary: Feedback messages not cleared for invisible/disabled form components on submit.
+Description: "Having: \n- IFeedbackMessageFilter.NONE used as the default application's
+  feedback message cleanup filter (in order to make feedback messages not to disappear
+  after page refresh, i.e. persistent)\n- form with validatable component whose enabled/visible
+  state may be dynamically changed by user (e.g. checkbox \"send me email\" and text
+  field \"email\")\n\nFirst, user tries to submit form having invalid value - as the
+  result validation error occurs. \nThen user makes that component invisible and retries
+  form submitting - as the result no validation errors, but form wasn't submitted.\n\nThis
+  happens because that component still has error feedback message got from first submit.
+  Note that when using default application's feedback message cleanup filter, form
+  is successfully submitted.\n\nProbably, feedback messages should be cleared for
+  invisible/disabled form components on submit, as it done for visible/enabled components
+  in FormComponent.validate()"

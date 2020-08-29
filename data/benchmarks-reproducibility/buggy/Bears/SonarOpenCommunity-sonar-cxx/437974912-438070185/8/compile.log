@@ -1,0 +1,1040 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Cxx
+[INFO] Cxx :: Squid
+[INFO] Cxx :: Checks
+[INFO] Cxx :: Lint
+[INFO] Cxx :: Sensors
+[INFO] Cxx :: Sonar Plugin
+[INFO] Cxx :: Sonar C Plugin
+[INFO] Cxx :: SSLR Toolkit
+[INFO] Cxx :: Integration Tests
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cxx ---
+[INFO] Executing: /bin/sh -c cd '/scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8
+[INFO] Storing buildNumber: dbc33043b6d8cb6ea48cb542def226ae40ded72f at timestamp: 1584144749486
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ cxx ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ cxx ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonarsource/license-headers/license-headers/1.3/license-headers-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonarsource/license-headers/license-headers/1.3/license-headers-1.3.pom (2.4 kB at 1.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonarsource/parent/parent/31/parent-31.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonarsource/parent/parent/31/parent-31.pom (30 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonarsource/license-headers/license-headers/1.3/license-headers-1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonarsource/license-headers/license-headers/1.3/license-headers-1.3.jar (4.8 kB at 369 kB/s)
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ cxx ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ cxx ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ cxx ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx/1.2.0-SNAPSHOT/cxx-1.2.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Squid 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cxx-squid ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ cxx-squid ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ cxx-squid ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ cxx-squid ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ cxx-squid ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ cxx-squid ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 58 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/target/classes
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/lexer/CxxLexer.java:[23,26] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/IncludeLexer.java:[23,26] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[29,26] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[30,26] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/JoinStringsPreprocessor.java:[29,26] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/JoinStringsPreprocessor.java:[30,26] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/lexer/CxxLexer.java:[57,30] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/lexer/CxxLexer.java:[61,53] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/lexer/CxxLexer.java:[110,10] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/lexer/CxxLexer.java:[111,14] withPreprocessor(com.sonar.sslr.api.Preprocessor) in com.sonar.sslr.impl.Lexer.Builder has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/IncludeLexer.java:[36,30] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/IncludeLexer.java:[40,53] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/IncludeLexer.java:[49,10] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/IncludeLexer.java:[50,14] withPreprocessor(com.sonar.sslr.api.Preprocessor) in com.sonar.sslr.impl.Lexer.Builder has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/CxxAstScanner.java:[98,26] file() in org.sonar.api.batch.fs.InputFile has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[83,38] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[328,10] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[421,20] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[440,20] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[454,18] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[460,20] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[469,12] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[510,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[539,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[543,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[578,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[582,11] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[599,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[603,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[619,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[623,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[636,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[640,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[649,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[659,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[704,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[708,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[711,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[715,3] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[722,5] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[722,35] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[747,11] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[747,39] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[753,29] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/CxxPreprocessor.java:[780,24] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/JoinStringsPreprocessor.java:[35,46] com.sonar.sslr.api.Preprocessor in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/JoinStringsPreprocessor.java:[39,10] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/JoinStringsPreprocessor.java:[53,14] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/preprocessor/JoinStringsPreprocessor.java:[67,16] com.sonar.sslr.api.PreprocessorAction in com.sonar.sslr.api has been deprecated
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/CxxAstScanner.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/main/java/org/sonar/cxx/CxxAstScanner.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ cxx-squid ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 443 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ cxx-squid ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 49 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/target/test-classes
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/parser/ParserBaseTestHelper.java:[44,16] mock() in com.sonar.sslr.api.Rule has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[37,16] mock() in com.sonar.sslr.api.Rule has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[341,36] findFirstChild(com.sonar.sslr.api.AstNodeType...) in com.sonar.sslr.api.AstNode has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[342,32] findFirstChild(com.sonar.sslr.api.AstNodeType...) in com.sonar.sslr.api.AstNode has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[343,31] findFirstChild(com.sonar.sslr.api.AstNodeType...) in com.sonar.sslr.api.AstNode has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[345,38] findFirstChild(com.sonar.sslr.api.AstNodeType...) in com.sonar.sslr.api.AstNode has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[346,39] findFirstChild(com.sonar.sslr.api.AstNodeType...) in com.sonar.sslr.api.AstNode has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/preprocessor/CppGrammarTest.java:[347,37] findFirstChild(com.sonar.sslr.api.AstNodeType...) in com.sonar.sslr.api.AstNode has been deprecated
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/parser/ParserBaseTestHelper.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/src/test/java/org/sonar/cxx/parser/ParserBaseTestHelper.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ cxx-squid ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ cxx-squid ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/target/cxx-squid-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ cxx-squid ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/target/cxx-squid-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ cxx-squid ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/target/cxx-squid-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-squid/1.2.0-SNAPSHOT/cxx-squid-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-squid/1.2.0-SNAPSHOT/cxx-squid-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-squid/target/cxx-squid-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-squid/1.2.0-SNAPSHOT/cxx-squid-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Checks 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cxx-checks ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ cxx-checks ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ cxx-checks ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ cxx-checks ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ cxx-checks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ cxx-checks ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 59 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ cxx-checks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 63 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ cxx-checks ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/src/test/java/org/sonar/cxx/checks/file/FileEncodingCheckTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/src/test/java/org/sonar/cxx/checks/file/FileEncodingCheckTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ cxx-checks ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ cxx-checks ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ cxx-checks ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ cxx-checks ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-checks/1.2.0-SNAPSHOT/cxx-checks-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-checks/1.2.0-SNAPSHOT/cxx-checks-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-checks/1.2.0-SNAPSHOT/cxx-checks-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Lint 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cxx-lint ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ cxx-lint ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ cxx-lint ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ cxx-lint ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ cxx-lint ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ cxx-lint ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/classes
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/src/main/java/org/sonar/cxx/cxxlint/CxxLint.java: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/src/main/java/org/sonar/cxx/cxxlint/CxxLint.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/src/main/java/org/sonar/cxx/cxxlint/CxxLint.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ cxx-lint ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ cxx-lint ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ cxx-lint ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ cxx-lint ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.1.0:single (make-assembly) @ cxx-lint ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.5.0.Final/os-maven-plugin-1.5.0.Final.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.5.0.Final/os-maven-plugin-1.5.0.Final.pom (6.4 kB at 246 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.1/maven-plugin-api-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.1/maven-plugin-api-3.2.1.pom (3.4 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.1/maven-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.1/maven-3.2.1.pom (23 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.2.1/maven-model-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.2.1/maven-model-3.2.1.pom (4.1 kB at 345 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.1/maven-artifact-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.1/maven-artifact-3.2.1.pom (2.0 kB at 164 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom (4.8 kB at 483 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom (13 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom (2.5 kB at 229 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom (14 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.5.0.Final/os-maven-plugin-1.5.0.Final.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.1/maven-plugin-api-3.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.2.1/maven-model-3.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.1/maven-artifact-3.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.2.1/maven-model-3.2.1.jar (160 kB at 5.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.1/maven-plugin-api-3.2.1.jar (46 kB at 849 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.17/plexus-utils-3.0.17.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.1/maven-artifact-3.2.1.jar (54 kB at 958 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.5.0.Final/os-maven-plugin-1.5.0.Final.jar (29 kB at 389 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.jar (291 kB at 3.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.jar (197 kB at 2.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.17/plexus-utils-3.0.17.jar (252 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/2.3.7/maven-bundle-plugin-2.3.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/2.3.7/maven-bundle-plugin-2.3.7.pom (4.0 kB at 250 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/2.1/felix-parent-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/2.1/felix-parent-2.1.pom (9.7 kB at 690 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bndlib/1.50.0/bndlib-1.50.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bndlib/1.50.0/bndlib-1.50.0.pom (1.4 kB at 85 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom (5.9 kB at 368 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom (193 B at 12 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.pom (5.3 kB at 355 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.pom (6.7 kB at 512 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom (11 kB at 880 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom (2.0 kB at 83 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom (3.0 kB at 234 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.pom (1.9 kB at 147 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.pom (1.8 kB at 146 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.7/maven-reporting-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.7/maven-reporting-2.0.7.pom (1.4 kB at 111 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom (2.0 kB at 198 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom (1.6 kB at 143 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom (1.9 kB at 168 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.pom (1.7 kB at 142 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom (2.6 kB at 240 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom (2.6 kB at 262 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom (1.9 kB at 216 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom (1.5 kB at 132 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.pom (2.0 kB at 155 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.pom (1.3 kB at 114 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom (4.0 kB at 282 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom (1.6 kB at 124 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 401 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom (1.2 kB at 123 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/2.3.7/maven-bundle-plugin-2.3.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bndlib/1.50.0/bndlib-1.50.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.jar (81 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/2.3.7/maven-bundle-plugin-2.3.7.jar (124 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.jar (163 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar (168 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.jar (21 kB at 483 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar (153 kB at 2.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.jar (9.9 kB at 188 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar (35 kB at 587 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar (49 kB at 780 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar (88 kB at 1.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.jar (14 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bndlib/1.50.0/bndlib-1.50.0.jar (920 kB at 7.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar (24 kB at 322 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.jar (86 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar (29 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.jar (13 kB at 138 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.jar (37 kB at 405 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar (117 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar (57 kB at 608 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.jar (10 kB at 106 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.jar (20 kB at 203 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.jar (177 kB at 1.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar (51 kB at 462 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.jar (225 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/maven-metadata.xml (1.3 kB at 91 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/4.2.1/maven-bundle-plugin-4.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/4.2.1/maven-bundle-plugin-4.2.1.pom (11 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/6/felix-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/6/felix-parent-6.pom (22 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/4.2.1/maven-bundle-plugin-4.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/4.2.1/maven-bundle-plugin-4.2.1.jar (233 kB at 6.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.pom (1.1 kB at 92 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/4.2.0/biz.aQute.bndlib-4.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/4.2.0/biz.aQute.bndlib-4.2.0.pom (2.1 kB at 142 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom (3.3 kB at 298 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom (463 B at 29 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.3.9/maven-core-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.3.9/maven-core-3.3.9.pom (8.3 kB at 553 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.3.9/maven-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.3.9/maven-3.3.9.pom (24 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.pom (4.0 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9.pom (1.8 kB at 167 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9.pom (2.6 kB at 238 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9.pom (1.7 kB at 127 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 171 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9.pom (1.9 kB at 189 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.pom (2.1 kB at 213 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.pom (2.7 kB at 269 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.pom (4.2 kB at 596 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.3.2/sisu-plexus-0.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.3.2/sisu-plexus-0.3.2.pom (14 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.pom (2.6 kB at 202 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.3.2/sisu-inject-0.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.3.2/sisu-inject-0.3.2.pom (14 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9.pom (3.1 kB at 314 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9.pom (4.0 kB at 403 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom (1.8 kB at 183 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom (29 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom (2.0 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom (2.1 kB at 265 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom (3.4 kB at 280 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/inject/guice/4.0/guice-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/inject/guice/4.0/guice-4.0.pom (11 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/inject/guice-parent/4.0/guice-parent-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/inject/guice-parent/4.0/guice-parent-4.0.pom (15 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom (6.1 kB at 610 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom (7.3 kB at 734 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9.pom (3.8 kB at 385 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom (4.3 kB at 480 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (5.0 kB at 334 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom (4.1 kB at 343 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom (2.7 kB at 177 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom (11 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.pom (4.4 kB at 492 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.0/doxia-sitetools-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.0/doxia-sitetools-1.0.pom (9.6 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.pom (2.4 kB at 200 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.7/plexus-utils-1.5.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.7/plexus-utils-1.5.7.pom (8.1 kB at 733 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.pom (3.2 kB at 394 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.pom (2.3 kB at 3.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.0/doxia-modules-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.0/doxia-modules-1.0.pom (2.4 kB at 184 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.pom (2.7 kB at 179 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.pom (2.2 kB at 249 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.pom (1.6 kB at 89 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom (2.2 kB at 168 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/4.2.0/biz.aQute.bndlib-4.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.3.9/maven-core-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar (68 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.jar (164 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.jar (475 kB at 6.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9.jar (44 kB at 662 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar (614 kB at 8.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.3.9/maven-core-3.3.9.jar (638 kB at 8.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9.jar (43 kB at 531 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9.jar (15 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9.jar (27 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.jar (55 kB at 561 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.jar (47 kB at 470 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9.jar (67 kB at 613 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9.jar (177 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.jar (31 kB at 246 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.jar (173 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.jar (136 kB at 995 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/inject/guice/4.0/guice-4.0-no_aop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.jar (147 kB at 992 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.jar (205 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.jar (378 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar (62 kB at 370 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/inject/guice/4.0/guice-4.0-no_aop.jar (424 kB at 2.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar (23 kB at 126 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9.jar (290 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (170 kB at 900 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar (74 kB at 373 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar (143 kB at 714 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar (35 kB at 172 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar (47 kB at 212 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar (65 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/4.2.0/biz.aQute.bndlib-4.2.0.jar (3.1 MB at 14 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar (378 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar (49 kB at 206 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar (55 kB at 228 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar (231 kB at 958 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar (28 kB at 111 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar (47 kB at 188 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar (19 kB at 74 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar (22 kB at 84 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar (153 kB at 578 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (571 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonarsource/sonar-packaging-maven-plugin/sonar-packaging-maven-plugin/1.15/sonar-packaging-maven-plugin-1.15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonarsource/sonar-packaging-maven-plugin/sonar-packaging-maven-plugin/1.15/sonar-packaging-maven-plugin-1.15.pom (4.9 kB at 608 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonarsource/parent/parent/23/parent-23.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonarsource/parent/parent/23/parent-23.pom (23 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonarsource/sonar-packaging-maven-plugin/sonar-packaging-maven-plugin/1.15/sonar-packaging-maven-plugin-1.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonarsource/sonar-packaging-maven-plugin/sonar-packaging-maven-plugin/1.15/sonar-packaging-maven-plugin-1.15.jar (32 kB at 231 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-packaging-maven-plugin/1.5/sonar-packaging-maven-plugin-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-packaging-maven-plugin/1.5/sonar-packaging-maven-plugin-1.5.pom (4.3 kB at 26 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-update-center/1.5/sonar-update-center-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-update-center/1.5/sonar-update-center-1.5.pom (14 kB at 984 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-update-center-common/1.5/sonar-update-center-common-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-update-center-common/1.5/sonar-update-center-common-1.5.pom (1.3 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom (17 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom (27 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-packaging-maven-plugin/1.5/sonar-packaging-maven-plugin-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-update-center-common/1.5/sonar-update-center-common-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.4/commons-io-1.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.4/commons-io-1.4.jar (109 kB at 4.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.jar (279 kB at 7.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-packaging-maven-plugin/1.5/sonar-packaging-maven-plugin-1.5.jar (23 kB at 136 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/sonar/sonar-update-center-common/1.5/sonar-update-center-common-1.5.jar (44 kB at 213 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/2.0/wagon-ssh-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/2.0/wagon-ssh-2.0.pom (5.9 kB at 735 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-providers/2.0/wagon-providers-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-providers/2.0/wagon-providers-2.0.pom (2.8 kB at 307 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.0/wagon-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.0/wagon-2.0.pom (15 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.pom (3.4 kB at 425 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/2.0/wagon-ssh-common-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/2.0/wagon-ssh-common-2.0.pom (1.8 kB at 131 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.0/wagon-provider-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.0/wagon-provider-api-2.0.pom (1.7 kB at 123 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/2.0/wagon-ssh-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/2.0/wagon-ssh-common-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.0/wagon-provider-api-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/2.0/wagon-ssh-common-2.0.jar (25 kB at 2.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/2.0/wagon-ssh-2.0.jar (29 kB at 993 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.0/wagon-provider-api-2.0.jar (52 kB at 3.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.jar (12 kB at 590 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.44-1/jsch-0.1.44-1.jar (214 kB at 5.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.4.1.Final/os-maven-plugin-1.4.1.Final.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.4.1.Final/os-maven-plugin-1.4.1.Final.pom (6.2 kB at 619 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.4.1.Final/os-maven-plugin-1.4.1.Final.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.4.1.Final/os-maven-plugin-1.4.1.Final.jar (29 kB at 2.2 MB/s)
+[WARNING] Artifact: org.sonarsource.sonarqube-plugins.cxx:cxx-lint:jar:1.2.0-SNAPSHOT references the same file as the assembly destination file. Moving it to a temporary location for inclusion.
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT.jar
+[WARNING] Configuration option 'appendAssemblyId' is set to false.
+Instead of attaching the assembly file: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT.jar, it will become the file for main project artifact.
+NOTE: If multiple descriptors or descriptor-formats are provided for this project, the value of this file will be non-deterministic!
+[WARNING] Replacing pre-existing project main-artifact file: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/archive-tmp/cxx-lint-1.2.0-SNAPSHOT.jar
+with assembly file: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ cxx-lint ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ cxx-lint ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-lint/1.2.0-SNAPSHOT/cxx-lint-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-lint/1.2.0-SNAPSHOT/cxx-lint-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-lint/target/cxx-lint-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-lint/1.2.0-SNAPSHOT/cxx-lint-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Sensors 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cxx-sensors ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ cxx-sensors ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ cxx-sensors ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ cxx-sensors ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ cxx-sensors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ cxx-sensors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 90 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/target/classes
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/main/java/org/sonar/cxx/sensors/tests/xunit/TestFile.java:[53,21] absolutePath() in org.sonar.api.batch.fs.InputFile has been deprecated
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/main/java/org/sonar/cxx/sensors/squid/CxxSquidSensor.java: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/main/java/org/sonar/cxx/sensors/squid/CxxSquidSensor.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/main/java/org/sonar/cxx/sensors/squid/CxxSquidSensor.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ cxx-sensors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 133 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ cxx-sensors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 57 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/test/java/org/sonar/cxx/sensors/utils/TestUtils.java: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/test/java/org/sonar/cxx/sensors/utils/TestUtils.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/src/test/java/org/sonar/cxx/sensors/utils/TestUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ cxx-sensors ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ cxx-sensors ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/target/cxx-sensors-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ cxx-sensors ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/target/cxx-sensors-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ cxx-sensors ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/target/cxx-sensors-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-sensors/1.2.0-SNAPSHOT/cxx-sensors-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-sensors/1.2.0-SNAPSHOT/cxx-sensors-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-sensors/target/cxx-sensors-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-sensors/1.2.0-SNAPSHOT/cxx-sensors-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Sonar Plugin 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ sonar-cxx-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ sonar-cxx-plugin ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ sonar-cxx-plugin ---
+[INFO] 
+[INFO] --- sonar-packaging-maven-plugin:1.18.0.372:check (default-check) @ sonar-cxx-plugin ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ sonar-cxx-plugin ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ sonar-cxx-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 49 resources
+[INFO] Copying 1 resource to static
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ sonar-cxx-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/target/classes
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/main/java/org/sonar/plugins/cxx/CxxDefaultProfile.java:[22,30] org.sonar.api.profiles.AnnotationProfileParser in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/main/java/org/sonar/plugins/cxx/CxxDefaultProfile.java:[23,30] org.sonar.api.profiles.ProfileDefinition in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/main/java/org/sonar/plugins/cxx/CxxDefaultProfile.java:[33,40] org.sonar.api.profiles.ProfileDefinition in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/main/java/org/sonar/plugins/cxx/CxxDefaultProfile.java:[36,17] org.sonar.api.profiles.AnnotationProfileParser in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/main/java/org/sonar/plugins/cxx/CxxDefaultProfile.java:[45,5] org.sonar.api.profiles.AnnotationProfileParser in org.sonar.api.profiles has been deprecated
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ sonar-cxx-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 21 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ sonar-cxx-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/test/java/org/sonar/plugins/cxx/CxxPluginTest.java: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/test/java/org/sonar/plugins/cxx/CxxPluginTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/src/test/java/org/sonar/plugins/cxx/CxxPluginTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ sonar-cxx-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- sonar-packaging-maven-plugin:1.18.0.372:sonar-plugin (default-sonar-plugin) @ sonar-cxx-plugin ---
+[INFO] -------------------------------------------------------
+[INFO] Plugin definition in update center
+[INFO]     Key: cxx
+[INFO]     Name: C++ (Community)
+[INFO]     Description: Enable analysis and reporting on c++ projects.
+[INFO]     Version: 1.2.0-SNAPSHOT
+[INFO]     Display Version: 1.2.0-SNAPSHOT
+[INFO]     Entry-point Class: org.sonar.plugins.cxx.CxxPlugin
+[INFO]     Required Plugins: 
+[INFO]     Does the plugin support SonarLint?: false
+[INFO]     Use Child-first ClassLoader: false
+[INFO]     Base Plugin: 
+[INFO]     Homepage URL: https://github.com/SonarOpenCommunity/sonar-cxx/wiki
+[INFO]     Minimal SonarQube Version: 6.7
+[INFO]     Licensing: GNU LGPL 3
+[INFO]     Organization: SonarOpenCommunity
+[INFO]     Organization URL: https://github.com/SonarOpenCommunity
+[INFO]     Terms and Conditions: 
+[INFO]     Issue Tracker URL: https://github.com/SonarOpenCommunity/sonar-cxx/issues?state=open
+[INFO]     Build date: 2020-03-13T17:13:50-0700
+[INFO]     Sources URL: https://github.com/SonarOpenCommunity/sonar-cxx/sonar-cxx-plugin
+[INFO]     Developers: Waleri Enns,Francois Dorin,Jorge Costa,Vincent Hardion,Mathias Cocheril,JP Chemali,Sylvain Hellegouarch,Przemyslaw Kociolek,Patrick Gansterer,Bert Kandert,Wolfgang Buckel,keithmarsh,Günter Wirth,Francois Ferrand,Ludovic Cintrat,Peter van Zetten,Chris Bagwell,Matthew DeTullio,Felipe Zorzo,,Baptiste Wicht,Arnaud SYLVESTRE,BobSilent,Kochise,gyorb,nathanaelg,gena01,MarcAntoineCRUE,Pasick,stefanweiser,Eric Lemes,ivangalkin,rufinio
+[INFO]     Dependencies: META-INF/lib/ant-1.10.4.jar META-INF/lib/jdom2-2.0.6.jar META-INF/lib/jackson-core-2.8.6.jar META-INF/lib/jackson-annotations-2.8.0.jar META-INF/lib/jsr305-1.3.9.jar META-INF/lib/sslr-squid-bridge-2.6.1.jar META-INF/lib/jaxen-1.1.4.jar META-INF/lib/guava-19.0.jar META-INF/lib/cglib-nodep-3.2.5.jar META-INF/lib/cxx-squid-1.2.0-SNAPSHOT.jar META-INF/lib/cxx-sensors-1.2.0-SNAPSHOT.jar META-INF/lib/commons-lang-2.6.jar META-INF/lib/sslr-core-1.22.jar META-INF/lib/cxx-checks-1.2.0-SNAPSHOT.jar META-INF/lib/ant-launcher-1.10.4.jar META-INF/lib/commons-io-2.6.jar META-INF/lib/sslr-xpath-1.20.jar META-INF/lib/jackson-databind-2.8.6.jar META-INF/lib/dd-plist-1.19.jar
+[INFO] -------------------------------------------------------
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/target/sonar-cxx-plugin-1.2.0-SNAPSHOT.jar
+[INFO]  already added, skipping
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ sonar-cxx-plugin ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/target/sonar-cxx-plugin-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ sonar-cxx-plugin ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/target/sonar-cxx-plugin-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sonar-cxx-plugin/1.2.0-SNAPSHOT/sonar-cxx-plugin-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sonar-cxx-plugin/1.2.0-SNAPSHOT/sonar-cxx-plugin-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-cxx-plugin/target/sonar-cxx-plugin-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sonar-cxx-plugin/1.2.0-SNAPSHOT/sonar-cxx-plugin-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Sonar C Plugin 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ sonar-c-plugin ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ sonar-c-plugin ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ sonar-c-plugin ---
+[INFO] 
+[INFO] --- sonar-packaging-maven-plugin:1.18.0.372:check (default-check) @ sonar-c-plugin ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ sonar-c-plugin ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ sonar-c-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 49 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ sonar-c-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/target/classes
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/main/java/org/sonar/plugins/c/CDefaultProfile.java:[22,30] org.sonar.api.profiles.AnnotationProfileParser in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/main/java/org/sonar/plugins/c/CDefaultProfile.java:[23,30] org.sonar.api.profiles.ProfileDefinition in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/main/java/org/sonar/plugins/c/CDefaultProfile.java:[33,38] org.sonar.api.profiles.ProfileDefinition in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/main/java/org/sonar/plugins/c/CDefaultProfile.java:[36,17] org.sonar.api.profiles.AnnotationProfileParser in org.sonar.api.profiles has been deprecated
+[WARNING] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/main/java/org/sonar/plugins/c/CDefaultProfile.java:[45,5] org.sonar.api.profiles.AnnotationProfileParser in org.sonar.api.profiles has been deprecated
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ sonar-c-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ sonar-c-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/test/java/org/sonar/plugins/c/CPluginTest.java: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/test/java/org/sonar/plugins/c/CPluginTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/src/test/java/org/sonar/plugins/c/CPluginTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ sonar-c-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- sonar-packaging-maven-plugin:1.18.0.372:sonar-plugin (default-sonar-plugin) @ sonar-c-plugin ---
+[INFO] -------------------------------------------------------
+[INFO] Plugin definition in update center
+[INFO]     Key: c
+[INFO]     Name: C (Community)
+[INFO]     Description: Enable analysis and reporting on c projects.
+[INFO]     Version: 1.2.0-SNAPSHOT
+[INFO]     Display Version: 1.2.0-SNAPSHOT
+[INFO]     Entry-point Class: org.sonar.plugins.c.CPlugin
+[INFO]     Required Plugins: 
+[INFO]     Does the plugin support SonarLint?: false
+[INFO]     Use Child-first ClassLoader: false
+[INFO]     Base Plugin: 
+[INFO]     Homepage URL: https://github.com/SonarOpenCommunity/sonar-cxx/wiki
+[INFO]     Minimal SonarQube Version: 6.7
+[INFO]     Licensing: GNU LGPL 3
+[INFO]     Organization: SonarOpenCommunity
+[INFO]     Organization URL: https://github.com/SonarOpenCommunity
+[INFO]     Terms and Conditions: 
+[INFO]     Issue Tracker URL: https://github.com/SonarOpenCommunity/sonar-cxx/issues?state=open
+[INFO]     Build date: 2020-03-13T17:13:53-0700
+[INFO]     Sources URL: https://github.com/SonarOpenCommunity/sonar-cxx/sonar-c-plugin
+[INFO]     Developers: Waleri Enns,Francois Dorin,Jorge Costa,Vincent Hardion,Mathias Cocheril,JP Chemali,Sylvain Hellegouarch,Przemyslaw Kociolek,Patrick Gansterer,Bert Kandert,Wolfgang Buckel,keithmarsh,Günter Wirth,Francois Ferrand,Ludovic Cintrat,Peter van Zetten,Chris Bagwell,Matthew DeTullio,Felipe Zorzo,,Baptiste Wicht,Arnaud SYLVESTRE,BobSilent,Kochise,gyorb,nathanaelg,gena01,MarcAntoineCRUE,Pasick,stefanweiser,Eric Lemes,ivangalkin,rufinio
+[INFO]     Dependencies: META-INF/lib/ant-1.10.4.jar META-INF/lib/jdom2-2.0.6.jar META-INF/lib/jackson-core-2.8.6.jar META-INF/lib/jackson-annotations-2.8.0.jar META-INF/lib/jsr305-1.3.9.jar META-INF/lib/sslr-squid-bridge-2.6.1.jar META-INF/lib/jaxen-1.1.4.jar META-INF/lib/guava-19.0.jar META-INF/lib/cglib-nodep-3.2.5.jar META-INF/lib/cxx-squid-1.2.0-SNAPSHOT.jar META-INF/lib/cxx-sensors-1.2.0-SNAPSHOT.jar META-INF/lib/commons-lang-2.6.jar META-INF/lib/sslr-core-1.22.jar META-INF/lib/cxx-checks-1.2.0-SNAPSHOT.jar META-INF/lib/ant-launcher-1.10.4.jar META-INF/lib/commons-io-2.6.jar META-INF/lib/sslr-xpath-1.20.jar META-INF/lib/jackson-databind-2.8.6.jar META-INF/lib/dd-plist-1.19.jar
+[INFO] -------------------------------------------------------
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/target/sonar-c-plugin-1.2.0-SNAPSHOT.jar
+[INFO]  already added, skipping
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ sonar-c-plugin ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/target/sonar-c-plugin-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ sonar-c-plugin ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/target/sonar-c-plugin-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sonar-c-plugin/1.2.0-SNAPSHOT/sonar-c-plugin-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sonar-c-plugin/1.2.0-SNAPSHOT/sonar-c-plugin-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sonar-c-plugin/target/sonar-c-plugin-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sonar-c-plugin/1.2.0-SNAPSHOT/sonar-c-plugin-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: SSLR Toolkit 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ sslr-cxx-toolkit ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ sslr-cxx-toolkit ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ sslr-cxx-toolkit ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ sslr-cxx-toolkit ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ sslr-cxx-toolkit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ sslr-cxx-toolkit ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ sslr-cxx-toolkit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ sslr-cxx-toolkit ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ sslr-cxx-toolkit ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ sslr-cxx-toolkit ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jarjar-maven-plugin:1.9:jarjar (default) @ sslr-cxx-toolkit ---
+[INFO] Processing: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar
+[INFO] Building zip: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/jarjar/uber-sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar
+[INFO] JarJar'ing to: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar
+Error reading org/sonar/api/resources/ResourceTypes.class: INVOKESPECIAL/STATIC on interfaces require ASM 5
+Error reading org/sonar/api/utils/UriReader.class: INVOKESPECIAL/STATIC on interfaces require ASM 5
+Error reading org/sonar/api/scan/filesystem/FileExclusions.class: INVOKESPECIAL/STATIC on interfaces require ASM 5
+Error reading org/sonar/api/config/PropertyDefinition$Builder.class: INVOKESPECIAL/STATIC on interfaces require ASM 5
+Error reading org/sonar/api/web/page/Page.class: INVOKESPECIAL/STATIC on interfaces require ASM 5
+[INFO] Original: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/original-sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-size) @ sslr-cxx-toolkit ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ sslr-cxx-toolkit ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/sslr-cxx-toolkit-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ sslr-cxx-toolkit ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sslr-cxx-toolkit/1.2.0-SNAPSHOT/sslr-cxx-toolkit-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sslr-cxx-toolkit/1.2.0-SNAPSHOT/sslr-cxx-toolkit-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/sslr-cxx-toolkit/target/sslr-cxx-toolkit-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/sslr-cxx-toolkit/1.2.0-SNAPSHOT/sslr-cxx-toolkit-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Integration Tests 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ integration-tests ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ integration-tests ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ integration-tests ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ integration-tests ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ integration-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ integration-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ integration-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ integration-tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ integration-tests ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ integration-tests ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/target/integration-tests-1.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ integration-tests ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/target/integration-tests-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ integration-tests ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/target/integration-tests-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/integration-tests/1.2.0-SNAPSHOT/integration-tests-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/integration-tests/1.2.0-SNAPSHOT/integration-tests-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/integration-tests/target/integration-tests-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/integration-tests/1.2.0-SNAPSHOT/integration-tests-1.2.0-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Cxx ................................................ SUCCESS [  8.743 s]
+[INFO] Cxx :: Squid ....................................... SUCCESS [ 32.443 s]
+[INFO] Cxx :: Checks ...................................... SUCCESS [ 22.078 s]
+[INFO] Cxx :: Lint ........................................ SUCCESS [ 12.357 s]
+[INFO] Cxx :: Sensors ..................................... SUCCESS [  5.303 s]
+[INFO] Cxx :: Sonar Plugin ................................ SUCCESS [  3.477 s]
+[INFO] Cxx :: Sonar C Plugin .............................. SUCCESS [  1.399 s]
+[INFO] Cxx :: SSLR Toolkit ................................ SUCCESS [ 13.476 s]
+[INFO] Cxx :: Integration Tests ........................... SUCCESS [ 10.259 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:50 min
+[INFO] Finished at: 2020-03-13T17:14:18-07:00
+[INFO] Final Memory: 97M/1841M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cxx :: Checks 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cxx-checks ---
+[INFO] Executing: /bin/sh -c cd '/scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks
+[INFO] Storing buildNumber: dbc33043b6d8cb6ea48cb542def226ae40ded72f at timestamp: 1584144863743
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce) @ cxx-checks ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (enforce-license-headers) @ cxx-checks ---
+[INFO] 
+[INFO] --- beanshell-maven-plugin:1.4:run (compute-artifact-display-version) @ cxx-checks ---
+[INFO] Executing Script
+[INFO] file class java.lang.Object
+[INFO] script class java.lang.String
+[INFO] evaluating script if (! "1.2.0-SNAPSHOT".endsWith("-SNAPSHOT")) { [+ 14 omitted line(s)]
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ cxx-checks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ cxx-checks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ cxx-checks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 63 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ cxx-checks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ cxx-checks ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ cxx-checks ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ cxx-checks ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ cxx-checks ---
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-checks/1.2.0-SNAPSHOT/cxx-checks-1.2.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/pom.xml to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-checks/1.2.0-SNAPSHOT/cxx-checks-1.2.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/cxx-checks/target/cxx-checks-1.2.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_SonarOpenCommunity-sonar-cxx_437974912-438070185_java-8/.m2/org/sonarsource/sonarqube-plugins/cxx/cxx-checks/1.2.0-SNAPSHOT/cxx-checks-1.2.0-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.984 s
+[INFO] Finished at: 2020-03-13T17:14:30-07:00
+[INFO] Final Memory: 28M/1237M
+[INFO] ------------------------------------------------------------------------

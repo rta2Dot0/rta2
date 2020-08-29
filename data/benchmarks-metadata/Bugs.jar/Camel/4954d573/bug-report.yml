@@ -1,0 +1,41 @@
+---
+BugID: CAMEL-6936
+Summary: FTP route with idempotent repo does not detect modified files
+Description: "Per my forum post:\nhttp://camel.465427.n5.nabble.com/inProgressRepository-Not-clearing-for-items-in-idempotentRepository-td5742613.html\n\nI'm
+  attempting to consume messages from an FTP server using an idempotent repository
+  to ensure that I do not re-download a file unless it has been modified. \n\nHere
+  is my (quite simple) camel configuration: \n{code}\n        <beans:bean id=\"downloadRepo\"
+  class=\"org.apache.camel.processor.idempotent.FileIdempotentRepository\" >\n                <beans:property
+  name=\"fileStore\" value=\"/tmp/.repo.txt\"/>\n                <beans:property name=\"cacheSize\"
+  value=\"25000\"/>\n                <beans:property name=\"maxFileStoreSize\" value=\"1000000\"/>\n
+  \       </beans:bean>\n\n        <camelContext trace=\"true\" xmlns=\"http://camel.apache.org/schema/spring\">\n
+  \               <endpoint id=\"myFtpEndpoint\" uri=\"ftp://me@localhost?password=****&binary=true&recursive=true&consumer.delay=15000&readLock=changed&passiveMode=true&noop=true&idempotentRepository=#downloadRepo&idempotentKey=$simple{file:name}-$simple{file:modified}\"
+  />\n                <endpoint id=\"myFileEndpoint\" uri=\"file:///tmp/files\"/>\n\n
+  \       <route>\n            <from uri=\"ref:myFtpEndpoint\" />\n            <to
+  uri=\"ref:myFileEndpoint\" />\n        </route>\n{code}\n\nWhen I start my application
+  for the first time, all files are correctly downloaded from the FTP server and stored
+  in the target directory, as well as recorded in the idempotent repo. \n\nWhen I
+  restart my application, all files are correctly detected as being in the idempotent
+  repo already on the first poll of the FTP server, and are not re-downloaded: \n\n13-11-04
+  16:52:10,811 TRACE [Camel (camel-1) thread #0 - ftp://me@localhost] org.apache.camel.component.file.remote.FtpConsumer:
+  FtpFile[name=test1.txt, dir=false, file=true] \n2013-11-04 16:52:10,811 TRACE [Camel
+  (camel-1) thread #0 - ftp://me@localhost] org.apache.camel.component.file.remote.FtpConsumer:
+  This consumer is idempotent and the file has been consumed before. Will skip this
+  file: RemoteFile[test1.txt] \n\nHowever, on all subsequent polls to the FTP server
+  the idempotent check is short-circuited because the file is \"in progress\": \n\n2013-11-04
+  16:53:10,886 TRACE [Camel (camel-1) thread #0 - ftp://me@localhost] org.apache.camel.component.file.remote.FtpConsumer:
+  FtpFile[name=test1.txt, dir=false, file=true]\n2013-11-04 16:53:10,886 TRACE [Camel
+  (camel-1) thread #0 - ftp://me@localhost] org.apache.camel.component.file.remote.FtpConsumer:
+  Skipping as file is already in progress: test1.txt \n\nI am using camel-ftp:2.11.1
+  (also observing same behavior with 2.12.1)  When I inspect the source code I notice
+  two interesting things. \nFirst, the GenericFileConsumer check that determines whether
+  a file is already inProgress which is called from isValidFile() always adds the
+  file to the inProgressRepository: \n{code}\n    protected boolean isInProgress(GenericFile<T>
+  file) { \n        String key = file.getAbsoluteFilePath(); \n        return !endpoint.getInProgressRepository().add(key);
+  \n    } \n{code}\n\nSecond, if a file is determined to match an entry already present
+  in the idempotent repository it is discarded (GenericFileConsumer.isValidFile()
+  returns false).  This means it is never published to an exchange, and thus never
+  reaches the code which would remove it from the inProgressRepository. \n\nSince
+  the inProgress check happens before the Idempotent Check, we will always short circuit
+  after we get into the inprogress state, and the file will never actually be checked
+  again. "

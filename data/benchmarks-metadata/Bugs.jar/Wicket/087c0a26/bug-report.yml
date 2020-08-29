@@ -1,0 +1,8 @@
+---
+BugID: WICKET-5701
+Summary: 'WebSocketRequestHandler is not set as a scheduled and thus RequestCycle#find(AjaxRequestTarget.class)
+  doesn''t work '
+Description: |-
+  As discussed at https://groups.google.com/d/topic/wicket-jquery-ui/fw6TdyO5o18/discussion AbstractWebSocketProcessor doesn't schedules the WebSocketRequestHandler in the request cycle and thus it is not reachable for user code via RequestCycle#find(Class) API.
+
+  Additionally the configured application RequestCycle listeners are not notified.

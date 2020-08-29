@@ -1,0 +1,202 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Core 0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-mk-api/0.6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/0.6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-mk/0.6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/0.6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-mk-remote/0.6-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-it-mk/0.6-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ oak-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ oak-core ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ oak-core ---
+[INFO] Compiling 1 source file to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_621a5101_java-8/oak-core/target/classes
+[INFO] 
+[INFO] --- maven-scr-plugin:1.7.4:scr (generate-scr-scrdescriptor) @ oak-core ---
+[INFO] Writing abstract service descriptor /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_621a5101_java-8/oak-core/target/scr-plugin-generated/OSGI-INF/scr-plugin/scrinfo.xml with 5 entries.
+[INFO] Generating 5 Service Component Descriptors to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_621a5101_java-8/oak-core/target/scr-plugin-generated/OSGI-INF/serviceComponents.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ oak-core ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ oak-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ oak-core ---
+[INFO] Surefire report directory: /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_621a5101_java-8/oak-core/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.pom (2.6 kB at 21 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.9/surefire-providers-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.9/surefire-providers-2.9.pom (2.3 kB at 226 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.jar (33 kB at 1.9 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=32m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.jackrabbit.oak.util.JsopUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.328 sec
+Running org.apache.jackrabbit.oak.util.ArrayUtilsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest
+Tests run: 5, Failures: 0, Errors: 4, Skipped: 1, Time elapsed: 0.154 sec <<< FAILURE!
+Running org.apache.jackrabbit.oak.query.index.FilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 sec
+Running org.apache.jackrabbit.oak.query.index.TraversingIndexTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.jackrabbit.oak.query.ast.FullTextTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.jackrabbit.oak.query.ast.LikePatternTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.jackrabbit.oak.namepath.NamePathMapperImplTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.apache.jackrabbit.oak.core.TreeImplTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.522 sec
+Running org.apache.jackrabbit.oak.core.RootImplTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running org.apache.jackrabbit.oak.core.DefaultConflictHandlerTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running org.apache.jackrabbit.oak.plugins.index.old.PropertyIndexTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running org.apache.jackrabbit.oak.plugins.index.old.IndexTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running org.apache.jackrabbit.oak.plugins.index.old.QueryTest
+Tests run: 6, Failures: 0, Errors: 4, Skipped: 2, Time elapsed: 0.152 sec <<< FAILURE!
+Running org.apache.jackrabbit.oak.plugins.index.old.PrefixIndexTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+Running org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest
+Tests run: 5, Failures: 0, Errors: 4, Skipped: 1, Time elapsed: 0.109 sec <<< FAILURE!
+Running org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.331 sec
+Running org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest
+Tests run: 5, Failures: 0, Errors: 4, Skipped: 1, Time elapsed: 0.078 sec <<< FAILURE!
+Running org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.jackrabbit.oak.plugins.name.NameValidatorTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.jackrabbit.oak.plugins.name.ReadWriteNamespaceRegistryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.jackrabbit.oak.plugins.memory.MemoryNodeBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.jackrabbit.oak.plugins.memory.MemoryPropertyBuilderTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.jackrabbit.oak.spi.security.authentication.AbstractLoginModuleTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.jackrabbit.oak.spi.security.user.PasswordUtilityTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.251 sec
+Running org.apache.jackrabbit.oak.spi.commit.SubtreeValidatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.jackrabbit.oak.kernel.KernelNodeStateTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.jackrabbit.oak.kernel.JsopDiffTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.jackrabbit.oak.kernel.LargeKernelNodeStateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.jackrabbit.oak.kernel.KernelNodeStoreTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.jackrabbit.oak.security.ConfigurationParametersTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.jackrabbit.oak.security.user.UserProviderImplTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.443 sec
+Running org.apache.jackrabbit.oak.TreeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running org.apache.jackrabbit.oak.RootTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0 sec
+Running org.apache.jackrabbit.mk.simple.AscendingClockTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running org.apache.jackrabbit.mk.simple.SimpleKernelTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.jackrabbit.mk.simple.NodeVersionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.jackrabbit.mk.LargeObjectTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.191 sec
+Running org.apache.jackrabbit.mk.wrapper.SecurityWrapperTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.apache.jackrabbit.mk.wrapper.IndexWrapperTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.jackrabbit.mk.wrapper.VirtualRepositoryWrapperTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 237.095 sec
+Running org.apache.jackrabbit.mk.mem.MemoryNodeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.jackrabbit.mk.json.fast.JsopObjectTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.apache.jackrabbit.mk.large.DescendantCountTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.923 sec
+Running org.apache.jackrabbit.mk.large.CreateNodesTraverseTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.761 sec
+Running org.apache.jackrabbit.mk.large.CreateRandomNodesTraverseTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.667 sec
+Running org.apache.jackrabbit.mk.large.LargeNodeTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.603 sec
+Running org.apache.jackrabbit.mk.large.ManyRevisionsTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.975 sec
+Running org.apache.jackrabbit.mk.ConflictingMoveTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 174.915 sec
+Running org.apache.jackrabbit.mk.hash.HashTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.114 sec
+
+Results :
+
+Failed tests:   test(org.apache.jackrabbit.oak.plugins.index.old.PrefixIndexTest): expected:<...:childNodeCount":2,"[prefix@d:":{":childNodeCount":1,":data":{}},":data":{":childNodeCount":0]}}> but was:<...:childNodeCount":2,"[:data":{":childNodeCount":0},"prefix@d:":{":childNodeCount":1,":data":{}]}}>
+
+Tests in error: 
+  sql1(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2Explain(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  sql1(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  sql1(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql1(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+
+Tests run: 266, Failures: 1, Errors: 16, Skipped: 7
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 08:29 min
+[INFO] Finished at: 2020-03-13T21:07:11-07:00
+[INFO] Final Memory: 37M/1221M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.9:test (default-test) on project oak-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_621a5101_java-8/oak-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

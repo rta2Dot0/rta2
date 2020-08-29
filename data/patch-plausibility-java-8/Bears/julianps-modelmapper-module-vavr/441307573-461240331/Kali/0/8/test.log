@@ -1,0 +1,192 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/rjust/projects/calling-bs/repair-them-all/RepairThemAll/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.132-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building modelmapper-vavr-module 1.0.2
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ modelmapper-vavr-module ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ modelmapper-vavr-module ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Kali_Bears_julianps-modelmapper-module-vavr_441307573-461240331/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ modelmapper-vavr-module ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ modelmapper-vavr-module ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Kali_Bears_julianps-modelmapper-module-vavr_441307573-461240331/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ modelmapper-vavr-module ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.21.0:test (default-test) @ modelmapper-vavr-module ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.21.0/surefire-testng-utils-2.21.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.21.0/surefire-testng-utils-2.21.0.jar (27 kB at 90 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.21.0/surefire-grouper-2.21.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.21.0/surefire-grouper-2.21.0.jar (40 kB at 1.8 MB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.github.julianps.modelmapper.ValueConverterTest
+[ERROR] Tests run: 9, Failures: 6, Errors: 2, Skipped: 0, Time elapsed: 0.224 s <<< FAILURE! - in com.github.julianps.modelmapper.ValueConverterTest
+[ERROR] testDerivedSet(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.146 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+	at com.github.julianps.modelmapper.ValueConverterTest.checkSetResult(ValueConverterTest.java:110)
+	at com.github.julianps.modelmapper.ValueConverterTest.testDerivedSet(ValueConverterTest.java:104)
+
+[ERROR] testNormalList(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.014 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+	at com.github.julianps.modelmapper.ValueConverterTest.checkListResult(ValueConverterTest.java:71)
+	at com.github.julianps.modelmapper.ValueConverterTest.testNormalList(ValueConverterTest.java:52)
+
+[ERROR] testNormalArray(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.008 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+	at com.github.julianps.modelmapper.ValueConverterTest.checkArrayResult(ValueConverterTest.java:91)
+	at com.github.julianps.modelmapper.ValueConverterTest.testNormalArray(ValueConverterTest.java:79)
+
+[ERROR] testDerivedArray(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+	at com.github.julianps.modelmapper.ValueConverterTest.checkArrayResult(ValueConverterTest.java:91)
+	at com.github.julianps.modelmapper.ValueConverterTest.testDerivedArray(ValueConverterTest.java:85)
+
+[ERROR] testDerivedList(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+	at com.github.julianps.modelmapper.ValueConverterTest.checkListResult(ValueConverterTest.java:71)
+	at com.github.julianps.modelmapper.ValueConverterTest.testDerivedList(ValueConverterTest.java:65)
+
+[ERROR] testOptionNull(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.01 s  <<< ERROR!
+java.lang.ClassCastException: com.github.julianps.modelmapper.StubFactory$Y cannot be cast to com.github.julianps.modelmapper.StubFactory$YInfo
+	at com.github.julianps.modelmapper.ValueConverterTest.testOptionNull(ValueConverterTest.java:46)
+
+[ERROR] testNormalSet(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+	at com.github.julianps.modelmapper.ValueConverterTest.checkSetResult(ValueConverterTest.java:110)
+	at com.github.julianps.modelmapper.ValueConverterTest.testNormalSet(ValueConverterTest.java:98)
+
+[ERROR] testOption(com.github.julianps.modelmapper.ValueConverterTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.ClassCastException: com.github.julianps.modelmapper.StubFactory$Y cannot be cast to com.github.julianps.modelmapper.StubFactory$YInfo
+	at com.github.julianps.modelmapper.ValueConverterTest.testOption(ValueConverterTest.java:33)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ValueConverterTest.testDerivedArray:85->checkArrayResult:91 
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+[ERROR]   ValueConverterTest.testDerivedList:65->checkListResult:71 
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+[ERROR]   ValueConverterTest.testDerivedSet:104->checkSetResult:110 
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+[ERROR]   ValueConverterTest.testNormalArray:79->checkArrayResult:91 
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+[ERROR]   ValueConverterTest.testNormalList:52->checkListResult:71 
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+[ERROR]   ValueConverterTest.testNormalSet:98->checkSetResult:110 
+Expecting:
+  <StubFactory.Source(x=5)>
+to be an instance of:
+  <com.github.julianps.modelmapper.StubFactory.Dest>
+but was instance of:
+  <com.github.julianps.modelmapper.StubFactory.Source>
+[ERROR] Errors: 
+[ERROR]   ValueConverterTest.testOption:33 ClassCast com.github.julianps.modelmapper.Stu...
+[ERROR]   ValueConverterTest.testOptionNull:46 ClassCast com.github.julianps.modelmapper...
+[INFO] 
+[ERROR] Tests run: 9, Failures: 6, Errors: 2, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.325 s
+[INFO] Finished at: 2019-08-21T13:30:50-07:00
+[INFO] Final Memory: 22M/1144M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.21.0:test (default-test) on project modelmapper-vavr-module: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /tmp/Kali_Bears_julianps-modelmapper-module-vavr_441307573-461240331/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

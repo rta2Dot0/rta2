@@ -1,0 +1,807 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Oak Parent POM
+[INFO] Oak Commons
+[INFO] Oak Blob Store
+[INFO] Oak Cloud Blob Store
+[INFO] Oak Core
+[INFO] Oak JCR Binding
+[INFO] Oak upgrade
+[INFO] Oak HTTP Binding
+[INFO] Oak Lucene
+[INFO] Oak Solr core
+[INFO] Oak Solr OSGi
+[INFO] Oak External Authentication Support
+[INFO] Oak LDAP Authentication Support
+[INFO] Oak TarMK Standby
+[INFO] Oak Remote API
+[INFO] Oak CUG
+[INFO] Oak Runnable Jar
+[INFO] Oak Integration Tests for OSGi deployments
+[INFO] Oak PojoSR
+[INFO] Oak Exercises
+[INFO] Oak Web Application Example
+[INFO] Oak Standalone Example
+[INFO] Oak Examples
+[INFO] Jackrabbit Oak
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Parent POM 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom (1.5 kB at 2.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom (4.5 kB at 411 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom (2.8 kB at 285 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.10/maven-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.10/maven-2.0.10.pom (24 kB at 419 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom (2.2 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom (3.3 kB at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (1.4 kB at 144 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom (2.1 kB at 209 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom (2.7 kB at 300 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom (2.3 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom (1.6 kB at 202 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom (2.0 kB at 224 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom (1.5 kB at 166 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom (1.6 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom (18 kB at 908 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom (1.6 kB at 93 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom (3.7 kB at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (5.6 kB at 626 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom (6.1 kB at 874 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom (15 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom (3.0 kB at 372 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom (1.6 kB at 200 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom (2.4 kB at 305 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom (5.5 kB at 687 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.pom (2.9 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.7.1.201405082137/org.jacoco.core-0.7.1.201405082137.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.7.1.201405082137/org.jacoco.core-0.7.1.201405082137.pom (1.2 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.pom (2.0 kB at 283 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.7.1.201405082137/org.jacoco.report-0.7.1.201405082137.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.7.1.201405082137/org.jacoco.report-0.7.1.201405082137.pom (1.4 kB at 170 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 356 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar (50 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar (52 kB at 726 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar (37 kB at 492 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar (15 kB at 185 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar (158 kB at 1.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar (237 kB at 2.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.jar (380 kB at 3.4 MB/s)
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom (6.0 kB at 749 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0/maven-common-artifact-filters-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0/maven-common-artifact-filters-1.0.pom (2.0 kB at 288 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom (1.6 kB at 3.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (8.8 kB at 151 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom (1.4 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom (2.4 kB at 49 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom (1.3 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom (1.2 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom (723 B at 27 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.pom (5.6 kB at 92 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom (1.4 kB at 92 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom (1.5 kB at 170 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom (1.1 kB at 111 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom (504 B at 72 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom (1.1 kB at 137 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom (812 B at 135 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom (1.3 kB at 183 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom (601 B at 43 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.pom (1.5 kB at 133 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom (400 B at 36 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom (767 B at 21 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom (5.9 kB at 457 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-5/plexus-resources-1.0-alpha-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-5/plexus-resources-1.0-alpha-5.pom (1.4 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.jar (142 kB at 3.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.jar (559 kB at 9.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar (12 kB at 725 kB/s)
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:report (post-unit-test) @ oak-parent ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ oak-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.pom (2.1 kB at 261 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.5/doxia-modules-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.5/doxia-modules-1.5.pom (2.6 kB at 69 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.5/doxia-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.5/doxia-1.5.pom (18 kB at 552 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom (1.9 kB at 110 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom (2.6 kB at 368 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom (1.7 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom (2.1 kB at 173 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom (2.1 kB at 110 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom (2.1 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.5/doxia-module-xhtml-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.5/doxia-module-xhtml-1.5.pom (1.6 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.5/doxia-core-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.5/doxia-core-1.5.pom (4.1 kB at 59 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.5/doxia-sink-api-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.5/doxia-sink-api-1.5.pom (1.5 kB at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.5/doxia-logging-api-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.5/doxia-logging-api-1.5.pom (1.5 kB at 256 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.1/maven-reporting-exec-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.1/maven-reporting-exec-1.1.pom (11 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 368 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 649 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 31 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 222 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 64 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 381 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 895 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 74 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 21 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 338 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 666 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 910 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 198 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 374 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 494 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 76 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 249 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4.0 kB at 578 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 123 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 145 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom (4.0 kB at 670 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom (9.2 kB at 339 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom (2.8 kB at 351 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom (1.7 kB at 122 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.4/doxia-module-apt-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.4/doxia-module-apt-1.4.pom (1.7 kB at 246 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.4/doxia-module-xdoc-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.4/doxia-module-xdoc-1.4.pom (4.6 kB at 659 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom (11 kB at 253 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.5/doxia-integration-tools-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.5/doxia-integration-tools-1.5.pom (6.9 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/2/doxia-tools-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/2/doxia-tools-2.pom (12 kB at 192 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.3/doxia-logging-api-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.3/doxia-logging-api-1.3.pom (1.6 kB at 235 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.3/doxia-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.3/doxia-1.3.pom (18 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.3/doxia-decoration-model-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.3/doxia-decoration-model-1.3.pom (3.1 kB at 611 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.3/doxia-sitetools-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.3/doxia-sitetools-1.3.pom (16 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom (5.6 kB at 939 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.pom (6.3 kB at 894 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/project/6.1.25/project-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/project/6.1.25/project-6.1.25.pom (9.2 kB at 124 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom (3.3 kB at 9.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom (16 kB at 785 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.pom (3.9 kB at 484 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom (2.7 kB at 382 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom (13 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom (17 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.jar (14 kB at 972 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar (59 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar (38 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar (20 kB at 566 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar (73 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar (185 kB at 4.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar (155 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar (22 kB at 435 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 898 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 2.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 230 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 599 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 916 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar (134 kB at 1.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar (237 kB at 2.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 4.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 1.0 MB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ oak-parent ---
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-parent/pom.xml to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/oak-parent-1.4-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Commons 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-commons ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-commons ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-commons ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-commons ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom (867 B at 87 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom (3.8 kB at 549 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3.0 kB at 603 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom (692 B at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom (688 B at 98 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom (1.2 kB at 178 kB/s)
+[INFO] Compiling 35 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ oak-commons ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ oak-commons ---
+[INFO] Compiling 23 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ oak-commons ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:report (post-unit-test) @ oak-commons ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:bundle (default-bundle) @ oak-commons ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ oak-commons ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ oak-commons ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/target/oak-commons-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:baseline (baseline) @ oak-commons ---
+[INFO] Skipping Baseline execution
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ oak-commons ---
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/target/oak-commons-1.4-SNAPSHOT.jar to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/oak-commons-1.4-SNAPSHOT.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/pom.xml to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/oak-commons-1.4-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-commons/target/oak-commons-1.4-SNAPSHOT-tests.jar to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/oak-commons-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:install (default-install) @ oak-commons ---
+[INFO] Local OBR update disabled (enable with -DobrRepository)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Blob Store 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-blob ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-blob ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-blob ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-blob ---
+[INFO] Compiling 18 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/classes
+[INFO] 
+[INFO] --- maven-scr-plugin:1.16.0:scr (generate-scr-scrdescriptor) @ oak-blob ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.2/maven-archiver-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.2/maven-archiver-2.2.pom (1.3 kB at 162 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/3/maven-shared-components-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/3/maven-shared-components-3.pom (2.0 kB at 2.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom (10.0 kB at 6.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.scr.generator/1.9.0/org.apache.felix.scr.generator-1.9.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.scr.generator/1.9.0/org.apache.felix.scr.generator-1.9.0.pom (4.1 kB at 688 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.pom (2.0 kB at 1.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.0/asm-parent-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.0/asm-parent-4.0.pom (5.5 kB at 104 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar (30 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar (21 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.jar (78 kB at 4.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar (79 kB at 3.9 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar (195 kB at 7.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar (51 kB at 392 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.jar (105 kB at 787 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.jar (213 kB at 1.6 MB/s)
+[INFO] Writing 1 Service Component Descriptors to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/classes/OSGI-INF/org.apache.jackrabbit.oak.spi.blob.osgi.FileBlobStoreService.xml
+[INFO] Writing 1 Service Component Descriptors to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/classes/OSGI-INF/org.apache.jackrabbit.oak.spi.blob.osgi.SplitBlobStoreService.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ oak-blob ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ oak-blob ---
+[INFO] Compiling 6 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ oak-blob ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:report (post-unit-test) @ oak-blob ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:bundle (default-bundle) @ oak-blob ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ oak-blob ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ oak-blob ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/oak-blob-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:baseline (baseline) @ oak-blob ---
+[INFO] Skipping Baseline execution
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ oak-blob ---
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/oak-blob-1.4-SNAPSHOT.jar to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/oak-blob-1.4-SNAPSHOT.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/pom.xml to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/oak-blob-1.4-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob/target/oak-blob-1.4-SNAPSHOT-tests.jar to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/oak-blob-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:install (default-install) @ oak-blob ---
+[INFO] Local OBR update disabled (enable with -DobrRepository)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Cloud Blob Store 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-blob-cloud ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-blob-cloud ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-blob-cloud ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-blob-cloud ---
+[INFO] Compiling 6 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/target/classes
+[INFO] 
+[INFO] --- maven-scr-plugin:1.16.0:scr (generate-scr-scrdescriptor) @ oak-blob-cloud ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ oak-blob-cloud ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ oak-blob-cloud ---
+[INFO] Compiling 7 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ oak-blob-cloud ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:report (post-unit-test) @ oak-blob-cloud ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:bundle (default-bundle) @ oak-blob-cloud ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ oak-blob-cloud ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ oak-blob-cloud ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/target/oak-blob-cloud-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:baseline (baseline) @ oak-blob-cloud ---
+[INFO] Skipping Baseline execution
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ oak-blob-cloud ---
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/target/oak-blob-cloud-1.4-SNAPSHOT.jar to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-blob-cloud/1.4-SNAPSHOT/oak-blob-cloud-1.4-SNAPSHOT.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/pom.xml to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-blob-cloud/1.4-SNAPSHOT/oak-blob-cloud-1.4-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-blob-cloud/target/oak-blob-cloud-1.4-SNAPSHOT-tests.jar to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-blob-cloud/1.4-SNAPSHOT/oak-blob-cloud-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.0.0:install (default-install) @ oak-blob-cloud ---
+[INFO] Local OBR update disabled (enable with -DobrRepository)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Core 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-core ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-core ---
+[INFO] Compiling 957 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-core/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-core/src/main/java/org/apache/jackrabbit/oak/plugins/document/mongo/MongoDocumentStore.java:[907,76] error: incomparable types: long and Number
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak JCR Binding 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-core/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-core/1.4-SNAPSHOT/oak-core-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-core/1.4-SNAPSHOT/oak-core-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak upgrade 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-jcr/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-jcr/1.4-SNAPSHOT/oak-jcr-1.4-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak HTTP Binding 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Lucene 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-jcr/1.4-SNAPSHOT/oak-jcr-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Solr core 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Solr OSGi 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-solr-core/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-solr-core/1.4-SNAPSHOT/oak-solr-core-1.4-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak External Authentication Support 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak LDAP Authentication Support 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-auth-external/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-auth-external/1.4-SNAPSHOT/oak-auth-external-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-auth-external/1.4-SNAPSHOT/oak-auth-external-1.4-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak TarMK Standby 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Remote API 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak CUG 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Runnable Jar 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-http/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-remote/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-authorization-cug/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-lucene/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-tarmk-standby/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-solr-osgi/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-http/1.4-SNAPSHOT/oak-http-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-remote/1.4-SNAPSHOT/oak-remote-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-lucene/1.4-SNAPSHOT/oak-lucene-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-tarmk-standby/1.4-SNAPSHOT/oak-tarmk-standby-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-authorization-cug/1.4-SNAPSHOT/oak-authorization-cug-1.4-SNAPSHOT.jar
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-solr-osgi/1.4-SNAPSHOT/oak-solr-osgi-1.4-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Integration Tests for OSGi deployments 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak PojoSR 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Exercises 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Web Application Example 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-pojosr/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-pojosr/1.4-SNAPSHOT/oak-pojosr-1.4-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Standalone Example 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Examples 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-examples ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-examples ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:report (post-unit-test) @ oak-examples ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ oak-examples ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ oak-examples ---
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-examples/pom.xml to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/oak-examples/1.4-SNAPSHOT/oak-examples-1.4-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Jackrabbit Oak 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ jackrabbit-oak ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ jackrabbit-oak ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:report (post-unit-test) @ jackrabbit-oak ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ jackrabbit-oak ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ jackrabbit-oak ---
+[INFO] Installing /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/pom.xml to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/.m2/org/apache/jackrabbit/jackrabbit-oak/1.4-SNAPSHOT/jackrabbit-oak-1.4-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Oak Parent POM ..................................... SUCCESS [ 12.098 s]
+[INFO] Oak Commons ........................................ SUCCESS [ 29.797 s]
+[INFO] Oak Blob Store ..................................... SUCCESS [ 51.673 s]
+[INFO] Oak Cloud Blob Store ............................... SUCCESS [ 43.359 s]
+[INFO] Oak Core ........................................... FAILURE [ 17.793 s]
+[INFO] Oak JCR Binding .................................... FAILURE [  0.457 s]
+[INFO] Oak upgrade ........................................ FAILURE [  0.376 s]
+[INFO] Oak HTTP Binding ................................... FAILURE [  0.017 s]
+[INFO] Oak Lucene ......................................... FAILURE [  0.295 s]
+[INFO] Oak Solr core ...................................... FAILURE [  0.207 s]
+[INFO] Oak Solr OSGi ...................................... FAILURE [  0.380 s]
+[INFO] Oak External Authentication Support ................ FAILURE [  0.013 s]
+[INFO] Oak LDAP Authentication Support .................... FAILURE [  0.612 s]
+[INFO] Oak TarMK Standby .................................. FAILURE [  0.040 s]
+[INFO] Oak Remote API ..................................... FAILURE [  0.036 s]
+[INFO] Oak CUG ............................................ FAILURE [  0.007 s]
+[INFO] Oak Runnable Jar ................................... FAILURE [  1.420 s]
+[INFO] Oak Integration Tests for OSGi deployments ......... FAILURE [  0.146 s]
+[INFO] Oak PojoSR ......................................... FAILURE [  0.034 s]
+[INFO] Oak Exercises ...................................... FAILURE [  0.010 s]
+[INFO] Oak Web Application Example ........................ FAILURE [  0.420 s]
+[INFO] Oak Standalone Example ............................. FAILURE [  0.200 s]
+[INFO] Oak Examples ....................................... SUCCESS [  0.025 s]
+[INFO] Jackrabbit Oak ..................................... SUCCESS [  0.053 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:40 min
+[INFO] Finished at: 2020-03-15T07:36:59-07:00
+[INFO] Final Memory: 84M/1367M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project oak-core: Compilation failure
+[ERROR] /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-core/src/main/java/org/apache/jackrabbit/oak/plugins/document/mongo/MongoDocumentStore.java:[907,76] error: incomparable types: long and Number
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal on project oak-jcr: Could not resolve dependencies for project org.apache.jackrabbit:oak-jcr:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT: Could not find artifact org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in apache.snapshots (http://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project oak-upgrade: Could not resolve dependencies for project org.apache.jackrabbit:oak-upgrade:jar:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-http: Could not resolve dependencies for project org.apache.jackrabbit:oak-http:bundle:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-lucene: Could not resolve dependencies for project org.apache.jackrabbit:oak-lucene:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:tests:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-solr-core: Could not resolve dependencies for project org.apache.jackrabbit:oak-solr-core:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-solr-osgi: Could not resolve dependencies for project org.apache.jackrabbit:oak-solr-osgi:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-solr-core:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-auth-external: Could not resolve dependencies for project org.apache.jackrabbit:oak-auth-external:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-auth-ldap: Could not resolve dependencies for project org.apache.jackrabbit:oak-auth-ldap:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-auth-external:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-auth-external:jar:tests:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-tarmk-standby: Could not resolve dependencies for project org.apache.jackrabbit:oak-tarmk-standby:bundle:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-remote: Could not resolve dependencies for project org.apache.jackrabbit:oak-remote:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-authorization-cug: Could not resolve dependencies for project org.apache.jackrabbit:oak-authorization-cug:bundle:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:tests:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-run: Could not resolve dependencies for project org.apache.jackrabbit:oak-run:jar:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-http:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-remote:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-authorization-cug:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-lucene:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-solr-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-tarmk-standby:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-solr-osgi:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-it-osgi: Could not resolve dependencies for project org.apache.jackrabbit:oak-it-osgi:jar:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-lucene:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-pojosr: Could not resolve dependencies for project org.apache.jackrabbit:oak-pojosr:jar:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-lucene:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-exercise: Could not resolve dependencies for project org.apache.jackrabbit:oak-exercise:jar:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-jcr:jar:tests:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:tests:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-webapp: Could not resolve dependencies for project org.apache.jackrabbit:oak-webapp:war:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-pojosr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-lucene:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project oak-standalone: Could not resolve dependencies for project org.apache.jackrabbit:oak-standalone:jar:1.4-SNAPSHOT: The following artifacts could not be resolved: org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-core:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-pojosr:jar:1.4-SNAPSHOT, org.apache.jackrabbit:oak-lucene:jar:1.4-SNAPSHOT: Failure to find org.apache.jackrabbit:oak-jcr:jar:1.4-SNAPSHOT in http://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :oak-core
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak Core 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/maven-metadata.xml (604 B at 977 B/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 1.8 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob-cloud/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob-cloud/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 402 B/s)
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-core ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-core ---
+[INFO] Compiling 434 source files to /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-core/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-core/src/main/java/org/apache/jackrabbit/oak/plugins/document/mongo/MongoDocumentStore.java:[907,76] error: incomparable types: long and Number
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:17 min
+[INFO] Finished at: 2020-03-15T07:38:21-07:00
+[INFO] Final Memory: 38M/1158M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project oak-core: Compilation failure
+[ERROR] /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_90ad50da_java-8/oak-core/src/main/java/org/apache/jackrabbit/oak/plugins/document/mongo/MongoDocumentStore.java:[907,76] error: incomparable types: long and Number
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

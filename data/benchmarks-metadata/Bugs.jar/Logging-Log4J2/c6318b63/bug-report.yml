@@ -1,0 +1,5 @@
+---
+BugID: LOG4J2-1310
+Summary: JndiLookup mindlessly casts to String and should use String.valueOf()
+Description: The value returned from Context.lookup() is cast to String which can
+  cause problems if the value is, well, anything else.

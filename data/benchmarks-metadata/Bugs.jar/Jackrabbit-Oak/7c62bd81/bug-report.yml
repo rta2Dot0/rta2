@@ -1,0 +1,9 @@
+---
+BugID: OAK-1516
+Summary: PhraseQuery fails due to missing posiion info in indexed fields
+Description: "Following OAK-1487 I've introduced a regression in the indexing of fields
+  on the Lucene index.\nThere are some types of queries (the ones that use property
+  restrictions) that cannot run anymore.\n\nbq. /jcr:root/content/dam//*[jcr:contains(jcr:content/metadata/@dc:format,
+  'application/pdf')] \n\nbq. Caused by: java.lang.IllegalStateException: field \"dc:format\"
+  was indexed without position data; cannot run PhraseQuery (term=text)\n\nI could
+  not reproduce this in an unit test so far."

@@ -1,0 +1,9 @@
+---
+BugID: WICKET-5686
+Summary: "@Inject should require the bean dependency instead of setting null"
+Description: |-
+  When using {{@SpringBean}}, if the bean cannot be injected then Wicket will throw {{Exception}}.
+
+  However current behavior if when using {{@Inject}} inside component, the field will be left as null. This is inconsistent behavior with what CDI spec and how the "real" Spring does it.
+
+  Wicket should change its behavior so that {{@Inject}} is always required. If the dependency is optional the user can use {{@SpringBean(required=false)}} as always.

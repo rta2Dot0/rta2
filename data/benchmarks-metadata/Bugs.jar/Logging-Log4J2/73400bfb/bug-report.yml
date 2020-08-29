@@ -1,0 +1,14 @@
+---
+BugID: LOG4J2-793
+Summary: Log4jLogger only accepts Log4jMarker, not SLF4J's Marker
+Description: |+
+  We're using Log4j 2 via SLF4J. A Logger's log methods have signatures like this:
+  public abstract void warn(org.slf4j.Marker marker, java.lang.String msg)
+
+  If you use an object that is an Marker but not a Log4jMarker this fails at org.apache.logging.slf4j.Log4jLogger.getMarker(Log4jLogger.java:378) due to "cannot be cast to org.apache.logging.slf4j.Log4jMarker".
+
+  Use case: we have a defined set of Markers. There's an enum for this, implementing SLF4J's marker interface. Obviously with Log4j we cannot use this enum.
+
+  I think an org.apache.logging.slf4j.Log4jLogger cannot expect an org.apache.logging.slf4j.Log4jMarker.
+
+

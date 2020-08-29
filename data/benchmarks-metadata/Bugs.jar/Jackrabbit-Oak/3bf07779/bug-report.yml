@@ -1,0 +1,18 @@
+---
+BugID: OAK-2999
+Summary: Index updation fails on updating multivalued property
+Description: "On emptying a multivalued property, fulltext index updation fails and
+  one can search on old values. Following test demonstrates the issue.\nAdded below
+  test in [LuceneIndexQueryTest.java|https://github.com/apache/jackrabbit-oak/blob/trunk/oak-lucene/src/test/java/org/apache/jackrabbit/oak/plugins/index/lucene/LuceneIndexQueryTest.java]
+  which should pass - \n{code}\n    @Test\n    public void testMultiValuedPropUpdate()
+  throws Exception {\n        Tree test = root.getTree(\"/\").addChild(\"test\");\n
+  \       String child = \"child\";\n        String mulValuedProp = \"prop\";\n        test.addChild(child).setProperty(mulValuedProp,
+  of(\"foo\",\"bar\"), Type.STRINGS);\n        root.commit();\n        assertQuery(\n
+  \               \"/jcr:root//*[jcr:contains(@\" + mulValuedProp + \", 'foo')]\",\n
+  \               \"xpath\", ImmutableList.of(\"/test/\" + child));\n        test.getChild(child).setProperty(mulValuedProp,
+  new ArrayList<String>(), Type.STRINGS);\n        root.commit();\n        assertQuery(\n
+  \               \"/jcr:root//*[jcr:contains(@\" + mulValuedProp + \", 'foo')]\",\n
+  \               \"xpath\", new ArrayList<String>());\n\n        test.getChild(child).setProperty(mulValuedProp,
+  of(\"bar\"), Type.STRINGS);\n        root.commit();\n        assertQuery(\n                \"/jcr:root//*[jcr:contains(@\"
+  + mulValuedProp + \", 'foo')]\",\n                \"xpath\", new ArrayList<String>());\n\n
+  \   }\n{code}"

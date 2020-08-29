@@ -1,0 +1,14 @@
+---
+BugID: WICKET-294
+Summary: 'WebRequestCodingStrategy: path mounting and matching'
+Description: |+
+  Assuming a mount path to "/p", it will match /pxyz
+
+  Assuming this is the desired behavior of matching (warning), then to avoid this match it should be declared "/p/" but it will create urls such as '/app/p//SomePage'. which is wrong.
+
+  In the servlet specs,  the mapping syntax '/p' is an exact match, this is not what you want in your case since you're doing path mapping, so the syntax if you want to stick close to the servlet specs should be '/p/*' or if you wan to get close to mod_proxy syntax it would be '/p/'
+
+  Note that the examples are also using this wrong mapping declaration. In the example below: both should throw a 404:
+  http://www.wicket-library.com/wicket-examples/niceurl/my/mounted/packageXXX
+  http://www.wicket-library.com/wicket-examples/niceurl/my/mounted/Xpackage
+

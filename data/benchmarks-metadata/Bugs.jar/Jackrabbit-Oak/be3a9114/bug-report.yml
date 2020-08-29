@@ -1,0 +1,7 @@
+---
+BugID: OAK-2430
+Summary: TARMK Cold Standby size increase due to checkpoints copy
+Description: The current sync design gets confused by existing checkpoints and tries
+  to copy them by value, bypassing the current storage optimization where there are
+  a lot of references to existing content. this can result in a considerable size
+  increase on the standby.

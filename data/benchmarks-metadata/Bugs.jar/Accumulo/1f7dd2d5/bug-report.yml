@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-2742
+Summary: History command incorrectly numbers commands
+Description: |-
+  When you use the history command, it will provide you with a list of previous commands that have been executed, each with a command number. However, if you try to use history expansion by number to invoke one of those commands, you will be off by one.
+
+  I think this is because the history command in added to the list after it shows you the list, and pushes everything else up by one. Uncertain if this is something we do wrong, or if this is an upstream JLine bug.

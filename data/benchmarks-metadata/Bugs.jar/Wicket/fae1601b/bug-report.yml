@@ -1,0 +1,14 @@
+---
+BugID: WICKET-2368
+Summary: Page.checkRendering fails after setting BorderBodyContainer visiblity to
+  false
+Description: "After toggling visibility of the BorderBodyContainer to false the Page.checkRendering
+  method fails in line 1157, claiming an iterator IllegalStateException. This happens
+  because iterator.remove() is called twice for a child component in the border component,
+  if the body is not visible.\n\nMy Code:\n\npublic class TogglePanel extends Border
+  {\n\tprivate boolean expanded = true;\n\n\tpublic TogglePanel(String id, IModel<String>
+  titleModel) {\n\t\tsuper(id, titleModel);\n\n\t\tLink link = new Link(\"title\")
+  {\n\n\t\t\t@Override\n\t\t\tpublic void onClick() {\n\t\t\t\texpanded = !expanded;\n\t\t\t\tgetBodyContainer().setVisible(expanded);\n\t\t\t}\n\t\t};\n\t\tlink.add(new
+  Label(\"titleLabel\", titleModel));\n\n\t\tadd(link);\n\t}\n\n}\n\nMarkup:\n\n<wicket:border>\n\t<h3
+  class=\"collapse\" wicket:id=\"title\">\n\t\t<span class=\"label\" wicket:id=\"titleLabel\">Panel
+  Title</span>\n\t\t<a class=\"foldicon\">&nbsp;</a>\n\t</h3>\n\t<wicket:body />\n</wicket:border>\n\n"

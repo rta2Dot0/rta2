@@ -1,0 +1,7 @@
+---
+BugID: OAK-2047
+Summary: Missing privileges after repository upgrade
+Description: "After upgrading from Jackrabbit classic all Oak specific privileges
+  are missing (rep:userManagement, rep:readNodes, rep:readProperties, rep:addProperties,\nrep:alterProperties,
+  rep:removeProperties, rep:indexDefinitionManagement).\n\nThe reason seems to be
+  that the {{PrivilegeInitializer}} is not run during upgrade. "

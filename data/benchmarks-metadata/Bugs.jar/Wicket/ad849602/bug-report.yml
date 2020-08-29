@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4824
+Summary: Redirect to HTTPS is using wrong port 80 if HttpsConfig with default ports
+  80/443 is used
+Description: |-
+  HttpsMapper#mapHandler() doesn't set the Url's port, if the desired protocol uses the standard port.
+
+  This leads to UrlRenderer choosing to the request's port as fallback (which is 80 before switching to https).

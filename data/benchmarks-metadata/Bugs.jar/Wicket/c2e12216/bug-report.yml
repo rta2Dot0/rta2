@@ -1,0 +1,18 @@
+---
+BugID: WICKET-5518
+Summary: FormComponent.updateCollectionModel  does not handle unmodifiableList
+Description: "FormComponent.updateCollectionModel should handle situation, when getter
+  returns unmodifiable list.\n\nProposed solution:\n\n\t\t\tformComponent.modelChanging();\n\t\t\tbooelan
+  isChanged;\n\t\t\ttry {\n\t\t\t\tcollection.clear();\n\t\t\t\tif (convertedInput
+  != null)\n\t\t\t\t{\n\t\t\t\t\tcollection.addAll(convertedInput);\n\t\t\t\t}\n\t\t\t\tisChanged
+  = true;\n\t\t\tcatch (Exception e)\n\t\t\t{\n\t\t\t\t// ignore this exception as
+  Unmodifiable list does not allow change \t\t\t\t\n\t\t\t\tlogger.info(\"An error
+  occurred while trying to modify list attached to \" + formComponent, e);\n\t\t\t}\n\n\t\t\ttry\n\t\t\t{\n\t\t\t\tif(isChanged)\t\t\t\t\n\t\t\t\t\tformComponent.getModel().setObject(collection);\n\t\t\t\telse
+  \n\t\t\t\t\t// TODO: create here collection as non-abstract successor of setObject
+  declared argument\n\t\t\t\t\tformComponent.getModel().setObject(new ArrayList(convertedInput));\n\t\t\t\tisChanged
+  = true;\n\t\t\t}\n\t\t\tcatch (Exception e)\n\t\t\t{\n\t\t\t\t// ignore this exception
+  because it could be that there\n\t\t\t\t// is not setter for this collection.\n\t\t\t\tlogger.info(\"An
+  error occurred while trying to set the new value for the property attached to \"
+  + formComponent, e);\n\t\t\t}\n\t\t\t// at least one update method should pass successfully\t\t\t\n\t\t\tif(isChanged)\n\t\t\t\tformComponent.modelChanged();\n\t\t\telse\n\t\t\t\tthrow
+  new RuntimeException(\"An error occurred while trying to modify value for the property
+  attached to \" + formComponent);\t   "

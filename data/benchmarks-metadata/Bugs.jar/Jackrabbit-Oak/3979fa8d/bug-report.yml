@@ -1,0 +1,20 @@
+---
+BugID: OAK-2799
+Summary: OakIndexInput cloned instances are not closed
+Description: |-
+  Related to the inspections I was doing for OAK-2798 I also noticed that we don't fully comply with the {{IndexInput}} javadoc [1] as the cloned instances should throw the given exception if original is closed, but I also think that the original instance should close the cloned instances, see also [ByteBufferIndexInput#close|https://github.com/apache/lucene-solr/blob/lucene_solr_4_7_1/lucene/core/src/java/org/apache/lucene/store/ByteBufferIndexInput.java#L271].
+
+  [1] : {code}
+  /** Abstract base class for input from a file in a {@link Directory}.  A
+   * random-access input stream.  Used for all Lucene index input operations.
+   *
+   * <p>{@code IndexInput} may only be used from one thread, because it is not
+   * thread safe (it keeps internal state like file position). To allow
+   * multithreaded use, every {@code IndexInput} instance must be cloned before
+   * used in another thread. Subclasses must therefore implement {@link #clone()},
+   * returning a new {@code IndexInput} which operates on the same underlying
+   * resource, but positioned independently. Lucene never closes cloned
+   * {@code IndexInput}s, it will only do this on the original one.
+   * The original instance must take care that cloned instances throw
+   * {@link AlreadyClosedException} when the original one is closed.
+  {code}

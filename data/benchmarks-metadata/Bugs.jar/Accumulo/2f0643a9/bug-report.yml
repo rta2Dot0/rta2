@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-178
+Summary: Off-by-one error in FamilyIntersectingIterator
+Description: In the buildDocKey() function within the FamilyIntersectingIterator there
+  is a bug that shortens the docID by 1.  This causes the wrong doc's data to be returned
+  in the results of a query using this Iterator.

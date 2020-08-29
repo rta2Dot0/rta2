@@ -1,0 +1,59 @@
+---
+BugID: OAK-2049
+Summary: ArrayIndexOutOfBoundsException in Segment.getRefId()
+Description: |-
+  It looks like there is some SegmentMK bug that causes the {{Segment.getRefId()}} to throw an {{ArrayIndexOutOfBoundsException}} in some fairly rare corner cases.
+  The data was originally migrated into oak via the crx2oak tool mentioned here: http://docs.adobe.com/docs/en/aem/6-0/deploy/upgrade.html
+  That tool uses *oak-core-1.0.0* creating an oak instance.
+
+  Similar to OAK-1566 this system was using FileDataStore with SegmentNodeStore.
+
+  In this case the error is seen when running offline compaction using oak-run-1.1-SNAPSHOT.jar (latest).
+
+  {code:none}
+  > java -Xmx4096m -jar oak-run-1.1-SNAPSHOT.jar compact /oak/crx-quickstart/repository/segmentstore
+  Apache Jackrabbit Oak 1.1-SNAPSHOT
+  Compacting /wcm/cq-author/crx-quickstart/repository/segmentstore
+  before [data00055a.tar, data00064a.tar, data00045b.tar, data00005a.tar, data00018a.tar, data00022a.tar, data00047a.tar, data00037a.tar, data00049a.tar, data00014a.tar, data00066a.tar, data00020a.tar, data00058a.tar, data00065a.tar, data00069a.tar, data00012a.tar, data00009a.tar, data00060a.tar, data00041a.tar, data00016a.tar, data00072a.tar, data00048a.tar, data00061a.tar, data00053a.tar, data00038a.tar, data00001a.tar, data00034a.tar, data00003a.tar, data00052a.tar, data00006a.tar, data00027a.tar, data00031a.tar, data00056a.tar, data00035a.tar, data00063a.tar, data00068a.tar, data00008v.tar, data00010a.tar, data00043b.tar, data00021a.tar, data00017a.tar, data00024a.tar, data00054a.tar, data00051a.tar, data00057a.tar, data00059a.tar, data00036a.tar, data00033a.tar, data00019a.tar, data00046a.tar, data00067a.tar, data00004a.tar, data00044a.tar, data00013a.tar, data00070a.tar, data00026a.tar, data00002a.tar, data00011a.tar, journal.log, data00030a.tar, data00042a.tar, data00025a.tar, data00062a.tar, data00023a.tar, data00071a.tar, data00032b.tar, data00040a.tar, data00015a.tar, data00029a.tar, data00050a.tar, data00000a.tar, data00007a.tar, data00028a.tar, data00039a.tar]
+  -> compacting
+  Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 206
+  at org.apache.jackrabbit.oak.plugins.segment.Segment.getRefId(Segment.java:191)
+  at org.apache.jackrabbit.oak.plugins.segment.Segment.internalReadRecordId(Segment.java:299)
+  at org.apache.jackrabbit.oak.plugins.segment.Segment.readRecordId(Segment.java:295)
+  at org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState.getTemplateId(SegmentNodeState.java:69)
+  at org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState.getTemplate(SegmentNodeState.java:78)
+  at org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState.getProperties(SegmentNodeState.java:150)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:154)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor$CompactDiff.childNodeAdded(Compactor.java:124)
+  at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:160)
+  at org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState.compareAgainstBaseState(SegmentNodeState.java:395)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor.process(Compactor.java:80)
+  at org.apache.jackrabbit.oak.plugins.segment.Compactor.compact(Compactor.java:85)
+  at org.apache.jackrabbit.oak.plugins.segment.file.FileStore.compact(FileStore.java:438)
+  at org.apache.jackrabbit.oak.run.Main.compact(Main.java:311)
+  at org.apache.jackrabbit.oak.run.Main.main(Main.java:133)
+  {code}

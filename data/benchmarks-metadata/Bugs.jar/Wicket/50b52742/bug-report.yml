@@ -1,0 +1,10 @@
+---
+BugID: WICKET-4301
+Summary: ByteArrayResource throws error if data is null
+Description: |-
+  When ByteArrayResource#getData(org.apache.wicket.request.resource.IResource.Attributes) returns null, the class throws a WicketRuntimeException.
+
+  This behavior differs from DynamicImageResource and ResourceStreamResource which instead issue the following call:
+  response.setError(HttpServletResponse.SC_NOT_FOUND);
+
+  ByteArrayResource should follow the same behavior. This would allow for instance to use it for resources which depend on the contents of attributes.getParameters(). When the parameters are invalid, a 404 should be issued instead of an exception.

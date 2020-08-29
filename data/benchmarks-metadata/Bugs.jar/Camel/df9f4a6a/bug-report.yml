@@ -1,0 +1,10 @@
+---
+BugID: CAMEL-4536
+Summary: Using AuthorizationPolicy on a Route prevents Processors from being exposed
+  via JMX
+Description: "Using AuthorizationPolicy on a route (e.g., using .policy(myAuthPolicy)
+  in a Java DSL) prevents that processors on this route are exposed via JMX. \n\nSteps
+  to reproduce:\n\n-) Start the Camel app in the attached test case (MyRouteBuilder)\n-)
+  Open JConsole\n-) Connect to the corresponding local process\n-) Under \"processors\"
+  only the processors from the route without the policy are shown, but not the ones
+  from the route where a policy is used"

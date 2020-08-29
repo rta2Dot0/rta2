@@ -1,0 +1,17 @@
+---
+BugID: LOG4J2-104
+Summary: LogManager initialization failed when running from Jdeveloper.
+Description: "This issue was incorrectly opened in bugzilla as https://issues.apache.org/bugzilla/show_bug.cgi?id=54053
+  by Evgeny.\n\n\nSteps to Reproduce:\n//config file presents or not - does not meter.\n\nRun
+  / Debug simple application:\n\nimport org.apache.logging.log4j.LogManager;\nimport
+  org.apache.logging.log4j.Logger;\n\npublic class test_log {\n    public test_log()
+  {\n        super();\n    }\n    \n    static Logger logger = LogManager.getLogger(test_log.class.getName());\n\n
+  \   public static void main(String[] args) {\n        test_log test_log = new test_log();\n
+  \     \n        logger.entry();\n\n        logger.debug(\"test\");\n\n        logger.error(\"test
+  Err\");\n\n        logger.exit();\n    \n\n    }\n...\n}\n\nActual Results:\nFailed
+  with error\njava.lang.ExceptionInInitializerError\n\tat view.test_log.<clinit>(test_log.java:13)\nCaused
+  by: java.lang.ClassCastException: oracle.xml.parser.v2.DTD cannot be cast to org.w3c.dom.Element\n\tat
+  java.util.XMLUtils.load(XMLUtils.java:61)\n\tat java.util.Properties.loadFromXML(Properties.java:852)\n\tat
+  org.apache.logging.log4j.LogManager.<clinit>(LogManager.java:77)\n\nAdditional Info:\nWhen
+  xmlparserv2.jar is deleted - application run fine.\nBut - it have to be presents
+  - when deleted, JDeveloper failed to start."

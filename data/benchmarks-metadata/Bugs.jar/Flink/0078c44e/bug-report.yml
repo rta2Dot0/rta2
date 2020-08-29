@@ -1,0 +1,23 @@
+---
+BugID: FLINK-1978
+Summary: POJO serialization NPE
+Description: "NullPointer on serialization of a Date field:\n\nCaused by: java.lang.RuntimeException:
+  Error obtaining the sorted input: Thread 'SortMerger Reading Thread' terminated
+  due to an exception: null\n\tat org.apache.flink.runtime.operators.sort.UnilateralSortMerger.getIterator(UnilateralSortMerger.java:607)\n\tat
+  org.apache.flink.runtime.operators.RegularPactTask.getInput(RegularPactTask.java:1132)\n\tat
+  org.apache.flink.runtime.operators.CoGroupDriver.prepare(CoGroupDriver.java:98)\n\tat
+  org.apache.flink.runtime.operators.RegularPactTask.run(RegularPactTask.java:464)\n\t...
+  3 more\nCaused by: java.io.IOException: Thread 'SortMerger Reading Thread' terminated
+  due to an exception: null\n\tat org.apache.flink.runtime.operators.sort.UnilateralSortMerger$ThreadBase.run(UnilateralSortMerger.java:784)\nCaused
+  by: java.lang.NullPointerException\n\tat org.apache.flink.api.common.typeutils.base.DateSerializer.deserialize(DateSerializer.java:72)\n\tat
+  org.apache.flink.api.common.typeutils.base.DateSerializer.deserialize(DateSerializer.java:1)\n\tat
+  org.apache.flink.api.java.typeutils.runtime.PojoSerializer.deserialize(PojoSerializer.java:487)\n\tat
+  org.apache.flink.api.java.typeutils.runtime.TupleSerializer.deserialize(TupleSerializer.java:136)\n\tat
+  org.apache.flink.api.java.typeutils.runtime.TupleSerializer.deserialize(TupleSerializer.java:30)\n\tat
+  org.apache.flink.runtime.plugable.ReusingDeserializationDelegate.read(ReusingDeserializationDelegate.java:57)\n\tat
+  org.apache.flink.runtime.io.network.api.serialization.SpillingAdaptiveSpanningRecordDeserializer.getNextRecord(SpillingAdaptiveSpanningRecordDeserializer.java:111)\n\tat
+  org.apache.flink.runtime.io.network.api.reader.AbstractRecordReader.getNextRecord(AbstractRecordReader.java:64)\n\tat
+  org.apache.flink.runtime.io.network.api.reader.MutableRecordReader.next(MutableRecordReader.java:34)\n\tat
+  org.apache.flink.runtime.operators.util.ReaderIterator.next(ReaderIterator.java:59)\n\tat
+  org.apache.flink.runtime.operators.sort.UnilateralSortMerger$ReadingThread.go(UnilateralSortMerger.java:958)\n\tat
+  org.apache.flink.runtime.operators.sort.UnilateralSortMerger$ThreadBase.run(UnilateralSortMerger.java:781)"

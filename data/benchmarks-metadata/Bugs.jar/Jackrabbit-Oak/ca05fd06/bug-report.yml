@@ -1,0 +1,17 @@
+---
+BugID: OAK-4387
+Summary: 'XPath: querying for nodes named "text", "element", and "rep:excerpt" fails'
+Description: |-
+  Queries that contain "text" or "element" as a node name currently fail, because the the parser assumes "text()" / "element(...)". Example query that fails:
+
+  {noformat}
+  /jcr:root/content/text/jcr:content//element(*,nt:unstructured)
+  {noformat}
+
+  A workaround is to use the escape mechanism, that is:
+
+  {noformat}
+  /jcr:root/tmp/_x0074_ext/jcr:content//element(*,nt:unstructured)
+  {noformat}
+
+  It looks like '(' and ')' are valid characters in node names, but to query for those characters, they need to be escaped.

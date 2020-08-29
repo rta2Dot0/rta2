@@ -1,0 +1,7 @@
+---
+BugID: OAK-1308
+Summary: XPath queries with ISO9075 escaped properties don't work
+Description: "XPath queries with ISO9075 escaped properties or relative path don't
+  work as expected. Example: \n\n{code}\n/jcr:root//*/element(*,rep:User)[_x002e_tokens/@jcr:primaryType]\n{code}\n\nThe
+  relative property should be converted to \".tokens/@jcr:primaryType\", but is not.\n\nThis
+  issue is similar to OAK-1000, but for property names or relative properties."

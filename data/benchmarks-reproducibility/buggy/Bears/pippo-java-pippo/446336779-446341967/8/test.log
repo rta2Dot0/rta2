@@ -1,0 +1,127 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 597 B/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/maven-metadata.xml (599 B at 174 B/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-8/pippo-session-parent/pippo-session/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ pippo-session ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-8/pippo-session-parent/pippo-session/src/test/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ pippo-session ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ pippo-session ---
+[INFO] Surefire report directory: /bam/scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-8/pippo-session-parent/pippo-session/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 69 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 564 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 23 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running ro.pippo.session.EncryptedSessionDataTranscoderTest
+encode
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.3 sec <<< FAILURE!
+test(ro.pippo.session.EncryptedSessionDataTranscoderTest)  Time elapsed: 0.274 sec  <<< ERROR!
+ro.pippo.core.PippoRuntimeException: ro.pippo.core.PippoRuntimeException: Cannot deserialize session. A new one will be created.
+	at ro.pippo.session.EncryptedSessionDataTranscoder.decode(EncryptedSessionDataTranscoder.java:61)
+	at ro.pippo.session.EncryptedSessionDataTranscoderTest.test(EncryptedSessionDataTranscoderTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: ro.pippo.core.PippoRuntimeException: Cannot deserialize session. A new one will be created.
+	at ro.pippo.session.SerializationSessionDataTranscoder.decode(SerializationSessionDataTranscoder.java:54)
+	at ro.pippo.session.EncryptedSessionDataTranscoder.decode(EncryptedSessionDataTranscoder.java:57)
+	... 30 more
+Caused by: java.io.InvalidClassException: Unauthorized deserialization attempt; ro.pippo.session.DefaultSessionData
+	at ro.pippo.session.FilteringObjectInputStream.resolveClass(FilteringObjectInputStream.java:20)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1868)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1751)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2042)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1573)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:431)
+	at ro.pippo.session.SerializationSessionDataTranscoder.decode(SerializationSessionDataTranscoder.java:52)
+	... 31 more
+
+
+Results :
+
+Tests in error: 
+  test(ro.pippo.session.EncryptedSessionDataTranscoderTest): ro.pippo.core.PippoRuntimeException: Cannot deserialize session. A new one will be created.
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 28.739 s
+[INFO] Finished at: 2020-03-13T20:27:46-07:00
+[INFO] Final Memory: 20M/1019M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project pippo-session: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /bam/scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-8/pippo-session-parent/pippo-session/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

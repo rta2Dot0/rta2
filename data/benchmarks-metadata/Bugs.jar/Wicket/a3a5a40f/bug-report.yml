@@ -1,0 +1,61 @@
+---
+BugID: WICKET-5460
+Summary: onBeforeRender called too early on stateless page
+Description: |-
+  I'm having a problem with a ListView that displays an outdated list.
+  In my test, the ListView uses a Model that returns a static variable just to make sure the model is independent from any page instance. As far as I can tell, this problem has nothing to do with the model, but with the way Wicket prepares for a request listener invocation.
+
+  The exact setup is this:
+  - the page contains a ListView and (outside of the list) a Link that
+  adds an item to the list in its onClick(). The list itself is stored
+  in a static variable.
+  - the page is stateless
+  - the page's components are created in onInitialize()
+
+  Result:
+  The list doesn't show the most recently added item. Reloading the
+  original page shows the correct list. Note that by "reloading" I mean
+  entering the page's original URL since the browser's address bar now contains the request listener URL due to the page being stateless.
+
+  This is how I think is happens:
+  - Initially rendering the page works fine. The page is then discarded
+  since it's stateless.
+  - Clicking on the link creates a new page instance to invoke the
+  link's request listener.
+  - IPageAndComponentProvider.getComponent() cannot find the link yet
+  since it is not created until onInitialize() has been called.
+  - as a consequence, it calls page.internalInitialize() and
+  internalPrepareForRender(false)
+  - this creates the link, but it also creates the ListView and prepares
+  it for rendering. This in turn polls the ListView's model and creates
+  list items. It also marks the ListView as "prepared for render", which
+  is the crucial point.
+  - The link's request listener runs and adds an item to the list.
+  - After the request listener handler, the page render handler runs
+  - That handler renders the page, including the ListView
+  - ... but it doesn't call onBeforeRender() on the ListView anymore,
+  because it's already marked as "prepared for render"! So it doesn't
+  pick up the new, up-to-date list from its model.
+
+  I'm not sure if I'm "doing it wrong", but then it doesn't seem quite
+  right that onBeforeRender() gets called before invoking the listener,
+  but not actually before rendering. There's probably some kind of logic
+  behind the decision to run onBeforeRender() only when this hasn't yet
+  happened, right? Is there a general way to "unprepare" the component
+  in onClick()?
+
+  ---
+  Re: #internalPrepareForRender(false) should not mark the page as rendered (thus the false parameter).
+
+  The problem is, I think, not that the component is being marked as
+  *rendered*, but as *prepared for render*. From class Component:
+
+  protected void onBeforeRender()
+  {
+    setFlag(FLAG_PREPARED_FOR_RENDER, true);
+    onBeforeRenderChildren();
+    setRequestFlag(RFLAG_BEFORE_RENDER_SUPER_CALL_VERIFIED, true);
+  }
+
+  Note the first line. This causes subsequent invocations of
+  internalBeforeRender() to skip the relevant part.

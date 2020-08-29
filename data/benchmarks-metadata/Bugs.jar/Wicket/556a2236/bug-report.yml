@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4594
+Summary: Do not use the parsed PageParameters when re-creating an expired page
+Description: |-
+  WICKET-4014 and WICKET-4290 provided functionality to re-create an expired page if there is a mount path in the current request's url.
+  There is a minor problem with that because the page parameters are passed to the freshly created page. I.e. parameters for a callback behavior are now set as page construction parameters.
+  Since the execution of the behavior is ignored for the recreated page these parameters should be ignored too.

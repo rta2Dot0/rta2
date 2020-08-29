@@ -1,0 +1,8 @@
+---
+BugID: OAK-1789
+Summary: Upgraded version history has UUIDs as jcr:frozenUuid of non-referenceable
+  nodes
+Description: |-
+  In Jackrabbit Classic each node, even non-referenceable ones, has a UUID as its identifier, and thus the {{jcr:frozenUuid}} properties of frozen nodes are always UUIDs. In contrast Oak uses path identifiers for non-referenceable frozen nodes (see OAK-1009), which presents a problem when dealing with version histories migrated from Jackrabbit Classic.
+
+  To avoid this mismatch, the upgrade code should check each frozen node for referenceability and replace the frozen UUID with a path identifier if needed.

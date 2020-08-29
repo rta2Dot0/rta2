@@ -1,0 +1,5 @@
+---
+BugID: OAK-4423
+Summary: Possible overflow in checkpoint creation
+Description: Creating a checkpoint with {{Long.MAX_VALUE}} lifetime will overflow
+  the value, allowing the store to immediately release the checkpoint.

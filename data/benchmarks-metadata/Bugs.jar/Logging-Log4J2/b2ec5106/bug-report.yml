@@ -1,0 +1,35 @@
+---
+BugID: LOG4J2-763
+Summary: Async loggers convert message parameters toString at log record writing not
+  at log statement execution
+Description: "http://javaadventure.blogspot.com/2014/07/log4j-20-async-loggers-and-immutability.html\n\nWhen
+  using parameterized messages, the toString() method of the log messages is not called
+  when the log message is enqueued, rather after the log message has been dequeued
+  for writing. If any of the message parameters are mutable, they can thus have changed
+  state before the log message is written, thus resulting in the logged message content
+  being incorrect.\n\nFrom the blog post, code that demonstrates the problem:\n{code}\nimport
+  org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\nimport
+  java.util.concurrent.atomic.AtomicLong;\n\npublic class App {\n    private static
+  final AtomicLong value = new AtomicLong();\n    public String toString() {\n        return
+  Long.toString(value.get());\n    }\n    public long next() {\n        return value.incrementAndGet();\n
+  \   }\n\n    public static void main(String[] args) {\n        for (int i = 0; i
+  < 32; i++) {\n            new Thread() {\n                final Logger logger =
+  LogManager.getLogger(App.class);\n                 final App instance = new App();\n
+  \               @Override\n                 public void run() {\n                     for
+  (int i = 0; i < 100000; i++) {\n                         logger.warn(\"{} == {}\",
+  instance.next(), instance);\n                     }\n                 }\n            }.start();\n
+  \       }\n    }\n}\n{code}\n\nHere is the first few lines of logging output\n{code}\n2014-07-28
+  15:59:45,729 WARN t.App [Thread-13] 13 == 13 \n2014-07-28 15:59:45,730 WARN t.App
+  [Thread-29] 29 == 29 \n2014-07-28 15:59:45,729 WARN t.App [Thread-15] 15 == 15 \n2014-07-28
+  15:59:45,729 WARN t.App [Thread-6] 6 == 6 \n2014-07-28 15:59:45,730 WARN t.App [Thread-30]
+  30 == 30 \n2014-07-28 15:59:45,729 WARN t.App [Thread-20] 20 == 20 \n2014-07-28
+  15:59:45,729 WARN t.App [Thread-8] 8 == 8 \n2014-07-28 15:59:45,730 WARN t.App [Thread-28]
+  28 == 28 \n2014-07-28 15:59:45,729 WARN t.App [Thread-19] 19 == 19 \n2014-07-28
+  15:59:45,729 WARN t.App [Thread-18] 18 == 18 \n2014-07-28 15:59:45,729 WARN t.App
+  [Thread-5] 5 == 6 \n2014-07-28 15:59:45,731 WARN t.App [Thread-13] 33 == 37 \n2014-07-28
+  15:59:45,731 WARN t.App [Thread-8] 39 == 39 \n2014-07-28 15:59:45,731 WARN t.App
+  [Thread-28] 40 == 41 \n2014-07-28 15:59:45,731 WARN t.App [Thread-18] 42 == 43 \n2014-07-28
+  15:59:45,731 WARN t.App [Thread-5] 43 == 43\n{code}\n\nTo make my previous code
+  work with Asynchronous loggers (other than by fixing the mutable state) I would
+  need to log like this:\n\n{code}\nif (logger.isWarnEnabled()) {\n    logger.warn(\"{}
+  == {}\", instance.next(), instance.toString());\n}\n{code}\n\n"

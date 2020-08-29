@@ -1,0 +1,11 @@
+---
+BugID: WICKET-4696
+Summary: NumberTextField doesn't accept values <=0 for Double and Float
+Description: |-
+  The org.apache.wicket.util.lang.Numbers class defines the method :
+  public static Number getMinValue(Class<? extends Number> numberType)
+
+  This method return the MatchingNumberTypeClass.MIN_VALUE.
+  But for Double.MIN_VALUE and Float.MIN_VALUE return the smallest positive number, not the smallest negative number like for the other number classes.
+
+  One side effect is that by default you can't enter a negative value, or a 0 in a NumberTextField<Double> or NumberTextField<Float>.

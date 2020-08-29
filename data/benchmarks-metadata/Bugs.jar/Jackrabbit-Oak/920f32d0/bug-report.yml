@@ -1,0 +1,48 @@
+---
+BugID: OAK-2426
+Summary: "[LucenePropertyIndex] full-text search on first level relative node returns
+  no result"
+Description: |
+  Following query does not return any result even with a proper index defined [1].
+  {noformat}//element(*, test:Page)[ " +
+              "jcr:contains(jcr:content, 'summer') ]
+  {noformat}
+
+  [1]
+  {code}
+  {
+    "jcr:primaryType": "oak:QueryIndexDefinition",
+    "compatVersion": 2,
+    "name": "pageIndex",
+    "type": "lucene",
+    "async": "async",
+    "reindex": true,
+    "aggregates": {
+      "jcr:primaryType": "nt:unstructured",
+      "test:Page": {
+        "jcr:primaryType": "nt:unstructured",
+        "include0": {
+          "jcr:primaryType": "nt:unstructured",
+          "relativeNode": true,
+          "path": "jcr:content"
+        }
+      }
+    },
+    "indexRules": {
+      "jcr:primaryType": "nt:unstructured",
+      "test:Page": {
+        "jcr:primaryType": "nt:unstructured",
+        "properties": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModified": {
+            "jcr:primaryType": "nt:unstructured",
+            "ordered": true,
+            "propertyIndex": true,
+            "name": "jcr:content/jcr:lastModified",
+            "type": "Date"
+          }
+        }
+      }
+    }
+  }
+  {code}

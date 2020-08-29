@@ -1,0 +1,15 @@
+---
+BugID: LOG4J2-466
+Summary: Cannot load log4j2 config file if path contains plus '+' characters
+Description: "Hello,\n\nI was trying to programmatically load a XML config file from
+  the temporary data directory of a MacOS X system. The temp path consists of serveral
+  '\\+' characters like MacOS automatically generates this path so we have to take
+  it this way. Even I would agree that it is not nice to have '\\+' chars in a path
+  name.\n\nWhen I tried to load the XML config the framework permanently loaded the
+  DefaultConfig and not the desired XML configuration.\nBy stepping through the debugger
+  I figured out that this was caused by the method fileFromURI() in org.apache.logging.log4j.core.helpers.FileUtils.java
+  .\nThe misbehaviour was basically caused by the call of URL.decode() which converts
+  '+' to ' ' (space) of a given String. \nNow I self-compiled the whole framework
+  without the call of URL.decode() and the XML configuration loaded properly. \nI
+  can not see why this call is necessary in this method so in my opinion this should
+  be removed.\n\n\nKind regards"

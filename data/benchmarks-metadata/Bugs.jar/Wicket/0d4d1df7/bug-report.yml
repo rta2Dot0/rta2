@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5165
+Summary: Session should be bound when adding messages to it
+Description: |-
+  When using the Sessions info(), error() and success() methods, and the session is temporary, the messages can be dropped silently. This happens when on stateless pages and a redirect happens in the same request during which a session message is added.
+
+  The fix for this could be to make sure the session is bound and call Session#bind() automatically when a session message is added.
+
+  Email thread:
+  http://wicket-users.markmail.org/thread/zd72s4gwnlp5d7ch

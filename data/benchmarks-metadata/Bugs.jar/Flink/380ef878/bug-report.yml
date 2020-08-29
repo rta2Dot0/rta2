@@ -1,0 +1,12 @@
+---
+BugID: FLINK-1761
+Summary: IndexOutOfBoundsException when receiving empty buffer at remote channel
+Description: "Receiving buffers from remote input channels with size 0 results in
+  an {{IndexOutOfBoundsException}}.\n\n{code}\nCaused by: java.lang.IndexOutOfBoundsException:
+  index: 30 (expected: range(0, 30))\n\tat io.netty.buffer.AbstractByteBuf.checkIndex(AbstractByteBuf.java:1123)\n\tat
+  io.netty.buffer.PooledUnsafeDirectByteBuf.getBytes(PooledUnsafeDirectByteBuf.java:156)\n\tat
+  io.netty.buffer.PooledUnsafeDirectByteBuf.getBytes(PooledUnsafeDirectByteBuf.java:151)\n\tat
+  io.netty.buffer.SlicedByteBuf.getBytes(SlicedByteBuf.java:179)\n\tat io.netty.buffer.AbstractByteBuf.readBytes(AbstractByteBuf.java:717)\n\tat
+  org.apache.flink.runtime.io.network.netty.PartitionRequestClientHandler.decodeBufferOrEvent(PartitionRequestClientHandler.java:205)\n\tat
+  org.apache.flink.runtime.io.network.netty.PartitionRequestClientHandler.decodeMsg(PartitionRequestClientHandler.java:164)\n\tat
+  org.apache.flink.runtime.io.network.netty.PartitionRequestClientHandler.channelRead(PartitionRequestClientHandler.java:118)\n{code}"

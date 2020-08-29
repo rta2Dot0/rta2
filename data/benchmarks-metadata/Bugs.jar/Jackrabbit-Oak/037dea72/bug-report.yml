@@ -1,0 +1,15 @@
+---
+BugID: OAK-4376
+Summary: 'XPath: queries starting with "//" are not always converted correctly'
+Description: |-
+  XPath queries starting with "//" are not always converted to the expected SQL-2 query. Examples:
+
+  {noformat}
+  //element(*, oak:QueryIndexDefinition)/*
+  select [jcr:path], [jcr:score], * from [oak:QueryIndexDefinition] as a
+
+  //element(*, oak:QueryIndexDefinition)//*
+  select [jcr:path], [jcr:score], * from [oak:QueryIndexDefinition] as a
+  {noformat}
+
+  This is wrong. Instead, a join should be used.

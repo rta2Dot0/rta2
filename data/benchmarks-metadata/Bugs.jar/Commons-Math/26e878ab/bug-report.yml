@@ -1,0 +1,6 @@
+---
+BugID: MATH-1272
+Summary: FastMath.pow(double, long) enters an infinite loop with Long.MIN_VALUE
+Description: FastMath.pow(double, long) enters an infinite loop with Long.MIN_VALUE.
+  It cannot be negated, so unsigned shift (>>>) is required instead of a signed one
+  (>>).

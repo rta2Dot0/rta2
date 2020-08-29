@@ -1,0 +1,18 @@
+---
+BugID: OAK-4067
+Summary: 'AssertionError thrown for Lucene index with empty suggest disctionary '
+Description: "Create an index where one field is enabled for suggestion but no content
+  is indexed for that index i.e. no matching content. Then while performing any query
+  following exception is thrown\n\n{noformat}\njava.lang.AssertionError\n\tat org.apache.lucene.search.suggest.analyzing.AnalyzingInfixSuggester.<init>(AnalyzingInfixSuggester.java:167)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.util.SuggestHelper$2.<init>(SuggestHelper.java:127)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.util.SuggestHelper.getLookup(SuggestHelper.java:127)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.util.SuggestHelper.getLookup(SuggestHelper.java:123)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexNode.<init>(IndexNode.java:109)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexNode.open(IndexNode.java:69)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexTracker.findIndexNode(IndexTracker.java:162)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexTracker.acquireIndexNode(IndexTracker.java:137)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex.getPlans(LucenePropertyIndex.java:249)\n\tat
+  org.apache.jackrabbit.oak.query.QueryImpl.getBestSelectorExecutionPlan(QueryImpl.java:1016)\n\tat
+  org.apache.jackrabbit.oak.query.QueryImpl.getBestSelectorExecutionPlan(QueryImpl.java:949)\n\tat
+  org.apache.jackrabbit.oak.query.ast.SelectorImpl.prepare(SelectorImpl.java:288)\n{noformat}\n\nThis
+  happens with {{-ea}} flag i.e. java assertions enabled. It caused [here|https://github.com/apache/lucene-solr/blob/releases/lucene-solr/4.7.1/lucene/suggest/src/java/org/apache/lucene/search/suggest/analyzing/AnalyzingInfixSuggester.java#L167]"

@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-4509
+Summary: Header not set after dead letter queue handles unmarshal error
+Description: |-
+  We have a route which unmarshals a soap msg into an object.  On that route is a dead letter queue error handler.  That DLQ sets headers on the message used later for error reporting.
+
+  If the error is thrown by the marshaller, the *first header* that we try to set is wiped out.  The 2nd header is set with no problem.  If an error is thrown by something other than the marshaller, the correct headers are set.
+
+  See attached project with failed test case (canSetHeadersOnBadXmlDeadLetter)

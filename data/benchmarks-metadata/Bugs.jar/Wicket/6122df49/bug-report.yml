@@ -1,0 +1,9 @@
+---
+BugID: WICKET-5250
+Summary: Minified css/js gets compressed
+Description: "Given an application with a resource reference to a minified script,
+  i.e. html5.js and html5.min.js.\n\nWhen the ResourceRequestHandler responds \nit
+  will set compress to false, if the resource reference was PackageResourceReference\nbut
+  it will not change compression if the resource reference was JavaScriptResourceReference.\n\n\nPackageResourceReference
+  handles minified resources more or less correctly (if they are minified, they should
+  not be further compressed), but this behavior is overwritten in its subclasses.\n"

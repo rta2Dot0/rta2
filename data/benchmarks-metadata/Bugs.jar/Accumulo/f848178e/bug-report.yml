@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-3015
+Summary: RangeInputSplit doesn't serialize table name
+Description: |-
+  Found another missed member in the serialization of RangeInputSplit: the table name.
+
+  Not a huge deal because the table information should still be in the Configuration for most users, but this does break in "advanced" uses of mapreduce. Work around is to re-set the table in the RangeInputSplit in your overridden InputFormat.getRecordReader or make sure the Configuration is consistent from getRecordReader and getSplits.

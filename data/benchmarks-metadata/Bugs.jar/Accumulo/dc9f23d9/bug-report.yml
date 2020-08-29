@@ -1,0 +1,10 @@
+---
+BugID: ACCUMULO-776
+Summary: TimestampFilter should serialize start and end as longs in the IteratorSetting
+Description: "Although the TimestampFilter supports using longs to set the start or
+  end timestamp, it formats them as strings using SimpleDateFormat when storing or
+  retrieving them in the IteratorSetting.\n\nThis results in exceptions when the timestamps
+  being used aren't able to be formatted as _yyyyMMddHHmmssz_. For example, try {{setEnd(253402300800001,true)}}\n\nInstead,
+  {{setStart()}} and {{setEnd()}} could just as easily use {{String.valueOf(long i)}}
+  to store the values, and {{init()}} could retrieve them using {{Long.valueOf(String
+  s)}}.  "

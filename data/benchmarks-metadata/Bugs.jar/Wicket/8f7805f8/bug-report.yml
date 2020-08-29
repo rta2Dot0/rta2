@@ -1,0 +1,10 @@
+---
+BugID: WICKET-4109
+Summary: AutocompleteTextField after Submit does not work
+Description: "I use an AutocompleteTextfield together with a submit-Button. After
+  once submitting the content oft the AutocompleteTextField the parameter q is added
+  to the URL. After that the autocompletion will only complete the parameter q in
+  the url and not the parameter given by ajax.\n\nI tracked the problem down to the
+  callbackURL. \nIt contains a pattern looking as follows: ....&q=<paramproducedbysubmit>&q=<paramproducedbyajaxautocomplete>
+  \nThe callbackurl is build of the parameter q and the extraction of parameters only
+  accepts the first parameter\n"

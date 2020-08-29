@@ -1,0 +1,860 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building flink-runtime 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-core/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-core/1.1-SNAPSHOT/maven-metadata.xml (1.4 kB at 530 B/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-parent/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-parent/1.1-SNAPSHOT/maven-metadata.xml (605 B at 317 B/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-annotations/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-annotations/1.1-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.2 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/1.1-SNAPSHOT/maven-metadata.xml (1.0 kB at 3.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop/1.1-SNAPSHOT/maven-metadata.xml (612 B at 1.8 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-java/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-java/1.1-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.2 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-curator-recipes/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-curator-recipes/1.1-SNAPSHOT/maven-metadata.xml (1.2 kB at 2.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-curator/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-curator/1.1-SNAPSHOT/maven-metadata.xml (613 B at 1.8 kB/s)
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.16:check (validate) @ flink-runtime_2.10 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ flink-runtime_2.10 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.1.5:revision (default) @ flink-runtime_2.10 ---
+[info] 
+[info] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/.git
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[info] 
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.7:add-source (add-source) @ flink-runtime_2.10 ---
+[INFO] Source directory: /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/scala added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ flink-runtime_2.10 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flink-runtime_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- scala-maven-plugin:3.1.4:compile (scala-compile-first) @ flink-runtime_2.10 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ flink-runtime_2.10 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 542 source files to /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/SignalHandler.java:[22,16] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/state/AbstractStateBackend.java:[297,80] unchecked call to restoreState(Backend,org.apache.flink.api.common.typeutils.TypeSerializer<K>,java.lang.ClassLoader,long) as a member of the raw type org.apache.flink.runtime.state.KvStateSnapshot
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/SignalHandler.java:[34,57] sun.misc.SignalHandler is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/SignalHandler.java:[37,39] sun.misc.SignalHandler is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/SignalHandler.java:[41,57] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/SignalHandler.java:[41,39] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/SignalHandler.java:[50,36] sun.misc.Signal is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/DataInputDeserializer.java:[372,38] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/zookeeper/ZooKeeperStateHandleStore.java:[90,44] unchecked conversion
+  required: org.apache.flink.runtime.zookeeper.StateStorageHelper<T>
+  found:    org.apache.flink.runtime.zookeeper.StateStorageHelper
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/DataOutputSerializer.java:[336,38] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java:[71,108] EXECUTION_RETRIES_KEY in org.apache.flink.configuration.ConfigConstants has been deprecated
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java:[75,93] EXECUTION_RETRY_DELAY_KEY in org.apache.flink.configuration.ConfigConstants has been deprecated
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java:[89,72] EXECUTION_RETRY_DELAY_KEY in org.apache.flink.configuration.ConfigConstants has been deprecated
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/FixedDelayRestartStrategy.java:[116,56] EXECUTION_RETRY_DELAY_KEY in org.apache.flink.configuration.ConfigConstants has been deprecated
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/util/DependencyVisitor.java:[191,29] visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String) in org.objectweb.asm.MethodVisitor has been deprecated
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/operators/udf/AssignRangeIndex.java:[51,51] unchecked call to CommonRangeBoundaries(org.apache.flink.api.common.typeutils.TypeComparator<T>,java.lang.Object[][]) as a member of the raw type org.apache.flink.api.common.distributions.CommonRangeBoundaries
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/operators/udf/AssignRangeIndex.java:[56,80] unchecked call to getRangeIndex(T) as a member of the raw type org.apache.flink.api.common.distributions.RangeBoundaries
+[WARNING] /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/main/java/org/apache/flink/runtime/operators/shipping/OutputEmitter.java:[293,64] unchecked call to compare(T,T) as a member of the raw type org.apache.flink.api.common.typeutils.TypeComparator
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.7:add-test-source (add-test-source) @ flink-runtime_2.10 ---
+[INFO] Test Source directory: /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/src/test/scala added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ flink-runtime_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- scala-maven-plugin:3.1.4:testCompile (scala-test-compile) @ flink-runtime_2.10 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ flink-runtime_2.10 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ flink-runtime_2.10 ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Flink_734ba01d_java-8/flink-runtime/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom (2.5 kB at 275 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom (2.5 kB at 134 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar (68 kB at 1.4 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.checkpoint.CheckpointCoordinatorTest
+Running org.apache.flink.runtime.checkpoint.CheckpointStateRestoreTest
+Running org.apache.flink.runtime.jobmanager.JobManagerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.buffer.NetworkBufferPoolTest
+Running org.apache.flink.runtime.jobmanager.scheduler.LifoSetQueueTest
+Running org.apache.flink.runtime.jobmanager.scheduler.CoLocationConstraintTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.flink.runtime.jobmanager.scheduler.LifoSetQueueTest
+Running org.apache.flink.runtime.io.disk.iomanager.IOManagerAsyncTest
+Running org.apache.flink.runtime.io.network.api.serialization.SpanningRecordSerializerTest
+Running org.apache.flink.runtime.executiongraph.VertexSlotSharingTest
+Running org.apache.flink.runtime.io.network.netty.ServerTransportErrorHandlingTest
+Running org.apache.flink.runtime.io.network.partition.PartialConsumePipelinedResultTest
+Running org.apache.flink.runtime.util.UnionIteratorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.util.UnionIteratorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 sec - in org.apache.flink.runtime.io.network.buffer.NetworkBufferPoolTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.028 sec - in org.apache.flink.runtime.jobmanager.scheduler.CoLocationConstraintTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.153 sec - in org.apache.flink.runtime.checkpoint.CheckpointStateRestoreTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.io.network.NetworkEnvironmentTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.564 sec - in org.apache.flink.runtime.io.disk.iomanager.IOManagerAsyncTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.io.network.partition.SpilledSubpartitionViewAsyncIOTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 sec - in org.apache.flink.runtime.io.network.partition.SpilledSubpartitionViewAsyncIOTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.105 sec - in org.apache.flink.runtime.executiongraph.VertexSlotSharingTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.leaderelection.StandaloneLeaderElectionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.leaderelection.StandaloneLeaderElectionTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.528 sec - in org.apache.flink.runtime.io.network.api.serialization.SpanningRecordSerializerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.executiongraph.TaskManagerLossFailsTasksTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.buffer.BufferTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.network.buffer.BufferTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.partition.SpillableSubpartitionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.io.network.partition.SpillableSubpartitionTest
+Running org.apache.flink.runtime.checkpoint.HeapStateStoreTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in org.apache.flink.runtime.checkpoint.HeapStateStoreTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.jobmanager.SlotCountExceedingParallelismTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.netty.ClientTransportErrorHandlingTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.partition.SpilledSubpartitionViewSyncIOTest
+Running org.apache.flink.runtime.jobmanager.StandaloneSubmittedJobGraphStoreTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.jobmanager.StandaloneSubmittedJobGraphStoreTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.network.partition.SpilledSubpartitionViewSyncIOTest
+Running org.apache.flink.runtime.jobmanager.scheduler.SchedulerIsolatedTasksTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.548 sec - in org.apache.flink.runtime.checkpoint.CheckpointCoordinatorTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.netty.NettyConnectionManagerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.operators.drivers.ReduceCombineDriverTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.partition.consumer.InputChannelTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.drivers.ReduceCombineDriverTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.io.network.partition.consumer.InputChannelTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.checkpoint.stats.DisabledCheckpointStatsTrackerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.operators.resettable.SpillingResettableMutableObjectIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.checkpoint.stats.DisabledCheckpointStatsTrackerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.akka.AkkaUtilsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.akka.AkkaUtilsTest
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.jobmanager.JobManagerProcessReapingTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72451!
+Kill 72451!
+Killed 72451! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72253!
+Killed 72253! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.CombinerOversizedRecordsTest
+Terminate 72200!
+Killed 72200! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 74024!
+Killed 74024! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 72363!
+Killed 72363! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.util.SerializedThrowableTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.executiongraph.ExecutionVertexSchedulingTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.partition.consumer.UnionInputGateTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.runtime.io.disk.iomanager.AsynchronousBufferFileWriterTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72463!
+Killed 72463! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.operators.sort.FixedLengthRecordSorterTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73670!
+Killed 73670! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.network.partition.consumer.UnionInputGateTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.util.SerializedThrowableTest
+Running org.apache.flink.runtime.io.network.buffer.LocalBufferPoolTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 73656!
+Kill 73656!
+Killed 73656! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.util.OutputEmitterTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 73624!
+Killed 73624! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.akka.FlinkUntypedActorTest
+Running org.apache.flink.runtime.util.DelegatingConfigurationTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73020!
+Killed 73020! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest
+Running org.apache.flink.runtime.executiongraph.LocalInputSplitsTest
+Running org.apache.flink.runtime.leaderelection.JobManagerLeaderElectionTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72529!
+Killed 72529! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.checkpoint.stats.SimpleCheckpointStatsTrackerTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73160!
+Kill 73160!
+Killed 73160! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Running org.apache.flink.runtime.leaderelection.ZooKeeperLeaderRetrievalTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 72841!
+Killed 72841! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.leaderelection.ZooKeeperLeaderElectionTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72682!
+Killed 72682! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.util.OutputEmitterTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.disk.iomanager.AsynchronousFileIOChannelTest
+Running org.apache.flink.runtime.io.network.partition.PipelinedSubpartitionTest
+Terminate 73175!
+Killed 73175! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 72861!
+Killed 72861! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.CombineTaskTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.executiongraph.LocalInputSplitsTest
+Running org.apache.flink.runtime.io.network.buffer.BufferPoolFactoryTest
+Terminate 72509!
+Running org.apache.flink.runtime.io.network.api.serialization.EventSerializerTest
+Running org.apache.flink.runtime.io.network.api.reader.AbstractReaderTest
+Running org.apache.flink.runtime.executiongraph.ExecutionGraphRestartTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 72563!
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.util.DelegatingConfigurationTest
+Terminate 72661!
+Killed 72563! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 72900!
+Kill 72900!
+Running org.apache.flink.runtime.io.disk.ChannelViewsTest
+Killed 72509! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73212!
+Killed 72900! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Kill 72661!
+Killed 72661! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Killed 73212! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.jobmanager.JobManagerStartupTest
+Running org.apache.flink.runtime.operators.drivers.GroupReduceDriverTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72667!
+Killed 72667! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.util.event.TaskEventHandlerTest
+Running org.apache.flink.runtime.operators.resettable.BlockResettableMutableObjectIteratorTest
+Running org.apache.flink.runtime.operators.sort.LargeRecordHandlerTest
+Running org.apache.flink.runtime.jobmanager.scheduler.ScheduleWithCoLocationHintTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.network.api.reader.AbstractReaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.util.event.TaskEventHandlerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.network.api.serialization.EventSerializerTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.operators.resettable.BlockResettableMutableObjectIteratorTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 71892!
+Terminate 72434!
+Killed 72434! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 71892! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Terminate 71976!
+Killed 71976! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 72341!
+Terminate 71618!
+Killed 71618! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 72289!
+Killed 72289! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 74109!
+Killed 74109! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 72341! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72436!
+Kill 72436!
+Killed 72436! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74989!
+Killed 74989! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74218!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74255!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72227!
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72337!
+Killed 72337! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74257!
+Killed 74257! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.sort.MergeIteratorTest
+Running org.apache.flink.runtime.operators.resettable.SpillingResettableIteratorTest
+Killed 72227! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 74255! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Kill 74218!
+Killed 74218! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74204!
+Killed 74204! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.JoinTaskTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74458!
+Killed 74458! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74423!
+Killed 74423! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.drivers.ReduceDriverTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74384!
+Killed 74384! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.util.MathUtilTest
+Running org.apache.flink.runtime.io.network.DataExchangeModeTest
+Running org.apache.flink.runtime.checkpoint.SavepointCoordinatorTest
+Running org.apache.flink.runtime.operators.sort.NormalizedKeySorterTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74496!
+Killed 74496! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.operators.CachedMatchTaskTest
+Running org.apache.flink.runtime.leaderelection.LeaderChangeStateCleanupTest
+Running org.apache.flink.runtime.operators.FlatMapTaskTest
+Running org.apache.flink.runtime.operators.drivers.AllReduceDriverTest
+Running org.apache.flink.runtime.io.disk.SpillingBufferTest
+Running org.apache.flink.runtime.operators.resettable.ReusingBlockResettableIteratorTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 71913!
+Killed 71913! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74546!
+Killed 74546! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.resettable.SpillingResettableIteratorTest
+Running org.apache.flink.runtime.executiongraph.VertexLocationConstraintTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.sort.MergeIteratorTest
+Running org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterFileSegmentReaderTest
+Running org.apache.flink.runtime.executiongraph.TerminalStateDeadlockTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74387!
+Killed 74387! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74819!
+Killed 74819! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.io.network.DataExchangeModeTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.operators.drivers.ReduceDriverTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.util.MathUtilTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.drivers.AllReduceDriverTest
+Terminate 75001!
+Killed 75001! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.executiongraph.VertexLocationConstraintTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterFileSegmentReaderTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72375!
+Kill 72375!
+Killed 72375! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.flink.runtime.io.network.buffer.BufferPoolFactoryTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.drivers.GroupReduceDriverTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 73869!
+Killed 73869! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.flink.runtime.jobmanager.scheduler.ScheduleWithCoLocationHintTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest
+testWriteSkipRead(org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.io.IOException: I/O channel already closed. Could not fulfill: org.apache.flink.runtime.io.disk.iomanager.BufferWriteRequest@7a79be86
+	at org.apache.flink.runtime.io.disk.iomanager.AsynchronousFileIOChannel.addRequest(AsynchronousFileIOChannel.java:249)
+	at org.apache.flink.runtime.io.disk.iomanager.AsynchronousBufferFileWriter.writeBlock(AsynchronousBufferFileWriter.java:36)
+	at org.apache.flink.runtime.io.disk.iomanager.AsynchronousBufferFileWriter.writeBlock(AsynchronousBufferFileWriter.java:26)
+	at org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest.testWriteSkipRead(BufferFileWriterReaderTest.java:145)
+
+testWriteSkipRead(org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.IllegalStateException: Cannot delete a channel that is open.
+	at org.apache.flink.runtime.io.disk.iomanager.AbstractFileIOChannel.deleteChannel(AbstractFileIOChannel.java:87)
+	at org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest.tearDownWriterAndReader(BufferFileWriterReaderTest.java:80)
+
+testWriteRead(org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IllegalStateException: I/O-Manger is shut down.
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:173)
+	at org.apache.flink.runtime.io.disk.iomanager.IOManagerAsync.createBufferFileWriter(IOManagerAsync.java:255)
+	at org.apache.flink.runtime.io.disk.iomanager.BufferFileWriterReaderTest.setUpWriterAndReader(BufferFileWriterReaderTest.java:61)
+
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73628!
+Killed 73628! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 73838!
+Killed 73838! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73637!
+Kill 73637!
+Killed 73637! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Running org.apache.flink.runtime.io.network.netty.PartitionRequestQueueTest
+Running org.apache.flink.runtime.util.EnvironmentInformationTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72681!
+Killed 72681! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 72742!
+Killed 72742! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72671!
+Killed 72671! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.io.network.partition.consumer.LocalInputChannelTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72703!
+Killed 72703! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.io.network.netty.NettyBufferPoolTest
+Running org.apache.flink.runtime.checkpoint.ExecutionGraphCheckpointCoordinatorTest
+Running org.apache.flink.runtime.checkpoint.CoordinatorShutdownTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74788!
+Killed 74788! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72622!
+Killed 72622! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74443!
+Killed 74443! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72666!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Terminate 74851!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74088!
+Kill 74088!
+Killed 74088! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+ps:display.c:66: please report this bug
+Terminate 75129!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72298!
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74963!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74506!
+Killed 74506! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 73713!
+Killed 73713! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74469!
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72322!
+Killed 72322! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+ps:display.c:66: please report this bug
+Running org.apache.flink.runtime.checkpoint.SavepointStoreFactoryTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74253!
+Killed 74253! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+ps:display.c:66: please report this bug
+Terminate 74054!
+Killed 74469! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 74963! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 72298! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 75129! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 74851! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Terminate 72470!
+Killed 72470! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 73678!
+Killed 73678! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 73765!
+Killed 73765! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Kill 72666!
+Killed 72666! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74831!
+Killed 74831! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74940!
+Killed 74054! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 72978!
+Killed 74940! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 74750!
+Terminate 73878!
+Kill 73878!
+Killed 73878! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+ps:display.c:66: please report this bug
+Terminate 73863!
+Killed 73863! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Killed 74750! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Killed 72978! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Terminate 73654!
+Killed 73654! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.util.ZooKeeperUtilTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74766!
+Killed 74766! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.flink.runtime.checkpoint.SavepointStoreFactoryTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.util.ZooKeeperUtilTest
+Running org.apache.flink.runtime.util.DataInputOutputSerializerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73660!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Killed 73660! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Terminate 72582!
+Killed 72582! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 73845!
+Kill 73845!
+Killed 73845! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+ps:display.c:66: please report this bug
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Signal 15 (TERM) caught by ps (procps-ng version 3.3.10).
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+ps:display.c:66: please report this bug
+Terminate 72670!
+Killed 72670! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74372!
+Killed 74372! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.checkpoint.FileSystemStateStoreTest
+Running org.apache.flink.runtime.io.network.netty.NettyMessageSerializationTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 74269!
+Killed 74269! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.io.network.netty.PartitionRequestClientHandlerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.checkpoint.FileSystemStateStoreTest
+Running org.apache.flink.runtime.io.network.api.serialization.SpanningRecordSerializationTest
+Running org.apache.flink.runtime.operators.CrossTaskTest
+Running org.apache.flink.runtime.executiongraph.ExecutionVertexDeploymentTest
+Running org.apache.flink.runtime.executiongraph.AllVerticesIteratorTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.jobmanager.scheduler.ScheduleOrUpdateConsumersTest
+Terminate 74275!
+Killed 74275! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.io.disk.FileChannelStreamsTest
+Running org.apache.flink.runtime.executiongraph.ExecutionGraphDeploymentTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Terminate 72514!
+Killed 72514! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+Running org.apache.flink.runtime.jobmanager.scheduler.SlotAllocationFutureTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.io.disk.FileChannelStreamsTest
+Running org.apache.flink.runtime.io.network.partition.consumer.RemoteInputChannelTest
+Running org.apache.flink.runtime.jobmanager.JobSubmitTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.jobmanager.scheduler.SlotAllocationFutureTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.util.ClassLoaderUtilsTest
+Running org.apache.flink.runtime.io.network.netty.PartitionRequestClientFactoryTest
+Running org.apache.flink.runtime.operators.util.BitSetTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.runtime.io.network.serialization.LargeRecordsTest
+Running org.apache.flink.runtime.executiongraph.ExecutionGraphConstructionTest
+Running org.apache.flink.runtime.operators.LeftOuterJoinTaskTest
+Running org.apache.flink.runtime.operators.drivers.AllGroupReduceDriverTest
+Running org.apache.flink.runtime.io.network.api.serialization.PagedViewsTest
+Running org.apache.flink.runtime.util.ReusingKeyGroupedIteratorTest
+Running org.apache.flink.runtime.executiongraph.ExecutionVertexCancelTest
+Running org.apache.flink.runtime.io.disk.SeekableFileChannelInputViewTest
+Running org.apache.flink.runtime.operators.util.BloomFilterTest
+Running org.apache.flink.runtime.io.disk.iomanager.IOManagerTest
+Running org.apache.flink.runtime.jobmanager.scheduler.SchedulerSlotSharingTest
+Running org.apache.flink.runtime.io.network.partition.SpilledSubpartitionViewTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in org.apache.flink.runtime.io.network.netty.PartitionRequestClientFactoryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.util.ReusingKeyGroupedIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.disk.SeekableFileChannelInputViewTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.flink.runtime.util.ClassLoaderUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.drivers.AllGroupReduceDriverTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.runtime.io.disk.iomanager.IOManagerTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.util.BloomFilterTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.runtime.operators.util.BitSetTest
+JVM seems rogue. Kill 67669!
+Terminate 67669!
+Killed 67669! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/bin/java line 73.

@@ -1,0 +1,90 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Hessian Lite(Alibaba embed version) 3.2.1-fixed-2
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ hessian-lite ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ hessian-lite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_apache-incubator-dubbo_347256120-347634018_java-7/hessian-lite/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ hessian-lite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ hessian-lite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_apache-incubator-dubbo_347256120-347634018_java-7/hessian-lite/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ hessian-lite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ hessian-lite ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (3.3 kB at 2.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (2.6 kB at 171 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (75 kB at 2.0 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running com.alibaba.com.caucho.hessian.io.LocaleSerializerTest
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.115 sec <<< FAILURE! - in com.alibaba.com.caucho.hessian.io.LocaleSerializerTest
+hessian1(com.alibaba.com.caucho.hessian.io.LocaleSerializerTest)  Time elapsed: 0.059 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<zh-hant_CN> but was:<zh_HANT_CN>
+	at com.alibaba.com.caucho.hessian.io.LocaleSerializerTest.hessian1(LocaleSerializerTest.java:39)
+
+hessian2(com.alibaba.com.caucho.hessian.io.LocaleSerializerTest)  Time elapsed: 0.008 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<zh-hant_CN> but was:<zh_HANT_CN>
+	at com.alibaba.com.caucho.hessian.io.LocaleSerializerTest.hessian2(LocaleSerializerTest.java:23)
+
+Running com.alibaba.com.caucho.hessian.io.SerializerFactoryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.alibaba.com.caucho.hessian.io.SerializerFactoryTest
+Running com.alibaba.com.caucho.hessian.io.Hessian2EnumSetTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.alibaba.com.caucho.hessian.io.Hessian2EnumSetTest
+Running com.alibaba.com.caucho.hessian.io.Hessian2StringShortTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.alibaba.com.caucho.hessian.io.Hessian2StringShortTest
+Running com.alibaba.com.caucho.hessian.io.HessianJavaSerializeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.alibaba.com.caucho.hessian.io.HessianJavaSerializeTest
+Running com.alibaba.com.caucho.hessian.io.java8.Java8TimeSerializerTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.alibaba.com.caucho.hessian.io.java8.Java8TimeSerializerTest
+
+Results :
+
+Failed tests: 
+  LocaleSerializerTest.hessian1:39 expected:<zh-hant_CN> but was:<zh_HANT_CN>
+  LocaleSerializerTest.hessian2:23 expected:<zh-hant_CN> but was:<zh_HANT_CN>
+
+Tests run: 33, Failures: 2, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.963 s
+[INFO] Finished at: 2020-03-12T03:05:37-07:00
+[INFO] Final Memory: 18M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project hessian-lite: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bears_apache-incubator-dubbo_347256120-347634018_java-7/hessian-lite/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

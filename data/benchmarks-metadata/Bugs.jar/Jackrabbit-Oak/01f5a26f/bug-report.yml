@@ -1,0 +1,18 @@
+---
+BugID: OAK-3510
+Summary: Troublesome ExternalIdentityRef.equals(Object) implementation
+Description: |-
+  in the light of OAK-3508 i looked at the {{ExternalIdentifyRef}} class and found the following implementation of {{Object.equals(Object)}}:
+
+  {code}
+  public boolean equals(Object o) {
+          try {
+              // assuming that we never compare other types of classes
+              return this == o || string.equals(((ExternalIdentityRef) o).string);
+          } catch (Exception e) {
+              return false;
+          }
+      }
+  {code}
+
+  since this class is public and exported as part of a public API, i don't think the assumption made in the code is justified. also i would argue that catching {{Exception}} is bad style as is exception driven development. in this particular case it was IMHO perfectly trivial to just get rid of the catch clause altogether.

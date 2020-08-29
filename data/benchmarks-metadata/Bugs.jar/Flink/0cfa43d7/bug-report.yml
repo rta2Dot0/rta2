@@ -1,0 +1,6 @@
+---
+BugID: FLINK-2082
+Summary: Chained stream tasks share the same RuntimeContext
+Description: "Chained stream operators currently share the same runtimecontext, this
+  will certainly lead to problems in the future. \n\nWe should create separate runtime
+  contexts for each operator in the chain."

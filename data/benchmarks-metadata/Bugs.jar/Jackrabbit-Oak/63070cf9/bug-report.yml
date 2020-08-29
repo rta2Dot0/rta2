@@ -1,0 +1,7 @@
+---
+BugID: OAK-1668
+Summary: Lucene should not serve queries for what it doesn't index
+Description: |
+  If a query is asked and Lucene is chosen as index for serving it, it
+  will try to serve all the restrictions of the query, even the one that
+  are not indexed.

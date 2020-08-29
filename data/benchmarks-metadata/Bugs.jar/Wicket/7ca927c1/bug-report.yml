@@ -1,0 +1,14 @@
+---
+BugID: WICKET-4370
+Summary: HttpSession getSession() in MockHttpServletRequest is not compliant with
+  the j2ee servlet spec
+Description: "The implementation of\nhttpRequest.getSession();\nfor MockHttpServletRequest
+  seems not correct since it can return null when\nthe servler api specs\n(http://docs.oracle.com/javaee/1.4/api/)
+  says:\n\npublic HttpSession getSession()\nReturns the current session associated
+  with this request, or if the request\ndoes not have a session, creates one.\n\nSo
+  as far as I understand\nhttpRequest.getSession(); and httpRequest.getSession(true);
+  are equivalent\n\nThe MockHttpServletRequest implementation is\n\n   public HttpSession
+  getSession()\n   {\n       if (session instanceof MockHttpSession &&\n((MockHttpSession)session).isTemporary())\n
+  \      {\n           return null;\n       }\n       return session;\n   }\n\nI think
+  it should be \n   public HttpSession getSession()\n   {\n       return getSession(true);\n
+  \  }\n\n"

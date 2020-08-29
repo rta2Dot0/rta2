@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-2748
+Summary: MockTableOperations.deleteRow does not handle null for start or end keys
+Description: "The deleteRow function does not check for null values for start or end
+  keys.\nThese null values are passed down into key constructor which will throw a
+  NullPointerException:\njava.lang.NullPointerException\n\tat org.apache.accumulo.core.data.Key.<init>(Key.java:103)\n\tat
+  org.apache.accumulo.core.client.mock.MockTableOperations.deleteRows(MockTableOperations.java:315)\n\nThe
+  API semantics dictate:\nif (start == null ) then start == Text()\nif (end == null
+  ) then end == maxKey()\n\n\n\n"

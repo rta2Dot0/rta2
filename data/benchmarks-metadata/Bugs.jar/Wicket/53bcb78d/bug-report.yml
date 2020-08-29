@@ -1,0 +1,25 @@
+---
+BugID: WICKET-4251
+Summary: Multipart Form and AjaxSubmitLink will result in invalid redirect after user
+  session expires
+Description: "Hi,\n\nI have hit an issue similar to this one:\n\nhttps://issues.apache.org/jira/browse/WICKET-3141\n\nI
+  do not receive any errors from Wicket itself to help clarify, so I will try to explain
+  using an example.\n\nThe example below with which I could recreate the issue uses
+  the default SignInPanel (in my LoginPage.clas) and AuthenticatedWebSession to authenticate
+  the user and store the session:\n\n\tprotected Class<? extends WebPage> getSignInPageClass()\n\t{\n\t\treturn
+  LoginPage.class;\n\t}\n\nIf the authentiation is succesfull then the user is redirect
+  back to the test page:\n\n\t\t\tprotected void onSignInSucceeded() {\n\t\t\t\tsetResponsePage(Test.class);\n\t\t\t}\n\nSo
+  far so good. However if I use a form with setMultiPart(true) in combination with
+  an AjaxSubmitLink as shown in the following piece of code:\n\nimport org.apache.wicket.ajax.AjaxRequestTarget;\nimport
+  org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;\nimport org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;\nimport
+  org.apache.wicket.markup.html.WebPage;\nimport org.apache.wicket.markup.html.form.Form;\n\n@AuthorizeInstantiation(\"USER\")\npublic
+  class Test extends WebPage {\n\n\tpublic Test()\n\t{\n\t\tsuper();\n\t\t\n\t\tfinal
+  Form testForm = \n\t\t\t\tnew Form(\"testForm\");\n\t\n\t\ttestForm.setMultiPart(true);\n\t\t\n\t\ttestForm.add(new
+  AjaxSubmitLink(\"testButton\", testForm) {\n\t\t\t\n\t\t\t@Override\n\t\t\tprotected
+  void onSubmit(AjaxRequestTarget target, Form form) {\n\t\t\t\tsuper.onSubmit();\n\t\t\t};\n\t\t\t\n\t\t\t@Override\n\t\t\tprotected
+  void onError(AjaxRequestTarget target, Form form) {\n\t\t\t\t\n\t\t\t};\n\t\t});\n\t\t\t\t\n\t\tadd(testForm);\n\t}\n}\n\nAnd
+  have selected the option \"Remember credentials\" in the SignInPanel, clicking on
+  the testButton AFTER the session has expired will result in:\n\nhttp://localhost:8080/PaladinWicket/?3-1.IBehaviorListener.0-testForm-testButton&wicket-ajax=true&wicket-ajax-baseurl=.\n\nwhich
+  displays this in the browser:\n\nThis XML file does not appear to have any style
+  information associated with it. The document tree is shown below.\n<ajax-response>\n<redirect>\n<![CDATA[
+  .?1 ]]>\n</redirect>\n</ajax-response>"

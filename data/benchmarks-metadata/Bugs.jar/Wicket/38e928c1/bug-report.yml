@@ -1,0 +1,10 @@
+---
+BugID: WICKET-4000
+Summary: Header contributions order is not stable
+Description: |-
+  In the last RCs, I started to experience problems with the contributions order.
+  For example, I add jQuery, and until 1.5RC5, it worked well, but now the call to the jQuery script has been moved to the bottom of the page head, and this disables all my other scripts that are expecting jQuery's $ to be defined.
+
+  I attach a quickstart to demonstrate the problem.
+  Maybe the order in the quickstart is not the expected one, but what it shows is that the order does not make real sense (at least to me) :
+  In the quickstart, the wicket:head tag contributions are in the order 3 - 8 - 9 - 5, and the renderHead methods contributions are in the order 4 - 1 - 2 - 6 - 7.

@@ -1,0 +1,20 @@
+---
+BugID: CAMEL-3433
+Summary: Undefined header results in Nullpointer when expression is evaluated
+Description: "If you define a filter for a header that is not defined like\n\nfrom(\"p:a\").filter(header(\"header\").in(\"value\")).to(\"p:b\");\n\nit
+  results in a NullPointerException:\n\n{code}\n2010-12-15 10:07:45,920 [main] ERROR
+  DefaultErrorHandler            - \nFailed delivery for exchangeId: 0215-1237-1292404064936-0-2.
+  \nExhausted after delivery attempt: 1 caught: java.lang.NullPointerException\n\tat
+  org.apache.camel.builder.ExpressionBuilder$40.evaluate(ExpressionBuilder.java:955)\n\tat
+  org.apache.camel.impl.ExpressionAdapter.evaluate(ExpressionAdapter.java:36)\n\tat
+  org.apache.camel.builder.BinaryPredicateSupport.matches(BinaryPredicateSupport.java:54)\n\tat
+  org.apache.camel.builder.PredicateBuilder$5.matches(PredicateBuilder.java:127)\n\tat
+  org.apache.camel.processor.FilterProcessor.process(FilterProcessor.java:46)\n\tat
+  org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:70)\n\tat
+  org.apache.camel.processor.DelegateAsyncProcessor.processNext(DelegateAsyncProcessor.java:98)\n\tat
+  org.apache.camel.processor.DelegateAsyncProcessor.process(DelegateAsyncProcessor.java:89)\n{code}\n\nThis
+  test reproduces the problem:\n{code}\npublic void testExpressionForUndefinedHeader(){\n
+  \   Expression type = ExpressionBuilder.headerExpression(\"header\");\n    Expression
+  expression = ExpressionBuilder.constantExpression(\"value\");\n    Expression convertToExpression
+  = ExpressionBuilder.convertToExpression(expression, type);\n    convertToExpression.evaluate(exchange,
+  Object.class);\n}\n{code}"

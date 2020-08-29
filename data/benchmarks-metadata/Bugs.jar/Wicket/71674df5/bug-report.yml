@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5734
+Summary: Problem with WICKET-4441 and RestartResponseAtInterceptPageException
+Description: WICKET-4441 introduced an issue when our app has an authorization strategy
+  and user is logged out. If user tries to access a protected url/page, RestartResponseAtInterceptPageException
+  is handled by DefaultExceptionMapper and leads to exception page instead of redirecting
+  user.

@@ -1,0 +1,16 @@
+---
+BugID: LOG4J2-1372
+Summary: XMLLayout indents, but not the first child tag (<Event>)
+Description: "I am using log4j 2.5 to print the logs via XMLLayout. I have set compact=\"true\",
+  hence the new line and indents of sub tags work correctly. However I have noticed
+  that the first child tag is not indented correctly. \n\nFollowing is such a sample
+  where <Events> and <Event> are at the same indent level (0 indent). \n\n{code:xml}\n<?xml
+  version=\"1.0\" encoding=\"UTF-8\"?>\n<Events xmlns=\"http://logging.apache.org/log4j/2.0/events\">\n<Event
+  xmlns=\"http://logging.apache.org/log4j/2.0/events\" timeMillis=\"1460974404123\"
+  thread=\"main\" level=\"INFO\" loggerName=\"com.foo.Bar\" endOfBatch=\"true\" loggerFqcn=\"org.apache.logging.log4j.spi.AbstractLogger\"
+  threadId=\"11\" threadPriority=\"5\">\n  <Message>First Msg tag must be in level
+  2 after correct indentation</Message>\n</Event>\n\n<Event xmlns=\"http://logging.apache.org/log4j/2.0/events\"
+  timeMillis=\"1460974404133\" thread=\"main\" level=\"INFO\" loggerName=\"com.foo.Bar\"
+  endOfBatch=\"true\" loggerFqcn=\"org.apache.logging.log4j.spi.AbstractLogger\" threadId=\"11\"
+  threadPriority=\"5\">\n  <Message>Second Msg tag must also be in level 2 after correct
+  indentation</Message>\n</Event>\n\n</Events>\n{code}\n"

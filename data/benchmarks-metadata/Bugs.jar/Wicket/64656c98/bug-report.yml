@@ -1,0 +1,73 @@
+---
+BugID: WICKET-4105
+Summary: Using ajax to update a component that has an AbstractTransformerBehavior
+  attached throws a ClassCastException
+Description: |
+  Using ajax to update a component that has an AbstractTransformerBehavior attached throws a ClassCastException:
+
+  java.lang.ClassCastException:
+  org.apache.wicket.ajax.AjaxRequestTarget$AjaxResponse cannot be cast
+  to org.apache.wicket.request.http.WebResponse
+        at org.apache.wicket.markup.transformer.AbstractTransformerBehavior.beforeRender(AbstractTransformerBehavior.java:68)
+
+        at org.apache.wicket.Component.notifyBehaviorsComponentBeforeRender(Component.java:3421)
+        at org.apache.wicket.Component.internalRender(Component.java:2344)
+        at org.apache.wicket.Component.render(Component.java:2273)
+
+        at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1474)
+        at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1638)
+        at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1613)
+
+        at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1567)
+        at org.apache.wicket.markup.html.form.Form.onComponentTagBody(Form.java:1570)
+        at org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.onComponentTagBody(DefaultMarkupSourcingStrategy.java:72)
+
+        at org.apache.wicket.Component.internalRenderComponent(Component.java:2515)
+        at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1576)
+        at org.apache.wicket.Component.internalRender(Component.java:2345)
+
+        at org.apache.wicket.Component.render(Component.java:2273)
+        at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1474)
+        at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1638)
+
+        at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1613)
+        at org.apache.wicket.MarkupContainer.renderAssociatedMarkup(MarkupContainer.java:735)
+        at org.apache.wicket.markup.html.panel.AssociatedMarkupSourcingStrategy.renderAssociatedMarkup(AssociatedMarkupSourcingStrategy.java:76)
+
+        at org.apache.wicket.markup.html.panel.PanelMarkupSourcingStrategy.onComponentTagBody(PanelMarkupSourcingStrategy.java:112)
+        at org.apache.wicket.Component.internalRenderComponent(Component.java:2515)
+        at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1576)
+
+        at org.apache.wicket.Component.internalRender(Component.java:2345)
+        at org.apache.wicket.Component.render(Component.java:2273)
+        at org.apache.wicket.ajax.AjaxRequestTarget.respondComponent(AjaxRequestTarget.java:982)
+
+        at org.apache.wicket.ajax.AjaxRequestTarget.respondComponents(AjaxRequestTarget.java:796)
+        at org.apache.wicket.ajax.AjaxRequestTarget.constructResponseBody(AjaxRequestTarget.java:676)
+        at org.apache.wicket.ajax.AjaxRequestTarget.respond(AjaxRequestTarget.java:637)
+
+        at org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:712)
+        at org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:63)
+        at org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:96)
+
+        at org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:208)
+        at org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:251)
+        at org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:162)
+
+        at org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:218)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+
+        at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+        at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+        at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+
+        at java.lang.Thread.run(Thread.java:619)

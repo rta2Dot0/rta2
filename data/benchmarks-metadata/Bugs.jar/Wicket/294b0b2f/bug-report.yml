@@ -1,0 +1,15 @@
+---
+BugID: WICKET-5980
+Summary: When using Servlet 3.0 filter Wicket calculates filter path wrong
+Description: |
+  When using a servlet 3.0 filter with annotations Wicket calculates the filter path wrong causing it to not match any pages other than the home page.
+
+  e.g.
+
+  {code}
+  @WebFilter(value = "/web/*", initParams = {@WebInitParam(name = "applicationClassName", value = "com.example.CheesrApplication")})
+  public class CheesrFilter extends WicketFilter {
+  }
+  {code}
+
+  Will cause Wicket to create a filter path of /web/*/ instead of the expected /web.

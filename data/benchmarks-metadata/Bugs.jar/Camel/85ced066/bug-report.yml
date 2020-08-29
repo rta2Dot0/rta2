@@ -1,0 +1,13 @@
+---
+BugID: CAMEL-7513
+Summary: Using JPA entities as the argument in Aggregator using POJO
+Description: "I have an Aggregator POJO with this method :\n\npublic Map<Hoteles,
+  List<EventoPrecio>> agregaEventoPrecio(Map<Hoteles, List<EventoPrecio>> lista, EventoPrecio
+  evento) \n\nWith this route :\n\nfrom(\"timer://tesipro?fixedRate=true&period=60000\").\nbeanRef(\"uploadARIService\",
+  \"getEventosPrecio\").\naggregate(constant(true), AggregationStrategies.bean(AgregadorEventos.class,
+  \"agregaEventoPrecio\")).\ncompletionSize(100).\nlog(\"Ejecucion de Quartz \");\n\nAnd
+  I get this error :\n\nError occurred during starting Camel: CamelContext(249-camel-9)
+  due Parameter annotations at index 1 is not supported on method: public java.util.HashMap
+  com.tesipro.conectores.interfaces.tesiproconpush.camel.AgregadorEventos.agregaEventoPrecio(java.util.HashMap,com.tesipro.conectores.domain.EventoPrecio)
+  \         \n\nIt seems the problem is that annotations are not supported in the
+  aggregator arguments nor in the argument class.\n\nhttps://github.com/apache/camel/blob/3f4f8e9ddcc8de32cca084927a10c5b3bceef7f9/camel-core/src/main/java/org/apache/camel/processor/aggregate/AggregationStrategyBeanInfo.java#L67"

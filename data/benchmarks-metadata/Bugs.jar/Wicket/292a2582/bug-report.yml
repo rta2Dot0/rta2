@@ -1,0 +1,14 @@
+---
+BugID: WICKET-3510
+Summary: DateTimeField improperly converts time causing wrong dates when the server's
+  current date is different from the client's date.
+Description: "The bug is in DateTimeField#convertInput().\n<code>\n// Get year, month
+  and day ignoring any timezone of the Date object\nCalendar cal = Calendar.getInstance();\ncal.setTime(dateFieldInput);\nint
+  year = cal.get(Calendar.YEAR);\nint month = cal.get(Calendar.MONTH) + 1;\nint day
+  = cal.get(Calendar.DAY_OF_MONTH);\nint hours = (hoursInput == null ? 0 : hoursInput
+  % 24);\nint minutes = (minutesInput == null ? 0 : minutesInput);\n\n// Use the input
+  to create a date object with proper timezone\nMutableDateTime date = new MutableDateTime(year,
+  month, day, hours, minutes, 0, 0,\n\tDateTimeZone.forTimeZone(getClientTimeZone()));\n</code>\nIf
+  the server's current date is different from the client's, this produces wrong output.
+  I attached a patch with a test case that simulates this condition.\n\nI don't know
+  why this \"casting\" of day, month, year is done.\n"

@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-5571
+Summary: Camel proxies should not forward hashCode() method invocations
+Description: |
+  Given a Camel proxy for an @InOnly service interface, and a route from the proxy to a JMS endpoint, calling hashCode() on the proxy throws an exception, either immediately or after a number of retries, depending on the route configuration.
+
+  See the attached test case for different scenarios.
+
+  The reason is that hashCode() is forwarded by the CamelInvocationHandler to the remote endpoint, which does not make sense in this case.

@@ -1,0 +1,11 @@
+---
+BugID: WICKET-4184
+Summary: AppendingStringBuffer.insert  infinite loop
+Description: "When trying to insert a StringBuffer into an AppendingStringBuffer,
+  the method \n\npublic AppendingStringBuffer insert(final int offset, final Object
+  obj)\n\nwill call itself repeatedly generating an infinite loop.\n\nThe fix would
+  be to call toString() method if the object is a StringBuffer\n\n\npublic AppendingStringBuffer
+  insert(final int offset, final Object obj)\n\t{\n\t\tif (obj instanceof AppendingStringBuffer)\n\t\t{\n\t\t\tAppendingStringBuffer
+  asb = (AppendingStringBuffer)obj;\n\t\t\treturn insert(offset, asb.value, 0, asb.count);\n\t\t}\n\t\telse
+  if (obj instanceof StringBuffer)\n\t\t{\n\t\t\t//return insert(offset, obj);\n                       return
+  insert(offset, obj.toString());\n\n\t\t}\n\t\treturn insert(offset, String.valueOf(obj));\n\t}\n"

@@ -1,0 +1,7 @@
+---
+BugID: OAK-428
+Summary: Binaries might get removed by garbage collection while still referenced
+Description: 'The [Microkernel contract|http://svn.apache.org/repos/asf/jackrabbit/oak/trunk/oak-mk-api/src/main/java/org/apache/jackrabbit/mk/api/MicroKernel.java]
+  specifies a specific format for references to binaries: ":blobId:<blobId>". Currently
+  oak-core uses a different format and thus risks premature garbage collection of
+  such binaries.'

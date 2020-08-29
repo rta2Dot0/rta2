@@ -1,0 +1,29 @@
+---
+BugID: CAMEL-7478
+Summary: Simple Language - Length of array properties is not correctly evaluated
+Description: |-
+  If the exchange body is an array, then {{body.length}} returns correctly the length of the array. However, if the array is a property of an object, then not the correct value is returned:
+  {code:title=MyClass.java}
+  public class MyClass {
+      public Object[] getMyArray() {
+          return new Object[]{"Hallo", "World", "!"};
+      }
+  }
+  {code}
+  Accessing the property {{myArray}} with Simple:
+  {code}
+  <setHeader headerName="mySimpleHeader">
+      <simple>body.myArray.length</simple>
+  </setHeader>
+  <log message="mySimpleHeader = ${header.mySimpleHeader}" />
+  {code}
+  Java:
+  {code}
+  final ProducerTemplate template = main.getCamelTemplate();
+  template.sendBody("direct:start", new MyClass());
+  {code}
+  Log:
+  {noformat}
+  [main] route1 INFO  mySimpleHeader = 1
+  {noformat}
+  The return value should be {{3}} instead of {{1}}.

@@ -1,0 +1,12 @@
+---
+BugID: WICKET-172
+Summary: Component reAttach and versioning
+Description: "I'm reAttaching a component doing something like: \n\nMyFooPanel p1
+  = new MyFooPanel(this, \"panel\";); \nMyBarPanel p2 = new MyBarPanel(this, \"panel\");
+  \np1.reAttach(); \n\nWhen I try to restore to the initial page version I found that
+  the component with id \"panel\" is not a children component of the page. \n\nI have
+  investigated it and I think it is because when the component is reAttached the order
+  in which the changes are added to the ChangesList is: \n- Add p2. \n- Remove p1.
+  \n\nWhen the initial version is restored the undo functionality is done in reverse
+  mode like, \n- Add p1. \n- Remove p2. \n\nThe problem is p1 and p2 have the same
+  id, so when p2 is removed what is removing is p1 that has just added. \n\nOscar."

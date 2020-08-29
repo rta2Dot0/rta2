@@ -1,0 +1,28 @@
+---
+BugID: LOG4J2-94
+Summary: 'Variable substitution: ${sys:foo} defaults to <property name=":foo">, should
+  default to <property name="foo">'
+Description: |-
+  The following configuration doesn't work (${sys:log.level} can't be resolved even though default value is provided).
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <configuration status="OFF">
+    <properties>
+      <property name="log.level">error</property>
+      <property name=":log.level">ACTUALLY_GETS_USED</property>
+    </properties>
+    <appenders>
+      <Console name="Console" target="SYSTEM_OUT">
+        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      </Console>
+    </appenders>
+    <loggers>
+      <root level="${sys:log.level}">
+        <appender-ref ref="Console"/>
+      </root>
+    </loggers>
+  </configuration>
+
+
+  In org.apache.logging.log4j.core.lookup.Interpolator.lookup(LogEvent, String), on line 110,
+  var = var.substring(prefixPos) should be var = var.substring(prefixPos + 1) instead.

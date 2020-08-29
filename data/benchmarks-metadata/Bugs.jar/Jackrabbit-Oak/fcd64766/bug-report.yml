@@ -1,0 +1,7 @@
+---
+BugID: OAK-3630
+Summary: Mixin based rules not working for relative properties
+Description: |-
+  If an indexing rule is defined for mixin then it does not work as expected for relative properties.
+
+  Issue here being that most of logic in Aggregate class (which is used for relative property handling also) relies on nodes primaryType and does not account for mixin type

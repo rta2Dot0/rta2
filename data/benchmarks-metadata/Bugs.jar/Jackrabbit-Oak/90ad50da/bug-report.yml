@@ -1,0 +1,7 @@
+---
+BugID: OAK-3634
+Summary: RDB/MongoDocumentStore may return stale documents
+Description: |-
+  It appears that the implementations of the {{update}} method sometimes populate the memory cache with documents that do not reflect any current or previous state in the persistence (that is, miss changes made by another node).
+
+  (will attach test)

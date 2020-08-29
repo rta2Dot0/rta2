@@ -1,0 +1,12 @@
+---
+BugID: LOG4J2-639
+Summary: NPE in AsyncLogger.log(..)
+Description: "Our production environment suffers from\n{noformat}\njava.lang.NullPointerException
+  at org.apache.logging.log4j.core.async.AsyncLogger.log(AsyncLogger.java:273)\n    at
+  org.apache.logging.log4j.spi.AbstractLoggerWrapper.log(AbstractLoggerWrapper.java:121)\n
+  \   at org.apache.logging.log4j.spi.AbstractLogger.info(AbstractLogger.java:1006)
+  \n    at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:873)
+  \n    at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:809)\n{noformat}\n\nIt
+  looks like something in our app is still logging despite the AsyncLogger having
+  been stopped (and the disruptor field set to null).\n\nThe logger could print out
+  a more informative message in this situation."

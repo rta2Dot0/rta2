@@ -1,0 +1,27 @@
+---
+BugID: LOG4J2-177
+Summary: ERROR StatusLogger An exception occurred processing Appender udpsocket java.lang.NullPointerException
+Description: "This seems to be a race condition of some kind. Two threads are exiting
+  at almost exactly the same time, and both print a message as they exit. This exception
+  happens every 3 or 4 times the code is run, so it's easily reproducible.\n\nERROR
+  StatusLogger An exception occurred processing Appender udpsocket java.lang.NullPointerException\n\tat
+  org.apache.logging.log4j.core.net.DatagramOutputStream.flush(DatagramOutputStream.java:93)\n\tat
+  org.apache.logging.log4j.core.appender.OutputStreamManager.flush(OutputStreamManager.java:146)\n\tat
+  org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:117)\n\tat
+  org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:102)\n\tat
+  org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:335)\n\tat
+  org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:316)\n\tat
+  org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:281)\n\tat
+  org.apache.logging.log4j.core.Logger.log(Logger.java:108)\n\tat org.apache.logging.log4j.spi.AbstractLogger.trace(AbstractLogger.java:250)\n\tat
+  com.galmont.automation.framework.gui.handlers.RunCycleHandler$2.run(RunCycleHandler.java:128)\n\tat
+  java.lang.Thread.run(Unknown Source)\n\nMy configuration file:\n\n<?xml version=\"1.0\"
+  encoding=\"UTF-8\"?>\n<configuration status=\"OFF\">\n\t\n\t<appenders>\n\t\t<Console
+  name=\"console\" target=\"SYSTEM_OUT\">\n\t\t\t<PatternLayout pattern=\"%d{HH:mm:ss.SSS}
+  [%t] %-5level %logger{36} - %msg%n\" />\n\t\t</Console>\n\t\t<Socket name=\"udpsocket\"
+  host=\"localhost\" port=\"90\" protocol=\"UDP\">\n\t\t\t<PatternLayout pattern=\"%d{HH:mm:ss.SSS}
+  [%t] %-5level %logger{36} - %msg%n\" />\n\t\t</Socket>\n\t\t<RollingFile name=\"RollingFile\"
+  fileName=\"logs/app.log\" filePattern=\"logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz\">\n\t\t\t<PatternLayout
+  pattern=\"%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n\" />\n\t\t\t<Policies>\n\t\t\t\t<SizeBasedTriggeringPolicy
+  size=\"20 MB\" />\n\t\t\t</Policies>\n\t\t</RollingFile>\n\t</appenders>\n\t\n\t<loggers>\n\t\t<root
+  level=\"trace\">\n\t\t\t<appender-ref ref=\"console\" />\n\t\t\t<appender-ref ref=\"udpsocket\"
+  />\n\t\t\t<appender-ref ref=\"RollingFile\" />\n\t\t</root>\n\t</loggers>\n\t\n</configuration>"

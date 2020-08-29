@@ -1,0 +1,30 @@
+---
+BugID: CAMEL-5844
+Summary: Camel Tracer not showing some EIP names
+Description: "In order to debug Camel routes, I have enabled the Tracer as follows:
+  \        getContext().setTracing(true);\n\nHowever, I have observed that some EIP
+  names and routes are not being printed on console, making it a bit confusing to
+  follow. As far as I know, this happens with:\n* process(): the processor is not
+  printed in the tracer; it's just empty (see below)\n* marshall(): the marshaller
+  name is not printed in the tracer; it's just empty (see below)\n* setBody(): this
+  step is also printed empty\n* from(\"activiti:...\"): this route step is not printed
+  altogether\n\nFor simplicity, I only provide the examples for process() and marshall(),
+  bit I can provide more information if needed.\n\n{panel:title=Route2 Config}\nfrom(\"vm:processIncomingOrders\")\n
+  \ .process(new IncomingOrdersProcessor())\n  .split(body())\t// iterate list of
+  Orders\n  .to(\"log:incomingOrder1?showExchangeId=true\")\n  .process(new ActivitiStarterProcessor())\n
+  \ .to(\"log:incomingOrder2?showExchangeId=true\")\t\t\t\n  .to(\"activiti:activiti-camel-example\");\n{panel}\n\n{panel:title=Route2
+  Tracer}\nINFO  03-12 12:09:31,899 (MarkerIgnoringBase.java:info:96)  -ID-ES-CNU2113RXH-51211-1354532898719-0-3
+  >>> (route2) from(vm://processIncomingOrders) -->  <<< Pattern:InOnly, [...]\nINFO
+  \ 03-12 12:09:34,899 (IncomingOrdersProcessor.java:process:39)  -Processing incoming
+  orders (from Web Services)\n[ORDER id:120 partName: wheel amount: 2 customerName:
+  Honda Mechanics]\n[ORDER id:121 partName: engine amount: 4 customerName: Volvo]\n[ORDER
+  id:122 partName: steering wheel amount: 3 customerName: Renault]\nINFO  03-12 12:09:34,900
+  (MarkerIgnoringBase.java:info:96)  -ID-ES-CNU2113RXH-51211-1354532898719-0-3 >>>
+  (route2)  --> split[body] <<< Pattern:InOnly, [...]\n{panel}\n\n\n\n{panel:title=Route6
+  config}\nfrom(\"direct:ordercsv\")\n  .marshal().bindy(BindyType.Csv, \"net.atos.camel.entities\")\n
+  \ .to(\"file:d://cameldata/orders?fileName=orders-$\\{date:now:yyyyMMdd-hhmmss}.csv\");\n{panel}\n\n{panel:title=Route6
+  Tracer}\nINFO  03-12 12:09:37,313 (MarkerIgnoringBase.java:info:96)  -ID-ES-CNU2113RXH-51211-1354532898719-0-8
+  >>> (route6) direct://ordercsv -->  <<< Pattern:InOnly, [...]\nINFO  03-12 12:09:37,320
+  (MarkerIgnoringBase.java:info:96)  -ID-ES-CNU2113RXH-51211-1354532898719-0-8 >>>
+  (route6)  --> file://d://cameldata/orders?fileName=orders-%24%7Bdate%3Anow%3AyyyyMMdd-hhmmss%7D.csv
+  <<< Pattern:InOnly,  [...]\n{panel}\n\n"

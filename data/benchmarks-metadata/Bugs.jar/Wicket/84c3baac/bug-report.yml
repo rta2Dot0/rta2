@@ -1,0 +1,10 @@
+---
+BugID: WICKET-3767
+Summary: INullAcceptingValidator behavior seems broken in 1.5-RC4.2
+Description: |
+  As discussed in this forum thread:
+  http://apache-wicket.1842946.n4.nabble.com/INullAcceptingValidator-behavior-tp3570352p3570352.html
+
+  It appears that Wicket no longer calls INullAcceptingValidator intances when the validatable value is null.
+
+  Wicket wraps validators  as behaviors, using the adapter pattern. The adapter class (org.apache.wicket.validation.ValidatorAdapter) implements  the interface IValidator<T>. This "hides" the case where the actual validator is an INullAcceptingValidator. Therefore, when going through a component's attached validators, the code of org.apache.wicket.markup.html.form.FormComponent will never call INullAcceptingValidators when the value is null.

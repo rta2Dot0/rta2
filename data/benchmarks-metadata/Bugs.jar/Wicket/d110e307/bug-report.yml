@@ -1,0 +1,16 @@
+---
+BugID: WICKET-5102
+Summary: 'wicket-bean-validation: Bean validation PropertyValidator only works with
+  direct field access'
+Description: |-
+  There's a substring indexing bug in the wicket-bean-validation module in org.apache.wicket.bean.validation.DefaultPropertyResolver that causes it to only work with direct field access and fail when field is missing and getter method should be used.
+
+  The problem is on this line:
+
+      String name = getter.getName().substring(3, 1).toLowerCase() + getter.getName().substring(4);
+
+  Which should be:
+
+      String name = getter.getName().substring(3, 4).toLowerCase() + getter.getName().substring(4);
+
+  (or simply a single character access)

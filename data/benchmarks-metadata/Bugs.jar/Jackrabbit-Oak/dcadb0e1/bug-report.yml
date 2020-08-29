@@ -1,0 +1,21 @@
+---
+BugID: OAK-2246
+Summary: UUID collision check is not does not work in transient space
+Description: |-
+  I think OAK-1037 broke the system view import.
+
+  test case:
+  1. create a new node with a uuid (referenceable, or new user)
+  2. import systemview with IMPORT_UUID_COLLISION_REPLACE_EXISTING
+  3. save()
+
+  result:
+  {noformat}
+  javax.jcr.nodetype.ConstraintViolationException: OakConstraint0030: Uniqueness constraint violated at path [/] for one of the property in [jcr:uuid] having value e358efa4-89f5-3062-b10d-d7316b65649e
+  {noformat}
+
+  expected:
+  * imported content should replace the existing node - even in transient space.
+
+  note:
+  * if you perform a save() after step 1, everything works.

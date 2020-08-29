@@ -1,0 +1,1169 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] ServiceComb Java Chassis
+[INFO] Java Chassis::Dependencies
+[INFO] Java Chassis::Parent
+[INFO] Java Chassis::Foundations
+[INFO] Java Chassis::Foundations::Common
+[INFO] Java Chassis::Common
+[INFO] Java Chassis::Common::Javassist
+[INFO] Java Chassis::Foundations::Test Scaffolding
+[INFO] Java Chassis::Foundations::Config
+[INFO] Java Chassis::Foundations::SSL
+[INFO] Java Chassis::Foundations::Vertx
+[INFO] Java Chassis::Service Registry
+[INFO] Java Chassis::Swagger
+[INFO] Java Chassis::Swagger::Generator
+[INFO] Java Chassis::Swagger::Generator::Core
+[INFO] Java Chassis::Swagger::Generator::Jaxrs
+[INFO] Java Chassis::Swagger::Invocation
+[INFO] Java Chassis::Swagger::Invocation::Core
+[INFO] Java Chassis::Core
+[INFO] Java Chassis::Common::Protobuf
+[INFO] Java Chassis::Foundations::Metrics
+[INFO] Java Chassis::Common::Rest
+[INFO] Java Chassis::Handlers
+[INFO] Java Chassis::Handlers::Tracing Zipkin
+[INFO] Java Chassis::Handlers::Bizkeeper
+[INFO] Java Chassis::Handlers::Flow Control QPS
+[INFO] Java Chassis::Handlers::Loadbalance
+[INFO] Java Chassis::Handlers::Fault Injection
+[INFO] Java Chassis::Handlers::PublicKey Auth
+[INFO] Java Chassis::Providers
+[INFO] Java Chassis::Providers::Rest Common
+[INFO] Java Chassis::Swagger::Invocation::JAXRS
+[INFO] Java Chassis::Providers::JAXRS
+[INFO] Java Chassis::Providers::POJO
+[INFO] Java Chassis::Swagger::Invocation::Spring MVC
+[INFO] Java Chassis::Swagger::Generator::Spring MVC
+[INFO] Java Chassis::Providers::Spring MVC
+[INFO] Java Chassis::Transports
+[INFO] Java Chassis::Transports::Hightway
+[INFO] Java Chassis::Transports::Rest
+[INFO] Java Chassis::Transports::Rest::Client
+[INFO] Java Chassis::Transports::Rest::Vertx
+[INFO] Java Chassis::Transports::Rest::Servlet
+[INFO] Java Chassis::Swagger::Invocation::Validator
+[INFO] Java Chassis::Dynamic Config
+[INFO] Java Chassis::Foundations::Config CC
+[INFO] Java Chassis::Spring Boot Starter::Parent
+[INFO] Java Chassis::Spring Boot Starter::Configuration
+[INFO] Java Chassis::Spring Boot Starter::ServiceComb
+[INFO] Java Chassis::Spring Boot Starter::Provider
+[INFO] Java Chassis::Spring Boot Starter::Transport
+[INFO] Java Chassis::Spring Boot Starter::Discovery
+[INFO] Java Chassis::Spring Boot Starter::Registry
+[INFO] Java Chassis::Spring Boot Starter::Spring Cloud Zuul
+[INFO] Java Chassis::Spring Boot Starter::Spring Cloud Zuul Zipkin
+[INFO] Java Chassis::Tracing
+[INFO] Java Chassis::Tracing::Common
+[INFO] Java Chassis::Tracing::Zipkin
+[INFO] Java Chassis::Edge
+[INFO] Java Chassis::Edge::Core
+[INFO] Java Chassis::Metrics
+[INFO] Java Chassis::Metrics::Core
+[INFO] Java Chassis::Metrics::Integration
+[INFO] Java Chassis::Metrics::Integration::Prometheus
+[INFO] Java Chassis::Dynamic Config::Apollo
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ServiceComb Java Chassis 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ java-chassis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom (6.0 kB at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom (1.4 kB at 72 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 84 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 515 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 315 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 305 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar (12 kB at 821 kB/s)
+[INFO] 
+[INFO] --- maven-site-plugin:3.5.1:attach-descriptor (attach-descriptor) @ java-chassis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.2/maven-reporting-exec-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.2/maven-reporting-exec-1.2.pom (11 kB at 751 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 368 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 188 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 185 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 101 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 595 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 208 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 447 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 261 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 261 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 707 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 827 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 333 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 496 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 691 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 250 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 247 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 129 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 552 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 159 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 336 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4.0 kB at 368 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.7/doxia-sink-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.7/doxia-sink-api-1.7.pom (1.5 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.7/doxia-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.7/doxia-1.7.pom (15 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.pom (1.5 kB at 154 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.7/doxia-module-xhtml-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.7/doxia-module-xhtml-1.7.pom (1.6 kB at 109 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.7/doxia-modules-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.7/doxia-modules-1.7.pom (2.6 kB at 202 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 348 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.pom (4.1 kB at 339 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/1.5/xmlunit-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/1.5/xmlunit-1.5.pom (3.0 kB at 277 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.7/doxia-module-apt-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.7/doxia-module-apt-1.7.pom (1.7 kB at 143 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.7/doxia-module-xdoc-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.7/doxia-module-xdoc-1.7.pom (4.4 kB at 370 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.7/doxia-module-fml-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.7/doxia-module-fml-1.7.pom (4.6 kB at 357 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.7/doxia-module-markdown-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.7/doxia-module-markdown-1.7.pom (2.1 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom (1.9 kB at 134 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom (2.6 kB at 70 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom (1.7 kB at 28 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom (1.9 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom (5.5 kB at 157 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom (2.1 kB at 260 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom (2.1 kB at 140 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom (2.1 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom (157 B at 16 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.7.1/doxia-decoration-model-1.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.7.1/doxia-decoration-model-1.7.1.pom (3.4 kB at 282 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.7.1/doxia-sitetools-1.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.7.1/doxia-sitetools-1.7.1.pom (14 kB at 351 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.7.1/doxia-site-renderer-1.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.7.1/doxia-site-renderer-1.7.1.pom (6.6 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.7.1/doxia-skin-model-1.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.7.1/doxia-skin-model-1.7.1.pom (2.9 kB at 267 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.pom (2.8 kB at 235 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 295 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.7.1/doxia-integration-tools-1.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.7.1/doxia-integration-tools-1.7.1.pom (5.9 kB at 297 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom (1.8 kB at 110 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom (9.8 kB at 894 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/20/maven-parent-20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/20/maven-parent-20.pom (25 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 196 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.pom (6.3 kB at 569 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/project/6.1.25/project-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/project/6.1.25/project-6.1.25.pom (9.2 kB at 658 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom (3.3 kB at 253 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom (16 kB at 785 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.pom (3.9 kB at 277 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom (2.7 kB at 191 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom (13 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom (22 kB at 964 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/37/commons-parent-37.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/37/commons-parent-37.pom (63 kB at 2.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar (155 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 860 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 163 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/1.5/xmlunit-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/1.5/xmlunit-1.5.jar (98 kB at 997 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar (59 kB at 538 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.jar (167 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar (73 kB at 653 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.jar (12 kB at 101 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 4.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar (47 kB at 379 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.7.1/doxia-skin-model-1.7.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar (22 kB at 177 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar (20 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar (185 kB at 1.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar (38 kB at 283 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/1.7.1/doxia-skin-model-1.7.1.jar (16 kB at 117 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.jar (8.1 kB at 59 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar (237 kB at 1.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar (134 kB at 894 kB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ java-chassis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 858 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4.0 kB at 337 kB/s)
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/java-chassis/1.0.0-m2-SNAPSHOT/java-chassis-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Dependencies 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ java-chassis-dependencies ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ java-chassis-dependencies ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom (4.0 kB at 402 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom (9.2 kB at 832 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom (2.8 kB at 312 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom (1.7 kB at 170 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.pom (1.5 kB at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.6/doxia-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.6/doxia-1.6.pom (19 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.pom (1.5 kB at 154 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.6/doxia-core-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.6/doxia-core-1.6.pom (4.2 kB at 382 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.6/doxia-module-xhtml-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.6/doxia-module-xhtml-1.6.pom (1.6 kB at 181 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.6/doxia-modules-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.6/doxia-modules-1.6.pom (2.6 kB at 291 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.6/doxia-module-apt-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.6/doxia-module-apt-1.6.pom (1.7 kB at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.6/doxia-module-xdoc-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.6/doxia-module-xdoc-1.6.pom (4.6 kB at 384 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.6/doxia-module-fml-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.6/doxia-module-fml-1.6.pom (4.8 kB at 370 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.6/doxia-module-markdown-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.6/doxia-module-markdown-1.6.pom (2.1 kB at 139 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.pom (3.0 kB at 187 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.6/doxia-sitetools-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.6/doxia-sitetools-1.6.pom (18 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.6/doxia-site-renderer-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.6/doxia-site-renderer-1.6.pom (6.1 kB at 407 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.6/doxia-integration-tools-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.6/doxia-integration-tools-1.6.pom (7.0 kB at 632 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/3/doxia-tools-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/3/doxia-tools-3.pom (9.9 kB at 827 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.4.3/plexus-archiver-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.4.3/plexus-archiver-2.4.3.pom (3.5 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.11/plexus-utils-3.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.11/plexus-utils-3.0.11.pom (3.1 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.8/plexus-io-2.0.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.8/plexus-io-2.0.8.pom (2.2 kB at 201 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom (11 kB at 208 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom (50 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.pom (1.9 kB at 146 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom (17 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom (27 kB at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.8/plexus-io-2.0.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.8/plexus-io-2.0.8.jar (59 kB at 3.9 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (61 kB at 4.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.jar (95 kB at 1.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar (256 kB at 3.2 MB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ java-chassis-dependencies ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/java-chassis-dependencies/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/java-chassis-dependencies/1.0.0-m2-SNAPSHOT/java-chassis-dependencies-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Parent 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ java-chassis-parent ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ java-chassis-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-incubator-disclaimer-resource-bundle/1.1/apache-incubator-disclaimer-resource-bundle-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-incubator-disclaimer-resource-bundle/1.1/apache-incubator-disclaimer-resource-bundle-1.1.jar (6.8 kB at 571 kB/s)
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ java-chassis-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ java-chassis-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/parent/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/java-chassis-parent/1.0.0-m2-SNAPSHOT/java-chassis-parent-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ foundations ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ foundations ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ foundations ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ foundations ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/foundations/1.0.0-m2-SNAPSHOT/foundations-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Common 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ foundation-common ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ foundation-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ foundation-common ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.pom (6.5 kB at 85 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (1.0 kB at 86 kB/s)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ foundation-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 49 source files to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/foundation-common/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Common 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ common ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ common ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ common ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ common ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/common/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/common/1.0.0-m2-SNAPSHOT/common-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Common::Javassist 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/foundation-common-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Test Scaffolding 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ foundation-test-scaffolding ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ foundation-test-scaffolding ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ foundation-test-scaffolding ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/foundation-test-scaffolding/src/main/resources
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ foundation-test-scaffolding ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/foundation-test-scaffolding/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Config 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/foundation-test-scaffolding-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::SSL 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-config/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-config/1.0.0-m2-SNAPSHOT/foundation-config-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Vertx 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-ssl/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-ssl/1.0.0-m2-SNAPSHOT/foundation-ssl-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Service Registry 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-vertx/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-vertx/1.0.0-m2-SNAPSHOT/foundation-vertx-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ swagger ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ swagger ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ swagger ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ swagger ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/swagger/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/swagger/1.0.0-m2-SNAPSHOT/swagger-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Generator 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ swagger-generator ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ swagger-generator ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ swagger-generator ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ swagger-generator ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/swagger/swagger-generator/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/swagger-generator/1.0.0-m2-SNAPSHOT/swagger-generator-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Generator::Core 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/common-javassist/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/common-javassist/1.0.0-m2-SNAPSHOT/common-javassist-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Generator::Jaxrs 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-generator-core/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-generator-core/1.0.0-m2-SNAPSHOT/swagger-generator-core-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Invocation 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ swagger-invocation ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ swagger-invocation ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ swagger-invocation ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ swagger-invocation ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/swagger/swagger-invocation/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/swagger-invocation/1.0.0-m2-SNAPSHOT/swagger-invocation-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Invocation::Core 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-generator-jaxrs/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-generator-jaxrs/1.0.0-m2-SNAPSHOT/swagger-generator-jaxrs-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Core 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/service-registry/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-invocation-core/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/service-registry/1.0.0-m2-SNAPSHOT/service-registry-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-invocation-core/1.0.0-m2-SNAPSHOT/swagger-invocation-core-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Common::Protobuf 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/java-chassis-core/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/java-chassis-core/1.0.0-m2-SNAPSHOT/java-chassis-core-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Metrics 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Common::Rest 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-metrics/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-metrics/1.0.0-m2-SNAPSHOT/foundation-metrics-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ handlers ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ handlers ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ handlers ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ handlers ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/handlers/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/handlers/1.0.0-m2-SNAPSHOT/handlers-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers::Tracing Zipkin 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/common-rest/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/common-rest/1.0.0-m2-SNAPSHOT/common-rest-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers::Bizkeeper 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers::Flow Control QPS 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers::Loadbalance 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers::Fault Injection 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Handlers::PublicKey Auth 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Providers 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ providers ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ providers ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ providers ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ providers ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/providers/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/providers/1.0.0-m2-SNAPSHOT/providers-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Providers::Rest Common 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Invocation::JAXRS 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Providers::JAXRS 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-rest-common/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-invocation-jaxrs/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-rest-common/1.0.0-m2-SNAPSHOT/provider-rest-common-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-invocation-jaxrs/1.0.0-m2-SNAPSHOT/swagger-invocation-jaxrs-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Providers::POJO 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Invocation::Spring MVC 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Generator::Spring MVC 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Providers::Spring MVC 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-invocation-springmvc/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-generator-springmvc/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-invocation-springmvc/1.0.0-m2-SNAPSHOT/swagger-invocation-springmvc-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/swagger-generator-springmvc/1.0.0-m2-SNAPSHOT/swagger-generator-springmvc-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Transports 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ transports ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ transports ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ transports ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ transports ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/transports/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/transports/1.0.0-m2-SNAPSHOT/transports-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Transports::Hightway 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/common-protobuf/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/common-protobuf/1.0.0-m2-SNAPSHOT/common-protobuf-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Transports::Rest 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ transport-rest ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ transport-rest ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ transport-rest ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ transport-rest ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/transports/transport-rest/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/transport-rest/1.0.0-m2-SNAPSHOT/transport-rest-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Transports::Rest::Client 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Transports::Rest::Vertx 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-rest-client/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-rest-client/1.0.0-m2-SNAPSHOT/transport-rest-client-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Transports::Rest::Servlet 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Swagger::Invocation::Validator 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Dynamic Config 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dynamic-config ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ dynamic-config ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ dynamic-config ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dynamic-config ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/dynamic-config/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/dynamic-config/1.0.0-m2-SNAPSHOT/dynamic-config-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Config CC 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Parent 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ spring-boot-starter-parent ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ spring-boot-starter-parent ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ spring-boot-starter-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ spring-boot-starter-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/spring-boot-starter/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/spring-boot-starter-parent/1.0.0-m2-SNAPSHOT/spring-boot-starter-parent-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Configuration 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/config-cc/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/config-cc/1.0.0-m2-SNAPSHOT/config-cc-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::ServiceComb 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-springmvc/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-jaxrs/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-pojo/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-bizkeeper/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-loadbalance/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-highway/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-flowcontrol-qps/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-springmvc/1.0.0-m2-SNAPSHOT/provider-springmvc-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-jaxrs/1.0.0-m2-SNAPSHOT/provider-jaxrs-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/provider-pojo/1.0.0-m2-SNAPSHOT/provider-pojo-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-bizkeeper/1.0.0-m2-SNAPSHOT/handler-bizkeeper-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-loadbalance/1.0.0-m2-SNAPSHOT/handler-loadbalance-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-highway/1.0.0-m2-SNAPSHOT/transport-highway-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-flowcontrol-qps/1.0.0-m2-SNAPSHOT/handler-flowcontrol-qps-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Provider 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/spring-boot-starter-servicecomb/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-rest-vertx/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/spring-boot-starter-servicecomb/1.0.0-m2-SNAPSHOT/spring-boot-starter-servicecomb-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-rest-vertx/1.0.0-m2-SNAPSHOT/transport-rest-vertx-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Transport 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-rest-servlet/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/transport-rest-servlet/1.0.0-m2-SNAPSHOT/transport-rest-servlet-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Discovery 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Registry 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Spring Cloud Zuul 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Spring Boot Starter::Spring Cloud Zuul Zipkin 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-tracing-zipkin/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/handler-tracing-zipkin/1.0.0-m2-SNAPSHOT/handler-tracing-zipkin-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Tracing 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ tracing ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ tracing ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ tracing ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ tracing ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/tracing/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/tracing/1.0.0-m2-SNAPSHOT/tracing-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Tracing::Common 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ tracing-common ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ tracing-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ tracing-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/tracing/tracing-common/src/main/resources
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tracing-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/tracing/tracing-common/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Tracing::Zipkin 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/tracing-common/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/tracing-common/1.0.0-m2-SNAPSHOT/tracing-common-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Edge 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ edge ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ edge ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ edge ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ edge ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/edge/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/edge/1.0.0-m2-SNAPSHOT/edge-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Edge::Core 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Metrics 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ metrics ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ metrics ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ metrics ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ metrics ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/metrics/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/metrics/1.0.0-m2-SNAPSHOT/metrics-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Metrics::Core 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Metrics::Integration 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ metrics-integration ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ metrics-integration ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ metrics-integration ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ metrics-integration ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/metrics/metrics-integration/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/metrics-integration/1.0.0-m2-SNAPSHOT/metrics-integration-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Metrics::Integration::Prometheus 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/metrics-core/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/metrics-core/1.0.0-m2-SNAPSHOT/metrics-core-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Dynamic Config::Apollo 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] ServiceComb Java Chassis ........................... SUCCESS [  5.061 s]
+[INFO] Java Chassis::Dependencies ......................... SUCCESS [  3.123 s]
+[INFO] Java Chassis::Parent ............................... SUCCESS [  1.294 s]
+[INFO] Java Chassis::Foundations .......................... SUCCESS [  0.612 s]
+[INFO] Java Chassis::Foundations::Common .................. FAILURE [ 10.450 s]
+[INFO] Java Chassis::Common ............................... SUCCESS [  2.431 s]
+[INFO] Java Chassis::Common::Javassist .................... FAILURE [  5.799 s]
+[INFO] Java Chassis::Foundations::Test Scaffolding ........ FAILURE [  2.498 s]
+[INFO] Java Chassis::Foundations::Config .................. FAILURE [  8.882 s]
+[INFO] Java Chassis::Foundations::SSL ..................... FAILURE [  2.776 s]
+[INFO] Java Chassis::Foundations::Vertx ................... FAILURE [  1.703 s]
+[INFO] Java Chassis::Service Registry ..................... FAILURE [  1.076 s]
+[INFO] Java Chassis::Swagger .............................. SUCCESS [  2.508 s]
+[INFO] Java Chassis::Swagger::Generator ................... SUCCESS [  5.811 s]
+[INFO] Java Chassis::Swagger::Generator::Core ............. FAILURE [  7.529 s]
+[INFO] Java Chassis::Swagger::Generator::Jaxrs ............ FAILURE [  7.578 s]
+[INFO] Java Chassis::Swagger::Invocation .................. SUCCESS [  4.264 s]
+[INFO] Java Chassis::Swagger::Invocation::Core ............ FAILURE [  3.008 s]
+[INFO] Java Chassis::Core ................................. FAILURE [  5.667 s]
+[INFO] Java Chassis::Common::Protobuf ..................... FAILURE [  3.686 s]
+[INFO] Java Chassis::Foundations::Metrics ................. FAILURE [  0.027 s]
+[INFO] Java Chassis::Common::Rest ......................... FAILURE [  3.251 s]
+[INFO] Java Chassis::Handlers ............................. SUCCESS [  0.220 s]
+[INFO] Java Chassis::Handlers::Tracing Zipkin ............. FAILURE [  3.668 s]
+[INFO] Java Chassis::Handlers::Bizkeeper .................. FAILURE [  0.050 s]
+[INFO] Java Chassis::Handlers::Flow Control QPS ........... FAILURE [  0.040 s]
+[INFO] Java Chassis::Handlers::Loadbalance ................ FAILURE [  0.272 s]
+[INFO] Java Chassis::Handlers::Fault Injection ............ FAILURE [  0.042 s]
+[INFO] Java Chassis::Handlers::PublicKey Auth ............. FAILURE [  0.038 s]
+[INFO] Java Chassis::Providers ............................ SUCCESS [  1.168 s]
+[INFO] Java Chassis::Providers::Rest Common ............... FAILURE [  0.037 s]
+[INFO] Java Chassis::Swagger::Invocation::JAXRS ........... FAILURE [  0.019 s]
+[INFO] Java Chassis::Providers::JAXRS ..................... FAILURE [  2.234 s]
+[INFO] Java Chassis::Providers::POJO ...................... FAILURE [  0.037 s]
+[INFO] Java Chassis::Swagger::Invocation::Spring MVC ...... FAILURE [  0.024 s]
+[INFO] Java Chassis::Swagger::Generator::Spring MVC ....... FAILURE [  0.020 s]
+[INFO] Java Chassis::Providers::Spring MVC ................ FAILURE [  1.829 s]
+[INFO] Java Chassis::Transports ........................... SUCCESS [  0.090 s]
+[INFO] Java Chassis::Transports::Hightway ................. FAILURE [  0.550 s]
+[INFO] Java Chassis::Transports::Rest ..................... SUCCESS [  0.179 s]
+[INFO] Java Chassis::Transports::Rest::Client ............. FAILURE [  0.038 s]
+[INFO] Java Chassis::Transports::Rest::Vertx .............. FAILURE [  0.619 s]
+[INFO] Java Chassis::Transports::Rest::Servlet ............ FAILURE [  0.045 s]
+[INFO] Java Chassis::Swagger::Invocation::Validator ....... FAILURE [  0.055 s]
+[INFO] Java Chassis::Dynamic Config ....................... SUCCESS [  0.190 s]
+[INFO] Java Chassis::Foundations::Config CC ............... FAILURE [  0.026 s]
+[INFO] Java Chassis::Spring Boot Starter::Parent .......... SUCCESS [  0.067 s]
+[INFO] Java Chassis::Spring Boot Starter::Configuration ... FAILURE [  0.539 s]
+[INFO] Java Chassis::Spring Boot Starter::ServiceComb ..... FAILURE [  3.058 s]
+[INFO] Java Chassis::Spring Boot Starter::Provider ........ FAILURE [  2.779 s]
+[INFO] Java Chassis::Spring Boot Starter::Transport ....... FAILURE [  3.554 s]
+[INFO] Java Chassis::Spring Boot Starter::Discovery ....... FAILURE [  0.177 s]
+[INFO] Java Chassis::Spring Boot Starter::Registry ........ FAILURE [  0.024 s]
+[INFO] Java Chassis::Spring Boot Starter::Spring Cloud Zuul FAILURE [  0.047 s]
+[INFO] Java Chassis::Spring Boot Starter::Spring Cloud Zuul Zipkin FAILURE [  1.379 s]
+[INFO] Java Chassis::Tracing .............................. SUCCESS [  5.734 s]
+[INFO] Java Chassis::Tracing::Common ...................... FAILURE [  0.996 s]
+[INFO] Java Chassis::Tracing::Zipkin ...................... FAILURE [  1.905 s]
+[INFO] Java Chassis::Edge ................................. SUCCESS [  0.066 s]
+[INFO] Java Chassis::Edge::Core ........................... FAILURE [  0.036 s]
+[INFO] Java Chassis::Metrics .............................. SUCCESS [  0.241 s]
+[INFO] Java Chassis::Metrics::Core ........................ FAILURE [  0.027 s]
+[INFO] Java Chassis::Metrics::Integration ................. SUCCESS [  0.090 s]
+[INFO] Java Chassis::Metrics::Integration::Prometheus ..... FAILURE [  0.578 s]
+[INFO] Java Chassis::Dynamic Config::Apollo ............... FAILURE [  0.026 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:04 min
+[INFO] Finished at: 2020-03-12T13:36:40-07:00
+[INFO] Final Memory: 163M/1751M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project foundation-common: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] Failed to execute goal on project common-javassist: Could not resolve dependencies for project org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project foundation-test-scaffolding: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] Failed to execute goal on project foundation-config: Could not resolve dependencies for project org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project foundation-ssl: Could not resolve dependencies for project org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project foundation-vertx: Could not resolve dependencies for project org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project service-registry: Could not resolve dependencies for project org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-generator-core: Could not resolve dependencies for project org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-generator-jaxrs: Could not resolve dependencies for project org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-invocation-core: Could not resolve dependencies for project org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project java-chassis-core: Could not resolve dependencies for project org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project common-protobuf: Could not resolve dependencies for project org.apache.servicecomb:common-protobuf:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project foundation-metrics: Could not resolve dependencies for project org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project common-rest: Could not resolve dependencies for project org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project handler-tracing-zipkin: Could not resolve dependencies for project org.apache.servicecomb:handler-tracing-zipkin:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project handler-bizkeeper: Could not resolve dependencies for project org.apache.servicecomb:handler-bizkeeper:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project handler-flowcontrol-qps: Could not resolve dependencies for project org.apache.servicecomb:handler-flowcontrol-qps:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project handler-loadbalance: Could not resolve dependencies for project org.apache.servicecomb:handler-loadbalance:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project handler-fault-injection: Could not resolve dependencies for project org.apache.servicecomb:handler-fault-injection:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project handler-publickey-auth: Could not resolve dependencies for project org.apache.servicecomb:handler-publickey-auth:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project provider-rest-common: Could not resolve dependencies for project org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-invocation-jaxrs: Could not resolve dependencies for project org.apache.servicecomb:swagger-invocation-jaxrs:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project provider-jaxrs: Could not resolve dependencies for project org.apache.servicecomb:provider-jaxrs:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project provider-pojo: Could not resolve dependencies for project org.apache.servicecomb:provider-pojo:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-invocation-springmvc: Could not resolve dependencies for project org.apache.servicecomb:swagger-invocation-springmvc:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-generator-springmvc: Could not resolve dependencies for project org.apache.servicecomb:swagger-generator-springmvc:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project provider-springmvc: Could not resolve dependencies for project org.apache.servicecomb:provider-springmvc:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project transport-highway: Could not resolve dependencies for project org.apache.servicecomb:transport-highway:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-protobuf:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project transport-rest-client: Could not resolve dependencies for project org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project transport-rest-vertx: Could not resolve dependencies for project org.apache.servicecomb:transport-rest-vertx:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project transport-rest-servlet: Could not resolve dependencies for project org.apache.servicecomb:transport-rest-servlet:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project swagger-invocation-validator: Could not resolve dependencies for project org.apache.servicecomb:swagger-invocation-validator:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project config-cc: Could not resolve dependencies for project org.apache.servicecomb:config-cc:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project spring-boot-starter-configuration: Could not resolve dependencies for project org.apache.servicecomb:spring-boot-starter-configuration:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:config-cc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project spring-boot-starter-servicecomb: Could not resolve dependencies for project org.apache.servicecomb:spring-boot-starter-servicecomb:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:provider-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-pojo:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-bizkeeper:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-loadbalance:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-highway:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-protobuf:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-flowcontrol-qps:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:provider-springmvc:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project spring-boot-starter-provider: Could not resolve dependencies for project org.apache.servicecomb:spring-boot-starter-provider:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:spring-boot-starter-servicecomb:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-pojo:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-bizkeeper:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-loadbalance:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-highway:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-protobuf:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-flowcontrol-qps:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-rest-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:spring-boot-starter-servicecomb:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project spring-boot-starter-transport: Could not resolve dependencies for project org.apache.servicecomb:spring-boot-starter-transport:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:spring-boot-starter-servicecomb:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-rest-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-springmvc:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:provider-pojo:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-bizkeeper:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-loadbalance:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-highway:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-protobuf:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:handler-flowcontrol-qps:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-rest-servlet:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:spring-boot-starter-servicecomb:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project spring-boot-starter-discovery: Could not resolve dependencies for project org.apache.servicecomb:spring-boot-starter-discovery:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project spring-boot-starter-registry: Could not resolve dependencies for project org.apache.servicecomb:spring-boot-starter-registry:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project spring-cloud-zuul: Could not resolve dependencies for project org.apache.servicecomb:spring-cloud-zuul:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project spring-cloud-zuul-zipkin: Could not resolve dependencies for project org.apache.servicecomb:spring-cloud-zuul-zipkin:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:handler-tracing-zipkin:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:handler-tracing-zipkin:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project tracing-common: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] Failed to execute goal on project tracing-zipkin: Could not resolve dependencies for project org.apache.servicecomb:tracing-zipkin:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:tracing-common:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project edge-core: Could not resolve dependencies for project org.apache.servicecomb:edge-core:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:transport-rest-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:transport-rest-client:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-rest:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:transport-rest-vertx:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project metrics-core: Could not resolve dependencies for project org.apache.servicecomb:metrics-core:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] Failed to execute goal on project metrics-prometheus: Could not resolve dependencies for project org.apache.servicecomb:metrics-prometheus:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:metrics-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:java-chassis-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:service-registry:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-invocation-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-jaxrs:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:swagger-generator-core:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:common-javassist:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:metrics-core:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project config-apollo: Could not resolve dependencies for project org.apache.servicecomb:config-apollo:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :foundation-common
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java Chassis::Foundations
+[INFO] Java Chassis::Foundations::Common
+[INFO] Java Chassis::Foundations::Test Scaffolding
+[INFO] Java Chassis::Foundations::Config
+[INFO] Java Chassis::Foundations::SSL
+[INFO] Java Chassis::Foundations::Vertx
+[INFO] Java Chassis::Foundations::Metrics
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ foundations ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ foundations ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ foundations ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ foundations ---
+[INFO] Installing /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/pom.xml to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/.m2/org/apache/servicecomb/foundations/1.0.0-m2-SNAPSHOT/foundations-1.0.0-m2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Common 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ foundation-common ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ foundation-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ foundation-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ foundation-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 49 source files to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/foundation-common/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Test Scaffolding 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ foundation-test-scaffolding ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ foundation-test-scaffolding ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ foundation-test-scaffolding ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/foundation-test-scaffolding/src/main/resources
+[INFO] Copying 4 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ foundation-test-scaffolding ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_apache-incubator-servicecomb-java-chassis_371353019-371886679_java-7/foundations/foundation-test-scaffolding/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Config 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/foundation-common-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/foundation-test-scaffolding-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::SSL 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-config/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-config/1.0.0-m2-SNAPSHOT/foundation-config-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Vertx 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-ssl/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-ssl/1.0.0-m2-SNAPSHOT/foundation-ssl-1.0.0-m2-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Metrics 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Java Chassis::Foundations .......................... SUCCESS [  2.507 s]
+[INFO] Java Chassis::Foundations::Common .................. FAILURE [  1.777 s]
+[INFO] Java Chassis::Foundations::Test Scaffolding ........ FAILURE [  6.140 s]
+[INFO] Java Chassis::Foundations::Config .................. FAILURE [  7.506 s]
+[INFO] Java Chassis::Foundations::SSL ..................... FAILURE [  3.333 s]
+[INFO] Java Chassis::Foundations::Vertx ................... FAILURE [  4.216 s]
+[INFO] Java Chassis::Foundations::Metrics ................. FAILURE [  0.039 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 26.992 s
+[INFO] Finished at: 2020-03-12T13:37:12-07:00
+[INFO] Final Memory: 45M/1238M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project foundation-common: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project foundation-test-scaffolding: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] Failed to execute goal on project foundation-config: Could not resolve dependencies for project org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project foundation-ssl: Could not resolve dependencies for project org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project foundation-vertx: Could not resolve dependencies for project org.apache.servicecomb:foundation-vertx:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-ssl:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 2]
+[ERROR] Failed to execute goal on project foundation-metrics: Could not resolve dependencies for project org.apache.servicecomb:foundation-metrics:jar:1.0.0-m2-SNAPSHOT: Failure to find org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in https://repository.apache.org/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of apache.snapshots has elapsed or updates are forced -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :foundation-common
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java Chassis::Foundations::Config 1.0.0-m2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/foundation-common-1.0.0-m2-SNAPSHOT.pom
+[WARNING] The POM for org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/foundation-test-scaffolding-1.0.0-m2-SNAPSHOT.pom
+[WARNING] The POM for org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-common/1.0.0-m2-SNAPSHOT/foundation-common-1.0.0-m2-SNAPSHOT.jar
+[INFO] Downloading: https://repository.apache.org/snapshots/org/apache/servicecomb/foundation-test-scaffolding/1.0.0-m2-SNAPSHOT/foundation-test-scaffolding-1.0.0-m2-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.944 s
+[INFO] Finished at: 2020-03-12T13:37:26-07:00
+[INFO] Final Memory: 31M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project foundation-config: Could not resolve dependencies for project org.apache.servicecomb:foundation-config:jar:1.0.0-m2-SNAPSHOT: The following artifacts could not be resolved: org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT, org.apache.servicecomb:foundation-test-scaffolding:jar:1.0.0-m2-SNAPSHOT: Could not find artifact org.apache.servicecomb:foundation-common:jar:1.0.0-m2-SNAPSHOT in apache.snapshots (https://repository.apache.org/snapshots) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

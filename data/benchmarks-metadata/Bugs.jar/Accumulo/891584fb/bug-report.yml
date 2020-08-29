@@ -1,0 +1,8 @@
+---
+BugID: ACCUMULO-3229
+Summary: Shell displays authTimeout poorly
+Description: |-
+  The authTimeout in the shell is displayed badly when executing {{about -v}}.
+  Even though it is configured in integer minutes, it is converted to seconds for display as a floating point number with 2 decimals. This makes no sense, since the decimals will always be {{.00}}.
+
+  We can keep the units in seconds, I guess, but this needs to be displayed with {{%ds}} not {{%.2fs}}. This was broken in ACCUMULO-3224 by using TimeUnit to convert the number, instead of dividing by 1000.0 as we were doing manually before.

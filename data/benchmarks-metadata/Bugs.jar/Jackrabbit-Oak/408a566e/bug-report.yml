@@ -1,0 +1,19 @@
+---
+BugID: OAK-2330
+Summary: Field boost not working if the property for indexing is picked using aggregate
+  index rules
+Description: "For below index definition - \n{code}\n{  \n   jcr:primaryType:\"oak:QueryIndexDefinition\",\n
+  \  compatVersion:2,\n   type:\"lucene\",\n   async:\"async\",\n   reindex:false,\n
+  \  reindexCount:12,\n   aggregates:{  \n      jcr:primaryType:\"oak:Unstructured\",\n
+  \     app:Asset:{  \n         jcr:primaryType:\"oak:Unstructured\",\n         include0:{
+  \ \n            jcr:primaryType:\"oak:Unstructured\",\n            path:\"jcr:content/metadata/*\"\n
+  \        }\n      }\n   },\n   indexRules:{  \n      jcr:primaryType:\"nt:unstructured\",\n
+  \     app:Asset:{  \n         jcr:primaryType:\"nt:unstructured\",\n         properties:{
+  \ \n            jcr:primaryType:\"nt:unstructured\",\n            foo:{  \n               jcr:primaryType:\"nt:unstructured\",\n
+  \              nodeScopeIndex:true,\n               ordered:true,\n               propertyIndex:true,\n
+  \              name:\"jcr:content/metadata/foo\",\n               type:\"Long\",\n
+  \              boost:3,\n               nodeName:\"foo\"\n            }\n         }\n
+  \     }\n   }\n}\n{code}\n\nOn executing query of form - \n\n{code}\n//element(*,
+  app:Asset) \n[\n    jcr:contains(., 'bar' )\n]\n{code}\n\nshould boost the results
+  containing property - 'jcr:content/metadata/foo', but its ignoring index time boosting
+  for it.\n\n"

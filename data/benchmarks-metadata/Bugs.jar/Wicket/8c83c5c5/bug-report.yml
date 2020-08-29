@@ -1,0 +1,8 @@
+---
+BugID: WICKET-5881
+Summary: NPE in FormComponent#updateCollectionModel in case of no converted input
+  and unmodifiable collection
+Description: There are 2 issues with FormComponent#updateCollectionModel. 1) converted
+  input is not checked for null before wrapping it to ArrayList 2) converted input
+  is not checked for null then model returns unmodifiable collection. The both issues
+  causes NPE.

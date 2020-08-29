@@ -1,0 +1,43 @@
+---
+BugID: WICKET-2506
+Summary: 'Regression: "Could not find child with id: <ID> in the wicket:enclosure"
+  for non-component tag'
+Description: "Attached testcase passes with wicket-1.4.1 but fails with 1.4.2 saying:\n\norg.apache.wicket.WicketRuntimeException:
+  Could not find child with id: radio in the wicket:enclosure\n\tat org.apache.wicket.markup.html.internal.Enclosure.checkChildComponent(Enclosure.java:210)\n\tat
+  org.apache.wicket.markup.html.internal.Enclosure.ensureAllChildrenPresent(Enclosure.java:249)\n\tat
+  org.apache.wicket.markup.html.internal.Enclosure.onComponentTagBody(Enclosure.java:169)\n\tat
+  org.apache.wicket.Component.renderComponent(Component.java:2626)\n\tat org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1512)\n\tat
+  org.apache.wicket.Component.render(Component.java:2457)\n\tat org.apache.wicket.MarkupContainer.autoAdd(MarkupContainer.java:229)\n\tat
+  org.apache.wicket.markup.resolver.EnclosureResolver.resolve(EnclosureResolver.java:61)\n\tat
+  org.apache.wicket.markup.resolver.ComponentResolvers.resolve(ComponentResolvers.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1418)\n\tat org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1577)\n\tat
+  org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1501)\n\tat
+  org.apache.wicket.Component.renderComponent(Component.java:2626)\n\tat org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1512)\n\tat
+  org.apache.wicket.Component.render(Component.java:2457)\n\tat org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1414)\n\tat
+  org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1528)\n\tat org.apache.wicket.Page.onRender(Page.java:1545)\n\tat
+  org.apache.wicket.Component.render(Component.java:2457)\n\tat org.apache.wicket.Page.renderPage(Page.java:914)\n\tat
+  org.apache.wicket.request.target.component.BookmarkablePageRequestTarget.respond(BookmarkablePageRequestTarget.java:262)\n\tat
+  org.apache.wicket.request.AbstractRequestCycleProcessor.respond(AbstractRequestCycleProcessor.java:105)\n\tat
+  org.apache.wicket.RequestCycle.processEventsAndRespond(RequestCycle.java:1258)\n\tat
+  org.apache.wicket.RequestCycle.step(RequestCycle.java:1329)\n\tat org.apache.wicket.RequestCycle.steps(RequestCycle.java:1428)\n\tat
+  org.apache.wicket.RequestCycle.request(RequestCycle.java:594)\n\tat org.apache.wicket.protocol.http.MockWebApplication.processRequestCycle(MockWebApplication.java:478)\n\tat
+  org.apache.wicket.protocol.http.MockWebApplication.processRequestCycle(MockWebApplication.java:390)\n\tat
+  org.apache.wicket.util.tester.BaseWicketTester.startPage(BaseWicketTester.java:300)\n\tat
+  org.apache.wicket.EnclosurePageTest.testRender(EnclosurePageTest.java:23)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat junit.framework.TestCase.runTest(TestCase.java:154)\n\tat
+  junit.framework.TestCase.runBare(TestCase.java:127)\n\tat junit.framework.TestResult$1.protect(TestResult.java:106)\n\tat
+  junit.framework.TestResult.runProtected(TestResult.java:124)\n\tat junit.framework.TestResult.run(TestResult.java:109)\n\tat
+  junit.framework.TestCase.run(TestCase.java:118)\n\tat junit.framework.TestSuite.runTest(TestSuite.java:208)\n\tat
+  junit.framework.TestSuite.run(TestSuite.java:203)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native
+  Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:213)\n\tat
+  org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)\n\tat
+  org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)\n\tat
+  org.apache.maven.surefire.Surefire.run(Surefire.java:177)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native
+  Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)\n\tat
+  org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)"

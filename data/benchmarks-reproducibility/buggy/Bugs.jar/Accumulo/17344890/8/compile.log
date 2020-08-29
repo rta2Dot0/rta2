@@ -1,0 +1,1645 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] The project org.apache.accumulo:accumulo-project:pom:1.6.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache Accumulo
+[INFO] Trace
+[INFO] Fate
+[INFO] Start
+[INFO] Core
+[INFO] Simple Examples
+[INFO] Server Base
+[INFO] GC Server
+[INFO] Master Server
+[INFO] Tablet Server
+[INFO] MiniCluster
+[INFO] Monitor Server
+[INFO] Native Libraries
+[INFO] Tracer Server
+[INFO] Testing
+[INFO] Proxy
+[INFO] Assemblies
+[INFO] Documentation
+[INFO] Accumulo Maven Plugin
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Accumulo 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/sortpom/maven-sortpom-sorter/2.3.0/maven-sortpom-sorter-2.3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/sortpom/maven-sortpom-sorter/2.3.0/maven-sortpom-sorter-2.3.0.pom (2.0 kB at 3.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom (1.8 kB at 121 kB/s)
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.pom (2.7 kB at 247 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.pom (3.8 kB at 239 kB/s)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.2.0.201312181205-r/org.eclipse.jgit-3.2.0.201312181205-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.2.0.201312181205-r/org.eclipse.jgit-3.2.0.201312181205-r.pom (6.1 kB at 254 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.2.0.201312181205-r/org.eclipse.jgit-parent-3.2.0.201312181205-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.2.0.201312181205-r/org.eclipse.jgit-parent-3.2.0.201312181205-r.pom (20 kB at 961 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom (3.4 kB at 261 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.pom (4.0 kB at 25 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.pom (820 B at 37 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-mockito/1.5.4/powermock-api-mockito-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-mockito/1.5.4/powermock-api-mockito-1.5.4.pom (1.2 kB at 51 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api/1.5.4/powermock-api-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api/1.5.4/powermock-api-1.5.4.pom (805 B at 54 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock/1.5.4/powermock-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock/1.5.4/powermock-1.5.4.pom (10 kB at 782 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.pom (1.0 kB at 74 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.4/powermock-api-support-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.4/powermock-api-support-1.5.4.pom (1.3 kB at 105 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.4/powermock-core-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.4/powermock-core-1.5.4.pom (1.9 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.4/powermock-reflect-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.4/powermock-reflect-1.5.4.pom (1.0 kB at 87 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom (2.5 kB at 133 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom (17 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.pom (9.5 kB at 453 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4/1.5.4/powermock-module-junit4-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4/1.5.4/powermock-module-junit4-1.5.4.pom (1.3 kB at 58 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-modules/1.5.4/powermock-modules-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-modules/1.5.4/powermock-modules-1.5.4.pom (798 B at 80 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.4/powermock-module-junit4-common-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.4/powermock-module-junit4-common-1.5.4.pom (1.1 kB at 63 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.4/powermock-api-support-1.5.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.4/powermock-core-1.5.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.4/powermock-api-support-1.5.4.jar (19 kB at 580 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.4/powermock-core-1.5.4.jar (84 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.4/powermock-reflect-1.5.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.jar (54 kB at 914 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar (226 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.4/powermock-module-junit4-common-1.5.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.4/powermock-reflect-1.5.4.jar (43 kB at 534 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.4/powermock-module-junit4-common-1.5.4.jar (14 kB at 155 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.jar (42 kB at 469 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar (714 kB at 5.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar (1.6 MB at 9.4 MB/s)
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/rat/apache-rat-core/0.10/apache-rat-core-0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/rat/apache-rat-core/0.10/apache-rat-core-0.10.pom (4.0 kB at 361 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 kB at 736 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom (11 kB at 379 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom (50 kB at 2.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar (10 kB at 684 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.jar (33 kB at 1.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar (18 kB at 588 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.jar (136 kB at 3.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar (7.6 kB at 200 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar (256 kB at 3.8 MB/s)
+[INFO] 69 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 7245 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 5121 unknown: 5121 generated: 0 approved: 943 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.pom (2.3 kB at 130 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom (481 B at 30 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom (5.9 kB at 367 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.1/maven-plugin-api-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.1/maven-plugin-api-2.0.1.pom (643 B at 6.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom (11 kB at 575 kB/s)
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom (6.0 kB at 375 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom (1.4 kB at 124 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 434 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 426 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 493 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar (12 kB at 333 kB/s)
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.1/maven-reporting-exec-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.1/maven-reporting-exec-1.1.pom (11 kB at 731 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 510 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 118 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 62 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 283 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 63 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 163 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 32 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 389 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 156 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 121 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 614 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 31 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 309 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 31 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 161 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4.0 kB at 450 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 369 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 145 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom (4.0 kB at 366 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom (2.8 kB at 48 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom (1.7 kB at 131 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.4/doxia-module-apt-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.4/doxia-module-apt-1.4.pom (1.7 kB at 156 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.4/doxia-module-xdoc-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.4/doxia-module-xdoc-1.4.pom (4.6 kB at 271 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.4/doxia-module-markdown-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.4/doxia-module-markdown-1.4.pom (2.1 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom (1.9 kB at 125 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom (2.6 kB at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom (1.7 kB at 102 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom (1.9 kB at 215 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom (5.5 kB at 112 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom (2.1 kB at 260 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom (2.1 kB at 48 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom (2.1 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom (11 kB at 131 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.5/doxia-integration-tools-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.5/doxia-integration-tools-1.5.pom (6.9 kB at 628 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/2/doxia-tools-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/2/doxia-tools-2.pom (12 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.3/doxia-logging-api-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.3/doxia-logging-api-1.3.pom (1.6 kB at 57 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.3/doxia-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.3/doxia-1.3.pom (18 kB at 2.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.3/doxia-decoration-model-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.3/doxia-decoration-model-1.3.pom (3.1 kB at 191 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.3/doxia-sitetools-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.3/doxia-sitetools-1.3.pom (16 kB at 6.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom (1.8 kB at 97 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom (9.8 kB at 579 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom (1.6 kB at 742 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom (1.2 kB at 136 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom (5.6 kB at 563 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 2.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 5.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar (155 kB at 6.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 5.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 452 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 3.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 4.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 960 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 8.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar (59 kB at 977 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar (73 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar (237 kB at 201 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar (22 kB at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar (185 kB at 155 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar (38 kB at 31 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar (47 kB at 31 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar (20 kB at 13 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar (51 kB at 33 kB/s)
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.pom (6.1 kB at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.pom (2.3 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.pom (2.8 kB at 897 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.jar (40 kB at 2.3 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-project ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-project ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4.0 kB at 202 kB/s)
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-project/1.6.0-SNAPSHOT/accumulo-project-1.6.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/target/accumulo-project-1.6.0-SNAPSHOT-site.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-project/1.6.0-SNAPSHOT/accumulo-project-1.6.0-SNAPSHOT-site.xml
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Trace 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-trace ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-trace ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-trace ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-trace ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 28 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 28 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-trace ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-trace ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-trace ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-trace ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/src/main/java/org/apache/accumulo/trace/thrift/SpanReceiver.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/src/main/java/org/apache/accumulo/trace/thrift/SpanReceiver.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-trace ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-trace ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-trace ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-trace ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/target/accumulo-trace-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-trace ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-trace ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-trace ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-trace ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/target/accumulo-trace-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-trace/1.6.0-SNAPSHOT/accumulo-trace-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-trace/1.6.0-SNAPSHOT/accumulo-trace-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Fate 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-fate ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-fate ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-fate ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-fate ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 34 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 34 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-fate ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-fate ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-fate ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-fate ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-fate ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-fate ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-fate ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-fate ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/target/accumulo-fate-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-fate ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-fate ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-fate ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-fate ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/target/accumulo-fate-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-fate/1.6.0-SNAPSHOT/accumulo-fate-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-fate/1.6.0-SNAPSHOT/accumulo-fate-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Start 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-start ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-start ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-start ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-start ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 36 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 31 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-start ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-start ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-start ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-start ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-start ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-start ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-start ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-start ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/target/accumulo-start-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-start ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-start ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-start ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-start ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/target/accumulo-start-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-start/1.6.0-SNAPSHOT/accumulo-start-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-start/1.6.0-SNAPSHOT/accumulo-start-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Core 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-core ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-core ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-core ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources/shelltest.txt
+[INFO] Exclude: src/test/resources/org/apache/accumulo/core/file/rfile/ver_3.rf
+[INFO] Exclude: src/test/resources/org/apache/accumulo/core/file/rfile/ver_4.rf
+[INFO] Exclude: src/test/resources/org/apache/accumulo/core/file/rfile/ver_6.rf
+[INFO] 728 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 728 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (prepare-filtered-java-source) @ accumulo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:add-source (add-filtered-java-source) @ accumulo-core ---
+[INFO] Source directory: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/filtered-java-src added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 579 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/iterators/aggregation/conf/AggregatorConfiguration.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/iterators/aggregation/conf/AggregatorConfiguration.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/data/thrift/TKey.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/data/thrift/TKey.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/test/filtered-resources
+[INFO] Copying 9 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 134 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/test-classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/test/java/org/apache/accumulo/core/iterators/aggregation/conf/AggregatorConfigurationTest.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/test/java/org/apache/accumulo/core/iterators/aggregation/conf/AggregatorConfigurationTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-core ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/accumulo-core-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-core ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/accumulo-core-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-core/1.6.0-SNAPSHOT/accumulo-core-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-core/1.6.0-SNAPSHOT/accumulo-core-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Simple Examples 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-examples-simple ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/examples/simple/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-examples-simple ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-examples-simple ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-examples-simple ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/main/resources/META-INF/services/org.apache.accumulo.core.util.shell.ShellExtension
+[INFO] 54 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 54 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-examples-simple ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-examples-simple ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-examples-simple ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-examples-simple ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/examples/simple/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-examples-simple ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-examples-simple ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/examples/simple/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-examples-simple ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-examples-simple ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/examples/simple/target/accumulo-examples-simple-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-examples-simple ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-examples-simple ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-examples-simple ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-examples-simple ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/examples/simple/target/accumulo-examples-simple-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-examples-simple/1.6.0-SNAPSHOT/accumulo-examples-simple-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/examples/simple/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-examples-simple/1.6.0-SNAPSHOT/accumulo-examples-simple-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Server Base 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-server-base ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-server-base ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-server-base ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-server-base ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 178 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 178 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-server-base ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-server-base ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-server-base ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-server-base ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 142 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-server-base ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-server-base ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-server-base ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-server-base ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/target/accumulo-server-base-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-server-base ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-server-base ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-server-base ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-server-base ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/target/accumulo-server-base-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-server-base/1.6.0-SNAPSHOT/accumulo-server-base-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-server-base/1.6.0-SNAPSHOT/accumulo-server-base-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GC Server 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-gc ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-gc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-gc ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-gc ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 9 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 9 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-gc ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-gc ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-gc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-gc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-gc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-gc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-gc ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-gc ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/target/accumulo-gc-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-gc ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-gc ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-gc ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-gc ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/target/accumulo-gc-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-gc/1.6.0-SNAPSHOT/accumulo-gc-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/gc/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-gc/1.6.0-SNAPSHOT/accumulo-gc-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Master Server 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-master ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-master ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-master ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-master ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 35 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 35 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-master ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-master ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-master ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-master ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 30 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-master ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-master ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-master ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-master ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/target/accumulo-master-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-master ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-master ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-master ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-master ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/target/accumulo-master-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-master/1.6.0-SNAPSHOT/accumulo-master-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/master/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-master/1.6.0-SNAPSHOT/accumulo-master-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Tablet Server 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-tserver ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-tserver ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-tserver ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-tserver ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources/*.walog
+[INFO] 69 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 69 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-tserver ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-tserver ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-tserver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-tserver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 57 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-tserver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-tserver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-tserver ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-tserver ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/target/accumulo-tserver-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-tserver ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-tserver ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-tserver ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-tserver ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/target/accumulo-tserver-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-tserver/1.6.0-SNAPSHOT/accumulo-tserver-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-tserver/1.6.0-SNAPSHOT/accumulo-tserver-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building MiniCluster 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-minicluster ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-minicluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-minicluster ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 23 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 22 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-minicluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-minicluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-minicluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-minicluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-minicluster ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-minicluster ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/target/accumulo-minicluster-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-minicluster ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-minicluster ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-minicluster ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/target/accumulo-minicluster-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-minicluster/1.6.0-SNAPSHOT/accumulo-minicluster-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/minicluster/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-minicluster/1.6.0-SNAPSHOT/accumulo-minicluster-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Monitor Server 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-monitor ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-monitor ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-monitor ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-monitor ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/main/resources/web/flot/**/*.js
+[INFO] 48 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 44 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-monitor ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-monitor ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-monitor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 35 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-monitor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 38 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-monitor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-monitor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-monitor ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-monitor ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/target/accumulo-monitor-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-monitor ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-monitor ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-monitor ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-monitor ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/target/accumulo-monitor-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-monitor/1.6.0-SNAPSHOT/accumulo-monitor-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/monitor/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-monitor/1.6.0-SNAPSHOT/accumulo-monitor-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Native Libraries 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-native ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-native ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-native ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-native ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 14 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 13 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-native ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-native ---
+[INFO] 
+[INFO] --- native-maven-plugin:1.0-alpha-8:javah (generate-javah-includes) @ accumulo-native ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.1/plexus-utils-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.1/plexus-utils-2.0.1.pom (3.3 kB at 257 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/bcel/bcel/5.1/bcel-5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/bcel/bcel/5.1/bcel-5.1.pom (310 B at 28 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/regexp/regexp/1.2/regexp-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/regexp/regexp/1.2/regexp-1.2.pom (145 B at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-api/1.0-alpha-8/maven-native-api-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-api/1.0-alpha-8/maven-native-api-1.0-alpha-8.pom (982 B at 123 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-javah/1.0-alpha-8/maven-native-javah-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-javah/1.0-alpha-8/maven-native-javah-1.0-alpha-8.pom (698 B at 10 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-components/1.0-alpha-8/maven-native-components-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-components/1.0-alpha-8/maven-native-components-1.0-alpha-8.pom (1.3 kB at 74 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-generic-c/1.0-alpha-8/maven-native-generic-c-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-generic-c/1.0-alpha-8/maven-native-generic-c-1.0-alpha-8.pom (828 B at 83 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-msvc/1.0-alpha-8/maven-native-msvc-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-msvc/1.0-alpha-8/maven-native-msvc-1.0-alpha-8.pom (846 B at 106 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-bcc/1.0-alpha-8/maven-native-bcc-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-bcc/1.0-alpha-8/maven-native-bcc-1.0-alpha-8.pom (707 B at 88 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-manager/1.0-alpha-8/maven-native-manager-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/natives/maven-native-manager/1.0-alpha-8/maven-native-manager-1.0-alpha-8.pom (539 B at 34 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-12/plexus-archiver-1.0-alpha-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-12/plexus-archiver-1.0-alpha-12.pom (1.6 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-4/plexus-io-1.0-alpha-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-4/plexus-io-1.0-alpha-4.pom (1.2 kB at 171 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/regexp/regexp/1.2/regexp-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/regexp/regexp/1.2/regexp-1.2.jar (30 kB at 2.5 MB/s)
+[INFO] /bin/sh -c cd /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native && javah -d /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/target/native/javah -classpath /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/target/classes:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tserver/target/accumulo-tserver-1.6.0-SNAPSHOT.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/beust/jcommander/1.32/jcommander-1.32.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/google/guava/guava/15.0/guava-15.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-codec/commons-codec/1.7/commons-codec-1.7.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-io/commons-io/2.1/commons-io-2.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/log4j/log4j/1.2.16/log4j-1.2.16.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/accumulo-core-1.6.0-SNAPSHOT.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/jline/jline/2.11/jline-2.11.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/commons/commons-math/2.1/commons-math-2.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/maven/scm/maven-scm-api/1.4/maven-scm-api-1.4.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/maven/scm/maven-scm-provider-svnexe/1.4/maven-scm-provider-svnexe-1.4.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.4/maven-scm-provider-svn-commons-1.4.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/regexp/regexp/1.3/regexp-1.3.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/fate/target/accumulo-fate-1.6.0-SNAPSHOT.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/base/target/accumulo-server-base-1.6.0-SNAPSHOT.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/start/target/accumulo-start-1.6.0-SNAPSHOT.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/trace/target/accumulo-trace-1.6.0-SNAPSHOT.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-client/2.2.0/hadoop-client-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-common/2.2.0/hadoop-common-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/commons-net/commons-net/3.1/commons-net-3.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/codehaus/jackson/jackson-core-asl/1.8.8/jackson-core-asl-1.8.8.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/codehaus/jackson/jackson-mapper-asl/1.8.8/jackson-mapper-asl-1.8.8.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/avro/avro/1.7.4/avro-1.7.4.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/xerial/snappy/snappy-java/1.0.4.1/snappy-java-1.0.4.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-auth/2.2.0/hadoop-auth-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/tukaani/xz/1.0/xz-1.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-hdfs/2.2.0/hadoop-hdfs-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-mapreduce-client-app/2.2.0/hadoop-mapreduce-client-app-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-mapreduce-client-common/2.2.0/hadoop-mapreduce-client-common-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-yarn-client/2.2.0/hadoop-yarn-client-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/google/inject/guice/3.0/guice-3.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/javax/inject/javax.inject/1/javax.inject-1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-test-framework/jersey-test-framework-grizzly2/1.9/jersey-test-framework-grizzly2-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-test-framework/jersey-test-framework-core/1.9/jersey-test-framework-core-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-client/1.9/jersey-client-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-grizzly2/1.9/jersey-grizzly2-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/grizzly/grizzly-http/2.1.2/grizzly-http-2.1.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/grizzly/grizzly-framework/2.1.2/grizzly-framework-2.1.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/gmbal/gmbal-api-only/3.0.0-b023/gmbal-api-only-3.0.0-b023.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/external/management-api/3.0.0-b012/management-api-3.0.0-b012.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/grizzly/grizzly-http-server/2.1.2/grizzly-http-server-2.1.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/grizzly/grizzly-rcm/2.1.2/grizzly-rcm-2.1.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/grizzly/grizzly-http-servlet/2.1.2/grizzly-http-servlet-2.1.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/glassfish/javax.servlet/3.1/javax.servlet-3.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-server/1.9/jersey-server-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/asm/asm/3.1/asm-3.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/javax/activation/activation/1.1/activation-1.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/codehaus/jackson/jackson-jaxrs/1.8.3/jackson-jaxrs-1.8.3.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/codehaus/jackson/jackson-xc/1.8.3/jackson-xc-1.8.3.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/com/sun/jersey/contribs/jersey-guice/1.9/jersey-guice-1.9.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-yarn-server-common/2.2.0/hadoop-yarn-server-common-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.2.0/hadoop-mapreduce-client-shuffle-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-yarn-api/2.2.0/hadoop-yarn-api-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-mapreduce-client-core/2.2.0/hadoop-mapreduce-client-core-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-yarn-common/2.2.0/hadoop-yarn-common-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.2.0/hadoop-mapreduce-client-jobclient-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/hadoop/hadoop-annotations/2.2.0/hadoop-annotations-2.2.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/thrift/libthrift/0.9.0/libthrift-0.9.0.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/httpcomponents/httpcore/4.1.3/httpcore-4.1.3.jar:/scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/zookeeper/zookeeper/3.3.6/zookeeper-3.3.6.jar org.apache.accumulo.tserver.NativeMap
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-native ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (assemble-native-tarball) @ accumulo-native ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom (3.2 kB at 402 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3.0 kB at 302 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom (2.5 kB at 251 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom (1.7 kB at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom (2.7 kB at 166 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom (2.2 kB at 245 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom (10.0 kB at 232 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom (3.0 kB at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0-alpha-2/maven-repository-builder-1.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0-alpha-2/maven-repository-builder-1.0-alpha-2.pom (3.2 kB at 538 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom (765 B at 76 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom (12 kB at 2.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom (1.4 kB at 136 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom (1.5 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom (1.8 kB at 71 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom (1.6 kB at 203 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom (2.7 kB at 339 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom (1.6 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0-alpha-1/maven-common-artifact-filters-1.0-alpha-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0-alpha-1/maven-common-artifact-filters-1.0-alpha-1.pom (1.8 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/6/maven-shared-components-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/6/maven-shared-components-6.pom (3.1 kB at 388 kB/s)
+[INFO] Reading assembly descriptor: src/main/assemblies/native-tarball.xml
+[INFO] Copying files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/target/accumulo-native-1.6.0-SNAPSHOT
+[WARNING] Assembly file: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/target/accumulo-native-1.6.0-SNAPSHOT is not a regular file (it may be a directory). It cannot be attached to the project build for installation or deployment.
+[INFO] Building tar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/target/accumulo-native-1.6.0-SNAPSHOT.tar.gz
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-native ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:exec (test-native-libs) @ accumulo-native ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.1/commons-exec-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.1/commons-exec-1.1.pom (11 kB at 1.4 MB/s)
+g++ -m64 -g -fPIC -shared -O2 -fno-omit-frame-pointer -fno-strict-aliasing -Wall -I/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/include -I/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/include/linux -Ijavah -o libaccumulo.so nativeMap/org_apache_accumulo_tserver_NativeMap.cc 
+JAVA_HOME is /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181
+g++ -g -Wall -I/System/Library/Frameworks/JavaVM.framework/Headers -I/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/include -I/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/include/linux -I/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/include/darwin -InativeMap -o runTests testNativeMap/test.cc testNativeMap/util.cc libaccumulo.so 
+LD_LIBRARY_PATH=./ ./runTests 20 20 20 20 20 20 20 20 true
+c
+ size pair<Key, Field>       : 56
+ size pair<Field, ColumnMap> : 72
+ size pair<SubKey, Field>    : 56
+row bytes   : 400
+entry bytes : 712000
+count : 8000   8000
+ mem delta 1351680
+ mem usage 1671168
+ simple overhead 59.96
+c
+ size pair<Key, Field>       : 56
+ size pair<Field, ColumnMap> : 72
+ size pair<SubKey, Field>    : 56
+row bytes   : 400
+entry bytes : 712000
+count : 8000   8000
+ mem delta 1310720
+ mem usage 1630208
+ simple overhead 54.84
+c
+ size pair<Key, Field>       : 56
+ size pair<Field, ColumnMap> : 72
+ size pair<SubKey, Field>    : 56
+row bytes   : 400
+entry bytes : 712000
+count : 8000   8000
+ mem delta 1310720
+ mem usage 1630208
+ simple overhead 54.84
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-native ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-native ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-native/1.6.0-SNAPSHOT/accumulo-native-1.6.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/native/target/accumulo-native-1.6.0-SNAPSHOT.tar.gz to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-native/1.6.0-SNAPSHOT/accumulo-native-1.6.0-SNAPSHOT.tar.gz
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Tracer Server 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-tracer ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-tracer ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-tracer ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-tracer ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 2 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 2 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-tracer ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-tracer ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-tracer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-tracer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-tracer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-tracer ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-tracer ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-tracer ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/target/accumulo-tracer-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-tracer ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-tracer ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-tracer ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-tracer ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/target/accumulo-tracer-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-tracer/1.6.0-SNAPSHOT/accumulo-tracer-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/server/tracer/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-tracer/1.6.0-SNAPSHOT/accumulo-tracer-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Testing 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-test ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/test/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-test ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-test ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-test ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: system/bench/lib/*splits
+[INFO] Exclude: system/continuous/*.txt
+[INFO] 393 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 387 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-test ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-test ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 162 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/test/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 104 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/test/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-test ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/test/target/accumulo-test-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-test ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-test ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/test/target/accumulo-test-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-test/1.6.0-SNAPSHOT/accumulo-test-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/test/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-test/1.6.0-SNAPSHOT/accumulo-test-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Proxy 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-proxy ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-proxy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-proxy ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 72 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 69 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-proxy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 42 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/src/main/java/org/apache/accumulo/proxy/thrift/KeyExtent.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/src/main/java/org/apache/accumulo/proxy/thrift/KeyExtent.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-proxy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-proxy ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-proxy ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/target/accumulo-proxy-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-proxy ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-proxy ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-proxy ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/target/accumulo-proxy-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-proxy/1.6.0-SNAPSHOT/accumulo-proxy-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/proxy/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-proxy/1.6.0-SNAPSHOT/accumulo-proxy-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Assemblies 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/assemble/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 5 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 5 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (directory-assembly) @ accumulo ---
+[INFO] Reading assembly descriptor: src/main/assemblies/dev-directory.xml
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'org.apache.accumulo:accumulo-docs'
+
+[WARNING] The following patterns were never triggered in this artifact inclusion filter:
+o  'org.apache.accumulo:accumulo-docs:pdf:user-manual'
+
+[INFO] Copying files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/assemble/target/accumulo-1.6.0-SNAPSHOT-dev
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/assemble/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo/1.6.0-SNAPSHOT/accumulo-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Documentation 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-docs ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/docs/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-docs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-docs ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-docs ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 55 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 48 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-docs ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-docs ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-docs ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-docs ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-docs ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-docs ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/docs/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-docs/1.6.0-SNAPSHOT/accumulo-docs-1.6.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Accumulo Maven Plugin 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-maven-plugin ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-maven-plugin ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-maven-plugin ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-maven-plugin ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] No excludes explicitly specified.
+[INFO] 9 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 9 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-maven-plugin ---
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ accumulo-maven-plugin ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-annotations/3.2/maven-plugin-tools-annotations-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-annotations/3.2/maven-plugin-tools-annotations-3.2.pom (4.3 kB at 36 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-api/3.2/maven-plugin-tools-api-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-api/3.2/maven-plugin-tools-api-3.2.pom (3.0 kB at 434 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.pom (417 B at 3.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.pom (406 B at 10 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.pom (18 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.2/maven-plugin-tools-generators-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.2/maven-plugin-tools-generators-3.2.pom (4.3 kB at 538 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom (4.5 kB at 646 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom (1.6 kB at 26 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom (18 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom (1.6 kB at 144 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom (3.7 kB at 413 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom (2.2 kB at 245 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom (738 B at 14 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom (6.1 kB at 765 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom (15 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom (3.0 kB at 372 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom (1.6 kB at 267 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom (2.4 kB at 305 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom (5.5 kB at 550 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-java/3.2/maven-plugin-tools-java-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-java/3.2/maven-plugin-tools-java-3.2.pom (3.6 kB at 519 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-beanshell/3.2/maven-plugin-tools-beanshell-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-beanshell/3.2/maven-plugin-tools-beanshell-3.2.pom (2.4 kB at 405 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/bsh/bsh/1.3.0/bsh-1.3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/bsh/bsh/1.3.0/bsh-1.3.0.pom (210 B at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-model/3.2/maven-plugin-tools-model-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-model/3.2/maven-plugin-tools-model-3.2.pom (3.1 kB at 618 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/bsh/bsh/1.3.0/bsh-1.3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar (22 kB at 2.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar (38 kB at 2.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/bsh/bsh/1.3.0/bsh-1.3.0.jar (242 kB at 3.0 MB/s)
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 0 mojo descriptors.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-maven-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/target/classes
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ accumulo-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ accumulo-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-maven-plugin ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-maven-plugin ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/target/accumulo-maven-plugin-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:addPluginArtifactMetadata (default-addPluginArtifactMetadata) @ accumulo-maven-plugin ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-maven-plugin ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-maven-plugin ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/target/accumulo-maven-plugin-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-maven-plugin/1.6.0-SNAPSHOT/accumulo-maven-plugin-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/maven-plugin/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-maven-plugin/1.6.0-SNAPSHOT/accumulo-maven-plugin-1.6.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Apache Accumulo .................................... SUCCESS [01:06 min]
+[INFO] Trace .............................................. SUCCESS [ 14.952 s]
+[INFO] Fate ............................................... SUCCESS [ 15.784 s]
+[INFO] Start .............................................. SUCCESS [  4.195 s]
+[INFO] Core ............................................... SUCCESS [ 54.339 s]
+[INFO] Simple Examples .................................... SUCCESS [ 23.344 s]
+[INFO] Server Base ........................................ SUCCESS [  5.452 s]
+[INFO] GC Server .......................................... SUCCESS [  1.284 s]
+[INFO] Master Server ...................................... SUCCESS [  4.416 s]
+[INFO] Tablet Server ...................................... SUCCESS [  4.393 s]
+[INFO] MiniCluster ........................................ SUCCESS [  2.559 s]
+[INFO] Monitor Server ..................................... SUCCESS [  1.349 s]
+[INFO] Native Libraries ................................... SUCCESS [ 12.065 s]
+[INFO] Tracer Server ...................................... SUCCESS [  8.528 s]
+[INFO] Testing ............................................ SUCCESS [ 24.971 s]
+[INFO] Proxy .............................................. SUCCESS [ 20.943 s]
+[INFO] Assemblies ......................................... SUCCESS [  8.050 s]
+[INFO] Documentation ...................................... SUCCESS [  0.082 s]
+[INFO] Accumulo Maven Plugin .............................. SUCCESS [ 13.675 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 04:47 min
+[INFO] Finished at: 2020-03-13T14:08:59-07:00
+[INFO] Final Memory: 109M/1993M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Core 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-fate/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-project/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-start/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-trace/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (verify-sorted-pom) @ accumulo-core ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-mvn) @ accumulo-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-core ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check-licenses) @ accumulo-core ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources/shelltest.txt
+[INFO] Exclude: src/test/resources/org/apache/accumulo/core/file/rfile/ver_3.rf
+[INFO] Exclude: src/test/resources/org/apache/accumulo/core/file/rfile/ver_4.rf
+[INFO] Exclude: src/test/resources/org/apache/accumulo/core/file/rfile/ver_6.rf
+[INFO] 728 resources included (use -debug for more details)
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 728 licence.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:regex-property (regex-property) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (prepare-filtered-java-source) @ accumulo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:add-source (add-filtered-java-source) @ accumulo-core ---
+[INFO] Source directory: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/filtered-java-src added.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ accumulo-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 579 source files to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/iterators/aggregation/conf/AggregatorConfiguration.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/iterators/aggregation/conf/AggregatorConfiguration.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/data/thrift/TKey.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/main/java/org/apache/accumulo/core/data/thrift/TKey.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/src/test/filtered-resources
+[INFO] Copying 9 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ accumulo-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ accumulo-core ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/accumulo-core-1.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (run-integration-tests) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:verify (run-integration-tests) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ accumulo-core ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/target/accumulo-core-1.6.0-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-core/1.6.0-SNAPSHOT/accumulo-core-1.6.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/core/pom.xml to /scratch/tmp-rta/Bugs.jar_Accumulo_17344890_java-8/.m2/org/apache/accumulo/accumulo-core/1.6.0-SNAPSHOT/accumulo-core-1.6.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:39 min
+[INFO] Finished at: 2020-03-13T14:10:42-07:00
+[INFO] Final Memory: 54M/1447M
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,21 @@
+---
+BugID: CAMEL-5437
+Summary: Add support for batch consumer's empty messages to aggregator
+Description: |-
+  Aggregator supports completion based on the batch consumer data (option completionFromBatchConsumer)
+
+  Some batch consumers (eg. File) can send an empty message if there is no input (option sendEmptyMessageWhenIdle for File consumer).
+
+  Aggregator is unable to handle such messages properly - the messages are aggregated, but Aggregator never completes.
+
+
+  Here is the relevant fragment from AggregateProcessor.isCompleted(String,
+  Exchange)
+
+  int size = exchange.getProperty(Exchange.BATCH_SIZE, 0, Integer.class);
+  if (size > 0 && batchConsumerCounter.intValue() >= size) {
+      ....
+  }
+
+
+  Please add support for this combination of options.

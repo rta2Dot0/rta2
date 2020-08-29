@@ -1,0 +1,9 @@
+---
+BugID: OAK-1739
+Summary: Incorrect handling of multivalued comparisons in queries
+Description: |-
+  [Section 6.7.14|http://www.day.com/specs/jcr/2.0/6_Query.html#6.7.16 Comparison] of the JCR 2.0 spec says:
+
+  bq. ... operand1 may evaluate to an array of values (for example, the values of a multi-valued property), in which case the comparison is separately performed for each element of the array, and the Comparison constraint is satisfied as a whole if the comparison against any element of the array is satisfied.
+
+  This is currently not the case in Oak. Instead only the first value of the array is used in the comparison.

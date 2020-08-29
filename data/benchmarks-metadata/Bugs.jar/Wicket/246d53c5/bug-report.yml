@@ -1,0 +1,11 @@
+---
+BugID: WICKET-442
+Summary: adding (and querying) feedback messages at construction time fails.
+Description: |-
+  See http://www.nabble.com/error%28...%29-No-page-found-for-component-tf3497125.html
+
+  Currently, adding (and querying) feedback messages fails whenever it is done on components that are not yet added to a page (or were removed from them due to component replacement).
+
+  There are two ways to fix this. The first fix is attached as a patch, and basically uses a thread local to temporarily store the messages and distribute them to the relevant page instances just in time or when rendering starts. The advantage of this method is that it is completely back wards compatible.
+
+  The other way to fix this is to store all messages, whether component specific or not, in the session, and pull them from there. We need to be careful about how/ when to clean these error messages up though. We can use this issue to think about it a little bit more.

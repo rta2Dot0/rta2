@@ -1,0 +1,19 @@
+---
+BugID: OAK-3137
+Summary: Global fulltext index returning plan for pure NodeType queries
+Description: |-
+  On a system having
+
+  # Global fulltext index enabled with version V2 and {{evaluatePathRestriction}} enabled
+  # NodeType index having indexing enabled for specific nodetype like cq:ClientLibraryFolder
+
+  A query like
+
+  {noformat}
+  /jcr:root//element(*, cq:ClientLibraryFolder)
+  {noformat}
+
+  Ends up getting evaluated by fulltext index as it return plan with include all query
+
+  *Expected*
+  For such query global fulltext index should not return any plan if the path restriction is on root path with include all children

@@ -1,0 +1,7 @@
+---
+BugID: MATH-555
+Summary: MathUtils round method should propagate rather than wrap Runitme exceptions
+Description: MathUtils.round(double, int, int) can generate IllegalArgumentException
+  or ArithmeticException.  Instead of wrapping these exceptions in MathRuntimeException,
+  the conditions under which these exceptions can be thrown should be documented and
+  the exceptions should be propagated directly to the caller.

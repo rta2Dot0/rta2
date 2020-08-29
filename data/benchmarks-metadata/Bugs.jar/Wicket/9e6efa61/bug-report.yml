@@ -1,0 +1,9 @@
+---
+BugID: WICKET-5204
+Summary: The DateTimeField.onBeforeRender() method does not format the fields correctly.
+Description: The current implementation relies on the org.joda.time.MutableDateTime
+  instance to format the date, hours, amOrPm, and minutes fields. Unfortunately, the
+  MutableDateTime constructor is not provided with the client's TimeZone value (assuming
+  it is set). As a result, the joda library uses the JVM's default timezone. If the
+  defaul timezone differs from the client's timezone, the formatted fields may turn
+  out to be incorrect.

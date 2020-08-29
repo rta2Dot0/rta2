@@ -1,0 +1,16 @@
+---
+BugID: WICKET-5500
+Summary: Ignore the path parameters when reading the page class
+Description: "http://localhost:8080/linkomatic/wicket/bookmarkable/org.apache.wicket.examples.linkomatic.Page3;myjsessionid=123456
+  leads to :\n\nWARN  - AbstractRepeater           - Child component of repeater org.apache.wicket.markup.repeater.RepeatingView:area
+  has a non-safe child id of page1. Safe child ids must be composed of digits only.\nWARN
+  \ - WicketObjects              - Could not resolve class [org.apache.wicket.examples.linkomatic.Page3;blass=koko]\njava.lang.ClassNotFoundException:
+  org/apache/wicket/examples/linkomatic/Page3;blass=koko\n\tat java.lang.Class.forName0(Native
+  Method)\n\tat java.lang.Class.forName(Class.java:264)\n\tat org.apache.wicket.application.AbstractClassResolver.resolveClass(AbstractClassResolver.java:108)\n\tat
+  org.apache.wicket.core.util.lang.WicketObjects.resolveClass(WicketObjects.java:72)\n\tat
+  org.apache.wicket.core.request.mapper.AbstractComponentMapper.getPageClass(AbstractComponentMapper.java:139)\n\tat
+  org.apache.wicket.core.request.mapper.BookmarkableMapper.parseRequest(BookmarkableMapper.java:118)\n\tat
+  org.apache.wicket.core.request.mapper.AbstractBookmarkableMapper.mapRequest(AbstractBookmarkableMapper.java:292)\n\tat
+  org.apache.wicket.request.mapper.CompoundRequestMapper.mapRequest(CompoundRequestMapper.java:152)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle.resolveRequestHandler(RequestCycle.java:190)\n...\n\nSuch
+  request at the moment works only if the the path parameter name is 'jsessionid'"

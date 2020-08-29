@@ -1,0 +1,11 @@
+---
+BugID: LOG4J2-127
+Summary: Methods info, warn, error, fatal with marker and message do not pass the
+  marker
+Description: |
+  The follwing methods do not log the message, because the marker is not passed to isXxxEnabled:
+
+  AbstractLogger.info(Marker, Message)
+  AbstractLogger.warn(Marker, Message)
+  AbstractLogger.error(Marker, Message)
+  AbstractLogger.fatal(Marker, Message)

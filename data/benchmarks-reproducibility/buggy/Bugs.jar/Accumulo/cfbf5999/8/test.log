@@ -1,0 +1,134 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Proxy 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-core/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-start/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-fate/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-trace/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-examples-instamo/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-server/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-test/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/mortbay/jetty/jetty/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml (688 B at 2.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-examples-simple/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-examples/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.1:create (default) @ accumulo-proxy ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy && svn --non-interactive info
+[INFO] Working directory: /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy
+[INFO] Storing buildNumber: null at timestamp: 1584134033698
+[INFO] Executing: /bin/sh -c cd /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy && svn --non-interactive info
+[INFO] Working directory: /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy
+[INFO] Storing buildScmBranch: UNKNOWN_BRANCH
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-proxy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:exec (generate-thrift) @ accumulo-proxy ---
+****************************************************
+*** thrift is not available
+***   expecting 'thrift -version' to return 0.9
+*** generated code will not be updated
+****************************************************
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.3:process (default) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ accumulo-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.3:copy-dependencies (copy-dependencies) @ accumulo-proxy ---
+[INFO] jcommander-1.30.jar already exists in destination.
+[INFO] libthrift-0.9.0.jar already exists in destination.
+[INFO] guava-13.0.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ accumulo-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ accumulo-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ accumulo-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (default-test) @ accumulo-proxy ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12/surefire-junit4-2.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12/surefire-junit4-2.12.pom (2.4 kB at 770 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12/surefire-providers-2.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12/surefire-providers-2.12.pom (2.3 kB at 630 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12/surefire-junit4-2.12.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12/surefire-junit4-2.12.jar (34 kB at 1.0 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.accumulo.proxy.TestProxyReadWrite
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 10.298 sec <<< FAILURE!
+Running org.apache.accumulo.proxy.TestProxyInstanceOperations
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 sec
+Running org.apache.accumulo.proxy.TestProxyTableOperations
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 sec
+Running org.apache.accumulo.proxy.TestProxySecurityOperations
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 sec
+Running org.apache.accumulo.proxy.SimpleTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 119.974 sec
+java.io.IOException: Stream closed
+	at java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:170)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:283)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at org.apache.accumulo.test.MiniAccumuloCluster$LogWriter.run(MiniAccumuloCluster.java:90)
+
+Results :
+
+Failed tests:   readWriteBatchOneShotWithColumnFamilyOnly(org.apache.accumulo.proxy.TestProxyReadWrite): expected:<100000> but was:<50000>
+  readWriteBatchOneShotWithFullColumn(org.apache.accumulo.proxy.TestProxyReadWrite): expected:<100000> but was:<50000>
+
+Tests run: 24, Failures: 2, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:41 min
+[INFO] Finished at: 2020-03-13T14:16:23-07:00
+[INFO] Final Memory: 26M/981M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12:test (default-test) on project accumulo-proxy: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bugs.jar_Accumulo_cfbf5999_java-8/proxy/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

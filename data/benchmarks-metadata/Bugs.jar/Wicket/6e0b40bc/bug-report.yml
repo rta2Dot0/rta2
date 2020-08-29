@@ -1,0 +1,11 @@
+---
+BugID: WICKET-2281
+Summary: MockHttpServletRequest is broken when used with CryptedUrlWebRequestCodingStrategy
+Description: "Upgraded to 1.3.6. One of my test cases started to fail with \norg.apache.wicket.WicketRuntimeException:
+  Internal error parsing wicket:interface = ?x=GR7uTj8e-D8FE0tmM9vvYcwdiASd9OJ5GgveAhSNaig\n
+  \    \nI tracked down the issue to MockHttpServletRequest .setRequestToComponent()\nIn
+  line 1253 it check for url starting with 6*. However, in CryptedUrlWebRequestCodingStrategy
+  following encryption is employed:\n\n198:\t\t\t\t\tqueryString = shortenUrl(queryString).toString();\n199:\n200:\t\t\t\t\t//
+  encrypt the query string\n201:\t\t\t\t\tString encryptedQueryString = urlCrypt.encryptUrlSafe(queryString);\n\n\nshortenUrl
+  will replace 'wicket:interface=' with '6*' but then it gets immediately encrypted,
+  consequently MockHttpServletRequest  will never recognize it correctly.\n\n"

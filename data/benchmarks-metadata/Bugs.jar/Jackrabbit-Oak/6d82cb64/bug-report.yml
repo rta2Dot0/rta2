@@ -1,0 +1,9 @@
+---
+BugID: OAK-888
+Summary: PathUtils#getDepth returns 1 for empty path
+Description: |-
+  PathUtils#getDepths that the root path / has depth 0.
+  however, passing in a empty string is accepted and returns 1.
+
+  according to the API contract getDepth is counting the number of elements
+  in the path which for "" should IMO be zero.

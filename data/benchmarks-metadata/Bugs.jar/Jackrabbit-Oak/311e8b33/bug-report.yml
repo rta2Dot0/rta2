@@ -1,0 +1,11 @@
+---
+BugID: OAK-3105
+Summary: SegmentWriter doesn't properly check the length of external blob IDs
+Description: "To store the length field of an external binary ID, the following encoding
+  is used:\n\n{noformat}\n1110 + 4bit + 8bit\n{noformat}\n\nwhich allows to store
+  numbers between 0 and 2{^}12^ - 1. \n\nThe current implementation of {{SegmentWriter}}
+  allows the length of binary IDs to range between 0 and 2{^}13^ - 1, writing incorrect
+  data when the length of the binary ID ranges from 2{^}12^ to 2{^}13^ - 1.\n\nWhen
+  reading this incorrect data back, an {{IllegalStateException}} is thrown complaining
+  that the first byte of the length fields has an unexpected value record type. See
+  OAK-1842 for an example."

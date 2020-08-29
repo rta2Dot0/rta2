@@ -1,0 +1,15 @@
+---
+BugID: WICKET-4012
+Summary: Component's onAfterRender() is called so many times as it is depth in the
+  component tree + 1
+Description: "org.apache.wicket.Component.afterRender() calls org.apache.wicket.Component.onAfterRenderChildren()
+  which for MarkupContainers calls afterRender() for its children.\n\nSo for code
+  like:\n\n WebMarkupContainer comp1 = new WebMarkupContainer(\"c1\");\n        add(comp1);\n
+  \       \n        WebMarkupContainer comp2 = new WebMarkupContainer(\"c2\");\n        comp1.add(comp2);\n
+  \       \n        WebMarkupContainer comp3 = new WebMarkupContainer(\"c3\") {\n\n
+  \           @Override\n            protected void onAfterRender() {\n                super.onAfterRender();\n
+  \               System.err.println(\"called\");\n            }\n            \n        };\n
+  \       comp2.add(comp3);\n\nyou'll see \"called\" printed 4 times in a single request.\n\nAdditionally
+  I think onAfterRenderChildren() should be called before onAfterRender() in Component.afterRender().
+  The flow should be first-in last-out: onBeforeRender > onBeforeRenderChildren >
+  onAfterRenderChildren > onAfterRender,"

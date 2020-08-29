@@ -1,0 +1,20 @@
+---
+BugID: CAMEL-7055
+Summary: NullPointerException at FileInputStreamCache.<init>(FileInputStreamCache.java:52)
+  in connection with DataFormat.marshal
+Description: "Stack Trace:\n{code}\nCaused by: java.lang.NullPointerException\n\tat
+  org.apache.camel.converter.stream.FileInputStreamCache.<init>(FileInputStreamCache.java:52)\n\tat
+  org.apache.camel.converter.stream.CachedOutputStream.newStreamCache(CachedOutputStream.java:199)\n\tat
+  org.apache.camel.processor.MarshalProcessor.process(MarshalProcessor.java:79)\n{code}\n\nError
+  occurs, if streamCache is true and the stream is put into the file system because
+  the spool threashold is reached. \n\nThe following is happening:\nThe Marshall Processor
+  handels over to the DataFromat.marshal method a CachedOutputStream instance. In
+  the marschal method data are written into the output stream, when the spool threshold
+  is reached the data are streamed into the file system. Finally the output stream
+  is closed and the CachedOutputStream instance deletes the cached file during closing.
+  The next processor tries to read the FileInputStreamCache and gets the NullPointerException.\n\nCurrently
+  this problem can occur in the following DataFormat classes (because they close the
+  stream, which is actually correct):\n\nGzipDataFormat\nCryptoDataFormat\nPGPDataFormat\nSerializationDataFormat\nXMLSecurityDataFormat\nZipDataFormat\n\nMy
+  proposal is not to delete the cached file during closing the output stream. The
+  cached file shall only be closed on the onCompletion event of the route. See attached
+  patch.\n\n\n"

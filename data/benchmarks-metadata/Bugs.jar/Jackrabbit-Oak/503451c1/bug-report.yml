@@ -1,0 +1,7 @@
+---
+BugID: OAK-748
+Summary: 'ContentMirrorStoreStrategy #insert fails to enforce uniqueness and is slow'
+Description: |-
+  Following OAK-734 I've noticed that the _ContentMirrorStoreStrategy_ fails to enforce the uniqueness constraints assumed on the #insert method.
+
+  It is also responsible for a slowdown on the #insert method because of the behavior change of the Property2Index (very frequent saves instead of a bulk one).

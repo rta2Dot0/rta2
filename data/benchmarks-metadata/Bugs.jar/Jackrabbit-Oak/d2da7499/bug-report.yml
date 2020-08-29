@@ -1,0 +1,6 @@
+---
+BugID: OAK-2691
+Summary: Blob GC throws NPE
+Description: |-
+  Blob GC when registered without a shared data store throws NPE.
+  The {{ClusterRepositoryInfo#getId}} method should check if clusterId is registered or not.

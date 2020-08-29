@@ -1,0 +1,14 @@
+---
+BugID: OAK-421
+Summary: NodeBuilder.reset might lead to inconsistent builder
+Description: |-
+  The following test fails:
+  {code}
+  NodeBuilder root = new MemoryNodeBuilder(BASE);
+  NodeBuilder x = root.child("x");
+  NodeBuilder y = x.child("y");
+
+  root.reset(BASE);
+  assertTrue(root.hasChildNode("x"));
+  assertFalse(x.hasChildNode("y"));  // fails
+  {code}

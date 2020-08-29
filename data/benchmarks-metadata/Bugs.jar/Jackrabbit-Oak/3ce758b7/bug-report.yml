@@ -1,0 +1,6 @@
+---
+BugID: OAK-543
+Summary: PutTokenImpl not thread safe
+Description: "{{PutTokenImpl}} uses prefix increment on a static member to generate
+  presumably unique identifiers. Prefix increment is not atomic though which might
+  result in non unique ids being generated. "

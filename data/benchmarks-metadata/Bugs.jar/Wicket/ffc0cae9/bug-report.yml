@@ -1,0 +1,32 @@
+---
+BugID: WICKET-3428
+Summary: 'IRequestCycleListener: RequestCycle.get() is null inside onBeginRequest'
+Description: |-
+  I expect the request cycle that is supplied as an argument to onBeginRequest to be the same as RequestCycle.get.
+
+  == == == CODE == == ==
+
+      @Override
+      public void onBeginRequest(RequestCycle cycle) {
+          Session session = Session.get(); // throws IllegalArgumentException
+          if (session.getMetaData(REDIRECTED_JSESSIONID) == null) {
+              logger.debug("first application request - redirecting to loading page");
+              session.setMetaData(REDIRECTED_JSESSIONID, Boolean.TRUE);
+              String url = getServletRequestContextPath() + "/" + cycle.getRequest().getUrl();
+              throw new RestartResponseException(newLoadingPage(url));
+          }
+      }
+  == == == == == == == ==
+
+
+  == == == STACK TRACE == == ==
+
+  java.lang.IllegalArgumentException: Argument 'requestCycle' may not be null.
+      at org.apache.wicket.util.lang.Args.notNull(Args.java:37)
+      at org.apache.wicket.Application.fetchCreateAndSetSession(Application.java:1436)
+      at org.apache.wicket.Session.get(Session.java:154)
+      at com.joynit.tuv.common.view.request.SessionIdRemoveListener.onBeginRequest(SessionIdRemoveListener.java:30)
+
+  ... [snipped -other part is not relevant]
+
+  == == == == == == == == == == ==

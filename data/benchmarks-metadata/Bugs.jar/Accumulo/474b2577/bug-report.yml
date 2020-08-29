@@ -1,0 +1,20 @@
+---
+BugID: ACCUMULO-1120
+Summary: 'stop-all doesn''t work: Error BAD_CREDENTIALS for user root'
+Description: "{noformat}\n$ bin/accumulo admin stopAll\n2013-02-27 14:56:14,072 [util.Admin]
+  ERROR: org.apache.accumulo.core.client.AccumuloSecurityException: Error BAD_CREDENTIALS
+  for user root - Username or Password is Invalid\norg.apache.accumulo.core.client.AccumuloSecurityException:
+  Error BAD_CREDENTIALS for user root - Username or Password is Invalid\n\tat org.apache.accumulo.core.client.impl.MasterClient.execute(MasterClient.java:119)\n\tat
+  org.apache.accumulo.server.util.Admin.stopServer(Admin.java:107)\n\tat org.apache.accumulo.server.util.Admin.main(Admin.java:95)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.apache.accumulo.start.Main$1.run(Main.java:97)\n\tat
+  java.lang.Thread.run(Thread.java:662)\nCaused by: ThriftSecurityException(user:root,
+  code:BAD_CREDENTIALS)\n\tat org.apache.accumulo.core.master.thrift.MasterClientService$shutdown_result$shutdown_resultStandardScheme.read(MasterClientService.java:8424)\n\tat
+  org.apache.accumulo.core.master.thrift.MasterClientService$shutdown_result$shutdown_resultStandardScheme.read(MasterClientService.java:8410)\n\tat
+  org.apache.accumulo.core.master.thrift.MasterClientService$shutdown_result.read(MasterClientService.java:8360)\n\tat
+  org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:78)\n\tat org.apache.accumulo.core.master.thrift.MasterClientService$Client.recv_shutdown(MasterClientService.java:312)\n\tat
+  org.apache.accumulo.core.master.thrift.MasterClientService$Client.shutdown(MasterClientService.java:297)\n\tat
+  org.apache.accumulo.server.util.Admin$1.execute(Admin.java:110)\n\tat org.apache.accumulo.server.util.Admin$1.execute(Admin.java:107)\n\tat
+  org.apache.accumulo.core.client.impl.MasterClient.execute(MasterClient.java:113)\n\t...
+  8 more\n\n{noformat}\n"

@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-4098
+Summary: ConditionalWriterIT is failing
+Description: |-
+  I noticed that the ConditionalWriterIT was failing in master.   Using the following command with {{git bisect}} I tracked it down to commit {{3af75fc}} for ACCUMULO-4077 as the change which broke the IT.  Have not looked into why its failing yet.
+
+  {noformat}
+  mvn clean verify -Dit.test=ConditionalWriterIT -Dfindbugs.skip -Dcheckstyle.skip -Dtest=foo -DfailIfNoTests=false
+  {noformat}

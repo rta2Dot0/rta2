@@ -1,0 +1,22 @@
+---
+BugID: CAMEL-4354
+Summary: header added using an EventNotifier is not present at AggregationStrategy
+  for http endpoints
+Description: "A new header added using an EventNotifier is not present when the exchange
+  is aggregated with an AggregationStrategy.\nThis is happening only if the enpoint
+  type is http, ftp doesn't have this issue.\n\nThis was working with an early version
+  of 2.8.0-SNAPSHOT\n\nFollowing the EventNotifier code used.\n\n{code:title=ExchangeSentEventNotifier.java|borderStyle=solid}\npublic
+  class ExchangeSentEventNotifier extends EventNotifierSupport {\n\n\t@Override\n\tprotected
+  void doStart() throws Exception {\n        /*\n         *  filter out unwanted events\n
+  \        *  we are interested only in ExchangeSentEvent\n         */\n        setIgnoreCamelContextEvents(true);\n
+  \       setIgnoreServiceEvents(true);\n        setIgnoreRouteEvents(true);\n        setIgnoreExchangeCreatedEvent(true);\n
+  \       setIgnoreExchangeCompletedEvent(true);\n        setIgnoreExchangeFailedEvents(true);\n
+  \       setIgnoreExchangeSentEvents(false);\t\t\n\t}\n\n\t@Override\n\tprotected
+  void doStop() throws Exception {\n\n\t}\n\n\t@Override\n\tpublic boolean isEnabled(EventObject
+  event) {\n\t\treturn event instanceof ExchangeSentEvent;\n\t}\n\n\t@Override\n\tpublic
+  void notify(EventObject event) throws Exception {\n    \tif(event.getClass() ==
+  ExchangeSentEvent.class){\n            ExchangeSentEvent eventSent = (ExchangeSentEvent)event;\n
+  \           \n            log.debug(\"Took \" + eventSent.getTimeTaken() + \" millis
+  to send to: \" + eventSent.getEndpoint());\n\n            //storing time taken to
+  the custom header            \n            eventSent.getExchange().getIn().setHeader(\"x-time-taken\",
+  eventSent.getTimeTaken());\n            \n    \t}\n\t\t\n\t}\n\n}\n{code} "

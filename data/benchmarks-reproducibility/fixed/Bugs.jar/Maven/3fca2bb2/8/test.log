@@ -1,0 +1,83 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Model Builder 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven-model/3.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven/3.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-model-builder ---
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-model-builder ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.6:check (check-java-1.5-compat) @ maven-model-builder ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java15:1.0
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-model-builder ---
+[INFO] Discovered 26 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 43 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-model-builder ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-model-builder ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.pom (1.5 kB at 177 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.4.3/surefire-providers-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.4.3/surefire-providers-2.4.3.pom (1.7 kB at 544 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.jar (15 kB at 580 kB/s)
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Maven_3fca2bb2_java-8/maven-model-builder/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.maven.model.interpolation.StringSearchModelInterpolatorTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.363 sec
+Running org.apache.maven.model.profile.activation.JdkVersionProfileActivatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 sec
+Running org.apache.maven.model.validation.DefaultModelValidatorTest
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.201 sec
+Running org.apache.maven.model.building.DefaultModelBuilderFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.486 sec
+Running org.apache.maven.model.profile.activation.PropertyProfileActivatorTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.489 sec
+Running org.apache.maven.model.path.DefaultUrlNormalizerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+
+Results :
+
+Tests run: 89, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 26.154 s
+[INFO] Finished at: 2020-03-14T19:34:40-07:00
+[INFO] Final Memory: 22M/1048M
+[INFO] ------------------------------------------------------------------------

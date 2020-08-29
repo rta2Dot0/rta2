@@ -1,0 +1,10 @@
+---
+BugID: OAK-1096
+Summary: QueryManager does not have autorefresh
+Description: |-
+  Having two sessions A and B.
+  A writes something for example /content/page/text = "text"
+  Accessing B's QueryManager and exexcute a query for "text" nothing will be found.
+  Triggering an explicit refresh on B before the query and the hit is found.
+
+  I assume that the autorefresh is missed for that case

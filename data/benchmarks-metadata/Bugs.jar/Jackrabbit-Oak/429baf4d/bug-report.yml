@@ -1,0 +1,8 @@
+---
+BugID: OAK-2740
+Summary: TreeTypeProvider treats optimized node type definition info as Ac-Content
+Description: |-
+  while investigating a bug reported by [~teofili] and [~mpetria] that cause group-import with policy node to fail when run with non-administrative session, i found that the {{TreeTypeProvider}} wrongly identifies the optimized item definition information stored with the node types (e.g. {{/jcr:system/jcr:nodeTypes/rep:AccessControllable/rep:namedChildNodeDefinitions/rep:policy}} ) as access control content and thus doesn't read it properly when using a session that doesn't have jcr:readAccessControl privilege at /jcr:system/jcr:nodeTypes.
+
+  the effect of this bug is as follows:
+  the internal calculation of the effective node type and thus item definitions will not work properly for {{rep:policy}} nodes (and similar) as the editing session cannot read the full (oak internal) node type definition as stored below {{/jcr:system/jcr:nodeTypes}}.

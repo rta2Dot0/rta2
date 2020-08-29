@@ -1,0 +1,12 @@
+---
+BugID: OAK-499
+Summary: SQL-2 query parser doesn't detect some illegal statements
+Description: |-
+  The SQL-2 query parser doesn't detect some illegal statements, for example
+
+  {code}
+  select * from [nt:base] where name =+ 'Hello'
+  select * from [nt:base] where name => 'Hello'
+  {code}
+
+  Both are currently interpreted as "name = 'Hello'", which is wrong.

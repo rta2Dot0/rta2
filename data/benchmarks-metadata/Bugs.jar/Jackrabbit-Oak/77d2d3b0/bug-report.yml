@@ -1,0 +1,10 @@
+---
+BugID: OAK-2603
+Summary: Failure in one of the batch in VersionGC might lead to orphaned nodes
+Description: "VersionGC logic currently performs deletion of nodes in batches. For
+  GC to work properly NodeDocument should always be removed in bottom-up mode i.e.
+  parent node should be removed *after* child has been removed\n\nCurrently the GC
+  logic deletes the NodeDocument in undefined order. In such mode if one of the batch
+  fails then its possible that parent might have got deleted but the child was not
+  deleted. \n\nNow in next run the child node would not be recognized as a deleted
+  node because the commit root would not be found."

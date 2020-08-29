@@ -1,0 +1,7 @@
+---
+BugID: OAK-2336
+Summary: NodeDocument.getNodeAtRevision() may read too many revisions
+Description: |-
+  This is a regression introduced by OAK-1972.
+
+  The revision returned with the value may be different from the revision of the change when the change was first committed to a branch and later merged. In this case the value will return the merge revision. The check in getNodeAtRevision() introduced with OAK-1972 then assumes there may be more recent changes in a previous document and starts to scan the revision history. This scan depends on the number of changes that have been applied on the document since the most recent change on the property in question.

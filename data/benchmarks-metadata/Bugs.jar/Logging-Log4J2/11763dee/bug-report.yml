@@ -1,0 +1,6 @@
+---
+BugID: LOG4J2-478
+Summary: The message and ndc fields are not JavaScript escaped in JSONLayout
+Description: The output of the JSONLayout includes the "message" field as is.  If
+  there are any embedded newlines, quote, etc, this renders the JSON output as invalid.  To
+  correct this, the "message" field should be properly JavaScript escaped.

@@ -1,0 +1,7 @@
+---
+BugID: OAK-2311
+Summary: 'Released checkpoint can still be retrieved '
+Description: "The following fails on the 2nd assertion on the MongoMK\n\n{code}\nassertTrue(store.release(cp));\nassertNull(store.retrieve(cp));\n{code}\n\nThe
+  JavaDoc on the {{release}} method is a bit vague, but I assume it is safe to assume
+  that when it returns {{true}} the checkpoint should be gone. If not, we should update
+  the JavaDoc. "

@@ -1,0 +1,8 @@
+---
+BugID: CAMEL-5261
+Summary: SEDA/VM requires completely same URI on producer and consumer side when consumer
+  route is adviced
+Description: |-
+  The producer side and consumer side of the SEDA (and VM) component seems to require the completely same URI to be able to communicate. Completely same meaning that all URI options must be the same on both sides. The strange thing is that this only is required when I have adviced the consumer route. 2.9.0 does not have this problem.
+
+  Attached a unit test - the producerWithDifferentUri will fail on 2.9.1 and 2.9.2. If the advice is removed it will not.

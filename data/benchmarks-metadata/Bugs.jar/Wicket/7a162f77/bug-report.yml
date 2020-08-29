@@ -1,0 +1,55 @@
+---
+BugID: WICKET-4379
+Summary: org.apache.wicket.validation.ValidatorAdapter class causes problem with validator
+  properties to be loaded
+Description: "\nPROBLEM:\n<e1nPL> hi I am having such problem: \n<e1nPL> I have implemented
+  validator by implementing IValidator<T> interface\n<e1nPL> and I have impelemnted
+  the same validator by extending AbstractValidator<T> class\n\nCODE:\n    =====================
+  VALIDATOR EXTENDED FROM AbstractValidator =====================\n    package com.mycompany;\n
+  \    \n    import java.util.regex.Pattern;\n    import org.apache.wicket.IClusterable;\n
+  \   import org.apache.wicket.util.lang.Classes;\n    import org.apache.wicket.validation.IValidatable;\n
+  \   import org.apache.wicket.validation.IValidator;\n    import org.apache.wicket.validation.ValidationError;\n
+  \   import org.apache.wicket.validation.validator.AbstractValidator;\n     \n    /**\n
+  \    *\n     * @author e1n\n     */\n    public class PasswordPolicyValidator<T>
+  extends AbstractValidator<T> {\n     \n        private static final Pattern UPPER
+  = Pattern.compile(\"[A-Z]\");\n        private static final Pattern LOWER = Pattern.compile(\"[a-z]\");\n
+  \       private static final Pattern NUMBER = Pattern.compile(\"[0-9]\");\n       \n
+  \       @Override\n        public void onValidate(IValidatable<T> validatable) {\n
+  \           final String password = (String)validatable.getValue();\n           \n
+  \           if (!NUMBER.matcher(password).find()) {\n                error(validatable,
+  \"no-digit\");\n            }\n            if (!LOWER.matcher(password).find())
+  {\n                error(validatable, \"no-lower\");\n            }\n            if
+  (!UPPER.matcher(password).find()) {\n                error(validatable, \"no-upper\");\n
+  \           }\n     \n        }\n       \n        @Override\n        public void
+  error(IValidatable<T> validatable, String errorKey) {\n            ValidationError
+  err = new ValidationError();\n            err.addMessageKey(Classes.simpleName(getClass())
+  + \".\" + errorKey);\n            validatable.error(err);\n        }\n       \n
+  \   }\n     \n     \n    =============== VALIDATOR directly implementing IValidator
+  interfce ====================\n    package com.mycompany;\n     \n    import java.util.regex.Pattern;\n
+  \   import org.apache.wicket.IClusterable;\n    import org.apache.wicket.util.lang.Classes;\n
+  \   import org.apache.wicket.validation.IValidatable;\n    import org.apache.wicket.validation.IValidator;\n
+  \   import org.apache.wicket.validation.ValidationError;\n    import org.apache.wicket.validation.validator.AbstractValidator;\n
+  \    \n    /**\n     *\n     * @author e1n\n     */\n    public class PasswordPolicyValidator<T>
+  implements IValidator<T> {\n     \n        private static final Pattern UPPER =
+  Pattern.compile(\"[A-Z]\");\n        private static final Pattern LOWER = Pattern.compile(\"[a-z]\");\n
+  \       private static final Pattern NUMBER = Pattern.compile(\"[0-9]\");\n     \n
+  \       public void validate(IValidatable<T> validatable) {\n            final String
+  password = (String)validatable.getValue();\n           \n            if (!NUMBER.matcher(password).find())
+  {\n                error(validatable, \"no-digit\");\n            }\n            if
+  (!LOWER.matcher(password).find()) {\n                error(validatable, \"no-lower\");\n
+  \           }\n            if (!UPPER.matcher(password).find()) {\n                error(validatable,
+  \"no-upper\");\n            }\n     \n        }\n       \n        public void error(IValidatable<T>
+  validatable, String errorKey) {\n            ValidationError err = new ValidationError();\n
+  \           err.addMessageKey(Classes.simpleName(getClass()) + \".\" + errorKey);\n
+  \           validatable.error(err);\n        }\n       \n    }\n\n\n\n<e1nPL> I
+  also have properties file which is named after validator class\n<e1nPL> and placed
+  in the same package\n<e1nPL> my problem is that when i use to validate my form field
+  validator which implements IValidator interface it is not capable of loading error
+  messages from properties file\n<e1nPL> but when i am using validator which is extending
+  AbstractValidator class\n<e1nPL> properties file with error msgs gets loaded\nPOSSIBLE
+  FIX:\n<e1nPL> ok i have found class which is responsible for my problem and it is
+  probably a bug\n<e1nPL> org.apache.wicket.validation.ValidatorAdapter\n<e1nPL> which
+  wraps classes that directly implements IValidator interface\n<e1nPL> then when resources
+  are loaded, and properties file are searched in class path etc., loaders search
+  in wrong path that is build against org.apache.wicket.validation.ValidatorAdapter
+  \nPLACE WHER FIX SHOULD OCCOUR\norg.apache.wicket.resource.loader.ValidatorStringResourceLoader::loadStringResource(java.lang.Class,java.lang.String,java.util.Locale,java.lang.String,java.lang.String)\n\n"

@@ -1,0 +1,6 @@
+---
+BugID: FLINK-3760
+Summary: 'Fix StateDescriptor.readObject '
+Description: The readObject method of StateDescriptor uses uses {{ObjectInputStream.read()}}.
+  For very large serialized default values this will not necessarily read all data
+  in one go. We need a loop that reads it in several steps.

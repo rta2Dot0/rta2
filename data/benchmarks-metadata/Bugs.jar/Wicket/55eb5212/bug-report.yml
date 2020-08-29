@@ -1,0 +1,20 @@
+---
+BugID: WICKET-5209
+Summary: NPE when using ComponentRenderer.renderComponent on a panel with <wicket:enclosure>
+Description: "Hi,\n\nConsider this example:\n<wicket:panel>\n\t<wicket:enclosure child=\"externalLink\">\n\t\t<a
+  wicket:id=\"externalLink\">Link</a>\n\t</wicket:enclosure>\n</wicket:panel>\n\nWhen
+  trying to render such a panel with ComponentRenderer.renderComponent, a NPE is thrown
+  because Wicket try to render Enclosure without initializing it.\n\nRoot cause:\njava.lang.NullPointerException\n\tat
+  org.apache.wicket.markup.html.internal.Enclosure.isVisible(Enclosure.java:143)\n\tat
+  org.apache.wicket.Component.determineVisibility(Component.java:4363)\n\tat org.apache.wicket.Component.internalBeforeRender(Component.java:916)\n\tat
+  org.apache.wicket.Component.beforeRender(Component.java:991)\n\tat org.apache.wicket.Component.internalPrepareForRender(Component.java:2214)\n\tat
+  org.apache.wicket.Component.render(Component.java:2303)\n\tat org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1390)\n\tat
+  org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1554)\n\tat org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1529)\n\tat
+  org.apache.wicket.MarkupContainer.renderAssociatedMarkup(MarkupContainer.java:689)\n\tat
+  org.apache.wicket.markup.html.panel.AssociatedMarkupSourcingStrategy.renderAssociatedMarkup(AssociatedMarkupSourcingStrategy.java:76)\n\tat
+  org.apache.wicket.markup.html.panel.PanelMarkupSourcingStrategy.onComponentTagBody(PanelMarkupSourcingStrategy.java:112)\n\tat
+  org.apache.wicket.Component.internalRenderComponent(Component.java:2549)\n\t...
+  29 more\n\nSee the attached quickstart.\n\nI've looked a little into it, and it
+  seems that RenderPage (used by ComponentRenderer to render components) is never
+  initialized.\nTherefore the panel's children are never initialized too (see MarkupContainer
+  l.930), and this causes Enclosure to have a null childComponent.\n\nThanks."

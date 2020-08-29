@@ -1,0 +1,15 @@
+---
+BugID: OAK-554
+Summary: PropertyStates#createProperty ignores namespace mappings when creating states
+  of type NAME and PATH
+Description: "as far as i saw we use PropertyStates#createProperty to create and\nset
+  an OAK property from a given JCR value or a list of JCR values.\n\nthis works well
+  for all types of values except for NAME, PATH which \nmay contain values with remapped
+  namespaces which will not be converted\nback to oak-values during the state creation:\n\n{code}\n
+  \    List<String> vals = Lists.newArrayList();\n     for (Value value : values)
+  {\n         vals.add(value.getString());\n     }\n     return new MultiGenericPropertyState(name,
+  vals, Type.fromTag(type, true));\n{code}\n\nif am not mistaken {code}value.getString(){code}
+  will return the JCR\nrepresentation of the value instead of the oak representation
+  as it\nwould be needed here.\n\npossible solutions include:\n- passing namepathmapper
+  to the create method\n- only accept oak Value implementation that allows to retrieve
+  the\n  internal representation, which is present in the ValueImpl afaik."

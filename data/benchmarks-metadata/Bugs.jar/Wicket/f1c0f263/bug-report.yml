@@ -1,0 +1,9 @@
+---
+BugID: WICKET-3196
+Summary: UrlValidator failes to validate urls that containt multiple dots in path
+Description: |+
+  refer to UrlValidator.java:466 (isValidPath).
+  if we have an url, that contains more than two consequent dots, for example "http://www.somedomain.com/this_one_is_tricky...but...still.....valid", validator will fail.
+  btw, the other side effect is that countTokens actually counts '...' a two 2dots.
+  One possible workaround is not just count '..' tokens, but count them along with slash, like '../'.
+

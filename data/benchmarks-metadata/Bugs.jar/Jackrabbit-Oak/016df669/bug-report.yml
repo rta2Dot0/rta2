@@ -1,0 +1,7 @@
+---
+BugID: OAK-1822
+Summary: NodeDocument _modified may go back in time
+Description: In a cluster with multiple DocumentMK instances the _modified field of
+  a NodeDocument may go back in time. This will result in incorrect diff calculations
+  when the DocumentNodeStore uses the _modified field to find changed nodes for a
+  given revision range.

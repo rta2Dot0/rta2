@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4102
+Summary: AutoLabelTextResolver fails to pick up locale changes in the session
+Description: |-
+  When using <wicket:label key="..."> AutoLabelTextResolver correctly picks up the localized message identified by the key. However, if the Session locale is changed, neither the printed label nor the FormComponent's label model get updated - both will still contain the initial message. This is inconsistent with the behavior of <wicket:message> and StringResourceModel. The principle of least surprise (and in my opinion, also that of highest usefulness ;-) ) suggests that AutoLabelTextResolver should dynamically get the localized string whenever it deals with something that can be localized. That includes the <wicket:label key="..."> case mentioned above, as well as when using FormComponent#getDefaultLabel.
+
+  I have only tested this in trunk 1.5 (since it recently came up during a training I gave on Wicket 1.5). I suspect it also affects 1.4.x.

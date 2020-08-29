@@ -1,0 +1,7 @@
+---
+BugID: OAK-2433
+Summary: IllegalStateException for ValueMap on _revisions
+Description: An IllegalStateException may be thrown by the MergeSortedIterator when
+  _revisions on the root document are read with the ValueMap implementation. It only
+  happens when the local _revisions map has entries that are lower than the most recent
+  split document.

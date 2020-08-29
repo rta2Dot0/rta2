@@ -1,0 +1,13 @@
+---
+BugID: LOG4J2-398
+Summary: DateLookup not parsed for FastRollingFile appender
+Description: "I'm trying to create a Log4j2 configuration file that will create a
+  log file using DateLookup so that the current date and time are in the filename
+  (so it matches the logging used in our other products).  This is what the appender
+  configuration looks like:\n\n{code:borderStyle=solid|language=XML}\n<FastRollingFile
+  name=\"Rolling\" fileName=\"log/$${date:yyyyMMdd-HHmmss} - myApp.log\" filePattern=\"log/$${date:yyyyMMdd-HHmmss}
+  - myApp-%i.log\">\n\t<immediateFlush>true</immediateFlush>\n\t<suppressExceptions>false</suppressExceptions>\n\t<PatternLayout>\n\t\t<pattern>%d
+  %p %c{1.} [%t] $${env:USER} %m%n</pattern>\n\t</PatternLayout>\n\t<Policies>\n\t\t<OnStartupTriggeringPolicy
+  />\n\t\t<SizeBasedTriggeringPolicy size=\"100 MB\"/>\n\t</Policies>\n</FastRollingFile>\n{code}\n\nHowever
+  when the log file is generated the filename is \"${date\".  I've tried different
+  variations and haven't been able to get this lookup to work at all."

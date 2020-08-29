@@ -1,0 +1,33 @@
+---
+BugID: OAK-2388
+Summary: Possibility of overflow in file length calculation
+Description: |-
+  In OakDirectory the length of a file is calculated in following way
+
+  {code:title=OakDirectory|linenumbers=true}
+          public OakIndexFile(String name, NodeBuilder file) {
+              ...
+              this.blobSize = determineBlobSize(file);
+              this.blob = new byte[blobSize];
+
+              PropertyState property = file.getProperty(JCR_DATA);
+              if (property != null && property.getType() == BINARIES) {
+                  this.data = newArrayList(property.getValue(BINARIES));
+              } else {
+                  this.data = newArrayList();
+              }
+
+              this.length = data.size() * blobSize;
+              if (!data.isEmpty()) {
+                  Blob last = data.get(data.size() - 1);
+                  this.length -= blobSize - last.length();
+              }
+  {code}
+
+  In above calculation its possible to have an overflow in
+
+  bq. this.length = data.size() * blobSize;
+
+  As multiplication of two integers result in an integer [1]
+
+  [1] http://stackoverflow.com/questions/12861893/casting-result-of-multiplication-two-positive-integers-to-long-is-negative-value

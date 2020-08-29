@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5838
+Summary: Last-modified header of external markup is ignored
+Description: "When using external base markup(in my case a drupal page with a wicket:child
+  element in it) this markup is supposed to be cached after first fetch. For subsequent
+  requests the last-modified header is checked to see if the markup has changed and
+  when it has the markup is fetched again.\n\nThis does not work, Connections.getLastModified(URL
+  url) always returns 0 when the URL is a http url(in fact, when url.openConnection
+  returns a sun.net.www.protocol.http.HttpURLConnection.\n\nSolution could be to not
+  setDoInput to false on this URLConnection(tested that)\n "

@@ -1,0 +1,19 @@
+---
+BugID: LOG4J2-1068
+Summary: Exceptions not logged when using TcpSocketServer + SerializedLayout
+Description: |
+  This issue was reported in BugZilla bug 57036: https://bz.apache.org/bugzilla/show_bug.cgi?id=57036.   The description there covers the problem well:
+
+  "... in the Method format(final LogEvent event, final StringBuilder toAppendTo) in ExtendedThrowablePatternConverter writing the Stacktrace in the logfile on condition that the Throwable throwable from Log4jLogEvent is not null, but on the Socketserver the Throwable throwable is always null, because it's defined as transient."
+
+  I couldn't find the bug here in Jira, so I'm reporting again in case it has been lost in the migration.
+
+  It's a major problem with a simple fix, so seems like it should be a high priority.
+
+  I've worked around it for now by plugging in my own ExtendedThrowablePatternConverter.  My fix is to change this line:
+
+  if (throwable != null && options.anyLines() {
+
+  to this:
+
+  if ((throwable != null || proxy != null) && options.anyLines()) {

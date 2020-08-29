@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-5699
+Summary: LogFormatter throws a NPE when all elements are disabled
+Description: |-
+  There are perfectly valid cases where you may want to output a log message with no elements displayed, i.e. with showExchangeId=false, showBody=false, etc.
+
+  For example, when you want to print a "signal" log line for a particular transaction and you're already using MDC logging with breadcrumbs enabled. You may already have all the info you need: logging category, severity, breadcrumbId. You are not interested in anything else.
+
+  Currently, disabling all elements leads to a NPE.

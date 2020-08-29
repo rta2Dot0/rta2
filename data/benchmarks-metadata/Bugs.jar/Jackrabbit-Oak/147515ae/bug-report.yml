@@ -1,0 +1,9 @@
+---
+BugID: OAK-3020
+Summary: Async Update fails after IllegalArgumentException
+Description: |-
+  The async index update can fail due to a mismatch between an index definition and the actual content. If that is the case, it seems that it can no longer make any progress. Instead it re-indexes the latest changes over and over again until it hits the problematic property.
+
+  Discussion at http://markmail.org/thread/42bixzkrkwv4s6tq
+
+  Stacktrace attached.

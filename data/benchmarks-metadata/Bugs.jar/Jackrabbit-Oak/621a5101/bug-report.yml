@@ -1,0 +1,24 @@
+---
+BugID: OAK-379
+Summary: Query test failures on buildbot
+Description: |-
+  Since revision 1398915 various query tests fail on [buildbot|http://ci.apache.org/builders/oak-trunk/builds/784]:
+
+  {code}
+  sql1(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql1(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.plugins.index.property.PropertyIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2Explain(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  sql1(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.plugins.index.old.QueryTest): No LoginModules configured for jackrabbit.oak
+  sql1(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  sql2(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  xpath(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  bindVariableTest(org.apache.jackrabbit.oak.query.index.TraversingIndexQueryTest): No LoginModules configured for jackrabbit.oak
+  {code}

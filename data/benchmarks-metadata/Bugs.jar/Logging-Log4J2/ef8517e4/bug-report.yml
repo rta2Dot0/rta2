@@ -1,0 +1,13 @@
+---
+BugID: LOG4J2-378
+Summary: Logging generates file named ${sys on some systems
+Description: "In a webapp I'm setting a system property in my apps ServletContextListener,
+  and using that system property in my log4j2.xml file, like so:\n{code}\n<appender
+  type=\"FastFile\" name=\"File\" fileName=\"${sys:catalina.home}/logs/${sys:application-name}.log\">\n{code}\nOn
+  my Windows machine, a log file named \"${sys.\" (always 0 bytes) is being created
+  instead of a log file with the application-name. The same war deployed on one of
+  our linux servers does not create a ${sys.\" file and instead creates a log file
+  with the intended application-name. \n\nI should note that the files DO appear in
+  the directory that sys:catalina.home should resolve to. They appear elsewhere when
+  I don't use sys:catalina.home so I'm quite sure that this variable is resolving
+  correctly and it is the sys:application-name which is the problem.\n"

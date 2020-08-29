@@ -1,0 +1,12 @@
+---
+BugID: WICKET-1677
+Summary: AjaxFormChoiceComponentUpdatingBehavior affects checkboxes even if component
+  uses radios and vice-versa
+Description: "I have a form with two radio buttons.  Depending which radio the user
+  selects, I show one form or another form.  I'm using an AjaxFormChoiceComponentUpdatingBehavior
+  attached to the RadioGroup.  One of the forms has a checkbox.  The checkbox triggers
+  an ajax update--even though the AjaxFormChoiceComponentUpdatingBehavior is attached
+  to a RadioGroup.  AjaxFormChoiceComponentUpdatingBehavior should only affect the
+  appropriate controls based on whether it is attached to a choice component that
+  uses radios or checkboxes.  If a developer really wants both, then he can use two
+  AjaxFormChoiceComponentUpdatingBehavior instances.\n\nI've attached a patch. "

@@ -1,0 +1,14 @@
+---
+BugID: CAMEL-3789
+Summary: org.apache.camel.component.file.strategy.MarkerFileExclusiveReadLockStrategy
+  is not thread-safe
+Description: "MarkerFileExclusiveReadLockStrategy is not thread-safe. When I run  a
+  File endpoint with more than one thread the MarkerFileExclusiveReadLockStrategy
+  only deletes the last file to start being processed. \n\nThe MarkerFileExclusiveReadLockStrategy
+  uses global variables: \nprivate File lock; \nprivate String lockFileName; \nand
+  gives them values on the acquireExclusiveReadLock method. When another thread calls
+  the releaseExclusiveReadLock method it uses the global variables to delete the locked
+  file. That means that if another thread came and called the acquireExclusiveReadLock
+  it would have changed the values on the global variables. \n\nIf lock and lockFileName
+  are not global variables the problem seems to disappear and I can a multithreaded
+  File endpoint and not locked file is left undeleted. \n"

@@ -1,0 +1,11 @@
+---
+BugID: FLINK-1333
+Summary: Getter/Setter recognition for POJO fields with generics is not working
+Description: |-
+  Fields like
+  {code}
+  private List<Contributors> contributors;
+  {code}
+
+  Are not recognized correctly, even if they have getters and setters.
+  Workaround: make them public.

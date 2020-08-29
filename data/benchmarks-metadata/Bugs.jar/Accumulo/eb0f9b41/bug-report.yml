@@ -1,0 +1,24 @@
+---
+BugID: ACCUMULO-4138
+Summary: CompactCommand description is incorrect
+Description: "The compact command has the following description \n{code}\nroot@accumulo>
+  compact -?\nusage: compact [<table>{ <table>}] [-?] [-b <begin-row>] [--cancel]
+  [-e <end-row>] [-nf] [-ns <namespace> | -p <pattern> | -t <tableName>]  [-pn <profile>]
+  \ [-w]\ndescription: sets all tablets for a table to major compact as soon as possible
+  (based on current time)\n  -?,--help                       display this help\n  -b,--begin-row
+  <begin-row>      begin row (inclusive)\n     --cancel                     cancel
+  user initiated compactions\n  -e,--end-row <end-row>          end row (inclusive)\n
+  \ -nf,--noFlush                   do not flush table data in memory before compacting.\n
+  \ -ns,--namespace <namespace>     name of a namespace to operate on\n  -p,--pattern
+  <pattern>          regex pattern of table names to operate on\n  -pn,--profile <profile>
+  \        iterator profile name\n  -t,--table <tableName>          name of a table
+  to operate on\n  -w,--wait                       wait for compact to finish\n{code}\n\nHowever,
+  the --begin-row is not inclusive.  Here is a simple demonstration.\n{code}\ncreatetable
+  compacttest\naddsplits a b c\ninsert \"a\" \"1\" \"\" \"\"\ninsert \"a\" \"2\" \"\"
+  \"\"\ninsert \"b\" \"3\" \"\" \"\"\ninsert \"b\" \"4\" \"\" \"\"\ninsert \"c\" \"5\"
+  \"\" \"\"\ninsert \"c\" \"6\" \"\" \"\"\nflush -w\nscan -t accumulo.metadata -np\ncompact
+  -b a -e c -t compacttest -w\nscan -t accumulo.metadata -np\ndeletetable compacttest
+  -f\n{code}\n\nYou will see that file associated with the 'a' split is still a F
+  flush file, which the files in the 'b' and 'c' split are A files.\n\nNot sure if
+  the fix is to update the commands description, which would be easy, or to make the
+  begin row actually inclusive."

@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-9269
+Summary: NotifyBuilder.fromRoute() does not work for some endpoint types
+Description: "{{NotifyBuilder.fromRoute()}} does not work if the endpoint uri in the
+  {{from()}} clause for a route does not match the actual endpoint uri the exchange
+  was sent to. Because we also have the route id itself available in the exchange,
+  we can use that as a fallback when the match on from endpoint uri doesn't work."

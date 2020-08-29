@@ -1,0 +1,12 @@
+---
+BugID: MATH-738
+Summary: Incomplete beta function I(x, a, b) is inaccurate for large values of a and/or
+  b
+Description: "This was first reported in MATH-718. The result of the current implementation
+  of the incomplete beta function I(x, a, b) is inaccurate when a and/or b are large-ish.
+  \r\n\r\nI've skimmed through [slatec|http://www.netlib.org/slatec/fnlib/betai.f],
+  GSL, [Boost|http://www.boost.org/doc/libs/1_38_0/libs/math/doc/sf_and_dist/html/math_toolkit/special/sf_beta/ibeta_function.html]
+  as well as NR. At first sight, neither uses the same method to compute this function.
+  I think [TOMS-708|http://www.netlib.org/toms/708] is probably the best option.\r\n\r\n_Issue
+  moved from MATH project on January 27, 2018 (concerned implementation was moved
+  to module {{commons-numbers-gamma}} of \"Commons Numbers\")._"

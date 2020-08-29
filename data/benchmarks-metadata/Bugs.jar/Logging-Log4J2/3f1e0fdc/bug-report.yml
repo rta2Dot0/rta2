@@ -1,0 +1,10 @@
+---
+BugID: LOG4J2-310
+Summary: SMTPAppender does not send mails with error or fatal level without prior
+  info event
+Description: |-
+  When using an SMTPAppender a mail is only delivered on a fatal event if there occured an info event before.
+  Prior fatal events are ignored by SMTPAppender - other Appenders log them.
+
+  A more detailed explanation/discussion including an example program can be found at:
+  http://stackoverflow.com/questions/17657983/log4j2-smtpappender-does-not-send-mails-with-error-or-fatal-level

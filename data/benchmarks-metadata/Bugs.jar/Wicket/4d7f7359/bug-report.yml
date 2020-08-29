@@ -1,0 +1,51 @@
+---
+BugID: WICKET-3166
+Summary: isVisibleInHierarchy() possibly unnecessarily checks children whose parents
+  are invisible?
+Description: |-
+  Hi!
+
+  See attached quickstart with junit test reproducing the bug. See also patch proposal.
+
+  I have a page with two panels:
+
+  page.form.add(panel1);
+  page.form.add(panel2);
+
+  in some situations panel1 is not visible.
+
+  However, a form submit event will visit all formcomponents of panel1 via:
+
+         at org.apache.wicket.markup.html.form.FormComponent.visitFormComponentsPostOrder(FormComponent.java:400)
+         at org.apache.wicket.markup.html.form.Form.visitFormComponentsPostOrder(Form.java:1209)
+         at org.apache.wicket.markup.html.form.Form.inputChanged(Form.java:1403)
+         at org.apache.wicket.markup.html.form.Form.onFormSubmitted(Form.java:865)
+
+  This results in a crash because panel1 components are not prepared to
+  be invoked via isvisible when the panel itself is not visible.
+
+  I wonder if the component.isVisibleInHierarchy could be changed as
+  follows, to first check parent visibility:
+
+   public final boolean isVisibleInHierarchy()
+   {
+     Component component = this;
+     while (component != null)
+     {
+       Component componentParent = component.getParent();
+
+       if (((componentParent == null) ||
+  componentParent.isVisibleInHierarchy()) &&
+  component.determineVisibility())
+       {
+         component = componentParent;
+       }
+       else
+       {
+         return false;
+       }
+     }
+     return true;
+   }
+
+  Similar change could/should maybe be possible also for isEnabledInHierarchy ?

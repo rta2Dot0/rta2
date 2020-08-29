@@ -1,0 +1,9 @@
+---
+BugID: WICKET-5441
+Summary: IResourceCachingStrategy implementations should only set caching if version
+  matches
+Description: Implementations of IResourceCachingStrategy (FilenameWithVersionResourceCachingStrategy
+  and QueryStringWithVersionResourceCachingStrategy) should only set cache duration
+  to maximum if the version matches. Currently, if a user requests a resource with
+  an arbitrary version, the version will be cached for one year (WebResponse.MAX_CACHE_DURATION).
+  So people could polute proxy caches with potentially upcoming version.

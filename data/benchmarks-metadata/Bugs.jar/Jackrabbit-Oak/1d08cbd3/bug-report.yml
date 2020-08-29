@@ -1,0 +1,7 @@
+---
+BugID: OAK-2318
+Summary: DocumentNodeStore.diffManyChildren() reads too many nodes
+Description: |-
+  DocumentNodeStore.diffManyChildren() compares too many nodes when running in a non-clustered setup and there are many changes below a location with 'many' children.
+
+  This is a regression introduced by OAK-2232. The fix changed the way how the minimum revision is calculated based on the two revisions to compare. The seen-at revision of the RevisionComparator is taken into account. However, in a single cluster node setup, the revision range for the current clusterId is never updated. This means the minimum revision is calculated too far back and causes queries with too many nodes than necessary.

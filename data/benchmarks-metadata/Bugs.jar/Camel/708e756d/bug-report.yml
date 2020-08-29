@@ -1,0 +1,28 @@
+---
+BugID: CAMEL-5704
+Summary: 'Split inside Split - Parallel processing issue - Thread is getting wrong
+  Exchange when leaving inner split '
+Description: "A small JUnit recreation case is attached.\nWhen using embedded split
+  inside a split with parallel processing, threads are getting a wrong exchange (or
+  wrong exchange copy) just after leaving the inner split and returning to the parent
+  split.\n\nIn the test case, we split a file by comma in a parent split (Block split),
+  then by line separator in inner split (Line Split). \nWe expect 2 files in output,
+  each of them containing the respective Blocks.\n\nHowever, once inner split is complete,
+  each thread is supposed to add a 11th line in the result(i).txt file saying split(i)
+  is complete.  \nBug is that one of the thread ends up with parent split Exchange
+  (copy?) from the other thread, and appends wrong information into the wrong file.\n\nExpected:\n---------\n(result0.txt)\nBlock1
+  Line 1:Status=OK\nBlock1 Line 2:Status=OK\nBlock1 Line 0:Status=OK\nBlock1 Line
+  4:Status=OK\nBlock1 Line 3:Status=OK\nBlock1 Line 8:Status=OK\nBlock1 Line 5:Status=OK\nBlock1
+  Line 6:Status=OK\nBlock1 Line 7:Status=OK\nBlock1 Line 9:Status=OK\n0 complete\n\n(result1.txt)\nBlock2
+  Line 0:Status=OK\nBlock2 Line 3:Status=OK\nBlock2 Line 1:Status=OK\nBlock2 Line
+  2:Status=OK\nBlock2 Line 6:Status=OK\nBlock2 Line 4:Status=OK\nBlock2 Line 7:Status=OK\nBlock2
+  Line 9:Status=OK\nBlock2 Line 5:Status=OK\nBlock2 Line 8:Status=OK\n1 complete\n\nActual:\n-------\n(result0.txt)\nBlock1
+  Line 1:Status=OK\nBlock1 Line 2:Status=OK\nBlock1 Line 0:Status=OK\nBlock1 Line
+  4:Status=OK\nBlock1 Line 3:Status=OK\nBlock1 Line 8:Status=OK\nBlock1 Line 5:Status=OK\nBlock1
+  Line 6:Status=OK\nBlock1 Line 7:Status=OK\nBlock1 Line 9:Status=OK\n0 complete0
+  complete\n\n(result1.txt)\nBlock2 Line 0:Status=OK\nBlock2 Line 3:Status=OK\nBlock2
+  Line 1:Status=OK\nBlock2 Line 2:Status=OK\nBlock2 Line 6:Status=OK\nBlock2 Line
+  4:Status=OK\nBlock2 Line 7:Status=OK\nBlock2 Line 9:Status=OK\nBlock2 Line 5:Status=OK\nBlock2
+  Line 8:Status=OK\n\n\nThis issue exist in 2.8.x, and probably in 2.10.x as well.\nThis
+  is a Splitter/MulticastProcessor or Pipeline issue but not quite familiar with the
+  code, I am having hard time tracking it. "

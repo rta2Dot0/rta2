@@ -1,0 +1,77 @@
+---
+BugID: WICKET-2334
+Summary: DebugBar throws an java.lang.ExceptionInInitializerError when Tomcat is restarted
+Description: "I have just added the DebugBar to our base page, and since then when
+  Tomcat is restarted and session would be reloaded by this it throws this exception:\n\n1
+  \   ERROR org.apache.catalina.session.ManagerBase  - Exception loading sessions
+  from persistent storage\njava.lang.ExceptionInInitializerError\n\tat sun.misc.Unsafe.ensureClassInitialized(Native
+  Method)\n\tat sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:25)\n\tat
+  sun.reflect.ReflectionFactory.newFieldAccessor(ReflectionFactory.java:122)\n\tat
+  java.lang.reflect.Field.acquireFieldAccessor(Field.java:918)\n\tat java.lang.reflect.Field.getFieldAccessor(Field.java:899)\n\tat
+  java.lang.reflect.Field.getLong(Field.java:528)\n\tat java.io.ObjectStreamClass.getDeclaredSUID(ObjectStreamClass.java:1614)\n\tat
+  java.io.ObjectStreamClass.access$700(ObjectStreamClass.java:52)\n\tat java.io.ObjectStreamClass$2.run(ObjectStreamClass.java:425)\n\tat
+  java.security.AccessController.doPrivileged(Native Method)\n\tat java.io.ObjectStreamClass.<init>(ObjectStreamClass.java:413)\n\tat
+  java.io.ObjectStreamClass.lookup(ObjectStreamClass.java:310)\n\tat java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:547)\n\tat
+  java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1583)\n\tat java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1496)\n\tat
+  java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1583)\n\tat java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1496)\n\tat
+  java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1732)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.readArray(ObjectInputStream.java:1667)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1323)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1871)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.defaultReadObject(ObjectInputStream.java:480)\n\tat org.apache.wicket.Component.readObject(Component.java:4469)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:974)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1849)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.readArray(ObjectInputStream.java:1667)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1323)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1871)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)\n\tat
+  java.util.concurrent.CopyOnWriteArrayList.readObject(CopyOnWriteArrayList.java:845)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:974)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1849)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1871)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1871)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1871)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.readArray(ObjectInputStream.java:1667)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1323)\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1947)\n\tat
+  java.io.ObjectInputStream.defaultReadObject(ObjectInputStream.java:480)\n\tat org.apache.wicket.Page.readPageObject(Page.java:1349)\n\tat
+  org.apache.wicket.Component.readObject(Component.java:4465)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native
+  Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:974)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1849)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)\n\tat
+  org.apache.wicket.protocol.http.SecondLevelCacheSessionStore$SecondLevelCachePageMap.readObject(SecondLevelCacheSessionStore.java:412)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:974)\n\tat
+  java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1849)\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1753)\n\tat
+  java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1329)\n\tat java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)\n\tat
+  org.apache.catalina.session.StandardSession.readObject(StandardSession.java:1407)\n\tat
+  org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:931)\n\tat
+  org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:394)\n\tat
+  org.apache.catalina.session.StandardManager.load(StandardManager.java:321)\n\tat
+  org.apache.catalina.session.StandardManager.start(StandardManager.java:637)\n\tat
+  org.apache.catalina.core.ContainerBase.setManager(ContainerBase.java:432)\n\tat
+  org.apache.catalina.core.StandardContext.start(StandardContext.java:4160)\n\tat
+  org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1014)\n\tat org.apache.catalina.core.StandardHost.start(StandardHost.java:736)\n\tat
+  org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1014)\n\tat org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)\n\tat
+  org.apache.catalina.core.StandardService.start(StandardService.java:448)\n\tat org.apache.catalina.core.StandardServer.start(StandardServer.java:700)\n\tat
+  org.apache.catalina.startup.Catalina.start(Catalina.java:552)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native
+  Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:295)\n\tat
+  org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:433)\nCaused by: org.apache.wicket.WicketRuntimeException:
+  There is no application attached to current thread main\n\tat org.apache.wicket.Application.get(Application.java:178)\n\tat
+  org.apache.wicket.devutils.debugbar.DebugBar.getContributors(DebugBar.java:146)\n\tat
+  org.apache.wicket.devutils.debugbar.DebugBar.registerContributor(DebugBar.java:140)\n\tat
+  org.apache.wicket.devutils.debugbar.DebugBar.registerStandardContributors(DebugBar.java:152)\n\tat
+  org.apache.wicket.devutils.debugbar.DebugBar.<clinit>(DebugBar.java:65)\n\t... 109
+  more"

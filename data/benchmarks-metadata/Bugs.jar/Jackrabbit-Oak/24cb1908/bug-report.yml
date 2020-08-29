@@ -1,0 +1,8 @@
+---
+BugID: OAK-2420
+Summary: DocumentNodeStore revision GC may lead to NPE
+Description: The DocumentNodeStore revision GC may cause a NPE in a reader thread
+  when the GC deletes documents currently accessed by the reader. The {{docChildrenCache}}
+  is invalidated in {{VersionGarbageCollector.collectDeletedDocuments()}} after documents
+  are removed in the DocumentStore. The NPE may occur if removed documents are access
+  in between.

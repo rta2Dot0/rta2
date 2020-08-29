@@ -1,0 +1,8 @@
+---
+BugID: WICKET-3603
+Summary: DataTable row groups are present in markup even when they contain no rows.
+Description: |-
+  As per the HTML spec :
+  "When present, each THEAD, TFOOT, and TBODY contains a row group. Each row group must contain at least one row, defined by the TR element."
+
+  There is no check in place to remove the row group tags from the output if they don't contain any row.

@@ -1,0 +1,1690 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] The project org.apache.maven:maven:pom:3.2.2-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache Maven
+[INFO] Maven Model
+[INFO] Maven Artifact
+[INFO] Maven Plugin API
+[INFO] Maven Model Builder
+[INFO] Maven Settings
+[INFO] Maven Settings Builder
+[INFO] Maven Repository Metadata Model
+[INFO] Maven Aether Provider
+[INFO] Maven Core
+[INFO] Maven Compat
+[INFO] Maven Embedder
+[INFO] Apache Maven Distribution
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Maven 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-2/extra-enforcer-rules-1.0-beta-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-2/extra-enforcer-rules-1.0-beta-2.pom (6.7 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.pom (2.7 kB at 209 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.pom (3.8 kB at 347 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-2/extra-enforcer-rules-1.0-beta-2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-2/extra-enforcer-rules-1.0-beta-2.jar (31 kB at 1.2 MB/s)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/rat/apache-rat-core/0.10/apache-rat-core-0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/rat/apache-rat-core/0.10/apache-rat-core-0.10.pom (4.0 kB at 331 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom (11 kB at 5.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom (50 kB at 56 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom (1.6 kB at 164 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom (1.4 kB at 2.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom (2.4 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom (1.3 kB at 1.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom (1.2 kB at 136 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.pom (5.6 kB at 4.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom (1.4 kB at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom (1.5 kB at 170 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom (1.1 kB at 111 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom (504 B at 254 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom (1.1 kB at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom (812 B at 81 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom (1.3 kB at 445 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom (400 B at 129 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom (767 B at 1.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom (5.9 kB at 495 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (61 kB at 2.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar (10 kB at 285 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar (7.6 kB at 27 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar (256 kB at 801 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar (18 kB at 33 kB/s)
+[INFO] 63 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 6138 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 4524 unknown: 4524 generated: 0 approved: 526 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom (6.0 kB at 3.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom (1.4 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 204 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 258 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 17 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar (12 kB at 648 kB/s)
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer/1.10/animal-sniffer-1.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer/1.10/animal-sniffer-1.10.pom (2.4 kB at 162 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.pom (2.0 kB at 197 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.0/asm-parent-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.0/asm-parent-4.0.pom (5.5 kB at 1.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/java-boot-classpath-detector/1.10/java-boot-classpath-detector-1.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/java-boot-classpath-detector/1.10/java-boot-classpath-detector-1.10.pom (2.4 kB at 111 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.1/maven-plugin-api-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.1/maven-plugin-api-2.0.1.pom (643 B at 592 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom (11 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.1/maven-core-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.1/maven-core-2.0.1.pom (5.2 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.1/maven-settings-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.1/maven-settings-2.0.1.pom (1.4 kB at 656 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.1/maven-model-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.1/maven-model-2.0.1.pom (2.5 kB at 1.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.1/maven-plugin-parameter-documenter-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.1/maven-plugin-parameter-documenter-2.0.1.pom (1.6 kB at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.1/maven-reporting-api-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.1/maven-reporting-api-2.0.1.pom (902 B at 100 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.1/maven-reporting-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.1/maven-reporting-2.0.1.pom (546 B at 474 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-6/doxia-sink-api-1.0-alpha-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-6/doxia-sink-api-1.0-alpha-6.pom (386 B at 32 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-6/doxia-1.0-alpha-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-6/doxia-1.0-alpha-6.pom (3.8 kB at 1.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.1/maven-profile-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.1/maven-profile-2.0.1.pom (1.5 kB at 850 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.1/maven-artifact-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.1/maven-artifact-2.0.1.pom (765 B at 85 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.1/maven-repository-metadata-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.1/maven-repository-metadata-2.0.1.pom (1.3 kB at 145 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.1/maven-error-diagnostics-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.1/maven-error-diagnostics-2.0.1.pom (854 B at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.1/maven-project-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.1/maven-project-2.0.1.pom (1.7 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.1/maven-artifact-manager-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.1/maven-artifact-manager-2.0.1.pom (1.4 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.1/maven-plugin-registry-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.1/maven-plugin-registry-2.0.1.pom (1.4 kB at 91 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.1/maven-plugin-descriptor-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.1/maven-plugin-descriptor-2.0.1.pom (1.5 kB at 12 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.1/maven-monitor-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.1/maven-monitor-2.0.1.pom (442 B at 158 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom (2.3 kB at 230 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.1/maven-settings-2.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.1/maven-plugin-parameter-documenter-2.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.1/maven-reporting-api-2.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-6/doxia-sink-api-1.0-alpha-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.1/maven-reporting-api-2.0.1.jar (5.5 kB at 290 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.1/maven-profile-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-6/doxia-sink-api-1.0-alpha-6.jar (4.0 kB at 104 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.1/maven-model-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.1/maven-plugin-parameter-documenter-2.0.1.jar (16 kB at 270 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.1/maven-repository-metadata-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.1/maven-repository-metadata-2.0.1.jar (20 kB at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.1/maven-error-diagnostics-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.1/maven-error-diagnostics-2.0.1.jar (8.5 kB at 8.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.1/maven-plugin-registry-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.1/maven-settings-2.0.1.jar (44 kB at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.1/maven-plugin-descriptor-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/4.0/asm-all-4.0.jar (213 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.1/maven-artifact-manager-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.1/maven-profile-2.0.1.jar (30 kB at 27 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.1/maven-monitor-2.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.1/maven-plugin-registry-2.0.1.jar (24 kB at 22 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.1/maven-model-2.0.1.jar (80 kB at 72 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.1/maven-artifact-manager-2.0.1.jar (49 kB at 44 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.1/maven-monitor-2.0.1.jar (5.6 kB at 5.1 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.1/maven-plugin-descriptor-2.0.1.jar (32 kB at 29 kB/s)
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java16/1.1/java16-1.1.signature
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java16/1.1/java16-1.1.signature (598 kB at 4.9 MB/s)
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.pom (2.1 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.5/doxia-modules-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.5/doxia-modules-1.5.pom (2.6 kB at 75 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.5/doxia-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.5/doxia-1.5.pom (18 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom (1.9 kB at 144 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom (2.6 kB at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom (1.7 kB at 37 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom (1.9 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/4.1/asm-parent-4.1.pom (5.5 kB at 157 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom (2.1 kB at 208 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom (2.1 kB at 50 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom (2.1 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.5/doxia-module-xhtml-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.5/doxia-module-xhtml-1.5.pom (1.6 kB at 74 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.5/doxia-core-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.5/doxia-core-1.5.pom (4.1 kB at 85 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.5/doxia-sink-api-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.5/doxia-sink-api-1.5.pom (1.5 kB at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.5/doxia-logging-api-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.5/doxia-logging-api-1.5.pom (1.5 kB at 31 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.1/maven-reporting-exec-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.1/maven-reporting-exec-1.1.pom (11 kB at 996 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 603 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 432 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 235 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 202 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 148 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 381 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 597 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 22 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 145 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 11 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 556 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 116 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 34 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 353 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 94 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 693 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4.0 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 3.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 528 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 519 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.2/maven-archiver-2.4.2.pom (4.0 kB at 1.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom (9.2 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.0.1/plexus-archiver-2.0.1.pom (2.8 kB at 1.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.1/plexus-io-2.0.1.pom (1.7 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.4/doxia-module-apt-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.4/doxia-module-apt-1.4.pom (1.7 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.4/doxia-module-xdoc-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.4/doxia-module-xdoc-1.4.pom (4.6 kB at 659 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom (157 B at 26 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom (11 kB at 12 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.5/doxia-integration-tools-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.5/doxia-integration-tools-1.5.pom (6.9 kB at 691 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/2/doxia-tools-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/2/doxia-tools-2.pom (12 kB at 16 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.3/doxia-logging-api-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.3/doxia-logging-api-1.3.pom (1.6 kB at 1.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.3/doxia-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.3/doxia-1.3.pom (18 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.3/doxia-decoration-model-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.3/doxia-decoration-model-1.3.pom (3.1 kB at 6.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.3/doxia-sitetools-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.3/doxia-sitetools-1.3.pom (16 kB at 6.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom (1.8 kB at 195 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom (9.8 kB at 70 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom (1.6 kB at 161 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom (1.2 kB at 112 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom (5.6 kB at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.pom (6.3 kB at 626 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/project/6.1.25/project-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/project/6.1.25/project-6.1.25.pom (9.2 kB at 6.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom (3.3 kB at 788 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom (16 kB at 29 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.pom (3.9 kB at 323 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom (2.7 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom (17 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom (27 kB at 234 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar (185 kB at 7.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.5/doxia-module-markdown-1.5.jar (14 kB at 130 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar (22 kB at 213 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar (59 kB at 558 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar (73 kB at 659 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar (47 kB at 431 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar (20 kB at 172 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 878 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar (155 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 805 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar (38 kB at 168 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 325 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 59 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 220 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 129 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar (134 kB at 541 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 614 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar (51 kB at 172 kB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 183 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4.0 kB at 578 kB/s)
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven/3.2.2-SNAPSHOT/maven-3.2.2-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/target/maven-3.2.2-SNAPSHOT-site.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven/3.2.2-SNAPSHOT/maven-3.2.2-SNAPSHOT-site.xml
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Model 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-model ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-model ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-model ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 46 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 46 licence.
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:java (standard) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom (1.5 kB at 112 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom (11 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-core/1.8.1/modello-core-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-core/1.8.1/modello-core-1.8.1.pom (1.5 kB at 100 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (3.2 kB at 356 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.13/plexus-utils-3.0.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.13/plexus-utils-3.0.13.pom (3.1 kB at 315 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom (2.6 kB at 330 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom (2.0 kB at 182 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom (3.0 kB at 305 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom (2.0 kB at 48 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom (2.6 kB at 218 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom (1.8 kB at 231 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom (1.6 kB at 18 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom (1.9 kB at 243 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-converters/1.8.1/modello-plugin-converters-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-converters/1.8.1/modello-plugin-converters-1.8.1.pom (1.6 kB at 178 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugins/1.8.1/modello-plugins-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugins/1.8.1/modello-plugins-1.8.1.pom (2.5 kB at 10.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-java/1.8.1/modello-plugin-java-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-java/1.8.1/modello-plugin-java-1.8.1.pom (2.6 kB at 259 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-dom4j/1.8.1/modello-plugin-dom4j-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-dom4j/1.8.1/modello-plugin-dom4j-1.8.1.pom (1.6 kB at 197 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.8.1/modello-plugin-xml-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.8.1/modello-plugin-xml-1.8.1.pom (1.0 kB at 14 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jackson/1.8.1/modello-plugin-jackson-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jackson/1.8.1/modello-plugin-jackson-1.8.1.pom (1.8 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.5/jackson-core-2.1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.5/jackson-core-2.1.5.pom (5.6 kB at 177 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom (18 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.1.5/jackson-databind-2.1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.1.5/jackson-databind-2.1.5.pom (5.6 kB at 431 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.1.5/jackson-annotations-2.1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.1.5/jackson-annotations-2.1.5.pom (1.9 kB at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jdom/1.8.1/modello-plugin-jdom-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jdom/1.8.1/modello-plugin-jdom-1.8.1.pom (1.9 kB at 10 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jsonschema/1.8.1/modello-plugin-jsonschema-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jsonschema/1.8.1/modello-plugin-jsonschema-1.8.1.pom (1.5 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-sax/1.8.1/modello-plugin-sax-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-sax/1.8.1/modello-plugin-sax-1.8.1.pom (1.3 kB at 79 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-snakeyaml/1.8.1/modello-plugin-snakeyaml-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-snakeyaml/1.8.1/modello-plugin-snakeyaml-1.8.1.pom (1.2 kB at 116 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.12/snakeyaml-1.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.12/snakeyaml-1.12.pom (22 kB at 792 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-stax/1.8.1/modello-plugin-stax-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-stax/1.8.1/modello-plugin-stax-1.8.1.pom (2.3 kB at 233 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xdoc/1.8.1/modello-plugin-xdoc-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xdoc/1.8.1/modello-plugin-xdoc-1.8.1.pom (1.2 kB at 138 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xsd/1.8.1/modello-plugin-xsd-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xsd/1.8.1/modello-plugin-xsd-1.8.1.pom (1.3 kB at 112 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xpp3/1.8.1/modello-plugin-xpp3-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xpp3/1.8.1/modello-plugin-xpp3-1.8.1.pom (1.4 kB at 204 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar (24 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar (35 kB at 2.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar (29 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.8.1/modello-plugin-xml-1.8.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.5/jackson-core-2.1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar (57 kB at 3.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.1.5/jackson-databind-2.1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar (88 kB at 3.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.1.5/jackson-annotations-2.1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.8.1/modello-plugin-xml-1.8.1.jar (15 kB at 557 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.12/snakeyaml-1.12.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.1.5/jackson-annotations-2.1.5.jar (34 kB at 841 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar (49 kB at 982 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.5/jackson-core-2.1.5.jar (207 kB at 3.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.12/snakeyaml-1.12.jar (271 kB at 4.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.1.5/jackson-databind-2.1.5.jar (927 kB at 14 MB/s)
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-reader (standard) @ maven-model ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-extended-reader (standard) @ maven-model ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-writer (standard) @ maven-model ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-model ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-model ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 53 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-model ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-model ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.pom (6.1 kB at 610 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom (1.6 kB at 12 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom (17 kB at 178 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.pom (2.3 kB at 43 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.pom (2.8 kB at 38 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.jar (40 kB at 2.8 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-model ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/maven-model-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-model ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-model ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/target/maven-model-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-model/3.2.2-SNAPSHOT/maven-model-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-model/3.2.2-SNAPSHOT/maven-model-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Artifact 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-artifact ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-artifact ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-artifact ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 33 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 33 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-artifact ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 27 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-artifact ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-artifact ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom (17 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-cli/1.2/plexus-cli-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-cli/1.2/plexus-cli-1.2.pom (1.8 kB at 2.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-tools/1.0.8/plexus-tools-1.0.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-tools/1.0.8/plexus-tools-1.0.8.pom (953 B at 2.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.pom (2.5 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.1/asm-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.1/asm-3.1.pom (278 B at 31 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-parent/3.1/asm-parent-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-parent/3.1/asm-parent-3.1.pom (4.2 kB at 5.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.jar (22 kB at 2.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.jar (64 kB at 4.0 MB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-artifact ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-artifact ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/maven-artifact-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-artifact ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/maven-artifact-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-artifact/3.2.2-SNAPSHOT/maven-artifact-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-artifact/3.2.2-SNAPSHOT/maven-artifact-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Plugin API 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-plugin-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-plugin-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-plugin-api ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 26 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 26 licence.
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:java (standard) @ maven-plugin-api ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/lifecycle.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-reader (standard) @ maven-plugin-api ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/lifecycle.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-writer (standard) @ maven-plugin-api ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/lifecycle.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-plugin-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-plugin-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/generated-sources/modello/org/apache/maven/plugin/lifecycle/io/xpp3/LifecycleMappingsXpp3Reader.java: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/generated-sources/modello/org/apache/maven/plugin/lifecycle/io/xpp3/LifecycleMappingsXpp3Reader.java uses unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/generated-sources/modello/org/apache/maven/plugin/lifecycle/io/xpp3/LifecycleMappingsXpp3Reader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-plugin-api ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-plugin-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-plugin-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-plugin-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-plugin-api ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/maven-plugin-api-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-plugin-api ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/target/maven-plugin-api-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-plugin-api/3.2.2-SNAPSHOT/maven-plugin-api-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-plugin-api/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-plugin-api/3.2.2-SNAPSHOT/maven-plugin-api-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Model Builder 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-model-builder ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-model-builder ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-model-builder ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 106 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 106 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-model-builder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 89 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model-builder/target/classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-model-builder ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-model-builder ---
+[INFO] Discovered 26 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 52 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-model-builder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model-builder/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-model-builder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-model-builder ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model-builder/target/maven-model-builder-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-model-builder ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model-builder/target/maven-model-builder-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-model-builder/3.2.2-SNAPSHOT/maven-model-builder-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-model-builder/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-model-builder/3.2.2-SNAPSHOT/maven-model-builder-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Settings 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-settings ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-settings ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-settings ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 5 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 5 licence.
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:java (standard) @ maven-settings ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-reader (standard) @ maven-settings ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-writer (standard) @ maven-settings ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-settings ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-settings ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-settings ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello/org/apache/maven/settings/Settings.java: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello/org/apache/maven/settings/Settings.java uses or overrides a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello/org/apache/maven/settings/Settings.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello/org/apache/maven/settings/io/xpp3/SettingsXpp3Reader.java: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello/org/apache/maven/settings/io/xpp3/SettingsXpp3Reader.java uses unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/generated-sources/modello/org/apache/maven/settings/io/xpp3/SettingsXpp3Reader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-settings ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-settings ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-settings ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-settings ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-settings ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/maven-settings-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-settings ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-settings ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/target/maven-settings-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-settings/3.2.2-SNAPSHOT/maven-settings-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-settings/3.2.2-SNAPSHOT/maven-settings-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Settings Builder 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-settings-builder ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-settings-builder ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-settings-builder ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 34 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 34 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-settings-builder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-settings-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings-builder/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-settings-builder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 30 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings-builder/target/classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-settings-builder ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-settings-builder ---
+[INFO] Discovered 5 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-settings-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-settings-builder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings-builder/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-settings-builder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-settings-builder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-settings-builder ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings-builder/target/maven-settings-builder-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-settings-builder ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-settings-builder ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings-builder/target/maven-settings-builder-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-settings-builder/3.2.2-SNAPSHOT/maven-settings-builder-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-settings-builder/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-settings-builder/3.2.2-SNAPSHOT/maven-settings-builder-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Repository Metadata Model 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-repository-metadata ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-repository-metadata ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-repository-metadata ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 4 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 4 licence.
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:java (standard) @ maven-repository-metadata ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-reader (standard) @ maven-repository-metadata ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-writer (standard) @ maven-repository-metadata ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-repository-metadata ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-repository-metadata ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-repository-metadata ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/io/xpp3/MetadataXpp3Reader.java: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/io/xpp3/MetadataXpp3Reader.java uses unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/io/xpp3/MetadataXpp3Reader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-repository-metadata ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-repository-metadata ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-repository-metadata ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-repository-metadata ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-repository-metadata ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/maven-repository-metadata-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-repository-metadata ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-repository-metadata ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/target/maven-repository-metadata-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-repository-metadata/3.2.2-SNAPSHOT/maven-repository-metadata-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-repository-metadata/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-repository-metadata/3.2.2-SNAPSHOT/maven-repository-metadata-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Aether Provider 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-aether-provider ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-aether-provider ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-aether-provider ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 30 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 30 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-aether-provider ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-aether-provider ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-aether-provider/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-aether-provider ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-aether-provider/target/classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-aether-provider ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-aether-provider ---
+[INFO] Discovered 5 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-aether-provider ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-aether-provider ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-aether-provider/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-aether-provider ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-aether-provider ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-aether-provider ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-aether-provider/target/maven-aether-provider-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-aether-provider ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-aether-provider ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-aether-provider/target/maven-aether-provider-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-aether-provider/3.2.2-SNAPSHOT/maven-aether-provider-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-aether-provider/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-aether-provider/3.2.2-SNAPSHOT/maven-aether-provider-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Core 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-core ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: lifecycle-executor.txt
+[INFO] Exclude: plugin-manager.txt
+[INFO] Exclude: project-builder.txt
+[INFO] Exclude: src/site/resources/design/**
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 407 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 407 licence.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create-timestamp (create-noncanonicalrev) @ maven-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.pom (2.3 kB at 234 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.pom (1.6 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm/1.8/maven-scm-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm/1.8/maven-scm-1.8.pom (21 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.3/plexus-utils-3.0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.3/plexus-utils-3.0.3.pom (2.5 kB at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.8/maven-scm-manager-plexus-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.8/maven-scm-manager-plexus-1.8.pom (2.2 kB at 240 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-managers/1.8/maven-scm-managers-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-managers/1.8/maven-scm-managers-1.8.pom (1.5 kB at 48 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-bazaar/1.8/maven-scm-provider-bazaar-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-bazaar/1.8/maven-scm-provider-bazaar-1.8.pom (2.1 kB at 257 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers/1.8/maven-scm-providers-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers/1.8/maven-scm-providers-1.8.pom (3.7 kB at 73 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/regexp/regexp/1.3/regexp-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/regexp/regexp/1.3/regexp-1.3.pom (145 B at 5.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.8/maven-scm-provider-svnexe-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.8/maven-scm-provider-svnexe-1.8.pom (2.5 kB at 278 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.8/maven-scm-providers-svn-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.8/maven-scm-providers-svn-1.8.pom (2.1 kB at 41 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.8/maven-scm-provider-svn-commons-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.8/maven-scm-provider-svn-commons-1.8.pom (2.7 kB at 245 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-gitexe/1.8/maven-scm-provider-gitexe-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-gitexe/1.8/maven-scm-provider-gitexe-1.8.pom (2.4 kB at 265 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-git/1.8/maven-scm-providers-git-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-git/1.8/maven-scm-providers-git-1.8.pom (2.2 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-git-commons/1.8/maven-scm-provider-git-commons-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-git-commons/1.8/maven-scm-provider-git-commons-1.8.pom (2.3 kB at 205 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.8/maven-scm-provider-cvsexe-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.8/maven-scm-provider-cvsexe-1.8.pom (2.7 kB at 298 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.8/maven-scm-providers-cvs-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.8/maven-scm-providers-cvs-1.8.pom (1.7 kB at 122 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.8/maven-scm-provider-cvs-commons-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.8/maven-scm-provider-cvs-commons-1.8.pom (2.4 kB at 121 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.8/maven-scm-provider-starteam-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.8/maven-scm-provider-starteam-1.8.pom (2.6 kB at 258 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.8/maven-scm-provider-clearcase-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.8/maven-scm-provider-clearcase-1.8.pom (2.7 kB at 388 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.8/maven-scm-provider-perforce-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.8/maven-scm-provider-perforce-1.8.pom (2.6 kB at 329 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-hg/1.8/maven-scm-provider-hg-1.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-hg/1.8/maven-scm-provider-hg-1.8.pom (2.4 kB at 349 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/1.13/maven-scm-provider-svnjava-1.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/1.13/maven-scm-provider-svnjava-1.13.pom (9.9 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom (4.1 kB at 510 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.5/maven-scm-provider-svn-commons-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.5/maven-scm-provider-svn-commons-1.5.pom (2.1 kB at 304 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.5/maven-scm-providers-svn-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.5/maven-scm-providers-svn-1.5.pom (2.1 kB at 236 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers/1.5/maven-scm-providers-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers/1.5/maven-scm-providers-1.5.pom (3.6 kB at 304 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm/1.5/maven-scm-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm/1.5/maven-scm-1.5.pom (15 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-api/1.5/maven-scm-api-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-api/1.5/maven-scm-api-1.5.pom (1.6 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/3.2.2/jna-3.2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/3.2.2/jna-3.2.2.pom (1.6 kB at 162 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tmatesoft/svnkit/svnkit/1.3.5/svnkit-1.3.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tmatesoft/svnkit/svnkit/1.3.5/svnkit-1.3.5.pom (1.1 kB at 157 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.pom (725 B at 81 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.pom (771 B at 77 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.pom (4.0 kB at 92 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr-master/3.1.3/antlr-master-3.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr-master/3.1.3/antlr-master-3.1.3.pom (8.5 kB at 218 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.pom (2.0 kB at 47 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 79 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.jar (251 kB at 9.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar (151 kB at 5.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar (172 kB at 4.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar (445 kB at 11 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.jar (744 kB at 16 MB/s)
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (create-buildnumber) @ maven-core ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core && git rev-parse --verify HEAD
+[INFO] Working directory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core
+[INFO] Storing buildNumber: caa03a218a3d00e2a0decd5fa1eb20b5ae8eea2f at timestamp: 1584034222957
+[INFO] Executing: /bin/sh -c cd /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core && git rev-parse --verify HEAD
+[INFO] Working directory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:java (standard) @ maven-core ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-reader (standard) @ maven-core ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-writer (standard) @ maven-core ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 17 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 307 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/src/main/java/org/apache/maven/artifact/repository/metadata/AbstractRepositoryMetadata.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/src/main/java/org/apache/maven/artifact/repository/metadata/AbstractRepositoryMetadata.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/src/main/java/org/apache/maven/execution/ReactorManager.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/src/main/java/org/apache/maven/execution/ReactorManager.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-core ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-core ---
+[INFO] Discovered 59 component descriptors(s)
+[INFO] 
+[INFO] --- sisu-maven-plugin:1.1:main-index (default) @ maven-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.2.1/sisu-inject-bean-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.2.1/sisu-inject-bean-2.2.1.pom (6.4 kB at 708 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.2.1/guice-bean-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.2.1/guice-bean-2.2.1.pom (3.0 kB at 610 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/containers/2.2.1/containers-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/containers/2.2.1/containers-2.2.1.pom (1.2 kB at 430 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.2.1/sisu-inject-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.2.1/sisu-inject-2.2.1.pom (3.0 kB at 758 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.2.1/sisu-parent-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.2.1/sisu-parent-2.2.1.pom (9.6 kB at 4.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/9/forge-parent-9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/9/forge-parent-9.pom (13 kB at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.0.1/sisu-guice-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.0.1/sisu-guice-3.0.1.pom (7.8 kB at 1.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.0.1/guice-parent-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.0.1/guice-parent-3.0.1.pom (14 kB at 75 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-44/plexus-container-default-1.0-alpha-44.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-44/plexus-container-default-1.0-alpha-44.pom (3.5 kB at 316 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-44/plexus-containers-1.0-alpha-44.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-44/plexus-containers-1.0-alpha-44.pom (1.7 kB at 141 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom (657 B at 66 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-10/plexus-classworlds-1.2-alpha-10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-10/plexus-classworlds-1.2-alpha-10.pom (3.2 kB at 323 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.0.1/sisu-guice-3.0.1-no_aop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.8/maven-settings-2.0.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.8/maven-artifact-manager-2.0.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.8/maven-model-2.0.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.8/maven-artifact-manager-2.0.8.jar (57 kB at 4.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar (35 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.8/maven-repository-metadata-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.8/maven-settings-2.0.8.jar (49 kB at 3.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.8/maven-plugin-registry-2.0.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-44/plexus-container-default-1.0-alpha-44.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.8/maven-model-2.0.8.jar (87 kB at 5.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-10/plexus-classworlds-1.2-alpha-10.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.8/maven-plugin-registry-2.0.8.jar (29 kB at 1.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-10/plexus-classworlds-1.2-alpha-10.jar (42 kB at 1.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.8/maven-repository-metadata-2.0.8.jar (25 kB at 793 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.0.1/sisu-guice-3.0.1-no_aop.jar (489 kB at 14 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-44/plexus-container-default-1.0-alpha-44.jar (262 kB at 7.5 MB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 216 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 73 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/test-classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/src/test/java/org/apache/maven/repository/LegacyRepositoryLayout.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/src/test/java/org/apache/maven/repository/LegacyRepositoryLayout.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-core ---
+[INFO] Discovered 4 component descriptors(s)
+[INFO] 
+[INFO] --- sisu-maven-plugin:1.1:test-index (default) @ maven-core ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-core ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/maven-core-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-core ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-core ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/target/maven-core-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-core/3.2.2-SNAPSHOT/maven-core-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-core/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-core/3.2.2-SNAPSHOT/maven-core-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Compat 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-compat ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-compat ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-compat ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 211 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 210 licence.
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:java (standard) @ maven-compat ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/profiles.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/paramdoc.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-reader (standard) @ maven-compat ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/profiles.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/paramdoc.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.8.1:xpp3-writer (standard) @ maven-compat ---
+[INFO] outputDirectory: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/profiles.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/paramdoc.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-compat ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-compat ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-compat ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 146 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/main/java/org/apache/maven/profiles/DefaultMavenProfilesBuilder.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/main/java/org/apache/maven/profiles/DefaultMavenProfilesBuilder.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/main/java/org/apache/maven/repository/legacy/resolver/DefaultLegacyArtifactCollector.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/main/java/org/apache/maven/repository/legacy/resolver/DefaultLegacyArtifactCollector.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-compat ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-compat ---
+[INFO] Discovered 34 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-compat ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 156 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-compat ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 71 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/test-classes
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/test/java/org/apache/maven/artifact/AbstractArtifactComponentTestCase.java: Some input files use or override a deprecated API.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/test/java/org/apache/maven/artifact/AbstractArtifactComponentTestCase.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-compat ---
+[INFO] Discovered 12 component descriptors(s)
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-compat ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-compat ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/maven-compat-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-compat ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-compat ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/target/maven-compat-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-compat/3.2.2-SNAPSHOT/maven-compat-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-compat/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-compat/3.2.2-SNAPSHOT/maven-compat-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Embedder 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-embedder ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-embedder ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-embedder ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: src/main/resources/META-INF/MANIFEST.MF
+[INFO] Exclude: src/test/*-projects/**
+[INFO] Exclude: src/test/*-project/**
+[INFO] Exclude: src/test/plugin-version-references/**
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 35 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 35 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-embedder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-embedder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-embedder/target/classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-embedder ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-embedder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-embedder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-embedder/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-embedder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-embedder ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-embedder/target/maven-embedder-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-embedder ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-embedder/target/maven-embedder-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-embedder/3.2.2-SNAPSHOT/maven-embedder-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-embedder/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-embedder/3.2.2-SNAPSHOT/maven-embedder-3.2.2-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Maven Distribution 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ apache-maven ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ apache-maven ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ apache-maven ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: src/bin/m2.conf
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 15 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 13 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ apache-maven ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ apache-maven ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (test-compile) @ apache-maven ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (test) @ apache-maven ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ apache-maven ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (create-distro) @ apache-maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom (3.2 kB at 357 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3.0 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom (2.5 kB at 7.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom (1.7 kB at 3.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom (2.7 kB at 380 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom (2.2 kB at 221 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom (3.0 kB at 7.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0-alpha-2/maven-repository-builder-1.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0-alpha-2/maven-repository-builder-1.0-alpha-2.pom (3.2 kB at 461 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom (765 B at 1.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom (12 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom (1.4 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom (1.5 kB at 135 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom (1.8 kB at 307 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom (1.6 kB at 1.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom (2.7 kB at 2.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom (1.6 kB at 2.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0-alpha-1/maven-common-artifact-filters-1.0-alpha-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0-alpha-1/maven-common-artifact-filters-1.0-alpha-1.pom (1.8 kB at 2.0 kB/s)
+[INFO] Reading assembly descriptor: src/main/assembly/bin.xml
+[INFO] Building zip: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/target/apache-maven-3.2.2-SNAPSHOT-bin.zip
+[INFO] Building tar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/target/apache-maven-3.2.2-SNAPSHOT-bin.tar.gz
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ apache-maven ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/apache-maven/3.2.2-SNAPSHOT/apache-maven-3.2.2-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/target/apache-maven-3.2.2-SNAPSHOT-site.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/apache-maven/3.2.2-SNAPSHOT/apache-maven-3.2.2-SNAPSHOT-site.xml
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/target/apache-maven-3.2.2-SNAPSHOT-bin.zip to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/apache-maven/3.2.2-SNAPSHOT/apache-maven-3.2.2-SNAPSHOT-bin.zip
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/apache-maven/target/apache-maven-3.2.2-SNAPSHOT-bin.tar.gz to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/apache-maven/3.2.2-SNAPSHOT/apache-maven-3.2.2-SNAPSHOT-bin.tar.gz
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Apache Maven ....................................... SUCCESS [03:26 min]
+[INFO] Maven Model ........................................ SUCCESS [ 12.242 s]
+[INFO] Maven Artifact ..................................... SUCCESS [ 14.053 s]
+[INFO] Maven Plugin API ................................... SUCCESS [  3.401 s]
+[INFO] Maven Model Builder ................................ SUCCESS [  9.996 s]
+[INFO] Maven Settings ..................................... SUCCESS [  9.577 s]
+[INFO] Maven Settings Builder ............................. SUCCESS [  4.956 s]
+[INFO] Maven Repository Metadata Model .................... SUCCESS [  4.618 s]
+[INFO] Maven Aether Provider .............................. SUCCESS [  5.967 s]
+[INFO] Maven Core ......................................... SUCCESS [ 56.170 s]
+[INFO] Maven Compat ....................................... SUCCESS [  4.955 s]
+[INFO] Maven Embedder ..................................... SUCCESS [  1.742 s]
+[INFO] Apache Maven Distribution .......................... SUCCESS [ 58.254 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 06:32 min
+[INFO] Finished at: 2020-03-12T10:32:21-07:00
+[INFO] Final Memory: 76M/1939M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Artifact 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-artifact ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-artifact ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-artifact ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 33 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 0 unknown: 0 generated: 0 approved: 33 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-artifact ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-artifact ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-artifact ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ maven-artifact ---
+[INFO] Building jar: /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/maven-artifact-3.2.2-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ maven-artifact ---
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/maven-artifact-3.2.2-SNAPSHOT.jar to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-artifact/3.2.2-SNAPSHOT/maven-artifact-3.2.2-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/pom.xml to /scratch/tmp-rta/Bugs.jar_Maven_af1ecd5f_java-7/.m2/org/apache/maven/maven-artifact/3.2.2-SNAPSHOT/maven-artifact-3.2.2-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.553 s
+[INFO] Finished at: 2020-03-12T10:32:31-07:00
+[INFO] Final Memory: 28M/982M
+[INFO] ------------------------------------------------------------------------

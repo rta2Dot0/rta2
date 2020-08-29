@@ -1,0 +1,20 @@
+---
+BugID: WICKET-2033
+Summary: "&amp; instead of & in javascript"
+Description: "the non httpsessionstore part of:\nhttps://issues.apache.org/jira/browse/WICKET-1971\n\nis
+  that \n\nin the \nwicket:ignoreIfNotActive actually becomes\n\namp;wicket:ignoreIfNotActive=true\n\nin:\n\n\tprotected
+  CharSequence encode(RequestCycle requestCycle,\n\t\t\tIListenerInterfaceRequestTarget
+  requestTarget)\n\nof WebRequestCodingStrategy on the line:\n\n\t\t\turl.append(url.indexOf(\"?\")
+  > -1 ? \"&amp;\" : \"?\").append(\n\t\t\t\t\tIGNORE_IF_NOT_ACTIVE_PARAMETER_NAME).append(\"=true\");\n\n\nso
+  when this happens in \n\tpublic final RequestParameters decode(final Request request)
+  {\n\n---\n\t\tif (request.getParameter(IGNORE_IF_NOT_ACTIVE_PARAMETER_NAME) != null)\n\t\t{\n\t\t\tparameters.setOnlyProcessIfPathActive(true);\n\t\t}\n---\n\nthis
+  never actually happens.\n\n\nthen if you have a throttle, ajaxlazyloadpanel etc
+  with onlyprocessifpathactive set to true, and you logout, but go to another wicket
+  page, then the original session is destroyed and a new one is created\n\nif this
+  is worked around in the way the  guys on WICKET-1971 suggest,\nWebRequestCycleProcessor\n\nmethod\n\n\tpublic
+  IRequestTarget resolve(final RequestCycle requestCycle,\n\t\t\tfinal RequestParameters
+  requestParameters)\n\n\n\t\t\t\tif (requestParameters.isOnlyProcessIfPathActive())\nlast
+  branch falls through:\n\t\t\t\t\telse\n\t\t\t\t\t{\n\t\t\t\t\t\t// TODO also this
+  should work..\n\t\t\t\t\t}\n\n\nand it throws PageExpiredException because the request
+  component/page/behavior does not exist in this new session.   even though onlyprocessifpathactive
+  was set to true, and it's purpose is precisely to avoid pageexpiredexception."

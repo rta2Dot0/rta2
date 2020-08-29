@@ -1,0 +1,15 @@
+---
+BugID: FLINK-1951
+Summary: NullPointerException in DeltaIteration when no ForwardedFileds
+Description: "The following exception is thrown by the Connected Components example,
+  if the @ForwardedFieldsFirst(\"*\") annotation from the ComponentIdFilter join is
+  removed:\n\nCaused by: java.lang.NullPointerException\n\tat org.apache.flink.examples.java.graph.ConnectedComponents$ComponentIdFilter.join(ConnectedComponents.java:186)\n\tat
+  org.apache.flink.examples.java.graph.ConnectedComponents$ComponentIdFilter.join(ConnectedComponents.java:1)\n\tat
+  org.apache.flink.runtime.operators.JoinWithSolutionSetSecondDriver.run(JoinWithSolutionSetSecondDriver.java:198)\n\tat
+  org.apache.flink.runtime.operators.RegularPactTask.run(RegularPactTask.java:496)\n\tat
+  org.apache.flink.runtime.iterative.task.AbstractIterativePactTask.run(AbstractIterativePactTask.java:139)\n\tat
+  org.apache.flink.runtime.iterative.task.IterationIntermediatePactTask.run(IterationIntermediatePactTask.java:92)\n\tat
+  org.apache.flink.runtime.operators.RegularPactTask.invoke(RegularPactTask.java:362)\n\tat
+  org.apache.flink.runtime.execution.RuntimeEnvironment.run(RuntimeEnvironment.java:217)\n\tat
+  java.lang.Thread.run(Thread.java:745)\n\n[Code | https://github.com/vasia/flink/tree/cc-test]
+  and [dataset | http://snap.stanford.edu/data/com-DBLP.html] to reproduce."

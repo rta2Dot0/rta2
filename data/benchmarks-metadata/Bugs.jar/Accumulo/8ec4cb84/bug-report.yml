@@ -1,0 +1,41 @@
+---
+BugID: ACCUMULO-1800
+Summary: delete mutations not working through the Proxy
+Description: |
+  Aru Sahni writes:
+
+  {quote}
+  I'm new to Accumulo and am still trying to wrap my head around its ways. To further that challenge, I'm using Pyaccumulo, which doesn't present much in terms of available reference material.
+
+  Right now I'm trying to understand how Accumulo manages record (key-value pair) deletions.
+
+  conn = Accumulo(host, port, user, password)
+  table = 'test_table'
+  conn.create_table(table)
+  writer = conn.create_batch_writer(table)
+  mut = Mutation('mut_01')
+  mut.put(cf='item', cq='name', value='car')
+  writer.add_mutation(mut)
+  writer.close()
+  conn.close()
+
+  Will generate a record (found via a shell scan):
+
+  mut_01 item:name []    car
+
+  However the subsequent mutation...
+
+  writer = conn.create_batch_writer(table)
+  mut = Mutation('mut_01')
+  mut.put(cf='item', cq='name', is_delete=True)
+  writer.add_mutation(mut)
+  writer.close()
+
+  Results in:
+
+  mut_01 item:name []
+
+  How should one expect the deleted row to be represented? That record sticks around even after I force a compaction of the table.  I was expecting it to not show up in any iterators, or at least provide an easy way to see if the cell has been deleted.
+  {quote}
+
+  [~ecn] has confirmed the problem.

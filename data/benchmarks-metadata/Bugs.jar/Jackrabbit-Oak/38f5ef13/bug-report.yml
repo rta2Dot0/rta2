@@ -1,0 +1,25 @@
+---
+BugID: OAK-3104
+Summary: Version garbage collector doesn't collect a rolled back document if it was
+  never deleted
+Description: |-
+  If a commit gets rolled back it can leave (in case the document was never deleted explicitly) a document in a state like:
+  {noformat}
+  {
+         "_id" : "7:/etc/workflow/packages/2014/10/12/rep:ours",
+         "_deleted" : {
+
+         },
+         "_commitRoot" : {
+
+         },
+         "jcr:primaryType" : {
+
+         },
+         "_modified" : NumberLong(1413126245),
+         "_children" : true,
+         "_modCount" : NumberLong(2)
+  }
+  {noformat}
+
+  If the path is fairly busy, the document can get created naturally later and then follow the usual cycle. But, at times, such documents are ephemeral in nature and never re-used. In those cases, such documents can remain silently without getting collected.

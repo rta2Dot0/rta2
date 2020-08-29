@@ -1,0 +1,6 @@
+---
+BugID: OAK-2117
+Summary: Reindex removes all nodes under index definition node
+Description: Reindex logic in {{IndexUpdate}} removes all child node from index definition
+  node thus removing valid nodes which might be part of index defintion. It should
+  only remove hidden nodes

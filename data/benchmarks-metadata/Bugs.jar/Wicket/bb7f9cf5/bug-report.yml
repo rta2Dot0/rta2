@@ -1,0 +1,12 @@
+---
+BugID: WICKET-1718
+Summary: WebPage#onAfterRender erroneously reports missing header
+Description: "In WebPage#onAfterRender() there's a check wether a header was missing
+  on a page and header contributions would be lost.\n\nIn the following case this
+  check erroneously barks:\n- page A was requested\n- in A's onBeforeRender() a RestartResponseAtInterceptPageException
+  to page B is thrown\n- page A's onAfterRender() is invoked in a finally block\n-
+  processing continues with page B\n\nPage A's onAfterRender() complains about the
+  missing header, althought his page was never completely rendered.\n\nIMHO there's
+  a check missing in WebPage#onAfterRender():\n\n    \tif (getRequestCycle().getResponsePage()
+  == this) {\n\t\t.....\n\t}\n\nOr is Page A not allowed to throw RestartResponseAtInterceptPageException
+  in onBeforeRender() at all?"

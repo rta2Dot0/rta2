@@ -1,0 +1,11 @@
+---
+BugID: WICKET-4548
+Summary: NullPointerException in org.apache.wicket.markup.html.form.ValidationErrorFeedback
+Description: |-
+  org.apache.wicket.markup.html.form.ValidationErrorFeedback throws a NPE in the following situation:
+
+  - Form with a TextField<Integer> that has a RangeValidator
+  - value outside range is entered
+  - form is submitted
+
+  See attached quickstart.

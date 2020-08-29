@@ -1,0 +1,15 @@
+---
+BugID: WICKET-5809
+Summary: URL IPv6 parsing
+Description: |-
+  There is an issue with native IPv6 address parsing.
+  "https://[::1]/myapp", URL parsing fails:
+
+  org.apache.wicket.request.Url.parse("https://[::1]/myapp")
+  generates an exception:
+  java.lang.NumberFormatException: For input string: "1]"
+  at java.lang.NumberFormatException.forInputString(
+  NumberFormatException.java:65)
+  at java.lang.Integer.parseInt(Integer.java:492)
+
+  However, "https://[::1]:80/myapp" works as expected.

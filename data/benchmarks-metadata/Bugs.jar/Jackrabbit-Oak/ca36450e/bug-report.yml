@@ -1,0 +1,10 @@
+---
+BugID: OAK-1829
+Summary: IllegalStateException when using "lowerCase"/"lower" on a array property
+Description: "if query contain lowerCase on array property then QueryResult.getRows()
+  throwing  IllegalStateException.\n\nQuery which causing issue\n\n select [selector_1].*
+  from [nt:unstructured] AS [selector_1] where (([selector_1].[lcc:className] = 'com.adobe.icc.dbforms.obj.ConditionalDataModule'))
+  AND (LOWER([selector_1].[dataDictionaryRefs]) = 'employeedd')\n\nIf we remove LOWER
+  function then it is working \n\n select [selector_1].* from [nt:unstructured] AS
+  [selector_1] where (([selector_1].[lcc:className] = 'com.adobe.icc.dbforms.obj.ConditionalDataModule'))
+  AND ([selector_1].[dataDictionaryRefs] = 'EmployeeDD')"

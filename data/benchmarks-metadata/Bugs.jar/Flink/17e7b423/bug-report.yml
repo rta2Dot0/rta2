@@ -1,0 +1,14 @@
+---
+BugID: FLINK-2874
+Summary: Certain Avro generated getters/setters not recognized
+Description: "For Avro schemas where value null is not allowed, the field is unboxed
+  e.g. int but the getter/setter methods provide the boxed Integer as interface:\n\n{code}\n{\n
+  \"fields\": [\n  {\n   \"type\": \"double\", \n   \"name\": \"time\"\n  }, \n}\n{code}\n\nThis
+  results in Java\n\n{code}\n  private double time;\n\n  public java.lang.Double getTime()
+  {\n    return time;\n  }\n\n  public void setTime(java.lang.Double value) {\n    this.time
+  = value;\n  }\n{code}\n\nThere is also a problem when there is an underscore in
+  the Avro schema, e.g.:\n\n{code}\n  {\n   \"default\": null, \n   \"type\": [\n
+  \   \"null\", \n    \"long\"\n   ], \n   \"name\": \"conn_id\"\n  }, \n{code}\n\nThis
+  results in Java:\n\n{code}\nprivate java.lang.Long conn_id;\n\n  public java.lang.Long
+  getConnId() {\n    return conn_id;\n  }\n\n  public void setConnId(java.lang.Long
+  value) {\n    this.conn_id = value;\n  }\n{code}"

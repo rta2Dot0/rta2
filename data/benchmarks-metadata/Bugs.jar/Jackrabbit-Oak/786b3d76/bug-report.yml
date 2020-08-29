@@ -1,0 +1,32 @@
+---
+BugID: OAK-3156
+Summary: Lucene suggestions index definition can't be restricted to a specific type
+  of node
+Description: "While performing a suggestor query like \n\n{code}\nSELECT [rep:suggest()]
+  as suggestion  FROM [nt:unstructured] WHERE suggest('foo')\n{code}\n\nSuggestor
+  does not provide any result. In current implementation, [suggestions|http://jackrabbit.apache.org/oak/docs/query/lucene.html#Suggestions]
+  in Oak work only for index definitions for {{nt:base}} nodetype.\nSo, an index definition
+  like:\n{code:xml}\n    <lucene-suggest\n        jcr:primaryType=\"oak:QueryIndexDefinition\"\n
+  \       async=\"async\"\n        compatVersion=\"{Long}2\"\n        type=\"lucene\">\n
+  \       <indexRules jcr:primaryType=\"nt:unstructured\">\n            <nt:base jcr:primaryType=\"nt:unstructured\">\n
+  \               <properties jcr:primaryType=\"nt:unstructured\">\n                    <description\n
+  \                       jcr:primaryType=\"nt:unstructured\"\n                        analyzed=\"{Boolean}true\"\n
+  \                       name=\"description\"\n                        propertyIndex=\"{Boolean}true\"\n
+  \                       useInSuggest=\"{Boolean}true\"/>\n                </properties>\n
+  \           </nt:base>\n        </indexRules>\n    </lucene-suggest>\n{code}\nworks,
+  but if we change nodetype to {{nt:unstructured}} like:\n{code:xml}\n    <lucene-suggest\n
+  \       jcr:primaryType=\"oak:QueryIndexDefinition\"\n        async=\"async\"\n
+  \       compatVersion=\"{Long}2\"\n        type=\"lucene\">\n        <indexRules
+  jcr:primaryType=\"nt:unstructured\">\n            <nt:unstructured jcr:primaryType=\"nt:unstructured\">\n
+  \               <properties jcr:primaryType=\"nt:unstructured\">\n                    <description\n
+  \                       jcr:primaryType=\"nt:unstructured\"\n                        analyzed=\"{Boolean}true\"\n
+  \                       name=\"description\"\n                        propertyIndex=\"{Boolean}true\"\n
+  \                       useInSuggest=\"{Boolean}true\"/>\n                </properties>\n
+  \           </nt:base>\n        </indexRules>\n    </lucene-suggest>\n{code}\n,
+  it won't work.\n\nThe issue is that suggestor implementation essentially is passing
+  a pseudo row with path=/.:\n{code:title=LucenePropertyIndex.java}\n    private boolean
+  loadDocs() {\n...\n                        queue.add(new LuceneResultRow(suggestedWords));\n...\n{code}\nand\n{code:title=LucenePropertyIndex.java}\n
+  \       LuceneResultRow(Iterable<String> suggestWords) {\n            this.path
+  = \"/\";\n            this.score = 1.0d;\n            this.suggestWords = suggestWords;\n
+  \       }\n{code}\nDue to path being set to \"/\", {{SelectorImpl}} later filters
+  out the result as {{rep:root}} (primary type of \"/\") isn't a {{nt:unstructured}}."

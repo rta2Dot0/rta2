@@ -1,0 +1,349 @@
+diff --git a/src/core/src/main/java/org/apache/accumulo/core/zookeeper/ZooCache.java b/src/core/src/main/java/org/apache/accumulo/core/zookeeper/ZooCache.java
+index 6931ea8..f5bdd6b 100644
+--- a/src/core/src/main/java/org/apache/accumulo/core/zookeeper/ZooCache.java
++++ b/src/core/src/main/java/org/apache/accumulo/core/zookeeper/ZooCache.java
+@@ -136,7 +136,7 @@ public class ZooCache {
+         }
+         log.warn("Zookeeper error, will retry", e);
+       } catch (InterruptedException e) {
+-        log.warn("Zookeeper error, will retry", e);
++        log.info("Zookeeper error, will retry", e);
+       } catch (ConcurrentModificationException e) {
+         log.debug("Zookeeper was modified, will retry");
+       }
+diff --git a/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/ArticleExtractor.java b/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/ArticleExtractor.java
+index 54e47b6..06d1670 100644
+--- a/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/ArticleExtractor.java
++++ b/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/ArticleExtractor.java
+@@ -16,6 +16,9 @@
+  */
+ package org.apache.accumulo.examples.wikisearch.ingest;
+ 
++import java.io.DataInput;
++import java.io.DataOutput;
++import java.io.IOException;
+ import java.io.Reader;
+ import java.text.ParseException;
+ import java.text.SimpleDateFormat;
+@@ -29,6 +32,7 @@ import javax.xml.stream.XMLStreamReader;
+ 
+ import org.apache.accumulo.examples.wikisearch.normalizer.LcNoDiacriticsNormalizer;
+ import org.apache.accumulo.examples.wikisearch.normalizer.NumberNormalizer;
++import org.apache.hadoop.io.Writable;
+ 
+ 
+ public class ArticleExtractor {
+@@ -37,13 +41,15 @@ public class ArticleExtractor {
+   private static NumberNormalizer nn = new NumberNormalizer();
+   private static LcNoDiacriticsNormalizer lcdn = new LcNoDiacriticsNormalizer();
+   
+-  public static class Article {
++  public static class Article implements Writable {
+     int id;
+     String title;
+     long timestamp;
+     String comments;
+     String text;
+     
++    public Article(){}
++    
+     private Article(int id, String title, long timestamp, String comments, String text) {
+       super();
+       this.id = id;
+@@ -90,6 +96,24 @@ public class ArticleExtractor {
+       fields.put("COMMENTS", lcdn.normalizeFieldValue("COMMENTS", this.comments));
+       return fields;
+     }
++
++    @Override
++    public void readFields(DataInput in) throws IOException {
++      id = in.readInt();
++      title = in.readUTF();
++      timestamp = in.readLong();
++      comments = in.readUTF();
++      text = in.readUTF();
++    }
++
++    @Override
++    public void write(DataOutput out) throws IOException {
++      out.writeInt(id);
++      out.writeUTF(title);
++      out.writeLong(timestamp);
++      out.writeUTF(comments);
++      out.writeUTF(text);
++    }
+     
+   }
+   
+diff --git a/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaConfiguration.java b/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaConfiguration.java
+index d76d713..5a0aad4 100644
+--- a/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaConfiguration.java
++++ b/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaConfiguration.java
+@@ -48,6 +48,11 @@ public class WikipediaConfiguration {
+ 
+   public final static String NUM_GROUPS = "wikipedia.ingest.groups";
+ 
++  public final static String PARTITIONED_ARTICLES_DIRECTORY = "wikipedia.partitioned.directory";
++  
++  public final static String RUN_PARTITIONER = "wikipedia.run.partitioner";
++  public final static String RUN_INGEST = "wikipedia.run.ingest";
++  
+   
+   public static String getUser(Configuration conf) {
+     return conf.get(USER);
+@@ -117,6 +122,18 @@ public class WikipediaConfiguration {
+     return conf.getInt(NUM_GROUPS, 1);
+   }
+   
++  public static Path getPartitionedArticlesPath(Configuration conf) {
++    return new Path(conf.get(PARTITIONED_ARTICLES_DIRECTORY));
++  }
++  
++  public static boolean runPartitioner(Configuration conf) {
++    return conf.getBoolean(RUN_PARTITIONER, false);
++  }
++
++  public static boolean runIngest(Configuration conf) {
++    return conf.getBoolean(RUN_INGEST, true);
++  }
++
+   /**
+    * Helper method to get properties from Hadoop configuration
+    * 
+diff --git a/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaInputFormat.java b/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaInputFormat.java
+index e8b8b52..dd2eeb9 100644
+--- a/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaInputFormat.java
++++ b/src/examples/wikisearch/ingest/src/main/java/org/apache/accumulo/examples/wikisearch/ingest/WikipediaInputFormat.java
+@@ -75,10 +75,14 @@ public class WikipediaInputFormat extends TextInputFormat {
+       Path file = new Path(in.readUTF());
+       long start = in.readLong();
+       long length = in.readLong();
+-      int numHosts = in.readInt();
+-      String[] hosts = new String[numHosts];
+-      for(int i = 0; i < numHosts; i++)
+-        hosts[i] = in.readUTF();
++      String [] hosts = null;
++      if(in.readBoolean())
++      {
++        int numHosts = in.readInt();
++        hosts = new String[numHosts];
++        for(int i = 0; i < numHosts; i++)
++          hosts[i] = in.readUTF();
++      }
+       fileSplit = new FileSplit(file, start, length, hosts);
+       partition = in.readInt();
+     }
+@@ -89,10 +93,17 @@ public class WikipediaInputFormat extends TextInputFormat {
+       out.writeLong(fileSplit.getStart());
+       out.writeLong(fileSplit.getLength());
+       String [] hosts = fileSplit.getLocations();
+-      out.writeInt(hosts.length);
+-      for(String host:hosts)
++      if(hosts == null)
++      {
++        out.writeBoolean(false);
++      }
++      else
++      {
++        out.writeBoolean(true);
++        out.writeInt(hosts.length);
++        for(String host:hosts)
+         out.writeUTF(host);
+-      fileSplit.write(out);
++      }
+       out.writeInt(partition);
+     }
+     
+diff --git a/src/server/src/main/java/org/apache/accumulo/server/tabletserver/Tablet.java b/src/server/src/main/java/org/apache/accumulo/server/tabletserver/Tablet.java
+index 3e719e6..e709704 100644
+--- a/src/server/src/main/java/org/apache/accumulo/server/tabletserver/Tablet.java
++++ b/src/server/src/main/java/org/apache/accumulo/server/tabletserver/Tablet.java
+@@ -123,6 +123,8 @@ import org.apache.hadoop.fs.FileSystem;
+ import org.apache.hadoop.fs.Path;
+ import org.apache.hadoop.io.Text;
+ import org.apache.log4j.Logger;
++import org.apache.zookeeper.KeeperException;
++import org.apache.zookeeper.KeeperException.NoNodeException;
+ 
+ import cloudtrace.instrument.Span;
+ import cloudtrace.instrument.Trace;
+@@ -2274,6 +2276,7 @@ public class Tablet {
+       if (updateMetadata) {
+         synchronized (this) {
+           updatingFlushID = false;
++          this.notifyAll();
+         }
+       }
+     }
+@@ -2281,8 +2284,19 @@ public class Tablet {
+   }
+   
+   boolean initiateMinorCompaction() {
++    if (isClosed()) {
++      // don't bother trying to get flush id if closed... could be closed after this check but that is ok... just trying to cut down on uneeded log messages....
++      return false;
++    }
++
+     // get the flush id before the new memmap is made available for write
+-    long flushId = getFlushID();
++    long flushId;
++    try {
++      flushId = getFlushID();
++    } catch (NoNodeException e) {
++      log.info("Asked to initiate MinC when there was no flush id " + getExtent() + " " + e.getMessage());
++      return false;
++    }
+     return initiateMinorCompaction(flushId);
+   }
+   
+@@ -2338,23 +2352,39 @@ public class Tablet {
+     return true;
+   }
+   
+-  long getFlushID() {
++  long getFlushID() throws NoNodeException {
+     try {
+       String zTablePath = Constants.ZROOT + "/" + HdfsZooInstance.getInstance().getInstanceID() + Constants.ZTABLES + "/" + extent.getTableId()
+           + Constants.ZTABLE_FLUSH_ID;
+       return Long.parseLong(new String(ZooReaderWriter.getRetryingInstance().getData(zTablePath, null)));
+-    } catch (Exception e) {
++    } catch (InterruptedException e) {
+       throw new RuntimeException(e);
++    } catch (NumberFormatException nfe) {
++      throw new RuntimeException(nfe);
++    } catch (KeeperException ke) {
++      if (ke instanceof NoNodeException) {
++        throw (NoNodeException) ke;
++      } else {
++        throw new RuntimeException(ke);
++      }
+     }
+   }
+   
+-  long getCompactionID() {
++  long getCompactionID() throws NoNodeException {
+     try {
+       String zTablePath = Constants.ZROOT + "/" + HdfsZooInstance.getInstance().getInstanceID() + Constants.ZTABLES + "/" + extent.getTableId()
+           + Constants.ZTABLE_COMPACT_ID;
+       return Long.parseLong(new String(ZooReaderWriter.getRetryingInstance().getData(zTablePath, null)));
+-    } catch (Exception e) {
++    } catch (InterruptedException e) {
+       throw new RuntimeException(e);
++    } catch (NumberFormatException nfe) {
++      throw new RuntimeException(nfe);
++    } catch (KeeperException ke) {
++      if (ke instanceof NoNodeException) {
++        throw (NoNodeException) ke;
++      } else {
++        throw new RuntimeException(ke);
++      }
+     }
+   }
+   
+@@ -2557,13 +2587,25 @@ public class Tablet {
+         }
+       }
+       
++      while (updatingFlushID) {
++        try {
++          this.wait(50);
++        } catch (InterruptedException e) {
++          log.error(e.toString());
++        }
++      }
++
+       if (!saveState || tabletMemory.getMemTable().getNumEntries() == 0) {
+         return;
+       }
+       
+       tabletMemory.waitForMinC();
+       
+-      mct = prepareForMinC(getFlushID());
++      try {
++        mct = prepareForMinC(getFlushID());
++      } catch (NoNodeException e) {
++        throw new RuntimeException(e);
++      }
+       
+       if (queueMinC) {
+         tabletResources.executeMinorCompaction(mct);
+@@ -2612,7 +2654,11 @@ public class Tablet {
+     tabletMemory.waitForMinC();
+     
+     if (saveState && tabletMemory.getMemTable().getNumEntries() > 0) {
+-      prepareForMinC(getFlushID()).run();
++      try {
++        prepareForMinC(getFlushID()).run();
++      } catch (NoNodeException e) {
++        throw new RuntimeException(e);
++      }
+     }
+     
+     if (saveState) {
+@@ -3103,7 +3149,11 @@ public class Tablet {
+       Long compactionId = null;
+       if (!propogateDeletes) {
+         // compacting everything, so update the compaction id in !METADATA
+-        compactionId = getCompactionID();
++        try {
++          compactionId = getCompactionID();
++        } catch (NoNodeException e) {
++          throw new RuntimeException(e);
++        }
+       }
+       
+       // need to handle case where only one file is being major compacted
+diff --git a/src/server/src/main/java/org/apache/accumulo/server/tabletserver/TabletServer.java b/src/server/src/main/java/org/apache/accumulo/server/tabletserver/TabletServer.java
+index e01ca07..94e8137 100644
+--- a/src/server/src/main/java/org/apache/accumulo/server/tabletserver/TabletServer.java
++++ b/src/server/src/main/java/org/apache/accumulo/server/tabletserver/TabletServer.java
+@@ -194,6 +194,7 @@ import org.apache.thrift.TProcessor;
+ import org.apache.thrift.TServiceClient;
+ import org.apache.thrift.server.TServer;
+ import org.apache.zookeeper.KeeperException;
++import org.apache.zookeeper.KeeperException.NoNodeException;
+ 
+ import cloudtrace.instrument.Span;
+ import cloudtrace.instrument.Trace;
+@@ -1887,7 +1888,13 @@ public class TabletServer extends AbstractMetricsImpl implements org.apache.accu
+         if (flushID == null) {
+           // read the flush id once from zookeeper instead of reading
+           // it for each tablet
+-          flushID = tablet.getFlushID();
++          try {
++            flushID = tablet.getFlushID();
++          } catch (NoNodeException e) {
++            // table was probably deleted
++            log.info("Asked to flush table that has no flush id " + ke + " " + e.getMessage());
++            return;
++          }
+         }
+         tablet.flush(flushID);
+       }
+@@ -1904,7 +1911,11 @@ public class TabletServer extends AbstractMetricsImpl implements org.apache.accu
+       Tablet tablet = onlineTablets.get(new KeyExtent(textent));
+       if (tablet != null) {
+         log.info("Flushing " + tablet.getExtent());
+-        tablet.flush(tablet.getFlushID());
++        try {
++          tablet.flush(tablet.getFlushID());
++        } catch (NoNodeException nne) {
++          log.info("Asked to flush tablet that has no flush id " + new KeyExtent(textent) + " " + nne.getMessage());
++        }
+       }
+     }
+     
+@@ -1999,7 +2010,12 @@ public class TabletServer extends AbstractMetricsImpl implements org.apache.accu
+         // all for the same table id, so only need to read
+         // compaction id once
+         if (compactionId == null)
+-          compactionId = tablet.getCompactionID();
++          try {
++            compactionId = tablet.getCompactionID();
++          } catch (NoNodeException e) {
++            log.info("Asked to compact table with no compaction id " + ke + " " + e.getMessage());
++            return;
++          }
+         tablet.compactAll(compactionId);
+       }
+       

@@ -1,0 +1,7 @@
+---
+BugID: OAK-2147
+Summary: "[Ordered Index] Indexing on large content is slow"
+Description: |-
+  Indexing large number of ordered properties is quite slow.
+
+  Explore ways of making it faster. The current skip list implementation uses 4 lanes with a probability of 10%. It should be made configurable and the defaults changed.

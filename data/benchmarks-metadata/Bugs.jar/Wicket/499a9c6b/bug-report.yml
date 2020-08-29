@@ -1,0 +1,22 @@
+---
+BugID: WICKET-3413
+Summary: FLAG_INHERITABLE_MODEL and default model change
+Description: "The issue is about correctness of Component#setDefaultModel (Component#setModelImpl)
+  method behavior. I expect that the flag FLAG_INHERITABLE_MODEL should be checked
+  there and turned off in case if new model is not a IComponentInheritedModel. \n\nLet
+  check the next code:\npublic MyPanel(String id) {\n super(id);\n  ...\n  form.setModel(new
+  CompoundPropertyModel(this));\n  DropDownChoice ddc = new DropDownChoice(\"variant\",
+  Arrays.ofList(...)) {    // p1\n    @Override\n    protected void onInitialize()
+  {\n       super.onInitialize();\n       setModel(new DefaultingWrapModel(getModel(),
+  Model.of(\"default value\"));            // p2\n    }\n  };\n  ddc.setNullValid(false);\n
+  \ ddc.setRequired(true);\n  form.add(ddc);\n  ...\n}\n\nIn the (p1) the DDC will
+  initialize with CompoundPropertyModel and the FLAG_INHERITABLE_MODEL will be turned
+  on soon by the first invocation of FormComponent#getModel().\n\n In the (p2) we
+  wrap the DDC model with the model which provide the default value (DefaultingWrapModel
+  implements IWrapModel). So we change the model, but the FLAG_INHERITABLE_MODEL is
+  still turned on. On the Component#detach() event, the method Component#setModelImpl(null)
+  will be invoked for the ddc and the DefaultingWrapModel instance will be lost:\n\n\t\t//
+  reset the model to null when the current model is a IWrapModel and\n\t\t// the model
+  that created it/wrapped in it is a IComponentInheritedModel\n\t\t// The model will
+  be created next time.\n\t\tif (getFlag(FLAG_INHERITABLE_MODEL))\n\t\t{\n\t\t\tsetModelImpl(null);\n\t\t\tsetFlag(FLAG_INHERITABLE_MODEL,
+  false);\n\t\t}\n\nI think that such behavior is unexpected.\n\nhttp://apache-wicket.1842946.n4.nabble.com/1-4-15-FLAG-INHERITABLE-MODEL-and-default-model-change-td3252093.html"

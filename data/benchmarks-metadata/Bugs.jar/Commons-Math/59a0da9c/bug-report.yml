@@ -1,0 +1,38 @@
+---
+BugID: MATH-293
+Summary: Matrix's "OutOfBoundException" in SimplexSolver
+Description: "Hi all,\nThis bug is somehow related to incident MATH-286, but not necessarily...\n\nLet's
+  say I have an LP and I solve it using SimplexSolver. Then I create a second LP similar
+  to the first one, but with \"stronger\" constraints. The second LP has the following
+  properties:\n* the only point in the feasible region for the second LP is the solution
+  returned for the first LP\n* the solution returned for the first LP is also the
+  (only possible) solution to the second LP\n\nThis shows the problem:\n\n{code:borderStyle=solid}\nLinearObjectiveFunction
+  f = new LinearObjectiveFunction(new double[] { 0.8, 0.2, 0.7, 0.3, 0.4, 0.6}, 0
+  );\nCollection<LinearConstraint> constraints = new ArrayList<LinearConstraint>();\nconstraints.add(new
+  LinearConstraint(new double[] { 1, 0, 1, 0, 1, 0 }, Relationship.EQ, 30.0));\nconstraints.add(new
+  LinearConstraint(new double[] { 0, 1, 0, 1, 0, 1 }, Relationship.EQ, 30.0));\nconstraints.add(new
+  LinearConstraint(new double[] { 0.8, 0.2, 0.0, 0.0, 0.0, 0.0 }, Relationship.GEQ,
+  10.0));\nconstraints.add(new LinearConstraint(new double[] { 0.0, 0.0, 0.7, 0.3,
+  0.0, 0.0 }, Relationship.GEQ, 10.0));\nconstraints.add(new LinearConstraint(new
+  double[] { 0.0, 0.0, 0.0, 0.0, 0.4, 0.6 }, Relationship.GEQ, 10.0));\n\nRealPointValuePair
+  solution = new SimplexSolver().optimize(f, constraints, GoalType.MAXIMIZE, true);\n\ndouble
+  valA = 0.8 * solution.getPoint()[0] + 0.2 * solution.getPoint()[1];\ndouble valB
+  = 0.7 * solution.getPoint()[2] + 0.3 * solution.getPoint()[3];\ndouble valC = 0.4
+  * solution.getPoint()[4] + 0.6 * solution.getPoint()[5];\n\nf = new LinearObjectiveFunction(new
+  double[] { 0.8, 0.2, 0.7, 0.3, 0.4, 0.6}, 0 );\nconstraints = new ArrayList<LinearConstraint>();\nconstraints.add(new
+  LinearConstraint(new double[] { 1, 0, 1, 0, 1, 0 }, Relationship.EQ, 30.0));\nconstraints.add(new
+  LinearConstraint(new double[] { 0, 1, 0, 1, 0, 1 }, Relationship.EQ, 30.0));\nconstraints.add(new
+  LinearConstraint(new double[] { 0.8, 0.2, 0.0, 0.0, 0.0, 0.0 }, Relationship.GEQ,
+  valA));\nconstraints.add(new LinearConstraint(new double[] { 0.0, 0.0, 0.7, 0.3,
+  0.0, 0.0 }, Relationship.GEQ, valB));\nconstraints.add(new LinearConstraint(new
+  double[] { 0.0, 0.0, 0.0, 0.0, 0.4, 0.6 }, Relationship.GEQ, valC));\n\nsolution
+  = new SimplexSolver().optimize(f, constraints, GoalType.MAXIMIZE, true);\n{code}
+  \n\nInstead of returning the solution, SimplexSolver throws an Exception:\n\n{noformat}
+  Exception in thread \"main\" org.apache.commons.math.linear.MatrixIndexException:
+  no entry at indices (0, 7) in a 6x7 matrix\n\tat org.apache.commons.math.linear.Array2DRowRealMatrix.getEntry(Array2DRowRealMatrix.java:356)\n\tat
+  org.apache.commons.math.optimization.linear.SimplexTableau.getEntry(SimplexTableau.java:408)\n\tat
+  org.apache.commons.math.optimization.linear.SimplexTableau.getBasicRow(SimplexTableau.java:258)\n\tat
+  org.apache.commons.math.optimization.linear.SimplexTableau.getSolution(SimplexTableau.java:336)\n\tat
+  org.apache.commons.math.optimization.linear.SimplexSolver.doOptimize(SimplexSolver.java:182)\n\tat
+  org.apache.commons.math.optimization.linear.AbstractLinearOptimizer.optimize(AbstractLinearOptimizer.java:106){noformat}
+  \n\nI was too optimistic with the bug MATH-286 ;-)"

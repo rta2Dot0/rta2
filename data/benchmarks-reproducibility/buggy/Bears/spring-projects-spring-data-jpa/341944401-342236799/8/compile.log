@@ -1,0 +1,1020 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml (639 B at 1.0 kB/s)
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-build/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-build/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml (638 B at 2.0 kB/s)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spring Data JPA 2.0.4.BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml (1.3 kB at 3.8 kB/s)
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/apache/apache/13/apache-13.pom
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/apache/apache/13/apache-13.pom (0 B at 0 B/s)
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (jacoco-initialize) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/junit/junit/4.8.2/junit-4.8.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/junit/junit/4.8.2/junit-4.8.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven/2.0.10/maven-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven/2.0.10/maven-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/apache/1/apache-1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/apache/1/apache-1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-codec/commons-codec/1.2/commons-codec-1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-codec/commons-codec/1.2/commons-codec-1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/xml-apis/xml-apis/2.0.2/xml-apis-2.0.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/xml-apis/xml-apis/2.0.2/xml-apis-2.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.core/0.8.0/org.jacoco.core-0.8.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.core/0.8.0/org.jacoco.core-0.8.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0/asm-6.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0/asm-6.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-parent/6.0/asm-parent-6.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-parent/6.0/asm-parent-6.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-util/6.0/asm-util-6.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-util/6.0/asm-util-6.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.report/0.8.0/org.jacoco.report-0.8.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.report/0.8.0/org.jacoco.report-0.8.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/junit/junit/4.8.2/junit-4.8.2.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/junit/junit/4.8.2/junit-4.8.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-codec/commons-codec/1.2/commons-codec-1.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-lang/commons-lang/2.4/commons-lang-2.4.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-codec/commons-codec/1.2/commons-codec-1.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0-runtime.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.core/0.8.0/org.jacoco.core-0.8.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0/asm-6.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.core/0.8.0/org.jacoco.core-0.8.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0-runtime.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-util/6.0/asm-util-6.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0/asm-6.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.report/0.8.0/org.jacoco.report-0.8.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-util/6.0/asm-util-6.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jacoco/org.jacoco.report/0.8.0/org.jacoco.report-0.8.0.jar (0 B at 0 B/s)
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:process (sources) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/hibernate/hibernate-jpamodelgen/1.3.0.Final/hibernate-jpamodelgen-1.3.0.Final.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/hibernate/hibernate-jpamodelgen/1.3.0.Final/hibernate-jpamodelgen-1.3.0.Final.pom (17 kB at 69 kB/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/spice/spice-parent/15/spice-parent-15.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/spice/spice-parent/15/spice-parent-15.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/forge/forge-parent/5/forge-parent-5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/forge/forge-parent/5/forge-parent-5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven/2.2.0/maven-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven/2.2.0/maven-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/commons/commons-parent/3/commons-parent-3.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/commons/commons-parent/3/commons-parent-3.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/hibernate/hibernate-jpamodelgen/1.3.0.Final/hibernate-jpamodelgen-1.3.0.Final.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/com/google/guava/guava/17.0/guava-17.0.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/com/google/guava/guava/17.0/guava-17.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/hibernate/hibernate-jpamodelgen/1.3.0.Final/hibernate-jpamodelgen-1.3.0.Final.jar (182 kB at 506 kB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-cli/commons-cli/1.0/commons-cli-1.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-cli/commons-cli/1.0/commons-cli-1.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-cli/commons-cli/1.0/commons-cli-1.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (0 B at 0 B/s)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- kotlin-maven-plugin:1.1.61:compile (compile) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven/3.0.5/maven-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven/3.0.5/maven-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guice-plexus/2.3.0/guice-plexus-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guice-plexus/2.3.0/guice-plexus-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guice-bean/2.3.0/guice-bean-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guice-bean/2.3.0/guice-bean-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/containers/2.3.0/containers-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/containers/2.3.0/containers-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject/2.3.0/sisu-inject-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject/2.3.0/sisu-inject-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-parent/2.3.0/sisu-parent-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-parent/2.3.0/sisu-parent-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guava-parent/0.9.9/guava-parent-0.9.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/inject/guava-parent/0.9.9/guava-parent-0.9.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether/1.13.1/aether-1.13.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether/1.13.1/aether-1.13.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/plugin-tools/maven-plugin-tools/3.4/maven-plugin-tools-3.4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/plugin-tools/maven-plugin-tools/3.4/maven-plugin-tools-3.4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-parent/26/maven-parent-26.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-parent/26/maven-parent-26.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-compiler/1.1.61/kotlin-compiler-1.1.61.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-compiler/1.1.61/kotlin-compiler-1.1.61.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-stdlib/1.1.61/kotlin-stdlib-1.1.61.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-stdlib/1.1.61/kotlin-stdlib-1.1.61.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/annotations/13.0/annotations-13.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/annotations/13.0/annotations-13.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-script-runtime/1.1.61/kotlin-script-runtime-1.1.61.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-script-runtime/1.1.61/kotlin-script-runtime-1.1.61.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-reflect/1.1.61/kotlin-reflect-1.1.61.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-reflect/1.1.61/kotlin-reflect-1.1.61.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-cli/commons-cli/1.2/commons-cli-1.2.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-cli/commons-cli/1.2/commons-cli-1.2.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/commons/commons-parent/11/commons-parent-11.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/commons/commons-parent/11/commons-parent-11.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-impl/1.13.1/aether-impl-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-compiler/1.1.61/kotlin-compiler-1.1.61.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-stdlib/1.1.61/kotlin-stdlib-1.1.61.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/annotations/13.0/annotations-13.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-script-runtime/1.1.61/kotlin-script-runtime-1.1.61.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-reflect/1.1.61/kotlin-reflect-1.1.61.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-stdlib/1.1.61/kotlin-stdlib-1.1.61.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/annotations/13.0/annotations-13.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-compiler/1.1.61/kotlin-compiler-1.1.61.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-script-runtime/1.1.61/kotlin-script-runtime-1.1.61.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/commons-io/commons-io/2.4/commons-io-2.4.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/jetbrains/kotlin/kotlin-reflect/1.1.61/kotlin-reflect-1.1.61.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/commons-io/commons-io/2.4/commons-io-2.4.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar (0 B at 0 B/s)
+[WARNING] No sources found skipping Kotlin compile
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (java-compile) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0_ALPHA/asm-6.0_ALPHA.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0_ALPHA/asm-6.0_ALPHA.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm-parent/6.0_ALPHA/asm-parent-6.0_ALPHA.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm-parent/6.0_ALPHA/asm-parent-6.0_ALPHA.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/com/thoughtworks/qdox/qdox/2.0-M5/qdox-2.0-M5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/com/thoughtworks/qdox/qdox/2.0-M5/qdox-2.0-M5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.8.1/plexus-compiler-api-2.8.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.8.1/plexus-compiler-api-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler/2.8.1/plexus-compiler-2.8.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler/2.8.1/plexus-compiler-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.8.1/plexus-compiler-manager-2.8.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.8.1/plexus-compiler-manager-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.8.1/plexus-compiler-javac-2.8.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.8.1/plexus-compiler-javac-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compilers/2.8.1/plexus-compilers-2.8.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compilers/2.8.1/plexus-compilers-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0_ALPHA/asm-6.0_ALPHA.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/com/thoughtworks/qdox/qdox/2.0-M5/qdox-2.0-M5.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.8.1/plexus-compiler-api-2.8.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/ow2/asm/asm/6.0_ALPHA/asm-6.0_ALPHA.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.8.1/plexus-compiler-manager-2.8.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/com/thoughtworks/qdox/qdox/2.0-M5/qdox-2.0-M5.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.8.1/plexus-compiler-javac-2.8.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-api/2.8.1/plexus-compiler-api-2.8.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-javac/2.8.1/plexus-compiler-javac-2.8.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-compiler-manager/2.8.1/plexus-compiler-manager-2.8.1.jar (0 B at 0 B/s)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/classes
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/main/java/org/springframework/data/jpa/domain/Specifications.java: Some input files use or override a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/main/java/org/springframework/data/jpa/domain/Specifications.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- aspectj-maven-plugin:1.8:compile (default) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/aspectj/aspectjtools/1.8.12/aspectjtools-1.8.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/aspectj/aspectjtools/1.8.12/aspectjtools-1.8.12.pom (1.0 kB at 4.3 kB/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/junit/junit/4.12/junit-4.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/junit/junit/4.12/junit-4.12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/aspectj/aspectjtools/1.8.12/aspectjtools-1.8.12.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/aspectj/aspectjtools/1.8.12/aspectjtools-1.8.12.jar (13 MB at 9.9 MB/s)
+[INFO] Showing AJC message detail for messages of types: [error, warning, fail]
+[WARNING] You aren't using a compiler supported by lombok, so lombok will not work and has been disabled.
+Your processor is: org.aspectj.org.eclipse.jdt.internal.compiler.apt.dispatch.BatchProcessingEnvImpl
+Lombok supports: sun/apple javac 1.6, ECJ
+	<unknown source file>:<no line information>
+
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:test-process (test-sources) @ spring-data-jpa ---
+[ERROR] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QAuditableUser.java:25: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractAuditable _super = new org.springframework.data.jpa.domain.QAbstractAuditable(this);
+                                                    ^
+  symbol:   class QAbstractAuditable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QAuditableRole.java:25: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractAuditable _super = new org.springframework.data.jpa.domain.QAbstractAuditable(this);
+                                                    ^
+  symbol:   class QAbstractAuditable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QCustomAbstractPersistable.java:22: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractPersistable _super = new org.springframework.data.jpa.domain.QAbstractPersistable(this);
+                                                    ^
+  symbol:   class QAbstractPersistable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QAccount.java:22: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractPersistable _super = new org.springframework.data.jpa.domain.QAbstractPersistable(this);
+                                                    ^
+  symbol:   class QAbstractPersistable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/CustomAbstractPersistable_.java:8: error: cannot find symbol
+public abstract class CustomAbstractPersistable_ extends org.springframework.data.jpa.domain.AbstractPersistable_ {
+                                                                                            ^
+  symbol:   class AbstractPersistable_
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/Account_.java:8: error: cannot find symbol
+public abstract class Account_ extends org.springframework.data.jpa.domain.AbstractPersistable_ {
+                                                                          ^
+  symbol:   class AbstractPersistable_
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/AuditableUser_.java:10: error: cannot find symbol
+public abstract class AuditableUser_ extends org.springframework.data.jpa.domain.AbstractAuditable_ {
+                                                                                ^
+  symbol:   class AbstractAuditable_
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/AuditableRole_.java:9: error: cannot find symbol
+public abstract class AuditableRole_ extends org.springframework.data.jpa.domain.AbstractAuditable_ {
+                                                                                ^
+  symbol:   class AbstractAuditable_
+  location: package org.springframework.data.jpa.domain
+8 errors
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spring-data-jpa ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 34 resources
+[INFO] 
+[INFO] --- kotlin-maven-plugin:1.1.61:test-compile (test-compile) @ spring-data-jpa ---
+[WARNING] No sources found skipping Kotlin compile
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (java-test-compile) @ spring-data-jpa ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 246 source files to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/domain/SpecificationsUnitTests.java: Some input files use or override a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/domain/SpecificationsUnitTests.java: Recompile with -Xlint:deprecation for details.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/repository/config/AbstractAuditingViaJavaConfigRepositoriesTests.java: /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/repository/config/AbstractAuditingViaJavaConfigRepositoriesTests.java uses unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/repository/config/AbstractAuditingViaJavaConfigRepositoriesTests.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (default-test) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven/2.0.9/maven-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven/2.0.9/maven-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-parent/8/maven-parent-8.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-parent/8/maven-parent-8.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-booter/2.12/surefire-booter-2.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-booter/2.12/surefire-booter-2.12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-api/2.12/surefire-api-2.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-api/2.12/surefire-api-2.12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/surefire/maven-surefire-common/2.12/maven-surefire-common-2.12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/surefire/maven-surefire-common/2.12/maven-surefire-common-2.12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting/2.0.9/maven-reporting-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting/2.0.9/maven-reporting-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-components/12/maven-shared-components-12.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-components/12/maven-shared-components-12.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-parent/13/maven-parent-13.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-parent/13/maven-parent-13.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/springframework/spring-instrument/5.0.4.RELEASE/spring-instrument-5.0.4.RELEASE.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-booter/2.12/surefire-booter-2.12.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-api/2.12/surefire-api-2.12.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/surefire/maven-surefire-common/2.12/maven-surefire-common-2.12.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-booter/2.12/surefire-booter-2.12.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/surefire/surefire-api/2.12/surefire-api-2.12.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/springframework/spring-instrument/5.0.4.RELEASE/spring-instrument-5.0.4.RELEASE.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/surefire/maven-surefire-common/2.12/maven-surefire-common-2.12.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar (0 B at 0 B/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (unit-tests) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (integration-tests) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (eclipselink-tests) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (0 B at 0 B/s)
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ spring-data-jpa >>>
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (jacoco-initialize) @ spring-data-jpa ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:process (sources) @ spring-data-jpa ---
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ spring-data-jpa <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ spring-data-jpa ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ spring-data-jpa ---
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom (0 B at 0 B/s)
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar
+[INFO] Downloading: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar (0 B at 0 B/s)
+[INFO] Downloaded: https://repo.spring.io/plugins-release/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar (0 B at 0 B/s)
+[INFO] Installing /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.jar to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/.m2/org/springframework/data/spring-data-jpa/2.0.4.BUILD-SNAPSHOT/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/pom.xml to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/.m2/org/springframework/data/spring-data-jpa/2.0.4.BUILD-SNAPSHOT/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT-sources.jar to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/.m2/org/springframework/data/spring-data-jpa/2.0.4.BUILD-SNAPSHOT/spring-data-jpa-2.0.4.BUILD-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:11 min
+[INFO] Finished at: 2020-03-13T19:38:54-07:00
+[INFO] Final Memory: 58M/1907M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml (639 B at 426 B/s)
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-build/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-build/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml (638 B at 1.8 kB/s)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spring Data JPA 2.0.4.BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.0.4.BUILD-SNAPSHOT/maven-metadata.xml (1.3 kB at 3.9 kB/s)
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (jacoco-initialize) @ spring-data-jpa ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:process (sources) @ spring-data-jpa ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spring-data-jpa ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- kotlin-maven-plugin:1.1.61:compile (compile) @ spring-data-jpa ---
+[WARNING] No sources found skipping Kotlin compile
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (java-compile) @ spring-data-jpa ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/classes
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/main/java/org/springframework/data/jpa/domain/Specifications.java: Some input files use or override a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/main/java/org/springframework/data/jpa/domain/Specifications.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- aspectj-maven-plugin:1.8:compile (default) @ spring-data-jpa ---
+[INFO] Showing AJC message detail for messages of types: [error, warning, fail]
+[WARNING] You aren't using a compiler supported by lombok, so lombok will not work and has been disabled.
+Your processor is: org.aspectj.org.eclipse.jdt.internal.compiler.apt.dispatch.BatchProcessingEnvImpl
+Lombok supports: sun/apple javac 1.6, ECJ
+	<unknown source file>:<no line information>
+
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:test-process (test-sources) @ spring-data-jpa ---
+[ERROR] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QAuditableUser.java:25: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractAuditable _super = new org.springframework.data.jpa.domain.QAbstractAuditable(this);
+                                                    ^
+  symbol:   class QAbstractAuditable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QAuditableRole.java:25: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractAuditable _super = new org.springframework.data.jpa.domain.QAbstractAuditable(this);
+                                                    ^
+  symbol:   class QAbstractAuditable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QCustomAbstractPersistable.java:22: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractPersistable _super = new org.springframework.data.jpa.domain.QAbstractPersistable(this);
+                                                    ^
+  symbol:   class QAbstractPersistable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/QAccount.java:22: error: cannot find symbol
+    public final org.springframework.data.jpa.domain.QAbstractPersistable _super = new org.springframework.data.jpa.domain.QAbstractPersistable(this);
+                                                    ^
+  symbol:   class QAbstractPersistable
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/CustomAbstractPersistable_.java:8: error: cannot find symbol
+public abstract class CustomAbstractPersistable_ extends org.springframework.data.jpa.domain.AbstractPersistable_ {
+                                                                                            ^
+  symbol:   class AbstractPersistable_
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/Account_.java:8: error: cannot find symbol
+public abstract class Account_ extends org.springframework.data.jpa.domain.AbstractPersistable_ {
+                                                                          ^
+  symbol:   class AbstractPersistable_
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/AuditableUser_.java:10: error: cannot find symbol
+public abstract class AuditableUser_ extends org.springframework.data.jpa.domain.AbstractAuditable_ {
+                                                                                ^
+  symbol:   class AbstractAuditable_
+  location: package org.springframework.data.jpa.domain
+/bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/generated-test-sources/test-annotations/org/springframework/data/jpa/domain/sample/AuditableRole_.java:9: error: cannot find symbol
+public abstract class AuditableRole_ extends org.springframework.data.jpa.domain.AbstractAuditable_ {
+                                                                                ^
+  symbol:   class AbstractAuditable_
+  location: package org.springframework.data.jpa.domain
+8 errors
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spring-data-jpa ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 34 resources
+[INFO] 
+[INFO] --- kotlin-maven-plugin:1.1.61:test-compile (test-compile) @ spring-data-jpa ---
+[WARNING] No sources found skipping Kotlin compile
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (java-test-compile) @ spring-data-jpa ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 246 source files to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/domain/SpecificationsUnitTests.java: Some input files use or override a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/domain/SpecificationsUnitTests.java: Recompile with -Xlint:deprecation for details.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/repository/config/AbstractAuditingViaJavaConfigRepositoriesTests.java: /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/repository/config/AbstractAuditingViaJavaConfigRepositoriesTests.java uses unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/src/test/java/org/springframework/data/jpa/repository/config/AbstractAuditingViaJavaConfigRepositoriesTests.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (default-test) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (unit-tests) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (integration-tests) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (eclipselink-tests) @ spring-data-jpa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ spring-data-jpa ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ spring-data-jpa >>>
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (jacoco-initialize) @ spring-data-jpa ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:process (sources) @ spring-data-jpa ---
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ spring-data-jpa <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ spring-data-jpa ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ spring-data-jpa ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.jar to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/.m2/org/springframework/data/spring-data-jpa/2.0.4.BUILD-SNAPSHOT/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/pom.xml to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/.m2/org/springframework/data/spring-data-jpa/2.0.4.BUILD-SNAPSHOT/spring-data-jpa-2.0.4.BUILD-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/target/spring-data-jpa-2.0.4.BUILD-SNAPSHOT-sources.jar to /bam/scratch/tmp-rta/Bears_spring-projects-spring-data-jpa_341944401-342236799_java-8/.m2/org/springframework/data/spring-data-jpa/2.0.4.BUILD-SNAPSHOT/spring-data-jpa-2.0.4.BUILD-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:57 min
+[INFO] Finished at: 2020-03-13T19:40:55-07:00
+[INFO] Final Memory: 48M/1842M
+[INFO] ------------------------------------------------------------------------

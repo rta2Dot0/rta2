@@ -1,0 +1,8 @@
+---
+BugID: WICKET-128
+Summary: Debug settings / serialize session attributes option not working
+Description: |-
+  Session attributes are serialized even if this debug setting is turned off. I've noticed that the code that serializes attributes and logs their serialized size in HttpSessionStore#setAttribute is duplicated in Session#setAttribute - but without the debug settings condition. This code was added by the recent patch resolving WICKET-100 and only in the trunk, not in the wicket-1.x branch... why???
+
+  Regards,
+  Bendis

@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5230
+Summary: AjaxFormChoiceComponentUpdatingBehavior fails for choices containing other
+  invalid FormComponents
+Description: |-
+  If a TextField inside a RadioGroup has a ValidationError, processing of AjaxFormChoiceComponentUpdatingBehavior will erroneously update the group's model:
+
+  - RadioGroup#validate() does not convert the input, because #isValid() returns false (since the nested textfield has an error message)
+  - the behavior tests #hasErrorMessage() on the group, which returns false (since the group itself doesn't have an error message)
+  - the behavior continues processing with a null value

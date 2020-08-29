@@ -1,0 +1,15 @@
+---
+BugID: MATH-1277
+Summary: Incorrect Kendall Tau calc due to data type mistmatch
+Description: "The Kendall Tau calculation returns a number from -1.0 to 1.0\n\ndue
+  to a mixing of ints and longs, a mistake occurs on large size columns (arrays) passed
+  to the function. an array size of > 50350 triggers the condition in my case - although
+  it may be data dependent\n\nthe ver 3.5 library returns 2.6 as a result (outside
+  of the defined range of Kendall Tau)\n\nwith the cast to long below - the result
+  reutns to its expected value\n\n\ncommons.math3.stat.correlation.KendallsCorrelation.correlation\n\n\nhere's
+  the sample code I used:\nI added the cast to long of swaps in the \n\n\t\t\tint
+  swaps = 1077126315;\n\t\t\t final long numPairs = sum(50350 - 1);\n\t\t\t    long
+  tiedXPairs = 0;\n\t\t        long tiedXYPairs = 0;\n\t\t        long tiedYPairs
+  = 0;\n\t\t        \n\t\t  final long concordantMinusDiscordant = numPairs - tiedXPairs
+  - tiedYPairs + tiedXYPairs - 2 * (long) swaps;\n\t        final double nonTiedPairsMultiplied
+  = 1.6e18;\n\t        double myTest = concordantMinusDiscordant / FastMath.sqrt(nonTiedPairsMultiplied);\n"

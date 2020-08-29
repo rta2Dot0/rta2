@@ -1,0 +1,29 @@
+---
+BugID: OAK-520
+Summary: IllegalStateException in MemoryNodeBuilder
+Description: "{{AuthorizablePropertyTest.testSetPropertyByRelPath()}} sometimes causes
+  an IllegalStateException in {{MemoryNodeBuilder}}. This might be a problem with
+  the latter uncovered by the recent switch to the p2 index mechanism (OAK-511).\n\n{code}\njava.lang.IllegalStateException\n
+  \   at com.google.common.base.Preconditions.checkState(Preconditions.java:133)\n
+  \   at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeBuilder.read(MemoryNodeBuilder.java:205)\n
+  \   at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeBuilder.getChildNodeNames(MemoryNodeBuilder.java:379)\n
+  \   at org.apache.jackrabbit.oak.plugins.index.p2.strategy.ContentMirrorStoreStrategy.remove(ContentMirrorStoreStrategy.java:66)\n
+  \   at org.apache.jackrabbit.oak.plugins.index.p2.Property2IndexUpdate.apply(Property2IndexUpdate.java:143)\n
+  \   at org.apache.jackrabbit.oak.plugins.index.p2.Property2IndexDiff.apply(Property2IndexDiff.java:232)\n
+  \   at org.apache.jackrabbit.oak.plugins.index.IndexHookManager.apply(IndexHookManager.java:71)\n
+  \   at org.apache.jackrabbit.oak.plugins.index.IndexHookManager.processCommit(IndexHookManager.java:61)\n
+  \   at org.apache.jackrabbit.oak.spi.commit.CompositeHook.processCommit(CompositeHook.java:59)\n
+  \   at org.apache.jackrabbit.oak.kernel.KernelNodeStoreBranch.merge(KernelNodeStoreBranch.java:127)\n
+  \   at org.apache.jackrabbit.oak.core.RootImpl$2.run(RootImpl.java:240)\n    at
+  org.apache.jackrabbit.oak.core.RootImpl$2.run(RootImpl.java:236)\n    at java.security.AccessController.doPrivileged(Native
+  Method)\n    at javax.security.auth.Subject.doAs(Subject.java:337)\n    at org.apache.jackrabbit.oak.core.RootImpl.commit(RootImpl.java:235)\n
+  \   at org.apache.jackrabbit.oak.jcr.SessionDelegate.save(SessionDelegate.java:255)\n
+  \   at org.apache.jackrabbit.oak.jcr.SessionImpl.save(SessionImpl.java:283)\n    at
+  org.apache.jackrabbit.oak.jcr.security.user.AbstractUserTest.tearDown(AbstractUserTest.java:72)\n
+  \   at org.apache.jackrabbit.test.AbstractJCRTest.run(AbstractJCRTest.java:456)\n
+  \   at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)\n
+  \   at org.junit.runner.JUnitCore.run(JUnitCore.java:157)\n    at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:76)\n
+  \   at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:195)\n
+  \   at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:63)\n
+  \   at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n
+  \   at com.intellij.rt.execution.application.AppMain.main(AppMain.java:120) \n{code}"

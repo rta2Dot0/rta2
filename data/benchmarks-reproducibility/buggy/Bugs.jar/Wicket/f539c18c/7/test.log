@@ -1,0 +1,108 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wicket Bean Validation 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-core/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-parent/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-util/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-request/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ wicket-bean-validation ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wicket-bean-validation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Wicket_f539c18c_java-7/wicket-bean-validation/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ wicket-bean-validation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> clirr-maven-plugin:2.6.1:check (clirr-check) > compile @ wicket-bean-validation >>>
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ wicket-bean-validation ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wicket-bean-validation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Wicket_f539c18c_java-7/wicket-bean-validation/src/main/resources
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ wicket-bean-validation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< clirr-maven-plugin:2.6.1:check (clirr-check) < compile @ wicket-bean-validation <<<
+[INFO] 
+[INFO] 
+[INFO] --- clirr-maven-plugin:2.6.1:check (clirr-check) @ wicket-bean-validation ---
+[INFO] Skipping execution
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.5.0:manifest (bundle-manifest) @ wicket-bean-validation ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ wicket-bean-validation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ wicket-bean-validation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ wicket-bean-validation ---
+[INFO] Surefire report directory: /tmp/Bugs.jar_Wicket_f539c18c_java-7/wicket-bean-validation/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO] parallel='none', perCoreThreadCount=true, threadCount=0, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.wicket.bean.validation.DefaultPropertyResolverTest
+log4j:WARN No appenders could be found for logger (org.apache.wicket.Application).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.919 sec - in org.apache.wicket.bean.validation.DefaultPropertyResolverTest
+Running org.apache.wicket.bean.validation.PropertyValidatorRequiredTest
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.252 sec <<< FAILURE! - in org.apache.wicket.bean.validation.PropertyValidatorRequiredTest
+testResolveComposedConstraints(org.apache.wicket.bean.validation.PropertyValidatorRequiredTest)  Time elapsed: 0.024 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.wicket.bean.validation.PropertyValidatorRequiredTest.testResolveComposedConstraints(PropertyValidatorRequiredTest.java:84)
+
+
+Results :
+
+Failed tests: 
+  PropertyValidatorRequiredTest.testResolveComposedConstraints:84 null
+
+Tests run: 8, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.154 s
+[INFO] Finished at: 2020-03-09T04:44:17-07:00
+[INFO] Final Memory: 31M/1238M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test (default-test) on project wicket-bean-validation: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /tmp/Bugs.jar_Wicket_f539c18c_java-7/wicket-bean-validation/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

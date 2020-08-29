@@ -1,0 +1,26 @@
+---
+BugID: LOG4J2-581
+Summary: No header output in RollingRandomAccessFile
+Description: "No header output in RollingRandomAccessFile due to DummyOutputStream
+  used when creating RollingRandomAccessFileManager. \n{code:title=RollingRandomAccessFileManager.java}\n...\n162:
+  \               return new RollingRandomAccessFileManager(raf, name, data.pattern,
+  +new DummyOutputStream()+, data.append,\n163:                        data.immediateFlush,
+  size, time, data.policy, data.strategy, data.advertiseURI, data.layout);\n{code}\nWhen
+  the superclass constructor (OutputStreamManager) writes header, it outputs thus
+  header to nowhere:\n{code:title=OutputStreamManager.java}\n35:    protected OutputStreamManager(final
+  OutputStream os, final String streamName, final Layout<?> layout) {\n36:        super(streamName);\n37:
+  \       this.os = os;\n38:        if (layout != null) {\n39:            this.footer
+  = layout.getFooter();\n40:            this.header = layout.getHeader();\n41:            if
+  (this.header != null) {\n42:                try {\n43:!!!                 this.os.write(header,
+  0, header.length);\n44:                } catch (final IOException ioe) {\n45:                    LOGGER.error(\"Unable
+  to write header\", ioe);\n46:                }\n47:            }\n48:        } else
+  {\n49:            this.footer = null;\n50:            this.header = null;\n51:        }\n52:
+  \   }\n{code}\nThe same fragment from RollingFileManager.java where header output
+  works fine:\n{code:title=RollingFileManager.java}\n306:                os = new
+  FileOutputStream(name, data.append);\n307:                if (data.bufferedIO) {\n308:
+  \                   os = new BufferedOutputStream(os);\n309:                }\n310:
+  \               final long time = file.lastModified(); // LOG4J2-531 create file
+  first so time has valid value\n311:                return new RollingFileManager(name,
+  data.pattern, +os+, data.append, size, time, data.policy,\n312:                    data.strategy,
+  data.advertiseURI, data.layout);\n{code}\n\nIn this case the \"os\" variable is
+  a real stream which points to the file."

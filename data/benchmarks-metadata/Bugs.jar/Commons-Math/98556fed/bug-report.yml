@@ -1,0 +1,7 @@
+---
+BugID: MATH-640
+Summary: AbstractRandomGenerator nextInt() and nextLong() default implementations
+  generate only positive values
+Description: The javadoc for these methods (and what is specified in the RandomGenerator
+  interface) says that all int / long values should be in the range of these methods.  The
+  default implementations provided in this class do not generate negative values.

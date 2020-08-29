@@ -1,0 +1,7 @@
+---
+BugID: WICKET-428
+Summary: MiniMap.iterator().next() should throw NoSuchElementException
+Description: |
+  The wicket.util.collections.MiniMap.iterator().next() should throw NoSuchElementException when there are no more elements to return (line 235), please add:
+  if(i >= size)
+      throw new NoSuchElementException();

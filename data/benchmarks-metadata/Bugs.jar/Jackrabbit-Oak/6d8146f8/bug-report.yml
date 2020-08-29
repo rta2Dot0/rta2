@@ -1,0 +1,19 @@
+---
+BugID: OAK-1624
+Summary: Item names with trailing spaces should not be allowed
+Description: |-
+  the following should fail:
+
+  {code}
+          Node hello = session.getRootNode().addNode("hello");
+          session.save();
+
+          Node illegal = hello.addNode("test "); <-- here
+          session.save();
+
+          assertEquals("/hello/test ", illegal.getPath()); <-- and here
+
+          Node other = session.getNode("/hello/test "); <-- and here
+          assertTrue(other.isSame(illegal));
+          assertTrue(session.nodeExists("/hello/test ")); <-- and here
+  {code}

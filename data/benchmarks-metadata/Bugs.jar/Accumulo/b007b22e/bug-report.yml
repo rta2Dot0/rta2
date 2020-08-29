@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-151
+Summary: Combiner default behavior is dangerous
+Description: "Currently if the users does not give the combiner any columns to work
+  against, it will work against all columns.  This is dangerous, if a user accidentally
+  forgets to specify columns then their data could be unintentionally corrupted.  Something
+  different needs to be done.  \n\nAlso classes that extend combiner should call super.validateOptions(). "

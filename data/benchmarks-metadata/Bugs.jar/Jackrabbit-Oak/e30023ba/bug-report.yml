@@ -1,0 +1,7 @@
+---
+BugID: OAK-2029
+Summary: Oak Lucene index doesn't get notified about updates when index is stored
+  on the file system
+Description: |-
+  It looks like the the lucene IndexTracked class responsible for refreshing the in-memory cache of the lucene index doesn't get the update notification when the index is stored on the file system.
+  This results in searches not working until the next restart

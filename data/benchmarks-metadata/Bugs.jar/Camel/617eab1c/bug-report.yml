@@ -1,0 +1,14 @@
+---
+BugID: CAMEL-6687
+Summary: Using simple language OGNL expressions doesn't work for Bean Binding when
+  a field is null
+Description: "The following functionality doesn't work, when one of the fields is
+  null: \n\nhttp://camel.apache.org/bean-binding.html\n{quote}\nYou can also use the
+  OGNL support of the Simple expression language. Now suppose the message body is
+  an object which has a method named asXml. To invoke the asXml method we can do as
+  follows:\n{code}.bean(OrderService.class, \"doSomething(${body.asXml}, ${header.high})\"){code}\n\nInstead
+  of using .bean as shown in the examples above, you may want to use .to instead as
+  shown:\n{code}.to(\"bean:orderService?method=doSomething(${body.asXml}, ${header.high})\"){code}\n{quote}\n\nA
+  test case is provided. Instead of getting values of fields \"foo\" and \"bar\" respectively,
+  the first parameter (which should be null) receives value of pojo.toString(), while
+  the second parameter receives the correct value."

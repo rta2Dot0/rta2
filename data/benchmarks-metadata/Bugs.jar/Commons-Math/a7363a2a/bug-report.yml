@@ -1,0 +1,31 @@
+---
+BugID: MATH-1135
+Summary: 'Bug in MonotoneChain: a collinear point landing on the existing boundary
+  should be dropped (patch)'
+Description: "The is a bug on the code in MonotoneChain.java that attempts to handle
+  the case of a point on the line formed by the previous last points and the last
+  point of the chain being constructed. When `includeCollinearPoints` is false, the
+  point should be dropped entirely. In common-math 3,3, the point is added, which
+  in some cases can cause a `ConvergenceException` to be thrown.\n\nIn the patch below,
+  the data points are from a case that showed up in testing before we went to production.\n\n{code:java}\nIndex:
+  src/main/java/org/apache/commons/math3/geometry/euclidean/twod/hull/MonotoneChain.java\n===================================================================\n---
+  src/main/java/org/apache/commons/math3/geometry/euclidean/twod/hull/MonotoneChain.java\t(revision
+  1609491)\n+++ src/main/java/org/apache/commons/math3/geometry/euclidean/twod/hull/MonotoneChain.java\t(working
+  copy)\n@@ -160,8 +160,8 @@\n                 } else {\n                     if (distanceToCurrent
+  > distanceToLast) {\n                         hull.remove(size - 1);\n+                        hull.add(point);\n
+  \                    }\n-                    hull.add(point);\n                 }\n
+  \                return;\n             } else if (offset > 0) {\nIndex: src/test/java/org/apache/commons/math3/geometry/euclidean/twod/hull/ConvexHullGenerator2DAbstractTest.java\n===================================================================\n---
+  src/test/java/org/apache/commons/math3/geometry/euclidean/twod/hull/ConvexHullGenerator2DAbstractTest.java\t(revision
+  1609491)\n+++ src/test/java/org/apache/commons/math3/geometry/euclidean/twod/hull/ConvexHullGenerator2DAbstractTest.java\t(working
+  copy)\n@@ -204,6 +204,24 @@\n     }\n \n     @Test\n+    public void testCollinnearPointOnExistingBoundary()
+  {\n+        final Collection<Vector2D> points = new ArrayList<Vector2D>();\n+        points.add(new
+  Vector2D(7.3152, 34.7472));\n+        points.add(new Vector2D(6.400799999999997,
+  34.747199999999985));\n+        points.add(new Vector2D(5.486399999999997, 34.7472));\n+
+  \       points.add(new Vector2D(4.876799999999999, 34.7472));\n+        points.add(new
+  Vector2D(4.876799999999999, 34.1376));\n+        points.add(new Vector2D(4.876799999999999,
+  30.48));\n+        points.add(new Vector2D(6.0959999999999965, 30.48));\n+        points.add(new
+  Vector2D(6.0959999999999965, 34.1376));\n+        points.add(new Vector2D(7.315199999999996,
+  34.1376));\n+        points.add(new Vector2D(7.3152, 30.48));\n+\n+        final
+  ConvexHull2D hull = generator.generate(points);\n+        checkConvexHull(points,
+  hull);\n+    }\n+\n+    @Test\n     public void testIssue1123() {\n \n         List<Vector2D>
+  points = new ArrayList<Vector2D>();\n{code}"

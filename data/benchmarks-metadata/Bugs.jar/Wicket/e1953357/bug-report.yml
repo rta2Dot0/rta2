@@ -1,0 +1,21 @@
+---
+BugID: WICKET-4290
+Summary: Confusion between a form component's wicket:id and a PageParameter in Wicket
+  1.5.x
+Description: "A Form has a strange behavior when a component has the same wicket:id
+  than a page parameter.\n\nTo create a Bookmarkable link after a form is submited,
+  setResponsePage is called, and a PageParameter object is given as a parameter :
+  \n\t\t\tPageParameters params = new PageParameters();\n\t\t\tparams.add(\"searchString\",
+  searchField.getValue());\n\t\t\tsetResponsePage(SomePage.class, params);\n\nIn Wicket
+  1.5, if \"searchString\" is also a form-component's wicket:id, the form will only
+  be submitted once : \nsearchField.getValue() will always return the first value
+  entered by the user.\n\n\nHere's an example : \n\npublic class SearchPanel extends
+  Panel {\n\n\tpublic SearchPanel(String id) {\n\t\tsuper(id);\n\t\tadd(new SearchForm(\"searchForm\"));\n\t}\n\n\tprivate
+  class SearchForm extends Form<String> {\n\n\t\tprivate static final long serialVersionUID
+  = 1L;\n\t\tprivate TextField<String> searchField;\n\n\t\tpublic SearchForm(String
+  id) {\n\t\t\tsuper(id);\n\t\t\tsearchField = new TextField<String>(\"searchString\",
+  new Model<String>(\"\"));\n\t\t\tadd(searchField);\n\t\t}\n\n\t\t@Override\n\t\tpublic
+  void onSubmit() {\n\t\t\tPageParameters params = new PageParameters();\n\t\t\tparams.add(\"searchString\",
+  searchField.getValue());\n\t\t\tsetResponsePage(ListContactsPage.class, params);\n\t\t}\n\t}\n}\n\n\nI
+  tested the same application with Wicket 1.4.17 and it was fine. I only had this
+  problem in Wicket 1.5.2 and 1.5.3."

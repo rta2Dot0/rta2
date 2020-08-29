@@ -1,0 +1,21 @@
+---
+BugID: ACCUMULO-2659
+Summary: Incompatible API changes in 1.6.0
+Description: "While examining API changes for 1.6.0 I noticed some non-deprecated
+  methods were removed.  I am not sure how important these are, but technically these
+  methods are in the public API.  Opening this issue to document what I found.\n\nI
+  compared 1.6.0 to 1.5.0.\n\nIn ACCUMULO-1674 the following methods were removed\n\n{noformat}\npackage
+  org.apache.accumulo.core.client.mapreduce.lib.util\nConfiguratorBase.getToken (
+  Class<?>, Configuration ) [static]  :  byte[ ]\nConfiguratorBase.getTokenClass (
+  Class<?> ,Configuration) [static]  :  String\n{noformat}\n\nIn ACCUMULO-391 the
+  following method was removed\n\n{noformat}\npackage org.apache.accumulo.core.client.mapreduce.lib.util\nInputConfigurator.getTabletLocator
+  ( Class<?>, Configuration ) [static]  : TabletLocator \n{noformat}\n\nIn ACCUMULO-391
+  the following method was removed and not properly fixed in ACCUMULO-2586\n\n{noformat}\naccumulo-core.jar,
+  RangeInputSplit.class\npackage org.apache.accumulo.core.client.mapred\nInputFormatBase.RangeInputSplit.InputFormatBase.RangeInputSplit
+  ( String table, Range range, String[ ] locations )\npackage org.apache.accumulo.core.client.mapreduce\nInputFormatBase.RangeInputSplit.InputFormatBase.RangeInputSplit
+  ( String table, Range range, String[ ] locations ) \n{noformat}\n\n It seems like
+  the following were removed in ACCUMULO-1854 \n\n{noformat}\npackage org.apache.accumulo.core.client.mapred\nInputFormatBase.RecordReaderBase<K.setupIterators
+  (JobConf job, Scanner scanner )  :  void\npackage org.apache.accumulo.core.client.mapreduce\nInputFormatBase.RecordReaderBase<K.setupIterators
+  (TaskAttemptContext context, Scanner scanner)  :  void\n{noformat}\n\nIn ACCUMULO-1018
+  the following method was removed\n\n{noformat}\npackage org.apache.accumulo.core.client\nMutationsRejectedException.MutationsRejectedException
+  ( List, HashMap, Set, Collection, int cause, Throwable cvsList ) \n{noformat}"

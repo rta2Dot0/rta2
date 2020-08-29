@@ -1,0 +1,1263 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building address-controller 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ address-controller ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ address-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ address-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ address-controller ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ address-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ address-controller ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ address-controller ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.pom (3.3 kB at 616 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.20.1/surefire-providers-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.20.1/surefire-providers-2.20.1.pom (2.6 kB at 147 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.jar (82 kB at 76 kB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error getting address space a1
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.getAddressSpaceWithName(TestAddressSpaceApi.java:24)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$getAddressSpace$3(HttpAddressSpaceService.java:72)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpace(HttpAddressSpaceService.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testGetException$3(HttpAddressSpaceServiceTest.java:115)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testGetException(HttpAddressSpaceServiceTest.java:115)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.getAddressSpaceWithName(TestAddressSpaceApi.java:24)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$getAddressSpace$3(HttpAddressSpaceService.java:72)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpace(HttpAddressSpaceService.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testGetException$3(HttpAddressSpaceServiceTest.java:115)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testGetException(HttpAddressSpaceServiceTest.java:115)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error deleting address space doesnotexist
+javax.ws.rs.NotFoundException: Unable to find address space doesnotexist
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$null$5(HttpAddressSpaceService.java:102)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$deleteAddressSpace$6(HttpAddressSpaceService.java:102)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.deleteAddressSpace(HttpAddressSpaceService.java:100)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testDeleteNotFound$9(HttpAddressSpaceServiceTest.java:163)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testDeleteNotFound(HttpAddressSpaceServiceTest.java:163)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 404: Unable to find address space doesnotexist
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error getting address space list
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.listAddressSpaces(TestAddressSpaceApi.java:53)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$getAddressSpaceList$0(HttpAddressSpaceService.java:64)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpaceList(HttpAddressSpaceService.java:63)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testListException$1(HttpAddressSpaceServiceTest.java:97)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testListException(HttpAddressSpaceServiceTest.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.listAddressSpaces(TestAddressSpaceApi.java:53)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$getAddressSpaceList$0(HttpAddressSpaceService.java:64)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpaceList(HttpAddressSpaceService.java:63)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testListException$1(HttpAddressSpaceServiceTest.java:97)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testListException(HttpAddressSpaceServiceTest.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error creating address space a1
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.createAddressSpace(TestAddressSpaceApi.java:32)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$createAddressSpace$4(HttpAddressSpaceService.java:91)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.createAddressSpace(HttpAddressSpaceService.java:81)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testCreateException$6(HttpAddressSpaceServiceTest.java:136)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testCreateException(HttpAddressSpaceServiceTest.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.createAddressSpace(TestAddressSpaceApi.java:32)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$createAddressSpace$4(HttpAddressSpaceService.java:91)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.createAddressSpace(HttpAddressSpaceService.java:81)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testCreateException$6(HttpAddressSpaceServiceTest.java:136)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testCreateException(HttpAddressSpaceServiceTest.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error getting address space doesnotexist
+javax.ws.rs.NotFoundException: Address space doesnotexist not found
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$null$2(HttpAddressSpaceService.java:74)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$getAddressSpace$3(HttpAddressSpaceService.java:74)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpace(HttpAddressSpaceService.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testGetUnknown$4(HttpAddressSpaceServiceTest.java:121)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testGetUnknown(HttpAddressSpaceServiceTest.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 404: Address space doesnotexist not found
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error deleting address space doesnotexist
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.verifyAuthorized(HttpAddressSpaceService.java:56)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:45)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.deleteAddressSpace(HttpAddressSpaceService.java:100)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testUnauthorized$10(HttpAddressSpaceServiceTest.java:171)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testUnauthorized(HttpAddressSpaceServiceTest.java:171)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error getting address space a1
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.verifyAuthorized(HttpAddressSpaceService.java:56)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:45)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpace(HttpAddressSpaceService.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testUnauthorized$11(HttpAddressSpaceServiceTest.java:175)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testUnauthorized(HttpAddressSpaceServiceTest.java:175)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error getting address space list
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.verifyAuthorized(HttpAddressSpaceService.java:56)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:45)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.getAddressSpaceList(HttpAddressSpaceService.java:63)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testUnauthorized$12(HttpAddressSpaceServiceTest.java:178)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testUnauthorized(HttpAddressSpaceServiceTest.java:178)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error creating address space a1
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.verifyAuthorized(HttpAddressSpaceService.java:56)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:45)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.createAddressSpace(HttpAddressSpaceService.java:81)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testUnauthorized$13(HttpAddressSpaceServiceTest.java:181)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testUnauthorized(HttpAddressSpaceServiceTest.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressSpaceService:48 - Error deleting address space a1
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.getAddressSpaceWithName(TestAddressSpaceApi.java:24)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$deleteAddressSpace$6(HttpAddressSpaceService.java:101)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.deleteAddressSpace(HttpAddressSpaceService.java:100)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testDeleteException$8(HttpAddressSpaceServiceTest.java:156)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testDeleteException(HttpAddressSpaceServiceTest.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: foo
+	at io.enmasse.k8s.api.TestAddressSpaceApi.getAddressSpaceWithName(TestAddressSpaceApi.java:24)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.lambda$deleteAddressSpace$6(HttpAddressSpaceService.java:101)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.doRequest(HttpAddressSpaceService.java:46)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceService.deleteAddressSpace(HttpAddressSpaceService.java:100)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.lambda$testDeleteException$8(HttpAddressSpaceServiceTest.java:156)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.invoke(HttpAddressSpaceServiceTest.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest.testDeleteException(HttpAddressSpaceServiceTest.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.119 s - in io.enmasse.controller.api.v1.http.HttpAddressSpaceServiceTest
+[INFO] Running io.enmasse.controller.api.v1.http.HttpAddressServiceTest
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error getting address
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.getAddressWithName(TestAddressApi.java:55)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddress(AddressApiHelper.java:99)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddress$2(HttpAddressService.java:60)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddress(HttpAddressService.java:59)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testGetException$3(HttpAddressServiceTest.java:108)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testGetException(HttpAddressServiceTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.getAddressWithName(TestAddressApi.java:55)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddress(AddressApiHelper.java:99)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddress$2(HttpAddressService.java:60)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddress(HttpAddressService.java:59)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testGetException$3(HttpAddressServiceTest.java:108)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testGetException(HttpAddressServiceTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error listing addresses
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.listAddresses(TestAddressApi.java:71)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddresses(AddressApiHelper.java:52)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddressList$0(HttpAddressService.java:51)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddressList(HttpAddressService.java:50)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testListException$1(HttpAddressServiceTest.java:92)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testListException(HttpAddressServiceTest.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.listAddresses(TestAddressApi.java:71)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddresses(AddressApiHelper.java:52)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddressList$0(HttpAddressService.java:51)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddressList(HttpAddressService.java:50)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testListException$1(HttpAddressServiceTest.java:92)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testListException(HttpAddressServiceTest.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error appending addresses
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.listAddresses(TestAddressApi.java:71)
+	at io.enmasse.controller.api.v1.AddressApiHelper.validateAddresses(AddressApiHelper.java:73)
+	at io.enmasse.controller.api.v1.AddressApiHelper.appendAddresses(AddressApiHelper.java:113)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$appendAddresses$3(HttpAddressService.java:84)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.appendAddresses(HttpAddressService.java:81)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.appendAddress(HttpAddressService.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testCreateException$7(HttpAddressServiceTest.java:148)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testCreateException(HttpAddressServiceTest.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.listAddresses(TestAddressApi.java:71)
+	at io.enmasse.controller.api.v1.AddressApiHelper.validateAddresses(AddressApiHelper.java:73)
+	at io.enmasse.controller.api.v1.AddressApiHelper.appendAddresses(AddressApiHelper.java:113)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$appendAddresses$3(HttpAddressService.java:84)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.appendAddresses(HttpAddressService.java:81)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.appendAddress(HttpAddressService.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testCreateException$7(HttpAddressServiceTest.java:148)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testCreateException(HttpAddressServiceTest.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error getting address
+javax.ws.rs.NotFoundException: Address space unknownspace not found
+	at io.enmasse.controller.api.v1.AddressApiHelper.lambda$getAddressSpace$1(AddressApiHelper.java:93)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddressSpace(AddressApiHelper.java:93)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddress(AddressApiHelper.java:97)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddress$2(HttpAddressService.java:60)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddress(HttpAddressService.java:59)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testGetUnknown$4(HttpAddressServiceTest.java:114)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testGetUnknown(HttpAddressServiceTest.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 404: Address space unknownspace not found
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error getting address
+javax.ws.rs.NotFoundException: Address doesnotexist not found
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notFoundException(OSBExceptions.java:31)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$null$1(HttpAddressService.java:61)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddress$2(HttpAddressService.java:61)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddress(HttpAddressService.java:59)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testGetUnknown$5(HttpAddressServiceTest.java:117)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testGetUnknown(HttpAddressServiceTest.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 404: Address doesnotexist not found
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error deleting address
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.AddressApiHelper.verifyAuthorized(AddressApiHelper.java:42)
+	at io.enmasse.controller.api.v1.AddressApiHelper.deleteAddress(AddressApiHelper.java:104)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$deleteAddress$6(HttpAddressService.java:154)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.deleteAddress(HttpAddressService.java:153)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testUnauthorized$10(HttpAddressServiceTest.java:171)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testUnauthorized(HttpAddressServiceTest.java:171)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error listing addresses
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.AddressApiHelper.verifyAuthorized(AddressApiHelper.java:42)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddresses(AddressApiHelper.java:51)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddressList$0(HttpAddressService.java:51)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddressList(HttpAddressService.java:50)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testUnauthorized$11(HttpAddressServiceTest.java:174)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testUnauthorized(HttpAddressServiceTest.java:174)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error getting address
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.AddressApiHelper.verifyAuthorized(AddressApiHelper.java:42)
+	at io.enmasse.controller.api.v1.AddressApiHelper.getAddress(AddressApiHelper.java:98)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$getAddress$2(HttpAddressService.java:60)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.getAddress(HttpAddressService.java:59)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testUnauthorized$12(HttpAddressServiceTest.java:177)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testUnauthorized(HttpAddressServiceTest.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error appending addresses
+javax.ws.rs.NotAuthorizedException: Not authorized
+	at io.enmasse.controller.api.osb.v2.OSBExceptions.notAuthorizedException(OSBExceptions.java:49)
+	at io.enmasse.controller.api.v1.AddressApiHelper.verifyAuthorized(AddressApiHelper.java:42)
+	at io.enmasse.controller.api.v1.AddressApiHelper.appendAddresses(AddressApiHelper.java:112)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$appendAddresses$3(HttpAddressService.java:84)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.appendAddresses(HttpAddressService.java:81)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.appendAddress(HttpAddressService.java:75)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testUnauthorized$13(HttpAddressServiceTest.java:188)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testUnauthorized(HttpAddressServiceTest.java:188)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 401: Not authorized
+2020-03-14 16:34:25 ERROR HttpAddressService:41 - Error deleting address
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.getAddressWithName(TestAddressApi.java:55)
+	at io.enmasse.controller.api.v1.AddressApiHelper.deleteAddress(AddressApiHelper.java:106)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$deleteAddress$6(HttpAddressService.java:154)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.deleteAddress(HttpAddressService.java:153)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testDeleteException$9(HttpAddressServiceTest.java:164)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testDeleteException(HttpAddressServiceTest.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+2020-03-14 16:34:25 WARN  DefaultExceptionMapper:46 - Returning server error HTTP status 500
+java.lang.RuntimeException: exception
+	at io.enmasse.k8s.api.TestAddressApi.getAddressWithName(TestAddressApi.java:55)
+	at io.enmasse.controller.api.v1.AddressApiHelper.deleteAddress(AddressApiHelper.java:106)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.lambda$deleteAddress$6(HttpAddressService.java:154)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.doRequest(HttpAddressService.java:39)
+	at io.enmasse.controller.api.v1.http.HttpAddressService.deleteAddress(HttpAddressService.java:153)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.lambda$testDeleteException$9(HttpAddressServiceTest.java:164)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.invoke(HttpAddressServiceTest.java:71)
+	at io.enmasse.controller.api.v1.http.HttpAddressServiceTest.testDeleteException(HttpAddressServiceTest.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:369)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:239)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:160)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in io.enmasse.controller.api.v1.http.HttpAddressServiceTest
+[INFO] Running io.enmasse.controller.api.v1.AddressApiHelperTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.275 s - in io.enmasse.controller.api.v1.AddressApiHelperTest
+[INFO] Running io.enmasse.controller.api.osb.v2.BindingServiceTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in io.enmasse.controller.api.osb.v2.BindingServiceTest
+[INFO] Running io.enmasse.controller.api.osb.v2.ProvisionServiceTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s - in io.enmasse.controller.api.osb.v2.ProvisionServiceTest
+[INFO] Running io.enmasse.controller.api.osb.v2.DeserializationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in io.enmasse.controller.api.osb.v2.DeserializationTest
+[INFO] Running io.enmasse.controller.api.osb.v2.SerializationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 s - in io.enmasse.controller.api.osb.v2.SerializationTest
+[INFO] Running io.enmasse.controller.api.osb.v2.CatalogServiceTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s - in io.enmasse.controller.api.osb.v2.CatalogServiceTest
+[INFO] Running io.enmasse.controller.ControllerTest
+2020-03-14 16:34:26 DEBUG InternalLoggerFactory:71 - Using SLF4J as the default logging framework
+2020-03-14 16:34:26 DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetection.level: simple
+2020-03-14 16:34:26 DEBUG ResourceLeakDetector:81 - -Dio.netty.leakDetection.targetRecords: 4
+2020-03-14 16:34:26 DEBUG MultithreadEventLoopGroup:76 - -Dio.netty.eventLoopThreads: 192
+2020-03-14 16:34:26 DEBUG PlatformDependent0:76 - -Dio.netty.noUnsafe: false
+2020-03-14 16:34:26 DEBUG PlatformDependent0:76 - Java version: 8
+2020-03-14 16:34:26 DEBUG PlatformDependent0:71 - sun.misc.Unsafe.theUnsafe: available
+2020-03-14 16:34:26 DEBUG PlatformDependent0:71 - sun.misc.Unsafe.copyMemory: available
+2020-03-14 16:34:26 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2020-03-14 16:34:26 DEBUG PlatformDependent0:71 - direct buffer constructor: available
+2020-03-14 16:34:26 DEBUG PlatformDependent0:76 - java.nio.Bits.unaligned: available, true
+2020-03-14 16:34:26 DEBUG PlatformDependent0:71 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2020-03-14 16:34:26 DEBUG PlatformDependent0:76 - java.nio.DirectByteBuffer.<init>(long, int): available
+2020-03-14 16:34:26 DEBUG PlatformDependent:76 - sun.misc.Unsafe: available
+2020-03-14 16:34:26 DEBUG PlatformDependent:76 - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2020-03-14 16:34:26 DEBUG PlatformDependent:76 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2020-03-14 16:34:26 DEBUG PlatformDependent:76 - -Dio.netty.noPreferDirect: false
+2020-03-14 16:34:26 DEBUG PlatformDependent:76 - -Dio.netty.maxDirectMemory: 28631367680 bytes
+2020-03-14 16:34:26 DEBUG PlatformDependent:76 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2020-03-14 16:34:26 DEBUG CleanerJava6:71 - java.nio.ByteBuffer.cleaner(): available
+2020-03-14 16:34:26 DEBUG NioEventLoop:76 - -Dio.netty.noKeySetOptimization: false
+2020-03-14 16:34:26 DEBUG NioEventLoop:76 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2020-03-14 16:34:26 DEBUG PlatformDependent:71 - org.jctools-core.MpscChunkedArrayQueue: available
+2020-03-14 16:34:27 DEBUG DefaultDnsServerAddressStreamProvider:76 - Default DNS servers: [/128.208.3.1:53, /128.208.2.1:53, /128.208.2.1:53, /128.208.4.1:53] (sun.net.dns.ResolverConfiguration)
+2020-03-14 16:34:27 DEBUG NetUtil:76 - -Djava.net.preferIPv4Stack: false
+2020-03-14 16:34:27 DEBUG NetUtil:76 - -Djava.net.preferIPv6Addresses: false
+2020-03-14 16:34:27 DEBUG NetUtil:86 - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo)
+2020-03-14 16:34:27 DEBUG NetUtil:81 - /proc/sys/net/core/somaxconn: 128
+2020-03-14 16:34:27 DEBUG Controller:102 - Check standard address spaces: [{name=myspace,namespace=enmasse-myspace,type=type1,plan=myplan}, {name=myspace2,namespace=enmasse-myspace2,type=type1,plan=myplan}]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.539 s - in io.enmasse.controller.ControllerTest
+[INFO] Running io.enmasse.controller.HTTPServerTest
+2020-03-14 16:34:27 DEBUG InternalThreadLocalMap:76 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2020-03-14 16:34:27 DEBUG InternalThreadLocalMap:76 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2020-03-14 16:34:28 DEBUG logging:26 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-14 16:34:28 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:28 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:28 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:28 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:28 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:28 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:28 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:28 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:28 INFO  HTTPServer:70 - Enabling RBAC for REST API
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.numHeapArenas: 192
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.numDirectArenas: 192
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.pageSize: 8192
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.maxOrder: 11
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.chunkSize: 16777216
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.tinyCacheSize: 512
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.smallCacheSize: 256
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.normalCacheSize: 64
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2020-03-14 16:34:28 DEBUG PooledByteBufAllocator:76 - -Dio.netty.allocator.useCacheForAllThreads: true
+2020-03-14 16:34:28 DEBUG DefaultChannelId:76 - -Dio.netty.processId: 11244 (auto-detected)
+2020-03-14 16:34:28 DEBUG DefaultChannelId:76 - -Dio.netty.machineId: 00:25:90:ff:fe:fa:83:19 (auto-detected)
+2020-03-14 16:34:28 DEBUG ByteBufUtil:76 - -Dio.netty.allocator.type: pooled
+2020-03-14 16:34:28 DEBUG ByteBufUtil:76 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2020-03-14 16:34:28 DEBUG ByteBufUtil:76 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2020-03-14 16:34:28 INFO  HTTPServer:150 - Started HTTP server. Listening on port 8080
+2020-03-14 16:34:28 DEBUG AbstractByteBuf:81 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2020-03-14 16:34:28 DEBUG ResourceLeakDetectorFactory:76 - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@a2f1c0b
+2020-03-14 16:34:28 DEBUG Recycler:76 - -Dio.netty.recycler.maxCapacityPerThread: 32768
+2020-03-14 16:34:28 DEBUG Recycler:76 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2020-03-14 16:34:28 DEBUG Recycler:76 - -Dio.netty.recycler.linkCapacity: 16
+2020-03-14 16:34:28 DEBUG Recycler:76 - -Dio.netty.recycler.ratio: 8
+2020-03-14 16:34:28 DEBUG i18n:255 - RESTEASY002315: PathInfo: /swagger.json
+2020-03-14 16:34:28 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:28 DEBUG i18n:1896 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.InputStreamProvider
+2020-03-14 16:34:28 DEBUG i18n:65 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.InputStreamProvider
+2020-03-14 16:34:28 DEBUG i18n:117 - Interceptor Context: org.jboss.resteasy.core.interception.jaxrs.ServerWriterInterceptorContext,  Method : proceed
+2020-03-14 16:34:28 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:28 DEBUG i18n:123 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.InputStreamProvider
+2020-03-14 16:34:28 DEBUG i18n:52 - Provider : org.jboss.resteasy.plugins.providers.InputStreamProvider,  Method : writeTo
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 3 thread-local buffer(s) from thread: vert.x-eventloop-thread-2
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 47 thread-local buffer(s) from thread: vert.x-eventloop-thread-0
+2020-03-14 16:34:29 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:29 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:29 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:29 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:29 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:29 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:29 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:29 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:29 INFO  HTTPServer:70 - Enabling RBAC for REST API
+2020-03-14 16:34:29 INFO  HTTPServer:150 - Started HTTP server. Listening on port 8080
+2020-03-14 16:34:29 DEBUG i18n:255 - RESTEASY002315: PathInfo: /apis/enmasse.io/v1/schema
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:1896 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:65 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:117 - Interceptor Context: org.jboss.resteasy.core.interception.jaxrs.ServerWriterInterceptorContext,  Method : proceed
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:123 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:138 - Provider : org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider,  Method : writeTo
+{"apiVersion":"enmasse.io/v1","kind":"Schema","spec":{"addressSpaceTypes":[{"name":"type1","description":"Test Type","addressTypes":[{"name":"anycast","description":"Test direct","plans":[{"name":"plan1","description":"plan1"}]},{"name":"queue","description":"Test queue","plans":[{"name":"pooled-inmemory","description":"pooled-inmemory"},{"name":"plan1","description":"plan1"}]}],"plans":[{"name":"myplan","description":"myplan"}]}]}}
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 2 thread-local buffer(s) from thread: vert.x-eventloop-thread-2
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 4 thread-local buffer(s) from thread: vert.x-eventloop-thread-0
+2020-03-14 16:34:29 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:29 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:29 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:29 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:29 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:29 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:29 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:29 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:29 INFO  HTTPServer:70 - Enabling RBAC for REST API
+2020-03-14 16:34:29 INFO  HTTPServer:150 - Started HTTP server. Listening on port 8080
+2020-03-14 16:34:29 DEBUG i18n:255 - RESTEASY002315: PathInfo: /apis/enmasse.io/v1/addresses/myinstance
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:1896 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:65 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:117 - Interceptor Context: org.jboss.resteasy.core.interception.jaxrs.ServerWriterInterceptorContext,  Method : proceed
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:123 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:138 - Provider : org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider,  Method : writeTo
+2020-03-14 16:34:29 DEBUG i18n:255 - RESTEASY002315: PathInfo: /apis/enmasse.io/v1/addresses/myinstance/addr1
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:1896 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:65 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:117 - Interceptor Context: org.jboss.resteasy.core.interception.jaxrs.ServerWriterInterceptorContext,  Method : proceed
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:123 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:138 - Provider : org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider,  Method : writeTo
+2020-03-14 16:34:29 DEBUG i18n:255 - RESTEASY002315: PathInfo: /apis/enmasse.io/v1/addresses/myinstance
+Mar 14, 2020 4:34:29 PM io.vertx.core.http.impl.HttpClientRequestImpl
+SEVERE: io.vertx.core.VertxException: Connection was closed
+2020-03-14 16:34:29 INFO  DefaultExceptionMapper:44 - Returning client error HTTP status 415: RESTEASY003065: Cannot consume content type
+Mar 14, 2020 4:34:29 PM io.vertx.core.http.impl.HttpClientRequestImpl
+SEVERE: io.vertx.core.VertxException: Connection was closed
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 5 thread-local buffer(s) from thread: vert.x-eventloop-thread-0
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 1 thread-local buffer(s) from thread: vert.x-eventloop-thread-3
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 2 thread-local buffer(s) from thread: vert.x-eventloop-thread-2
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 1 thread-local buffer(s) from thread: vert.x-eventloop-thread-4
+2020-03-14 16:34:29 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:29 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:29 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:29 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:29 DEBUG i18n:49 - Provider : org.jboss.resteasy.plugins.providers.DocumentProvider,  Method : DocumentProvider
+2020-03-14 16:34:29 DEBUG i18n:59 - RESTEASY002330: Unable to retrieve config: expandEntityReferences defaults to false
+2020-03-14 16:34:29 DEBUG i18n:68 - RESTEASY002335: Unable to retrieve config: enableSecureProcessingFeature defaults to true
+2020-03-14 16:34:29 DEBUG i18n:77 - RESTEASY002325: Unable to retrieve config: disableDTDs defaults to true
+2020-03-14 16:34:29 INFO  HTTPServer:70 - Enabling RBAC for REST API
+2020-03-14 16:34:29 INFO  HTTPServer:150 - Started HTTP server. Listening on port 8080
+2020-03-14 16:34:29 DEBUG i18n:255 - RESTEASY002315: PathInfo: /apis/enmasse.io/v1
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:1896 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:65 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:117 - Interceptor Context: org.jboss.resteasy.core.interception.jaxrs.ServerWriterInterceptorContext,  Method : proceed
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:123 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:138 - Provider : org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider,  Method : writeTo
+2020-03-14 16:34:29 DEBUG i18n:255 - RESTEASY002315: PathInfo: /apis/enmasse.io/v1/addressspaces
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:1896 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:65 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:117 - Interceptor Context: org.jboss.resteasy.core.interception.jaxrs.ServerWriterInterceptorContext,  Method : proceed
+2020-03-14 16:34:29 DEBUG i18n:1921 - MessageBodyWriter: org.jboss.resteasy.spi.ResteasyProviderFactory$SortedKey
+2020-03-14 16:34:29 DEBUG i18n:123 - MessageBodyWriter: org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider
+2020-03-14 16:34:29 DEBUG i18n:138 - Provider : org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider,  Method : writeTo
+{"apiVersion":"enmasse.io/v1","kind":"AddressSpaceList","items":[{"metadata":{"name":"myinstance","namespace":"myinstance","createdBy":null},"spec":{"type":"mytype","plan":"myplan","endpoints":[{"name":"foo","service":"messaging","certProvider":{"name":"secret","secretName":"mysecret"}}],"authenticationService":{"type":"none","details":{}}},"status":{"isReady":false}}]}
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 5 thread-local buffer(s) from thread: vert.x-eventloop-thread-0
+2020-03-14 16:34:29 DEBUG PoolThreadCache:81 - Freed 3 thread-local buffer(s) from thread: vert.x-eventloop-thread-2
+[WARNING] Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.861 s - in io.enmasse.controller.HTTPServerTest
+[INFO] Running io.enmasse.controller.auth.AuthInterceptorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s - in io.enmasse.controller.auth.AuthInterceptorTest
+[INFO] Running io.enmasse.controller.ControllerHelperTest
+2020-03-14 16:34:29 INFO  ControllerHelper:62 - Creating address space {name=myspace,namespace=mynamespace,type=type1,plan=myplan}
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in io.enmasse.controller.ControllerHelperTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 46, Failures: 0, Errors: 0, Skipped: 4
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 28.316 s
+[INFO] Finished at: 2020-03-14T16:34:30-07:00
+[INFO] Final Memory: 29M/1237M
+[INFO] ------------------------------------------------------------------------

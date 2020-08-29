@@ -1,0 +1,7 @@
+---
+BugID: OAK-1977
+Summary: ContentMirrorStoreStrategy should utilize path restriction when available
+Description: |-
+  Currently {{ContentStoreMirrorStrategy}} has a mirror of content path under {{:index}}. Yet, while {{query}} (and {{count}}) methods doesn't jump directly into restricted path.
+
+  This would be very useful for {{PropertyIndex}} where the queries can be optimized by supplying a path restriction along with an indexed property restriction (I don't know if queries with references would use paths so much though)

@@ -1,0 +1,9 @@
+---
+BugID: WICKET-5251
+Summary: Minified name resolves incorrectly if default resource reference is used
+Description: "In PackageResourceReference.\n\nWhen a default reference to a minified
+  resource is used (i.e. the resource wasn't mounted) the resource reference name
+  includes '.min'. \n\nWhen trying to resolve the minified name, another '.min' is
+  appended, resulting in the minified name resolving to 'html5.min.min.js'. \n\nAs
+  a result, the PackageResourceReference concludes that the resource was not minified,
+  and adds compression."

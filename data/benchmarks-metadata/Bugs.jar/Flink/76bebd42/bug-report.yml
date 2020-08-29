@@ -1,0 +1,39 @@
+---
+BugID: FLINK-2964
+Summary: MutableHashTable fails when spilling partitions without overflow segments
+Description: "When one performs a join operation with many and large records then
+  the join operation fails with the following exception when it tries to spill a {{HashPartition}}.\n\n{code}\njava.lang.RuntimeException:
+  Bug in Hybrid Hash Join: Request to spill a partition with less than two buffers.\n\tat
+  org.apache.flink.runtime.operators.hash.HashPartition.spillPartition(HashPartition.java:302)\n\tat
+  org.apache.flink.runtime.operators.hash.MutableHashTable.spillPartition(MutableHashTable.java:1108)\n\tat
+  org.apache.flink.runtime.operators.hash.MutableHashTable.nextSegment(MutableHashTable.java:1277)\n\tat
+  org.apache.flink.runtime.operators.hash.HashPartition$BuildSideBuffer.nextSegment(HashPartition.java:524)\n\tat
+  org.apache.flink.runtime.memory.AbstractPagedOutputView.advance(AbstractPagedOutputView.java:140)\n\tat
+  org.apache.flink.runtime.memory.AbstractPagedOutputView.write(AbstractPagedOutputView.java:201)\n\tat
+  org.apache.flink.runtime.memory.AbstractPagedOutputView.write(AbstractPagedOutputView.java:178)\n\tat
+  org.apache.flink.api.common.typeutils.base.array.BytePrimitiveArraySerializer.serialize(BytePrimitiveArraySerializer.java:74)\n\tat
+  org.apache.flink.api.common.typeutils.base.array.BytePrimitiveArraySerializer.serialize(BytePrimitiveArraySerializer.java:30)\n\tat
+  org.apache.flink.runtime.operators.hash.HashPartition.insertIntoBuildBuffer(HashPartition.java:257)\n\tat
+  org.apache.flink.runtime.operators.hash.MutableHashTable.insertIntoTable(MutableHashTable.java:856)\n\tat
+  org.apache.flink.runtime.operators.hash.MutableHashTable.buildInitialTable(MutableHashTable.java:685)\n\tat
+  org.apache.flink.runtime.operators.hash.MutableHashTable.open(MutableHashTable.java:443)\n\tat
+  org.apache.flink.runtime.operators.hash.HashTableTest.testSpillingWhenBuildingTableWithoutOverflow(HashTableTest.java:234)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)\n\tat
+  org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)\n\tat
+  org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)\n\tat
+  org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)\n\tat
+  org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)\n\tat
+  org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)\n\tat
+  org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\n\tat
+  org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\n\tat
+  org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\n\tat
+  org.junit.runner.JUnitCore.run(JUnitCore.java:160)\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:78)\n\tat
+  com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:212)\n\tat
+  com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:68)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native
+  Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat
+  com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)\n{code}\n\nThe
+  reason is that the {{HashPartition}} does not include the number of used memory
+  segments by the {{BuildSideBuffer}} when it counts the currently occupied memory
+  segments."

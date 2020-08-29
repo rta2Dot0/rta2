@@ -1,0 +1,13 @@
+---
+BugID: CAMEL-7568
+Summary: OnComplete does not  work on transactioned route after rollback
+Description: "Example:\n{code:title=Route Sample|borderStyle=solid}\nthis.from(\"servlet:///test\").routeId(\"CamelTestRoute\")
+  \n   .onCompletion() \n      .bean(this.logCompletionRoute) \n   .end() \n   .onException(Exception.class)
+  \n      .log(LoggingLevel.ERROR, this.log, \"Error on processing message. Sending
+  Rollback command!\") \n      .log(LoggingLevel.ERROR, this.log, \"${exception.stacktrace}\")
+  \n      .rollback()\n      .handled(true) \n   .end() \n   .transacted(RouteTransactionConfiguration.PROPAGATION_REQUIRED)
+  \n   .process(new Processor() { \n                @Override \n                public
+  void process(Exchange exchange) throws Exception { \n                    throw new
+  Exception(); \n                }}); \n{code}\n\nIn this sample, the OnCompletion
+  bean never is executed. But, if I remove the \"rollback()\" call, it is executed
+  properly.\n\nthanks,"

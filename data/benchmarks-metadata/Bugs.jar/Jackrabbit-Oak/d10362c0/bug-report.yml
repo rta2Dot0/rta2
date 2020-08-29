@@ -1,0 +1,29 @@
+---
+BugID: OAK-3110
+Summary: AsyncIndexer fails due to FileNotFoundException thrown by CopyOnWrite logic
+Description: "At times the CopyOnWrite reports following exception\n\n{noformat}\n15.07.2015
+  14:20:35.930 *WARN* [pool-58-thread-1] org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate
+  The async index update failed\norg.apache.jackrabbit.oak.api.CommitFailedException:
+  OakLucene0004: Failed to close the Lucene index\n\tat org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexEditor.leave(LuceneIndexEditor.java:204)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.IndexUpdate.leave(IndexUpdate.java:219)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.VisibleEditor.leave(VisibleEditor.java:63)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.EditorDiff.process(EditorDiff.java:56)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate.updateIndex(AsyncIndexUpdate.java:366)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate.run(AsyncIndexUpdate.java:311)\n\tat
+  org.apache.sling.commons.scheduler.impl.QuartzJobExecutor.execute(QuartzJobExecutor.java:105)\n\tat
+  org.quartz.core.JobRunShell.run(JobRunShell.java:207)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)\n\tat
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)\n\tat
+  java.lang.Thread.run(Thread.java:745)\nCaused by: java.io.FileNotFoundException:
+  _2s7.fdt\n\tat org.apache.lucene.store.FSDirectory.fileLength(FSDirectory.java:261)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier$CopyOnWriteDirectory$COWLocalFileReference.fileLength(IndexCopier.java:837)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier$CopyOnWriteDirectory.fileLength(IndexCopier.java:607)\n\tat
+  org.apache.lucene.index.SegmentCommitInfo.sizeInBytes(SegmentCommitInfo.java:141)\n\tat
+  org.apache.lucene.index.DocumentsWriterPerThread.sealFlushedSegment(DocumentsWriterPerThread.java:529)\n\tat
+  org.apache.lucene.index.DocumentsWriterPerThread.flush(DocumentsWriterPerThread.java:502)\n\tat
+  org.apache.lucene.index.DocumentsWriter.doFlush(DocumentsWriter.java:508)\n\tat
+  org.apache.lucene.index.DocumentsWriter.flushAllThreads(DocumentsWriter.java:618)\n\tat
+  org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3147)\n\tat org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3123)\n\tat
+  org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:988)\n\tat org.apache.lucene.index.IndexWriter.close(IndexWriter.java:932)\n\tat
+  org.apache.lucene.index.IndexWriter.close(IndexWriter.java:894)\n\tat org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexEditorContext.closeWriter(LuceneIndexEditorContext.java:192)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LuceneIndexEditor.leave(LuceneIndexEditor.java:202)\n\t...
+  10 common frames omitted\n{noformat}"

@@ -1,0 +1,9 @@
+---
+BugID: LOG4J2-447
+Summary: XMLLayout does not include marker name
+Description: |-
+  Log4j2 supports the notion of markers, but this is not represented by the XMLLayout.
+
+  For example, using SerializedLayout with SocketAppender will send marker information, but using XMLLayout with SocketAppender will not.
+
+  It would be very helpful to have just the name of the leaf marker sent with the log event, not the corresponding marker hierarchy.

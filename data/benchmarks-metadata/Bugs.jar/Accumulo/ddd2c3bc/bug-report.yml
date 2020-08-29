@@ -1,0 +1,5 @@
+---
+BugID: ACCUMULO-3143
+Summary: InputTableConfig missing isOfflineScan field in Serializer
+Description: InputTableConfig write(DataOutput dataOutput) forgets to write out the
+  isOfflineScan field, which makes it always false when it gets unserialized.

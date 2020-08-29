@@ -1,0 +1,2641 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.accumulo:accumulo-core:jar:1.4.5-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.accumulo:cloudtrace:jar -> duplicate declaration of version (?) @ org.apache.accumulo:accumulo-core:[unknown-version], /tmp/Bugs.jar_Accumulo_28294266_java-7/src/core/pom.xml, line 174, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.accumulo:accumulo-server:jar:1.4.5-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.mortbay.jetty:jetty:jar -> duplicate declaration of version (?) @ org.apache.accumulo:accumulo-server:[unknown-version], /tmp/Bugs.jar_Accumulo_28294266_java-7/src/server/pom.xml, line 107, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.accumulo:accumulo:pom:1.4.5-SNAPSHOT
+[WARNING] The expression ${artifactId} is deprecated. Please use ${project.artifactId} instead.
+[WARNING] The expression ${artifactId} is deprecated. Please use ${project.artifactId} instead.
+[WARNING] The expression ${artifactId} is deprecated. Please use ${project.artifactId} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] accumulo
+[INFO] cloudtrace
+[INFO] accumulo-start
+[INFO] accumulo-core
+[INFO] accumulo-server
+[INFO] accumulo-examples
+[INFO] examples-simple
+[INFO] accumulo-minicluster
+[INFO] Proxy
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building accumulo 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.0.1/enforcer-api-1.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.0.1/enforcer-api-1.0.1.pom (3.2 kB at 4.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.0.1/enforcer-rules-1.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.0.1/enforcer-rules-1.0.1.pom (4.0 kB at 3.2 kB/s)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.1.0.201310021548-r/org.eclipse.jgit-3.1.0.201310021548-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.1.0.201310021548-r/org.eclipse.jgit-3.1.0.201310021548-r.pom (6.1 kB at 203 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.1.0.201310021548-r/org.eclipse.jgit-parent-3.1.0.201310021548-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.1.0.201310021548-r/org.eclipse.jgit-parent-3.1.0.201310021548-r.pom (20 kB at 52 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.pom (3.4 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.pom (4.0 kB at 2.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.pom (820 B at 634 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-mockito/1.5.1/powermock-api-mockito-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-mockito/1.5.1/powermock-api-mockito-1.5.1.pom (1.2 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api/1.5.1/powermock-api-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api/1.5.1/powermock-api-1.5.1.pom (805 B at 739 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock/1.5.1/powermock-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock/1.5.1/powermock-1.5.1.pom (10.0 kB at 7.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.pom (1.0 kB at 792 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.1/powermock-api-support-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.1/powermock-api-support-1.5.1.pom (1.3 kB at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.1/powermock-core-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.1/powermock-core-1.5.1.pom (1.9 kB at 6.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.1/powermock-reflect-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.1/powermock-reflect-1.5.1.pom (1.0 kB at 61 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.0-GA/javassist-3.18.0-GA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.0-GA/javassist-3.18.0-GA.pom (9.2 kB at 612 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4/1.5.1/powermock-module-junit4-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4/1.5.1/powermock-module-junit4-1.5.1.pom (1.3 kB at 192 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-modules/1.5.1/powermock-modules-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-modules/1.5.1/powermock-modules-1.5.1.pom (798 B at 8.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.1/powermock-module-junit4-common-1.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.1/powermock-module-junit4-common-1.5.1.pom (1.1 kB at 142 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.1/powermock-api-support-1.5.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.1/powermock-core-1.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-api-support/1.5.1/powermock-api-support-1.5.1.jar (19 kB at 501 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.0-GA/javassist-3.18.0-GA.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.5.6/JavaEWAH-0.5.6.jar (54 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.1/powermock-reflect-1.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.46/jsch-0.1.46.jar (226 kB at 4.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.1/powermock-module-junit4-common-1.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-module-junit4-common/1.5.1/powermock-module-junit4-common-1.5.1.jar (13 kB at 243 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/javassist/javassist/3.18.0-GA/javassist-3.18.0-GA.jar (714 kB at 9.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar (1.6 MB at 13 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-core/1.5.1/powermock-core-1.5.1.jar (84 kB at 405 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/powermock/powermock-reflect/1.5.1/powermock-reflect-1.5.1.jar (43 kB at 113 kB/s)
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom (6.0 kB at 999 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0/maven-common-artifact-filters-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0/maven-common-artifact-filters-1.0.pom (2.0 kB at 336 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-downloader/1.1/maven-downloader-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-downloader/1.1/maven-downloader-1.1.pom (1.8 kB at 303 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom (2.2 kB at 316 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom (10.0 kB at 476 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.pom (5.8 kB at 824 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-5/plexus-resources-1.0-alpha-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-5/plexus-resources-1.0-alpha-5.pom (1.4 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (5.6 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/velocity/velocity/1.5/velocity-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/velocity/velocity/1.5/velocity-1.5.pom (7.8 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.4/velocity-1.6.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.4/velocity-1.6.4.pom (11 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/velocity/velocity/1.5/velocity-1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/velocity/velocity/1.5/velocity-1.5.jar (392 kB at 14 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.1/commons-collections-3.1.jar (559 kB at 17 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar (12 kB at 3.4 kB/s)
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2:exec (user-manual) @ accumulo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.0.1/commons-exec-1.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.0.1/commons-exec-1.0.1.pom (7.2 kB at 721 kB/s)
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
+ restricted \write18 enabled.
+entering extended mode
+(./accumulo_user_manual.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+No file accumulo_user_manual.aux.
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+
+LaTeX Warning: No \author given.
+
+[1{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning 
+(ext4): destination with the same identifier (name{page.1}) has been already us
+ed, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 \include{chapters/introduction}
+                                     [1] (./chapters/introduction.tex
+Chapter 1.
+) [2] (./chapters/design.tex
+Chapter 2.
+[3] [4] <images/data_distribution.png, id=41, 811.03pt x 583.17876pt>
+<use images/data_distribution.png> [5 <./images/data_distribution.png>]
+<images/failure_handling.png, id=50, 813.0375pt x 624.3325pt>
+<use images/failure_handling.png> [6]) [7 <./images/failure_handling.png (PNG c
+opy)>] (./chapters/shell.tex
+Chapter 3.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd) [8] [9]) [10]
+(./chapters/clients.tex
+Chapter 4.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [11] [12] [13]
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 171--173
+\T1/txtt/m/n/10.95 src/examples/src/main/java/org/apache/accumulo/examples/isol
+ation/InterferenceTest.java 
+[14] [15] [16]) [17] (./chapters/development_clients.tex
+Chapter 5.
+[18]
+Overfull \hbox (5.06117pt too wide) in paragraph at lines 104--104
+[]\T1/txtt/m/n/10 File tempDirectory = // JUnit and Guava supply mechanisms for
+ creating temp directories[] 
+
+Overfull \hbox (52.31104pt too wide) in paragraph at lines 113--113
+[]\T1/txtt/m/n/10 Instance instance = new ZooKeeperInstance(accumulo.getInstanc
+eName(), accumulo.getZooKeepers());[] 
+) [19] (./chapters/table_configuration.tex
+Chapter 6.
+[20]
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.1=com.test.ExampleConstraint[] 
+
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.2=com.test.AnotherConstraint[] 
+[21]
+Overfull \hbox (126.66458pt too wide) in paragraph at lines 111--114
+\T1/cmr/m/n/10.95 New con-straints can be cre-ated by writ-ing a Java class tha
+t im-ple-ments the org.apache.accumulo.core.constraints.Constraint
+[22] [23] [24]
+Overfull \hbox (36.56108pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 user@myinstance filtertest> setiter -t filtertest -scan -minc
+ -majc -p 10 -n myfilter -ageoff[] 
+
+Overfull \hbox (477.5598pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter negate, default false keeps k/v that pass accept method, true
+ rejects k/v that pass accept method:[] 
+
+Overfull \hbox (162.56071pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter ttl, time to live (milliseconds): 3000[] 
+
+Overfull \hbox (514.3097pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter currentTime, if set, use the given value as the absolute time
+ in milliseconds as the current time of day:[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+[25]
+Overfull \hbox (89.14725pt too wide) in paragraph at lines 355--357
+\T1/cmr/m/n/10.95 accumulo/src/examples/simple/main/java/org/apache/accumulo/ex
+amples/simple/combiner/StatsCombiner.java 
+[26]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 376--376
+[]\T1/txtt/m/n/10.95 table.cache.block.enable: Determines whether file (data) b
+lock cache is enabled.[] 
+[27] [28] [29] [30] [31]) [32] (./chapters/table_design.tex
+Chapter 7.
+[33] [34] [35] [36] [37] [38]) [39] (./chapters/high_speed_ingest.tex
+Chapter 8.
+[40] [41]) [42] (./chapters/analytics.tex
+Chapter 9.
+[43] [44] [45]) [46] (./chapters/security.tex
+Chapter 10.
+[47] [48]
+Overfull \hbox (31.3111pt too wide) in paragraph at lines 124--124
+[]\T1/txtt/m/n/10 config -t table -s table.constraint.1=org.apache.accumulo.cor
+e.security.VisibilityConstraint[] 
+[49]) [50] (./chapters/administration.tex
+Chapter 11.
+[51]
+Overfull \hbox (3.49286pt too wide) in paragraph at lines 56--63
+\T1/cmr/m/n/10.95 Accumulo re-quires HDFS and ZooKeeper to be con-fig-ured and 
+run-ning be-fore start-ing. Password-
+[52] [53] [54]
+Overfull \hbox (63.97098pt too wide) in paragraph at lines 195--197
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ add and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/start-here.sh\T1/cmr/m/n/10.
+95 . 
+
+Overfull \hbox (74.25185pt too wide) in paragraph at lines 211--213
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ re-move and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/stop-here.sh\T1/cmr/m/n/
+10.95 . 
+[55]) [56] (./appendices/shell_commands.tex
+Appendix A.
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 37--37
+[]    \T1/txtt/m/n/10.95 usage: addsplits [<split> <split> ] [-?] [-b64] [-sf <
+filename>] [-t <tableName>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 41--41
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to add to[] 
+[57]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 71--71
+[]    \T1/txtt/m/n/10.95 usage: clonetable <current table name> <new table name
+> [-?] [-e <arg>] [-nf] [-s[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 75--75
+[]      \T1/txtt/m/n/10.95 -e,--exclude <arg>  properties that should not be co
+pied from source table.[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 78--78
+[]      \T1/txtt/m/n/10.95 -s,--set <arg>  set initial properties before the ta
+ble comes online. Expects[] 
+[58]
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 89--89
+[]    \T1/txtt/m/n/10.95 usage: compact [-?] [-b <arg>] [-e <arg>] [-nf] [-p <p
+attern> | -t <tableName>][] 
+
+Overfull \hbox (19.70865pt too wide) in paragraph at lines 91--91
+[]    \T1/txtt/m/n/10.95 description: sets all tablets for a table to major com
+pact as soon as possible[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 103--103
+[]    \T1/txtt/m/n/10.95 usage: config [-?] [-d <property> | -f <string> | -s <
+property=value>]  [-np]  [-t[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 116--116
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>]=<aggrega
+tion class>>] [-b64] [-cc[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 117--117
+[]              \T1/txtt/m/n/10.95 <table>] [-cs <table> | -sf <filename>] [-ev
+c] [-f <className>] [-ndi][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 119--119
+[]    \T1/txtt/m/n/10.95 description: creates a new table, with optional aggreg
+ators and optionally pre-split[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 121--121
+[]      \T1/txtt/m/n/10.95 -a,--aggregator <<columnfamily>[:<columnqualifier>]=
+<aggregation class>>  comma[] 
+[59]
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 126--126
+[]      \T1/txtt/m/n/10.95 -evc,--enable-visibility-constraint  prevents users 
+from writing data they can not[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 127--127
+[]              \T1/txtt/m/n/10.95 read.  When enabling this may want to consid
+er disabling bulk import and[] 
+
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 130--130
+[]      \T1/txtt/m/n/10.95 -ndi,--no-default-iterators  prevents creation of th
+e normal default iterator set[] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 131--131
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to create a[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 141--141
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 155--155
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[60]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 172--172
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 179--179
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 183--183
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 186--186
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 194--194
+[]    \T1/txtt/m/n/10.95 description: delete a range of rows in a table.  Note 
+that rows matching the start[] 
+[61]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 205--205
+[]    \T1/txtt/m/n/10.95 description: deletes a table-specific scan iterator so
+ it is no longer used during[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 241--241
+[]    \T1/txtt/m/n/10.95 description: Prints how much space is used by files re
+ferenced by a table.  When[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 242--242
+[]              \T1/txtt/m/n/10.95 multiple tables are specified it prints how 
+much space is used by files[] 
+[62]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 250--250
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 251--251
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 253--253
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value, in[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 254--254
+[]              \T1/txtt/m/n/10.95 parallel, on the server side (using a java M
+atcher, so put .* before and[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 259--259
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 263--263
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 267--267
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[63]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 287--287
+[]    \T1/txtt/m/n/10.95 usage: flush [-?] [-b <arg>] [-e <arg>] [-p <pattern> 
+| -t <tableName>]  [-w][] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 301--301
+[]      \T1/txtt/m/n/10.95 -f,--formatter <className>  fully qualified name of 
+the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 323--323
+[]    \T1/txtt/m/n/10.95 description: retrieves the current split points for ta
+blets in the current table[] 
+[64]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 333--333
+[]    \T1/txtt/m/n/10.95 usage: grant <permission> [-?] -p <pattern> | -s | -t 
+<table>  -u <username>[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 344--344
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 345--345
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 347--347
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value in a table[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 348--348
+[]              \T1/txtt/m/n/10.95 for a substring (not a regular expression), 
+in parallel, on the server[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 353--353
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 357--357
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 361--361
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[65]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 384--384
+[]    \T1/txtt/m/n/10.95 description: bulk imports an entire directory of data 
+files to the current table.[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 397--397
+[]    \T1/txtt/m/n/10.95 usage: insert <row> <colfamily> <colqualifier> <value>
+ [-?] [-l <expression>] [-t[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 401--401
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[66]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 419--419
+[]              \T1/txtt/m/n/10.95 accumulo.core.client.admin.ActiveScan javado
+c for more information about[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 423--423
+[]      \T1/txtt/m/n/10.95 -ts,--tabletServer <tablet server>  list scans for a
+ specific tablet server[] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 427--427
+[]    \T1/txtt/m/n/10.95 usage: masterstate is deprecated, use the command line
+ utility instead [-?][] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 438--438
+[]      \T1/txtt/m/n/10.95 -be,--begin-exclusive  make start row exclusive, by 
+defaults it inclusive[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 441--441
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[67]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 452--452
+[]      \T1/txtt/m/n/10.95 -f,--force  merge small tablets to large tablets, ev
+en if it goes over the given[] 
+[68]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 512--512
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 519--519
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 523--523
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+[69]
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 526--526
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 538--538
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 544--544
+[]    \T1/txtt/m/n/10.95 usage: selectrow <row> [-?] [-np] [-s <comma-separated
+-authorizations>] [-st] [-t[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 549--549
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[70]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 565--565
+[]    \T1/txtt/m/n/10.95 usage: setgroups <group>=<col fam>,<col fam> <group>=<
+col fam>,<col fam> [-?][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 567--567
+[]    \T1/txtt/m/n/10.95 description: sets the locality groups for a given tabl
+e (for binary or commas, use[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 574--574
+[]    \T1/txtt/m/n/10.95 usage: setiter [-?] -ageoff | -agg | -class <name> | -
+regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 586--586
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 593--593
+[]    \T1/txtt/m/n/10.95 usage: setscaniter [-?] -ageoff | -agg | -class <name>
+ | -regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 603--603
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+[71] [72]) [73] (./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux))
+
+Package rerunfilecheck Warning: File `accumulo_user_manual.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/c
+m-super/sfti1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
+t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
+
+Output written on accumulo_user_manual.pdf (74 pages, 446825 bytes).
+Transcript written on accumulo_user_manual.log.
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
+ restricted \write18 enabled.
+entering extended mode
+(./accumulo_user_manual.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux))
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./accumulo_user_manual.out) (./accumulo_user_manual.out)
+
+LaTeX Warning: No \author given.
+
+[1{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(./accumulo_user_manual.tocpdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 ...}{\numberline {4.5}Proxy}{15}{section.4.5}
+                                                   [1] [2] [3]) [4]
+(./chapters/introduction.tex
+Chapter 1.
+) [5] (./chapters/design.tex
+Chapter 2.
+[6] [7] <images/data_distribution.png, id=554, 811.03pt x 583.17876pt>
+<use images/data_distribution.png> [8 <./images/data_distribution.png>]
+<images/failure_handling.png, id=561, 813.0375pt x 624.3325pt>
+<use images/failure_handling.png> [9]) [10 <./images/failure_handling.png (PNG 
+copy)>] (./chapters/shell.tex
+Chapter 3.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd) [11] [12]) [13]
+(./chapters/clients.tex
+Chapter 4.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [14] [15] [16]
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 171--173
+\T1/txtt/m/n/10.95 src/examples/src/main/java/org/apache/accumulo/examples/isol
+ation/InterferenceTest.java 
+[17] [18] [19]) [20] (./chapters/development_clients.tex
+Chapter 5.
+[21]
+Overfull \hbox (5.06117pt too wide) in paragraph at lines 104--104
+[]\T1/txtt/m/n/10 File tempDirectory = // JUnit and Guava supply mechanisms for
+ creating temp directories[] 
+
+Overfull \hbox (52.31104pt too wide) in paragraph at lines 113--113
+[]\T1/txtt/m/n/10 Instance instance = new ZooKeeperInstance(accumulo.getInstanc
+eName(), accumulo.getZooKeepers());[] 
+) [22] (./chapters/table_configuration.tex
+Chapter 6.
+[23]
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.1=com.test.ExampleConstraint[] 
+
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.2=com.test.AnotherConstraint[] 
+[24]
+Overfull \hbox (126.66458pt too wide) in paragraph at lines 111--114
+\T1/cmr/m/n/10.95 New con-straints can be cre-ated by writ-ing a Java class tha
+t im-ple-ments the org.apache.accumulo.core.constraints.Constraint
+[25] [26] [27]
+Overfull \hbox (36.56108pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 user@myinstance filtertest> setiter -t filtertest -scan -minc
+ -majc -p 10 -n myfilter -ageoff[] 
+
+Overfull \hbox (477.5598pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter negate, default false keeps k/v that pass accept method, true
+ rejects k/v that pass accept method:[] 
+
+Overfull \hbox (162.56071pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter ttl, time to live (milliseconds): 3000[] 
+
+Overfull \hbox (514.3097pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter currentTime, if set, use the given value as the absolute time
+ in milliseconds as the current time of day:[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+[28]
+Overfull \hbox (89.14725pt too wide) in paragraph at lines 355--357
+\T1/cmr/m/n/10.95 accumulo/src/examples/simple/main/java/org/apache/accumulo/ex
+amples/simple/combiner/StatsCombiner.java 
+[29]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 376--376
+[]\T1/txtt/m/n/10.95 table.cache.block.enable: Determines whether file (data) b
+lock cache is enabled.[] 
+[30] [31] [32] [33] [34]) [35] (./chapters/table_design.tex
+Chapter 7.
+[36] [37] [38] [39] [40] [41]) [42] (./chapters/high_speed_ingest.tex
+Chapter 8.
+[43] [44]) [45] (./chapters/analytics.tex
+Chapter 9.
+[46] [47] [48]) [49] (./chapters/security.tex
+Chapter 10.
+[50] [51]
+Overfull \hbox (31.3111pt too wide) in paragraph at lines 124--124
+[]\T1/txtt/m/n/10 config -t table -s table.constraint.1=org.apache.accumulo.cor
+e.security.VisibilityConstraint[] 
+[52]) [53] (./chapters/administration.tex
+Chapter 11.
+[54]
+Overfull \hbox (3.49286pt too wide) in paragraph at lines 56--63
+\T1/cmr/m/n/10.95 Accumulo re-quires HDFS and ZooKeeper to be con-fig-ured and 
+run-ning be-fore start-ing. Password-
+[55] [56] [57]
+Overfull \hbox (63.97098pt too wide) in paragraph at lines 195--197
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ add and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/start-here.sh\T1/cmr/m/n/10.
+95 . 
+
+Overfull \hbox (74.25185pt too wide) in paragraph at lines 211--213
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ re-move and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/stop-here.sh\T1/cmr/m/n/
+10.95 . 
+[58]) [59] (./appendices/shell_commands.tex
+Appendix A.
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 37--37
+[]    \T1/txtt/m/n/10.95 usage: addsplits [<split> <split> ] [-?] [-b64] [-sf <
+filename>] [-t <tableName>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 41--41
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to add to[] 
+[60]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 71--71
+[]    \T1/txtt/m/n/10.95 usage: clonetable <current table name> <new table name
+> [-?] [-e <arg>] [-nf] [-s[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 75--75
+[]      \T1/txtt/m/n/10.95 -e,--exclude <arg>  properties that should not be co
+pied from source table.[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 78--78
+[]      \T1/txtt/m/n/10.95 -s,--set <arg>  set initial properties before the ta
+ble comes online. Expects[] 
+[61]
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 89--89
+[]    \T1/txtt/m/n/10.95 usage: compact [-?] [-b <arg>] [-e <arg>] [-nf] [-p <p
+attern> | -t <tableName>][] 
+
+Overfull \hbox (19.70865pt too wide) in paragraph at lines 91--91
+[]    \T1/txtt/m/n/10.95 description: sets all tablets for a table to major com
+pact as soon as possible[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 103--103
+[]    \T1/txtt/m/n/10.95 usage: config [-?] [-d <property> | -f <string> | -s <
+property=value>]  [-np]  [-t[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 116--116
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>]=<aggrega
+tion class>>] [-b64] [-cc[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 117--117
+[]              \T1/txtt/m/n/10.95 <table>] [-cs <table> | -sf <filename>] [-ev
+c] [-f <className>] [-ndi][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 119--119
+[]    \T1/txtt/m/n/10.95 description: creates a new table, with optional aggreg
+ators and optionally pre-split[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 121--121
+[]      \T1/txtt/m/n/10.95 -a,--aggregator <<columnfamily>[:<columnqualifier>]=
+<aggregation class>>  comma[] 
+[62]
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 126--126
+[]      \T1/txtt/m/n/10.95 -evc,--enable-visibility-constraint  prevents users 
+from writing data they can not[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 127--127
+[]              \T1/txtt/m/n/10.95 read.  When enabling this may want to consid
+er disabling bulk import and[] 
+
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 130--130
+[]      \T1/txtt/m/n/10.95 -ndi,--no-default-iterators  prevents creation of th
+e normal default iterator set[] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 131--131
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to create a[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 141--141
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 155--155
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[63]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 172--172
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 179--179
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 183--183
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 186--186
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 194--194
+[]    \T1/txtt/m/n/10.95 description: delete a range of rows in a table.  Note 
+that rows matching the start[] 
+[64]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 205--205
+[]    \T1/txtt/m/n/10.95 description: deletes a table-specific scan iterator so
+ it is no longer used during[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 241--241
+[]    \T1/txtt/m/n/10.95 description: Prints how much space is used by files re
+ferenced by a table.  When[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 242--242
+[]              \T1/txtt/m/n/10.95 multiple tables are specified it prints how 
+much space is used by files[] 
+[65]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 250--250
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 251--251
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 253--253
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value, in[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 254--254
+[]              \T1/txtt/m/n/10.95 parallel, on the server side (using a java M
+atcher, so put .* before and[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 259--259
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 263--263
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 267--267
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[66]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 287--287
+[]    \T1/txtt/m/n/10.95 usage: flush [-?] [-b <arg>] [-e <arg>] [-p <pattern> 
+| -t <tableName>]  [-w][] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 301--301
+[]      \T1/txtt/m/n/10.95 -f,--formatter <className>  fully qualified name of 
+the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 323--323
+[]    \T1/txtt/m/n/10.95 description: retrieves the current split points for ta
+blets in the current table[] 
+[67]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 333--333
+[]    \T1/txtt/m/n/10.95 usage: grant <permission> [-?] -p <pattern> | -s | -t 
+<table>  -u <username>[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 344--344
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 345--345
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 347--347
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value in a table[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 348--348
+[]              \T1/txtt/m/n/10.95 for a substring (not a regular expression), 
+in parallel, on the server[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 353--353
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 357--357
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 361--361
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[68]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 384--384
+[]    \T1/txtt/m/n/10.95 description: bulk imports an entire directory of data 
+files to the current table.[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 397--397
+[]    \T1/txtt/m/n/10.95 usage: insert <row> <colfamily> <colqualifier> <value>
+ [-?] [-l <expression>] [-t[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 401--401
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[69]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 419--419
+[]              \T1/txtt/m/n/10.95 accumulo.core.client.admin.ActiveScan javado
+c for more information about[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 423--423
+[]      \T1/txtt/m/n/10.95 -ts,--tabletServer <tablet server>  list scans for a
+ specific tablet server[] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 427--427
+[]    \T1/txtt/m/n/10.95 usage: masterstate is deprecated, use the command line
+ utility instead [-?][] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 438--438
+[]      \T1/txtt/m/n/10.95 -be,--begin-exclusive  make start row exclusive, by 
+defaults it inclusive[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 441--441
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[70]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 452--452
+[]      \T1/txtt/m/n/10.95 -f,--force  merge small tablets to large tablets, ev
+en if it goes over the given[] 
+[71]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 512--512
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 519--519
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 523--523
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+[72]
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 526--526
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 538--538
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 544--544
+[]    \T1/txtt/m/n/10.95 usage: selectrow <row> [-?] [-np] [-s <comma-separated
+-authorizations>] [-st] [-t[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 549--549
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[73]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 565--565
+[]    \T1/txtt/m/n/10.95 usage: setgroups <group>=<col fam>,<col fam> <group>=<
+col fam>,<col fam> [-?][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 567--567
+[]    \T1/txtt/m/n/10.95 description: sets the locality groups for a given tabl
+e (for binary or commas, use[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 574--574
+[]    \T1/txtt/m/n/10.95 usage: setiter [-?] -ageoff | -agg | -class <name> | -
+regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 586--586
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 593--593
+[]    \T1/txtt/m/n/10.95 usage: setscaniter [-?] -ageoff | -agg | -class <name>
+ | -regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 603--603
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+[74] [75]) [76] (./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux)) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/c
+m-super/sfti1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
+t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
+
+Output written on accumulo_user_manual.pdf (77 pages, 466754 bytes).
+Transcript written on accumulo_user_manual.log.
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
+ restricted \write18 enabled.
+entering extended mode
+(./accumulo_user_manual.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux))
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./accumulo_user_manual.out) (./accumulo_user_manual.out)
+
+LaTeX Warning: No \author given.
+
+[1{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(./accumulo_user_manual.tocpdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 ...}{\numberline {4.5}Proxy}{18}{section.4.5}
+                                                   [1] [2] [3]) [4]
+(./chapters/introduction.tex
+Chapter 1.
+) [5] (./chapters/design.tex
+Chapter 2.
+[6] [7] <images/data_distribution.png, id=554, 811.03pt x 583.17876pt>
+<use images/data_distribution.png> [8 <./images/data_distribution.png>]
+<images/failure_handling.png, id=561, 813.0375pt x 624.3325pt>
+<use images/failure_handling.png> [9]) [10 <./images/failure_handling.png (PNG 
+copy)>] (./chapters/shell.tex
+Chapter 3.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd) [11] [12]) [13]
+(./chapters/clients.tex
+Chapter 4.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [14] [15] [16]
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 171--173
+\T1/txtt/m/n/10.95 src/examples/src/main/java/org/apache/accumulo/examples/isol
+ation/InterferenceTest.java 
+[17] [18] [19]) [20] (./chapters/development_clients.tex
+Chapter 5.
+[21]
+Overfull \hbox (5.06117pt too wide) in paragraph at lines 104--104
+[]\T1/txtt/m/n/10 File tempDirectory = // JUnit and Guava supply mechanisms for
+ creating temp directories[] 
+
+Overfull \hbox (52.31104pt too wide) in paragraph at lines 113--113
+[]\T1/txtt/m/n/10 Instance instance = new ZooKeeperInstance(accumulo.getInstanc
+eName(), accumulo.getZooKeepers());[] 
+) [22] (./chapters/table_configuration.tex
+Chapter 6.
+[23]
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.1=com.test.ExampleConstraint[] 
+
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.2=com.test.AnotherConstraint[] 
+[24]
+Overfull \hbox (126.66458pt too wide) in paragraph at lines 111--114
+\T1/cmr/m/n/10.95 New con-straints can be cre-ated by writ-ing a Java class tha
+t im-ple-ments the org.apache.accumulo.core.constraints.Constraint
+[25] [26] [27]
+Overfull \hbox (36.56108pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 user@myinstance filtertest> setiter -t filtertest -scan -minc
+ -majc -p 10 -n myfilter -ageoff[] 
+
+Overfull \hbox (477.5598pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter negate, default false keeps k/v that pass accept method, true
+ rejects k/v that pass accept method:[] 
+
+Overfull \hbox (162.56071pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter ttl, time to live (milliseconds): 3000[] 
+
+Overfull \hbox (514.3097pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter currentTime, if set, use the given value as the absolute time
+ in milliseconds as the current time of day:[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+[28]
+Overfull \hbox (89.14725pt too wide) in paragraph at lines 355--357
+\T1/cmr/m/n/10.95 accumulo/src/examples/simple/main/java/org/apache/accumulo/ex
+amples/simple/combiner/StatsCombiner.java 
+[29]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 376--376
+[]\T1/txtt/m/n/10.95 table.cache.block.enable: Determines whether file (data) b
+lock cache is enabled.[] 
+[30] [31] [32] [33] [34]) [35] (./chapters/table_design.tex
+Chapter 7.
+[36] [37] [38] [39] [40] [41]) [42] (./chapters/high_speed_ingest.tex
+Chapter 8.
+[43] [44]) [45] (./chapters/analytics.tex
+Chapter 9.
+[46] [47] [48]) [49] (./chapters/security.tex
+Chapter 10.
+[50] [51]
+Overfull \hbox (31.3111pt too wide) in paragraph at lines 124--124
+[]\T1/txtt/m/n/10 config -t table -s table.constraint.1=org.apache.accumulo.cor
+e.security.VisibilityConstraint[] 
+[52]) [53] (./chapters/administration.tex
+Chapter 11.
+[54]
+Overfull \hbox (3.49286pt too wide) in paragraph at lines 56--63
+\T1/cmr/m/n/10.95 Accumulo re-quires HDFS and ZooKeeper to be con-fig-ured and 
+run-ning be-fore start-ing. Password-
+[55] [56] [57]
+Overfull \hbox (63.97098pt too wide) in paragraph at lines 195--197
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ add and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/start-here.sh\T1/cmr/m/n/10.
+95 . 
+
+Overfull \hbox (74.25185pt too wide) in paragraph at lines 211--213
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ re-move and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/stop-here.sh\T1/cmr/m/n/
+10.95 . 
+[58]) [59] (./appendices/shell_commands.tex
+Appendix A.
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 37--37
+[]    \T1/txtt/m/n/10.95 usage: addsplits [<split> <split> ] [-?] [-b64] [-sf <
+filename>] [-t <tableName>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 41--41
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to add to[] 
+[60]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 71--71
+[]    \T1/txtt/m/n/10.95 usage: clonetable <current table name> <new table name
+> [-?] [-e <arg>] [-nf] [-s[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 75--75
+[]      \T1/txtt/m/n/10.95 -e,--exclude <arg>  properties that should not be co
+pied from source table.[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 78--78
+[]      \T1/txtt/m/n/10.95 -s,--set <arg>  set initial properties before the ta
+ble comes online. Expects[] 
+[61]
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 89--89
+[]    \T1/txtt/m/n/10.95 usage: compact [-?] [-b <arg>] [-e <arg>] [-nf] [-p <p
+attern> | -t <tableName>][] 
+
+Overfull \hbox (19.70865pt too wide) in paragraph at lines 91--91
+[]    \T1/txtt/m/n/10.95 description: sets all tablets for a table to major com
+pact as soon as possible[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 103--103
+[]    \T1/txtt/m/n/10.95 usage: config [-?] [-d <property> | -f <string> | -s <
+property=value>]  [-np]  [-t[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 116--116
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>]=<aggrega
+tion class>>] [-b64] [-cc[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 117--117
+[]              \T1/txtt/m/n/10.95 <table>] [-cs <table> | -sf <filename>] [-ev
+c] [-f <className>] [-ndi][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 119--119
+[]    \T1/txtt/m/n/10.95 description: creates a new table, with optional aggreg
+ators and optionally pre-split[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 121--121
+[]      \T1/txtt/m/n/10.95 -a,--aggregator <<columnfamily>[:<columnqualifier>]=
+<aggregation class>>  comma[] 
+[62]
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 126--126
+[]      \T1/txtt/m/n/10.95 -evc,--enable-visibility-constraint  prevents users 
+from writing data they can not[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 127--127
+[]              \T1/txtt/m/n/10.95 read.  When enabling this may want to consid
+er disabling bulk import and[] 
+
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 130--130
+[]      \T1/txtt/m/n/10.95 -ndi,--no-default-iterators  prevents creation of th
+e normal default iterator set[] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 131--131
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to create a[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 141--141
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 155--155
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[63]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 172--172
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 179--179
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 183--183
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 186--186
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 194--194
+[]    \T1/txtt/m/n/10.95 description: delete a range of rows in a table.  Note 
+that rows matching the start[] 
+[64]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 205--205
+[]    \T1/txtt/m/n/10.95 description: deletes a table-specific scan iterator so
+ it is no longer used during[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 241--241
+[]    \T1/txtt/m/n/10.95 description: Prints how much space is used by files re
+ferenced by a table.  When[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 242--242
+[]              \T1/txtt/m/n/10.95 multiple tables are specified it prints how 
+much space is used by files[] 
+[65]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 250--250
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 251--251
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 253--253
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value, in[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 254--254
+[]              \T1/txtt/m/n/10.95 parallel, on the server side (using a java M
+atcher, so put .* before and[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 259--259
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 263--263
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 267--267
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[66]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 287--287
+[]    \T1/txtt/m/n/10.95 usage: flush [-?] [-b <arg>] [-e <arg>] [-p <pattern> 
+| -t <tableName>]  [-w][] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 301--301
+[]      \T1/txtt/m/n/10.95 -f,--formatter <className>  fully qualified name of 
+the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 323--323
+[]    \T1/txtt/m/n/10.95 description: retrieves the current split points for ta
+blets in the current table[] 
+[67]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 333--333
+[]    \T1/txtt/m/n/10.95 usage: grant <permission> [-?] -p <pattern> | -s | -t 
+<table>  -u <username>[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 344--344
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 345--345
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 347--347
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value in a table[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 348--348
+[]              \T1/txtt/m/n/10.95 for a substring (not a regular expression), 
+in parallel, on the server[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 353--353
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 357--357
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 361--361
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[68]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 384--384
+[]    \T1/txtt/m/n/10.95 description: bulk imports an entire directory of data 
+files to the current table.[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 397--397
+[]    \T1/txtt/m/n/10.95 usage: insert <row> <colfamily> <colqualifier> <value>
+ [-?] [-l <expression>] [-t[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 401--401
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[69]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 419--419
+[]              \T1/txtt/m/n/10.95 accumulo.core.client.admin.ActiveScan javado
+c for more information about[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 423--423
+[]      \T1/txtt/m/n/10.95 -ts,--tabletServer <tablet server>  list scans for a
+ specific tablet server[] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 427--427
+[]    \T1/txtt/m/n/10.95 usage: masterstate is deprecated, use the command line
+ utility instead [-?][] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 438--438
+[]      \T1/txtt/m/n/10.95 -be,--begin-exclusive  make start row exclusive, by 
+defaults it inclusive[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 441--441
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[70]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 452--452
+[]      \T1/txtt/m/n/10.95 -f,--force  merge small tablets to large tablets, ev
+en if it goes over the given[] 
+[71]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 512--512
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 519--519
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 523--523
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+[72]
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 526--526
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 538--538
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 544--544
+[]    \T1/txtt/m/n/10.95 usage: selectrow <row> [-?] [-np] [-s <comma-separated
+-authorizations>] [-st] [-t[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 549--549
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[73]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 565--565
+[]    \T1/txtt/m/n/10.95 usage: setgroups <group>=<col fam>,<col fam> <group>=<
+col fam>,<col fam> [-?][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 567--567
+[]    \T1/txtt/m/n/10.95 description: sets the locality groups for a given tabl
+e (for binary or commas, use[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 574--574
+[]    \T1/txtt/m/n/10.95 usage: setiter [-?] -ageoff | -agg | -class <name> | -
+regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 586--586
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 593--593
+[]    \T1/txtt/m/n/10.95 usage: setscaniter [-?] -ageoff | -agg | -class <name>
+ | -regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 603--603
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+[74] [75]) [76] (./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux)) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/c
+m-super/sfti1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
+t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
+
+Output written on accumulo_user_manual.pdf (77 pages, 466758 bytes).
+Transcript written on accumulo_user_manual.log.
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
+ restricted \write18 enabled.
+entering extended mode
+(./accumulo_user_manual.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux))
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./accumulo_user_manual.out) (./accumulo_user_manual.out)
+
+LaTeX Warning: No \author given.
+
+[1{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(./accumulo_user_manual.tocpdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 ...}{\numberline {4.5}Proxy}{18}{section.4.5}
+                                                   [1] [2] [3]) [4]
+(./chapters/introduction.tex
+Chapter 1.
+) [5] (./chapters/design.tex
+Chapter 2.
+[6] [7] <images/data_distribution.png, id=554, 811.03pt x 583.17876pt>
+<use images/data_distribution.png> [8 <./images/data_distribution.png>]
+<images/failure_handling.png, id=561, 813.0375pt x 624.3325pt>
+<use images/failure_handling.png> [9]) [10 <./images/failure_handling.png (PNG 
+copy)>] (./chapters/shell.tex
+Chapter 3.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd) [11] [12]) [13]
+(./chapters/clients.tex
+Chapter 4.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [14] [15] [16]
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 171--173
+\T1/txtt/m/n/10.95 src/examples/src/main/java/org/apache/accumulo/examples/isol
+ation/InterferenceTest.java 
+[17] [18] [19]) [20] (./chapters/development_clients.tex
+Chapter 5.
+[21]
+Overfull \hbox (5.06117pt too wide) in paragraph at lines 104--104
+[]\T1/txtt/m/n/10 File tempDirectory = // JUnit and Guava supply mechanisms for
+ creating temp directories[] 
+
+Overfull \hbox (52.31104pt too wide) in paragraph at lines 113--113
+[]\T1/txtt/m/n/10 Instance instance = new ZooKeeperInstance(accumulo.getInstanc
+eName(), accumulo.getZooKeepers());[] 
+) [22] (./chapters/table_configuration.tex
+Chapter 6.
+[23]
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.1=com.test.ExampleConstraint[] 
+
+Overfull \hbox (26.06111pt too wide) in paragraph at lines 108--108
+[]\T1/txtt/m/n/10 user@myinstance mytable> config -t mytable -s table.constrain
+t.2=com.test.AnotherConstraint[] 
+[24]
+Overfull \hbox (126.66458pt too wide) in paragraph at lines 111--114
+\T1/cmr/m/n/10.95 New con-straints can be cre-ated by writ-ing a Java class tha
+t im-ple-ments the org.apache.accumulo.core.constraints.Constraint
+[25] [26] [27]
+Overfull \hbox (36.56108pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 user@myinstance filtertest> setiter -t filtertest -scan -minc
+ -majc -p 10 -n myfilter -ageoff[] 
+
+Overfull \hbox (477.5598pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter negate, default false keeps k/v that pass accept method, true
+ rejects k/v that pass accept method:[] 
+
+Overfull \hbox (162.56071pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter ttl, time to live (milliseconds): 3000[] 
+
+Overfull \hbox (514.3097pt too wide) in paragraph at lines 269--269
+[]\T1/txtt/m/n/10 ----------> set org.apache.accumulo.core.iterators.user.AgeOf
+fFilter parameter currentTime, if set, use the given value as the absolute time
+ in milliseconds as the current time of day:[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.majc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.minc.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+
+Overfull \hbox (136.31079pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.myfilter .............. | 10,o
+rg.apache.accumulo.core.iterators.user.AgeOffFilter[] 
+
+Overfull \hbox (141.56078pt too wide) in paragraph at lines 293--293
+[]\T1/txtt/m/n/10 table    | table.iterator.scan.vers .................. | 20,o
+rg.apache.accumulo.core.iterators.VersioningIterator[] 
+[28]
+Overfull \hbox (89.14725pt too wide) in paragraph at lines 355--357
+\T1/cmr/m/n/10.95 accumulo/src/examples/simple/main/java/org/apache/accumulo/ex
+amples/simple/combiner/StatsCombiner.java 
+[29]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 376--376
+[]\T1/txtt/m/n/10.95 table.cache.block.enable: Determines whether file (data) b
+lock cache is enabled.[] 
+[30] [31] [32] [33] [34]) [35] (./chapters/table_design.tex
+Chapter 7.
+[36] [37] [38] [39] [40] [41]) [42] (./chapters/high_speed_ingest.tex
+Chapter 8.
+[43] [44]) [45] (./chapters/analytics.tex
+Chapter 9.
+[46] [47] [48]) [49] (./chapters/security.tex
+Chapter 10.
+[50] [51]
+Overfull \hbox (31.3111pt too wide) in paragraph at lines 124--124
+[]\T1/txtt/m/n/10 config -t table -s table.constraint.1=org.apache.accumulo.cor
+e.security.VisibilityConstraint[] 
+[52]) [53] (./chapters/administration.tex
+Chapter 11.
+[54]
+Overfull \hbox (3.49286pt too wide) in paragraph at lines 56--63
+\T1/cmr/m/n/10.95 Accumulo re-quires HDFS and ZooKeeper to be con-fig-ured and 
+run-ning be-fore start-ing. Password-
+[55] [56] [57]
+Overfull \hbox (63.97098pt too wide) in paragraph at lines 195--197
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ add and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/start-here.sh\T1/cmr/m/n/10.
+95 . 
+
+Overfull \hbox (74.25185pt too wide) in paragraph at lines 211--213
+[]\T1/cmr/m/n/10.95 Alternatively, you can ssh to each of the hosts you want to
+ re-move and run \T1/txtt/m/n/10.95 $ACCUMULO_HOME/bin/stop-here.sh\T1/cmr/m/n/
+10.95 . 
+[58]) [59] (./appendices/shell_commands.tex
+Appendix A.
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 37--37
+[]    \T1/txtt/m/n/10.95 usage: addsplits [<split> <split> ] [-?] [-b64] [-sf <
+filename>] [-t <tableName>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 41--41
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to add to[] 
+[60]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 71--71
+[]    \T1/txtt/m/n/10.95 usage: clonetable <current table name> <new table name
+> [-?] [-e <arg>] [-nf] [-s[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 75--75
+[]      \T1/txtt/m/n/10.95 -e,--exclude <arg>  properties that should not be co
+pied from source table.[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 78--78
+[]      \T1/txtt/m/n/10.95 -s,--set <arg>  set initial properties before the ta
+ble comes online. Expects[] 
+[61]
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 89--89
+[]    \T1/txtt/m/n/10.95 usage: compact [-?] [-b <arg>] [-e <arg>] [-nf] [-p <p
+attern> | -t <tableName>][] 
+
+Overfull \hbox (19.70865pt too wide) in paragraph at lines 91--91
+[]    \T1/txtt/m/n/10.95 description: sets all tablets for a table to major com
+pact as soon as possible[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 103--103
+[]    \T1/txtt/m/n/10.95 usage: config [-?] [-d <property> | -f <string> | -s <
+property=value>]  [-np]  [-t[] 
+
+Overfull \hbox (25.45738pt too wide) in paragraph at lines 116--116
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>]=<aggrega
+tion class>>] [-b64] [-cc[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 117--117
+[]              \T1/txtt/m/n/10.95 <table>] [-cs <table> | -sf <filename>] [-ev
+c] [-f <className>] [-ndi][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 119--119
+[]    \T1/txtt/m/n/10.95 description: creates a new table, with optional aggreg
+ators and optionally pre-split[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 121--121
+[]      \T1/txtt/m/n/10.95 -a,--aggregator <<columnfamily>[:<columnqualifier>]=
+<aggregation class>>  comma[] 
+[62]
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 126--126
+[]      \T1/txtt/m/n/10.95 -evc,--enable-visibility-constraint  prevents users 
+from writing data they can not[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 127--127
+[]              \T1/txtt/m/n/10.95 read.  When enabling this may want to consid
+er disabling bulk import and[] 
+
+Overfull \hbox (48.45232pt too wide) in paragraph at lines 130--130
+[]      \T1/txtt/m/n/10.95 -ndi,--no-default-iterators  prevents creation of th
+e normal default iterator set[] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 131--131
+[]      \T1/txtt/m/n/10.95 -sf,--splits-file <filename>  file with newline sepa
+rated list of rows to create a[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 141--141
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 155--155
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[63]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 172--172
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 179--179
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 183--183
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 186--186
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 194--194
+[]    \T1/txtt/m/n/10.95 description: delete a range of rows in a table.  Note 
+that rows matching the start[] 
+[64]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 205--205
+[]    \T1/txtt/m/n/10.95 description: deletes a table-specific scan iterator so
+ it is no longer used during[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 241--241
+[]    \T1/txtt/m/n/10.95 description: Prints how much space is used by files re
+ferenced by a table.  When[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 242--242
+[]              \T1/txtt/m/n/10.95 multiple tables are specified it prints how 
+much space is used by files[] 
+[65]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 250--250
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 251--251
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 253--253
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value, in[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 254--254
+[]              \T1/txtt/m/n/10.95 parallel, on the server side (using a java M
+atcher, so put .* before and[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 259--259
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 263--263
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 267--267
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[66]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 287--287
+[]    \T1/txtt/m/n/10.95 usage: flush [-?] [-b <arg>] [-e <arg>] [-p <pattern> 
+| -t <tableName>]  [-w][] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 301--301
+[]      \T1/txtt/m/n/10.95 -f,--formatter <className>  fully qualified name of 
+the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 323--323
+[]    \T1/txtt/m/n/10.95 description: retrieves the current split points for ta
+blets in the current table[] 
+[67]
+Overfull \hbox (8.21118pt too wide) in paragraph at lines 333--333
+[]    \T1/txtt/m/n/10.95 usage: grant <permission> [-?] -p <pattern> | -s | -t 
+<table>  -u <username>[] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 344--344
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 345--345
+[]              \T1/txtt/m/n/10.95 [-e <end-row>] [-f <int>] [-fm <className>] 
+[-np] [-nt <arg>] [-r <row>][] 
+
+Overfull \hbox (54.20105pt too wide) in paragraph at lines 347--347
+[]    \T1/txtt/m/n/10.95 description: searches each row, column family, column 
+qualifier and value in a table[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 348--348
+[]              \T1/txtt/m/n/10.95 for a substring (not a regular expression), 
+in parallel, on the server[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 353--353
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 357--357
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 361--361
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[68]
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 384--384
+[]    \T1/txtt/m/n/10.95 description: bulk imports an entire directory of data 
+files to the current table.[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 397--397
+[]    \T1/txtt/m/n/10.95 usage: insert <row> <colfamily> <colqualifier> <value>
+ [-?] [-l <expression>] [-t[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 401--401
+[]      \T1/txtt/m/n/10.95 -l,--authorization-label <expression>  formatted aut
+horization label expression[] 
+[69]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 419--419
+[]              \T1/txtt/m/n/10.95 accumulo.core.client.admin.ActiveScan javado
+c for more information about[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 423--423
+[]      \T1/txtt/m/n/10.95 -ts,--tabletServer <tablet server>  list scans for a
+ specific tablet server[] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 427--427
+[]    \T1/txtt/m/n/10.95 usage: masterstate is deprecated, use the command line
+ utility instead [-?][] 
+
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 438--438
+[]      \T1/txtt/m/n/10.95 -be,--begin-exclusive  make start row exclusive, by 
+defaults it inclusive[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 441--441
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[70]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 452--452
+[]      \T1/txtt/m/n/10.95 -f,--force  merge small tablets to large tablets, ev
+en if it goes over the given[] 
+[71]
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 512--512
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>][] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 519--519
+[]              \T1/txtt/m/n/10.95 <<columnfamily>[:<columnqualifier>],<columnf
+amily>[:<columnqualifier>]>[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 523--523
+[]      \T1/txtt/m/n/10.95 -fm,--formatter <className>  fully qualified name of
+ the formatter class to use[] 
+[72]
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 526--526
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 538--538
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 544--544
+[]    \T1/txtt/m/n/10.95 usage: selectrow <row> [-?] [-np] [-s <comma-separated
+-authorizations>] [-st] [-t[] 
+
+Overfull \hbox (31.20612pt too wide) in paragraph at lines 549--549
+[]      \T1/txtt/m/n/10.95 -s,--scan-authorizations <comma-separated-authorizat
+ions>  scan authorizations[] 
+[73]
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 565--565
+[]    \T1/txtt/m/n/10.95 usage: setgroups <group>=<col fam>,<col fam> <group>=<
+col fam>,<col fam> [-?][] 
+
+Overfull \hbox (42.70358pt too wide) in paragraph at lines 567--567
+[]    \T1/txtt/m/n/10.95 description: sets the locality groups for a given tabl
+e (for binary or commas, use[] 
+
+Overfull \hbox (13.95992pt too wide) in paragraph at lines 574--574
+[]    \T1/txtt/m/n/10.95 usage: setiter [-?] -ageoff | -agg | -class <name> | -
+regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 586--586
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 593--593
+[]    \T1/txtt/m/n/10.95 usage: setscaniter [-?] -ageoff | -agg | -class <name>
+ | -regex | -reqvis | -vers[] 
+
+Overfull \hbox (36.95485pt too wide) in paragraph at lines 603--603
+[]      \T1/txtt/m/n/10.95 -reqvis,--require-visibility  a type that omits entr
+ies with empty visibilities[] 
+[74] [75]) [76] (./accumulo_user_manual.aux (./chapters/introduction.aux)
+(./chapters/design.aux) (./chapters/shell.aux) (./chapters/clients.aux)
+(./chapters/development_clients.aux) (./chapters/table_configuration.aux)
+(./chapters/table_design.aux) (./chapters/high_speed_ingest.aux)
+(./chapters/analytics.aux) (./chapters/security.aux)
+(./chapters/administration.aux) (./appendices/shell_commands.aux)) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/c
+m-super/sfti1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
+t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
+
+Output written on accumulo_user_manual.pdf (77 pages, 466758 bytes).
+Transcript written on accumulo_user_manual.log.
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/1.0/wagon-ssh-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/1.0/wagon-ssh-1.0.pom (2.9 kB at 408 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-providers/1.0/wagon-providers-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-providers/1.0/wagon-providers-1.0.pom (2.1 kB at 191 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom (9.8 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/1.0/wagon-ssh-common-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/1.0/wagon-ssh-common-1.0.pom (1.8 kB at 259 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4/plexus-utils-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4/plexus-utils-1.4.pom (1.2 kB at 164 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom (1.8 kB at 219 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.0.1/maven-reporting-exec-1.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-exec/1.0.1/maven-reporting-exec-1.0.1.pom (9.5 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 829 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 778 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 314 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 278 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 322 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 381 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 767 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 348 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 372 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 208 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 648 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 512 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 116 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 530 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 666 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 910 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 239 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 295 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 462 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 348 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.2/doxia-module-apt-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/1.2/doxia-module-apt-1.2.pom (2.5 kB at 417 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.2/doxia-module-xdoc-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.2/doxia-module-xdoc-1.2.pom (5.4 kB at 603 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.4/maven-doxia-tools-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.4/maven-doxia-tools-1.4.pom (7.7 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom (1.6 kB at 322 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 868 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom (1.2 kB at 246 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.10/plexus-utils-1.5.10.pom (5.6 kB at 805 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/1.0/wagon-ssh-common-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 3.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 5.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh-common/1.0/wagon-ssh-common-1.0.jar (27 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 968 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 8.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 5.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 4.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 5.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 6.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar (51 kB at 1.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 6.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 14 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.jar (237 kB at 6.6 MB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo/1.4.5-SNAPSHOT/accumulo-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cloudtrace 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ cloudtrace ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ cloudtrace ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2:exec (generate-thrift) @ cloudtrace ---
+****************************************************
+*** thrift is not available
+***   expecting 'thrift -version' to return 0.6
+*** generated code will not be updated
+****************************************************
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ cloudtrace ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ cloudtrace ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ cloudtrace ---
+[INFO] Copying log4j-1.2.16.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/log4j-1.2.16.jar
+[INFO] Copying libthrift-0.6.1.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/libthrift-0.6.1.jar
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ cloudtrace ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.8.1/plexus-compiler-api-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.8.1/plexus-compiler-api-1.8.1.pom (805 B at 213 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.8.1/plexus-compiler-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.8.1/plexus-compiler-1.8.1.pom (3.5 kB at 8.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.8.1/plexus-compiler-manager-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.8.1/plexus-compiler-manager-1.8.1.pom (713 B at 79 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.8.1/plexus-compiler-javac-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.8.1/plexus-compiler-javac-1.8.1.pom (710 B at 118 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.8.1/plexus-compilers-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.8.1/plexus-compilers-1.8.1.pom (1.3 kB at 403 B/s)
+[INFO] Compiling 22 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ cloudtrace ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ cloudtrace ---
+[INFO] Compiling 3 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ cloudtrace ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.9/surefire-booter-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.9/surefire-booter-2.9.pom (3.0 kB at 432 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.9/surefire-api-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.9/surefire-api-2.9.pom (2.3 kB at 152 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.9/maven-surefire-common-2.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.9/maven-surefire-common-2.9.pom (4.0 kB at 573 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.9/surefire-api-2.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.9/surefire-api-2.9.jar (159 kB at 11 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ cloudtrace ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom (4.0 kB at 659 kB/s)
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/cloudtrace-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ cloudtrace ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ cloudtrace ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/cloudtrace-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/cloudtrace/1.4.5-SNAPSHOT/cloudtrace-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/cloudtrace/1.4.5-SNAPSHOT/cloudtrace-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building accumulo-start 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/mortbay/jetty/jetty/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml (688 B at 86 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-start ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo-start ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo-start ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ accumulo-start ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/start/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo-start ---
+[INFO] Copying commons-jci-core-1.0.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-jci-core-1.0.jar
+[INFO] Copying commons-logging-api-1.0.4.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-logging-api-1.0.4.jar
+[INFO] Copying commons-logging-1.0.4.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-logging-1.0.4.jar
+[INFO] Copying commons-jci-fam-1.0.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-jci-fam-1.0.jar
+[INFO] Copying commons-io-2.1.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-io-2.1.jar
+[INFO] log4j-1.2.16.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ accumulo-start ---
+[INFO] Compiling 5 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/start/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ accumulo-start ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ accumulo-start ---
+[INFO] Compiling 2 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/start/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ accumulo-start ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ accumulo-start ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-start-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo-start ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo-start ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-start-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-start/1.4.5-SNAPSHOT/accumulo-start-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/start/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-start/1.4.5-SNAPSHOT/accumulo-start-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building accumulo-core 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo-core ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1.1:exec (generate-core-thrift) @ accumulo-core ---
+[INFO] ****************************************************
+[INFO] *** thrift is not available
+[INFO] ***   expecting 'thrift -version' to return 0.6
+[INFO] *** generated code will not be updated
+[INFO] ****************************************************
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ accumulo-core ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/core/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo-core ---
+[INFO] Copying commons-collections-3.2.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-collections-3.2.jar
+[INFO] Copying commons-lang-2.4.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-lang-2.4.jar
+[INFO] Copying jline-0.9.94.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/jline-0.9.94.jar
+[INFO] log4j-1.2.16.jar already exists in destination.
+[INFO] commons-logging-1.0.4.jar already exists in destination.
+[INFO] libthrift-0.6.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ accumulo-core ---
+[INFO] Compiling 441 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/core/target/classes
+[INFO] 
+[INFO] --- exec-maven-plugin:1.1.1:exec (generate-documentation) @ accumulo-core ---
+[INFO] HADOOP_HOME is not set
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ accumulo-core ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ accumulo-core ---
+[INFO] Compiling 69 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/core/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ accumulo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ accumulo-core ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-core-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo-core ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo-core ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-core-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-core/1.4.5-SNAPSHOT/accumulo-core-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/core/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-core/1.4.5-SNAPSHOT/accumulo-core-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building accumulo-server 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo-server ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo-server ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ accumulo-server ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 39 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo-server ---
+[INFO] Copying commons-configuration-1.5.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/commons-configuration-1.5.jar
+[INFO] commons-lang-2.4.jar already exists in destination.
+[INFO] log4j-1.2.16.jar already exists in destination.
+[INFO] jline-0.9.94.jar already exists in destination.
+[INFO] libthrift-0.6.1.jar already exists in destination.
+[INFO] commons-io-2.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ accumulo-server ---
+[INFO] Compiling 421 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/server/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ accumulo-server ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ accumulo-server ---
+[INFO] Compiling 28 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/server/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ accumulo-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ accumulo-server ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-server-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo-server ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo-server ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-server-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-server/1.4.5-SNAPSHOT/accumulo-server-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/server/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-server/1.4.5-SNAPSHOT/accumulo-server-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building accumulo-examples 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-examples ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo-examples ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo-examples ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo-examples ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo-examples ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo-examples ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/examples/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-examples/1.4.5-SNAPSHOT/accumulo-examples-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building examples-simple 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml
+[INFO] Downloading: https://maven.java.net/content/groups/public/org/mortbay/jetty/jetty/maven-metadata.xml
+[WARNING] Could not transfer metadata org.mortbay.jetty:jetty/maven-metadata.xml from/to central (http://repo1.maven.org/maven2): Failed to transfer file: http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml. Return code is: 501 , ReasonPhrase:HTTPS Required.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ examples-simple ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ examples-simple ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ examples-simple ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ examples-simple ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/examples/simple/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ examples-simple ---
+[INFO] Copying log4j-1.2.16.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/lib/log4j-1.2.16.jar
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ examples-simple ---
+[INFO] Compiling 40 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/examples/simple/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ examples-simple ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/examples/simple/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ examples-simple ---
+[INFO] Compiling 5 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/examples/simple/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ examples-simple ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ examples-simple ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/examples-simple-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ examples-simple ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ examples-simple ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/examples-simple-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/examples-simple/1.4.5-SNAPSHOT/examples-simple-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/examples/simple/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/examples-simple/1.4.5-SNAPSHOT/examples-simple-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building accumulo-minicluster 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.mortbay.jetty:jetty/maven-metadata.xml from https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer metadata org.mortbay.jetty:jetty/maven-metadata.xml from/to central (http://repo1.maven.org/maven2): Failed to transfer file: http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml. Return code is: 501 , ReasonPhrase:HTTPS Required.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-minicluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ accumulo-minicluster ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/minicluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo-minicluster ---
+[INFO] Copying guava-14.0.1.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/guava-14.0.1.jar
+[INFO] commons-lang-2.4.jar already exists in destination.
+[INFO] log4j-1.2.16.jar already exists in destination.
+[INFO] commons-configuration-1.5.jar already exists in destination.
+[INFO] jline-0.9.94.jar already exists in destination.
+[INFO] commons-io-2.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ accumulo-minicluster ---
+[INFO] Compiling 2 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/minicluster/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ accumulo-minicluster ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/minicluster/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ accumulo-minicluster ---
+[INFO] Compiling 2 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/minicluster/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ accumulo-minicluster ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ accumulo-minicluster ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-minicluster-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo-minicluster ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo-minicluster ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-minicluster-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-minicluster/1.4.5-SNAPSHOT/accumulo-minicluster-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/minicluster/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-minicluster/1.4.5-SNAPSHOT/accumulo-minicluster-1.4.5-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Proxy 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.mortbay.jetty:jetty/maven-metadata.xml from https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer metadata org.mortbay.jetty:jetty/maven-metadata.xml from/to central (http://repo1.maven.org/maven2): Failed to transfer file: http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/maven-metadata.xml. Return code is: 501 , ReasonPhrase:HTTPS Required.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-proxy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2:exec (generate-thrift) @ accumulo-proxy ---
+****************************************************
+*** thrift is not available
+***   expecting 'thrift -version' to return 0.6
+*** generated code will not be updated
+****************************************************
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ accumulo-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/proxy/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ accumulo-proxy ---
+[INFO] guava-14.0.1.jar already exists in destination.
+[INFO] libthrift-0.6.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ accumulo-proxy ---
+[INFO] Compiling 38 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/proxy/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ accumulo-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ accumulo-proxy ---
+[INFO] Compiling 5 source files to /tmp/Bugs.jar_Accumulo_28294266_java-7/src/proxy/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ accumulo-proxy ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ accumulo-proxy ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-proxy-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ accumulo-proxy ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/accumulo-proxy-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-proxy/1.4.5-SNAPSHOT/accumulo-proxy-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/proxy/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/accumulo-proxy/1.4.5-SNAPSHOT/accumulo-proxy-1.4.5-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] accumulo ........................................... SUCCESS [ 55.942 s]
+[INFO] cloudtrace ......................................... SUCCESS [ 20.928 s]
+[INFO] accumulo-start ..................................... SUCCESS [  1.852 s]
+[INFO] accumulo-core ...................................... SUCCESS [01:34 min]
+[INFO] accumulo-server .................................... SUCCESS [ 47.981 s]
+[INFO] accumulo-examples .................................. SUCCESS [  2.579 s]
+[INFO] examples-simple .................................... SUCCESS [  8.065 s]
+[INFO] accumulo-minicluster ............................... SUCCESS [  3.621 s]
+[INFO] Proxy .............................................. SUCCESS [ 22.383 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 04:17 min
+[INFO] Finished at: 2020-03-09T04:29:14-07:00
+[INFO] Final Memory: 106M/992M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.081 s
+[INFO] Finished at: 2020-03-09T04:29:17-07:00
+[INFO] Final Memory: 16M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/tmp/Bugs.jar_Accumulo_28294266_java-7/src). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cloudtrace 1.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ cloudtrace ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.6.1:commit (git-commit) @ cloudtrace ---
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2:exec (generate-thrift) @ cloudtrace ---
+****************************************************
+*** thrift is not available
+***   expecting 'thrift -version' to return 0.6
+*** generated code will not be updated
+****************************************************
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ cloudtrace ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ cloudtrace ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (copy-dependencies) @ cloudtrace ---
+[INFO] log4j-1.2.16.jar already exists in destination.
+[INFO] libthrift-0.6.1.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ cloudtrace ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ cloudtrace ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ cloudtrace ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ cloudtrace ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ cloudtrace ---
+[INFO] Building jar: /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/cloudtrace-1.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.0:attach-descriptor (attach-descriptor) @ cloudtrace ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ cloudtrace ---
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/lib/cloudtrace-1.4.5-SNAPSHOT.jar to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/cloudtrace/1.4.5-SNAPSHOT/cloudtrace-1.4.5-SNAPSHOT.jar
+[INFO] Installing /tmp/Bugs.jar_Accumulo_28294266_java-7/src/trace/pom.xml to /tmp/Bugs.jar_Accumulo_28294266_java-7/.m2/org/apache/accumulo/cloudtrace/1.4.5-SNAPSHOT/cloudtrace-1.4.5-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.350 s
+[INFO] Finished at: 2020-03-09T04:29:25-07:00
+[INFO] Final Memory: 27M/982M
+[INFO] ------------------------------------------------------------------------

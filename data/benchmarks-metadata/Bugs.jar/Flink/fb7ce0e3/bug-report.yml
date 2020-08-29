@@ -1,0 +1,16 @@
+---
+BugID: FLINK-1437
+Summary: Bug in PojoSerializer's copy() method
+Description: "The PojoSerializer's {{copy()}} method does not work properly with {{null}}
+  values. An exception could look like:\n\n{code}\nCaused by: java.io.IOException:
+  Thread 'SortMerger spilling thread' terminated due to an exception: null\n\tat org.apache.flink.runtime.operators.sort.UnilateralSortMerger$ThreadBase.run(UnilateralSortMerger.java:792)\nCaused
+  by: java.io.EOFException\n\tat org.apache.flink.runtime.io.disk.RandomAccessInputView.nextSegment(RandomAccessInputView.java:83)\n\tat
+  org.apache.flink.runtime.memorymanager.AbstractPagedInputView.advance(AbstractPagedInputView.java:159)\n\tat
+  org.apache.flink.runtime.memorymanager.AbstractPagedInputView.readByte(AbstractPagedInputView.java:270)\n\tat
+  org.apache.flink.runtime.memorymanager.AbstractPagedInputView.readUnsignedByte(AbstractPagedInputView.java:277)\n\tat
+  org.apache.flink.types.StringValue.copyString(StringValue.java:839)\n\tat org.apache.flink.api.common.typeutils.base.StringSerializer.copy(StringSerializer.java:83)\n\tat
+  org.apache.flink.api.java.typeutils.runtime.PojoSerializer.copy(PojoSerializer.java:261)\n\tat
+  org.apache.flink.runtime.operators.sort.NormalizedKeySorter.writeToOutput(NormalizedKeySorter.java:449)\n\tat
+  org.apache.flink.runtime.operators.sort.UnilateralSortMerger$SpillingThread.go(UnilateralSortMerger.java:1303)\n\tat
+  org.apache.flink.runtime.operators.sort.UnilateralSortMerger$ThreadBase.run(UnilateralSortMerger.java:788)\n{code}\n\nI'm
+  working on a fix for that..."

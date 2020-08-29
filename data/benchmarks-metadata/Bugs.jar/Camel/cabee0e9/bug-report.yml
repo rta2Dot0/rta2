@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-7418
+Summary: org.apache.camel.impl.JndiRegistry.findByTypeWithName
+Description: "I guess this line isn't correct:\nif (type.isInstance(pair.getClass())
+  || type.getName().equals(pair.getClassName()))\n\nThe variable \"pair.getClass()\"
+  always returns \"javax.naming.NameClassPair\" or its subclasses and the method \"isInstance\"
+  works only with Instances, but doesnt Classes.\n\n\n I think the correct code should
+  be:\nif (type.isAssignableFrom(Class.forName(pair.getClassName())))\n\n\nI've tried
+  to test a transacted route, but i couldnt because the error: \nFailed to create
+  route route1 at: >>> Transacted[] <<< in route: Route(route1)[[From[direct:start]]
+  -> [Transacted[]]] because of No bean could be found in the registry of type: PlatformTransactionManager\n"

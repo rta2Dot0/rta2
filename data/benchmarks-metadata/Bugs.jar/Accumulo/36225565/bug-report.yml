@@ -1,0 +1,21 @@
+---
+BugID: ACCUMULO-3945
+Summary: In Accumulo 1.7.0, connecting to a minicluster started via bin/accumulo minicluster
+  doesn't work
+Description: "In Accumulo 1.7.0, connecting to a minicluster started via \"bin/accumulo
+  minicluster\" doesn't work.  When connecting, it appears to ignore the ZK port supplied
+  in the command and is attempting to listen to ZK on 2181.\n\nFor example:\naccumulo-1.7.0
+  > bin/accumulo minicluster\n…\nMini Accumulo Cluster\n\n  Directory:            /var/folders/rv/44k88tps4ql0dc1f68ck4d2w0000gn/T/1437925819514-0\n
+  \ Logs:                 /var/folders/rv/44k88tps4ql0dc1f68ck4d2w0000gn/T/1437925819514-0/logs\n
+  \ Instance Name:        miniInstance\n  Root Password:        secret\n  ZooKeeper:
+  \           localhost:56783\n  Shutdown Port:        4445\n\n  To connect with shell,
+  use the following command :\n    accumulo shell -zh localhost:56783 -zi miniInstance
+  -u root\n\nSuccessfully started on Sun Jul 26 11:50:28 EDT 2015\n===================\n\nFrom
+  a new terminal:\n\naccumulo-1.7.0 > accumulo shell -zh localhost:56783 -zi miniInstance
+  -u root\nPassword: *******\n…. 60 seconds later ….\n2015-07-26 11:52:44,436 [tracer.ZooTraceClient]
+  ERROR: Unabled to get destination tracer hosts\nin ZooKeeper, will retry in 5000
+  milliseconds\njava.lang.RuntimeException: Failed to connect to zookeeper (localhost:2181)
+  within 2x zookeeper\ntimeout period 30000\n\tat org.apache.accumulo.fate.zookeeper.ZooSession.connect(ZooSession.java:124)\n\nShell
+  - Apache Accumulo Interactive Shell\n-\n- version: 1.7.0\n- instance name: miniInstance\n-
+  instance id: a371d4ac-8bc7-4a6a-865f-5f3c8e27fbe1\n-\n- type 'help' for a list of
+  available commands\n-\nroot@miniInstance>\n\n"

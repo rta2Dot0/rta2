@@ -1,0 +1,9 @@
+---
+BugID: LOG4J2-102
+Summary: Bad priority in Syslog messages
+Description: |-
+  In class org.apache.logging.log4j.core.net.Priority the method getPriority returns a bad priority when used for Syslog messages (the only usage at the moment). The bug is in the statement:
+
+  facility.getCode() << 3 + Severity.getSeverity(level).getCode()
+
+  That's because the operator "+" takes precedence over "<<", and so the facility code isn't shifted by 3 but by "3 + Severity.getSeverity(level).getCode()".

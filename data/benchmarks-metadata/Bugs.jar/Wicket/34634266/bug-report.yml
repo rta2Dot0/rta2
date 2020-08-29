@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5176
+Summary: StringResourceModel doesn't detach model in some cases
+Description: |-
+  We have come across an issue with StringResourceModel not detaching the model it holds under a certain condition.  The problem is the case where the StringResourceModel is created but it is not used - for example when it is on a tab that is not displayed.
+
+  StringResourceModel is a subclass of LoadableDetachableModel and it simply implements onDetach(), letting the superclass decide whether it is attached or not. The problem is that when StringResourceModel is created, LoadableDetachableModel.attached will be false.  If the StringResourceModel is never read (i.e. getObject() is not called) the LoadableDetachableModel will not be marked as attached and when detach() is called, onDetach() will not be called.  Therefore StringResourceModel will not call detach() on the model that it holds.

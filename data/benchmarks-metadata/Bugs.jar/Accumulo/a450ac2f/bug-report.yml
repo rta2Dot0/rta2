@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-821
+Summary: MockBatchScanner inappropriately filters on ranges
+Description: I believe I have a legitimate case where an iterator will return something
+  outside of the seeked-to range.  This appears to work in a live system, but fails
+  to work in test cases using the MockBatchScanner.  I believe this is because the
+  MockBatchScanner filters on the supplied ranges in addition to seeking the iterators
+  to each range.  Either we need to remove this range filter, or fix the real system
+  to do the same thing.  I prefer the former of course.

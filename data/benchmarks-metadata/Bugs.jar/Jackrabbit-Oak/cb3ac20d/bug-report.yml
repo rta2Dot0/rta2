@@ -1,0 +1,9 @@
+---
+BugID: OAK-1208
+Summary: Lucene Index should ignore property existence checks
+Description: |-
+  Some optimizations on the query engine transform certain clauses in property existence checks. ie (p = 'somevalue' turns into 'p is not null').
+
+  This doesn't play well with lucene as it can not  effectively build a 'not null' query, even worse the query doesn't return any results.
+
+  As a fix I'll just skip the existence constraints from the generated lucene query.

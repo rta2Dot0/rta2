@@ -1,0 +1,13 @@
+---
+BugID: LOG4J2-668
+Summary: AsyncAppender ignores RingBufferLogEvents from AsyncLoggers (when all loggers
+  async by setting context selector)
+Description: |-
+  AsyncAppender's #append method currently has this code:
+  {code}
+  if (!(logEvent instanceof Log4jLogEvent)) {
+      return; // only know how to Serialize Log4jLogEvents
+  }
+  {code}
+
+  When all loggers are made asynchronous by setting Log4jContextSelector to {{org.apache.logging.log4j.core.async.AsyncLoggerContextSelector}}, they produce {{RingBufferLogEvent}} instances, not {{Log4jLogEvent}}. These log events will be dropped by AsyncAppender.

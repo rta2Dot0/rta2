@@ -1,0 +1,8 @@
+---
+BugID: CAMEL-6889
+Summary: CBR - Should break out if exception was thrown when evaluating predicate
+Description: |+
+  If having a CBR and the predicate throws an exception, then the next predicate is called before error handler triggers.
+
+  We should break out when exception is detected like pipeline/multicast can do.
+

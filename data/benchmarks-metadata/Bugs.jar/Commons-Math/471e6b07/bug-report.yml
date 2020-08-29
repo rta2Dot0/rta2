@@ -1,0 +1,11 @@
+---
+BugID: MATH-1241
+Summary: Digamma calculation produces SOE on NaN argument
+Description: |-
+  Digamma doesn't work particularly well with NaNs.
+
+  How to reproduce: call Gamma.digamma(Double.NaN)
+
+  Expected outcome: returns NaN or throws a meaningful exception
+
+  Real outcome: crashes with StackOverflowException, as digamma enters infinite recursion.

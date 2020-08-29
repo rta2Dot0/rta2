@@ -1,0 +1,15 @@
+---
+BugID: LOG4J2-811
+Summary: SimpleLogger throws ArrayIndexOutOfBoundsException for an empty array
+Description: "There seems to be an issue with SimpleLogger implementation provided
+  by log4j2. The issue seems to be in the new improved API supporting placeholders
+  and var args when called with an Object Array of size 0.\n\nfor e.g logger.error(\"Hello
+  World {} in {} \" , new Object[0]);\n\nA statement above results in an error as
+  shown below\n\nERROR StatusLogger Unable to locate a logging implementation, using
+  SimpleLogger\nException in thread \"main\" java.lang.ArrayIndexOutOfBoundsException:
+  -1\n       at org.apache.logging.log4j.simple.SimpleLogger.logMessage(SimpleLogger.java:157)\n
+  \      at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:1347)\n
+  \      at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1312)\n
+  \      at org.apache.logging.log4j.spi.AbstractLogger.error(AbstractLogger.java:539)\n
+  \      at TestError.main(TestError.java:21)\n\n\nSolution to place a check in SimpleLogger
+  for checking the size of the array . "

@@ -1,0 +1,28 @@
+---
+BugID: FLINK-3189
+Summary: Error while parsing job arguments passed by CLI
+Description: "Flink CLI treats job arguments provided in format \"-<char>\" as its
+  own parameters, which results in errors in execution.\n\nExample 1:\ncall: >bin/flink
+  info myJarFile.jar -f flink -i <filepath> -m 1\nerror: Unrecognized option: -f\n\nExample
+  2:\nJob myJarFile.jar is uploaded to web submission client, flink parameter box
+  is empty\nprogram arguments box: -f flink -i <filepath> -m 1\nerror: \nAn unexpected
+  error occurred:\nUnrecognized option: -f\norg.apache.flink.client.cli.CliArgsException:
+  Unrecognized option: -f\n\tat org.apache.flink.client.cli.CliFrontendParser.parseInfoCommand(CliFrontendParser.java:296)\n\tat
+  org.apache.flink.client.CliFrontend.info(CliFrontend.java:376)\n\tat org.apache.flink.client.CliFrontend.parseParameters(CliFrontend.java:983)\n\tat
+  org.apache.flink.client.web.JobSubmissionServlet.doGet(JobSubmissionServlet.java:171)\n\tat
+  javax.servlet.http.HttpServlet.service(HttpServlet.java:734)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:847)\n\tat
+  org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:532)\n\tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)\n\tat
+  org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)\n\tat
+  org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:965)\n\tat
+  org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:388)\n\tat
+  org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:187)\n\tat
+  org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:901)\n\tat
+  org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)\n\tat
+  org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:47)\n\tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:113)\n\tat
+  org.eclipse.jetty.server.Server.handle(Server.java:348)\n\tat org.eclipse.jetty.server.HttpConnection.handleRequest(HttpConnection.java:596)\n\tat
+  org.eclipse.jetty.server.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:1048)\n\tat
+  org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:549)\n\tat org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:211)\n\tat
+  org.eclipse.jetty.server.HttpConnection.handle(HttpConnection.java:425)\n\tat org.eclipse.jetty.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:489)\n\tat
+  org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:436)\n\tat
+  java.lang.Thread.run(Thread.java:745)\n\nExecution of \n>bin/flink run myJarFile.jar
+  -f flink -i <filepath> -m 1  \nworks perfectly fine"

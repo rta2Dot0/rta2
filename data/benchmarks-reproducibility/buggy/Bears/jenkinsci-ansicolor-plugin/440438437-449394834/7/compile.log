@@ -1,0 +1,459 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jenkins-ci/tools/maven-hpi-plugin/2.6/maven-hpi-plugin-2.6.pom
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:2.6 is missing, no dependency information available
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jenkins-ci/tools/maven-hpi-plugin/2.6/maven-hpi-plugin-2.6.jar
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins:ansicolor:hpi:0.5.3-SNAPSHOT
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building AnsiColor 0.5.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-hpi-plugin:2.6:validate (default-validate) @ ansicolor ---
+[WARNING] Error injecting: org.jenkinsci.maven.plugins.hpi.ValidateMojo
+java.lang.TypeNotPresentException: Type org.jenkinsci.maven.plugins.hpi.ValidateMojo not present
+	at org.eclipse.sisu.space.URLClassSpace.loadClass(URLClassSpace.java:147)
+	at org.eclipse.sisu.space.NamedClass.load(NamedClass.java:46)
+	at org.eclipse.sisu.space.AbstractDeferredClass.get(AbstractDeferredClass.java:48)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:53)
+	at com.google.inject.internal.ProviderInternalFactory$1.call(ProviderInternalFactory.java:65)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:115)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:133)
+	at com.google.inject.internal.ProvisionListenerStackCallback.provision(ProvisionListenerStackCallback.java:68)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:63)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:45)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	at org.eclipse.sisu.inject.Guice4$1.get(Guice4.java:162)
+	at org.eclipse.sisu.inject.LazyBeanEntry.getValue(LazyBeanEntry.java:81)
+	at org.eclipse.sisu.plexus.LazyPlexusBean.getValue(LazyPlexusBean.java:51)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.apache.maven.plugin.internal.DefaultMavenPluginManager.getConfiguredMojo(DefaultMavenPluginManager.java:519)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:121)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:154)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:146)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:117)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:81)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:309)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:194)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:107)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:993)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:345)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: java.lang.UnsupportedClassVersionError: org/jenkinsci/maven/plugins/hpi/ValidateMojo : Unsupported major.minor version 52.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClassFromSelf(ClassRealm.java:401)
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:42)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at org.eclipse.sisu.space.URLClassSpace.loadClass(URLClassSpace.java:139)
+	... 41 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.213 s
+[INFO] Finished at: 2020-03-12T05:36:09-07:00
+[INFO] Final Memory: 28M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.jenkins-ci.tools:maven-hpi-plugin:2.6:validate (default-validate) on project ansicolor: Execution default-validate of goal org.jenkins-ci.tools:maven-hpi-plugin:2.6:validate failed: Unable to load the mojo 'validate' in the plugin 'org.jenkins-ci.tools:maven-hpi-plugin:2.6' due to an API incompatibility: org.codehaus.plexus.component.repository.exception.ComponentLookupException: org/jenkinsci/maven/plugins/hpi/ValidateMojo : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    extension>org.jenkins-ci.tools:maven-hpi-plugin:2.6
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/tools/maven-hpi-plugin/2.6/maven-hpi-plugin-2.6.jar
+[ERROR] urls[1] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.1/plexus-utils-3.0.1.jar
+[ERROR] urls[2] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/ibm/icu/icu4j/52.1/icu4j-52.1.jar
+[ERROR] urls[3] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/sun/codemodel/codemodel/2.6/codemodel-2.6.jar
+[ERROR] urls[4] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/stapler-groovy/1.237/stapler-groovy-1.237.jar
+[ERROR] urls[5] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/stapler-jelly/1.237/stapler-jelly-1.237.jar
+[ERROR] urls[6] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/commons-jelly/1.1-jenkins-20120928/commons-jelly-1.1-jenkins-20120928.jar
+[ERROR] urls[7] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/commons-jexl/1.1-jenkins-20111212/commons-jexl-1.1-jenkins-20111212.jar
+[ERROR] urls[8] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/dom4j/dom4j/1.6.1-jenkins-4/dom4j-1.6.1-jenkins-4.jar
+[ERROR] urls[9] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/groovy/groovy-all/1.8.3/groovy-all-1.8.3.jar
+[ERROR] urls[10] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[ERROR] urls[11] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[ERROR] urls[12] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/junit/junit/3.8.1/junit-3.8.1.jar
+[ERROR] urls[13] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/maven-archiver/2.0.1/maven-archiver-2.0.1.jar
+[ERROR] urls[14] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-archiver/1.0-alpha-4/plexus-archiver-1.0-alpha-4.jar
+[ERROR] urls[15] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-maven-plugin/9.4.5.v20170502/jetty-maven-plugin-9.4.5.v20170502.jar
+[ERROR] urls[16] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/maven-aether-provider/3.0.3/maven-aether-provider-3.0.3.jar
+[ERROR] urls[17] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/aether/aether-util/1.11/aether-util-1.11.jar
+[ERROR] urls[18] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.jar
+[ERROR] urls[19] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4-no_aop.jar
+[ERROR] urls[20] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[21] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[22] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/plugin-tools/maven-plugin-tools-api/3.4/maven-plugin-tools-api-3.4.jar
+[ERROR] urls[23] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-util/9.4.5.v20170502/jetty-util-9.4.5.v20170502.jar
+[ERROR] urls[24] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-webapp/9.4.5.v20170502/jetty-webapp-9.4.5.v20170502.jar
+[ERROR] urls[25] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-xml/9.4.5.v20170502/jetty-xml-9.4.5.v20170502.jar
+[ERROR] urls[26] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-servlet/9.4.5.v20170502/jetty-servlet-9.4.5.v20170502.jar
+[ERROR] urls[27] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-quickstart/9.4.5.v20170502/jetty-quickstart-9.4.5.v20170502.jar
+[ERROR] urls[28] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-jaas/9.4.5.v20170502/jetty-jaas-9.4.5.v20170502.jar
+[ERROR] urls[29] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-security/9.4.5.v20170502/jetty-security-9.4.5.v20170502.jar
+[ERROR] urls[30] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-plus/9.4.5.v20170502/jetty-plus-9.4.5.v20170502.jar
+[ERROR] urls[31] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-jndi/9.4.5.v20170502/jetty-jndi-9.4.5.v20170502.jar
+[ERROR] urls[32] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-server/9.4.5.v20170502/jetty-server-9.4.5.v20170502.jar
+[ERROR] urls[33] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+[ERROR] urls[34] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-http/9.4.5.v20170502/jetty-http-9.4.5.v20170502.jar
+[ERROR] urls[35] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-io/9.4.5.v20170502/jetty-io-9.4.5.v20170502.jar
+[ERROR] urls[36] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-jmx/9.4.5.v20170502/jetty-jmx-9.4.5.v20170502.jar
+[ERROR] urls[37] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-annotations/9.4.5.v20170502/jetty-annotations-9.4.5.v20170502.jar
+[ERROR] urls[38] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar
+[ERROR] urls[39] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/ow2/asm/asm/5.1/asm-5.1.jar
+[ERROR] urls[40] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/ow2/asm/asm-commons/5.1/asm-commons-5.1.jar
+[ERROR] urls[41] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.jar
+[ERROR] urls[42] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/javax-websocket-server-impl/9.4.5.v20170502/javax-websocket-server-impl-9.4.5.v20170502.jar
+[ERROR] urls[43] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.4.5.v20170502/javax-websocket-client-impl-9.4.5.v20170502.jar
+[ERROR] urls[44] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/websocket/javax.websocket-api/1.0/javax.websocket-api-1.0.jar
+[ERROR] urls[45] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-server/9.4.5.v20170502/websocket-server-9.4.5.v20170502.jar
+[ERROR] urls[46] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-common/9.4.5.v20170502/websocket-common-9.4.5.v20170502.jar
+[ERROR] urls[47] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-api/9.4.5.v20170502/websocket-api-9.4.5.v20170502.jar
+[ERROR] urls[48] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-client/9.4.5.v20170502/websocket-client-9.4.5.v20170502.jar
+[ERROR] urls[49] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-client/9.4.5.v20170502/jetty-client-9.4.5.v20170502.jar
+[ERROR] urls[50] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-servlet/9.4.5.v20170502/websocket-servlet-9.4.5.v20170502.jar
+[ERROR] urls[51] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/apache-jsp/9.4.5.v20170502/apache-jsp-9.4.5.v20170502.jar
+[ERROR] urls[52] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/toolchain/jetty-schemas/3.1/jetty-schemas-3.1.jar
+[ERROR] urls[53] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/mortbay/jasper/apache-jsp/8.5.9.1/apache-jsp-8.5.9.1.jar
+[ERROR] urls[54] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/mortbay/jasper/apache-el/8.5.9.1/apache-el-8.5.9.1.jar
+[ERROR] urls[55] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar
+[ERROR] urls[56] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/apache-jstl/9.4.5.v20170502/apache-jstl-9.4.5.v20170502.jar
+[ERROR] urls[57] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/taglibs/taglibs-standard-spec/1.2.5/taglibs-standard-spec-1.2.5.jar
+[ERROR] urls[58] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar
+[ERROR] urls[59] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/transaction/javax.transaction-api/1.2/javax.transaction-api-1.2.jar
+[ERROR] urls[60] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/net/java/sezpoz/sezpoz/1.9/sezpoz-1.9.jar
+[ERROR] urls[61] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar
+[ERROR] urls[62] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[ERROR] urls[63] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar
+[ERROR] urls[64] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+[ERROR] urls[65] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar
+[ERROR] urls[66] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar
+[ERROR] urls[67] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-digester/commons-digester/1.6/commons-digester-1.6.jar
+[ERROR] urls[68] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar
+[ERROR] urls[69] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/oro/oro/2.0.8/oro-2.0.8.jar
+[ERROR] urls[70] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+[ERROR] urls[71] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+[ERROR] urls[72] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+[ERROR] urls[73] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+[ERROR] urls[74] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+[ERROR] urls[75] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+[ERROR] urls[76] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+[ERROR] urls[77] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+[ERROR] urls[78] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+[ERROR] urls[79] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+[ERROR] urls[80] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar
+[ERROR] urls[81] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar
+[ERROR] urls[82] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-io/2.0.6/plexus-io-2.0.6.jar
+[ERROR] urls[83] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-dependency-analyzer/1.4/maven-dependency-analyzer-1.4.jar
+[ERROR] urls[84] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/asm/asm/3.3.1/asm-3.3.1.jar
+[ERROR] urls[85] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.jar
+[ERROR] urls[86] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[ERROR] urls[87] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-common-artifact-filters/1.4/maven-common-artifact-filters-1.4.jar
+[ERROR] urls[88] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-invoker/2.0.11/maven-invoker-2.0.11.jar
+[ERROR] urls[89] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[ERROR] urls[90] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+[ERROR] urls[91] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[ERROR] urls[92] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/plexus/plexus-utils/1.0.2/plexus-utils-1.0.2.jar
+[ERROR] urls[93] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/maven-stapler-plugin/1.16/maven-stapler-plugin-1.16.jar
+[ERROR] urls[94] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/stapler/1.100/stapler-1.100.jar
+[ERROR] urls[95] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-discovery/commons-discovery/0.4/commons-discovery-0.4.jar
+[ERROR] urls[96] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+[ERROR] urls[97] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-io/commons-io/1.3.1/commons-io-1.3.1.jar
+[ERROR] urls[98] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/localizer/localizer/1.7/localizer-1.7.jar
+[ERROR] urls[99] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/json-lib/2.1/json-lib-2.1-jdk15.jar
+[ERROR] urls[100] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/net/sf/ezmorph/ezmorph/1.0.3/ezmorph-1.0.3.jar
+[ERROR] urls[101] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/tiger-types/1.1/tiger-types-1.1.jar
+[ERROR] urls[102] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar
+[ERROR] urls[103] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/qdox/qdox/1.6.1/qdox-1.6.1.jar
+[ERROR] urls[104] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/plugins/maven-compiler-plugin/2.0.2/maven-compiler-plugin-2.0.2.jar
+[ERROR] urls[105] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.jar
+[ERROR] urls[106] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.jar
+[ERROR] urls[107] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.jar
+[ERROR] urls[108] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+[ERROR] urls[109] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+[ERROR] urls[110] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/maven-jellydoc-plugin/maven-jellydoc-plugin/1.5/maven-jellydoc-plugin-1.5.jar
+[ERROR] urls[111] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/maven-jellydoc-plugin/jellydoc-annotations/1.5/jellydoc-annotations-1.5.jar
+[ERROR] urls[112] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/maven-jellydoc-plugin/taglib-xml-writer/1.5/taglib-xml-writer-1.5.jar
+[ERROR] urls[113] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/sun/xml/txw2/txw2/20090102/txw2-20090102.jar
+[ERROR] urls[114] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/net/java/dev/textile-j/textile-j/2.2.864/textile-j-2.2.864.jar
+[ERROR] urls[115] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/nekohtml/nekohtml/1.9.6.2/nekohtml-1.9.6.2.jar
+[ERROR] urls[116] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/ant/ant/1.6.5/ant-1.6.5.jar
+[ERROR] urls[117] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/jaxen/jaxen/1.1.1/jaxen-1.1.1.jar
+[ERROR] urls[118] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/jdom/jdom/1.0/jdom-1.0.jar
+[ERROR] urls[119] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar
+[ERROR] urls[120] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xom/xom/1.0/xom-1.0.jar
+[ERROR] urls[121] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar
+[ERROR] urls[122] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xalan/xalan/2.6.0/xalan-2.6.0.jar
+[ERROR] urls[123] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/google/guava/guava/r06/guava-r06.jar
+[ERROR] urls[124] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/metainf-services/metainf-services/1.2/metainf-services-1.2.jar
+[ERROR] urls[125] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[ERROR] urls[126] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/version-number/1.4/version-number-1.4.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginContainerException
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jenkins-ci/tools/maven-hpi-plugin/2.6/maven-hpi-plugin-2.6.pom
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:2.6 is missing, no dependency information available
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jenkins-ci/tools/maven-hpi-plugin/2.6/maven-hpi-plugin-2.6.jar
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins:ansicolor:hpi:0.5.3-SNAPSHOT
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building AnsiColor 0.5.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-hpi-plugin:2.6:validate (default-validate) @ ansicolor ---
+[WARNING] Error injecting: org.jenkinsci.maven.plugins.hpi.ValidateMojo
+java.lang.TypeNotPresentException: Type org.jenkinsci.maven.plugins.hpi.ValidateMojo not present
+	at org.eclipse.sisu.space.URLClassSpace.loadClass(URLClassSpace.java:147)
+	at org.eclipse.sisu.space.NamedClass.load(NamedClass.java:46)
+	at org.eclipse.sisu.space.AbstractDeferredClass.get(AbstractDeferredClass.java:48)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:53)
+	at com.google.inject.internal.ProviderInternalFactory$1.call(ProviderInternalFactory.java:65)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:115)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:133)
+	at com.google.inject.internal.ProvisionListenerStackCallback.provision(ProvisionListenerStackCallback.java:68)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:63)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:45)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	at org.eclipse.sisu.inject.Guice4$1.get(Guice4.java:162)
+	at org.eclipse.sisu.inject.LazyBeanEntry.getValue(LazyBeanEntry.java:81)
+	at org.eclipse.sisu.plexus.LazyPlexusBean.getValue(LazyPlexusBean.java:51)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.apache.maven.plugin.internal.DefaultMavenPluginManager.getConfiguredMojo(DefaultMavenPluginManager.java:519)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:121)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:154)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:146)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:117)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:81)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:309)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:194)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:107)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:993)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:345)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: java.lang.UnsupportedClassVersionError: org/jenkinsci/maven/plugins/hpi/ValidateMojo : Unsupported major.minor version 52.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClassFromSelf(ClassRealm.java:401)
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:42)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at org.eclipse.sisu.space.URLClassSpace.loadClass(URLClassSpace.java:139)
+	... 41 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.454 s
+[INFO] Finished at: 2020-03-12T05:36:15-07:00
+[INFO] Final Memory: 28M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.jenkins-ci.tools:maven-hpi-plugin:2.6:validate (default-validate) on project ansicolor: Execution default-validate of goal org.jenkins-ci.tools:maven-hpi-plugin:2.6:validate failed: Unable to load the mojo 'validate' in the plugin 'org.jenkins-ci.tools:maven-hpi-plugin:2.6' due to an API incompatibility: org.codehaus.plexus.component.repository.exception.ComponentLookupException: org/jenkinsci/maven/plugins/hpi/ValidateMojo : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    extension>org.jenkins-ci.tools:maven-hpi-plugin:2.6
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/tools/maven-hpi-plugin/2.6/maven-hpi-plugin-2.6.jar
+[ERROR] urls[1] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.1/plexus-utils-3.0.1.jar
+[ERROR] urls[2] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/ibm/icu/icu4j/52.1/icu4j-52.1.jar
+[ERROR] urls[3] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/sun/codemodel/codemodel/2.6/codemodel-2.6.jar
+[ERROR] urls[4] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/stapler-groovy/1.237/stapler-groovy-1.237.jar
+[ERROR] urls[5] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/stapler-jelly/1.237/stapler-jelly-1.237.jar
+[ERROR] urls[6] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/commons-jelly/1.1-jenkins-20120928/commons-jelly-1.1-jenkins-20120928.jar
+[ERROR] urls[7] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/commons-jexl/1.1-jenkins-20111212/commons-jexl-1.1-jenkins-20111212.jar
+[ERROR] urls[8] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/dom4j/dom4j/1.6.1-jenkins-4/dom4j-1.6.1-jenkins-4.jar
+[ERROR] urls[9] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/groovy/groovy-all/1.8.3/groovy-all-1.8.3.jar
+[ERROR] urls[10] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[ERROR] urls[11] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[ERROR] urls[12] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/junit/junit/3.8.1/junit-3.8.1.jar
+[ERROR] urls[13] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/maven-archiver/2.0.1/maven-archiver-2.0.1.jar
+[ERROR] urls[14] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-archiver/1.0-alpha-4/plexus-archiver-1.0-alpha-4.jar
+[ERROR] urls[15] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-maven-plugin/9.4.5.v20170502/jetty-maven-plugin-9.4.5.v20170502.jar
+[ERROR] urls[16] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/maven-aether-provider/3.0.3/maven-aether-provider-3.0.3.jar
+[ERROR] urls[17] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/aether/aether-util/1.11/aether-util-1.11.jar
+[ERROR] urls[18] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.jar
+[ERROR] urls[19] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4-no_aop.jar
+[ERROR] urls[20] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[21] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[22] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/plugin-tools/maven-plugin-tools-api/3.4/maven-plugin-tools-api-3.4.jar
+[ERROR] urls[23] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-util/9.4.5.v20170502/jetty-util-9.4.5.v20170502.jar
+[ERROR] urls[24] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-webapp/9.4.5.v20170502/jetty-webapp-9.4.5.v20170502.jar
+[ERROR] urls[25] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-xml/9.4.5.v20170502/jetty-xml-9.4.5.v20170502.jar
+[ERROR] urls[26] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-servlet/9.4.5.v20170502/jetty-servlet-9.4.5.v20170502.jar
+[ERROR] urls[27] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-quickstart/9.4.5.v20170502/jetty-quickstart-9.4.5.v20170502.jar
+[ERROR] urls[28] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-jaas/9.4.5.v20170502/jetty-jaas-9.4.5.v20170502.jar
+[ERROR] urls[29] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-security/9.4.5.v20170502/jetty-security-9.4.5.v20170502.jar
+[ERROR] urls[30] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-plus/9.4.5.v20170502/jetty-plus-9.4.5.v20170502.jar
+[ERROR] urls[31] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-jndi/9.4.5.v20170502/jetty-jndi-9.4.5.v20170502.jar
+[ERROR] urls[32] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-server/9.4.5.v20170502/jetty-server-9.4.5.v20170502.jar
+[ERROR] urls[33] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+[ERROR] urls[34] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-http/9.4.5.v20170502/jetty-http-9.4.5.v20170502.jar
+[ERROR] urls[35] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-io/9.4.5.v20170502/jetty-io-9.4.5.v20170502.jar
+[ERROR] urls[36] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-jmx/9.4.5.v20170502/jetty-jmx-9.4.5.v20170502.jar
+[ERROR] urls[37] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-annotations/9.4.5.v20170502/jetty-annotations-9.4.5.v20170502.jar
+[ERROR] urls[38] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar
+[ERROR] urls[39] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/ow2/asm/asm/5.1/asm-5.1.jar
+[ERROR] urls[40] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/ow2/asm/asm-commons/5.1/asm-commons-5.1.jar
+[ERROR] urls[41] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.jar
+[ERROR] urls[42] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/javax-websocket-server-impl/9.4.5.v20170502/javax-websocket-server-impl-9.4.5.v20170502.jar
+[ERROR] urls[43] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.4.5.v20170502/javax-websocket-client-impl-9.4.5.v20170502.jar
+[ERROR] urls[44] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/websocket/javax.websocket-api/1.0/javax.websocket-api-1.0.jar
+[ERROR] urls[45] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-server/9.4.5.v20170502/websocket-server-9.4.5.v20170502.jar
+[ERROR] urls[46] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-common/9.4.5.v20170502/websocket-common-9.4.5.v20170502.jar
+[ERROR] urls[47] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-api/9.4.5.v20170502/websocket-api-9.4.5.v20170502.jar
+[ERROR] urls[48] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-client/9.4.5.v20170502/websocket-client-9.4.5.v20170502.jar
+[ERROR] urls[49] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/jetty-client/9.4.5.v20170502/jetty-client-9.4.5.v20170502.jar
+[ERROR] urls[50] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/websocket/websocket-servlet/9.4.5.v20170502/websocket-servlet-9.4.5.v20170502.jar
+[ERROR] urls[51] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/apache-jsp/9.4.5.v20170502/apache-jsp-9.4.5.v20170502.jar
+[ERROR] urls[52] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/toolchain/jetty-schemas/3.1/jetty-schemas-3.1.jar
+[ERROR] urls[53] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/mortbay/jasper/apache-jsp/8.5.9.1/apache-jsp-8.5.9.1.jar
+[ERROR] urls[54] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/mortbay/jasper/apache-el/8.5.9.1/apache-el-8.5.9.1.jar
+[ERROR] urls[55] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar
+[ERROR] urls[56] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/jetty/apache-jstl/9.4.5.v20170502/apache-jstl-9.4.5.v20170502.jar
+[ERROR] urls[57] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/taglibs/taglibs-standard-spec/1.2.5/taglibs-standard-spec-1.2.5.jar
+[ERROR] urls[58] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar
+[ERROR] urls[59] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/javax/transaction/javax.transaction-api/1.2/javax.transaction-api-1.2.jar
+[ERROR] urls[60] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/net/java/sezpoz/sezpoz/1.9/sezpoz-1.9.jar
+[ERROR] urls[61] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar
+[ERROR] urls[62] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[ERROR] urls[63] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar
+[ERROR] urls[64] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+[ERROR] urls[65] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar
+[ERROR] urls[66] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar
+[ERROR] urls[67] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-digester/commons-digester/1.6/commons-digester-1.6.jar
+[ERROR] urls[68] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar
+[ERROR] urls[69] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/oro/oro/2.0.8/oro-2.0.8.jar
+[ERROR] urls[70] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+[ERROR] urls[71] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+[ERROR] urls[72] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+[ERROR] urls[73] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+[ERROR] urls[74] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+[ERROR] urls[75] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+[ERROR] urls[76] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+[ERROR] urls[77] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+[ERROR] urls[78] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+[ERROR] urls[79] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+[ERROR] urls[80] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar
+[ERROR] urls[81] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar
+[ERROR] urls[82] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-io/2.0.6/plexus-io-2.0.6.jar
+[ERROR] urls[83] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-dependency-analyzer/1.4/maven-dependency-analyzer-1.4.jar
+[ERROR] urls[84] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/asm/asm/3.3.1/asm-3.3.1.jar
+[ERROR] urls[85] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.jar
+[ERROR] urls[86] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[ERROR] urls[87] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-common-artifact-filters/1.4/maven-common-artifact-filters-1.4.jar
+[ERROR] urls[88] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/shared/maven-invoker/2.0.11/maven-invoker-2.0.11.jar
+[ERROR] urls[89] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[ERROR] urls[90] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+[ERROR] urls[91] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[ERROR] urls[92] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/plexus/plexus-utils/1.0.2/plexus-utils-1.0.2.jar
+[ERROR] urls[93] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/maven-stapler-plugin/1.16/maven-stapler-plugin-1.16.jar
+[ERROR] urls[94] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/stapler/1.100/stapler-1.100.jar
+[ERROR] urls[95] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-discovery/commons-discovery/0.4/commons-discovery-0.4.jar
+[ERROR] urls[96] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+[ERROR] urls[97] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-io/commons-io/1.3.1/commons-io-1.3.1.jar
+[ERROR] urls[98] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/localizer/localizer/1.7/localizer-1.7.jar
+[ERROR] urls[99] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/stapler/json-lib/2.1/json-lib-2.1-jdk15.jar
+[ERROR] urls[100] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/net/sf/ezmorph/ezmorph/1.0.3/ezmorph-1.0.3.jar
+[ERROR] urls[101] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/tiger-types/1.1/tiger-types-1.1.jar
+[ERROR] urls[102] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar
+[ERROR] urls[103] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/qdox/qdox/1.6.1/qdox-1.6.1.jar
+[ERROR] urls[104] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/apache/maven/plugins/maven-compiler-plugin/2.0.2/maven-compiler-plugin-2.0.2.jar
+[ERROR] urls[105] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.jar
+[ERROR] urls[106] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.jar
+[ERROR] urls[107] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.jar
+[ERROR] urls[108] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+[ERROR] urls[109] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+[ERROR] urls[110] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/maven-jellydoc-plugin/maven-jellydoc-plugin/1.5/maven-jellydoc-plugin-1.5.jar
+[ERROR] urls[111] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/maven-jellydoc-plugin/jellydoc-annotations/1.5/jellydoc-annotations-1.5.jar
+[ERROR] urls[112] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jvnet/maven-jellydoc-plugin/taglib-xml-writer/1.5/taglib-xml-writer-1.5.jar
+[ERROR] urls[113] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/sun/xml/txw2/txw2/20090102/txw2-20090102.jar
+[ERROR] urls[114] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/net/java/dev/textile-j/textile-j/2.2.864/textile-j-2.2.864.jar
+[ERROR] urls[115] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/nekohtml/nekohtml/1.9.6.2/nekohtml-1.9.6.2.jar
+[ERROR] urls[116] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/ant/ant/1.6.5/ant-1.6.5.jar
+[ERROR] urls[117] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/jaxen/jaxen/1.1.1/jaxen-1.1.1.jar
+[ERROR] urls[118] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/jdom/jdom/1.0/jdom-1.0.jar
+[ERROR] urls[119] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar
+[ERROR] urls[120] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xom/xom/1.0/xom-1.0.jar
+[ERROR] urls[121] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar
+[ERROR] urls[122] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/xalan/xalan/2.6.0/xalan-2.6.0.jar
+[ERROR] urls[123] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/com/google/guava/guava/r06/guava-r06.jar
+[ERROR] urls[124] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/kohsuke/metainf-services/metainf-services/1.2/metainf-services-1.2.jar
+[ERROR] urls[125] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[ERROR] urls[126] = file:/boom/scratch/tmp-rta/Bears_jenkinsci-ansicolor-plugin_440438437-449394834_java-7/.m2/org/jenkins-ci/version-number/1.4/version-number-1.4.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginContainerException

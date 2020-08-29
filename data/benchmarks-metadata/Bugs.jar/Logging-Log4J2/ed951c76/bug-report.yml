@@ -1,0 +1,21 @@
+---
+BugID: LOG4J2-219
+Summary: Named logger without root logger ends up with empty Appenders map - does
+  not log anything
+Description: "On the log4j-user mailing list, Peter DePasquale gave this test case
+  that demonstrates the problem:\n\nNote that the configuration has no root logger,
+  but only contains a named logger.\n\nIn a debugger I found that the LoggerConfig
+  for \"logtest.LogTest\" ended up with an empty \"appenders\" Map<String, AppenderControl<?>>.
+  The appenderRefs list did contain an AppenderRef object but in #callAppenders there
+  are no AppenderControl objects to call...  \n\n(Sorry, I have been unable to find
+  out the underlying cause yet.)\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<configuration
+  status=\"warn\">\n\t<appenders>\n\t\t<File name=\"tracelog\" fileName=\"trace-log.txt\"
+  \n\t\t\t\timmediateFlush=\"true\" append=\"false\">\n\t\t\t<PatternLayout pattern=\"%d{HH:mm:ss.SSS}
+  [%t] %-5level %logger{36} - %msg%n\"/>\n\t\t</File>\n\t</appenders>\n\t\n\t<loggers>\n\t\t<logger
+  name=\"logtest.LogTest\" level=\"trace\">\n\t\t\t<appender-ref ref=\"tracelog\"/>\n\t\t</logger>\n\t</loggers>\n</configuration>\n\n\n\npackage
+  logtest;\nimport org.apache.logging.log4j.LogManager;\nimport org.apache.logging.log4j.Logger;\nimport
+  org.apache.logging.log4j.core.config.XMLConfigurationFactory;\n\npublic class LogTest
+  {\n\tpublic static void main(String[] args) {\n\t\tSystem.setProperty(XMLConfigurationFactory.CONFIGURATION_FILE_PROPERTY,\n\t\t\t\t\"log4j2-roottest.xml\");\n\n\t\tLogger
+  logger = LogManager.getLogger(LogTest.class);\n\t\tlogger.trace(\"This is a trace
+  message\");\n\t\tlogger.info(\"This is an info message\");\n\t\tlogger.warn(\"This
+  is a warning message\");\n\t}\n}\n"

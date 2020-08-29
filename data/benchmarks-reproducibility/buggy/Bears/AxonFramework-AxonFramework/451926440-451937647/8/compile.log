@@ -1,0 +1,804 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.axonframework:axon-integrationtests:jar:4.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.systemPath' for com.oracle:ojdbc7:jar should not point at files within the project directory, ${project.basedir}/src/test/binary/ojdbc7.jar will be unresolvable by dependent projects @ org.axonframework:axon-integrationtests:[unknown-version], /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/pom.xml, line 138, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.release: "centos"
+[INFO] os.detected.release.version: 7
+[INFO] os.detected.release.like."centos": true
+[INFO] os.detected.release.like."rhel: true
+[INFO] os.detected.release.like.fedora": true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Axon Framework
+[INFO] Axon Framework Messaging
+[INFO] Axon Framework Modelling
+[INFO] Axon Event Sourcing
+[INFO] Axon Disruptor
+[INFO] Axon Configuration
+[INFO] Axon Framework Test Fixtures
+[INFO] Axon Framework Connector for AxonServer
+[INFO] Axon Framework Metrics
+[INFO] Axon Framework Spring Support
+[INFO] Axon Framework Spring Boot Support
+[INFO] Spring Boot Starter module for Axon Framework
+[INFO] Axon Integration tests
+[INFO] Axon Legacy Components
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon/4.0.1-SNAPSHOT/axon-4.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Messaging 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ axon-messaging ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.pom (2.3 kB at 8.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.4.1/enforcer-api-1.4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.4.1/enforcer-api-1.4.1.pom (2.8 kB at 217 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.4.1/enforcer-rules-1.4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.4.1/enforcer-rules-1.4.1.pom (3.7 kB at 177 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom (7.3 kB at 559 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing-harness/1.3/maven-plugin-testing-harness-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing-harness/1.3/maven-plugin-testing-harness-1.3.pom (3.4 kB at 383 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing/1.3/maven-plugin-testing-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing/1.3/maven-plugin-testing-1.3.pom (9.5 kB at 561 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom (3.2 kB at 884 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3.0 kB at 14 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom (1.7 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 297 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar (64 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 298 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar (58 kB at 1.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar (185 kB at 3.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar (245 kB at 3.0 MB/s)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-messaging ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom (2.6 kB at 138 kB/s)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-messaging ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 395 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/src/main/java/org/axonframework/messaging/annotation/AnnotatedHandlerInspector.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/src/main/java/org/axonframework/messaging/annotation/AnnotatedHandlerInspector.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-messaging ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-messaging ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-messaging ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 133 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/src/test/java/org/axonframework/commandhandling/distributed/ReplyMessageSerializationTest.java: Some input files use or override a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/src/test/java/org/axonframework/commandhandling/distributed/ReplyMessageSerializationTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/src/test/java/org/axonframework/eventhandling/AbstractEventBusTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/src/test/java/org/axonframework/eventhandling/AbstractEventBusTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-messaging ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (1.6 kB at 109 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 kB at 4.8 kB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-messaging ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-messaging ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/target/axon-messaging-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-messaging ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/target/axon-messaging-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-messaging/4.0.1-SNAPSHOT/axon-messaging-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-messaging/4.0.1-SNAPSHOT/axon-messaging-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/messaging/target/axon-messaging-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-messaging/4.0.1-SNAPSHOT/axon-messaging-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-messaging ---
+[INFO] Writing OBR metadata
+[INFO] Installing org/axonframework/axon-messaging/4.0.1-SNAPSHOT/axon-messaging-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Modelling 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ axon-modelling ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-modelling ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-modelling ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 99 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/main/java/org/axonframework/modelling/command/inspection/AnnotatedAggregateMetaModelFactory.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/main/java/org/axonframework/modelling/command/inspection/AnnotatedAggregateMetaModelFactory.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/main/java/org/axonframework/modelling/command/inspection/AnnotatedAggregateMetaModelFactory.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-modelling ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-modelling ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-modelling ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/test/java/org/axonframework/modelling/command/AbstractRepositoryTest.java: Some input files use or override a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/test/java/org/axonframework/modelling/command/AbstractRepositoryTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/test/java/org/axonframework/modelling/command/AbstractRepositoryTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/src/test/java/org/axonframework/modelling/command/AbstractRepositoryTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-modelling ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-modelling ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-modelling ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/target/axon-modelling-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-modelling ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/target/axon-modelling-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-modelling/4.0.1-SNAPSHOT/axon-modelling-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-modelling/4.0.1-SNAPSHOT/axon-modelling-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/modelling/target/axon-modelling-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-modelling/4.0.1-SNAPSHOT/axon-modelling-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-modelling ---
+[INFO] Installing org/axonframework/axon-modelling/4.0.1-SNAPSHOT/axon-modelling-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Event Sourcing 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ axon-eventsourcing ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-eventsourcing ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-eventsourcing ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 61 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-eventsourcing ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-eventsourcing ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-eventsourcing ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/src/test/java/org/axonframework/eventsourcing/EventSourcingRepositoryTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/src/test/java/org/axonframework/eventsourcing/EventSourcingRepositoryTest.java uses or overrides a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/src/test/java/org/axonframework/eventsourcing/EventSourcingRepositoryTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/src/test/java/org/axonframework/eventsourcing/eventstore/EmbeddedEventStoreTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/src/test/java/org/axonframework/eventsourcing/eventstore/EmbeddedEventStoreTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/src/test/java/org/axonframework/eventsourcing/eventstore/EmbeddedEventStoreTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-eventsourcing ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-eventsourcing ---
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:test-jar (default) @ axon-eventsourcing ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/axon-eventsourcing-4.0.1-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-eventsourcing ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/axon-eventsourcing-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-eventsourcing ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/axon-eventsourcing-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-eventsourcing/4.0.1-SNAPSHOT/axon-eventsourcing-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-eventsourcing/4.0.1-SNAPSHOT/axon-eventsourcing-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/axon-eventsourcing-4.0.1-SNAPSHOT-tests.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-eventsourcing/4.0.1-SNAPSHOT/axon-eventsourcing-4.0.1-SNAPSHOT-tests.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/eventsourcing/target/axon-eventsourcing-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-eventsourcing/4.0.1-SNAPSHOT/axon-eventsourcing-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-eventsourcing ---
+[INFO] Installing org/axonframework/axon-eventsourcing/4.0.1-SNAPSHOT/axon-eventsourcing-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Disruptor 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-disruptor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-disruptor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-disruptor ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-disruptor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-disruptor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/src/test/java/org/axonframework/disruptor/commandhandling/DisruptorCommandBusTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/src/test/java/org/axonframework/disruptor/commandhandling/DisruptorCommandBusTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/src/test/java/org/axonframework/disruptor/commandhandling/DisruptorCommandBusTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-disruptor ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-disruptor ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-disruptor ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/target/axon-disruptor-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-disruptor ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/target/axon-disruptor-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-disruptor/4.0.1-SNAPSHOT/axon-disruptor-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-disruptor/4.0.1-SNAPSHOT/axon-disruptor-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/disruptor/target/axon-disruptor-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-disruptor/4.0.1-SNAPSHOT/axon-disruptor-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-disruptor ---
+[INFO] Installing org/axonframework/axon-disruptor/4.0.1-SNAPSHOT/axon-disruptor-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Configuration 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ axon-configuration ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-configuration ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-configuration ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/src/main/java/org/axonframework/config/EventProcessingConfigurer.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/src/main/java/org/axonframework/config/EventProcessingConfigurer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-configuration ---
+[WARNING] Manifest org.axonframework:axon-configuration:bundle:4.0.1-SNAPSHOT : Unused Import-Package instructions: [org.slf4j.*] 
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-configuration ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-configuration ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/src/test/java/org/axonframework/config/SagaConfigurerTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/src/test/java/org/axonframework/config/SagaConfigurerTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/src/test/java/org/axonframework/config/SagaConfigurerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-configuration ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-configuration ---
+[WARNING] Bundle org.axonframework:axon-configuration:bundle:4.0.1-SNAPSHOT : Unused Import-Package instructions: [org.slf4j.*] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-configuration ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/target/axon-configuration-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-configuration ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/target/axon-configuration-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-configuration/4.0.1-SNAPSHOT/axon-configuration-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-configuration/4.0.1-SNAPSHOT/axon-configuration-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/config/target/axon-configuration-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-configuration/4.0.1-SNAPSHOT/axon-configuration-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-configuration ---
+[INFO] Installing org/axonframework/axon-configuration/4.0.1-SNAPSHOT/axon-configuration-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Test Fixtures 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ axon-test ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 59 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/src/main/java/org/axonframework/test/matchers/MapEntryMatcher.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/src/main/java/org/axonframework/test/matchers/MapEntryMatcher.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/src/main/java/org/axonframework/test/matchers/MapEntryMatcher.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 63 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/src/test/java/org/axonframework/test/matchers/ExactSequenceOfEventsMatcherTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/src/test/java/org/axonframework/test/matchers/ExactSequenceOfEventsMatcherTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-test ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ axon-test ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/target/axon-test-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-test ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/target/axon-test-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-test ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/target/axon-test-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-test/4.0.1-SNAPSHOT/axon-test-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-test/4.0.1-SNAPSHOT/axon-test-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/test/target/axon-test-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-test/4.0.1-SNAPSHOT/axon-test-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Connector for AxonServer 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-core/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (2.5 kB at 61 kB/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-core/maven-metadata.xml (722 B at 1.7 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/netty/netty-codec-http2/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (2.6 kB at 260 kB/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/io/netty/netty-codec-http2/maven-metadata.xml (1.1 kB at 6.7 kB/s)
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack (unpack) @ axon-server-connector ---
+[INFO] Configured Artifact: io.axoniq:axon-server-api:?:jar
+[INFO] Unpacking /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/io/axoniq/axon-server-api/4.0/axon-server-api-4.0.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/proto with includes "*.proto" and excludes ""
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.5.0:compile (default) @ axon-server-connector ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom (5.7 kB at 354 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom (7.7 kB at 640 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.pom (1.6 kB at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.4/maven-plugin-tools-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.4/maven-plugin-tools-3.4.pom (14 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4.0 kB at 287 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/com/google/protobuf/protoc/3.0.2/protoc-3.0.2.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/3.0.2/protoc-3.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/3.0.2/protoc-3.0.2.pom (4.5 kB at 649 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/com/google/protobuf/protoc/3.0.2/protoc-3.0.2-linux-x86_64.exe
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/3.0.2/protoc-3.0.2-linux-x86_64.exe
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/3.0.2/protoc-3.0.2-linux-x86_64.exe (4.1 MB at 17 MB/s)
+[INFO] Compiling 5 proto file(s) to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/java
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.5.0:compile-custom (default) @ axon-server-connector ---
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/protoc-gen-grpc-java/1.1.2/protoc-gen-grpc-java-1.1.2.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.1.2/protoc-gen-grpc-java-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.1.2/protoc-gen-grpc-java-1.1.2.pom (2.0 kB at 12 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/protoc-gen-grpc-java/1.1.2/protoc-gen-grpc-java-1.1.2-linux-x86_64.exe
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.1.2/protoc-gen-grpc-java-1.1.2-linux-x86_64.exe
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.1.2/protoc-gen-grpc-java-1.1.2-linux-x86_64.exe (2.5 MB at 5.6 MB/s)
+[INFO] Compiling 5 proto file(s) to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/grpc-java
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-server-connector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 5 resources
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-server-connector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 179 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/java/io/axoniq/axonserver/grpc/ProcessingInstruction.java: Some input files use or override a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/java/io/axoniq/axonserver/grpc/ProcessingInstruction.java: Recompile with -Xlint:deprecation for details.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/main/java/org/axonframework/axonserver/connector/util/GrpcPayloadSerializer.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/main/java/org/axonframework/axonserver/connector/util/GrpcPayloadSerializer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-server-connector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-server-connector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/test/java/org/axonframework/axonserver/connector/event/axon/EventBufferTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/test/java/org/axonframework/axonserver/connector/event/axon/EventBufferTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/test/java/org/axonframework/axonserver/connector/event/axon/EventBufferTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-server-connector ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ axon-server-connector ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-server-connector ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-server-connector ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-server-connector/4.0.1-SNAPSHOT/axon-server-connector-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-server-connector/4.0.1-SNAPSHOT/axon-server-connector-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-server-connector/4.0.1-SNAPSHOT/axon-server-connector-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Metrics 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ axon-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-metrics ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-metrics ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/src/main/java/org/axonframework/metrics/GlobalMetricRegistry.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/src/main/java/org/axonframework/metrics/GlobalMetricRegistry.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/src/main/java/org/axonframework/metrics/GlobalMetricRegistry.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-metrics ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-metrics ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-metrics ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-metrics ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-metrics ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-metrics ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/target/axon-metrics-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-metrics ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/target/axon-metrics-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-metrics/4.0.1-SNAPSHOT/axon-metrics-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-metrics/4.0.1-SNAPSHOT/axon-metrics-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/metrics/target/axon-metrics-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-metrics/4.0.1-SNAPSHOT/axon-metrics-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-metrics ---
+[INFO] Installing org/axonframework/axon-metrics/4.0.1-SNAPSHOT/axon-metrics-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Spring Support 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-spring ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:manifest (default) @ axon-spring ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-spring ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/src/test/java/org/axonframework/spring/config/annotation/AnnotationCommandHandlerBeanPostProcessorTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/src/test/java/org/axonframework/spring/config/annotation/AnnotationCommandHandlerBeanPostProcessorTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/src/test/java/org/axonframework/spring/config/annotation/AnnotationCommandHandlerBeanPostProcessorTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-spring ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:bundle (default-bundle) @ axon-spring ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-spring ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/target/axon-spring-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-spring ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/target/axon-spring-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring/4.0.1-SNAPSHOT/axon-spring-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring/4.0.1-SNAPSHOT/axon-spring-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring/target/axon-spring-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring/4.0.1-SNAPSHOT/axon-spring-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.3.0:install (default-install) @ axon-spring ---
+[INFO] Installing org/axonframework/axon-spring/4.0.1-SNAPSHOT/axon-spring-4.0.1-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Spring Boot Support 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-spring-boot-autoconfigure ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-spring-boot-autoconfigure ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/main/java/org/axonframework/springboot/autoconfig/AxonAutoConfiguration.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/main/java/org/axonframework/springboot/autoconfig/AxonAutoConfiguration.java uses or overrides a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/main/java/org/axonframework/springboot/autoconfig/AxonAutoConfiguration.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-spring-boot-autoconfigure ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-spring-boot-autoconfigure ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/test/java/org/axonframework/springboot/AxonAutoConfigurationWithEventSerializerPropertiesTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/test/java/org/axonframework/springboot/AxonAutoConfigurationWithEventSerializerPropertiesTest.java uses or overrides a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/test/java/org/axonframework/springboot/AxonAutoConfigurationWithEventSerializerPropertiesTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/test/java/org/axonframework/springboot/AxonAutoConfigurationWithHibernateTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/test/java/org/axonframework/springboot/AxonAutoConfigurationWithHibernateTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/src/test/java/org/axonframework/springboot/AxonAutoConfigurationWithHibernateTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-spring-boot-autoconfigure ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ axon-spring-boot-autoconfigure ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/target/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-spring-boot-autoconfigure ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/target/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-spring-boot-autoconfigure ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/target/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring-boot-autoconfigure/4.0.1-SNAPSHOT/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring-boot-autoconfigure/4.0.1-SNAPSHOT/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-autoconfigure/target/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring-boot-autoconfigure/4.0.1-SNAPSHOT/axon-spring-boot-autoconfigure-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spring Boot Starter module for Axon Framework 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ axon-spring-boot-starter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-starter/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-spring-boot-starter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ axon-spring-boot-starter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-starter/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-spring-boot-starter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.21.0:test (default-test) @ axon-spring-boot-starter ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ axon-spring-boot-starter ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-starter/target/axon-spring-boot-starter-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-spring-boot-starter ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-starter/target/axon-spring-boot-starter-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring-boot-starter/4.0.1-SNAPSHOT/axon-spring-boot-starter-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/spring-boot-starter/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-spring-boot-starter/4.0.1-SNAPSHOT/axon-spring-boot-starter-4.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Integration tests 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-integrationtests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-integrationtests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-integrationtests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-integrationtests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 50 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/target/test-classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/src/test/java/org/axonframework/integrationtests/eventhandling/TrackingEventProcessorTest.java: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/src/test/java/org/axonframework/integrationtests/eventhandling/TrackingEventProcessorTest.java uses unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/src/test/java/org/axonframework/integrationtests/eventhandling/TrackingEventProcessorTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-integrationtests ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ axon-integrationtests ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom (4.0 kB at 264 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom (1.6 kB at 161 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 474 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom (1.2 kB at 205 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.jar (51 kB at 4.2 MB/s)
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/target/axon-integrationtests-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.1:test-jar (default) @ axon-integrationtests ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/target/axon-integrationtests-4.0.1-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-integrationtests ---
+[INFO] No sources in project. Archive not created.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-integrationtests ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/target/axon-integrationtests-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-integrationtests/4.0.1-SNAPSHOT/axon-integrationtests-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-integrationtests/4.0.1-SNAPSHOT/axon-integrationtests-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/integrationtests/target/axon-integrationtests-4.0.1-SNAPSHOT-tests.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-integrationtests/4.0.1-SNAPSHOT/axon-integrationtests-4.0.1-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Legacy Components 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-legacy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-legacy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-legacy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-legacy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-legacy ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ axon-legacy ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/target/axon-legacy-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-legacy ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/target/axon-legacy-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-legacy ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/target/axon-legacy-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-legacy/4.0.1-SNAPSHOT/axon-legacy-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-legacy/4.0.1-SNAPSHOT/axon-legacy-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/legacy/target/axon-legacy-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-legacy/4.0.1-SNAPSHOT/axon-legacy-4.0.1-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Axon Framework ..................................... SUCCESS [  0.842 s]
+[INFO] Axon Framework Messaging ........................... SUCCESS [ 42.986 s]
+[INFO] Axon Framework Modelling ........................... SUCCESS [ 13.824 s]
+[INFO] Axon Event Sourcing ................................ SUCCESS [  5.194 s]
+[INFO] Axon Disruptor ..................................... SUCCESS [  3.825 s]
+[INFO] Axon Configuration ................................. SUCCESS [  3.613 s]
+[INFO] Axon Framework Test Fixtures ....................... SUCCESS [  3.038 s]
+[INFO] Axon Framework Connector for AxonServer ............ SUCCESS [ 11.927 s]
+[INFO] Axon Framework Metrics ............................. SUCCESS [  0.743 s]
+[INFO] Axon Framework Spring Support ...................... SUCCESS [  7.233 s]
+[INFO] Axon Framework Spring Boot Support ................. SUCCESS [ 12.751 s]
+[INFO] Spring Boot Starter module for Axon Framework ...... SUCCESS [  0.717 s]
+[INFO] Axon Integration tests ............................. SUCCESS [ 30.971 s]
+[INFO] Axon Legacy Components ............................. SUCCESS [  4.655 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:23 min
+[INFO] Finished at: 2020-03-13T14:05:21-07:00
+[INFO] Final Memory: 103M/2216M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.release: "centos"
+[INFO] os.detected.release.version: 7
+[INFO] os.detected.release.like."centos": true
+[INFO] os.detected.release.like."rhel: true
+[INFO] os.detected.release.like.fedora": true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Axon Framework Connector for AxonServer 4.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/axonframework/axon-configuration/4.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/axonframework/axon/4.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/axonframework/axon-eventsourcing/4.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/axonframework/axon-modelling/4.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/axonframework/axon-messaging/4.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/axonframework/axon-disruptor/4.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-core/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (2.5 kB at 2.1 kB/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/io/grpc/grpc-core/maven-metadata.xml (722 B at 594 B/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/netty/netty-codec-http2/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (2.6 kB at 4.2 kB/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/io/netty/netty-codec-http2/maven-metadata.xml (1.1 kB at 1.4 kB/s)
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack (unpack) @ axon-server-connector ---
+[INFO] Configured Artifact: io.axoniq:axon-server-api:?:jar
+[INFO] axon-server-api-4.0.jar already unpacked.
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.5.0:compile (default) @ axon-server-connector ---
+[INFO] Compiling 5 proto file(s) to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/java
+[INFO] 
+[INFO] --- protobuf-maven-plugin:0.5.0:compile-custom (default) @ axon-server-connector ---
+[INFO] Compiling 5 proto file(s) to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/grpc-java
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ axon-server-connector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 5 resources
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ axon-server-connector ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 179 source files to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/classes
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/java/io/axoniq/axonserver/grpc/ProcessingInstruction.java: Some input files use or override a deprecated API.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/generated-sources/protobuf/java/io/axoniq/axonserver/grpc/ProcessingInstruction.java: Recompile with -Xlint:deprecation for details.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/main/java/org/axonframework/axonserver/connector/util/GrpcPayloadSerializer.java: Some input files use unchecked or unsafe operations.
+[INFO] /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/src/main/java/org/axonframework/axonserver/connector/util/GrpcPayloadSerializer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ axon-server-connector ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ axon-server-connector ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ axon-server-connector ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ axon-server-connector ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ axon-server-connector ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ axon-server-connector ---
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-server-connector/4.0.1-SNAPSHOT/axon-server-connector-4.0.1-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/pom.xml to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-server-connector/4.0.1-SNAPSHOT/axon-server-connector-4.0.1-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/axon-server-connector/target/axon-server-connector-4.0.1-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_AxonFramework-AxonFramework_451926440-451937647_java-8/.m2/org/axonframework/axon-server-connector/4.0.1-SNAPSHOT/axon-server-connector-4.0.1-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 41.724 s
+[INFO] Finished at: 2020-03-13T14:06:06-07:00
+[INFO] Final Memory: 40M/1470M
+[INFO] ------------------------------------------------------------------------

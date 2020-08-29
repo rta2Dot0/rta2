@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-843
+Summary: Mock does not implement locality groups or merging
+Description: |-
+  The Mock Instance does not implement locality groups and throws an exception if one attempts to set them. It would be useful for the unit tests that I am writing for the Accumulo proxy to have at least minimal locality group functionality in the Mock instance, for example simply storing the groups and returning the stored groups when asked for.
+
+  *Edit: Tablet merging would be useful as well.

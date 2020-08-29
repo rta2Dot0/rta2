@@ -1,0 +1,14 @@
+---
+BugID: CAMEL-3314
+Summary: Property resolve in EIP does not work when in a sub route.
+Description: "The 2.5 feature: \"The EIP now supports property placeholders in the
+  String based options (a few spots in Java DSL where its not possible). For example:
+  \n<convertBodyTo type=\"String\" charset=\"{{foo.myCharset}}\"/>\" does not work
+  correctly when ie nested in a <choice> tag.\n\nSee discussion: http://camel.465427.n5.nabble.com/Camel-2-5-Propertyplaceholders-and-Spring-DSL-still-not-working-td3251608.html#a3251608\n\nExample
+  route:\n\nThis works: \n<route> \n        <from uri=\"direct:in\" /> \n        <convertBodyTo
+  type=\"String\" charset=\"{{charset.external}}\" />\t\n        <log message=\"Charset:
+  {{charset.external}}\" /> \n        <to uri=\"mock:out\" /> \n</route> \n\nThis
+  fails: \n<route> \n        <from uri=\"direct:in\" /> \n        <choice> \n                <when>
+  \n                        <constant>true</constant> \n                        <convertBodyTo
+  type=\"String\" charset=\"{{charset.external}}\" />\t\n                </when> \n
+  \       </choice> \n        <to uri=\"mock:out\" /> \n</route> "

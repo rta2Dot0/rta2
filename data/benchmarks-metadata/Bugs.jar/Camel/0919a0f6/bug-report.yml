@@ -1,0 +1,20 @@
+---
+BugID: CAMEL-3388
+Summary: "@OutHeaders in bean binding issue with InOnly MEP"
+Description: |-
+  When you invoke a bean with a method signature like this in Camel 2.5.0/HEAD, the in and out message both are null (the "Hello!" value just disappears):
+
+  {code:java}
+      public String doTest(@Body Object body, @Headers Map headers, @OutHeaders Map outHeaders) {
+          return "Hello!";
+      }
+  {code}
+
+  The same thing without the headers works OK:
+
+  {code:java}
+      public String doTest(@Body Object body) {
+          return "Hello!";
+      }
+  {code}
+  See camel-core/src/test/java/org/apache/camel/component/bean/BeanWithHeadersAndBodyInject3Test.java

@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-6667
+Summary: Loop EIP doesn't honour copy option in some circumstances
+Description: "Happens when the Async Routing Engine variant of the Loop logic kicks
+  in, and there are more than two processors in the loop body, e.g. \n\\\\\n\\\\\n{code:java}\n.loop(3)\n
+  \ .to(\"activemq:queue:abc?exchangePattern=InOut\")\n  .to(\"activemq:queue:def?exchangePattern=InOut\")\n.end()\n{code}\n\nThe
+  wrong inflight Exchange is copied (instead of the original one), and since the implicit
+  Pipeline has copied the OUT message from the 1st endpoint to the IN message, the
+  original IN message is lost fully."

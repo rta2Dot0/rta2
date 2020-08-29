@@ -1,0 +1,28 @@
+---
+BugID: LOG4J2-619
+Summary: Unable to recover after loading corrupted XML
+Description: |-
+  Steps to reproduce:
+  1) auto-reloading of log4j 2.x configuration from XML is enabled
+  2) system is started and producing logs
+  3) change XML configuration, so it's not valid XML any longer
+  4) Wait till it would be picked up -> no more logging info is produced, exception can be found from logs (see below).
+  5) Fix XML configuration -> it's not getting reloaded anymore, only java restart can fix the problem.
+
+  log4j2.xml org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 7; The processi
+  ng instruction target matching "[xX][mM][lL]" is not allowed.
+          at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:257)
+          at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:347)
+          at org.apache.logging.log4j.core.config.XMLConfiguration.<init>(XMLConfiguration.java:145)
+          at org.apache.logging.log4j.core.config.XMLConfiguration.reconfigure(XMLConfiguration.java:286)
+          at org.apache.logging.log4j.core.LoggerContext.onChange(LoggerContext.java:421)
+          at org.apache.logging.log4j.core.config.FileConfigurationMonitor.checkConfiguration(FileConfigurationMonitor.java:79)
+          at org.apache.logging.log4j.core.Logger$PrivateConfig.filter(Logger.java:279)
+          at org.apache.logging.log4j.core.Logger.isEnabled(Logger.java:117)
+          at org.apache.logging.log4j.spi.AbstractLoggerWrapper.isEnabled(AbstractLoggerWrapper.java:82)
+          at org.apache.logging.log4j.spi.AbstractLogger.isDebugEnabled(AbstractLogger.java:1071)
+          at org.slf4j.impl.SLF4JLogger.isDebugEnabled(SLF4JLogger.java:174)
+          at org.apache.commons.logging.impl.SLF4JLocationAwareLog.isDebugEnabled(SLF4JLocationAwareLog.java:67)
+  ....
+
+  ERROR No logging configuration

@@ -1,0 +1,7 @@
+---
+BugID: OAK-4307
+Summary: SegmentWriter saves references to external blobs
+Description: |-
+  The new {{SegmentWriteOperation#internalWriteStream}} method checks whether the input stream to write is a {{SegmentStream}}. If it's, writer will reuse existing block ids, rather than storing the whole stream.
+
+  It should also check whether the blocks in {{SegmentStream}} comes from the same tracker / segment store. Otherwise this will create invalid references if someone invokes the {{internalWriteStream()}} method with a {{SegmentStream}} created externally.

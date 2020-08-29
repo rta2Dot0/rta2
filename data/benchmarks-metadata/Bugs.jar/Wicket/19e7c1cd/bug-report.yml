@@ -1,0 +1,14 @@
+---
+BugID: WICKET-5398
+Summary: XmlPullParser fails to properly parse from String with encoding declaration
+Description: |-
+  When parsing from a string, XmlPullParser fails if the encoding from the XML declaration is different than the system's file encoding.
+
+  Examples:
+     -Dfile.encoding=ISO-8859-1
+     parser.parse("<?xml encoding='UTF-8' ?><span id='umlaut-äöü'></span>");
+
+     -Dfile.encoding=UTF-8
+     parser.parse("<?xml encoding='ISO-8859-1' ?><span id='umlaut-äöü'></span>");
+
+  Both fail because the string is read with the system's file encoding while the parser expects the stream to be encoded in the declarated encoding.

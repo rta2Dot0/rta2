@@ -1,0 +1,8 @@
+---
+BugID: OAK-4153
+Summary: segment's compareAgainstBaseState wont call childNodeDeleted when deleting
+  last and adding n nodes
+Description: |-
+  {{SegmentNodeState.compareAgainstBaseState}} fails to call {{NodeStateDiff.childNodeDeleted}} when for the same parent the only child is deleted and at the same time multiple new, different children are added.
+
+  Reason is that the [current code|https://github.com/apache/jackrabbit-oak/blob/a9ce70b61567ffe27529dad8eb5d38ced77cf8ad/oak-segment/src/main/java/org/apache/jackrabbit/oak/plugins/segment/SegmentNodeState.java#L558] for '{{afterChildName == MANY_CHILD_NODES}}' *and* '{{beforeChildName == ONE_CHILD_NODE}}' does not handle all cases: it assumes that 'after' contains the 'before' child and doesn't handle the situation where the 'before' child has gone.

@@ -1,0 +1,13 @@
+---
+BugID: LOG4J2-234
+Summary: RegexFilter crashes as context-wide filter
+Description: "If a RegexFilter is used as a context-wide filter,\nthen a call like\n
+  \ logger.isDebugEnabled()\nleads to a Null-Pointer-Exception, because the RegexFilter
+  is called with the message \"null\".\nThe stack-trace (2.0-beta5) is:\n\tat org.apache.logging.log4j.core.filter.RegexFilter.filter(RegexFilter.java:60)\n\tat
+  org.apache.logging.log4j.core.filter.CompositeFilter.filter(CompositeFilter.java:176)\n\tat
+  org.apache.logging.log4j.core.Logger$PrivateConfig.filter(Logger.java:317)\n\tat
+  org.apache.logging.log4j.core.Logger.isEnabled(Logger.java:128)\n\tat org.apache.logging.log4j.spi.AbstractLogger.isTraceEnabled(AbstractLogger.java:1129)\n\n\nIn
+  the MarkerFilter is the code\n  return marker != null && ...\ni.e. it is only necessary
+  to change line 60 to\n  return msg != null && filter(msg.toString)\nin RegexFilter
+  (I do not know how to do this correctly...)\n\nIn line 77, this check is done; in
+  line 66 and 72 the same problem may arise...\n\nGreetings,\nGerald Kroisandt\n"

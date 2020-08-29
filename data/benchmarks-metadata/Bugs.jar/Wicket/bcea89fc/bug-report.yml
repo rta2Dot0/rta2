@@ -1,0 +1,76 @@
+---
+BugID: WICKET-5751
+Summary: NullPointerException in IntHashMap
+Description: "I was looking through a tester's log file to track down a separate issue.
+  I came across a {{NullPointerException}} with {{IntHashMap}}, apparently when the
+  server was shutting down.\n\nSee also WICKET-5584, which also deals with a {{NullPointerException}}
+  with {{IntHashMap}}, and also seems to relate to a {{null}} {{modCount}} (judging
+  by the line number).\n\n{noformat}\nINFO  (ExampleServer) [2014-11-06 00:49:24,979]
+  - com.example.server.ExampleServer.stopServer(ExampleServer.java:268): Stopping
+  server.\nINFO  (ServerConnector) [2014-11-06 00:49:24,982] - org.eclipse.jetty.server.AbstractConnector.doStop(AbstractConnector.java:306):
+  Stopped ServerConnector@3b7d3a38{HTTP/1.1}{0.0.0.0:8099}\nINFO  (Application) [2014-11-06
+  00:49:24,983] - org.apache.wicket.Application.destroyInitializers(Application.java:588):
+  [org.apache.wicket.protocol.http.WicketFilter-55b0dcab] destroy: Wicket core library
+  initializer\nINFO  (Application) [2014-11-06 00:49:24,983] - org.apache.wicket.Application.destroyInitializers(Application.java:588):
+  [org.apache.wicket.protocol.http.WicketFilter-55b0dcab] destroy: Wicket extensions
+  initializer\nERROR (DiskDataStore) [2014-11-06 00:49:24,988] - org.apache.wicket.pageStore.DiskDataStore.saveIndex(DiskDataStore.java:282):
+  Couldn't write DiskDataStore index to file C:\\Windows\\SERVIC~2\\NETWOR~1\\AppData\\Local\\Temp\\org.apache.wicket.protocol.http.WicketFilter-55b0dcab-filestore\\DiskDataStoreIndex.\njava.lang.NullPointerException\n\tat
+  org.apache.wicket.util.collections.IntHashMap$HashIterator.<init>(IntHashMap.java:777)\n\tat
+  org.apache.wicket.util.collections.IntHashMap$EntryIterator.<init>(IntHashMap.java:871)\n\tat
+  org.apache.wicket.util.collections.IntHashMap$EntryIterator.<init>(IntHashMap.java:871)\n\tat
+  org.apache.wicket.util.collections.IntHashMap.newEntryIterator(IntHashMap.java:896)\n\tat
+  org.apache.wicket.util.collections.IntHashMap$EntrySet.iterator(IntHashMap.java:1055)\n\tat
+  org.apache.wicket.util.collections.IntHashMap.writeObject(IntHashMap.java:1128)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:483)\n\tat java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)\n\tat
+  java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)\n\tat java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)\n\tat
+  java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)\n\tat java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)\n\tat
+  java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)\n\tat java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)\n\tat
+  java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)\n\tat java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)\n\tat
+  java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509)\n\tat java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)\n\tat
+  java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)\n\tat java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)\n\tat
+  java.util.HashMap.internalWriteEntries(HashMap.java:1777)\n\tat java.util.HashMap.writeObject(HashMap.java:1354)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:483)\n\tat java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)\n\tat
+  java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)\n\tat java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)\n\tat
+  java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)\n\tat java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)\n\tat
+  org.apache.wicket.pageStore.DiskDataStore.saveIndex(DiskDataStore.java:274)\n\tat
+  org.apache.wicket.pageStore.DiskDataStore.destroy(DiskDataStore.java:106)\n\tat
+  org.apache.wicket.pageStore.AsynchronousDataStore.destroy(AsynchronousDataStore.java:118)\n\tat
+  org.apache.wicket.pageStore.AbstractPageStore.destroy(AbstractPageStore.java:53)\n\tat
+  org.apache.wicket.pageStore.AbstractCachingPageStore.destroy(AbstractCachingPageStore.java:102)\n\tat
+  org.apache.wicket.page.PageStoreManager.destroy(PageStoreManager.java:437)\n\tat
+  org.apache.wicket.Application.internalDestroy(Application.java:659)\n\tat org.apache.wicket.protocol.http.WebApplication.internalDestroy(WebApplication.java:607)\n\tat
+  org.apache.wicket.protocol.http.WicketFilter.destroy(WicketFilter.java:605)\n\tat
+  org.eclipse.jetty.servlet.FilterHolder.destroyInstance(FilterHolder.java:173)\n\tat
+  org.eclipse.jetty.servlet.FilterHolder.doStop(FilterHolder.java:151)\n\tat org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:89)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:143)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:162)\n\tat
+  org.eclipse.jetty.server.handler.AbstractHandler.doStop(AbstractHandler.java:73)\n\tat
+  org.eclipse.jetty.servlet.ServletHandler.doStop(ServletHandler.java:230)\n\tat org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:89)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:143)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:162)\n\tat
+  org.eclipse.jetty.server.handler.AbstractHandler.doStop(AbstractHandler.java:73)\n\tat
+  org.eclipse.jetty.security.SecurityHandler.doStop(SecurityHandler.java:411)\n\tat
+  org.eclipse.jetty.security.ConstraintSecurityHandler.doStop(ConstraintSecurityHandler.java:457)\n\tat
+  org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:89)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:143)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:162)\n\tat
+  org.eclipse.jetty.server.handler.AbstractHandler.doStop(AbstractHandler.java:73)\n\tat
+  org.eclipse.jetty.server.session.SessionHandler.doStop(SessionHandler.java:127)\n\tat
+  org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:89)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:143)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:162)\n\tat
+  org.eclipse.jetty.server.handler.AbstractHandler.doStop(AbstractHandler.java:73)\n\tat
+  org.eclipse.jetty.server.handler.ContextHandler.doStop(ContextHandler.java:833)\n\tat
+  org.eclipse.jetty.servlet.ServletContextHandler.doStop(ServletContextHandler.java:215)\n\tat
+  org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:89)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:143)\n\tat
+  org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:162)\n\tat
+  org.eclipse.jetty.server.handler.AbstractHandler.doStop(AbstractHandler.java:73)\n\tat
+  org.eclipse.jetty.server.Server.doStop(Server.java:456)\n\tat org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:89)\n\tat
+  com.example.server.ExampleServer.stopServer(ExampleServer.java:269)\n\tat com.example.server.ExampleServer.stop(ExampleServer.java:279)\nINFO
+  \ (ContextHandler) [2014-11-06 00:49:24,990] - org.eclipse.jetty.server.handler.ContextHandler.doStop(ContextHandler.java:863):
+  Stopped o.e.j.s.ServletContextHandler@63f259c3{/,null,UNAVAILABLE}\n{noformat}"

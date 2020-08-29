@@ -1,0 +1,12 @@
+---
+BugID: OAK-1108
+Summary: Query constraints marked as invalid in the case of an mvp
+Description: |-
+  It seems that in the case of a query that has more constraints on the same property, like
+  bq. //*[(@prop = 'aaa' and @prop = 'bbb' and @prop = 'ccc')]
+
+  the filter is marked as invalid (_#isAlwaysFalse_) and the query returns no results.
+
+  This is incorrect and affects queries that search for multi-valued properties on nodes.
+
+  This comes from/affects OAK-1075.

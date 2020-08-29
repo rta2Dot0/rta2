@@ -1,0 +1,6 @@
+---
+BugID: FLINK-2442
+Summary: 'PojoType fields not supported by field position keys '
+Description: "Tuple fields which are Pojos (or any other non-tuple composite type)
+  cannot be selected as keys by field position keys.\n\nSomething like \n\n{code}\nDataSet<Tuple2<Integer,
+  MyPojo>> data = ...\ndata.groupBy(1).reduce(...)\n{code}\n\nfails with an exception."

@@ -1,0 +1,15 @@
+---
+BugID: OAK-1899
+Summary: Ordered index fails with old index content
+Description: |-
+  With the latest changes, the ordered index no longer works with old index data. When running the latest Oak 1.0.2 snapshot run against an Oak 1.0.0 repository with an existing ordered index, the index fails with the exception below.
+
+  As a workaround, the ordered index can be manually re-built. Either the index re-build needs to be automatic, or the ordered index needs to work with the old index content.
+
+  {noformat}
+  java.lang.IndexOutOfBoundsException: index (3) must be less than size (1)
+      at com.google.common.base.Preconditions.checkElementIndex(Preconditions.java:306)
+      at com.google.common.base.Preconditions.checkElementIndex(Preconditions.java:285)
+      at org.apache.jackrabbit.oak.plugins.segment.SegmentPropertyState.getValue(SegmentPropertyState.java:157)
+      at org.apache.jackrabbit.oak.plugins.index.property.strategy.OrderedContentMirrorStoreStrategy.getPropertyNext(OrderedContentMirrorStoreStrategy.java:1024)
+  {noformat}

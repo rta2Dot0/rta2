@@ -1,0 +1,22 @@
+---
+BugID: CAMEL-7622
+Summary: advice-with - No outputs found matching id when upgrading from 2.13 to 2.14
+Description: "I have the following route defined with the Java DSL: \n\nfrom(\"direct:localMemberLookup\").routeId(\"localMemberLookup\")
+  \n        .process(new MemberLookupToSqlParametersProcessor()).id(\"sqlParams\")
+  \n        .recipientList(simple(\"sql:{{sql.memberLookup}}\")).delimiter(\"false\")
+  \n        .to(\"log:output\") \n        .process(new MemberLookupProcessor()) \n
+  \       // do more processing \n        .to(\"log:output\"); \n\nI'm testing it
+  with a test that looks as follows: \n\n@EndpointInject(uri = \"mock:lookupHeaders\")
+  \nMockEndpoint lookupHeaders; \n\n@EndpointInject(uri = \"mock:searchResult\") \nMockEndpoint
+  searchResult; \n\n@EndpointInject(uri = \"mock:lookupResult\") \nMockEndpoint lookupResult;
+  \n\n@Autowired \nCamelContext camelContext; \n\n@Before \npublic void before() throws
+  Exception { \n        ModelCamelContext context = (ModelCamelContext) camelContext;
+  \n        context.setTracing(true); \n        RouteDefinition searchRoute = context.getRouteDefinition(\"memberSearchRequest\");
+  \n        searchRoute.to(searchResult); \n\n        RouteDefinition lookupRoute
+  = context.getRouteDefinition(\"localMemberLookup\"); \n        lookupRoute.adviceWith(context,
+  new AdviceWithRouteBuilder() { \n                @Override \n                public
+  void configure() throws Exception { \n                        weaveById(\"sqlParams\").after().to(lookupHeaders);
+  \n                } \n        }); \n        lookupRoute.to(lookupResult); \n        context.start();
+  \n} \n\nWith Camel 2.13.1, this works fine. However, with 2.14-SNAPSHOT, I get the
+  following error: \n\njava.lang.IllegalArgumentException: There are no outputs which
+  matches: sqlParams in the route \n\nMailing list thread: http://camel.465427.n5.nabble.com/weaveById-works-with-2-13-1-not-with-2-14-SNAPSHOT-td5753809.html"

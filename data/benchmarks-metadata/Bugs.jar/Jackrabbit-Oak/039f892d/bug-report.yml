@@ -1,0 +1,17 @@
+---
+BugID: OAK-2418
+Summary: int overflow with orderby causing huge slowdown
+Description: |-
+  Consider the following query:
+  {code}
+  //element(*,slingevent:Job) order by @slingevent:created ascending
+  {code}
+  this query - when running with a large number of slingevent:Job around - will take a very long time due to the fact, that FilterIterators.SortIterator.init() in the following loop:
+  {code}
+  if (list.size() > max * 2) {
+    // remove tail entries right now, to save memory
+    Collections.sort(list, orderBy);
+    keepFirst(list, max);
+  }
+  {code}
+  does a multiplication with 'max', which is by default set to Integer.MAX_VALUE (see FilterIterators.newCombinedFilter). This results in max *2 to overflow (result is -2) - thus that init-loop will sort the list for every additional entry. Which is definitely not the intention.

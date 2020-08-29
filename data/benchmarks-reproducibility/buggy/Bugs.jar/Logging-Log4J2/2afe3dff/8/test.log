@@ -1,0 +1,555 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Log4J Core 2.0-alpha3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/logging/log4j/log4j-api/2.0-alpha3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/logging/log4j/log4j-api/2.0-alpha3-SNAPSHOT/maven-metadata.xml (798 B at 1.7 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/logging/log4j/log4j/2.0-alpha3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/logging/log4j/log4j/2.0-alpha3-SNAPSHOT/maven-metadata.xml (616 B at 540 B/s)
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ log4j-core ---
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ log4j-core ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ log4j-core ---
+[INFO] Compiling 18 source files to /scratch/tmp-rta/Bugs.jar_Logging-Log4J2_2afe3dff_java-8/core/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.3.7:manifest (bundle-manifest) @ log4j-core ---
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default) > validate @ log4j-core >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default) < validate @ log4j-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default) @ log4j-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ log4j-core ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 28 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ log4j-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ log4j-core ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Logging-Log4J2_2afe3dff_java-8/core/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.pom (2.2 kB at 9.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.7.2/surefire-providers-2.7.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.7.2/surefire-providers-2.7.2.pom (1.8 kB at 80 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.7.2/surefire-junit4-2.7.2.jar (25 kB at 1.1 MB/s)
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.logging.log4j.core.appender.FailoverAppenderTest
+2020-03-13 13:04:48,689 ERROR An exception occurred processing Appender Fail org.apache.logging.log4j.LoggingException: Always fail
+	at org.apache.logging.log4j.test.appender.AlwaysFailAppender.append(AlwaysFailAppender.java:37)
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:99)
+	at org.apache.logging.log4j.core.appender.FailoverAppender.append(FailoverAppender.java:99)
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:99)
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:318)
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:299)
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:263)
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:115)
+	at org.apache.logging.log4j.spi.AbstractLogger.error(AbstractLogger.java:965)
+	at org.apache.logging.log4j.core.appender.FailoverAppenderTest.testFailover(FailoverAppenderTest.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:35)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:115)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at com.sun.proxy.$Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:74)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+
+2020-03-13 13:04:48,693 ERROR An exception occurred processing Appender Fail org.apache.logging.log4j.LoggingException: Always fail
+	at org.apache.logging.log4j.test.appender.AlwaysFailAppender.append(AlwaysFailAppender.java:37)
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:99)
+	at org.apache.logging.log4j.core.appender.FailoverAppender.append(FailoverAppender.java:99)
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:99)
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:318)
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:299)
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:263)
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:115)
+	at org.apache.logging.log4j.spi.AbstractLogger.error(AbstractLogger.java:965)
+	at org.apache.logging.log4j.core.appender.FailoverAppenderTest.testFailover(FailoverAppenderTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:35)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:115)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at com.sun.proxy.$Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:74)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.routing.RoutingAppenderTest
+2020-03-13 13:04:50,178 DEBUG Generated plugins in 0.003108624 seconds
+2020-03-13 13:04:50,188 DEBUG Calling createProperty on class org.apache.logging.log4j.core.config.Property for element property with params(name="filename", value="target/rolling1/rollingtest-${sd:type}.log")
+2020-03-13 13:04:50,190 DEBUG Calling configureSubstitutor on class org.apache.logging.log4j.core.config.plugins.PropertiesPlugin for element properties with params(properties={filename=target/rolling1/rollingtest-${sd:type}.log})
+2020-03-13 13:04:50,192 DEBUG Generated plugins in 0.001233813 seconds
+2020-03-13 13:04:50,195 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.ThresholdFilter for element ThresholdFilter with params(level="debug", onMatch="null", onMismatch="null")
+2020-03-13 13:04:50,199 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%m%n", Configuration(RoutingTest), null, charset="null")
+2020-03-13 13:04:50,200 DEBUG Generated plugins in 0.001204315 seconds
+2020-03-13 13:04:50,202 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%m%n), null, target="null", name="STDOUT", suppressExceptions="null")
+2020-03-13 13:04:50,203 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.ThresholdFilter for element ThresholdFilter with params(level="debug", onMatch="null", onMismatch="null")
+2020-03-13 13:04:50,205 DEBUG Calling createAppender on class org.apache.logging.log4j.test.appender.ListAppender for element List with params(name="List", entryPerNewLine="null", raw="null", null, ThresholdFilter(DEBUG))
+2020-03-13 13:04:50,208 DEBUG Calling createRoute on class org.apache.logging.log4j.core.appender.routing.Route for element Route with params(ref="null", key="null", Node=Route)
+2020-03-13 13:04:50,208 DEBUG Calling createRoute on class org.apache.logging.log4j.core.appender.routing.Route for element Route with params(ref="STDOUT", key="Audit", Node=Route)
+2020-03-13 13:04:50,209 DEBUG Calling createRoute on class org.apache.logging.log4j.core.appender.routing.Route for element Route with params(ref="List", key="Service", Node=Route)
+2020-03-13 13:04:50,210 DEBUG Calling createRoutes on class org.apache.logging.log4j.core.appender.routing.Routes for element Routes with params(pattern="${sd:type}", routes={Route(type=dynamic default), Route(type=static Reference=STDOUT key='Audit'), Route(type=static Reference=List key='Service')})
+2020-03-13 13:04:50,211 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.routing.RoutingAppender for element Routing with params(name="Routing", suppressExceptions="null", Routes({Route(type=dynamic default),Route(type=static Reference=STDOUT key='Audit'),Route(type=static Reference=List key='Service')}), Configuration(RoutingTest), null, null)
+2020-03-13 13:04:50,212 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element appenders with params(appenders={STDOUT, List, Routing})
+2020-03-13 13:04:50,213 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="Routing", level="null", null)
+2020-03-13 13:04:50,214 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig for element logger with params(additivity="false", level="info", name="EventLogger", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@2fc14f68}, null)
+2020-03-13 13:04:50,215 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="STDOUT", level="null", null)
+2020-03-13 13:04:50,216 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig$RootLogger for element root with params(additivity="null", level="error", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@445b84c0}, null)
+2020-03-13 13:04:50,217 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element loggers with params(loggers={EventLogger, root})
+2020-03-13 13:04:50,218 DEBUG Reconfiguration completed
+2020-03-13 13:04:50,232 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%d %p %C{1.} [%t] %m%n", Configuration(RoutingTest), null, charset="null")
+2020-03-13 13:04:50,234 DEBUG Calling createPolicy on class org.apache.logging.log4j.core.appender.rolling.SizeBasedTriggeringPolicy for element SizeBasedTriggeringPolicy with params(size="500")
+2020-03-13 13:04:50,237 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.RollingFileAppender for element RollingFile with params(fileName="target/rolling1/rollingtest-Unknown.log", filePattern="target/rolling1/test1-Unknown.%i.log.gz", append="null", name="Rolling-Unknown", bufferedIO="null", immediateFlush="null", SizeBasedTriggeringPolicy(SizeBasedTriggeringPolicy(size=500)), null, PatternLayout(%d %p %C{1.} [%t] %m%n), null, suppressExceptions="null", Configuration(RoutingTest))
+2020-03-13 13:04:50,246 DEBUG Generated plugins in 0.001705308 seconds
+2020-03-13 13:04:50,257 DEBUG Reconfiguration started for context sun.misc.Launcher$AppClassLoader@6bc7c054
+2020-03-13 13:04:50,259 DEBUG Generated plugins in 0.001228598 seconds
+2020-03-13 13:04:50,284 DEBUG Generated plugins in 0.002287961 seconds
+2020-03-13 13:04:50,286 DEBUG Generated plugins in 0.000887281 seconds
+2020-03-13 13:04:50,287 WARN No Loggers were configured, using default
+2020-03-13 13:04:50,288 DEBUG Reconfiguration completed
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.42 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.routing.JSONRoutingAppenderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.593 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.routing.JSONRoutingAppender2Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.573 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.rolling.RollingAppenderSizeTest
+2020-03-13 13:04:55,799 WARN No Loggers were configured, using default
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.295 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.rolling.RollingAppenderTimeAndSizeTest
+2020-03-13 13:05:06,682 WARN No Loggers were configured, using default
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.528 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.rolling.RollingAppenderTimeTest
+2020-03-13 13:05:24,025 WARN No Loggers were configured, using default
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.986 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.rolling.OnStartupTriggeringPolicyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.196 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.FileAppenderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.175 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.rewrite.RewriteAppenderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.393 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.SyslogAppenderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.393 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.SocketAppenderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.695 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.appender.OutputStreamAppenderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.995 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.helpers.UUIDTest
+Elapsed for 2000 UUIDS = 324105565 Average = 162052 ns
+Elapsed for 200 UUIDS = 17750 Average = 88 ns
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.InterpolatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.ContextMapLookupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.StrSubstitutorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.SystemPropertiesLookupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.627 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.DateLookupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.StructuredDataLookupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.lookup.EnvironmentLookupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.config.XMLConfigurationPropsTest
+2020-03-13 13:05:44,291 ERROR Invalid status specified: ${sys:log4j.level}. Defaulting to ERROR
+2020-03-13 13:05:44,306 ERROR Invalid Log level specified: ${sys:log.level}. Defaulting to Error
+2020-03-13 13:05:44,314 ERROR Invalid Log level specified: ${sys:log.level}. Defaulting to Error
+2020-03-13 13:05:44,324 DEBUG Generated plugins in 0.000099771 seconds
+2020-03-13 13:05:44,325 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="[%-5level] %msg%n", Configuration(DSI), null, charset="null")
+2020-03-13 13:05:44,325 DEBUG Generated plugins in 0.000141568 seconds
+2020-03-13 13:05:44,327 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout([%-5level] %msg%n), null, target="SYSTEM_OUT", name="Console", suppressExceptions="null")
+2020-03-13 13:05:44,327 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element appenders with params(appenders={Console})
+2020-03-13 13:05:44,328 DEBUG Generated plugins in 0.000093437 seconds
+2020-03-13 13:05:44,328 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="Console", level="null", null)
+2020-03-13 13:05:44,329 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig$RootLogger for element root with params(additivity="null", level="${sys:log.level}", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@61a52fbd}, null)
+2020-03-13 13:05:44,330 ERROR Invalid Log level specified: ${sys:log.level}. Defaulting to Error
+2020-03-13 13:05:44,330 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element loggers with params(loggers={root})
+2020-03-13 13:05:44,330 DEBUG Reconfiguration completed
+2020-03-13 13:05:44,331 DEBUG Reconfiguration started for context Default
+2020-03-13 13:05:44,332 DEBUG Generated plugins in 0.000098837 seconds
+2020-03-13 13:05:44,335 DEBUG Generated plugins in 0.000101529 seconds
+2020-03-13 13:05:44,336 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="[%-5level] %msg%n", Configuration(DSI), null, charset="null")
+2020-03-13 13:05:44,337 DEBUG Generated plugins in 0.000166355 seconds
+2020-03-13 13:05:44,338 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout([%-5level] %msg%n), null, target="SYSTEM_OUT", name="Console", suppressExceptions="null")
+2020-03-13 13:05:44,339 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element appenders with params(appenders={Console})
+2020-03-13 13:05:44,339 DEBUG Generated plugins in 0.000091590 seconds
+2020-03-13 13:05:44,340 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="Console", level="null", null)
+2020-03-13 13:05:44,341 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig$RootLogger for element root with params(additivity="null", level="debug", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@233c0b17}, null)
+2020-03-13 13:05:44,341 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element loggers with params(loggers={root})
+2020-03-13 13:05:44,341 DEBUG Reconfiguration completed
+2020-03-13 13:05:44,342 DEBUG Reconfiguration started for context Default
+2020-03-13 13:05:44,342 DEBUG Generated plugins in 0.000093575 seconds
+2020-03-13 13:05:44,383 DEBUG Generated plugins in 0.000111191 seconds
+2020-03-13 13:05:44,384 DEBUG Generated plugins in 0.000085045 seconds
+2020-03-13 13:05:44,385 WARN No Loggers were configured, using default
+2020-03-13 13:05:44,385 DEBUG Reconfiguration completed
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.395 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.config.XMLConfigurationTest
+2020-03-13 13:05:45,402 WARN No Loggers were configured, using default
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.551 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.MarkerFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.RegexFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.ThreadContextMapFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.BurstFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.177 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.ThresholdFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.DynamicThresholdFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.TimeFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.MapFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.filter.StructuredDataFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.ExtendedThrowablePatternConverterTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.083 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.RegexReplacementConverterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.958 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.RegexReplacementTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.372 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.PatternParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.MarkerPatternConverterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.NameAbbreviatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.RootThrowablePatternConverterTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.084 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.pattern.MapPatternConverterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.layout.RFC5424LayoutTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.355 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.layout.HTMLLayoutTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.321 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.layout.PatternLayoutTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.326 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.layout.XMLLayoutTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.334 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.layout.SyslogLayoutTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.305 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.layout.SerializedLayoutTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.384 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.AppenderRefLevelTest
+2020-03-13 13:06:15,677 WARN No Loggers were configured, using default
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.843 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.LoggerTest
+2020-03-13 13:06:16,260 DEBUG Generated plugins in 0.002782599 seconds
+2020-03-13 13:06:16,268 DEBUG Calling createProperty on class org.apache.logging.log4j.core.config.Property for element property with params(name="filename", value="target/test.log")
+2020-03-13 13:06:16,271 DEBUG Calling configureSubstitutor on class org.apache.logging.log4j.core.config.plugins.PropertiesPlugin for element properties with params(properties={filename=target/test.log})
+2020-03-13 13:06:16,272 DEBUG Generated plugins in 0.000999688 seconds
+2020-03-13 13:06:16,275 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.ThresholdFilter for element ThresholdFilter with params(level="trace", onMatch="null", onMismatch="null")
+2020-03-13 13:06:16,278 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%m MDC%X%n", Configuration(XMLConfigTest), null, charset="null")
+2020-03-13 13:06:16,279 DEBUG Generated plugins in 0.001165739 seconds
+2020-03-13 13:06:16,281 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="FLOW", onMatch="DENY", onMismatch="NEUTRAL")
+2020-03-13 13:06:16,282 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="EXCEPTION", onMatch="DENY", onMismatch="ACCEPT")
+2020-03-13 13:06:16,283 DEBUG Calling createFilters on class org.apache.logging.log4j.core.filter.CompositeFilter for element filters with params(filters={FLOW, EXCEPTION})
+2020-03-13 13:06:16,284 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%m MDC%X%n), filters({FLOW, EXCEPTION}), target="null", name="STDOUT", suppressExceptions="null")
+2020-03-13 13:06:16,285 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%C{1}.%M %m %ex%n", Configuration(XMLConfigTest), null, charset="null")
+2020-03-13 13:06:16,286 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="FLOW", onMatch="ACCEPT", onMismatch="NEUTRAL")
+2020-03-13 13:06:16,287 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="EXCEPTION", onMatch="ACCEPT", onMismatch="DENY")
+2020-03-13 13:06:16,288 DEBUG Calling createFilters on class org.apache.logging.log4j.core.filter.CompositeFilter for element filters with params(filters={FLOW, EXCEPTION})
+2020-03-13 13:06:16,288 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%C{1}.%M %m %ex%n), filters({FLOW, EXCEPTION}), target="null", name="FLOW", suppressExceptions="null")
+2020-03-13 13:06:16,289 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%d %p %C{1.} [%t] %m%n", Configuration(XMLConfigTest), null, charset="null")
+2020-03-13 13:06:16,291 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.FileAppender for element File with params(fileName="target/test.log", append="null", locking="null", name="File", immediateFlush="null", suppressExceptions="null", bufferedIO="null", PatternLayout(%d %p %C{1.} [%t] %m%n), null)
+2020-03-13 13:06:16,293 DEBUG Calling createAppender on class org.apache.logging.log4j.test.appender.ListAppender for element List with params(name="List", entryPerNewLine="null", raw="null", null, null)
+2020-03-13 13:06:16,294 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element appenders with params(appenders={STDOUT, FLOW, File, List})
+2020-03-13 13:06:16,295 DEBUG Calling createPair on class org.apache.logging.log4j.core.helpers.KeyValuePair for element KeyValuePair with params(key="test", value="123")
+2020-03-13 13:06:16,296 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.ThreadContextMapFilter for element ThreadContextMapFilter with params(pairs={test=123}, operator="null", onmatch="null", onmismatch="null")
+2020-03-13 13:06:16,297 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="STDOUT", level="null", null)
+2020-03-13 13:06:16,298 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig for element logger with params(additivity="false", level="debug", name="org.apache.logging.log4j.test1", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@63d4e2ba}, ThreadContextMapFilter(isAnd=false, {test=123}))
+2020-03-13 13:06:16,299 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="File", level="null", null)
+2020-03-13 13:06:16,299 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig for element logger with params(additivity="false", level="debug", name="org.apache.logging.log4j.test2", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@33a10788}, null)
+2020-03-13 13:06:16,300 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="List", level="null", null)
+2020-03-13 13:06:16,301 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig$RootLogger for element root with params(additivity="null", level="trace", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@34033bd0}, null)
+2020-03-13 13:06:16,302 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element loggers with params(loggers={org.apache.logging.log4j.test1, org.apache.logging.log4j.test2, root})
+2020-03-13 13:06:16,304 DEBUG Reconfiguration completed
+2020-03-13 13:06:16,337 DEBUG Reconfiguration started for context sun.misc.Launcher$AppClassLoader@6bc7c054
+2020-03-13 13:06:16,338 DEBUG Generated plugins in 0.000965889 seconds
+2020-03-13 13:06:16,355 DEBUG Generated plugins in 0.000958753 seconds
+2020-03-13 13:06:16,357 DEBUG Generated plugins in 0.000855285 seconds
+2020-03-13 13:06:16,357 WARN No Loggers were configured, using default
+2020-03-13 13:06:16,358 DEBUG Reconfiguration completed
+Tests run: 9, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.396 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.BasicLoggingTest
+13:06:19.272 [main] ERROR org.apache.logging.log4j.core.BasicLoggingTest - Test message
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.331 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.net.SocketServerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.839 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.net.JMSTopicTest
+log4j:WARN No appenders could be found for logger (org.mockejb.jndi.MockContext).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.372 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.net.JMSQueueTest
+log4j:WARN No appenders could be found for logger (org.mockejb.jndi.MockContext).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.621 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.StrictXMLConfigTest
+2020-03-13 13:06:27,692 DEBUG Generated plugins in 0.002702645 seconds
+2020-03-13 13:06:27,701 DEBUG Calling createProperty on class org.apache.logging.log4j.core.config.Property for element property with params(name="filename", value="target/test.log")
+2020-03-13 13:06:27,703 DEBUG Calling configureSubstitutor on class org.apache.logging.log4j.core.config.plugins.PropertiesPlugin for element properties with params(properties={filename=target/test.log})
+2020-03-13 13:06:27,705 DEBUG Generated plugins in 0.001003427 seconds
+2020-03-13 13:06:27,707 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.ThresholdFilter for element ThresholdFilter with params(level="trace", onMatch="null", onMismatch="null")
+2020-03-13 13:06:27,710 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%m MDC%X%n", Configuration(XMLConfigTest), null, charset="null")
+2020-03-13 13:06:27,712 DEBUG Generated plugins in 0.001126250 seconds
+2020-03-13 13:06:27,713 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="FLOW", onMatch="DENY", onMismatch="NEUTRAL")
+2020-03-13 13:06:27,714 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="EXCEPTION", onMatch="DENY", onMismatch="ACCEPT")
+2020-03-13 13:06:27,715 DEBUG Calling createFilters on class org.apache.logging.log4j.core.filter.CompositeFilter for element filters with params(filters={FLOW, EXCEPTION})
+2020-03-13 13:06:27,716 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%m MDC%X%n), filters({FLOW, EXCEPTION}), target="null", name="STDOUT", suppressExceptions="null")
+2020-03-13 13:06:27,717 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%C{1}.%M %m %ex%n", Configuration(XMLConfigTest), null, charset="null")
+2020-03-13 13:06:27,718 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="FLOW", onMatch="ACCEPT", onMismatch="NEUTRAL")
+2020-03-13 13:06:27,719 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.MarkerFilter for element MarkerFilter with params(marker="EXCEPTION", onMatch="ACCEPT", onMismatch="DENY")
+2020-03-13 13:06:27,719 DEBUG Calling createFilters on class org.apache.logging.log4j.core.filter.CompositeFilter for element filters with params(filters={FLOW, EXCEPTION})
+2020-03-13 13:06:27,720 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%C{1}.%M %m %ex%n), filters({FLOW, EXCEPTION}), target="null", name="FLOW", suppressExceptions="null")
+2020-03-13 13:06:27,721 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%d %p %C{1.} [%t] %m%n", Configuration(XMLConfigTest), null, charset="null")
+2020-03-13 13:06:27,723 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.FileAppender for element File with params(fileName="target/test.log", append="null", locking="null", name="File", immediateFlush="null", suppressExceptions="null", bufferedIO="null", PatternLayout(%d %p %C{1.} [%t] %m%n), null)
+2020-03-13 13:06:27,725 DEBUG Calling createAppender on class org.apache.logging.log4j.test.appender.ListAppender for element List with params(name="List", entryPerNewLine="null", raw="null", null, null)
+2020-03-13 13:06:27,726 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element appenders with params(appenders={STDOUT, FLOW, File, List})
+2020-03-13 13:06:27,727 DEBUG Calling createPair on class org.apache.logging.log4j.core.helpers.KeyValuePair for element KeyValuePair with params(key="test", value="123")
+2020-03-13 13:06:27,728 DEBUG Calling createFilter on class org.apache.logging.log4j.core.filter.ThreadContextMapFilter for element ThreadContextMapFilter with params(pairs={test=123}, operator="null", onmatch="null", onmismatch="null")
+2020-03-13 13:06:27,729 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="STDOUT", level="null", null)
+2020-03-13 13:06:27,730 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig for element logger with params(additivity="false", level="debug", name="org.apache.logging.log4j.test1", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@63d4e2ba}, ThreadContextMapFilter(isAnd=false, {test=123}))
+2020-03-13 13:06:27,731 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="File", level="null", null)
+2020-03-13 13:06:27,732 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig for element logger with params(additivity="false", level="debug", name="org.apache.logging.log4j.test2", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@33a10788}, null)
+2020-03-13 13:06:27,732 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="List", level="null", null)
+2020-03-13 13:06:27,733 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig$RootLogger for element root with params(additivity="null", level="trace", appender-ref={org.apache.logging.log4j.core.config.AppenderRef@34033bd0}, null)
+2020-03-13 13:06:27,735 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element loggers with params(loggers={org.apache.logging.log4j.test1, org.apache.logging.log4j.test2, root})
+2020-03-13 13:06:27,736 DEBUG Reconfiguration completed
+2020-03-13 13:06:27,769 DEBUG Reconfiguration started for context sun.misc.Launcher$AppClassLoader@6bc7c054
+2020-03-13 13:06:27,770 DEBUG Generated plugins in 0.000972194 seconds
+2020-03-13 13:06:27,788 DEBUG Generated plugins in 0.001175140 seconds
+2020-03-13 13:06:27,790 DEBUG Generated plugins in 0.000842579 seconds
+2020-03-13 13:06:27,790 WARN No Loggers were configured, using default
+2020-03-13 13:06:27,791 DEBUG Reconfiguration completed
+Tests run: 9, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.399 sec <<< FAILURE!
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.ThreadedPerfTest
+Timer DebugDisabled stopped. Elapsed time: 0.003676523 seconds Average per iteration: 0.000000000 seconds
+Timer DebugLogger stopped. Elapsed time: 0.002654632 seconds Average per iteration: 0.000000000 seconds
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.323 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.SimplePerfTest
+Timer Setup stopped. Elapsed time: 0.121584847 seconds Average per iteration: 0.000000012 seconds
+Timer DebugDisabled stopped. Elapsed time: 0.038618203 seconds Average per iteration: 0.000000003 seconds
+Timer DebugLogger stopped. Elapsed time: 0.033271011 seconds Average per iteration: 0.000000003 seconds
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.637 sec
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.logging.log4j.core.ThreadedTest
+Counter = 100
+2020-03-13 13:06:31,665 WARN No Loggers were configured, using default
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.664 sec
+
+Results :
+
+Failed tests: 
+
+Tests in error: 
+
+Tests run: 95, Failures: 1, Errors: 9, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:53 min
+[INFO] Finished at: 2020-03-13T13:06:31-07:00
+[INFO] Final Memory: 26M/1180M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.7.2:test (default-test) on project log4j-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bugs.jar_Logging-Log4J2_2afe3dff_java-8/core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

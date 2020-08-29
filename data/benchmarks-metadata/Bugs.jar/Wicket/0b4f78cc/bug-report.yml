@@ -1,0 +1,22 @@
+---
+BugID: WICKET-2993
+Summary: 'ClassCastException when requesting for non-page class '
+Description: "org.apache.wicket.request.mapper.BookmarkableMapper tries to instantiate
+  Page even for classes which are not Page.\nRequesting http://localhost:8080/wicket/bookmarkable/com.mycompany.Pojo
+  fails with:\n\nERROR - DefaultExceptionMapper     - Unexpected error occurred\njava.lang.ClassCastException:
+  com.mycompany.Pojo\n\tat org.apache.wicket.session.DefaultPageFactory.newPage(DefaultPageFactory.java:155)\n\tat
+  org.apache.wicket.session.DefaultPageFactory.newPage(DefaultPageFactory.java:59)\n\tat
+  org.apache.wicket.session.DefaultPageFactory.newPage(DefaultPageFactory.java:43)\n\tat
+  org.apache.wicket.Application$2.newPageInstance(Application.java:1425)\n\tat org.apache.wicket.request.handler.PageProvider.getPageInstance(PageProvider.java:259)\n\tat
+  org.apache.wicket.request.handler.PageProvider.getPageInstance(PageProvider.java:160)\n\tat
+  org.apache.wicket.request.handler.render.WebPageRenderer.getPage(WebPageRenderer.java:59)\n\tat
+  org.apache.wicket.request.handler.render.WebPageRenderer.renderPage(WebPageRenderer.java:131)\n\tat
+  org.apache.wicket.request.handler.render.WebPageRenderer.respond(WebPageRenderer.java:232)\n\tat
+  org.apache.wicket.request.handler.RenderPageRequestHandler.respond(RenderPageRequestHandler.java:147)\n\tat
+  org.apache.wicket.request.RequestHandlerStack.executeRequestHandler(RequestHandlerStack.java:84)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:217)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:253)\n\tat
+  org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:135)\n\tat
+  org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:188)\n\tat
+  org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1157)
+  \n        ....."

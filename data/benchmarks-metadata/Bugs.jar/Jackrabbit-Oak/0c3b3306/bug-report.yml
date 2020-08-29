@@ -1,0 +1,25 @@
+---
+BugID: OAK-1250
+Summary: Guard against invalid/missing checkpoints
+Description: "Playing with the backup revealed a case where a checkpoint can become
+  invalid after a manual restore of the repository. [0]\nThe NodeStore#retrieve apis
+  already specify that this can return null in the case the checkpoint doesn't exist
+  anymore, but it looks like the storage bits aren't yet prepared for that scenario.\n\n\n\n[0]\n{noformat}\norg.apache.sling.commons.scheduler.impl.QuartzScheduler
+  Exception during job execution of org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate@3a6d47
+  : Failed to load segment 8a8b281c-1a02-4950-aad5-aad8e436a0d8\njava.lang.IllegalStateException:
+  Failed to load segment 8a8b281c-1a02-4950-aad5-aad8e436a0d8\n\tat org.apache.jackrabbit.oak.plugins.segment.AbstractStore.readSegment(AbstractStore.java:109)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.segment.Segment.getSegment(Segment.java:189)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.segment.Record.getSegment(Record.java:97)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState.getTemplate(SegmentNodeState.java:56)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.segment.SegmentNodeState.getChildNode(SegmentNodeState.java:209)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStore.retrieve(SegmentNodeStore.java:175)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.retrieve(SegmentNodeStoreService.java:198)
+  ~[na:na]\n\tat org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate.run(AsyncIndexUpdate.java:97)
+  ~[na:na]\n\tat org.apache.sling.commons.scheduler.impl.QuartzJobExecutor.execute(QuartzJobExecutor.java:105)
+  ~[org.apache.sling.commons.scheduler-2.4.2.jar:na]\n\tat org.quartz.core.JobRunShell.run(JobRunShell.java:207)
+  [org.apache.sling.commons.scheduler-2.4.2.jar:na]\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+  [na:1.7.0_40]\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+  [na:1.7.0_40]\n\tat java.lang.Thread.run(Thread.java:724) [na:1.7.0_40]\nCaused
+  by: java.lang.IllegalStateException: Segment 8a8b281c-1a02-4950-aad5-aad8e436a0d8
+  not found\n\tat org.apache.jackrabbit.oak.plugins.segment.file.FileStore.loadSegment(FileStore.java:184)
+  ~[na:na]\n{noformat}"

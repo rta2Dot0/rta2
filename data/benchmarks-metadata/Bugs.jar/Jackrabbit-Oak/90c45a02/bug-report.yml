@@ -1,0 +1,13 @@
+---
+BugID: OAK-531
+Summary: NodeBuilder deleted child nodes can come back
+Description: |-
+  While working on OAK-520, I've noticed a problem with the NodeBuilder: when we delete an entire hierarchy of nodes and then recreate a part of it, some of the previously deleted nodes can come back.
+
+  This only happens when there are more than 3 levels of nodes.
+
+  So given a hierarchy of nodes: /x/y/z deleted 'x' and simply use the NodeBuilder to traverse down on the same path: .child('x').child('y').
+  At this point the 'z' child reappears even though it was deleted before.
+
+
+  I'll attach a test case shortly.

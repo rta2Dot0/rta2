@@ -1,0 +1,1708 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for io.enmasse:amqp-utils:jar:0.17-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.activemq:artemis-amqp-protocol:jar -> duplicate declaration of version ${artemis.version} @ io.enmasse:amqp-utils:[unknown-version], /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/pom.xml, line 66, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] enmasse
+[INFO] address-model-lib
+[INFO] k8s-api
+[INFO] k8s-api-testutil
+[INFO] amqp-utils
+[INFO] discovery-lib
+[INFO] topic-forwarder
+[INFO] mqtt-gateway
+[INFO] mqtt-lwt
+[INFO] standard-controller
+[INFO] address-controller
+[INFO] keycloak
+[INFO] sasl-plugin
+[INFO] keycloak-controller
+[INFO] systemtests
+[INFO] artemis
+[INFO] amqp-connector
+[INFO] sasl-delegation
+[INFO] shutdown-hook
+[INFO] jmx_exporter
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building enmasse 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ enmasse ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/8.8/checkstyle-8.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/8.8/checkstyle-8.8.pom (100 kB at 86 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.pom (3.5 kB at 253 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.7.1/antlr4-master-4.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.7.1/antlr4-master-4.7.1.pom (4.4 kB at 546 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.4/commons-cli-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.4/commons-cli-1.4.pom (11 kB at 892 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom (68 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-7/Saxon-HE-9.8.0-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-7/Saxon-HE-9.8.0-7.pom (3.4 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 737 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 432 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 235 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 247 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 595 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 83 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 418 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 322 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 597 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 104 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 278 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 500 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 682 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 922 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 374 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 353 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 29 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 297 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 90 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 161 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom (11 kB at 408 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.6/doxia-integration-tools-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/1.6/doxia-integration-tools-1.6.pom (7.0 kB at 994 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/3/doxia-tools-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-tools/3/doxia-tools-3.pom (9.9 kB at 552 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.pom (1.5 kB at 219 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.6/doxia-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.6/doxia-1.6.pom (19 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.pom (3.0 kB at 333 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.6/doxia-sitetools-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.6/doxia-sitetools-1.6.pom (18 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.1.0/plexus-resources-1.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.1.0/plexus-resources-1.1.0.pom (3.2 kB at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 332 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 295 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 688 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom (2.6 kB at 375 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/8.8/checkstyle-8.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.4/commons-cli-1.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.6-jre/guava-23.6-jre.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.4/commons-cli-1.4.jar (54 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-7/Saxon-HE-9.8.0-7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar (337 kB at 9.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 752 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar (445 kB at 8.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 2.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 813 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 470 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.2/doxia-core-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 4.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.2/doxia-core-1.2.jar (154 kB at 1.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.6-jre/guava-23.6-jre.jar (2.7 MB at 21 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar (195 kB at 1.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/8.8/checkstyle-8.8.jar (1.3 MB at 4.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.8.0-7/Saxon-HE-9.8.0-7.jar (5.0 MB at 15 MB/s)
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ enmasse ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom (1.5 kB at 18 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom (4.5 kB at 646 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom (2.8 kB at 407 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.10/maven-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.10/maven-2.0.10.pom (24 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom (2.2 kB at 373 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom (3.3 kB at 238 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (1.4 kB at 240 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom (2.1 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom (2.7 kB at 450 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom (2.3 kB at 331 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom (1.6 kB at 270 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom (2.0 kB at 336 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom (1.5 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom (1.6 kB at 262 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom (18 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom (1.6 kB at 144 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom (3.7 kB at 162 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (5.6 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom (2.2 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom (738 B at 39 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom (3.4 kB at 487 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom (7.8 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom (3.8 kB at 137 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom (6.1 kB at 874 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom (15 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom (3.0 kB at 496 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom (1.6 kB at 400 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom (2.4 kB at 348 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom (5.5 kB at 916 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9.pom (3.5 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.pom (1.9 kB at 237 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.pom (2.0 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom (5.5 kB at 610 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.pom (2.0 kB at 290 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar (158 kB at 9.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar (237 kB at 8.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar (305 kB at 11 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 400 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar (30 kB at 912 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar (50 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar (52 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar (15 kB at 385 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar (37 kB at 959 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar (1.2 MB at 20 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.jar (388 kB at 6.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (571 kB at 8.7 MB/s)
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ enmasse ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ enmasse ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/enmasse/0.17-SNAPSHOT/enmasse-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building address-model-lib 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ address-model-lib ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ address-model-lib ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ address-model-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ address-model-lib ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 47 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ address-model-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ address-model-lib ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 3 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ address-model-lib ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.20.1/maven-surefire-common-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.20.1/maven-surefire-common-2.20.1.pom (9.3 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (1.6 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.pom (3.7 kB at 522 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.pom (2.0 kB at 335 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.pom (8.5 kB at 939 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.jar (13 kB at 1.9 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar (14 kB at 1.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.jar (183 kB at 11 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (228 kB at 10 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.jar (268 kB at 5.1 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ address-model-lib ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/target/address-model-lib-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ address-model-lib ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ address-model-lib ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/target/address-model-lib-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/address-model-lib/0.17-SNAPSHOT/address-model-lib-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/address-model-lib/0.17-SNAPSHOT/address-model-lib-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building k8s-api 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ k8s-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ k8s-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ k8s-api ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ k8s-api ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/target/classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/main/java/io/enmasse/k8s/api/ConfigMapAddressSpaceApi.java: Some input files use unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/main/java/io/enmasse/k8s/api/ConfigMapAddressSpaceApi.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ k8s-api ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ k8s-api ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/target/test-classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/test/java/io/enmasse/k8s/api/KubeEventLoggerTest.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/test/java/io/enmasse/k8s/api/KubeEventLoggerTest.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/src/test/java/io/enmasse/k8s/api/KubeEventLoggerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ k8s-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ k8s-api ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/target/k8s-api-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ k8s-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ k8s-api ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/target/k8s-api-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/k8s-api/0.17-SNAPSHOT/k8s-api-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/k8s-api/0.17-SNAPSHOT/k8s-api-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building k8s-api-testutil 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ k8s-api-testutil ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ k8s-api-testutil ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ k8s-api-testutil ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api-testutil/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ k8s-api-testutil ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 3 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api-testutil/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ k8s-api-testutil ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api-testutil/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ k8s-api-testutil ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ k8s-api-testutil ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ k8s-api-testutil ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api-testutil/target/k8s-api-testutil-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ k8s-api-testutil ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ k8s-api-testutil ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api-testutil/target/k8s-api-testutil-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/k8s-api-testutil/0.17-SNAPSHOT/k8s-api-testutil-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/k8s-api-testutil/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/k8s-api-testutil/0.17-SNAPSHOT/k8s-api-testutil-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building amqp-utils 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ amqp-utils ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ amqp-utils ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ amqp-utils ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ amqp-utils ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ amqp-utils ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ amqp-utils ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 4 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ amqp-utils ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ amqp-utils ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/target/amqp-utils-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ amqp-utils ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ amqp-utils ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/target/amqp-utils-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/amqp-utils/0.17-SNAPSHOT/amqp-utils-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/amqp-utils/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/amqp-utils/0.17-SNAPSHOT/amqp-utils-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building discovery-lib 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ discovery-lib ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ discovery-lib ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ discovery-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ discovery-lib ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/target/classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/src/main/java/enmasse/discovery/DiscoveryClient.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/src/main/java/enmasse/discovery/DiscoveryClient.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/src/main/java/enmasse/discovery/DiscoveryClient.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ discovery-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ discovery-lib ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ discovery-lib ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ discovery-lib ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/target/discovery-lib-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ discovery-lib ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ discovery-lib ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/target/discovery-lib-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/discovery-lib/0.17-SNAPSHOT/discovery-lib-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/discovery-lib/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/discovery-lib/0.17-SNAPSHOT/discovery-lib-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building topic-forwarder 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ topic-forwarder ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ topic-forwarder ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ topic-forwarder ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ topic-forwarder ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 3 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ topic-forwarder ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ topic-forwarder ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ topic-forwarder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ topic-forwarder ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/target/topic-forwarder-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ topic-forwarder ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ topic-forwarder ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.9.1/maven-artifact-transfer-0.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.9.1/maven-artifact-transfer-0.9.1.pom (7.6 kB at 761 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 967 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 996 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 232 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom (2.7 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom (12 kB at 656 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.pom (1.9 kB at 277 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_BETA/asm-parent-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_BETA/asm-parent-6.0_BETA.pom (5.5 kB at 687 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/6.0_BETA/asm-commons-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/6.0_BETA/asm-commons-6.0_BETA.pom (2.1 kB at 350 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0_BETA/asm-tree-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0_BETA/asm-tree-6.0_BETA.pom (2.1 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom (1.8 kB at 304 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom (7.3 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/1.2/jdependency-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/1.2/jdependency-1.2.pom (11 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0_BETA/asm-analysis-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0_BETA/asm-analysis-6.0_BETA.pom (2.1 kB at 262 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0_BETA/asm-util-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0_BETA/asm-util-6.0_BETA.pom (2.1 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar (26 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0_BETA/asm-tree-6.0_BETA.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar (61 kB at 4.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0_BETA/asm-analysis-6.0_BETA.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0_BETA/asm-util-6.0_BETA.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0_BETA/asm-tree-6.0_BETA.jar (34 kB at 1.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0_BETA/asm-analysis-6.0_BETA.jar (21 kB at 771 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar (233 kB at 6.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0_BETA/asm-util-6.0_BETA.jar (47 kB at 1.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar (164 kB at 4.2 MB/s)
+[INFO] Including io.enmasse:discovery-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:k8s-api:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:address-model-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.fabric8:openshift-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-model:jar:2.0.4 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.7.5 in the shaded jar.
+[INFO] Including javax.validation:validation-api:jar:1.1.0.Final in the shaded jar.
+[INFO] Including com.squareup.okhttp3:okhttp:jar:3.9.0 in the shaded jar.
+[INFO] Including com.squareup.okio:okio:jar:1.13.0 in the shaded jar.
+[INFO] Including com.squareup.okhttp3:logging-interceptor:jar:3.9.0 in the shaded jar.
+[INFO] Including org.slf4j:jul-to-slf4j:jar:1.7.13 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.7.7 in the shaded jar.
+[INFO] Including org.yaml:snakeyaml:jar:1.15 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.7.7 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.7.0 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.7.7 in the shaded jar.
+[INFO] Including io.fabric8:zjsonpatch:jar:0.3.0 in the shaded jar.
+[INFO] Including com.github.mifmif:generex:jar:1.0.1 in the shaded jar.
+[INFO] Including dk.brics.automaton:automaton:jar:1.11-8 in the shaded jar.
+[INFO] Including io.vertx:vertx-proton:jar:3.5.1 in the shaded jar.
+[INFO] Including io.vertx:vertx-core:jar:3.5.1 in the shaded jar.
+[INFO] Including io.netty:netty-common:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-buffer:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-transport:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler-proxy:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-socks:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http2:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including org.apache.qpid:proton-j:jar:0.25.0 in the shaded jar.
+[INFO] Including io.vertx:vertx-codegen:jar:processor:3.5.1 in the shaded jar.
+[INFO] Including org.mvel:mvel2:jar:2.3.1.Final in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.21 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-log4j12:jar:1.7.21 in the shaded jar.
+[INFO] Including log4j:log4j:jar:1.2.17 in the shaded jar.
+[WARNING] kubernetes-client-3.0.3.jar, openshift-client-3.0.3.jar define 3 overlapping classes: 
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluent
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluentImpl
+[WARNING]   - io.fabric8.kubernetes.client.ConfigBuilder
+[WARNING] maven-shade-plugin has detected that some class files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the class is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See http://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/target/topic-forwarder-0.17-SNAPSHOT.jar with /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/target/topic-forwarder-0.17-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ topic-forwarder ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/target/topic-forwarder-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/topic-forwarder/0.17-SNAPSHOT/topic-forwarder-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/topic-forwarder/dependency-reduced-pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/topic-forwarder/0.17-SNAPSHOT/topic-forwarder-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building mqtt-gateway 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ mqtt-gateway ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ mqtt-gateway ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mqtt-gateway ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mqtt-gateway ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 21 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-gateway/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mqtt-gateway ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mqtt-gateway ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 17 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-gateway/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ mqtt-gateway ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ mqtt-gateway ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-gateway/target/mqtt-gateway-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ mqtt-gateway ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.4.RELEASE:repackage (default) @ mqtt-gateway ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/1.5.4.RELEASE/spring-boot-loader-tools-1.5.4.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/1.5.4.RELEASE/spring-boot-loader-tools-1.5.4.RELEASE.pom (3.8 kB at 469 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom (4.3 kB at 617 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.1/maven-artifact-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.1/maven-artifact-3.1.1.pom (2.0 kB at 328 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.1/maven-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.1/maven-3.1.1.pom (22 kB at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.1/maven-model-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.1/maven-model-3.1.1.pom (4.1 kB at 592 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.1/maven-core-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.1/maven-core-3.1.1.pom (7.3 kB at 808 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.1/maven-settings-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.1/maven-settings-3.1.1.pom (2.2 kB at 271 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.pom (2.6 kB at 324 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (1.0 kB at 147 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.pom (2.2 kB at 318 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.1/maven-plugin-api-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.1/maven-plugin-api-3.1.1.pom (3.4 kB at 483 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom (4.8 kB at 690 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom (13 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom (5.7 kB at 378 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom (7.7 kB at 366 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 923 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 364 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom (2.5 kB at 52 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom (14 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 647 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.pom (2.8 kB at 351 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.pom (4.1 kB at 819 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.1/maven-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.1/maven-3.2.1.pom (23 kB at 551 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.1/maven-model-builder-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.1/maven-model-builder-3.2.1.pom (2.8 kB at 468 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.1/maven-repository-metadata-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.1/maven-repository-metadata-3.2.1.pom (2.2 kB at 372 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom (1.8 kB at 306 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom (29 kB at 3.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom (2.0 kB at 165 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom (2.1 kB at 354 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom (3.4 kB at 560 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom (5.0 kB at 716 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (5.0 kB at 836 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom (4.1 kB at 142 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom (2.7 kB at 204 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom (11 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 220 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (3.2 kB at 146 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom (8.4 kB at 4.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.2/maven-shade-plugin-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.2/maven-shade-plugin-2.2.pom (7.8 kB at 784 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4.0 kB at 1.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 116 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 6.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 5.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (1.8 kB at 378 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (12 kB at 2.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.pom (417 B at 82 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.pom (406 B at 41 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom (2.2 kB at 962 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.pom (7.5 kB at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom (9.7 kB at 335 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/3/commons-parent-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/3/commons-parent-3.pom (12 kB at 909 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom (264 B at 44 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom (4.4 kB at 242 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.pom (417 B at 17 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.pom (404 B at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.pom (415 B at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.pom (409 B at 41 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.jar (42 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar (62 kB at 3.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.jar (160 kB at 9.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (170 kB at 9.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.jar (25 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.jar (31 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.jar (61 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.jar (136 kB at 4.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.jar (147 kB at 4.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.jar (50 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.8/maven-project-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 7.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.jar (173 kB at 3.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.8/maven-artifact-manager-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.jar (197 kB at 3.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.8/maven-plugin-registry-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.8/maven-project-2.0.8.jar (117 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar (35 kB at 655 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.8/maven-plugin-registry-2.0.8.jar (29 kB at 519 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.8/maven-artifact-manager-2.0.8.jar (57 kB at 961 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar (74 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (53 kB at 806 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.jar (291 kB at 4.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar (22 kB at 307 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar (285 kB at 4.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar (38 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.jar (12 kB at 155 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar (88 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar (378 kB at 4.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.jar (18 kB at 222 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.jar (37 kB at 446 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar (153 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.jar (2.3 MB at 13 MB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ mqtt-gateway ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-gateway/target/mqtt-gateway-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/mqtt-gateway/0.17-SNAPSHOT/mqtt-gateway-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-gateway/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/mqtt-gateway/0.17-SNAPSHOT/mqtt-gateway-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building mqtt-lwt 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ mqtt-lwt ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ mqtt-lwt ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mqtt-lwt ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mqtt-lwt ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-lwt/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mqtt-lwt ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mqtt-lwt ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-lwt/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ mqtt-lwt ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ mqtt-lwt ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-lwt/target/mqtt-lwt-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ mqtt-lwt ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.4.RELEASE:repackage (default) @ mqtt-lwt ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ mqtt-lwt ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-lwt/target/mqtt-lwt-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/mqtt-lwt/0.17-SNAPSHOT/mqtt-lwt-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/mqtt-lwt/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/mqtt-lwt/0.17-SNAPSHOT/mqtt-lwt-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building standard-controller 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ standard-controller ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ standard-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ standard-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ standard-controller ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 12 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/target/classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/src/main/java/io/enmasse/controller/standard/AddressController.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/src/main/java/io/enmasse/controller/standard/AddressController.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/src/main/java/io/enmasse/controller/standard/AddressController.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ standard-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ standard-controller ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 4 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ standard-controller ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ standard-controller ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/target/standard-controller-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ standard-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ standard-controller ---
+[INFO] Including io.enmasse:address-model-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.9.2 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.9.2 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0 in the shaded jar.
+[INFO] Including io.enmasse:amqp-utils:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.vertx:vertx-core:jar:3.5.1 in the shaded jar.
+[INFO] Including io.netty:netty-common:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-buffer:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-transport:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler-proxy:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-socks:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http2:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.vertx:vertx-proton:jar:3.5.1 in the shaded jar.
+[INFO] Including org.apache.qpid:proton-j:jar:0.25.0 in the shaded jar.
+[INFO] Including io.vertx:vertx-codegen:jar:processor:3.5.1 in the shaded jar.
+[INFO] Including org.mvel:mvel2:jar:2.3.1.Final in the shaded jar.
+[INFO] Including io.enmasse:k8s-api:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.fabric8:openshift-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-model:jar:2.0.4 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.7.5 in the shaded jar.
+[INFO] Including javax.validation:validation-api:jar:1.1.0.Final in the shaded jar.
+[INFO] Including com.squareup.okhttp3:okhttp:jar:3.9.0 in the shaded jar.
+[INFO] Including com.squareup.okio:okio:jar:1.13.0 in the shaded jar.
+[INFO] Including com.squareup.okhttp3:logging-interceptor:jar:3.9.0 in the shaded jar.
+[INFO] Including org.slf4j:jul-to-slf4j:jar:1.7.13 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.7.7 in the shaded jar.
+[INFO] Including org.yaml:snakeyaml:jar:1.15 in the shaded jar.
+[INFO] Including io.fabric8:zjsonpatch:jar:0.3.0 in the shaded jar.
+[INFO] Including com.github.mifmif:generex:jar:1.0.1 in the shaded jar.
+[INFO] Including dk.brics.automaton:automaton:jar:1.11-8 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.21 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-log4j12:jar:1.7.21 in the shaded jar.
+[INFO] Including log4j:log4j:jar:1.2.17 in the shaded jar.
+[WARNING] kubernetes-client-3.0.3.jar, openshift-client-3.0.3.jar define 3 overlapping classes: 
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluent
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluentImpl
+[WARNING]   - io.fabric8.kubernetes.client.ConfigBuilder
+[WARNING] maven-shade-plugin has detected that some class files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the class is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See http://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/target/standard-controller-0.17-SNAPSHOT.jar with /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/target/standard-controller-0.17-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ standard-controller ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/target/standard-controller-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/standard-controller/0.17-SNAPSHOT/standard-controller-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/standard-controller/dependency-reduced-pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/standard-controller/0.17-SNAPSHOT/standard-controller-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building address-controller 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ address-controller ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ address-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ address-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ address-controller ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 71 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ address-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ address-controller ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 18 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/target/test-classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/src/test/java/io/enmasse/controller/api/v1/http/HttpAddressServiceTest.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/src/test/java/io/enmasse/controller/api/v1/http/HttpAddressServiceTest.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/src/test/java/io/enmasse/controller/api/v1/http/HttpAddressServiceTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ address-controller ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ address-controller ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/target/address-controller-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ address-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ address-controller ---
+[INFO] Including io.enmasse:address-model-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:amqp-utils:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:k8s-api:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.fabric8:openshift-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-model:jar:2.0.4 in the shaded jar.
+[INFO] Including com.squareup.okhttp3:okhttp:jar:3.9.0 in the shaded jar.
+[INFO] Including com.squareup.okio:okio:jar:1.13.0 in the shaded jar.
+[INFO] Including com.squareup.okhttp3:logging-interceptor:jar:3.9.0 in the shaded jar.
+[INFO] Including org.slf4j:jul-to-slf4j:jar:1.7.13 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.7.7 in the shaded jar.
+[INFO] Including org.yaml:snakeyaml:jar:1.15 in the shaded jar.
+[INFO] Including io.fabric8:zjsonpatch:jar:0.3.0 in the shaded jar.
+[INFO] Including com.github.mifmif:generex:jar:1.0.1 in the shaded jar.
+[INFO] Including dk.brics.automaton:automaton:jar:1.11-8 in the shaded jar.
+[INFO] Including io.vertx:vertx-core:jar:3.5.1 in the shaded jar.
+[INFO] Including io.netty:netty-common:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-buffer:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-transport:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler-proxy:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-socks:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http2:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.vertx:vertx-proton:jar:3.5.1 in the shaded jar.
+[INFO] Including org.apache.qpid:proton-j:jar:0.25.0 in the shaded jar.
+[INFO] Including io.vertx:vertx-codegen:jar:processor:3.5.1 in the shaded jar.
+[INFO] Including org.mvel:mvel2:jar:2.3.1.Final in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.21 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-log4j12:jar:1.7.21 in the shaded jar.
+[INFO] Including log4j:log4j:jar:1.2.17 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.9.2 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.9.2 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-jsonSchema:jar:2.9.2 in the shaded jar.
+[INFO] Including javax.validation:validation-api:jar:1.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-jackson2-provider:jar:3.1.0.Final in the shaded jar.
+[INFO] Including com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.8.3 in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-vertx:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-jaxrs:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.0_spec:jar:1.0.1.Beta1 in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-jaxrs-services:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.spec.javax.annotation:jboss-annotations-api_1.2_spec:jar:1.0.0.Final in the shaded jar.
+[INFO] Including javax.activation:activation:jar:1.1.1 in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpclient:jar:4.5.2 in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpcore:jar:4.4.4 in the shaded jar.
+[INFO] Including commons-logging:commons-logging:jar:1.2 in the shaded jar.
+[INFO] Including commons-codec:commons-codec:jar:1.9 in the shaded jar.
+[INFO] Including commons-io:commons-io:jar:2.5 in the shaded jar.
+[INFO] Including net.jcip:jcip-annotations:jar:1.0 in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-client:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.logging:jboss-logging:jar:3.3.0.Final in the shaded jar.
+[WARNING] kubernetes-client-3.0.3.jar, openshift-client-3.0.3.jar define 3 overlapping classes: 
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluent
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluentImpl
+[WARNING]   - io.fabric8.kubernetes.client.ConfigBuilder
+[WARNING] maven-shade-plugin has detected that some class files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the class is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See http://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/target/address-controller-0.17-SNAPSHOT.jar with /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/target/address-controller-0.17-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ address-controller ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/target/address-controller-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/address-controller/0.17-SNAPSHOT/address-controller-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-controller/dependency-reduced-pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/address-controller/0.17-SNAPSHOT/address-controller-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building keycloak 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ keycloak ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ keycloak ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ keycloak ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ keycloak ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/keycloak/0.17-SNAPSHOT/keycloak-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sasl-plugin 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ sasl-plugin ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ sasl-plugin ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sasl-plugin ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sasl-plugin ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 16 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sasl-plugin ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sasl-plugin ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ sasl-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ sasl-plugin ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/target/sasl-plugin-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ sasl-plugin ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ sasl-plugin ---
+[INFO] Including io.vertx:vertx-proton:jar:3.5.1 in the shaded jar.
+[INFO] Including io.vertx:vertx-core:jar:3.5.1 in the shaded jar.
+[INFO] Including io.netty:netty-common:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-buffer:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-transport:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec:jar:4.1.19.Final in the shaded jar.
+[INFO] Excluding io.netty:netty-handler-proxy:jar:4.1.19.Final from the shaded jar.
+[INFO] Excluding io.netty:netty-codec-socks:jar:4.1.19.Final from the shaded jar.
+[INFO] Excluding io.netty:netty-codec-http:jar:4.1.19.Final from the shaded jar.
+[INFO] Excluding io.netty:netty-codec-http2:jar:4.1.19.Final from the shaded jar.
+[INFO] Including io.netty:netty-resolver:jar:4.1.19.Final in the shaded jar.
+[INFO] Excluding io.netty:netty-resolver-dns:jar:4.1.19.Final from the shaded jar.
+[INFO] Excluding io.netty:netty-codec-dns:jar:4.1.19.Final from the shaded jar.
+[INFO] Including org.apache.qpid:proton-j:jar:0.25.0 in the shaded jar.
+[INFO] Including io.vertx:vertx-codegen:jar:processor:3.5.1 in the shaded jar.
+[INFO] Including org.mvel:mvel2:jar:2.3.1.Final in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/target/sasl-plugin-0.17-SNAPSHOT.jar with /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/target/sasl-plugin-0.17-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ sasl-plugin ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/target/sasl-plugin-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/sasl-plugin/0.17-SNAPSHOT/sasl-plugin-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-plugin/sasl-plugin/dependency-reduced-pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/sasl-plugin/0.17-SNAPSHOT/sasl-plugin-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building keycloak-controller 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ keycloak-controller ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ keycloak-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ keycloak-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ keycloak-controller ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ keycloak-controller ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ keycloak-controller ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ keycloak-controller ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ keycloak-controller ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/target/keycloak-controller-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ keycloak-controller ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ keycloak-controller ---
+[INFO] Including io.enmasse:k8s-api:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:address-model-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.fabric8:openshift-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-model:jar:2.0.4 in the shaded jar.
+[INFO] Including javax.validation:validation-api:jar:1.1.0.Final in the shaded jar.
+[INFO] Including com.squareup.okhttp3:okhttp:jar:3.9.0 in the shaded jar.
+[INFO] Including com.squareup.okio:okio:jar:1.13.0 in the shaded jar.
+[INFO] Including com.squareup.okhttp3:logging-interceptor:jar:3.9.0 in the shaded jar.
+[INFO] Including org.slf4j:jul-to-slf4j:jar:1.7.13 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.7.7 in the shaded jar.
+[INFO] Including org.yaml:snakeyaml:jar:1.15 in the shaded jar.
+[INFO] Including io.fabric8:zjsonpatch:jar:0.3.0 in the shaded jar.
+[INFO] Including com.github.mifmif:generex:jar:1.0.1 in the shaded jar.
+[INFO] Including dk.brics.automaton:automaton:jar:1.11-8 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.21 in the shaded jar.
+[INFO] Including org.keycloak:keycloak-admin-client:jar:3.3.0.Final in the shaded jar.
+[INFO] Including org.keycloak:keycloak-core:jar:3.3.0.Final in the shaded jar.
+[INFO] Including org.keycloak:keycloak-common:jar:3.3.0.Final in the shaded jar.
+[INFO] Including org.bouncycastle:bcprov-jdk15on:jar:1.56 in the shaded jar.
+[INFO] Including org.bouncycastle:bcpkix-jdk15on:jar:1.56 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-log4j12:jar:1.7.21 in the shaded jar.
+[INFO] Including log4j:log4j:jar:1.2.17 in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-client:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-jaxrs:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.0_spec:jar:1.0.1.Beta1 in the shaded jar.
+[INFO] Including org.jboss.spec.javax.annotation:jboss-annotations-api_1.2_spec:jar:1.0.0.Final in the shaded jar.
+[INFO] Including javax.activation:activation:jar:1.1.1 in the shaded jar.
+[INFO] Including commons-io:commons-io:jar:2.5 in the shaded jar.
+[INFO] Including net.jcip:jcip-annotations:jar:1.0 in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-jaxrs-services:jar:3.1.0.Final in the shaded jar.
+[INFO] Including org.jboss.logging:jboss-logging:jar:3.3.0.Final in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpclient:jar:4.5.2 in the shaded jar.
+[INFO] Including org.apache.httpcomponents:httpcore:jar:4.4.4 in the shaded jar.
+[INFO] Including commons-logging:commons-logging:jar:1.2 in the shaded jar.
+[INFO] Including commons-codec:commons-codec:jar:1.9 in the shaded jar.
+[INFO] Including org.jboss.resteasy:resteasy-jackson2-provider:jar:3.1.0.Final in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.8.3 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.8.3 in the shaded jar.
+[WARNING] kubernetes-client-3.0.3.jar, openshift-client-3.0.3.jar define 3 overlapping classes: 
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluent
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluentImpl
+[WARNING]   - io.fabric8.kubernetes.client.ConfigBuilder
+[WARNING] maven-shade-plugin has detected that some class files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the class is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See http://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/target/keycloak-controller-0.17-SNAPSHOT.jar with /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/target/keycloak-controller-0.17-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ keycloak-controller ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/target/keycloak-controller-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/keycloak-controller/0.17-SNAPSHOT/keycloak-controller-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/keycloak-controller/dependency-reduced-pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/keycloak-controller/0.17-SNAPSHOT/keycloak-controller-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building systemtests 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/seleniumhq/selenium/selenium-java/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/maven-metadata.xml (3.6 kB at 365 kB/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/org/seleniumhq/selenium/selenium-java/maven-metadata.xml (373 B at 905 B/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/seleniumhq/selenium/selenium-support/maven-metadata.xml
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml (3.9 kB at 2.6 kB/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/org/seleniumhq/selenium/selenium-support/maven-metadata.xml (376 B at 239 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/org/seleniumhq/selenium/selenium-api/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml (3.7 kB at 892 B/s)
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/org/seleniumhq/selenium/selenium-api/maven-metadata.xml (372 B at 85 B/s)
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ systemtests ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ systemtests ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ systemtests ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ systemtests ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 76 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/target/classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/TestUtils.java:[15,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java:[10,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/TestUtils.java:[15,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java:[10,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/TestUtils.java:[15,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java:[10,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/TestUtils.java:[537,78] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/TestUtils.java:[538,19] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/TestUtils.java:[549,106] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java:[54,76] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/main/java/io/enmasse/systemtest/PlansProvider.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ systemtests ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ systemtests ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 56 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/target/test-classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java:[35,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/marathon/WebConsoleTest.java:[21,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/standard/PlansTest.java:[18,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java:[35,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/marathon/WebConsoleTest.java:[21,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/standard/PlansTest.java:[18,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java:[35,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/marathon/WebConsoleTest.java:[21,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/standard/PlansTest.java:[18,46] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java:[715,74] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java:[719,79] sun.reflect.generics.reflectiveObjects.NotImplementedException is internal proprietary API and may be removed in a future release
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/src/test/java/io/enmasse/systemtest/bases/TestBase.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ systemtests ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ systemtests ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/target/systemtests-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ systemtests ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ systemtests ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/target/systemtests-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/systemtests/0.17-SNAPSHOT/systemtests-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/systemtests/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/systemtests/0.17-SNAPSHOT/systemtests-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building artemis 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ artemis ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ artemis ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ artemis ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ artemis ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/artemis/0.17-SNAPSHOT/artemis-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building amqp-connector 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ amqp-connector ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ amqp-connector ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ amqp-connector ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/amqp-connector/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ amqp-connector ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/amqp-connector/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ amqp-connector ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/amqp-connector/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ amqp-connector ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ amqp-connector ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ amqp-connector ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/amqp-connector/target/amqp-connector-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ amqp-connector ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ amqp-connector ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/amqp-connector/target/amqp-connector-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/amqp-connector/0.17-SNAPSHOT/amqp-connector-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/amqp-connector/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/amqp-connector/0.17-SNAPSHOT/amqp-connector-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sasl-delegation 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ sasl-delegation ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ sasl-delegation ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sasl-delegation ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sasl-delegation ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/target/classes
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/src/main/java/io/enmasse/artemis/sasl_delegation/SaslDelegatingLogin.java: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/src/main/java/io/enmasse/artemis/sasl_delegation/SaslDelegatingLogin.java uses unchecked or unsafe operations.
+[WARNING] /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/src/main/java/io/enmasse/artemis/sasl_delegation/SaslDelegatingLogin.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sasl-delegation ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sasl-delegation ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ sasl-delegation ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ sasl-delegation ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/target/sasl-delegation-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ sasl-delegation ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ sasl-delegation ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/target/sasl-delegation-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/sasl-delegation/0.17-SNAPSHOT/sasl-delegation-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/sasl-delegation/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/sasl-delegation/0.17-SNAPSHOT/sasl-delegation-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building shutdown-hook 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ shutdown-hook ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ shutdown-hook ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ shutdown-hook ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ shutdown-hook ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ shutdown-hook ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ shutdown-hook ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 6 source files to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ shutdown-hook ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ shutdown-hook ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/target/shutdown-hook-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ shutdown-hook ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ shutdown-hook ---
+[INFO] Including io.enmasse:discovery-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:k8s-api:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.enmasse:address-model-lib:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including io.fabric8:openshift-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-client:jar:3.0.3 in the shaded jar.
+[INFO] Including io.fabric8:kubernetes-model:jar:2.0.4 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.7.5 in the shaded jar.
+[INFO] Including javax.validation:validation-api:jar:1.1.0.Final in the shaded jar.
+[INFO] Including com.squareup.okhttp3:okhttp:jar:3.9.0 in the shaded jar.
+[INFO] Including com.squareup.okio:okio:jar:1.13.0 in the shaded jar.
+[INFO] Including com.squareup.okhttp3:logging-interceptor:jar:3.9.0 in the shaded jar.
+[INFO] Including org.slf4j:jul-to-slf4j:jar:1.7.13 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.7.7 in the shaded jar.
+[INFO] Including org.yaml:snakeyaml:jar:1.15 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-databind:jar:2.7.7 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.7.0 in the shaded jar.
+[INFO] Including com.fasterxml.jackson.core:jackson-core:jar:2.7.7 in the shaded jar.
+[INFO] Including io.fabric8:zjsonpatch:jar:0.3.0 in the shaded jar.
+[INFO] Including com.github.mifmif:generex:jar:1.0.1 in the shaded jar.
+[INFO] Including dk.brics.automaton:automaton:jar:1.11-8 in the shaded jar.
+[INFO] Including io.enmasse:amqp-utils:jar:0.17-SNAPSHOT in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.21 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-log4j12:jar:1.7.21 in the shaded jar.
+[INFO] Including log4j:log4j:jar:1.2.17 in the shaded jar.
+[INFO] Including io.vertx:vertx-proton:jar:3.5.1 in the shaded jar.
+[INFO] Including io.vertx:vertx-core:jar:3.5.1 in the shaded jar.
+[INFO] Including io.netty:netty-common:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-buffer:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-transport:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-handler-proxy:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-socks:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-http2:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-resolver-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including io.netty:netty-codec-dns:jar:4.1.19.Final in the shaded jar.
+[INFO] Including org.apache.qpid:proton-j:jar:0.25.0 in the shaded jar.
+[INFO] Including io.vertx:vertx-codegen:jar:processor:3.5.1 in the shaded jar.
+[INFO] Including org.mvel:mvel2:jar:2.3.1.Final in the shaded jar.
+[WARNING] kubernetes-client-3.0.3.jar, openshift-client-3.0.3.jar define 3 overlapping classes: 
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluent
+[WARNING]   - io.fabric8.kubernetes.client.ConfigFluentImpl
+[WARNING]   - io.fabric8.kubernetes.client.ConfigBuilder
+[WARNING] maven-shade-plugin has detected that some class files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the class is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See http://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/target/shutdown-hook-0.17-SNAPSHOT.jar with /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/target/shutdown-hook-0.17-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/dependency-reduced-pom.xml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ shutdown-hook ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/target/shutdown-hook-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/shutdown-hook/0.17-SNAPSHOT/shutdown-hook-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/shutdown-hook/dependency-reduced-pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/shutdown-hook/0.17-SNAPSHOT/shutdown-hook-0.17-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jmx_exporter 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ jmx_exporter ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ jmx_exporter ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jmx_exporter ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/jmx_exporter/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jmx_exporter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jmx_exporter ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/jmx_exporter/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jmx_exporter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ jmx_exporter ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jmx_exporter ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/jmx_exporter/target/jmx_exporter-0.17-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ jmx_exporter ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (default) @ jmx_exporter ---
+[INFO] Copying jmx_prometheus_javaagent-0.1.0.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/jmx_exporter/target/lib/jmx_prometheus_javaagent-0.1.0.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ jmx_exporter ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/jmx_exporter/target/jmx_exporter-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/jmx_exporter/0.17-SNAPSHOT/jmx_exporter-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/artemis/jmx_exporter/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/jmx_exporter/0.17-SNAPSHOT/jmx_exporter-0.17-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] enmasse ............................................ SUCCESS [  6.281 s]
+[INFO] address-model-lib .................................. SUCCESS [  2.180 s]
+[INFO] k8s-api ............................................ SUCCESS [  0.484 s]
+[INFO] k8s-api-testutil ................................... SUCCESS [  0.197 s]
+[INFO] amqp-utils ......................................... SUCCESS [  0.967 s]
+[INFO] discovery-lib ...................................... SUCCESS [  0.208 s]
+[INFO] topic-forwarder .................................... SUCCESS [  4.025 s]
+[INFO] mqtt-gateway ....................................... SUCCESS [01:35 min]
+[INFO] mqtt-lwt ........................................... SUCCESS [  1.050 s]
+[INFO] standard-controller ................................ SUCCESS [  2.932 s]
+[INFO] address-controller ................................. SUCCESS [  3.926 s]
+[INFO] keycloak ........................................... SUCCESS [  0.040 s]
+[INFO] sasl-plugin ........................................ SUCCESS [  1.201 s]
+[INFO] keycloak-controller ................................ SUCCESS [  3.944 s]
+[INFO] systemtests ........................................ SUCCESS [  9.748 s]
+[INFO] artemis ............................................ SUCCESS [  0.012 s]
+[INFO] amqp-connector ..................................... SUCCESS [  0.401 s]
+[INFO] sasl-delegation .................................... SUCCESS [  0.420 s]
+[INFO] shutdown-hook ...................................... SUCCESS [  3.438 s]
+[INFO] jmx_exporter ....................................... SUCCESS [  0.235 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:17 min
+[INFO] Finished at: 2020-03-14T16:24:40-07:00
+[INFO] Final Memory: 151M/2045M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building address-model-lib 0.17-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (validate) @ address-model-lib ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default) @ address-model-lib ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] surefireArgLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ address-model-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ address-model-lib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ address-model-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ address-model-lib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ address-model-lib ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ address-model-lib ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (report) @ address-model-lib ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ address-model-lib ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/target/address-model-lib-0.17-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/address-model-lib/0.17-SNAPSHOT/address-model-lib-0.17-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/address-model-lib/pom.xml to /boom/scratch/tmp-rta/Bears_EnMasseProject-enmasse_344863667-344945686_java-8/.m2/io/enmasse/address-model-lib/0.17-SNAPSHOT/address-model-lib-0.17-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.036 s
+[INFO] Finished at: 2020-03-14T16:24:45-07:00
+[INFO] Final Memory: 25M/1237M
+[INFO] ------------------------------------------------------------------------

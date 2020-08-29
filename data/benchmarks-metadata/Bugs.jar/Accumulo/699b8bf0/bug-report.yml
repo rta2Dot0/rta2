@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-3897
+Summary: ShutdownTServer never sets requestedShutdown
+Description: |-
+  ACCUMULO-1259 made ShutdownTServer a bit more sane WRT to what it was doing and the FATE repo interface.
+
+  One attempt it makes it to not repeatedly invoke shutdownTServer on the master..
+
+  Except {{requestedShutdown}} is never set to {{true}}.

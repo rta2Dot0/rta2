@@ -1,0 +1,72 @@
+---
+BugID: OAK-3442
+Summary: Intermittent IllegalMonitorStateException seen while releaseing IndexNode
+Description: "At times following exception seen. On this system the index got corrupted
+  because backing index files got deleted from the system and hence index is not accessible.
+  \n\n{noformat}\n21.09.2015 09:26:36.764 *ERROR* [FelixStartLevel] com.adobe.granite.repository.impl.SlingRepositoryManager
+  start: Uncaught Throwable trying to access Repository, calling stopRepository()\njava.lang.IllegalMonitorStateException:
+  attempt to unlock read lock, not locked by current thread\n        at java.util.concurrent.locks.ReentrantReadWriteLock$Sync.unmatchedUnlockException(ReentrantReadWriteLock.java:444)\n
+  \       at java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryReleaseShared(ReentrantReadWriteLock.java:428)\n
+  \       at java.util.concurrent.locks.AbstractQueuedSynchronizer.releaseShared(AbstractQueuedSynchronizer.java:1341)\n
+  \       at java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock.unlock(ReentrantReadWriteLock.java:881)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.IndexNode.release(IndexNode.java:121)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex.getPlans(LucenePropertyIndex.java:212)\n
+  \       at org.apache.jackrabbit.oak.query.QueryImpl.getBestSelectorExecutionPlan(QueryImpl.java:847)\n
+  \       at org.apache.jackrabbit.oak.query.QueryImpl.getBestSelectorExecutionPlan(QueryImpl.java:793)\n
+  \       at org.apache.jackrabbit.oak.query.ast.SelectorImpl.prepare(SelectorImpl.java:283)\n
+  \       at org.apache.jackrabbit.oak.query.QueryImpl.prepare(QueryImpl.java:568)\n
+  \       at org.apache.jackrabbit.oak.query.QueryEngineImpl.executeQuery(QueryEngineImpl.java:183)\n
+  \       at org.apache.jackrabbit.oak.security.user.UserProvider.getAuthorizableByPrincipal(UserProvider.java:234)\n
+  \       at org.apache.jackrabbit.oak.security.user.UserManagerImpl.getAuthorizable(UserManagerImpl.java:116)\n
+  \       at org.apache.jackrabbit.oak.security.principal.PrincipalProviderImpl.getAuthorizable(PrincipalProviderImpl.java:140)\n
+  \       at org.apache.jackrabbit.oak.security.principal.PrincipalProviderImpl.getPrincipal(PrincipalProviderImpl.java:69)\n
+  \       at org.apache.jackrabbit.oak.spi.security.principal.CompositePrincipalProvider.getPrincipal(CompositePrincipalProvider.java:50)\n
+  \       at org.apache.jackrabbit.oak.spi.security.principal.PrincipalManagerImpl.getPrincipal(PrincipalManagerImpl.java:47)\n
+  \       at com.adobe.granite.repository.impl.SlingRepositoryManager.setupPermissions(SlingRepositoryManager.java:997)\n
+  \       at com.adobe.granite.repository.impl.SlingRepositoryManager.createRepository(SlingRepositoryManager.java:420)\n
+  \       at com.adobe.granite.repository.impl.SlingRepositoryManager.acquireRepository(SlingRepositoryManager.java:290)\n
+  \       at org.apache.sling.jcr.base.AbstractSlingRepositoryManager.start(AbstractSlingRepositoryManager.java:304)\n
+  \       at com.adobe.granite.repository.impl.SlingRepositoryManager.activate(SlingRepositoryManager.java:267)\n
+  \       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n        at
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n
+  \       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n
+  \       at java.lang.reflect.Method.invoke(Method.java:483)\n        at org.apache.felix.scr.impl.helper.BaseMethod.invokeMethod(BaseMethod.java:222)\n
+  \       at org.apache.felix.scr.impl.helper.BaseMethod.access$500(BaseMethod.java:37)\n
+  \       at org.apache.felix.scr.impl.helper.BaseMethod$Resolved.invoke(BaseMethod.java:615)\n
+  \       at org.apache.felix.scr.impl.helper.BaseMethod.invoke(BaseMethod.java:499)\n
+  \       at org.apache.felix.scr.impl.helper.ActivateMethod.invoke(ActivateMethod.java:295)\n
+  \       at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:302)\n
+  \       at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:113)\n
+  \       at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:832)\n
+  \       at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:799)\n
+  \       at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:724)\n
+  \       at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:927)\n
+  \       at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:891)\n
+  \       at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1492)\n
+  \       at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1413)\n
+  \       at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:1222)\n
+  \       at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:1158)\n
+  \       at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1444)\n
+  \       at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:987)\n
+  \       at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:838)\n
+  \       at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:545)\n
+  \       at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4547)\n
+  \       at org.apache.felix.framework.Felix.registerService(Felix.java:3521)\n        at
+  org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)\n
+  \       at org.apache.sling.commons.threads.impl.Activator.start(Activator.java:55)\n
+  \       at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:697)\n
+  \       at org.apache.felix.framework.Felix.activateBundle(Felix.java:2223)\n        at
+  org.apache.felix.framework.Felix.startBundle(Felix.java:2141)\n        at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1368)\n
+  \       at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:308)\n
+  \       at java.lang.Thread.run(Thread.java:745)\n{noformat}\n\nAbove exception
+  happens at\n\n{code}\nfor (String path : indexPaths) {\n            try {\n                indexNode
+  = tracker.acquireIndexNode(path);\n\n                if (indexNode != null) {\n
+  \                   IndexPlan plan = new IndexPlanner(indexNode, path, filter, sortOrder).getPlan();\n
+  \                   if (plan != null) {\n                        plans.add(plan);\n
+  \                   }\n                }\n            } finally {\n                if
+  (indexNode != null) {\n                    indexNode.release();\n                }\n
+  \           }\n        }\n{code}\n\nIt has been ensured that if indexNode is initialized
+  then it has been acquired. So only way for such an exception to happen is that in
+  a loop of say 2 paths {{indexNode}} got initialized for Loop 1 and then while acquiring
+  in Loop 2 the indexNode still refers to old released value and that would cause
+  the exception. The fix should be simply to null the variable once released"

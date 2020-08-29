@@ -1,0 +1,6 @@
+---
+BugID: OAK-4038
+Summary: o.a.j.o.spi.query.Filter exposes unexported class o.a.j.o.query.ast.SelectorImpl
+Description: The interface {{o.a.j.o.spi.query.Filter}} uses in its public API the
+  class {{o.a.j.o.query.ast.SelectorImpl}}, but while the former is contained in an
+  exported package, the latter is not.

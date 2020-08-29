@@ -1,0 +1,21 @@
+---
+BugID: ACCUMULO-4029
+Summary: hashCode for Mutation has an unfortunate implementation
+Description: |
+  While looking at how a tablet server processes constraint violations, I happened to look into Mutation's hashCode implementation:
+
+  {code}
+    @Override
+    public int hashCode() {
+      return toThrift(false).hashCode();
+    }
+  {code}
+
+  Clicking through to TMutation hashCode finds this gem:
+
+  {code}
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+  {code}

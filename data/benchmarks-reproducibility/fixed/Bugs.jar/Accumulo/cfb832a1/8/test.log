@@ -1,0 +1,87 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Proxy 1.5.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-core/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-project/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-fate/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-start/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-trace/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-minicluster/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-server/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-examples-simple/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-examples/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-test/1.5.3-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.1.0:verify (verify-sorted-pom) @ accumulo-proxy ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_cfb832a1_java-8/proxy/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-proxy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- mavanagaiata:0.7.0:commit (git-commit) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_cfb832a1_java-8/proxy/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ accumulo-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ accumulo-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ accumulo-proxy ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Accumulo_cfb832a1_java-8/proxy/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 6.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 84 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 615 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.accumulo.proxy.SimpleTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 60.282 sec
+Running org.apache.accumulo.proxy.TestProxyInstanceOperations
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec
+Running org.apache.accumulo.proxy.TestProxySecurityOperations
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 sec
+Running org.apache.accumulo.proxy.TestProxyReadWrite
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.665 sec
+Running org.apache.accumulo.proxy.TestProxyTableOperations
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec
+
+Results :
+
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:22 min
+[INFO] Finished at: 2020-03-14T22:15:56-07:00
+[INFO] Final Memory: 27M/1061M
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4572
+Summary: 'DiskDataStore returns the wrong page when the page disk space is full '
+Description: |-
+  If the configured file size for the session data is overflowed (see org.apache.wicket.settings.IStoreSettings#setMaxSizePerSession(Bytes)) then Wicket may return wrong page data (bytes) for a expired page.
+
+  The problem is in org.apache.wicket.pageStore.PageWindowManager#idToWindowIndex which may have several page ids (the keys) pointing to the same window index (values).

@@ -1,0 +1,11 @@
+---
+BugID: WICKET-4153
+Summary: The tbody section of a DataTable is empty when no records are returned by
+  the provider.
+Description: |-
+  When a DataTable is rendered without records, the tbody section is empty. This violates the html spec.
+
+  From the spec:
+  "When present, each THEAD, TFOOT, and TBODY contains a row group. Each row group must contain at least one row, defined by the TR element."
+  and
+  "The THEAD, TFOOT, and TBODY sections must contain the same number of columns."

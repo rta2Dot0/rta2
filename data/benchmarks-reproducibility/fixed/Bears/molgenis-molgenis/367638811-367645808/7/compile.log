@@ -1,0 +1,626 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] MOLGENIS
+[INFO] test
+[INFO] util
+[INFO] i18n
+[INFO] data
+[INFO] security-core
+[INFO] settings
+[INFO] data-security
+[INFO] data-file
+[INFO] data-i18n
+[INFO] scripts-core
+[INFO] js
+[INFO] data-validation
+[INFO] data-import
+[INFO] jobs
+[INFO] data-excel
+[INFO] data-csv
+[INFO] amazon-bucket
+[INFO] core
+[INFO] data-cache
+[INFO] data-index
+[INFO] data-platform
+[INFO] data-plugin
+[INFO] web
+[INFO] security
+[INFO] core-ui
+[INFO] apps
+[INFO] data-vcf
+[INFO] data-rest
+[INFO] genomebrowser
+[INFO] beacon
+[INFO] data-migrate
+[INFO] data-annotators
+[INFO] data-postgresql
+[INFO] bootstrap
+[INFO] dataexplorer
+[INFO] python
+[INFO] r
+[INFO] searchall
+[INFO] data-elasticsearch
+[INFO] ontology-core
+[INFO] semantic-search
+[INFO] semantic-mapper
+[INFO] ontology
+[INFO] questionnaires
+[INFO] scripts
+[INFO] file-ingester
+[INFO] gavin
+[INFO] fair
+[INFO] settings-ui
+[INFO] swagger
+[INFO] navigator
+[INFO] metadata-manager
+[INFO] one-click-importer
+[INFO] app
+[INFO] api-tests
+[INFO] data-rest-client
+[INFO] platform-integration-tests
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building MOLGENIS 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-banned-dependencies) @ molgenis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-6/extra-enforcer-rules-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-6/extra-enforcer-rules-1.0-beta-6.pom (7.3 kB at 362 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/56.1/icu4j-56.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/56.1/icu4j-56.1.pom (4.8 kB at 912 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-6/extra-enforcer-rules-1.0-beta-6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/56.1/icu4j-56.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-6/extra-enforcer-rules-1.0-beta-6.jar (36 kB at 1.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/56.1/icu4j-56.1.jar (11 MB at 5.8 MB/s)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.1:prepare-agent (pre-unit-test) @ molgenis ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (execution-annotations) @ molgenis ---
+[INFO] Source directory: /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/target/generated-sources/annotations added.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-resource (minify-build-helper) @ molgenis ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (copy-generated-resources) @ molgenis ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/target/generated-resources
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.1:report (post-unit-test) @ molgenis ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.1:prepare-agent (pre-integration-test) @ molgenis ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] failsafe.argLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.1:report (post-integration-test) @ molgenis ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ molgenis ---
+[INFO] Installing /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/pom.xml to /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/.m2/org/molgenis/molgenis/7.0.0-SNAPSHOT/molgenis-7.0.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building test 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-banned-dependencies) @ molgenis-test ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.1:prepare-agent (pre-unit-test) @ molgenis-test ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (execution-annotations) @ molgenis-test ---
+[INFO] Source directory: /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/molgenis-test/target/generated-sources/annotations added.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-resource (minify-build-helper) @ molgenis-test ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ molgenis-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/molgenis-test/src/main/resources
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/molgenis-test/target/generated-resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ molgenis-test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /boom/scratch/tmp-rta/Bears_molgenis-molgenis_367638811-367645808_java-7/molgenis-test/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building util 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building i18n 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building security-core 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building settings 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-security 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-file 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-i18n 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building scripts-core 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building js 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-validation 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-import 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jobs 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-excel 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-csv 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building amazon-bucket 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building core 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-cache 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-index 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-platform 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-plugin 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building web 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building security 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-core/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-web/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-security-core/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-util/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-util:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-data:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-i18n/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-i18n:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-plugin/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-security/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-settings/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-settings:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-validation/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-data-validation:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-file/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[WARNING] Could not transfer metadata org.molgenis:molgenis-data-file:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-js/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-js:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-scripts-core/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-scripts-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-test/7.0.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata org.molgenis:molgenis-test:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-security-core/7.0.0-SNAPSHOT/molgenis-security-core-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-core/7.0.0-SNAPSHOT/molgenis-core-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-util/7.0.0-SNAPSHOT/molgenis-util-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data/7.0.0-SNAPSHOT/molgenis-data-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-i18n/7.0.0-SNAPSHOT/molgenis-i18n-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-plugin/7.0.0-SNAPSHOT/molgenis-data-plugin-7.0.0-SNAPSHOT.jar
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-security/7.0.0-SNAPSHOT/molgenis-data-security-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-settings/7.0.0-SNAPSHOT/molgenis-settings-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-web/7.0.0-SNAPSHOT/molgenis-web-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-validation/7.0.0-SNAPSHOT/molgenis-data-validation-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-data-file/7.0.0-SNAPSHOT/molgenis-data-file-7.0.0-SNAPSHOT.jar
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-js/7.0.0-SNAPSHOT/molgenis-js-7.0.0-SNAPSHOT.jar
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-scripts-core/7.0.0-SNAPSHOT/molgenis-scripts-core-7.0.0-SNAPSHOT.jar
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://repo.enonic.com:80: The target server failed to respond
+[INFO] Retrying request to {}->http://repo.enonic.com:80
+[INFO] Downloading: http://repo.enonic.com/public/org/molgenis/molgenis-test/7.0.0-SNAPSHOT/molgenis-test-7.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building core-ui 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building apps 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-vcf 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-rest 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building genomebrowser 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building beacon 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-migrate 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-annotators 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-postgresql 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building bootstrap 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building dataexplorer 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building python 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-util:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-util:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-i18n:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-i18n:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-settings:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-settings:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-validation:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-validation:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-file:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-file:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-js:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-js:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building r 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-util:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-util:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-i18n:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-i18n:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-settings:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-settings:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-validation:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-validation:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-file:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-file:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-js:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-js:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building searchall 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-elasticsearch 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ontology-core 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building semantic-search 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building semantic-mapper 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ontology 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building questionnaires 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building scripts 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building file-ingester 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building gavin 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fair 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building settings-ui 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building navigator 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building metadata-manager 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building one-click-importer 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building app 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-maven-plugin/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/mortbay/jetty/jetty-maven-plugin/maven-metadata.xml (4.0 kB at 486 B/s)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building api-tests 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-security:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-rest-client 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building platform-integration-tests 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] Failure to transfer org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-security-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-core:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-data-plugin:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[WARNING] Failure to transfer org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from http://repo.enonic.com/public/ was cached in the local repository, resolution will not be reattempted until the update interval of enonic has elapsed or updates are forced. Original error: Could not transfer metadata org.molgenis:molgenis-web:7.0.0-SNAPSHOT/maven-metadata.xml from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] MOLGENIS ........................................... SUCCESS [ 40.391 s]
+[INFO] test ............................................... FAILURE [  1.534 s]
+[INFO] util ............................................... FAILURE [  0.056 s]
+[INFO] i18n ............................................... FAILURE [  0.047 s]
+[INFO] data ............................................... FAILURE [  0.058 s]
+[INFO] security-core ...................................... FAILURE [  0.037 s]
+[INFO] settings ........................................... FAILURE [  0.040 s]
+[INFO] data-security ...................................... FAILURE [  0.042 s]
+[INFO] data-file .......................................... FAILURE [  0.045 s]
+[INFO] data-i18n .......................................... FAILURE [  0.040 s]
+[INFO] scripts-core ....................................... FAILURE [  0.029 s]
+[INFO] js ................................................. FAILURE [  0.037 s]
+[INFO] data-validation .................................... FAILURE [  0.082 s]
+[INFO] data-import ........................................ FAILURE [  0.058 s]
+[INFO] jobs ............................................... FAILURE [  0.062 s]
+[INFO] data-excel ......................................... FAILURE [  0.062 s]
+[INFO] data-csv ........................................... FAILURE [  0.039 s]
+[INFO] amazon-bucket ...................................... FAILURE [  0.106 s]
+[INFO] core ............................................... FAILURE [  0.027 s]
+[INFO] data-cache ......................................... FAILURE [  0.033 s]
+[INFO] data-index ......................................... FAILURE [  0.050 s]
+[INFO] data-platform ...................................... FAILURE [  0.053 s]
+[INFO] data-plugin ........................................ FAILURE [  0.032 s]
+[INFO] web ................................................ FAILURE [  0.053 s]
+[INFO] security ........................................... FAILURE [01:20 min]
+[INFO] core-ui ............................................ FAILURE [  0.099 s]
+[INFO] apps ............................................... FAILURE [  0.040 s]
+[INFO] data-vcf ........................................... FAILURE [  0.039 s]
+[INFO] data-rest .......................................... FAILURE [  0.048 s]
+[INFO] genomebrowser ...................................... FAILURE [  0.038 s]
+[INFO] beacon ............................................. FAILURE [  0.039 s]
+[INFO] data-migrate ....................................... FAILURE [  0.010 s]
+[INFO] data-annotators .................................... FAILURE [  0.036 s]
+[INFO] data-postgresql .................................... FAILURE [  0.024 s]
+[INFO] bootstrap .......................................... FAILURE [  0.043 s]
+[INFO] dataexplorer ....................................... FAILURE [  0.057 s]
+[INFO] python ............................................. FAILURE [  0.027 s]
+[INFO] r .................................................. FAILURE [  0.035 s]
+[INFO] searchall .......................................... FAILURE [  0.033 s]
+[INFO] data-elasticsearch ................................. FAILURE [  0.153 s]
+[INFO] ontology-core ...................................... FAILURE [  0.191 s]
+[INFO] semantic-search .................................... FAILURE [  0.025 s]
+[INFO] semantic-mapper .................................... FAILURE [  0.041 s]
+[INFO] ontology ........................................... FAILURE [  0.032 s]
+[INFO] questionnaires ..................................... FAILURE [  0.019 s]
+[INFO] scripts ............................................ FAILURE [  0.019 s]
+[INFO] file-ingester ...................................... FAILURE [  0.026 s]
+[INFO] gavin .............................................. FAILURE [  0.023 s]
+[INFO] fair ............................................... FAILURE [  0.027 s]
+[INFO] settings-ui ........................................ FAILURE [  0.020 s]
+[INFO] swagger ............................................ FAILURE [  0.014 s]
+[INFO] navigator .......................................... FAILURE [  0.018 s]
+[INFO] metadata-manager ................................... FAILURE [  0.019 s]
+[INFO] one-click-importer ................................. FAILURE [  0.025 s]
+[INFO] app ................................................ FAILURE [  9.322 s]
+[INFO] api-tests .......................................... FAILURE [  0.116 s]
+[INFO] data-rest-client ................................... FAILURE [  0.007 s]
+[INFO] platform-integration-tests ......................... FAILURE [  0.041 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:17 min
+[INFO] Finished at: 2020-03-15T16:48:23-07:00
+[INFO] Final Memory: 179M/1751M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project molgenis-test: Fatal error compiling: invalid flag: -parameters -> [Help 1]
+[ERROR] Failed to execute goal on project molgenis-util: Could not resolve dependencies for project org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-i18n: Could not resolve dependencies for project org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data: Could not resolve dependencies for project org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-security-core: Could not resolve dependencies for project org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-settings: Could not resolve dependencies for project org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-security: Could not resolve dependencies for project org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-file: Could not resolve dependencies for project org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-i18n: Could not resolve dependencies for project org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-scripts-core: Could not resolve dependencies for project org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-js: Could not resolve dependencies for project org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-validation: Could not resolve dependencies for project org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-import: Could not resolve dependencies for project org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-jobs: Could not resolve dependencies for project org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-excel: Could not resolve dependencies for project org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-csv: Could not resolve dependencies for project org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-amazon-bucket: Could not resolve dependencies for project org.molgenis:molgenis-amazon-bucket:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:tests:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-core: Could not resolve dependencies for project org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-cache: Could not resolve dependencies for project org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-index: Could not resolve dependencies for project org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-platform: Could not resolve dependencies for project org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-plugin: Could not resolve dependencies for project org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-web: Could not resolve dependencies for project org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-security: Could not resolve dependencies for project org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not transfer artifact org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT from/to enonic (http://repo.enonic.com/public/): sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-core-ui: Could not resolve dependencies for project org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-apps: Could not resolve dependencies for project org.molgenis:molgenis-apps:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-vcf: Could not resolve dependencies for project org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-rest: Could not resolve dependencies for project org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-genomebrowser: Could not resolve dependencies for project org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-beacon: Could not resolve dependencies for project org.molgenis:molgenis-beacon:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-migrate: Could not resolve dependencies for project org.molgenis:molgenis-data-migrate:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-annotators: Could not resolve dependencies for project org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-postgresql: Could not resolve dependencies for project org.molgenis:molgenis-data-postgresql:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-bootstrap: Could not resolve dependencies for project org.molgenis:molgenis-bootstrap:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data-migrate:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-postgresql:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data-migrate:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-dataexplorer: Could not resolve dependencies for project org.molgenis:molgenis-dataexplorer:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-python: Could not resolve dependencies for project org.molgenis:molgenis-python:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-r: Could not resolve dependencies for project org.molgenis:molgenis-r:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-searchall: Could not resolve dependencies for project org.molgenis:molgenis-searchall:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-elasticsearch: Could not resolve dependencies for project org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-ontology-core: Could not resolve dependencies for project org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-semantic-search: Could not resolve dependencies for project org.molgenis:molgenis-semantic-search:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-semantic-mapper: Could not resolve dependencies for project org.molgenis:molgenis-semantic-mapper:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-dataexplorer:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-semantic-search:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:tests:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-ontology: Could not resolve dependencies for project org.molgenis:molgenis-ontology:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-semantic-search:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-questionnaires: Could not resolve dependencies for project org.molgenis:molgenis-questionnaires:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-scripts: Could not resolve dependencies for project org.molgenis:molgenis-scripts:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-file-ingester: Could not resolve dependencies for project org.molgenis:molgenis-file-ingester:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-gavin: Could not resolve dependencies for project org.molgenis:molgenis-gavin:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-fair: Could not resolve dependencies for project org.molgenis:molgenis-fair:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-semantic-search:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-settings-ui: Could not resolve dependencies for project org.molgenis:molgenis-settings-ui:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-swagger: Could not resolve dependencies for project org.molgenis:molgenis-swagger:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-navigator: Could not resolve dependencies for project org.molgenis:molgenis-navigator:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-metadata-manager: Could not resolve dependencies for project org.molgenis:molgenis-metadata-manager:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-one-click-importer: Could not resolve dependencies for project org.molgenis:molgenis-one-click-importer:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-navigator:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-dataexplorer:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-app: Could not resolve dependencies for project org.molgenis:molgenis-app:war:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-apps:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-beacon:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-bootstrap:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-postgresql:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-dataexplorer:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-python:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-r:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-searchall:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-semantic-mapper:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-semantic-search:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-migrate:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-questionnaires:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-file-ingester:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-gavin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-fair:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-swagger:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-amazon-bucket:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-navigator:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-metadata-manager:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-one-click-importer:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-apps:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-api-tests: Could not resolve dependencies for project org.molgenis:molgenis-api-tests:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-app:war:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-one-click-importer:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-navigator:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-dataexplorer:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-annotators:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-beacon:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-genomebrowser:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-app:war:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-data-rest-client: Could not resolve dependencies for project org.molgenis:molgenis-data-rest-client:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project molgenis-platform-integration-tests: Could not resolve dependencies for project org.molgenis:molgenis-platform-integration-tests:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-cache:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-index:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-js:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-scripts-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-security-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-plugin:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-web:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-postgresql:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-csv:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-excel:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-jobs:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-settings:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-util:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-import:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-vcf:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-rest:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-core-ui:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-i18n:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-ontology-core:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-elasticsearch:jar:tests:7.0.0-SNAPSHOT, org.molgenis:molgenis-semantic-search:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data-platform:jar:7.0.0-SNAPSHOT -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :molgenis-test
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-postgresql 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.089 s
+[INFO] Finished at: 2020-03-15T16:48:28-07:00
+[INFO] Final Memory: 28M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project molgenis-data-postgresql: Could not resolve dependencies for project org.molgenis:molgenis-data-postgresql:jar:7.0.0-SNAPSHOT: The following artifacts could not be resolved: org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-file:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-data-validation:jar:7.0.0-SNAPSHOT, org.molgenis:molgenis-test:jar:7.0.0-SNAPSHOT: Could not find artifact org.molgenis:molgenis-data:jar:7.0.0-SNAPSHOT -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

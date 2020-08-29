@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-2962
+Summary: RangeInputSplit Writable methods don't serialize IteratorSettings
+Description: |-
+  Was trying to figure out why some information was getting lost on a RangeInputSplit after serialization, and found out it was because the serialization and deserialization of the class didn't include the configured IteratorSettings.
+
+  This likely isn't a big problem for normal users as, when no IteratorSettings are configured on the RangeInputSplit, it falls back to pulling from the Configuration, but it's possible, with "non-standard" uses of mapreduce, that information could be missing in the Configuration that the mappers receive, and would subsequently error.

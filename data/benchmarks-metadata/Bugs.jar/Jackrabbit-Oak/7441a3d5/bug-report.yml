@@ -1,0 +1,19 @@
+---
+BugID: OAK-4431
+Summary: Index path property should be considered optional for copy on read logic
+Description: "As part of changes done for OAK-4347 logic assumes that indexPath is
+  always non null. This works fine for fresh setup where the indexPath would have
+  been set by the initial indexing. However for upgraded setup this assumption would
+  break as it might happen that index does not get updated with new approach and before
+  that a read is performed.\n\nCurrently with updated code on upgraded setup following
+  exception is seen \n\n{noformat}\nCaused by: javax.security.auth.login.LoginException:
+  java.lang.NullPointerException: Index path property [:indexPath] not found\n        at
+  com.google.common.base.Preconditions.checkNotNull(Preconditions.java:236)\n        at
+  org.apache.jackrabbit.oak.plugins.index.lucene.IndexDefinition.getIndexPathFromConfig(IndexDefinition.java:664)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier.getSharedWorkingSet(IndexCopier.java:242)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier.wrapForRead(IndexCopier.java:140)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.IndexNode.open(IndexNode.java:53)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.IndexTracker.findIndexNode(IndexTracker.java:179)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.IndexTracker.acquireIndexNode(IndexTracker.java:154)\n
+  \       at org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex.getPlans(LucenePropertyIndex.java:250)\n{noformat}\n\nFor
+  this specific flow the indexPath can be passed in and not looked up from IndexDefinition"

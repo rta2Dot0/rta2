@@ -1,0 +1,7 @@
+---
+BugID: OAK-846
+Summary: Branch conflicts not detected by MongoMK
+Description: |-
+  MongoMK does not correctly detect conflicts when changes are committed into multiple branches concurrently and then merged back.
+
+  ConflictTest already covers conflict detection for non-branch commits and mixed branch/non-branch changes, but is missing tests for conflicting branches. I'll commit an ignored test to illustrate the problem.

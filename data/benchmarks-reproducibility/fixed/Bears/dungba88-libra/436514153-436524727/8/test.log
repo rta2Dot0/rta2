@@ -1,0 +1,100 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Libra 1.0.3
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (prepare-agent) @ joo-libra ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ joo-libra ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_dungba88-libra_436514153-436524727_java-8/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ joo-libra ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ joo-libra ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_dungba88-libra_436514153-436524727_java-8/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ joo-libra ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ joo-libra ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bears_dungba88-libra_436514153-436524727_java-8/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 4.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 157 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 923 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.joo.libra.test.TestSqlError
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.342 sec
+Running org.joo.libra.test.TestJavaPredicate
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running org.joo.libra.test.TestSqlVariable
+Tests run: 68, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.301 sec
+Running org.joo.libra.test.TestSqlComplex
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec
+Running org.joo.libra.test.TestSqlSimple
+Tests run: 57, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 sec
+Running org.joo.libra.test.TestSqlPerf
+Setting up...
+Parsed expression: AND(EQUALS(name,'John'),GREATER(age,27))
+Parsed expression: AND(CONTAIN(bar.foo.collection1,age),EQUALS(data,'ok'),OR(NOT(VAR(female)), EQUALS(name,bar.foo.name)),NOT(EQUALS(bar,null)),MATCH(bar.foo.name,'[Ms]ario.*'))
+Warming up...
+
+Testing with Java object...
+Elapsed: 16540 ms
+Pace: 604578 ops/sec
+Avg: 1654 ns
+
+Testing with Map...
+Elapsed: 10843 ms
+Pace: 922179 ops/sec
+Avg: 1084 ns
+
+Test Complex SQL
+Elapsed: 24497 ms
+Pace: 408203 ops/sec
+Avg: 2449 ns
+
+Cleaning up...
+Finished
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 52.094 sec
+Running org.joo.libra.test.TestSqlOptimized
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 sec
+Running org.joo.libra.test.TestSqlMisc
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+
+Results :
+
+Tests run: 178, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:00 min
+[INFO] Finished at: 2020-03-15T06:40:25-07:00
+[INFO] Final Memory: 28M/1237M
+[INFO] ------------------------------------------------------------------------

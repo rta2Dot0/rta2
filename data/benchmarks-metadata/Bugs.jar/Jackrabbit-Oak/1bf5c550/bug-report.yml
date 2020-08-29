@@ -1,0 +1,12 @@
+---
+BugID: OAK-276
+Summary: potential clash of commit id's after restart
+Description: "the commit id's in the current implementation are counter-based, i.e.
+  every commit (on HEAD or on a branch) gets its id by incrementing counter.\n\nonly
+  the current HEAD id is recorded/persisted. on startup the counter is initialized
+  with the current HEAD id. \n\nassume the following sequence:\n\n- ...startup...\n-
+  counter == HEAD == 99\n- commit on HEAD -> new HEAD rev: ++counter == 100\n- create
+  branch -> new branch rev: ++counter == 101\n- ...restart...\n- counter == HEAD ==
+  100\n- commit on HEAD -> new HEAD rev: ++counter == 101 => clashes with older branch
+  rev! \n\nsince a commit is never overwritten the above scenario results in a private
+  branch revision marked as HEAD, i.e. the revision history is corrupted."

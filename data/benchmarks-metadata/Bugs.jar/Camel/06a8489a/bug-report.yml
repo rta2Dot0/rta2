@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-4474
+Summary: 'file: consumer does not create directory'
+Description: "According to http://camel.apache.org/file2.html autoCreate is true by
+  default and should for a consumer create the directory.\n{noformat}\nautoCreate
+  \ttrue \tAutomatically create missing directories in the file's pathname. For the
+  file consumer, that means creating the starting directory. For the file producer,
+  it means the directory the files should be written to. \n{noformat}\nThis does not
+  happen and thus a route startup would fail."

@@ -1,0 +1,30 @@
+---
+BugID: CAMEL-3727
+Summary: Recipient list with parallel processing doesn't reuse aggregation threads
+Description: |
+  When I'm using recipient list in parallel mode {{aggregateExecutorService}} in {{MulticastProcessor}} doesn't reuse threads and is creating one new thread per each request.
+
+  To reproduce this bug simply add a loop to {{RecipientListParallelTest.testRecipientListParallel()}} test:
+  {code:title=RecipientListParallelTest.java|borderStyle=solid}
+      public void testRecipientListParallel() throws Exception {
+          for (int i = 0; i < 10000; i++) {
+              MockEndpoint mock = getMockEndpoint("mock:result");
+              mock.reset();
+              mock.expectedBodiesReceivedInAnyOrder("c", "b", "a");
+              template.sendBodyAndHeader("direct:start", "Hello World", "foo", "direct:a,direct:b,direct:c");
+              assertMockEndpointsSatisfied();
+          }
+      }
+  {code}
+
+  In the logs you can find:
+  {code}
+  2011-02-28 13:22:30,984 [) thread #0 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:31,984 [) thread #4 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:32,984 [) thread #8 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:34,000 [ thread #12 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:35,000 [ thread #14 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:36,000 [ thread #15 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:37,015 [ thread #16 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  2011-02-28 13:22:38,015 [ thread #17 - RecipientListProcessor-AggregateTask] DEBUG MulticastProcessor             - Done aggregating 3 exchanges on the fly.
+  {code}

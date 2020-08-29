@@ -1,0 +1,20 @@
+---
+BugID: OAK-510
+Summary: Multivalued properties with array size 0 forget their type
+Description: "thought i remember that i have seen a related TODO or issue before,
+  i\ncouldn't find it any more... sorry for that.\n\nwhile cleaning up the node type
+  code i found that one FIXME in the \nReadOnlyNodeTypeManager related to definition
+  generation was only needed\nbecause the TypeValidator failed upon validation of
+  an empty jcr:supertypes\ndefinition. not storing the super types if none has be
+  declared solved the\nproblem for the time being.\n\nhowever, it seems to me that
+  the underlying problem is in a completely\ndifferent area: namely that mv properties
+  with an empty value array\nforget their type.\n\nthis can be verified with the following
+  test:\n{code}\n    @Test\n    public void addEmptyMultiValueName() throws RepositoryException
+  {\n        Node parentNode = getNode(TEST_PATH);\n        Value[] values = new Value[0];\n\n
+  \       parentNode.setProperty(\"multi name\", values);\n        parentNode.getSession().save();\n\n
+  \       Session session2 = createAnonymousSession();\n        try {\n            Property
+  property = session2.getProperty(TEST_PATH + \"/multi name\");\n            assertTrue(property.isMultiple());\n
+  \           assertEquals(PropertyType.NAME, property.getType());\n            Value[]
+  values2 = property.getValues();\n            assertEquals(values.length, values2.length);\n
+  \           assertEquals(values[0], values2[0]);\n            assertEquals(values[1],
+  values2[1]);\n        } finally {\n            session2.logout();\n        }\n    }\n{code}"

@@ -1,0 +1,18 @@
+---
+BugID: OAK-766
+Summary: 'TreeImpl#*Location: unable retrieve child location if access to parent is
+  denied'
+Description: |-
+  as a consequence of OAK-709 we now have an issue with the way
+  SessionDelegate and Root#getLocation access a node in the hierarchy
+  which has an ancestor which is not accessible.
+
+  specifically RootImpl#getLocation will be served a NullLocation for the
+  first ancestor which is not accessible and consequently any accessible
+  child node cannot be accessed.
+
+  in order to reproduce the issue you may:
+
+  - change AccessControlConfigurationImpl to use PermissionProviderImpl instead
+    of the tmp solution
+  - and run o.a.j.oak.jcr.security.authorization.ReadTest#testReadDenied

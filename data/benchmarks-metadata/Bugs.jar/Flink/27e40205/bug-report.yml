@@ -1,0 +1,6 @@
+---
+BugID: FLINK-1133
+Summary: Type extractor cannot determine type of function
+Description: "This function fails in the type extractor.\n\n{code}\npublic static
+  final class DuplicateValue<T> implements MapFunction<Tuple1<T>, Tuple2<T, T>> {\n\t\t\n\t@Override\n\tpublic
+  Tuple2<T, T> map(Tuple1<T> vertex) {\n\t\treturn new Tuple2<T, T>(vertex.f0, vertex.f0);\n\t}\n}\n{code}"

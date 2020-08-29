@@ -1,0 +1,10 @@
+---
+BugID: OAK-43
+Summary: Incomplete journal when move and copy operations are involved
+Description: "Given a node at /source:\n\n{code}\nhead = mk.commit(\"/\",\n    \">\\\"source\\\"
+  : \\\"moved\\\"\" +\n    \"*\\\"moved\\\" : \\\"copy\\\"\",\n    head, \"\");\n{code}\n\nresults
+  in the following journal:\n\n{code}\n>\"/source\":\"/copy\"\n{code}\n\nwhere the
+  freshly created node at /moved is missing.\n\nSimilarly \n\n{code}\nhead = mk.commit(\"/\",\n
+  \   \"*\\\"source\\\" : \\\"copy\\\"\" +\n    \">\\\"copy\\\" : \\\"moved\\\"\",\n
+  \   head, \"\");\n{code}\n\nresults in\n\n{code}\n+\"/moved\":{}\n{code}\n\nwhere
+  moved away node at /source is missing."

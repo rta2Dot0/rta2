@@ -1,0 +1,7 @@
+---
+BugID: FLINK-2515
+Summary: CheckpointCoordinator triggers checkpoints even if not all sources are running
+  any more
+Description: When some sources finish early, they will not emit checkpoint barriers
+  any more. That means that pending checkpoint alignments will never be able to complete,
+  locking the flow.

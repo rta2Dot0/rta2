@@ -1,0 +1,15 @@
+---
+BugID: FLINK-3762
+Summary: " Kryo StackOverflowError due to disabled Kryo Reference tracking"
+Description: "As discussed on the dev list,\n\nIn {{KryoSerializer.java}}\n\nKryo
+  Reference tracking is disabled by default:\n\n{code}\n    kryo.setReferences(false);\n{code}\n\nThis
+  can causes  {{StackOverflowError}} Exceptions when serializing many objects that
+  may contain recursive objects:\n\n{code}\njava.lang.StackOverflowError\n\tat com.esotericsoftware.kryo.serializers.ObjectField.write(ObjectField.java:48)\n\tat
+  com.esotericsoftware.kryo.serializers.FieldSerializer.write(FieldSerializer.java:495)\n\tat
+  com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:523)\n\tat com.esotericsoftware.kryo.serializers.ObjectField.write(ObjectField.java:61)\n\tat
+  com.esotericsoftware.kryo.serializers.FieldSerializer.write(FieldSerializer.java:495)\n\tat
+  com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:523)\n\tat com.esotericsoftware.kryo.serializers.ObjectField.write(ObjectField.java:61)\n\tat
+  com.esotericsoftware.kryo.serializers.FieldSerializer.write(FieldSerializer.java:495)\n\tat
+  com.esotericsoftware.kryo.Kryo.writeObject(Kryo.java:523)\n\tat com.esotericsoftware.kryo.serializers.ObjectField.write(ObjectField.java:61)\n\tat
+  com.esotericsoftware.kryo.serializers.FieldSerializer.write(FieldSerializer.java:495)\n{code}\n\nBy
+  enabling reference tracking, we can fix this problem.\n\n[1]https://gist.github.com/andrewpalumbo/40c7422a5187a24cd03d7d81feb2a419\n "

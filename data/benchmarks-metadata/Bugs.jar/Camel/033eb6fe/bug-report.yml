@@ -1,0 +1,13 @@
+---
+BugID: CAMEL-5215
+Summary: The file producer should use the charset encoding when writing the file if
+  configured
+Description: |-
+  When writing to a file, we offer the charset option on the endpoint, as well the charset property set on the exchange.
+  However in a route  that is optimized as
+  {code}
+  from file
+   to file
+  {code}
+
+  Then we optimize to do a file move operation instead. We should detect the charset configured and then we would need to stream and write using the configured charset.

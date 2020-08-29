@@ -1,0 +1,9 @@
+---
+BugID: OAK-539
+Summary: Wrong compareTo in micro-kernel Id class
+Description: "CompareTo method in Id class fails in some cases.\n\n{code} \n// this
+  works\nfinal Id id1 = Id.fromString( \"0000000000000007\" );\nfinal Id id2 = Id.fromString(
+  \"000000000000000c\" );\n\nassertTrue( id1 + \" should be less than \" + id2, id1.compareTo(
+  id2 ) < 0 );\n\n// but this doesn't\nfinal Id id1 = Id.fromString( \"0000000000000070\"
+  );\nfinal Id id2 = Id.fromString( \"00000000000000c0\" );\n\nassertTrue( id1 + \"
+  should be less than \" + id2, id1.compareTo( id2 ) < 0 );\n{code} "

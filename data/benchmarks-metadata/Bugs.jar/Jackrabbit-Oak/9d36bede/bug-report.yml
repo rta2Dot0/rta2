@@ -1,0 +1,5 @@
+---
+BugID: OAK-1779
+Summary: Stale cache after MongoMK GC
+Description: After a MongoMK revision GC the docChildrenCache may be stale and lead
+  to a NPE when reading children with deleted and GC'ed siblings.

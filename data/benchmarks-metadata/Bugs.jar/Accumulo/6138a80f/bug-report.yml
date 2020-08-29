@@ -1,0 +1,8 @@
+---
+BugID: ACCUMULO-2713
+Summary: Instance secret written out with other configuration items to RFiles and
+  WALogs when encryption is turned on
+Description: |-
+  The encryption at rest feature records configuration information in order to encrypted RFiles and WALogs so that if the configuration changes, the files can be read back.  The code that does this recording hovers up all the "instance.*" entries, and does not pick out the instance.secret as a special one not to write.  Thus the instance secret goes into each file in the clear, which is non-ideal to say the least.
+
+  Patch forthcoming.

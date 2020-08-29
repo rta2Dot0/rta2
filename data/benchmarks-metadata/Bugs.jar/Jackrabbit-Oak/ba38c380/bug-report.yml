@@ -1,0 +1,7 @@
+---
+BugID: OAK-3089
+Summary: 'LIRS cache: zero size cache causes IllegalArgumentException'
+Description: |-
+  The LIRS cache does not support a zero size cache currently. Such a configuration causes an IllegalArgumentException.
+
+  Instead, no exception should be thrown, and no or a minimum size cache should be used.

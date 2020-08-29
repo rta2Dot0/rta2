@@ -1,0 +1,129 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Project Builder 2.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-artifact-test/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-settings/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-model/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-artifact-manager/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-repository-metadata/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-artifact/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-profile/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/maven-snapshot-repository/org/apache/maven/maven-tools/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-project ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-project ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 65 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven-project ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Maven_cc859f5c_java-8/maven-project/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.pom (1.7 kB at 6.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 147 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.jar (26 kB at 864 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.maven.project.canonical.CanonicalProjectBuilderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.399 sec
+Running org.apache.maven.project.ProjectSorterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.maven.project.ModelUtilsTest
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE!
+testShouldKeepOriginalPluginOrdering(org.apache.maven.project.ModelUtilsTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected same:<org.apache.maven.model.Plugin@4973813a> was not:<org.apache.maven.model.Plugin@6321e813>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotSame(Assert.java:278)
+	at junit.framework.Assert.assertSame(Assert.java:242)
+	at junit.framework.Assert.assertSame(Assert.java:249)
+	at org.apache.maven.project.ModelUtilsTest.testShouldKeepOriginalPluginOrdering(ModelUtilsTest.java:240)
+
+Running org.apache.maven.project.injection.TestProfileInjector
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.maven.project.injection.DefaultProfileInjectorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.maven.project.injection.DefaultModelDefaultsInjectorTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.maven.project.MavenProjectTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running org.apache.maven.project.inheritance.t03.ProjectInheritanceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+Running org.apache.maven.project.inheritance.DefaultModelInheritanceAssemblerTest
+Resulting path is: '/file-management'
+Resulting path is: 'http://maven.apache.org/shared/file-management'
+Resulting path is: 'http://maven.apache.org/shared/file-management'
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.maven.project.inheritance.t01.ProjectInheritanceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running org.apache.maven.project.inheritance.t02.ProjectInheritanceTest
+Local repository is at: /scratch/tmp-rta/Bugs.jar_Maven_cc859f5c_java-8/maven-project/src/test/resources/inheritance-repo/t02
+Location of project-4's POM: /scratch/tmp-rta/Bugs.jar_Maven_cc859f5c_java-8/maven-project/src/test/resources/inheritance-repo/t02/p0/p1/p2/p3/p4/pom.xml
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Running org.apache.maven.project.inheritance.t00.ProjectInheritanceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running org.apache.maven.project.ProjectClasspathTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Running org.apache.maven.project.interpolation.RegexBasedModelInterpolatorTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running org.apache.maven.project.validation.DefaultModelValidatorTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.31 sec
+Running org.apache.maven.project.ProjectBaseDirectoryAlignmentTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running org.apache.maven.project.artifact.MavenMetadataSourceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running org.apache.maven.project.TestProjectBuilder
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.maven.project.TestArtifactResolver
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.maven.profiles.DefaultProfileManagerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Failed tests:   testShouldKeepOriginalPluginOrdering(org.apache.maven.project.ModelUtilsTest): expected same:<org.apache.maven.model.Plugin@4973813a> was not:<org.apache.maven.model.Plugin@6321e813>
+
+Tests run: 93, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 14.188 s
+[INFO] Finished at: 2020-03-14T21:16:12-07:00
+[INFO] Final Memory: 17M/981M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project maven-project: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bugs.jar_Maven_cc859f5c_java-8/maven-project/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

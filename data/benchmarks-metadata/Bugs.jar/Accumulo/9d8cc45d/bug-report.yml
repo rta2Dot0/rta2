@@ -1,0 +1,83 @@
+---
+BugID: ACCUMULO-334
+Summary: Bulk random walk test failed
+Description: "The bulk random walk test failed while running on a 10 node cluster
+  w/ the following error message.\n\n{noformat}\n18 23:36:05,167 [bulk.Setup] INFO
+  : Starting bulk test on 459a04a0\n\n\n19 00:24:33,950 [randomwalk.Framework] ERROR:
+  Error during random walk\njava.lang.Exception: Error running node Bulk.xml\n        at
+  org.apache.accumulo.server.test.randomwalk.Module.visit(Module.java:253)\n        at
+  org.apache.accumulo.server.test.randomwalk.Framework.run(Framework.java:61)\n        at
+  org.apache.accumulo.server.test.randomwalk.Framework.main(Framework.java:114)\n
+  \       at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n        at
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n
+  \       at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n
+  \       at java.lang.reflect.Method.invoke(Method.java:597)\n        at org.apache.accumulo.start.Main$1.run(Main.java:89)\n
+  \       at java.lang.Thread.run(Thread.java:662)\nCaused by: java.lang.Exception:
+  Error running node bulk.Verify\n        at org.apache.accumulo.server.test.randomwalk.Module.visit(Module.java:253)\n
+  \       at org.apache.accumulo.server.test.randomwalk.Module.visit(Module.java:249)\n
+  \       ... 8 more\nCaused by: java.lang.Exception: Bad key at r0d646 cf:000 []
+  1326932285943 false -1\n        at org.apache.accumulo.server.test.randomwalk.bulk.Verify.visit(Verify.java:51)\n
+  \       at org.apache.accumulo.server.test.randomwalk.Module.visit(Module.java:249)\n
+  \       ... 9 more\n{noformat}\n\nLooking at the table the rows [r0d646, r0edd9]
+  and [r0f056, r10467] all had -1 values.  There was a tablet that overlapped the
+  first range of -1 rows exactly 268;r0edd9;r0d645.  This tablet had only the following
+  activity on a tablet server and was then merged out of existence.  The merge operation
+  was 268;r10eff;r093b1.\n\n{noformat}\n19 00:05:10,966 [tabletserver.Tablet] DEBUG:
+  Files for low split 268;r0edd9;r0d645  [/b-0001azp/I0001azt.rf, /b-0001azp/I0001azu.rf,
+  /t-0001ale/A0001an3.rf]\n19 00:05:10,974 [tabletserver.Tablet] TABLET_HIST: 268;r0f055;r0d645
+  split 268;r0edd9;r0d645 268;r0f055;r0edd9\n19 00:05:10,975 [tabletserver.Tablet]
+  TABLET_HIST: 268;r0edd9;r0d645 opened \n19 00:05:15,029 [tabletserver.Tablet] TABLET_HIST:
+  268;r0edd9;r0d645 import /b-0001azi/I0001azm.rf 17138 0\n19 00:05:15,103 [tabletserver.Tablet]
+  DEBUG: Starting MajC 268;r0edd9;r0d645 [/b-0001azi/I0001azm.rf, /b-0001azp/I0001azt.rf,
+  /b-0001azp/I0001azu.rf, /t-0001ale/A0001an3.rf] --> /t-0001apj/A0001bri.rf_tmp\n19
+  00:05:15,339 [tabletserver.Tablet] TABLET_HIST: 268;r0edd9;r0d645 import /b-0001azx/I0001azy.rf
+  16620 0\n19 00:05:15,651 [tabletserver.Compactor] DEBUG: Compaction 268;r0edd9;r0d645
+  181,080 read | 60,360 written | 553,761 entries/sec |  0.327 secs\n19 00:05:15,661
+  [tabletserver.Tablet] TABLET_HIST: 268;r0edd9;r0d645 MajC [/b-0001azi/I0001azm.rf,
+  /b-0001azp/I0001azt.rf, /b-0001azp/I0001azu.rf, /t-0001ale/A0001an3.rf] --> /t-0001apj/A0001bri.rf\n19
+  00:05:30,672 [tabletserver.Tablet] DEBUG: Starting MajC 268;r0edd9;r0d645 [/b-0001azx/I0001azy.rf]
+  --> /t-0001apj/C0001brn.rf_tmp\n19 00:05:30,810 [tabletserver.Compactor] DEBUG:
+  Compaction 268;r0edd9;r0d645 60,360 read | 60,360 written | 534,159 entries/sec
+  |  0.113 secs\n19 00:05:30,824 [tabletserver.Tablet] TABLET_HIST: 268;r0edd9;r0d645
+  MajC [/b-0001azx/I0001azy.rf] --> /t-0001apj/C0001brn.rf\n19 00:05:30,943 [tabletserver.Tablet]
+  DEBUG: initiateClose(saveState=true queueMinC=false disableWrites=false) 268;r0edd9;r0d645\n19
+  00:05:30,943 [tabletserver.Tablet] DEBUG: completeClose(saveState=true completeClose=true)
+  268;r0edd9;r0d645\n19 00:05:30,947 [tabletserver.Tablet] TABLET_HIST: 268;r0edd9;r0d645
+  closed\n19 00:05:30,947 [tabletserver.TabletServer] DEBUG: Unassigning 268;r0edd9;r0d645@(null,xxx.xxx.xxx.xxx:9997[134d7425fc59413],null)\n19
+  00:05:30,949 [tabletserver.TabletServer] INFO : unloaded 268;r0edd9;r0d645\n19 00:05:30,949
+  [tabletserver.TabletServer] INFO : unloaded 268;r0edd9;r0d645\n\n{noformat}\n\n\nFor
+  the second range of -1 values [r0f056, r10467], r0f056 corresponds to the split
+  point r0f055.  Howerver, there is no split point corresponding to r10467. All of
+  the tablets w/ a split of r0f055 lived on one tablet server.  \n\n{noformat}\n19
+  00:02:21,262 [tabletserver.Tablet] TABLET_HIST: 268<;r0d645 split 268;r0f055;r0d645
+  268<;r0f055\n19 00:02:21,263 [tabletserver.Tablet] TABLET_HIST: 268;r0f055;r0d645
+  opened \n19 00:02:21,264 [tabletserver.Tablet] TABLET_HIST: 268<;r0f055 opened \n19
+  00:02:44,504 [tabletserver.Tablet] TABLET_HIST: 268<;r0f055 split 268;r11da6;r0f055
+  268<;r11da6\n19 00:02:44,505 [tabletserver.Tablet] TABLET_HIST: 268;r11da6;r0f055
+  opened \n19 00:05:10,974 [tabletserver.Tablet] TABLET_HIST: 268;r0f055;r0d645 split
+  268;r0edd9;r0d645 268;r0f055;r0edd9\n19 00:05:10,975 [tabletserver.Tablet] TABLET_HIST:
+  268;r0f055;r0edd9 opened \n19 00:05:15,023 [tabletserver.Tablet] TABLET_HIST: 268;r11da6;r0f055
+  split 268;r0f622;r0f055 268;r11da6;r0f622\n19 00:05:15,024 [tabletserver.Tablet]
+  TABLET_HIST: 268;r0f622;r0f055 opened \n{noformat}\n\nAll of the tablets mentioned
+  so far were all merged away in the same merge operation, making this operation a
+  possible place were data loss occurred.  However, I can not pinpoint the issue at
+  this point in time.  Below is a little info about the merge from the master logs
+  showing which tablets were involved in the merge.\n\n{noformat}\n19 00:05:30,616
+  [master.EventCoordinator] INFO : Merge state of 268;r10eff;r093b1 set to WAITING_FOR_CHOPPED\n19
+  00:05:30,677 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc5940c]
+  to chop 268;r09927;r0903a\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc5940c]
+  to chop 268;r0ca9e;r09927\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc5940a]
+  to chop 268;r0d2b5;r0ca9e\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59412]
+  to chop 268;r0d645;r0d2b5\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59413]
+  to chop 268;r0edd9;r0d645\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59413]
+  to chop 268;r0f055;r0edd9\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59413]
+  to chop 268;r0f622;r0f055\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59413]
+  to chop 268;r0f68b;r0f622\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59413]
+  to chop 268;r10c14;r0f68b\n19 00:05:30,678 [master.Master] INFO : Asking xxx.xxx.xxx.xxx:9997[134d7425fc59413]
+  to chop 268;r110f7;r10c14\n{noformat}\n\nWhen this test verifies its data and detects
+  data loss, there is no easy way to determine at what time the data loss occurred.
+  \ It might be useful to modify the data in the bulk test such that it is easier
+  to determine the time when data was lost.  For example the continuous ingest test
+  creates linked list and it is possible to determine tight time bounds when a node
+  was ingested.  However that may change the nature of this test and the bugs that
+  it might find."

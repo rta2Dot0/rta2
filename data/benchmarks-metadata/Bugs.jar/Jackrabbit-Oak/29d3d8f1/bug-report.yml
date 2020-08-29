@@ -1,0 +1,9 @@
+---
+BugID: OAK-2235
+Summary: Lucene index not created if no node is indexed
+Description: |-
+  If a Lucene property index is defined for a property which is not present in any of the nodes then {{LuceneIndexWriter}} would create any lucene index for that.
+
+  For eg if we have an index of {{foo}} and none of the node has property {{foo}} set in that case {{LuceneIndexWriter}} would not create an {{IndexWriter}} and hence no directory would be created. Later when system performs a query like {{select jcr:path from nt:base where foo = 'bar'}} then {{LucenePropertyIndex}} would not participate in the query as no Lucene index would be found and system would revert to traversal.
+
+  As a fix Lucene index should still be created even if it does not contain any document

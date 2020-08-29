@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5968
+Summary: CachingResourceLocator lookup key doesn't take strict into account
+Description: "CachingResourceLocator uses a CacheKey to store lookups for resources.
+  \n\nWith e.g. \n- b_nl.js\n- b.js\n\nWhen e.g. a strict resource lookup for b.js
+  with locale \"us\" is performed, it will store the not-found for locale \"us\" under
+  the cache key. The cache key consists of resource name, locale, style and variation.
+  However when you search non-strict for locale \"us\", the resource locator should
+  find the non-localized resource \"b.js\", but since a matching key for the lookup
+  was stored for this particular resource, it will fail.\n"

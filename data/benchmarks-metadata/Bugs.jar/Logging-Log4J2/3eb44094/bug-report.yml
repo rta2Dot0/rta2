@@ -1,0 +1,14 @@
+---
+BugID: LOG4J2-56
+Summary: Level.toLevel throws IllegalArgumentException instead of returning default
+  Level
+Description: "org.apache.logging.log4j.Level.toLevel(String, Level) ( Level.java line
+  100) uses enum static method valueOf(String) which throws IllegalArgumentException
+  instead of returning null when enum const doesnt exists. This makes the methods
+  Level.toLevel throw the exception instead of return default value.\n\nSolution:\n\nYou
+  can:\na) sorround it with a try-catch statement, like:\n        try {\n\t\t\treturn
+  valueOf(sArg);\n\t\t} catch (Exception e) {\n\t\t\t//exception doesnt matter\n\t\t\treturn
+  defaultLevel;\n\t\t}\n\nb) translate manually de String to a enum constant, like:\n
+  \       for (Level level : values()) {\n\t\t\tif (level.name().equals(sArg)) {\n\t\t\t\treturn
+  level;\n\t\t\t}\n\t\t}\n        return defaultLevel;\n\nI prefer b) because it saves
+  the try-catch context and the for is nearly the same that the valueOf should do.\n"

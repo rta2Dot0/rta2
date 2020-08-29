@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-6948
+Summary: ProducerCache should not only stop non-singelton Producers but also shutdown
+  them afterwards as well if the given Producer is a ShutdownableService
+Description: |-
+  Currently because of this bug the {{doShutdown}} hook of the following non-singleton Producers doesn't kick in at all:
+
+  - {{JpaProducer}}
+  - {{Mina2Producer}}
+
+  Which could cause resources leaking.

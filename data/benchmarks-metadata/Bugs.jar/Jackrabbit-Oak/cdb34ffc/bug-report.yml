@@ -1,0 +1,10 @@
+---
+BugID: OAK-4291
+Summary: FileStore.flush prone to races leading to corruption
+Description: "There is a small window in {{FileStore.flush}} that could lead to data
+  corruption: if we crash right after setting the persisted head but before any delay-flushed
+  {{SegmentBufferWriter}} instance flushes (see {{SegmentBufferWriterPool.returnWriter()}})
+  then that data is lost although it might already be referenced from the persisted
+  head.\n\nWe need to come up with a test case for this. \n\nA possible fix would
+  be to return a future from {{SegmentWriter.flush}} and rely on a completion callback.
+  Such a change would most likely also be useful for OAK-3690. \n"

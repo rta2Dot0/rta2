@@ -1,0 +1,10 @@
+---
+BugID: MATH-1141
+Summary: UniformIntegerDistribution should make constructer a exclusive bound or made
+  parameter check more relax
+Description: "UniformIntegerDistribution constructer  public UniformIntegerDistribution(RandomGenerator
+  rng,\n                                      int lower,\n                                      int
+  upper) \nthe lower and the upper all inclusive. but the parameter check made a   if
+  (lower >= upper) {\n            throw new NumberIsTooLargeException(\n                            LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,\n
+  \                           lower, upper, false);\ncheck, i think it is too strict\nto
+  construct UniformIntegerDistribution (0,0) \nthis should make it possible"

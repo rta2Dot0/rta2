@@ -1,0 +1,8 @@
+---
+BugID: OAK-1749
+Summary: AsyncIndexUpdate may resurrect nodes
+Description: There is a race condition in the AsyncIndexUpdate.run() method. The implementation
+  creates a checkpoint used as the after node state for the comparison with the previous
+  checkpoint. In a next step a builder is created from the current root state of the
+  node store. Node removed between the checkpoint call and retrieving the root state
+  may get resurrected by the AsyncIndexUpdate.

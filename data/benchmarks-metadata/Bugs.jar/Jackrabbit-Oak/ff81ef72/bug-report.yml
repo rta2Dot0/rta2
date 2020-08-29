@@ -1,0 +1,8 @@
+---
+BugID: OAK-3474
+Summary: NodeDocument.getNodeAtRevision can go into property history traversal when
+  latest rev on current doc isn't committed
+Description: |-
+  {{NodeDocument.getNodeAtRevision}} tried to look at latest revisions entries for each property in current document. But it just looks at the *last* entry for a given property. In case this last entry isn't committed, the code would go into previous documents to look for a committed value.
+
+  (cc [~mreutegg])

@@ -1,0 +1,6 @@
+---
+BugID: OAK-3549
+Summary: Initial read of _lastRev creates incorrect RevisionComparator
+Description: "The logic in backgroundRead(false) orders the local lastRev \nbefore
+  external lastRev. This the last change done by the\nlocal cluster node will look
+  as if it happend before a potentially\nolder external change. "

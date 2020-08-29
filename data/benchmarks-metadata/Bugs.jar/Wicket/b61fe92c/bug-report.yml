@@ -1,0 +1,50 @@
+---
+BugID: WICKET-5237
+Summary: Wicket generates invalid HTML by expanding col tags
+Description: |-
+  hi,
+
+  I just noticed that wicket expands col tags, even though the (x)html specifications forbids it.
+
+  take this markup as an example:
+
+  <table>
+      <colgroup>
+          <col width="20%" />
+          <col width="80%" />
+      </colgroup>
+      <tbody>
+          <tr>
+              <td>I take a fifth of the available space</td>
+              <td>I take four fifth of the available space</td>
+          </tr>
+      </tbody>
+  </table>
+
+  Instead of return this as-is, it get's converted to:
+
+  <table>
+      <colgroup>
+          <col width="20%"></col>
+          <col width="80%"></col>
+      </colgroup>
+      <tbody>
+          <tr>
+              <td>I take a fifth of the available space</td>
+              <td>I take four fifth of the available space</td>
+          </tr>
+      </tbody>
+  </table>
+
+  But the specifications mention that col tags must not have end tags. This may be related to WICKET-2765, as this seems to be the point when col was added to the OpenCloseTagExpander class. Note that it is ok to have a non closing col tag in html (self-closing in xhtml). It's all about generating a separated end tag.
+
+  This happens in wicket 6.8, but I guess it's relevant to all versions down to wicket 1.4.
+
+  Specs for reference:
+
+  http://www.w3.org/TR/1999/REC-html401-19991224/struct/tables.html#edef-COL
+  http://www.w3.org/TR/html-markup/col.html
+
+  Kind regards,
+
+  Konrad

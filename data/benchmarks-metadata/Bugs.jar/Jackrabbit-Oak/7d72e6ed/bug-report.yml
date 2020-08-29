@@ -1,0 +1,13 @@
+---
+BugID: OAK-579
+Summary: 'Query: for joins, sometimes no or the wrong index is used'
+Description: "Currently, no index is used for the join condition. For example, the
+  query:\n\n{code}\nselect * from [nodeTypeA] as a \ninner join [nodeTypeB] as b\non
+  isdescendantnode(b, a) \nwhere lower(a.x) = 'y'\nand b.[property] is not null\n{code}\n\ncurrently
+  doesn't take into account that the path of the selector 'a' is known at the time
+  selector 'b' is accessed (given that selector 'a' is executed first). So in this
+  case, the query would use an index on the property b.[property], even if this index
+  has a very bad selectivity (many nodes with this problem), or the query would use
+  the node type index on [nodeTypeB], even if there are many nodes of this type.\n\nInstead,
+  most likely the query should do a traversal, using the isdescendantnode(b, a) join
+  condition."

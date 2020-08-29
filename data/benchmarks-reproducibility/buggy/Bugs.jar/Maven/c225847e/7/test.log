@@ -1,0 +1,90 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Aether Provider 3.1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven-model/3.1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven/3.1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven-model-builder/3.1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven-repository-metadata/3.1.1-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ maven-aether-provider ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-aether-provider ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/Bugs.jar_Maven_c225847e_java-7/maven-aether-provider/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ maven-aether-provider ---
+[INFO] Compiling 1 source file to /scratch/Bugs.jar_Maven_c225847e_java-7/maven-aether-provider/target/classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.6:check (check-java-1.5-compat) @ maven-aether-provider ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java15:1.0
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-aether-provider ---
+[INFO] Discovered 5 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-aether-provider ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ maven-aether-provider ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-aether-provider ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (default-test) @ maven-aether-provider ---
+[INFO] Surefire report directory: /scratch/Bugs.jar_Maven_c225847e_java-7/maven-aether-provider/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12/surefire-junit3-2.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12/surefire-junit3-2.12.pom (1.7 kB at 1.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12/surefire-providers-2.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12/surefire-providers-2.12.pom (2.3 kB at 4.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12/surefire-junit3-2.12.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12/surefire-junit3-2.12.jar (26 kB at 77 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.maven.repository.internal.MavenRepositorySystemUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec
+Running org.apache.maven.repository.internal.DefaultVersionResolverTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.973 sec
+Running org.apache.maven.repository.internal.DefaultArtifactDescriptorReaderTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.926 sec <<< FAILURE!
+Running org.apache.maven.repository.internal.RepositorySystemTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.262 sec
+
+Results :
+
+Failed tests:   testMng5459(org.apache.maven.repository.internal.DefaultArtifactDescriptorReaderTest): expected:<...om:0.4.0-20130404.09[0532-2] in repo (file:/scra...> but was:<...om:0.4.0-20130404.09[3655-3] in repo (file:/scra...>
+
+Tests run: 16, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 20.328 s
+[INFO] Finished at: 2020-03-10T11:07:54-07:00
+[INFO] Final Memory: 30M/1238M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12:test (default-test) on project maven-aether-provider: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/Bugs.jar_Maven_c225847e_java-7/maven-aether-provider/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,13 @@
+---
+BugID: CAMEL-9444
+Summary: Incorrect exceptions handling from Splitter
+Description: "Steps to reproduce:\n1. Create global onException handler\n{code}\n<onException>\n
+  \   <exception>java.lang.Exception</exception>\n    <handled>\n        <constant>false</constant>\n
+  \   </handled>\n    <log message=\"SOME MESSAGE\"/>\n</onException>\n{code}\n\n2.
+  Create 2 routes with Splitter (set shareUnitOfWork to TRUE, important)\n{code}\n<route>\n
+  \   <from uri=\"timer://foo?repeatCount=1\"/>\n\n    <!-- Add some value list to
+  body here -->\n\n    <split shareUnitOfWork=\"true\" stopOnException=\"true\">\n
+  \       <simple>${body}</simple>\n        <to uri=\"direct:handleSplit\"/>\n    </split>\n</route>\n\n<route>\n
+  \   <from uri=\"direct:handleSplit\"/>\n    <throwException ref=\"myException\"/>\n</route>\n{code}\n\nExpected:
+  string \"SOME MESSAGE\" is logged\nActual:  <log message=\"SOME MESSAGE\"/> is not
+  executed at all "

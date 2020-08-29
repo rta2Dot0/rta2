@@ -1,0 +1,13 @@
+---
+BugID: WICKET-3174
+Summary: SmartLinkLabel failing to process email with +
+Description: |+
+  Using SmartLinkLabel with an email address that includes a "+" generates a link only on the right-most part of the address.
+
+  Example:
+  - my+test@example.com
+  Will generate a link like:
+  - my+<a href="mailto:test@example.com">test@example.com@pappin.ca</a>
+
+  THe addition of the "+" char is a valid email address format.
+

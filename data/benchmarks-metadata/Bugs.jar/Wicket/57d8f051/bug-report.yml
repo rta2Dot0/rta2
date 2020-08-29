@@ -1,0 +1,6 @@
+---
+BugID: WICKET-5570
+Summary: Rescheduling the same ajax timer behavior causes memory leak in the browser
+Description: 'AbstractAjaxTimerBehavior uses JavaScript setTimeout() function to do
+  its job. It has a #stop() method that clears the timeout but if the timeout is re-scheduled
+  without being cleared a memory leak is observed in the browser.'

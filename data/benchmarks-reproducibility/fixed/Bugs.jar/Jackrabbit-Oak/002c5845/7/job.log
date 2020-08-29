@@ -1,0 +1,28 @@
+PID: 68272
+boom.cs.washington.edu
+Job started at Sun Mar 15 16:37:18 PDT 2020
+[RESOURCES] The current load is too high: 92!
+[RESOURCES] The current load is too high: 92!
+[RESOURCES] The current load is too high: 94!
+[RESOURCES] The current load is too high: 92!
+[RESOURCES] The current load is too high: 92!
+[RESOURCES] The current load is too high: 80!
+Running checkout, compile, and test under Java-7 on Bugs.jar::Jackrabbit-Oak-002c5845. Excluding broken tests? false. Running on the buggy version? false.
+compile_and_test.py script started at Sun Mar 15 16:39:06 PDT 2020
+Switched to branch 'bugs-dot-jar_OAK-4359_002c5845'
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2  
+There was no 'Please refer to (.*) for the individual test results.' in the maven log file!
+Traceback (most recent call last):
+  File "/boom/scratch/jmcampos/RTA/repair_them_all_framework/data/benchmarks-reproducibility/checkout_and_compile_and_metadata_and_test.py", line 135, in <module>
+    test, all_tests, failing_tests = utils.test(bugObj, CHECKOUT_DIR, java_home_dir, os.path.join(output_dir, "test.log"))
+  File "/scratch/jmcampos/RTA/repair_them_all_framework/script/utils.py", line 256, in test
+    xml_files = collect_maven_surefire_xml_files(checkout_dir, rta_test_log_file)
+  File "/scratch/jmcampos/RTA/repair_them_all_framework/script/utils.py", line 361, in collect_maven_surefire_xml_files
+    assert len(xml_files) > 0
+AssertionError
+Checkout Bugs.jar_Jackrabbit-Oak_002c5845
+Compile Bugs.jar_Jackrabbit-Oak_002c5845
+Compile top-level project
+Get module information
+Run tests on Bugs.jar_Jackrabbit-Oak_002c5845
+/boom/scratch/jmcampos/RTA/repair_them_all_framework/data/benchmarks-reproducibility/checkout_and_compile_and_metadata_and_test.py has failed!

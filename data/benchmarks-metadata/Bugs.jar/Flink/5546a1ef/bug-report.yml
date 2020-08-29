@@ -1,0 +1,31 @@
+---
+BugID: FLINK-2447
+Summary: TypeExtractor returns wrong type info when a Tuple has two fields of the
+  same POJO type
+Description: "Consider the following code:\n\nDataSet<FooBarPojo> d1 = env.fromElements(new
+  FooBarPojo());\n\t\tDataSet<Tuple2<FooBarPojo, FooBarPojo>> d2 = d1.map(new MapFunction<FooBarPojo,
+  Tuple2<FooBarPojo, FooBarPojo>>() {\n\t\t\t@Override\n\t\t\tpublic Tuple2<FooBarPojo,
+  FooBarPojo> map(FooBarPojo value) throws Exception {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t});\n\nwhere
+  FooBarPojo is the following type:\npublic class FooBarPojo {\n\tpublic int foo,
+  bar;\n\tpublic FooBarPojo() {}\n}\n\nThis should print a tuple type with two identical
+  fields:\nJava Tuple2<PojoType<FooBarPojo, fields = [bar: Integer, foo: Integer]>,
+  PojoType<FooBarPojo, fields = [bar: Integer, foo: Integer]>>\n\nBut it prints the
+  following instead:\nJava Tuple2<PojoType<FooBarPojo, fields = [bar: Integer, foo:
+  Integer]>, GenericType<FooBarPojo>>\n\nNote, that this problem causes some co-groups
+  in Gelly to crash with \"org.apache.flink.api.common.InvalidProgramException: The
+  pair of co-group keys are not compatible with each other\" when the vertex ID type
+  is a POJO, because the second field of the Edge type gets to be a generic type,
+  but the POJO gets recognized in the Vertex type, and getNumberOfKeyFields returns
+  different numbers for the POJO and the generic type.\n\nThe source of the problem
+  is the mechanism in TypeExtractor that would detect recursive types (see the \"alreadySeen\"
+  field in TypeExtractor), as it mistakes the second appearance of FooBarPojo with
+  a recursive field.\n\nSpecifically the following happens: createTypeInfoWithTypeHierarchy
+  starts to process the Tuple2<FooBarPojo, FooBarPojo> type, and in line 434 it calls
+  itself for the first field, which proceeds into the privateGetForClass case which
+  correctly detects that it is a POJO, and correctly returns a PojoTypeInfo; but in
+  the meantime in line 1191, privateGetForClass adds PojoTypeInfo to \"alreadySeen\".
+  Then the outer createTypeInfoWithTypeHierarchy approaches the second field, goes
+  into privateGetForClass, which mistakenly returns a GenericTypeInfo, as it thinks
+  in line 1187, that a recursive type is being processed.\n\n(Note, that if we comment
+  out the recursive type detection (the lines that do their thing with the alreadySeen
+  field), then the output is correct.)"

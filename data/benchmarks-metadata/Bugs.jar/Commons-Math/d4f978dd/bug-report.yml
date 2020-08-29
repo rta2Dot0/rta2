@@ -1,0 +1,18 @@
+---
+BugID: MATH-1129
+Summary: Percentile Computation errs
+Description: "In the following test, the 75th percentile is _smaller_ than the 25th
+  percentile, leaving me with a negative interquartile range.\n\n{code:title=Bar.java|borderStyle=solid}\n@Test
+  public void negativePercentiles(){\n\n        double[] data = new double[]{\n                -0.012086732064244697,
+  \n                -0.24975668704012527, \n                0.5706168483164684, \n
+  \               -0.322111769955327, \n                0.24166759508327315, \n                Double.NaN,
+  \n                0.16698443218942854, \n                -0.10427763937565114, \n
+  \               -0.15595963093172435, \n                -0.028075857595882995, \n
+  \               -0.24137994506058857, \n                0.47543170476574426, \n
+  \               -0.07495595384947631, \n                0.37445697625436497, \n
+  \               -0.09944199541668033\n        };\n        DescriptiveStatistics
+  descriptiveStatistics = new DescriptiveStatistics(data);\n\n        double threeQuarters
+  = descriptiveStatistics.getPercentile(75);\n        double oneQuarter = descriptiveStatistics.getPercentile(25);\n\n
+  \       double IQR = threeQuarters - oneQuarter;\n        \n        System.out.println(String.format(\"25th
+  percentile %s 75th percentile %s\", oneQuarter, threeQuarters ));\n        \n        assert
+  IQR >= 0;\n        \n    }\n{code}"

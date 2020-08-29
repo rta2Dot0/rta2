@@ -1,0 +1,61 @@
+---
+BugID: WICKET-4256
+Summary: onBeforeRender() is called on components that are not allowed to render
+Description: |-
+  pasted from the list:
+
+  Hi,
+
+  I ran into an odd problem this week. A model fed to a ListView was
+  calling service methods the current user wasn't allowed to use, and I
+  was wondering how that could happen. A panel far above this ListView in
+  the hierarchy had been secured (using Shiro annotations, but that turns
+  out to not matter at all) and was not supposed to be rendered for this
+  user. From this I had expected the ListView not to be rendered either,
+  but here it was trying to assemble itself in onBeforeRender and thus
+  calling the "forbidden" service methods.
+
+  I investigated Component and friends for a bit, and have found a
+  potential problem.
+
+  internalBeforeRender() checks determineVisibility() before doing
+  anything. So far so good. determineVisibility() then checks
+  isRenderAllowed() so the application's IAuthorizationStrategy can block
+  certain components. This is where it goes wrong though:
+  isRenderAllowed() only looks at FLAG_IS_RENDER_ALLOWED for performance
+  reasons, and that flag hasn't been set yet! internalPrepareForRender()
+  only calls setRenderAllowed() *after* beforeRender().
+
+  Due to this, the supposedly secure panel was going through its own
+  beforeRender and thus calling that ListView's beforeRender.
+
+  I think this can be a serious problem, such as in my case described
+  above. I'd expect that if isActionAuthorized(RENDER) is false, the
+  secured component should basically never get to the beforeRender phase.
+  My questions are now:
+
+  - Is this intentional? If yes, please explain the reasoning behind it,
+   because it isn't obvious to me.
+
+  - If not, can we fix it? My intuitive suggestion would be to simply
+   move the call to setRenderAllowed() from the end of
+   internalBeforeRender() (prepareForRender in 1.4) to the beginning of
+   that method, so beforeRender() can reliably look at that flag.
+
+  - If we can fix it, when and where do we fix it? This hit me in 1.4,
+   and looking at the code it's still there in 1.5. I'd *really* like it
+   fixed in the last 1.4 release, and certainly in 1.5, given that this
+   has the potential to impact security.
+
+   It's not an API break, but I'm not sure whether the implications for
+   application behavior are tolerable for all existing applications. On
+   the other hand, it seems to be a real security problem, so maybe the
+   change is justified. I'd like some core dev opinions please :-)
+
+  If this is in fact a bug, I'm of course willing to provide a ticket and
+  a patch :-)
+
+  Thanks!
+
+  Carl-Eric
+  www.wicketbuch.de

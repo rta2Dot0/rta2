@@ -1,0 +1,6 @@
+---
+BugID: WICKET-5072
+Summary: Cookies#isEqual(Cookie, Cookie) may fail with NullPointerException
+Description: |-
+  If c1.getPath == null but c2.getPath != null then a NPE will occur.
+  Same is valid for the 'domain' property.

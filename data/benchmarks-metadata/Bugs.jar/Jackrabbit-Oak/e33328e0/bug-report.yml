@@ -1,0 +1,32 @@
+---
+BugID: OAK-225
+Summary: Sling I18N queries not supported by Oak
+Description: |-
+  The Sling I18N component issues XPath queries like the following:
+
+  {code:none}
+  //element(*,mix:language)[fn:lower-case(@jcr:language)='en']//element(*,sling:Message)[@sling:message]/(@sling:key|@sling:message)
+  {code}
+
+  Such queries currently fail with the following exception:
+
+  {code:none}
+  javax.jcr.query.InvalidQueryException: java.text.ParseException: Query: //element(*,mix:language)[fn:lower-(*)case(@jcr:language)='en']//element(*,sling:Message)[@sling:message]/(@sling:key|@sling:message); expected: (
+          at org.apache.jackrabbit.oak.jcr.query.QueryManagerImpl.executeQuery(QueryManagerImpl.java:115)
+          at org.apache.jackrabbit.oak.jcr.query.QueryImpl.execute(QueryImpl.java:85)
+          at org.apache.sling.jcr.resource.JcrResourceUtil.query(JcrResourceUtil.java:52)
+          at org.apache.sling.jcr.resource.internal.helper.jcr.JcrResourceProvider.queryResources(JcrResourceProvider.java:262)
+          ... 54 more
+  Caused by: java.text.ParseException: Query: //element(*,mix:language)[fn:lower-(*)case(@jcr:language)='en']//element(*,sling:Message)[@sling:message]/(@sling:key|@sling:message); expected: (
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.getSyntaxError(XPathToSQL2Converter.java:704)
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.read(XPathToSQL2Converter.java:410)
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.parseExpression(XPathToSQL2Converter.java:336)
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.parseCondition(XPathToSQL2Converter.java:279)
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.parseAnd(XPathToSQL2Converter.java:252)
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.parseConstraint(XPathToSQL2Converter.java:244)
+          at org.apache.jackrabbit.oak.query.XPathToSQL2Converter.convert(XPathToSQL2Converter.java:153)
+          at org.apache.jackrabbit.oak.query.QueryEngineImpl.parseQuery(QueryEngineImpl.java:86)
+          at org.apache.jackrabbit.oak.query.QueryEngineImpl.executeQuery(QueryEngineImpl.java:99)
+          at org.apache.jackrabbit.oak.query.QueryEngineImpl.executeQuery(QueryEngineImpl.java:39)
+          at org.apache.jackrabbit.oak.jcr.query.QueryManagerImpl.executeQuery(QueryManagerImpl.java:110)
+  {code}

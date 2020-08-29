@@ -1,0 +1,12 @@
+---
+BugID: WICKET-5546
+Summary: Adding behavior in component instantiation listener causes Page.onInitialize()
+  being called even if constructor throws an exception
+Description: "Page.onInitialize() will be called even if constructor throws an exception\nin
+  case below code is added in wicket WebApplication.init():\ngetComponentInstantiationListeners().add(new
+  IComponentInstantiationListener() {\n              @Override\n              public
+  void onInstantiation(Component component) {\n                  component.add(new
+  Behavior() {\n\n                  });\n              }\n             \n          });\n\nIt
+  seems that the instantiation listener adds the behavior to the page at very start
+  of the page constructor, and then the page is marked as dirty to cause onInitialize()
+  being called afterwards."

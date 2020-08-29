@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-6743
+Summary: Using @Simple (or others) bean parameter binding for boolean type should
+  eval as predicate
+Description: |-
+  For example
+  {code}
+          public void read(String body, @Simple("${header.foo} != null") boolean foo) {
+  {code}
+
+  The foo parameter is a boolean and thus the @Simple expression should be evaluated as a predicate and not as an Expression which happens today.

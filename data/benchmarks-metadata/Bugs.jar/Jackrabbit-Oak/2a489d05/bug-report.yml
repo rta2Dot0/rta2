@@ -1,0 +1,16 @@
+---
+BugID: OAK-4170
+Summary: QueryEngine adding invalid property restriction for fulltext query
+Description: "QueryEngine inserts a property restriction of \"is not null\" for any
+  property used in fulltext constraint. For e.g. for query\n\n{noformat}\nselect *
+  from [nt:unstructured] where CONTAINS([jcr:content/metadata/comment], 'december')\n{noformat}\n\nA
+  property restriction would be added for {{jcr:content/metadata/comment}}. However
+  currently due to bug in {{FulltextSearchImpl}} [1] the property name generated is
+  {{comment/jcr:content/metadata}}.\n\n{code}\n@Override\n    public void restrict(FilterImpl
+  f) {\n        if (propertyName != null) {\n            if (f.getSelector().equals(selector))
+  {\n                String p = propertyName;\n                if (relativePath !=
+  null) {\n                    p = PathUtils.concat(p, relativePath);\n                }
+  \               \n                p = normalizePropertyName(p);\n                restrictPropertyOnFilter(p,
+  f);\n            }\n        }\n        f.restrictFulltextCondition(fullTextSearchExpression.currentValue().getValue(Type.STRING));\n
+  \   }\n{code}\n\nThis happens because {{relativePath}} is passed as second param
+  to {{PathUtils.concat}}. It should be first param\n\n[1] https://github.com/apache/jackrabbit-oak/blob/1.4/oak-core/src/main/java/org/apache/jackrabbit/oak/query/ast/FullTextSearchImpl.java#L275-L286"

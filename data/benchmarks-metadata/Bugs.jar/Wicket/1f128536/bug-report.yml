@@ -1,0 +1,14 @@
+---
+BugID: WICKET-4259
+Summary: Using an IValidator on an AjaxEditableLabel causes ClassCastException
+Description: "AjaxEditableLabel<Integer> label = new AjaxEditableLabel<Integer>(\"label\",
+  new PropertyModel<Integer>(this, \"value\"));\nform.add(label);\nlabel.setRequired(true);\nlabel.add(new
+  RangeValidator<Integer>(1, 10));\n\nUsing a RangeValidator<Integer> on an AjaxEditableLabel<Integer>
+  \ causes an ClassCastException after editing the label. \n\njava.lang.ClassCastException:
+  java.lang.Integer cannot be cast to java.lang.String\n\nThis can be avoided by setting
+  the type explicit on the AjaxEditableLabel.\n\nlabel.setType(Integer.class);\n\nBut
+  this wasn't necessary in Wicket 1.4.19. In this version all works fine without setting
+  the type explicit.\n\nI found out, that AbstractTextComponent.resolveType() is not
+  able to get the type of the DefaultModel of the AjaxEditableLabel in Wicket 1.5.3.\n\nI
+  will attach two QuickStarts to demonstrate the bug. One with wicket 1.4.19 and the
+  other with Wicket 1.5.3\n\n"

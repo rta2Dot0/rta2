@@ -1,0 +1,11 @@
+---
+BugID: WICKET-3278
+Summary: DropDownChoice no selection value
+Description: "This problem came from this topic:\nhttp://apache-wicket.1842946.n4.nabble.com/DropDownChoice-no-selection-value-td3160661.html\n\nI've
+  noticed that the method AbstractSingleSelectChoice.getNoSelectionValue() returns
+  the value for no selection. In AbstractSingleSelectChoice.getDefaultChoice(final
+  Object selected) on line 314: \n      return \"\\n<option selected=\\\"selected\\\"
+  value=\\\"\\\">\" + option + \"</option>\"; \n\nand on line 296: \n      buffer.append(\"
+  value=\\\"\\\">\").append(option).append(\"</option>\"); \n\nIn those cases the
+  null value option has empty value attribute. Wouldn't it be more consistent for
+  this option to have the \"value\" attribute with the result provided from getNoSelectionValue()?"

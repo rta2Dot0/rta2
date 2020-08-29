@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-3006
+Summary: Don't allow viewfs in instance.volumes
+Description: |-
+  I think one of our folks put viewfs into instance.volumes on accident. File references in accumulo.root and accumulo.metadata were then written with viewfs in the path. The garbage collector then throws errors as compactions occur and it tries delete and move the files to the hdfs users trash directory.
+
+  viewfs should never be allowed in instance.volumes property. It should fail.

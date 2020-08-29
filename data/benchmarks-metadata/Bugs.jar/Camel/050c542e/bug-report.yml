@@ -1,0 +1,30 @@
+---
+BugID: CAMEL-3545
+Summary: MethodCallExpression doesn't validate whether the method exists for all cases
+Description: "I tried to refactor\n\n{code:title=org.apache.camel.model.language.MethodCallExpression.java}\n
+  \   public Expression createExpression(CamelContext camelContext) {\n        Expression
+  answer;\n\n        if (beanType != null) {            \n            instance = ObjectHelper.newInstance(beanType);\n
+  \           return new BeanExpression(instance, getMethod(), parameterType); //
+  <--\n        } else if (instance != null) {\n            return new BeanExpression(instance,
+  getMethod(), parameterType); // <--\n        } else {\n            String ref =
+  beanName();\n            // if its a ref then check that the ref exists\n            BeanHolder
+  holder = new RegistryBean(camelContext, ref);\n            // get the bean which
+  will check that it exists\n            instance = holder.getBean();\n            answer
+  = new BeanExpression(ref, getMethod(), parameterType);\n        }\n\n        //
+  validate method\n        validateHasMethod(camelContext, instance, getMethod(),
+  parameterType);\n\n        return answer;\n    }\n{code}\n\nto\n\n{code:title=org.apache.camel.model.language.MethodCallExpression.java}\n
+  \   public Expression createExpression(CamelContext camelContext) {\n        Expression
+  answer;\n\n        if (beanType != null) {            \n            instance = ObjectHelper.newInstance(beanType);\n
+  \           answer = new BeanExpression(instance, getMethod(), parameterType); //
+  <--\n        } else if (instance != null) {\n            answer = new BeanExpression(instance,
+  getMethod(), parameterType); // <--\n        } else {\n            String ref =
+  beanName();\n            // if its a ref then check that the ref exists\n            BeanHolder
+  holder = new RegistryBean(camelContext, ref);\n            // get the bean which
+  will check that it exists\n            instance = holder.getBean();\n            answer
+  = new BeanExpression(ref, getMethod(), parameterType);\n        }\n\n        //
+  validate method\n        validateHasMethod(camelContext, instance, getMethod(),
+  parameterType);\n\n        return answer;\n    }\n{code}\n\nso that the created
+  BeanExpression is also validate if you provide the bean type or an instance. With
+  this change, some tests in org.apache.camel.language.SimpleTest fails.\nI'm not
+  sure whether the tests are faulty or if it's a bug.\nAlso not sure whether this
+  should fixed in 2.6. "

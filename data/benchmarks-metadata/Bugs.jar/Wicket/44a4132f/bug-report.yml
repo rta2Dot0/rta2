@@ -1,0 +1,21 @@
+---
+BugID: WICKET-5247
+Summary: Broken Link in Tomcat because of Page Mount
+Description: "I post this message on the user mailing List (http://apache-wicket.1842946.n4.nabble.com/Broken-Link-in-Tomcat-because-of-Page-Mount-tt4659663.html)
+  and Martin Grigorov asked me, to create a ticket on Jira.\n\nBroken Link in Tomcat
+  because of Page Mount\n\nFollowing situation:\n-I have a Wicket Application(6.8.0)
+  which runs under the context \"webapp\" on a Tomcat 7.0.41\n-I mount a Page with
+  two parameters (this is important) in the WicketApplication.\n\tmountPage(\"/mount/${parameter1}/${parameter2}\",
+  MountedPage.class);\n-The mounted Page(MountedPage.class) has only a simple Link\n-There
+  are two links on the HomePage to the mounted Page.\n They are declared as follows:\n
+  \n\tadd(new Link<Void>(\"link\") {\n\t\t\t@Override\n\t\t\tpublic void onClick()
+  {\n\t\t\t\tsetResponsePage(MountedPage.class, linkParameters);\n\t\t\t}\n\t});\n\n\tadd(new
+  Link<Void>(\"brokenLink\") {\n\t\t\t@Override\n\t\t\tpublic void onClick() {\n\t\t\t\tsetResponsePage(new
+  MountedPage(linkParameters));\n\t\t\t}\n\t});\n\t\nI deploy this Application as
+  a war file on a Tomcat under the context \"webapp\".\nWhen I call the first Link
+  on the HomePage and then the Link on the mounted Page, everything works fine.\n\nBut
+  if I call the second Link and then the Link on the mounted Page, the link is broken.\nThe
+  context is missing in the generated link\n\thttp://localhost:8080/wicket/bookmarkable/com.mycompany.LinkedPage\n\nDoes
+  anyone have an idea, why the second link does not work on Tomcat?\n\nI add a Quickstart
+  and the war file as attachment.\n\nPs: Both links works fine in Jetty. \nPss:If
+  I remove the mount command, both links will work in  Tomcat too."

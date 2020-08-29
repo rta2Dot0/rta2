@@ -1,0 +1,114 @@
+---
+BugID: WICKET-5898
+Summary: StackOverflowError after form submit with a validation error
+Description: "I was not able to find a cause or make a small quickstart, but it has
+  something to do with a form validation, my workaround was to setDefaultFormProcessing(false)
+  or not use required TextFields.\n\nIt can be reproduced on https://github.com/krasa/DevSupportApp/tree/stackOverflow
+  \n1) run StartVojtitkoDummy\n2) go to http://localhost:8765/wicket/bookmarkable/krasa.release.frontend.TokenizationPage\n3)
+  click on \"Generate Release json\" button \n- instead of SOE, it should give a validation
+  error, probably even on fields which I would not want to validate, but that's just
+  because I've made the page badly... \n\n \n{code}\njava.lang.StackOverflowError:
+  null\n...\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:81)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:74)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy$1.component(AbstractMarkupSourcingStrategy.java:66)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:162)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:162)\n\tat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:162)\n\tat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\n\tat org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:862)\n\tat
+  org.apache.wicket.markup.html.panel.AbstractMarkupSourcingStrategy.searchMarkupInTransparentResolvers(AbstractMarkupSourcingStrategy.java:65)\n\tat
+  org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.getMarkup(DefaultMarkupSourcingStrategy.java:99)\n\tat
+  org.apache.wicket.MarkupContainer.getMarkup(MarkupContainer.java:453)\n\tat org.apache.wicket.Component.getMarkup(Component.java:755)\n\tat
+  org.apache.wicket.Component.internalRender(Component.java:2344)\n\tat org.apache.wicket.Component.render(Component.java:2307)\n\tat
+  org.apache.wicket.ajax.XmlAjaxResponse.writeComponent(XmlAjaxResponse.java:128)\n\tat
+  org.apache.wicket.ajax.AbstractAjaxResponse.writeComponents(AbstractAjaxResponse.java:218)\n\tat
+  org.apache.wicket.ajax.AbstractAjaxResponse.writeTo(AbstractAjaxResponse.java:150)\n\tat
+  org.apache.wicket.ajax.AjaxRequestHandler.respond(AjaxRequestHandler.java:359)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:865)\n\tat
+  org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:64)\n\tat
+  org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:97)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle.execute(RequestCycle.java:265)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:222)\n\tat
+  org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:293)\n\tat
+  org.apache.wicket.protocol.ws.AbstractUpgradeFilter.processRequestCycle(AbstractUpgradeFilter.java:59)\n\tat
+  org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:203)\n\tat
+  org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:284)\n\tat
+  org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)\n\tat
+  org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)\n\tat
+  org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)\n\tat
+  org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)\n\tat
+  org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)\n\tat
+  org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)\n\tat
+  org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)\n\tat
+  org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)\n\tat
+  org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)\n\tat
+  org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\n\tat
+  org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)\n\tat
+  org.eclipse.jetty.server.Server.handle(Server.java:497)\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)\n\tat
+  org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)\n\tat
+  org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)\n\tat
+  org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)\n\tat
+  org.eclipse.jetty.util.thread.QueuedThreadPool$3.ru\n{code}"

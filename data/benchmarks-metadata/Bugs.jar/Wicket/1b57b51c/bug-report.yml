@@ -1,0 +1,7 @@
+---
+BugID: WICKET-3647
+Summary: Component#getMarkupId() throws exceptions when not added to page yet
+Description: |
+  When retrieving the markup ID for a component that has not yet been added to a page, Wicket currently throws an exception telling that the markup could not be found, or that the markup type (in case the component was added to a Panel) could not be determined. In 1.4, Wicket would generate a markup ID in these cases.
+
+  Proposed solution: to first see if a markup ID has been either generated or set (using setOutputMarkupId), and then returning that, or if no ID was yet available *and* the component has been added to a Page: use the ID from the markup, or if the component has not been added to a Page nor a markup ID: generate the ID.

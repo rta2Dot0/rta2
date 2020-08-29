@@ -1,0 +1,13 @@
+---
+BugID: WICKET-3076
+Summary: UrlUtils.isRelative returns false if URL parameter contains an absolute URL
+Description: "I have a page that gets a return path for a back link as a parameter.
+  A link to this page looks like this:\n\n./mypage?return=http://example.com\n\nIn
+  WebRequestCodingStrategy.encode, this URL is returned by pathForTarget.\nThen it
+  is checked whether this URL is relative using UrlUtils.isRelative. The URL is apparently
+  relative, but UrlUtils.isRelative returns false, since the check contains:\n\n(url.indexOf(\"://\")
+  < 0\n\nthis is false for the above example. Thus, an incorrect path is returned
+  by WebRequestCodingStrategy.encode (relative path resolution does not take place).\n\nA
+  fix for the problem would be to check for \n\n!(url.startsWith(\"http://\") || url.startsWith(\"https://\"))\n\nOr,
+  if other protocols should also be supported, a regular expression like \"^[^/?]*://\"
+  should work. \n"

@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-1183
+Summary: ProxyServer does not set column information on BatchScanner
+Description: The createScanner method uses the options from the thrift request to
+  call fetchColumn() and fetchColumnFamily(). The createBatchScanner should be doing
+  have the same feature, though the statements are absent from the code.

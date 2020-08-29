@@ -1,0 +1,15 @@
+---
+BugID: LOG4J2-832
+Summary: ThrowableProxy fails if a class in logged stack trace throws java.lang.Error
+  from initializer
+Description: "When the Logger attempts to log a message with an exception stack trace,
+  it uses the ThrowableProxy class to introspect classes in the stack trace frames.\n\nIf
+  the class sun.reflect.misc.Trampoline is in the stack trace, the introspection performed
+  by ThrowableProxy will fail causing a java.lang.Error to be thrown by the Logger
+  call.\n\nThe sun.reflect.misc.Trampoline class is used by the sun.reflect.misc.MethodUtil
+  class to perform reflection-based method invocations. MethodUtil is widely used
+  by libraries to perform method invocations. I've encountered this problem when invoking
+  methods over JMX and inside Jetty.\n\nI am classifying this as a blocker because
+  it means that any logging statement that is logging a Throwable message containing
+  a MethodUtil-based reflection stack trace can cause a java.lang.Error to be thrown
+  by Log4j2. \n\nI will attach a unit test for this failure."

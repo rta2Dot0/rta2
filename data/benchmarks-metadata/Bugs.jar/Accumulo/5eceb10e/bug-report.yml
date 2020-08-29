@@ -1,0 +1,11 @@
+---
+BugID: ACCUMULO-2974
+Summary: Unable to assign single tablet table migrated to 1.6.0
+Description: |-
+  Sorry for the screen caps, no copy/paste from machines.
+
+  Background- several tables migrated from 1.5.1 to 1.6.0. Only one of which was a single tablet. Upon starting, we noticed that that single table was not loading and the master was reporting an unassigned tablet. Had a stack trace in the monitor (attached).
+
+  Also attached is a a metadata scan of the table in question (ID: 12). I was able to get a functional copy of the table by offlining 12 and cloning it. It functioned without issues. Attached is a copy of it's metadata scan as well (ID: 9o)
+
+  The stack trace leads me to it being a specific issue with the contents of srv:dir, and the only difference is the relative vs. absolute file names. This cluster was not changed to multiple namenodes and ../tables/default_tablet does not exist. There are other tables which still use the relative naming scheme, and the system does not seem to be having issues with them.

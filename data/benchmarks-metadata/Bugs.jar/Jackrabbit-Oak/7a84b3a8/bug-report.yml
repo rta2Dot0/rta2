@@ -1,0 +1,14 @@
+---
+BugID: OAK-642
+Summary: NPE trying to add a node to an nt:folder node
+Description: "The following code throws a NPE:\n\n{code}\nSession s = getAdminSession();\ns.getRootNode().addNode(\"a\",
+  \"nt:folder\").addNode(\"b\");\ns.save();        \n{code}\n\nStack trace:\n{code}\njava.lang.NullPointerException\nat
+  com.google.common.base.Preconditions.checkNotNull(Preconditions.java:191)\nat org.apache.jackrabbit.oak.namepath.LocalNameMapper.getOakNameOrNull(LocalNameMapper.java:82)\nat
+  org.apache.jackrabbit.oak.namepath.GlobalNameMapper.getOakName(GlobalNameMapper.java:64)\nat
+  org.apache.jackrabbit.oak.namepath.NamePathMapperImpl.getOakName(NamePathMapperImpl.java:62)\nat
+  org.apache.jackrabbit.oak.plugins.nodetype.ReadOnlyNodeTypeManager.getOakName(ReadOnlyNodeTypeManager.java:92)\nat
+  org.apache.jackrabbit.oak.plugins.nodetype.ReadOnlyNodeTypeManager.getNodeType(ReadOnlyNodeTypeManager.java:186)\nat
+  org.apache.jackrabbit.oak.jcr.NodeImpl$5.perform(NodeImpl.java:265)\nat org.apache.jackrabbit.oak.jcr.NodeImpl$5.perform(NodeImpl.java:1)\nat
+  org.apache.jackrabbit.oak.jcr.SessionDelegate.perform(SessionDelegate.java:136)\nat
+  org.apache.jackrabbit.oak.jcr.NodeImpl.addNode(NodeImpl.java:219)\nat org.apache.jackrabbit.oak.jcr.NodeImpl.addNode(NodeImpl.java:210)\nat
+  org.apache.jackrabbit.oak.jcr.CRUDTest.nodeType(CRUDTest.java:122)\n{code}\n"

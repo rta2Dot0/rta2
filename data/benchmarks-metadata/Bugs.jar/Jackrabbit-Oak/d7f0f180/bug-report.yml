@@ -1,0 +1,13 @@
+---
+BugID: OAK-1093
+Summary: IllegalArgumentException on Row.getValues()
+Description: "Calling {{row.getValues()}} is throwing an {{IllegalArgumentException}}
+  when called on the {{QueryResult}} of the query {{SELECT properties FROM \\[nt:base\\]
+  WHERE \\[sling:resourceType\\]=\"cq/personalization/components/contextstores/surferinfo\"}}\n\n{quote}\njava.lang.IllegalArgumentException\n\tat
+  com.google.common.base.Preconditions.checkArgument(Preconditions.java:76)\n\tat
+  org.apache.jackrabbit.oak.plugins.value.ValueImpl.checkSingleValued(ValueImpl.java:85)\n\tat
+  org.apache.jackrabbit.oak.plugins.value.ValueImpl.<init>(ValueImpl.java:72)\n\tat
+  org.apache.jackrabbit.oak.plugins.value.ValueFactoryImpl.createValue(ValueFactoryImpl.java:95)\n\tat
+  org.apache.jackrabbit.oak.jcr.query.QueryResultImpl.createValue(QueryResultImpl.java:266)\n\tat
+  org.apache.jackrabbit.oak.jcr.query.RowImpl.getValues(RowImpl.java:99)\n\tat com.day.cq.analytics.sitecatalyst.impl.FrameworkComponentImpl.getListProperty(FrameworkComponentImpl.java:128)\n\tat
+  com.day.cq.analytics.sitecatalyst.impl.FrameworkComponentImpl.<init>(FrameworkComponentImpl.java:91)\n{quote}"

@@ -1,0 +1,15 @@
+---
+BugID: OAK-47
+Summary: Wrong results and NPE with copy operation
+Description: "The following code either results in an NPE or in a wrong result depending
+  on which Microkernel instance is used. \n\n{code}\n    mk.commit(\"\", \"+\\\"/root\\\":{}\",
+  mk.getHeadRevision(), \"\");\n    mk.commit(\"\", \"+\\\"/root/N0\\\":{}*\\\"/root/N0\\\":\\\"/root/N1\\\"+\\\"/root/N0/N4\\\":{}\",\n
+  \           mk.getHeadRevision(), \"\");\n{code}\n\nThe wrong result is \n{code}\n{\n
+  \   \":childNodeCount\": 2,\n    \"N0\": {\n        \":childNodeCount\": 1,\n        \"N4\":
+  {\n            \":childNodeCount\": 0\n        }\n    },\n    \"N1\": {\n        \":childNodeCount\":
+  1,\n        \"N4\": {\n            \":childNodeCount\": 0\n        }\n    }\n}\n{code}\n\nThe
+  expected result is\n{code}\n{\n    \":childNodeCount\": 2,\n    \"N0\": {\n        \":childNodeCount\":
+  1,\n        \"N4\": {\n            \":childNodeCount\": 0\n        }\n    },\n    \"N1\":
+  {\n        \":childNodeCount\": 0\n    }\n}\n{code}\n\nsimple:fs:target/temp: wrong
+  result\nfs:{homeDir}/target: NPE\nhttp-bridge:fs:{homeDir}/target: NPE\nsimple:
+  wrong result\n\n"

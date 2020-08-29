@@ -1,0 +1,8 @@
+---
+BugID: ACCUMULO-795
+Summary: MockTable doesn't obey useVersions parameter
+Description: "The constructor for {{MockTable}} will call {{IteratorUtil.generateInitialTableProperties()}},
+  and thus set a versioning iterator on itself regardless of whether the useVersion
+  parameter is set to true or false. \n\nI believe {{MockTable}}'s constructor should
+  call IteratorUtil.generateInitialTableProperties() only if useVersions is true,
+  otherwise, it should populate {{settings}} with a new {{TreeMap}}"

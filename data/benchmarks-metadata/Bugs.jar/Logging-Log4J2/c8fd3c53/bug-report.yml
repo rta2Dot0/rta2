@@ -1,0 +1,14 @@
+---
+BugID: LOG4J2-1058
+Summary: Log4jMarker#contains(String) does not respect org.slf4j.Marker contract
+Description: |
+  Expected behavior
+  ==============
+  'org.apache.logging.slf4j.Log4jMarker' implements 'org.slf4j.Marker'.
+
+  'org.slf4j.Marker#contains(String name)' contract states that: "If 'name' is null the returned value is always false."
+  http://www.slf4j.org/apidocs/org/slf4j/Marker.html#contains%28java.lang.String%29
+
+  Actual behavior
+  =============
+  'org.apache.logging.slf4j.Log4jMarker#contains(final String name)'  throws 'IllegalArgumentException' if 'name' is null

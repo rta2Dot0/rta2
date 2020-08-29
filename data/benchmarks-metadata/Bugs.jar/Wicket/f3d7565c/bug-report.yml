@@ -1,0 +1,15 @@
+---
+BugID: WICKET-4038
+Summary: MountedMapper.mapHandler ruins Links inside mounted pages appending parameters
+  wicket-ajax and wicket-ajax-baseurl
+Description: |-
+  With the last commit n° 1166194 method mapHandler has been added to MountedMapper class in order to solve WICKET-4014. Unfortunately this method seems to ruin Link url inside mounted page (for example home page) if this page uses AJAX.
+  mapHandler modifies Link url appending parameters 'wicket-ajax' and 'wicket-ajax-baseur'l to it. In this way when we click Link we get an error from browser like this:
+
+         " This XML file does not appear to have any style information associated with it. The document tree is shown below.
+        <ajax-response><redirect>wicket/page?41</redirect></ajax-response> "
+
+  The error message is the same for Firefox and Chromium.
+  See attached quickstart.
+
+  Warning: as I'm writing this issue, Wicket snapshot is not affected yet by this bug, so you have to run quickstart with the last source from repository.

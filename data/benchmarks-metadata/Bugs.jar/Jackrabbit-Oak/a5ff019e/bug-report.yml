@@ -1,0 +1,59 @@
+---
+BugID: OAK-3733
+Summary: Sometimes hierarchy conflict between concurrent add/delete isn't detected
+Description: |-
+  I'm not sure of exact set of event that led to an incident on one of our test clusters. The cluster is running 3 AEM instances based on oak build at 1.3.10.r1713699 backed by a single mongo 3 instance.
+
+  Unfortunately, we found the issue too late and logs had rolled over. Here's the exception that showed over and over as workflow jobs were (trying to) being processed:
+  {noformat}
+  ....
+          at java.lang.Thread.run(Thread.java:745)
+  Caused by: javax.jcr.InvalidItemStateException: OakMerge0004: OakMerge0004: The node 8:/oak:index/event.job.topic/:index/com%2Fadobe%2Fgranite%2Fworkflow%2Ftransient%2Fjob%2Fetc%2Fworkflow%2Fmodels%2Fdam-xmp-writeback%2Fjcr_content%2Fmodel/var/eventing/jobs/assigned was already added in revision
+  r151233e54e1-0-4, before
+  r15166378b6a-0-2 (retries 5, 6830 ms)
+          at org.apache.jackrabbit.oak.api.CommitFailedException.asRepositoryException(CommitFailedException.java:239)
+          at org.apache.jackrabbit.oak.api.CommitFailedException.asRepositoryException(CommitFailedException.java:212)
+          at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.newRepositoryException(SessionDelegate.java:669)
+          at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.save(SessionDelegate.java:495)
+          at org.apache.jackrabbit.oak.jcr.session.SessionImpl$8.performVoid(SessionImpl.java:419)
+          at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.performVoid(SessionDelegate.java:273)
+          at org.apache.jackrabbit.oak.jcr.session.SessionImpl.save(SessionImpl.java:416)
+          at org.apache.sling.jcr.resource.internal.helper.jcr.JcrResourceProvider.commit(JcrResourceProvider.java:634)
+          ... 16 common frames omitted
+  Caused by: org.apache.jackrabbit.oak.api.CommitFailedException: OakMerge0004: OakMerge0004: The node 8:/oak:index/event.job.topic/:index/com%2Fadobe%2Fgranite%2Fworkflow%2Ftransient%2Fjob%2Fetc%2Fworkflow%2Fmodels%2Fdam-xmp-writeback%2Fjcr_content%2Fmodel/var/eventing/jobs/assigned was already added in revision
+  r151233e54e1-0-4, before
+  r15166378b6a-0-2 (retries 5, 6830 ms)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.merge0(DocumentNodeStoreBranch.java:200)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.merge(DocumentNodeStoreBranch.java:123)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentRootBuilder.merge(DocumentRootBuilder.java:158)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.merge(DocumentNodeStore.java:1497)
+          at org.apache.jackrabbit.oak.core.MutableRoot.commit(MutableRoot.java:247)
+          at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.commit(SessionDelegate.java:346)
+          at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.save(SessionDelegate.java:493)
+          ... 20 common frames omitted
+  Caused by: org.apache.jackrabbit.oak.plugins.document.ConflictException: The node 8:/oak:index/event.job.topic/:index/com%2Fadobe%2Fgranite%2Fworkflow%2Ftransient%2Fjob%2Fetc%2Fworkflow%2Fmodels%2Fdam-xmp-writeback%2Fjcr_content%2Fmodel/var/eventing/jobs/assigned was already added in revision
+  r151233e54e1-0-4, before
+  r15166378b6a-0-2
+          at org.apache.jackrabbit.oak.plugins.document.Commit.checkConflicts(Commit.java:582)
+          at org.apache.jackrabbit.oak.plugins.document.Commit.createOrUpdateNode(Commit.java:487)
+          at org.apache.jackrabbit.oak.plugins.document.Commit.applyToDocumentStore(Commit.java:371)
+          at org.apache.jackrabbit.oak.plugins.document.Commit.applyToDocumentStore(Commit.java:265)
+          at org.apache.jackrabbit.oak.plugins.document.Commit.applyInternal(Commit.java:234)
+          at org.apache.jackrabbit.oak.plugins.document.Commit.apply(Commit.java:219)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.persist(DocumentNodeStoreBranch.java:290)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.persist(DocumentNodeStoreBranch.java:260)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.access$300(DocumentNodeStoreBranch.java:54)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch$InMemory.merge(DocumentNodeStoreBranch.java:498)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.merge0(DocumentNodeStoreBranch.java:180)
+          ... 26 common frames omitted
+  ....
+  {noformat}
+
+  Doing following removed repo corruption and restored w/f processing:
+  {noformat}
+  oak.removeDescendantsAndSelf("/oak:index/event.job.topic/:index/com%2Fadobe%2Fgranite%2Fworkflow%2Ftransient%2Fjob%2Fetc%2Fworkflow%2Fmodels%2Fdam-xmp-writeback%2Fjcr_content%2Fmodel/var/eventing/jobs/assigned")
+  {noformat}
+
+  Attaching [mongoexport output|^mongoexport.zip] for {{/oak:index/event.job.topic/:index/com%2Fadobe%2Fgranite%2Fworkflow%2Ftransient%2Fjob%2Fetc%2Fworkflow%2Fmodels%2Fdam-xmp-writeback%2Fjcr_content%2Fmodel/var/eventing/jobs/assigned/6a389a6a-a8bf-4038-b57b-cb441c6ac557/com.adobe.granite.workflow.transient.job.etc.workflow.models.dam-xmp-writeback.jcr_content.model/2015/11/19/23/54/6a389a6a-a8bf-4038-b57b-cb441c6ac557_10}} (the hierarchy created at {{r151233e54e1-0-4}}). I've renamed a few path elements to make it more reable though (e.g. {{:index/com%2Fadobe%2Fgranite%2Fworkflow%2Ftransient%2Fjob%2Fetc%2Fworkflow%2Fmodels%2Fdam-xmp-writeback%2Fjcr_content%2Fmodel}} -> {{enc_value}}).
+
+  [~mreutegg], I'm assigning it to myself for now, but I think this would require your expertise all the way :).

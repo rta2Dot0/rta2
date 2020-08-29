@@ -1,0 +1,22 @@
+---
+BugID: WICKET-16
+Summary: missing base64/ URL encoding
+Description: "yesterday i showed the concept of omponents to a friend and stumled
+  into something i dont understand and think it might be a bug. \n \nI have a small
+  panelcompoment that holds a searchform (textfield + submit) nothing special here,
+  the code behind looks like: \n \n @Override\n        public void onSubmit() \n        {\n
+  \           String suchFeld = getSuchfeld();\n            if(suchFeld.length()>0)\n
+  \           {\n                PageParameters params = new PageParameters();\n                params.add(\"finde\",suchFeld);\n
+  \               setResponsePage(Suche.class,params);\n            }\n            else\n
+  \           {\n                setResponsePage(getPage().getClass());\n            }
+  \ \n      }\n \nthe component is put into a \"BasePage\":\n \n public BasePage()
+  {\n        ....    \n        add(bar);\n        add(new SuchPanel(\"SuchPanel\"));\n
+  \       .....\n}\n \nwich is then extended by the real page:\n \npublic class Foo
+  extends BasePage{\n    \n    /** Creates a new instance of Zigarren */\n    public
+  Foo() {\n        }\n \nwich works all fine, however if the class name contains non
+  ascii letters\n(e.g: ö ä ü etc.) it gives me a bug if nothing is entered into the
+  search and the part\n \npublic class Zubehör extends BasePage{\n    \n    /** Creates
+  a new instance of Zubehör */\n    public Zubehör() {\n    }\n \n\"setResponsePage(getPage().getClass());\"
+  comes to action, the trouble is that the page might have the URL:\n?wicket:bookmarkablePage=:de.pages.Zubeh%C3%B6r\nbut
+  the form tries to go to : \nwicket:bookmarkablePage=:de.pages.Zubeh%F6r\n \nwich
+  results in a CODE 404 in the App Server \n"

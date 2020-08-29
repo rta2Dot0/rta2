@@ -1,0 +1,21 @@
+---
+BugID: MATH-1261
+Summary: Overflow checks in Fraction multiply(int) / divide(int)
+Description: |-
+  The member methods multiply(int) / divide(int) in the class org.apache.commons.math3.fraction.Fraction do not have overflow checks.
+
+  {code:java}
+  return new Fraction(numerator * i, denominator);
+  {code}
+
+  should be
+
+  {code:java}
+  return new Fraction(ArithmeticUtils.mulAndCheck(numerator, i), denominator);
+  {code}
+
+  or, considering the case gcd(i, denominator) > 1,
+
+  {code:java}
+  return multiply(new Fraction(i));
+  {code}

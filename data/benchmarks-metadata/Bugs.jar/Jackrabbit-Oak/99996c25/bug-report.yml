@@ -1,0 +1,19 @@
+---
+BugID: OAK-3920
+Summary: OakDirectory not usable in readOnly mode with a readOnly builder
+Description: |-
+  When using {{OakDirectory}} with a read only builder say in LuceneCommand in oak-console following error is seen
+
+  {noformat}
+  lc info /oak:index/users
+  ERROR java.lang.UnsupportedOperationException:
+  This builder is read-only.
+         at org.apache.jackrabbit.oak.spi.state.ReadOnlyBuilder.unsupported (ReadOnlyBuilder.java:45)
+         at org.apache.jackrabbit.oak.spi.state.ReadOnlyBuilder.child (ReadOnlyBuilder.java:190)
+         at org.apache.jackrabbit.oak.spi.state.ReadOnlyBuilder.child (ReadOnlyBuilder.java:35)
+         at org.apache.jackrabbit.oak.plugins.index.lucene.OakDirectory.<init> (OakDirectory.java:93)
+         at org.apache.jackrabbit.oak.plugins.index.lucene.OakDirectory.<init> (OakDirectory.java:87)
+         at org.apache.jackrabbit.oak.console.commands.LuceneCommand.getDirectory (LuceneCommand.groovy:128)
+         at org.apache.jackrabbit.oak.console.commands.LuceneCommand.this$4$getDirectory (LuceneCommand.groovy)
+         at org.apache.jackrabbit.oak.console.commands.LuceneCommand$_closure1.doCall (LuceneCommand.groovy:55)
+  {noformat}

@@ -1,0 +1,36 @@
+---
+BugID: LOG4J2-1069
+Summary: Improper handling of JSON escape chars when deserializing JSON log events
+Description: "There is an error in the handling of JSON escape characters while determining
+  the log event boundaries in a JSON stream.  This error is causing log events with
+  JSON escaped characters in the message string to be skipped.  The existing tests
+  do not appear to cover this case, and other serialization types are not affected.
+  \ Here is a test/fix patch: \n\n{code}\ndiff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/net/server/JsonInputStreamLogEventBridge.java
+  b/log4j-core/src/main/java/org/apache/logging/log4j/core/net/server/JsonInputStreamLogEventBridge.java\nindex
+  1b81644..8ed2732 100644\n--- a/log4j-core/src/main/java/org/apache/logging/log4j/core/net/server/JsonInputStreamLogEventBridge.java\n+++
+  b/log4j-core/src/main/java/org/apache/logging/log4j/core/net/server/JsonInputStreamLogEventBridge.java\n@@
+  -55,8 +55,10 @@ public class JsonInputStreamLogEventBridge extends InputStreamLogEventBridge
+  {\n         boolean inEsc = false;\n         for (int i = start; i < charArray.length;
+  i++) {\n             final char c = charArray[i];\n-            if (!inEsc) {\n-
+  \               inEsc = false;\n+            if (inEsc) {\n+            \t// Skip
+  this char and continue\n+            \tinEsc = false;\n+            } else { \n
+  \                switch (c) {\n                 case EVENT_START_MARKER:\n                     if
+  (!inStr) {\ndiff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/net/server/AbstractSocketServerTest.java
+  b/log4j-core/src/test/java/org/apache/logging/log4j/core/net/server/AbstractSocketServerTest.java\nindex
+  891e278..2bdb3c3 100644\n--- a/log4j-core/src/test/java/org/apache/logging/log4j/core/net/server/AbstractSocketServerTest.java\n+++
+  b/log4j-core/src/test/java/org/apache/logging/log4j/core/net/server/AbstractSocketServerTest.java\n@@
+  -69,7 +69,9 @@ public abstract class AbstractSocketServerTest {\n     private static
+  final String MESSAGE = \"This is test message\";\n \n     private static final String
+  MESSAGE_2 = \"This is test message 2\";\n-\n+    \n+    private static final String
+  MESSAGE_WITH_SPECIAL_CHARS = \"{This}\\n[is]\\\"n\\\"a\\\"\\r\\ntrue:\\n\\ttest,\\nmessage\";\n+
+  \   \n     static final int PORT_NUM = AvailablePortFinder.getNextAvailable();\n
+  \n     static final String PORT = String.valueOf(PORT_NUM);\n@@ -158,6 +160,13 @@
+  public abstract class AbstractSocketServerTest {\n             testServer(m1, m2);\n
+  \        }\n     }\n+    \n+    \n+    @Test\n+    public void testMessagesWithSpecialChars()
+  throws Exception {\n+        testServer(MESSAGE_WITH_SPECIAL_CHARS);\n+    }\n+
+  \   \n \n     private void testServer(final int size) throws Exception {\n         final
+  String[] messages = new String[size];\n{code}\n\nThe test provided is simplistic
+  and does not attempt to cover all possible special characters as the bug has to
+  do with escaped characters in general.  XML and java serialization handle the special
+  chars in my test string without issue - I did not attempt to locate similar cases
+  in the other serialization types.\n"

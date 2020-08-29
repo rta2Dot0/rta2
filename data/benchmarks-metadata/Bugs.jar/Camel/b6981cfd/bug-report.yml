@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-7146
+Summary: NPE in Aggregator when completionSize = 1
+Description: "A Camel aggregator with persistence repository cannot have a completionSize
+  of 1. If this is configured, every message produces a NPE with the attached stacktrace.
+  \n\nI have also attached a small example project that shows the Exception. As soon
+  as the completionSize is > 1, it runs fine.\n\nThis is just a minor flaw, since
+  I cannot think about a really useful case with completionSize 1, but it worked with
+  earlier versions of Camel. \n\nAs an alternative (if completionSize 1 should not
+  be used), Camel could throw an error during Context startup when completionSize
+  < 2."

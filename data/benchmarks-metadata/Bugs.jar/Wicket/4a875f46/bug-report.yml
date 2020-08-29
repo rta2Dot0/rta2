@@ -1,0 +1,13 @@
+---
+BugID: WICKET-3511
+Summary: Mapping ResourceReferences to Urls is slow
+Description: |
+  PackageResourceReference is often used for stylesheets and JavaScript resources, many of which can appear on a typical page (WicketAjaxReference is one common example). Every time the page is rendered, these resources are mapped to urls in order to build the appropriate <link href="..."> or <script src="..."> tags.
+
+  The trouble is that this mapping process is extremely inefficient. To map a ResourceReference to a url, ResourceReference#getLastModified() must be consulted for FilenameWithTimestampResourceCachingStrategy, and ResourceReference#getUrlAttributes() is called to append appropriate query parameters.
+
+  In PackageResourceReference, both of these methods delegate to the very expensive PackageResourceReference#lookupStream(), which makes several attempts to locate the underlying file or classpath item using various permutations of locale, style, and variation. Each of these attempts involves I/O. The default ResourceStreamLocator, which does the actual file and classpath queries, does no caching whatsoever.
+
+  On a trivial Wicket page containing 7 total PackageResourceReferences for images, stylesheets and JavaScript files, the average response time in my tests was 211 ms. The vast majority of that time was spent in ResourceStreamLocator, due to the expensive steps described above.
+
+  It seems that putting caching at the ResourceStreamLocator would be extremely beneficial. I am attaching a simple implementation. With caching enabled in ResourceStreamLocator, the response time of my test page dropped from 211 ms to 49 ms.

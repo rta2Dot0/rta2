@@ -1,0 +1,7 @@
+---
+BugID: WICKET-3620
+Summary: IResponseFilter cannot change buffer contents
+Description: Changes to the responseBuffer, passed to an IResponseFilter, are not
+  picked up, nor are newly created AppendingStringBuffer (return value of the method).
+  Both callers of the method invoke it with a copy of the buffer and ignore return
+  values (BufferedWebResponse line 145 and AjaxRequestTarget line 687).

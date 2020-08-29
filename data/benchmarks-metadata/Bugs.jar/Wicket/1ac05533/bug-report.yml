@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4775
+Summary: PageParameters#mergeWith may loose values of the 'other' PP
+Description: "The code at org.apache.wicket.request.mapper.parameter.PageParameters#mergeWith()
+  looks like:\n\nfor (NamedPair curNamed : other.getAllNamed())\n\t\tset(curNamed.getKey(),
+  curNamed.getValue());\n\nmay loose some values if 'other' has a named parameter
+  with several values.With the current code only the last name/value pair is preserved."

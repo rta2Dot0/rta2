@@ -1,0 +1,24 @@
+---
+BugID: ACCUMULO-2544
+Summary: Incorrect boundry matching for MockTableOperations.deleteRows
+Description: "The api for deleteRows specifies: Delete rows between (start, end] but
+  the current implementation for MockTableOperations.deleteRows is implemented as
+  (start, end)\n\nHere is the failing test case\n\n{code:java}\npublic class TestDelete
+  {\n  private static final String INSTANCE = \"mock\";\n  private static final String
+  TABLE = \"foo\";\n  private static final String USER = \"user\";\n  private static
+  final String PASS = \"password\";\n  private static final Authorizations AUTHS =
+  new Authorizations();\n\n  @Test\n  public void testDelete() throws TableNotFoundException,
+  AccumuloException,\n      AccumuloSecurityException, TableExistsException {\n\n
+  \   MockInstance mockAcc = new MockInstance(INSTANCE);\n    Connector conn = mockAcc.getConnector(USER,
+  new PasswordToken(PASS));\n    conn.tableOperations().create(TABLE);\n    conn.securityOperations().grantTablePermission(USER,
+  TABLE, TablePermission.READ);\n    conn.securityOperations().grantTablePermission(USER,
+  TABLE, TablePermission.WRITE);\n\n    Mutation mut = new Mutation(\"2\");\n    mut.put(\"colfam\",
+  \"colqual\", \"value\");\n    BatchWriter writer = conn.createBatchWriter(TABLE,
+  new BatchWriterConfig());\n    writer.addMutation(mut);\n\n    Scanner scan = conn.createScanner(TABLE,
+  AUTHS);\n    scan.setRange(new Range(\"2\", \"2\"));\n\n    assertEquals(1, countRecords(scan));\n
+  \   \n    // this should delete (1,2] \n    conn.tableOperations().deleteRows(TABLE,
+  new Text(\"1\"), new Text(\"2\"));\n\n    scan = conn.createScanner(TABLE, AUTHS);\n
+  \   scan.setRange(new Range(\"2\", \"2\"));\n    \n    // this will fail if row
+  2 exists\n    assertEquals(0, countRecords(scan));\n  }\n\n  private int countRecords(Scanner
+  scan) {\n    int cnt = 0;\n    for (Entry<Key, Value> entry : scan) {\n      cnt++;\n
+  \   }\n    scan.close();\n    return cnt;\n  }\n}\n{code}"

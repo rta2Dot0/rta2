@@ -1,0 +1,1287 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Zipkin (Parent)
+[INFO] Zipkin v2
+[INFO] Zipkin
+[INFO] Zipkin UI
+[INFO] Zipkin JUnit
+[INFO] Guava support library
+[INFO] Auto Configuration
+[INFO] Auto Configuration: Ui
+[INFO] Storage
+[INFO] Storage: Cassandra
+[INFO] Auto Configuration: Cassandra Storage
+[INFO] Storage: Cassandra (Zipkin V2)
+[INFO] Auto Configuration: Cassandra 3 Storage
+[INFO] Storage: Elasticsearch (V2)
+[INFO] Storage: Elasticsearch (HTTP)
+[INFO] Auto Configuration: Elasticsearch Storage (HTTP)
+[INFO] Auto Configuration: Elasticsearch Storage (AWS)
+[INFO] Storage: MySQL
+[INFO] Auto Configuration: MySQL Storage
+[INFO] Zipkin Collectors
+[INFO] Collector: Kafka
+[INFO] Auto Configuration: Kafka Collector
+[INFO] Collector: RabbitMQ
+[INFO] Auto Configuration: RabbitMQ Collector
+[INFO] Collector: Scribe
+[INFO] Auto Configuration: Scribe Collector
+[INFO] Auto Configuration: Prometheus Metrics
+[INFO] Zipkin Server
+[INFO] Benchmarks
+[INFO] ZooKeeper support library
+[INFO] Collector: Kafka 0.10+
+[INFO] Auto Configuration: Kafka 0.10 Collector
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin (Parent) 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 7.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 4.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 243 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 268 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 3.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 1.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 484 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 75 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 489 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 58 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 126 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 364 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 614 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 246 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 145 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 159 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 70 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 412 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 107 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 154 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 105 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 515 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 187 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 284 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 124 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.0.0-M1/enforcer-api-3.0.0-M1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.0.0-M1/enforcer-api-3.0.0-M1.pom (2.9 kB at 126 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.pom (2.3 kB at 156 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.0.0-M1/enforcer-rules-3.0.0-M1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.0.0-M1/enforcer-rules-3.0.0-M1.pom (3.9 kB at 136 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 403 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 207 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom (23 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/41/commons-parent-41.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/41/commons-parent-41.pom (65 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 930 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom (7.3 kB at 484 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4.0 kB at 51 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (1.8 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (12 kB at 729 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 430 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 522 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 713 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 3.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (4.3 kB at 38 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 493 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 369 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar (61 kB at 469 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar (195 kB at 1.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (53 kB at 397 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar (285 kB at 1.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar (245 kB at 1.4 MB/s)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.pom (1.6 kB at 118 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.2/plexus-compilers-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.2/plexus-compilers-2.8.2.pom (1.3 kB at 52 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.2/plexus-compiler-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.2/plexus-compiler-2.8.2.pom (4.9 kB at 407 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 68 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 255 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.pom (771 B at 20 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.pom (867 B at 87 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_core/2.0.13/error_prone_core-2.0.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_core/2.0.13/error_prone_core-2.0.13.pom (11 kB at 570 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.0.13/error_prone_parent-2.0.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.0.13/error_prone_parent-2.0.13.pom (5.0 kB at 311 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotation/2.0.13/error_prone_annotation-2.0.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotation/2.0.13/error_prone_annotation-2.0.13.pom (1.5 kB at 84 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.pom (5.4 kB at 258 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.pom (2.1 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.pom (3.8 kB at 256 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.pom (3.9 kB at 350 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/dataflow/1.8.10/dataflow-1.8.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/dataflow/1.8.10/dataflow-1.8.10.pom (4.3 kB at 310 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/javacutil/1.8.10/javacutil-1.8.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/javacutil/1.8.10/javacutil-1.8.10.pom (4.0 kB at 269 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/javac/1.9.0-dev-r2973-2/javac-1.9.0-dev-r2973-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/javac/1.9.0-dev-r2973-2/javac-1.9.0-dev-r2973-2.pom (1.2 kB at 77 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.13/error_prone_annotations-2.0.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.13/error_prone_annotations-2.0.13.pom (1.3 kB at 95 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.pom (13 kB at 795 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom (5.1 kB at 242 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.pom (1.7 kB at 98 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/22.0/guava-22.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/22.0/guava-22.0.pom (5.7 kB at 355 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/22.0/guava-parent-22.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/22.0/guava-parent-22.0.pom (8.9 kB at 681 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.pom (4.6 kB at 271 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.pom (2.9 kB at 121 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.pom (2.6 kB at 185 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.pom (1.2 kB at 70 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.pom (2.8 kB at 154 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom (1.8 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.pom (3.4 kB at 148 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/auto/auto-common/0.9/auto-common-0.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/auto/auto-common/0.9/auto-common-0.9.pom (2.8 kB at 112 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.5-jre/guava-23.5-jre.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/23.5-jre/guava-23.5-jre.pom (7.0 kB at 413 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.5-jre/guava-parent-23.5-jre.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.5-jre/guava-parent-23.5-jre.pom (10 kB at 484 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.pom (4.2 kB at 168 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.pom (2.4 kB at 84 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.2/plexus-languages-0.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.2/plexus-languages-0.9.2.pom (2.3 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.pom (1.9 kB at 162 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_BETA/asm-parent-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_BETA/asm-parent-6.0_BETA.pom (5.5 kB at 550 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.pom (16 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.pom (692 B at 38 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.jar (9.8 kB at 427 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.jar (10.0 kB at 474 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar (245 kB at 7.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar (4.7 kB at 107 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.jar (530 kB at 9.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/22.0/guava-22.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar (34 kB at 599 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/auto/auto-common/0.9/auto-common-0.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.jar (39 kB at 687 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar (64 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.jar (35 kB at 476 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar (33 kB at 452 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.jar (1.6 MB at 17 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.jar (92 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar (14 kB at 133 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar (315 kB at 2.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/22.0/guava-22.0.jar (2.6 MB at 14 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/auto/auto-common/0.9/auto-common-0.9.jar (85 kB at 319 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.jar (302 kB at 1.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.jar (6.9 MB at 12 MB/s)
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.pom (1.8 kB at 86 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.pom (6.2 kB at 345 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.6.1.201501031845-r/org.eclipse.jgit-parent-3.6.1.201501031845-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.6.1.201501031845-r/org.eclipse.jgit-parent-3.6.1.201501031845-r.pom (24 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.pom (3.2 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom (4.8 kB at 439 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom (4.3 kB at 189 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom (4.1 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.pom (6.0 kB at 461 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.1.3/httpcomponents-client-4.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.1.3/httpcomponents-client-4.1.3.pom (12 kB at 932 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/5/project-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/5/project-5.pom (23 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.pom (7.4 kB at 493 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.1.4/httpcomponents-core-4.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.1.4/httpcomponents-core-4.1.4.pom (9.8 kB at 752 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.pom (10 kB at 874 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom (3.0 kB at 217 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom (22 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom (3.8 kB at 293 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom (1.6 kB at 109 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom (5.9 kB at 491 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom (7.9 kB at 495 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom (5.4 kB at 337 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom (2.0 kB at 163 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 846 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 607 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom (5.0 kB at 355 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom (7.8 kB at 488 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 353 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/3.0-alpha-2/maven-project-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/3.0-alpha-2/maven-project-3.0-alpha-2.pom (3.3 kB at 275 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-2/maven-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-2/maven-3.0-alpha-2.pom (21 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0-alpha-2/maven-model-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0-alpha-2/maven-model-3.0-alpha-2.pom (3.5 kB at 207 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (1.4 kB at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.pom (2.9 kB at 264 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.pom (1.4 kB at 94 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-beta-3.0.5/plexus-containers-1.0-beta-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-beta-3.0.5/plexus-containers-1.0-beta-3.0.5.pom (4.1 kB at 294 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.4/plexus-classworlds-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.4/plexus-classworlds-1.4.pom (4.7 kB at 133 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.0/plexus-2.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.0/plexus-2.0.0.pom (8.0 kB at 469 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.pom (1.5 kB at 104 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.0-beta-3.0.5/plexus-component-annotations-1.0-beta-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.0-beta-3.0.5/plexus-component-annotations-1.0-beta-3.0.5.pom (602 B at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.pom (906 B at 53 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-4/wagon-1.0-beta-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-4/wagon-1.0-beta-4.pom (10 kB at 806 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 218 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.pom (1.3 kB at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.pom (1.5 kB at 80 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.pom (2.9 kB at 85 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.pom (1.7 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.4/maven-settings-3.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.4/maven-settings-3.0.4.pom (1.8 kB at 23 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.4/maven-3.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.4/maven-3.0.4.pom (22 kB at 624 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom (2.9 kB at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.4/maven-settings-builder-3.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.4/maven-settings-builder-3.0.4.pom (2.3 kB at 188 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.pom (2.6 kB at 105 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.1.3.RELEASE/spring-parent-3.1.3.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.1.3.RELEASE/spring-parent-3.1.3.RELEASE.pom (8.7 kB at 460 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.pom (2.5 kB at 210 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/mycila/mycila-xmltool/4.4.ga/mycila-xmltool-4.4.ga.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/mycila/mycila-xmltool/4.4.ga/mycila-xmltool-4.4.ga.pom (2.8 kB at 255 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.pom (12 kB at 775 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/33/commons-parent-33.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/33/commons-parent-33.pom (53 kB at 2.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.jar (12 kB at 722 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar (125 kB at 4.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar (254 kB at 3.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.jar (58 kB at 895 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar (353 kB at 5.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar (181 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar (164 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar (52 kB at 614 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar (202 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar (47 kB at 444 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar (202 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.jar (2.0 MB at 16 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.jar (35 kB at 279 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.jar (238 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.jar (209 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.jar (27 kB at 169 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.jar (520 kB at 3.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.jar (52 kB at 326 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.jar (502 kB at 3.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.jar (53 kB at 310 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (61 kB at 351 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar (1.5 MB at 8.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.jar (169 kB at 934 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar (108 kB at 578 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.jar (36 kB at 185 kB/s)
+[INFO] 
+[INFO] --- retrolambda-maven-plugin:2.5.3:process-main (default) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/orfjackal/retrolambda/retrolambda/2.5.3/retrolambda-2.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/orfjackal/retrolambda/retrolambda/2.5.3/retrolambda-2.5.3.pom (4.0 kB at 360 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/orfjackal/retrolambda/retrolambda-api/2.5.3/retrolambda-api-2.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/orfjackal/retrolambda/retrolambda-api/2.5.3/retrolambda-api-2.5.3.pom (1.3 kB at 126 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 16 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 424 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom (3.8 kB at 318 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor/2.2.0/mojo-executor-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor/2.2.0/mojo-executor-2.2.0.pom (2.2 kB at 117 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor-parent/2.2.0/mojo-executor-parent-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/twdata/maven/mojo-executor-parent/2.2.0/mojo-executor-parent-2.2.0.pom (9.3 kB at 713 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.jar (4.2 kB at 145 kB/s)
+[INFO] Retrieving Retrolambda 2.5.3
+[INFO] Configured Artifact: net.orfjackal.retrolambda:retrolambda:2.5.3:jar
+[INFO] Copying retrolambda-2.5.3.jar to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/target/retrolambda/retrolambda.jar
+[INFO] Processing classes with Retrolambda
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.pom (4.1 kB at 7.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.7/maven-antrun-plugin-1.7.jar (32 kB at 259 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.11/maven-plugin-api-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.11/maven-plugin-api-2.0.11.pom (1.5 kB at 113 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.11/maven-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.11/maven-2.0.11.pom (22 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/12/maven-parent-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/12/maven-parent-12.pom (22 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.11/maven-project-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.11/maven-project-2.0.11.pom (2.8 kB at 185 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.11/maven-settings-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.11/maven-settings-2.0.11.pom (2.2 kB at 198 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.11/maven-model-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.11/maven-model-2.0.11.pom (3.2 kB at 270 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.11/maven-profile-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.11/maven-profile-2.0.11.pom (2.0 kB at 102 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.11/maven-artifact-manager-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.11/maven-artifact-manager-2.0.11.pom (2.6 kB at 239 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.11/maven-repository-metadata-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.11/maven-repository-metadata-2.0.11.pom (2.3 kB at 188 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.11/maven-artifact-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.11/maven-artifact-2.0.11.pom (1.6 kB at 132 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.11/maven-plugin-registry-2.0.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.11/maven-plugin-registry-2.0.11.pom (1.9 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.pom (9.9 kB at 898 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.2/ant-parent-1.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.2/ant-parent-1.8.2.pom (4.7 kB at 247 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.pom (2.4 kB at 121 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.11/maven-plugin-api-2.0.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.11/maven-project-2.0.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.11/maven-settings-2.0.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.11/maven-profile-2.0.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.11/maven-model-2.0.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.11/maven-plugin-api-2.0.11.jar (13 kB at 545 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.11/maven-artifact-manager-2.0.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.11/maven-model-2.0.11.jar (97 kB at 5.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.11/maven-repository-metadata-2.0.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.11/maven-settings-2.0.11.jar (51 kB at 1.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.11/maven-project-2.0.11.jar (123 kB at 3.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.11/maven-plugin-registry-2.0.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.11/maven-artifact-2.0.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.11/maven-profile-2.0.11.jar (37 kB at 1.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.11/maven-artifact-manager-2.0.11.jar (58 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.11/maven-repository-metadata-2.0.11.jar (26 kB at 750 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.11/maven-artifact-2.0.11.jar (90 kB at 2.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.11/maven-plugin-registry-2.0.11.jar (31 kB at 828 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar (12 kB at 228 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.jar (1.9 MB at 15 MB/s)
+[INFO] Executing tasks
+
+main:
+     [exec] Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+     [exec] Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+     [exec] FATAL ERROR in native method: processing of -javaagent failed
+     [exec] Exception in thread "main" java.lang.UnsupportedClassVersionError: net/orfjackal/retrolambda/PreMain : Unsupported major.minor version 52.0
+     [exec] 	at java.lang.ClassLoader.defineClass1(Native Method)
+     [exec] 	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+     [exec] 	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+     [exec] 	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+     [exec] 	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+     [exec] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+     [exec] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+     [exec] 	at java.security.AccessController.doPrivileged(Native Method)
+     [exec] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+     [exec] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+     [exec] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+     [exec] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+     [exec] 	at sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:300)
+     [exec] 	at sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:397)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin v2 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ zipkin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin2/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 30 source files to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin2/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin UI 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin-ui ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.6:install-node-and-npm (install node and npm) @ zipkin-ui ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/github/eirslett/frontend-plugin-core/1.6/frontend-plugin-core-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/github/eirslett/frontend-plugin-core/1.6/frontend-plugin-core-1.6.pom (2.0 kB at 84 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.pom (1.5 kB at 79 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.pom (1.3 kB at 107 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.pom (11 kB at 816 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.pom (1.9 kB at 106 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom (9.7 kB at 3.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/3/commons-parent-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/3/commons-parent-3.pom (12 kB at 7.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.pom (11 kB at 1.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.pom (6.4 kB at 5.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.1/httpcomponents-client-4.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.1/httpcomponents-client-4.5.1.pom (16 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.pom (5.5 kB at 7.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.3/httpcomponents-core-4.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.3/httpcomponents-core-4.4.3.pom (13 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom (1.6 kB at 22 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom (17 kB at 48 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (3.2 kB at 267 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom (8.4 kB at 182 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.2/xz-1.2.jar (95 kB at 3.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar (232 kB at 6.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar (88 kB at 3.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.5/commons-compress-1.5.jar (256 kB at 5.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar (781 kB at 13 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar (26 kB at 580 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar (54 kB at 812 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar (733 kB at 8.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar (327 kB at 3.8 MB/s)
+[INFO] Installing node version v6.9.2
+[INFO] Downloading https://nodejs.org/dist/v6.9.2/node-v6.9.2-linux-x64.tar.gz to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/eirslett/node/6.9.2/node-6.9.2-linux-x64.tar.gz
+[INFO] No proxies configured
+[INFO] No proxy was configured, downloading directly
+[INFO] Unpacking /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/eirslett/node/6.9.2/node-6.9.2-linux-x64.tar.gz into /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-ui/target/node/tmp
+[INFO] Copying node binary from /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-ui/target/node/tmp/node-v6.9.2-linux-x64/bin/node to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-ui/target/node/node
+[INFO] Extracting NPM
+[INFO] Installed node locally.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.6:npm (npm install) @ zipkin-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ zipkin-ui ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-ui/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin-ui ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.6:npm (npm lint) @ zipkin-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.6:npm (npm run build) @ zipkin-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.16:check (default) @ zipkin-ui ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer/1.16/animal-sniffer-1.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer/1.16/animal-sniffer-1.16.pom (2.4 kB at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/5.2/asm-all-5.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/5.2/asm-all-5.2.pom (2.0 kB at 523 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom (5.5 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/java-boot-classpath-detector/1.16/java-boot-classpath-detector-1.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/java-boot-classpath-detector/1.16/java-boot-classpath-detector-1.16.pom (2.5 kB at 193 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/5.2/asm-all-5.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 641 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 258 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-all/5.2/asm-all-5.2.jar (248 kB at 5.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 11 kB/s)
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java17/1.0/java17-1.0.signature
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java17/1.0/java17-1.0.signature (664 kB at 945 kB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ zipkin-ui ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-ui/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ zipkin-ui ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ zipkin-ui ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.20.1/maven-surefire-common-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.20.1/maven-surefire-common-2.20.1.pom (9.3 kB at 776 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (1.6 kB at 3.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.pom (3.7 kB at 1.6 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.pom (2.0 kB at 728 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.pom (8.5 kB at 445 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar (14 kB at 1.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.20.1/surefire-api-2.20.1.jar (183 kB at 8.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (228 kB at 11 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.20.1/surefire-booter-2.20.1.jar (268 kB at 10 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.20.1/surefire-logger-api-2.20.1.jar (13 kB at 295 kB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.6:npm (npm run test) @ zipkin-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ zipkin-ui ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (4.3 kB at 30 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (4.6 kB at 382 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom (10 kB at 106 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom (48 kB at 443 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (5.3 kB at 44 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (4.9 kB at 79 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 kB at 849 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 kB at 375 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 kB at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 606 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (1.9 kB at 159 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 192 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (5.3 kB at 355 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 2.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (100 kB at 5.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (86 kB at 2.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (426 kB at 7.9 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (154 kB at 2.4 MB/s)
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-ui/target/zipkin-ui-2.4.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.20.1:integration-test (integration-test) @ zipkin-ui ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.20.1:verify (verify) @ zipkin-ui ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ zipkin-ui ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4.0 kB at 270 kB/s)
+[INFO] Installing io.zipkin.java:zipkin-ui:2.4.5-SNAPSHOT at end
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin JUnit 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Guava support library 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin-autoconfigure ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin-autoconfigure ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ zipkin-autoconfigure ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.16:check (default) @ zipkin-autoconfigure ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java18/1.0/java18-1.0.signature
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java18/1.0/java18-1.0.signature (2.0 MB at 21 MB/s)
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.20.1:integration-test (integration-test) @ zipkin-autoconfigure ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.20.1:verify (verify) @ zipkin-autoconfigure ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ zipkin-autoconfigure ---
+[INFO] Installing io.zipkin.java:zipkin-autoconfigure:2.4.5-SNAPSHOT at end
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Ui 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin-autoconfigure-ui ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ zipkin-autoconfigure-ui ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin-autoconfigure-ui ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-autoconfigure/ui/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Storage 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin-storage ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin-storage ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ zipkin-storage ---
+[INFO] 
+[INFO] --- retrolambda-maven-plugin:2.5.3:process-main (default) @ zipkin-storage ---
+[INFO] Retrieving Retrolambda 2.5.3
+[INFO] Configured Artifact: net.orfjackal.retrolambda:retrolambda:2.5.3:jar
+[INFO] Copying retrolambda-2.5.3.jar to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-storage/target/retrolambda/retrolambda.jar
+[INFO] Processing classes with Retrolambda
+[INFO] Executing tasks
+
+main:
+     [exec] Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+     [exec] Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+     [exec] FATAL ERROR in native method: processing of -javaagent failed
+     [exec] Exception in thread "main" java.lang.UnsupportedClassVersionError: net/orfjackal/retrolambda/PreMain : Unsupported major.minor version 52.0
+     [exec] 	at java.lang.ClassLoader.defineClass1(Native Method)
+     [exec] 	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+     [exec] 	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+     [exec] 	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+     [exec] 	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+     [exec] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+     [exec] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+     [exec] 	at java.security.AccessController.doPrivileged(Native Method)
+     [exec] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+     [exec] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+     [exec] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+     [exec] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+     [exec] 	at sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:300)
+     [exec] 	at sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:397)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Storage: Cassandra 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Cassandra Storage 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Storage: Cassandra (Zipkin V2) 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Cassandra 3 Storage 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Storage: Elasticsearch (V2) 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Storage: Elasticsearch (HTTP) 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Elasticsearch Storage (HTTP) 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Elasticsearch Storage (AWS) 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Storage: MySQL 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: MySQL Storage 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin Collectors 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin-collector ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin-collector ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ zipkin-collector ---
+[INFO] 
+[INFO] --- retrolambda-maven-plugin:2.5.3:process-main (default) @ zipkin-collector ---
+[INFO] Retrieving Retrolambda 2.5.3
+[INFO] Configured Artifact: net.orfjackal.retrolambda:retrolambda:2.5.3:jar
+[INFO] Copying retrolambda-2.5.3.jar to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-collector/target/retrolambda/retrolambda.jar
+[INFO] Processing classes with Retrolambda
+[INFO] Executing tasks
+
+main:
+     [exec] Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+     [exec] Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+     [exec] FATAL ERROR in native method: processing of -javaagent failed
+     [exec] Exception in thread "main" java.lang.UnsupportedClassVersionError: net/orfjackal/retrolambda/PreMain : Unsupported major.minor version 52.0
+     [exec] 	at java.lang.ClassLoader.defineClass1(Native Method)
+     [exec] 	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+     [exec] 	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+     [exec] 	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+     [exec] 	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+     [exec] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+     [exec] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+     [exec] 	at java.security.AccessController.doPrivileged(Native Method)
+     [exec] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+     [exec] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+     [exec] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+     [exec] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+     [exec] 	at sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:300)
+     [exec] 	at sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:397)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Collector: Kafka 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Kafka Collector 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Collector: RabbitMQ 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: RabbitMQ Collector 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Collector: Scribe 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Scribe Collector 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Prometheus Metrics 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin-autoconfigure-metrics-prometheus ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ zipkin-autoconfigure-metrics-prometheus ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin-autoconfigure-metrics-prometheus ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-autoconfigure/metrics-prometheus/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin Server 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Benchmarks 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ZooKeeper support library 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Collector: Kafka 0.10+ 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Auto Configuration: Kafka 0.10 Collector 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Zipkin (Parent) .................................... FAILURE [ 24.864 s]
+[INFO] Zipkin v2 .......................................... FAILURE [  0.598 s]
+[INFO] Zipkin ............................................. FAILURE [  0.037 s]
+[INFO] Zipkin UI .......................................... SUCCESS [01:52 min]
+[INFO] Zipkin JUnit ....................................... FAILURE [  0.037 s]
+[INFO] Guava support library .............................. FAILURE [  0.023 s]
+[INFO] Auto Configuration ................................. SUCCESS [  2.469 s]
+[INFO] Auto Configuration: Ui ............................. FAILURE [  0.386 s]
+[INFO] Storage ............................................ FAILURE [  0.878 s]
+[INFO] Storage: Cassandra ................................. FAILURE [  0.191 s]
+[INFO] Auto Configuration: Cassandra Storage .............. FAILURE [  0.034 s]
+[INFO] Storage: Cassandra (Zipkin V2) ..................... FAILURE [  0.037 s]
+[INFO] Auto Configuration: Cassandra 3 Storage ............ FAILURE [  0.027 s]
+[INFO] Storage: Elasticsearch (V2) ........................ FAILURE [  0.028 s]
+[INFO] Storage: Elasticsearch (HTTP) ...................... FAILURE [  0.027 s]
+[INFO] Auto Configuration: Elasticsearch Storage (HTTP) ... FAILURE [  0.028 s]
+[INFO] Auto Configuration: Elasticsearch Storage (AWS) .... FAILURE [  0.081 s]
+[INFO] Storage: MySQL ..................................... FAILURE [  0.035 s]
+[INFO] Auto Configuration: MySQL Storage .................. FAILURE [  0.022 s]
+[INFO] Zipkin Collectors .................................. FAILURE [  0.794 s]
+[INFO] Collector: Kafka ................................... FAILURE [  0.073 s]
+[INFO] Auto Configuration: Kafka Collector ................ FAILURE [  0.022 s]
+[INFO] Collector: RabbitMQ ................................ FAILURE [  0.022 s]
+[INFO] Auto Configuration: RabbitMQ Collector ............. FAILURE [  0.012 s]
+[INFO] Collector: Scribe .................................. FAILURE [  0.079 s]
+[INFO] Auto Configuration: Scribe Collector ............... FAILURE [  0.041 s]
+[INFO] Auto Configuration: Prometheus Metrics ............. FAILURE [  0.281 s]
+[INFO] Zipkin Server ...................................... FAILURE [  0.314 s]
+[INFO] Benchmarks ......................................... FAILURE [  0.075 s]
+[INFO] ZooKeeper support library .......................... FAILURE [  0.037 s]
+[INFO] Collector: Kafka 0.10+ ............................. FAILURE [  0.064 s]
+[INFO] Auto Configuration: Kafka 0.10 Collector ........... FAILURE [  0.014 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:26 min
+[INFO] Finished at: 2020-03-12T11:43:49-07:00
+[INFO] Final Memory: 47M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal net.orfjackal.retrolambda:retrolambda-maven-plugin:2.5.3:process-main (default) on project parent: Unable to execute mojo: An Ant BuildException has occured: exec returned: 1
+[ERROR] around Ant part ...<exec executable="/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre/bin/java" failonerror="true">... @ 4:119 in /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project zipkin: Execution default-compile of goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile failed: An API incompatibility was encountered while executing org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile: java.lang.UnsupportedClassVersionError: javax/tools/DiagnosticListener : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.maven.plugins:maven-compiler-plugin:3.7.0
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
+[ERROR] urls[1] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.jar
+[ERROR] urls[2] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[ERROR] urls[3] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.jar
+[ERROR] urls[4] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.jar
+[ERROR] urls[5] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.jar
+[ERROR] urls[6] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar
+[ERROR] urls[7] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar
+[ERROR] urls[8] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar
+[ERROR] urls[9] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.jar
+[ERROR] urls[10] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/guava/guava/22.0/guava-22.0.jar
+[ERROR] urls[11] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+[ERROR] urls[12] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+[ERROR] urls[13] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/auto/auto-common/0.9/auto-common-0.9.jar
+[ERROR] urls[14] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.jar
+[ERROR] urls[15] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+[ERROR] urls[16] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.jar
+[ERROR] urls[17] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.jar
+[ERROR] urls[18] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.jar
+[ERROR] urls[19] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+[ERROR] urls[20] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[ERROR] urls[21] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[ERROR] urls[22] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[ERROR] urls[23] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[ERROR] urls[24] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[ERROR] urls[25] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[ERROR] urls[26] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[27] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[28] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[ERROR] urls[29] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[ERROR] urls[30] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[ERROR] urls[31] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.jar
+[ERROR] urls[32] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.jar
+[ERROR] urls[33] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar
+[ERROR] urls[34] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.jar
+[ERROR] urls[35] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.jar
+[ERROR] urls[36] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 2]
+[ERROR] Failed to execute goal on project zipkin: Could not resolve dependencies for project io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-junit: Could not resolve dependencies for project io.zipkin.java:zipkin-junit:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-guava: Could not resolve dependencies for project io.zipkin.java:zipkin-guava:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project zipkin-autoconfigure-ui: Execution default-compile of goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile failed: An API incompatibility was encountered while executing org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile: java.lang.UnsupportedClassVersionError: javax/tools/DiagnosticListener : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.maven.plugins:maven-compiler-plugin:3.7.0
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
+[ERROR] urls[1] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.jar
+[ERROR] urls[2] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[ERROR] urls[3] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.jar
+[ERROR] urls[4] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.jar
+[ERROR] urls[5] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.jar
+[ERROR] urls[6] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar
+[ERROR] urls[7] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar
+[ERROR] urls[8] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar
+[ERROR] urls[9] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.jar
+[ERROR] urls[10] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/guava/guava/22.0/guava-22.0.jar
+[ERROR] urls[11] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+[ERROR] urls[12] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+[ERROR] urls[13] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/auto/auto-common/0.9/auto-common-0.9.jar
+[ERROR] urls[14] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.jar
+[ERROR] urls[15] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+[ERROR] urls[16] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.jar
+[ERROR] urls[17] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.jar
+[ERROR] urls[18] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.jar
+[ERROR] urls[19] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+[ERROR] urls[20] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[ERROR] urls[21] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[ERROR] urls[22] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[ERROR] urls[23] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[ERROR] urls[24] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[ERROR] urls[25] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[ERROR] urls[26] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[27] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[28] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[ERROR] urls[29] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[ERROR] urls[30] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[ERROR] urls[31] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.jar
+[ERROR] urls[32] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.jar
+[ERROR] urls[33] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar
+[ERROR] urls[34] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.jar
+[ERROR] urls[35] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.jar
+[ERROR] urls[36] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 2]
+[ERROR] Failed to execute goal net.orfjackal.retrolambda:retrolambda-maven-plugin:2.5.3:process-main (default) on project zipkin-storage: Unable to execute mojo: An Ant BuildException has occured: exec returned: 1
+[ERROR] around Ant part ...<exec executable="/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre/bin/java" failonerror="true">... @ 4:119 in /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-storage/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal on project zipkin-storage-cassandra: Could not resolve dependencies for project io.zipkin.java:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-guava:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-storage-cassandra: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-storage-cassandra:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-guava:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-storage-cassandra: Could not resolve dependencies for project io.zipkin.zipkin2:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:tests:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-storage-cassandra3: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-storage-cassandra3:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-storage-elasticsearch: Could not resolve dependencies for project io.zipkin.zipkin2:zipkin-storage-elasticsearch:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-storage-elasticsearch-http: Could not resolve dependencies for project io.zipkin.java:zipkin-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin-storage-elasticsearch:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-storage-elasticsearch-http: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin-storage-elasticsearch:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-storage-elasticsearch-aws: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-aws:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin-storage-elasticsearch:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-storage-mysql: Could not resolve dependencies for project io.zipkin.java:zipkin-storage-mysql:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-storage-mysql: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-storage-mysql:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-storage-mysql:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-storage-mysql:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal net.orfjackal.retrolambda:retrolambda-maven-plugin:2.5.3:process-main (default) on project zipkin-collector: Unable to execute mojo: An Ant BuildException has occured: exec returned: 1
+[ERROR] around Ant part ...<exec executable="/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre/bin/java" failonerror="true">... @ 4:119 in /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin-collector/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal on project zipkin-collector-kafka: Could not resolve dependencies for project io.zipkin.java:zipkin-collector-kafka:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-collector-kafka: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-collector-kafka:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-collector-kafka:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-collector-kafka:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-collector-rabbitmq: Could not resolve dependencies for project io.zipkin.java:zipkin-collector-rabbitmq:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-collector-rabbitmq: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-collector-rabbitmq:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-collector-rabbitmq:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-collector-rabbitmq:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-collector-scribe: Could not resolve dependencies for project io.zipkin.java:zipkin-collector-scribe:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-guava:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-collector-scribe: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-collector-scribe:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-collector-scribe:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-guava:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-collector-scribe:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project zipkin-autoconfigure-metrics-prometheus: Execution default-compile of goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile failed: An API incompatibility was encountered while executing org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile: java.lang.UnsupportedClassVersionError: javax/tools/DiagnosticListener : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.maven.plugins:maven-compiler-plugin:3.7.0
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
+[ERROR] urls[1] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.jar
+[ERROR] urls[2] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[ERROR] urls[3] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.jar
+[ERROR] urls[4] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.jar
+[ERROR] urls[5] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.jar
+[ERROR] urls[6] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar
+[ERROR] urls[7] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar
+[ERROR] urls[8] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar
+[ERROR] urls[9] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.jar
+[ERROR] urls[10] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/guava/guava/22.0/guava-22.0.jar
+[ERROR] urls[11] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+[ERROR] urls[12] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+[ERROR] urls[13] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/auto/auto-common/0.9/auto-common-0.9.jar
+[ERROR] urls[14] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.jar
+[ERROR] urls[15] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+[ERROR] urls[16] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.jar
+[ERROR] urls[17] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.jar
+[ERROR] urls[18] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.jar
+[ERROR] urls[19] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+[ERROR] urls[20] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[ERROR] urls[21] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[ERROR] urls[22] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[ERROR] urls[23] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[ERROR] urls[24] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[ERROR] urls[25] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[ERROR] urls[26] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[27] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[28] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[ERROR] urls[29] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[ERROR] urls[30] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[ERROR] urls[31] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.jar
+[ERROR] urls[32] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.jar
+[ERROR] urls[33] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar
+[ERROR] urls[34] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.jar
+[ERROR] urls[35] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.jar
+[ERROR] urls[36] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 2]
+[ERROR] Failed to execute goal on project zipkin-server: Could not resolve dependencies for project io.zipkin.java:zipkin-server:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-ui:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-storage-cassandra:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-guava:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-storage-cassandra3:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin-storage-cassandra:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-storage-elasticsearch-http:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin-storage-elasticsearch:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-aws:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-storage-mysql:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-storage-mysql:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-collector-kafka:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-collector-kafka:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-collector-rabbitmq:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-collector-rabbitmq:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-collector-scribe:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-collector-scribe:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-autoconfigure-metrics-prometheus:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project benchmarks: Could not resolve dependencies for project io.zipkin.java:benchmarks:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin-server:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-zookeeper: Could not resolve dependencies for project io.zipkin.java:zipkin-zookeeper:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-collector-kafka10: Could not resolve dependencies for project io.zipkin.java:zipkin-collector-kafka10:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:tests:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project zipkin-autoconfigure-collector-kafka10: Could not resolve dependencies for project io.zipkin.java:zipkin-autoconfigure-collector-kafka10:jar:2.4.5-SNAPSHOT: The following artifacts could not be resolved: io.zipkin.java:zipkin-collector-kafka10:jar:2.4.5-SNAPSHOT, io.zipkin.java:zipkin:jar:2.4.5-SNAPSHOT, io.zipkin.zipkin2:zipkin:jar:2.4.5-SNAPSHOT: Could not find artifact io.zipkin.java:zipkin-collector-kafka10:jar:2.4.5-SNAPSHOT -> [Help 3]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/PluginContainerException
+[ERROR] [Help 3] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Zipkin v2 2.4.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java) @ zipkin ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ zipkin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin2/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ zipkin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 30 source files to /scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/zipkin2/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.049 s
+[INFO] Finished at: 2020-03-12T11:43:58-07:00
+[INFO] Final Memory: 25M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project zipkin: Execution default-compile of goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile failed: An API incompatibility was encountered while executing org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile: java.lang.UnsupportedClassVersionError: javax/tools/DiagnosticListener : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.maven.plugins:maven-compiler-plugin:3.7.0
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/plugins/maven-compiler-plugin/3.7.0/maven-compiler-plugin-3.7.0.jar
+[ERROR] urls[1] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac-errorprone/2.8.2/plexus-compiler-javac-errorprone-2.8.2.jar
+[ERROR] urls[2] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[ERROR] urls[3] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_core/2.2.0/error_prone_core-2.2.0.jar
+[ERROR] urls[4] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotation/2.2.0/error_prone_annotation-2.2.0.jar
+[ERROR] urls[5] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_check_api/2.2.0/error_prone_check_api-2.2.0.jar
+[ERROR] urls[6] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar
+[ERROR] urls[7] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar
+[ERROR] urls[8] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar
+[ERROR] urls[9] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/pcollections/pcollections/2.1.2/pcollections-2.1.2.jar
+[ERROR] urls[10] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/guava/guava/22.0/guava-22.0.jar
+[ERROR] urls[11] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+[ERROR] urls[12] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+[ERROR] urls[13] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/auto/auto-common/0.9/auto-common-0.9.jar
+[ERROR] urls[14] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jFormatString/3.0.0/jFormatString-3.0.0.jar
+[ERROR] urls[15] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+[ERROR] urls[16] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/dataflow/2.2.2/dataflow-2.2.2.jar
+[ERROR] urls[17] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/checkerframework/javacutil/2.2.2/javacutil-2.2.2.jar
+[ERROR] urls[18] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/javac/9+181-r4173-1/javac-9+181-r4173-1.jar
+[ERROR] urls[19] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+[ERROR] urls[20] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[ERROR] urls[21] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[ERROR] urls[22] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[ERROR] urls[23] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[ERROR] urls[24] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[ERROR] urls[25] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[ERROR] urls[26] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[27] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[28] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[ERROR] urls[29] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[ERROR] urls[30] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[ERROR] urls[31] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.jar
+[ERROR] urls[32] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.jar
+[ERROR] urls[33] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar
+[ERROR] urls[34] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.jar
+[ERROR] urls[35] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.jar
+[ERROR] urls[36] = file:/scratch/tmp-rta/Bears_openzipkin-zipkin_332209085-332270677_java-7/.m2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginContainerException

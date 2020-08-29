@@ -1,0 +1,14 @@
+---
+BugID: WICKET-3222
+Summary: AbstractMarkupParser doesn't remove Comments correctly
+Description: |-
+  AbstractMarkupParser removeComment(...) doesn't remove Comments correctly
+
+  if two html comments stand to close together <!-- foo --> <!-- bar -->
+  foo will be removed but not bar.
+
+  see:
+
+  https://github.com/mafulafunk/wicketComments
+
+  git@github.com:mafulafunk/wicketComments.git

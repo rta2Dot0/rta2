@@ -1,0 +1,10 @@
+---
+BugID: OAK-1697
+Summary: Unresolved conflicts in TokenProviderImpl#createToken()
+Description: "In certain situations (e.g. heavy load) {{TokenProviderImpl#createToken()}}
+  might create some unresolved conflicts.\n\ne.g. \n\n{code}\norg.apache.jackrabbit.oak.api.CommitFailedException:
+  OakState0001: Unresolved conflicts in /home/users/..../..../.tokens/2014-04-07T11.55.58.167+02.00\n{code}\n\nand\n\n{code}\n01.04.2014
+  17:52:41.216 *WARN* [qtp218544742-286] org.apache.jackrabbit.oak.security.authentication.token.TokenProviderImpl
+  Failed to create login token.\n01.04.2014 17:52:41.218 *WARN* [qtp218544742-300]
+  org.eclipse.jetty.servlet.ServletHandler /projects.html\njava.lang.IllegalArgumentException:
+  Invalid token ''\n    at org.apache.jackrabbit.api.security.authentication.token.TokenCredentials.<init>(TokenCredentials.java:42)\n{code}"

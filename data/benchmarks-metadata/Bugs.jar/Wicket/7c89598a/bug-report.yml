@@ -1,0 +1,24 @@
+---
+BugID: WICKET-4138
+Summary: BookmarkablePageLinks not working on a forwarded page
+Description: |-
+  While migrating our app from 1.4 to 1.5 we have discovered a problem with how BookmarkablePageLinks are rendered.
+
+  The attached quickstart demonstrates the problem:
+
+  Two pages: HomePage and OtherPage mounted at: /content/home and /content/other respectively.
+
+  These are mounted using the encoder UrlPathPageParametersEncoder for backwards compatibility with existing 1.4 style URLs.
+
+  A filter has been established in web.xml to forward requests to root (eg., localhost) to localhost/content/home
+  [Note: I have left out the port :8080 part from all URL references so please insert when testing]
+
+  Point browser to http://localhost and the page is forwarded to http://localhost/content/home and displays correctly (browser URL still shows http://localhost as desired) but the links do not work because they remove the 'content' segment of the URL:
+
+  eg., Home link -> http://localhost/home - fails - should have been http://localhost/content/home
+
+  If you type in the full URL: http://localhost/content/home
+
+  then the home page displays and the links work correctly.
+
+  A similar page set  up works fine in 1.4.

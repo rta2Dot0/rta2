@@ -1,0 +1,43 @@
+---
+BugID: OAK-1807
+Summary: ConstraintViolationException seen with multiple Oak/Mongo with ConcurrentCreateNodesTest
+Description: |-
+  While running ConcurrentCreateNodesTest with 5 instances writing to same Mongo instance following exception is seen
+
+  {noformat}
+  Exception in thread "Background job org.apache.jackrabbit.oak.benchmark.ConcurrentCreateNodesTest$Writer@3f56e5ed" java.lang.RuntimeException: javax.jcr.nodetype.ConstraintViolationException: OakConstraint0001: /: The primary type rep:root does not exist
+      at org.apache.jackrabbit.oak.benchmark.ConcurrentCreateNodesTest$Writer.run(ConcurrentCreateNodesTest.java:111)
+      at org.apache.jackrabbit.oak.benchmark.AbstractTest$1.run(AbstractTest.java:481)
+  Caused by: javax.jcr.nodetype.ConstraintViolationException: OakConstraint0001: /: The primary type rep:root does not exist
+      at org.apache.jackrabbit.oak.api.CommitFailedException.asRepositoryException(CommitFailedException.java:225)
+      at org.apache.jackrabbit.oak.api.CommitFailedException.asRepositoryException(CommitFailedException.java:212)
+      at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.newRepositoryException(SessionDelegate.java:679)
+      at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.save(SessionDelegate.java:553)
+      at org.apache.jackrabbit.oak.jcr.session.SessionImpl$8.perform(SessionImpl.java:417)
+      at org.apache.jackrabbit.oak.jcr.session.SessionImpl$8.perform(SessionImpl.java:414)
+      at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.perform(SessionDelegate.java:308)
+      at org.apache.jackrabbit.oak.jcr.session.SessionImpl.perform(SessionImpl.java:127)
+      at org.apache.jackrabbit.oak.jcr.session.SessionImpl.save(SessionImpl.java:414)
+      at org.apache.jackrabbit.oak.benchmark.ConcurrentCreateNodesTest$Writer.run(ConcurrentCreateNodesTest.java:100)
+      ... 1 more
+  Caused by: org.apache.jackrabbit.oak.api.CommitFailedException: OakConstraint0001: /: The primary type rep:root does not exist
+      at org.apache.jackrabbit.oak.plugins.nodetype.TypeEditor.constraintViolation(TypeEditor.java:150)
+      at org.apache.jackrabbit.oak.plugins.nodetype.TypeEditor.getEffectiveType(TypeEditor.java:286)
+      at org.apache.jackrabbit.oak.plugins.nodetype.TypeEditor.<init>(TypeEditor.java:101)
+      at org.apache.jackrabbit.oak.plugins.nodetype.TypeEditorProvider.getRootEditor(TypeEditorProvider.java:85)
+      at org.apache.jackrabbit.oak.spi.commit.CompositeEditorProvider.getRootEditor(CompositeEditorProvider.java:80)
+      at org.apache.jackrabbit.oak.spi.commit.EditorHook.processCommit(EditorHook.java:53)
+      at org.apache.jackrabbit.oak.spi.commit.CompositeHook.processCommit(CompositeHook.java:60)
+      at org.apache.jackrabbit.oak.spi.commit.CompositeHook.processCommit(CompositeHook.java:60)
+      at org.apache.jackrabbit.oak.spi.state.AbstractNodeStoreBranch$InMemory.merge(AbstractNodeStoreBranch.java:498)
+      at org.apache.jackrabbit.oak.spi.state.AbstractNodeStoreBranch.merge(AbstractNodeStoreBranch.java:300)
+      at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreBranch.merge(DocumentNodeStoreBranch.java:129)
+      at org.apache.jackrabbit.oak.plugins.document.DocumentRootBuilder.merge(DocumentRootBuilder.java:159)
+      at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.merge(DocumentNodeStore.java:1275)
+      at org.apache.jackrabbit.oak.core.MutableRoot.commit(MutableRoot.java:247)
+      at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.commit(SessionDelegate.java:405)
+      at org.apache.jackrabbit.oak.jcr.delegate.SessionDelegate.save(SessionDelegate.java:551)
+      ... 7 more
+  {noformat}
+
+  This has been reported by [~rogoz]

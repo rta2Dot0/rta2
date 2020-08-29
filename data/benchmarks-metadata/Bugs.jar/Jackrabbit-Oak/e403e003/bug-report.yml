@@ -1,0 +1,11 @@
+---
+BugID: OAK-1216
+Summary: Path parsing must support SNS indexes, irrespective of SNS support
+Description: |-
+  {code}
+  Session.getNode("/foo/bar[2]");
+  {code}
+
+  throws {{javax.jcr.RepositoryException: Invalid name or path: /foo/bar\[2]}}
+
+  This should be an ItemNotFoundException (if the item does not exist), irrespective if the repository supports SNS or not.

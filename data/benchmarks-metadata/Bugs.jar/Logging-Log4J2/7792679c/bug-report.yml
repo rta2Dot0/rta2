@@ -1,0 +1,36 @@
+---
+BugID: LOG4J2-1402
+Summary: Exception when using log4j2.properties and logger with dot
+Description: "After upgrading log4j2 from 2.5 to 2.6 I get the following exception:\n\n{quote}\nException
+  in thread \"main\" org.apache.logging.log4j.core.config.ConfigurationException:
+  No name attribute provided for Logger org\n\tat org.apache.logging.log4j.core.config.properties.PropertiesConfigurationBuilder.createLogger(PropertiesConfigurationBuilder.java:215)\n\tat
+  org.apache.logging.log4j.core.config.properties.PropertiesConfigurationBuilder.build(PropertiesConfigurationBuilder.java:140)\n\tat
+  org.apache.logging.log4j.core.config.properties.PropertiesConfigurationFactory.getConfiguration(PropertiesConfigurationFactory.java:52)\n\tat
+  org.apache.logging.log4j.core.config.properties.PropertiesConfigurationFactory.getConfiguration(PropertiesConfigurationFactory.java:34)\n\tat
+  org.apache.logging.log4j.core.config.ConfigurationFactory$Factory.getConfiguration(ConfigurationFactory.java:510)\n\tat
+  org.apache.logging.log4j.core.config.ConfigurationFactory$Factory.getConfiguration(ConfigurationFactory.java:450)\n\tat
+  org.apache.logging.log4j.core.config.ConfigurationFactory.getConfiguration(ConfigurationFactory.java:257)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:560)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:577)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.start(LoggerContext.java:212)\n\tat
+  org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:152)\n\tat
+  org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:45)\n\tat
+  org.apache.logging.log4j.LogManager.getContext(LogManager.java:194)\n\tat org.apache.logging.log4j.spi.AbstractLoggerAdapter.getContext(AbstractLoggerAdapter.java:103)\n\tat
+  org.apache.logging.log4j.jcl.LogAdapter.getContext(LogAdapter.java:39)\n\tat org.apache.logging.log4j.spi.AbstractLoggerAdapter.getLogger(AbstractLoggerAdapter.java:42)\n\tat
+  org.apache.logging.log4j.jcl.LogFactoryImpl.getInstance(LogFactoryImpl.java:40)\n\tat
+  org.apache.logging.log4j.jcl.LogFactoryImpl.getInstance(LogFactoryImpl.java:55)\n\tat
+  org.apache.commons.logging.LogFactory.getLog(LogFactory.java:655)\n\tat org.springframework.context.support.AbstractApplicationContext.<init>(AbstractApplicationContext.java:159)\n\tat
+  org.springframework.context.support.AbstractApplicationContext.<init>(AbstractApplicationContext.java:223)\n\tat
+  org.springframework.context.support.AbstractRefreshableApplicationContext.<init>(AbstractRefreshableApplicationContext.java:88)\n\tat
+  org.springframework.context.support.AbstractRefreshableConfigApplicationContext.<init>(AbstractRefreshableConfigApplicationContext.java:58)\n\tat
+  org.springframework.context.support.AbstractXmlApplicationContext.<init>(AbstractXmlApplicationContext.java:61)\n\tat
+  org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:136)\n\tat
+  org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)\nx.y.z.Start.main(Start.java:12)\n{quote}\n\nThe
+  parameter \"key\" has the value \"org\" and the parameter properties has the value
+  {code}{activiti.engine.impl.level=info, activiti.engine.impl.name=org.activiti.engine.impl}{code}\n\nThe
+  log4j2.properties in use:\n\n{code}\n# Root logger option\nrootLogger.level = info\nrootLogger.appenderRefs
+  = stdout\nrootLogger.appenderRef.stdout.ref = STDOUT\n\n# Redirect log messages
+  to console\nappenders = stdout\nappender.stdout.type = Console\nappender.stdout.name
+  = STDOUT\nappender.stdout.layout.type = PatternLayout\nappender.stdout.layout.pattern
+  = %d %-5p [%t] %c - %m%n\n{code}\n\nSadly I have not been able to reproduce the
+  issue in a simple standalone application."

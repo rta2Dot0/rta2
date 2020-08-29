@@ -1,0 +1,33 @@
+---
+BugID: LOG4J2-834
+Summary: ThrowableProxy throws NoClassDefFoundError
+Description: |-
+  In method *loadClass* we expect {{ClassNotFoundException}}. But if class comes from another java machine we can get {{NoClassDefFoundError}}.
+
+  Possible fix:
+  {code:java}
+  private Class<?> loadClass(final ClassLoader lastLoader, final String className) {
+         // XXX: this is overly complicated
+         Class<?> clazz;
+         if (lastLoader != null) {
+             try {
+                 clazz = Loader.initializeClass(className, lastLoader);
+                 if (clazz != null) {
+                     return clazz;
+                 }
+             } catch (final Throwable ignore) {
+                 // Ignore exception.
+             }
+         }
+         try {
+             clazz = Loader.loadClass(className);
+         } catch (final ClassNotFoundException | LinkageError ignored) {
+             try {
+                 clazz = Loader.initializeClass(className, this.getClass().getClassLoader());
+             } catch (final ClassNotFoundException | LinkageError ignore) {
+                 return null;
+             }
+         }
+         return clazz;
+     }
+  {code}

@@ -1,0 +1,14 @@
+---
+BugID: LOG4J2-368
+Summary: PatternLayout in 1.2 bridge missing constructor
+Description: "java.lang.NoSuchMethodError: org.apache.log4j.PatternLayout.<init>(Ljava/lang/String;)V\n\tat
+  org.apache.velocity.runtime.log.Log4JLogChute.initAppender(Log4JLogChute.java:117)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.log.Log4JLogChute.init(Log4JLogChute.java:85)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:157)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:269)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:871)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:262)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.RuntimeInstance.requireInitialization(RuntimeInstance.java:302)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1531)
+  ~[velocity-1.7-dep.jar:1.7]\n\tat org.apache.velocity.app.VelocityEngine.mergeTemplate(VelocityEngine.java:343)
+  ~[velocity-1.7-dep.jar:1.7]"

@@ -1,0 +1,47 @@
+---
+BugID: ACCUMULO-366
+Summary: master killed a tablet server
+Description: |+
+  Master killed a tablet server for having long hold times.
+
+  The tablet server had this error during minor compaction:
+
+  {noformat}
+  01 23:57:20,073 [security.ZKAuthenticator] ERROR: org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /accumulo/88cd0f63-a36a-4218-86b1-9ba1d2cccf08/users/user004
+  org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /accumulo/88cd0f63-a36a-4218-86b1-9ba1d2cccf08/users/user004
+          at org.apache.zookeeper.KeeperException.create(KeeperException.java:102)
+          at org.apache.zookeeper.KeeperException.create(KeeperException.java:42)
+          at org.apache.zookeeper.ZooKeeper.getChildren(ZooKeeper.java:1243)
+          at org.apache.zookeeper.ZooKeeper.getChildren(ZooKeeper.java:1271)
+          at org.apache.accumulo.core.zookeeper.ZooUtil.recursiveDelete(ZooUtil.java:103)
+          at org.apache.accumulo.core.zookeeper.ZooUtil.recursiveDelete(ZooUtil.java:117)
+          at org.apache.accumulo.server.zookeeper.ZooReaderWriter.recursiveDelete(ZooReaderWriter.java:67)
+          at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+          at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+          at java.lang.reflect.Method.invoke(Method.java:597)
+          at org.apache.accumulo.server.zookeeper.ZooReaderWriter$1.invoke(ZooReaderWriter.java:169)
+          at $Proxy4.recursiveDelete(Unknown Source)
+          at org.apache.accumulo.server.security.ZKAuthenticator.dropUser(ZKAuthenticator.java:252)
+          at org.apache.accumulo.server.security.Auditor.dropUser(Auditor.java:104)
+          at org.apache.accumulo.server.client.ClientServiceHandler.dropUser(ClientServiceHandler.java:136)
+          at sun.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+          at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+          at java.lang.reflect.Method.invoke(Method.java:597)
+          at cloudtrace.instrument.thrift.TraceWrap$1.invoke(TraceWrap.java:58)
+          at $Proxy2.dropUser(Unknown Source)
+          at org.apache.accumulo.core.client.impl.thrift.ClientService$Processor$dropUser.process(ClientService.java:2257)
+          at org.apache.accumulo.core.tabletserver.thrift.TabletClientService$Processor.process(TabletClientService.java:2037)
+          at org.apache.accumulo.server.util.TServerUtils$TimedProcessor.process(TServerUtils.java:151)
+          at org.apache.thrift.server.TNonblockingServer$FrameBuffer.invoke(TNonblockingServer.java:631)
+          at org.apache.accumulo.server.util.TServerUtils$THsHaServer$Invocation.run(TServerUtils.java:199)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+          at org.apache.accumulo.core.util.LoggingRunnable.run(LoggingRunnable.java:34)
+          at java.lang.Thread.run(Thread.java:662)
+
+  {noformat}
+
+  This tablet was the result of a split that occurred during a delete.  The master missed this tablet when taking tablets offline.
+
+  We need to do a consistency check on the offline tablets before deleting the table information in zookeeper.
+

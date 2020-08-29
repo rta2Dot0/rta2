@@ -1,0 +1,10 @@
+---
+BugID: WICKET-4398
+Summary: Any empty url-parameter will make wicket 1.5 crash
+Description: "Adding an empty parameter to the query string will make wicket crash.\n\nhttp://www.example.com/?oneParam&\n\n\nHow
+  to reproduce in test:\n\nPageParameters params = new PageParameters();\nparams.set(\"\",\"\");\nparams.getAllNamed();\n\n\nCause:\nWicket
+  accepts empty parameters, but when encoding the url for a rendered page it will
+  call params.getAllNamed().\n\nparams.getAllNamed() instantiates new NamedPairs,
+  which calls Args.notEmpty() on the key during instantiation, causing the application
+  to crash. \n\nThe NamedPair constructor should probably allow empty string as a
+  key, and call Args.notNull() on the key in stead.\n"

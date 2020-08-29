@@ -1,0 +1,10 @@
+---
+BugID: ACCUMULO-2671
+Summary: BlockedOutputStream can hit a StackOverflowError
+Description: "This issue mostly came up after a resolution to ACCUMULO-2668 that allows
+  a byte[] to be passed directly to the underlying stream from the NoFlushOutputStream.\n\nThe
+  problem appears to be due to the BlockedOutputStream.write(byte[], int, int) implementation
+  that recursively writes out blocks/buffers out. When the stream is passed a large
+  mutation (128MB was sufficient to trigger the error for me), this will cause a StackOverflowError.
+  \n\nThis is appears to be specifically with encryption at rest turned on.\n\nA simple
+  fix would be to unroll the recursion."

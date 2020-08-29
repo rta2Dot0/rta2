@@ -1,0 +1,29 @@
+---
+BugID: CAMEL-6593
+Summary: Predicates from java dsl are not dumped to xml correctly
+Description: |-
+  Predicates defined in the java dsl are not dumped to xml when using jmx.
+
+  Eg, this java dsl route:
+  {code}
+  from("seda:a").choice().when(header("test").isNotNull()).log("not null").end().to("mock:a");
+  {code}
+
+  Will be dumped as this:
+  {code}
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <route group="com.example.TestRoute" id="route1" xmlns="http://camel.apache.org/schema/spring">
+      <from uri="seda:a"/>
+      <choice id="choice23">
+          <when id="when24">
+              <expressionDefinition/>
+              <log message="not null" id="log20"/>
+          </when>
+      </choice>
+      <to uri="mock:a" id="to17"/>
+  </route>
+  {code}
+
+  The <expressionDefinition> element should contain the expression.
+
+  This seems similar to CAMEL-4733.

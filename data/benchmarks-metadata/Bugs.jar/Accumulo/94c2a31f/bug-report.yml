@@ -1,0 +1,26 @@
+---
+BugID: ACCUMULO-3055
+Summary: calling MiniAccumuloCluster.stop multiple times fails with NPE
+Description: "On the mailing list [~ctubbsii] mentioned seeing some NPEs in the stderr
+  for {{mvn verify}}.\n\nI see one here when running mvn verify with either hadoop
+  profile:\n\n{quote}\nException in thread \"Thread-0\" java.lang.NullPointerException\n\tat
+  org.apache.accumulo.minicluster.MiniAccumuloCluster.stopProcessWithTimeout(MiniAccumuloCluster.java:449)\n\tat
+  org.apache.accumulo.minicluster.MiniAccumuloCluster.stop(MiniAccumuloCluster.java:376)\n\tat
+  org.apache.accumulo.minicluster.MiniAccumuloCluster$1.run(MiniAccumuloCluster.java:318)\n{quote}\n\nThe
+  relevant piece of code (in 1.5.2-SNAP) is the {{executor.execute}} below\n\n{code}\n
+  \ private int stopProcessWithTimeout(final Process proc, long timeout, TimeUnit
+  unit) throws InterruptedException, ExecutionException, TimeoutException {\n    FutureTask<Integer>
+  future = new FutureTask<Integer>(new Callable<Integer>() {\n        @Override\n
+  \       public Integer call() throws InterruptedException {\n          proc.destroy();\n
+  \         return proc.waitFor();\n        }\n    });\n\n    executor.execute(future);\n\n
+  \   return future.get(timeout, unit);\n  }\n{code}\n\nReading through the code for
+  stop, it nulls out executor when it's done. So the easy way to get an NPE is calling
+  stop() multiple times on a MAC instance. Since we have a shutdown hook that calls
+  stop, that means that a single user invocation of stop should result in a NPE later.\n\nSince
+  start() doesn't allow multiple starts, we probably shouldn't allow multiple stops.
+  That would mean adding logic to the shutdown hook to check if we're already stopped
+  or making a private unguarded version of stop that allows multiple calls and using
+  that from the hook.\n\ncriteria for closing this issue:\n\n* MAC should document
+  wether calling stop() multiple times is allowed\n* fix MAC.stop to either guard
+  against multiple calls or handle them gracefully\n* find out why this only gets
+  an NPE in one place. Do we rely on the shutdown hook everywhere?"

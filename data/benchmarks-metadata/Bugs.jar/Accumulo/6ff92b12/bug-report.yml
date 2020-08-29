@@ -1,0 +1,16 @@
+---
+BugID: ACCUMULO-1348
+Summary: Accumulo Shell does not respect 'exit' when executing file
+Description: |-
+  If there is an {{exit}} statement in the file given via {{accumulo shell -f file}}, the execution seems to skip it and go on to the next command instead of terminating.
+
+  To recreate:
+  {noformat}
+  [mike@home ~] cat bug.accumulo
+  exit
+  scan -np -t !METADATA
+  [mike@home ~] bin/accumulo shell -f /home/mike/bug.accumulo
+  {noformat}
+
+  Expected output: None
+  Actual output: A full scan of the !METADATA

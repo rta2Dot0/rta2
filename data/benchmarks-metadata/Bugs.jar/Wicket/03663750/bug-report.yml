@@ -1,0 +1,15 @@
+---
+BugID: WICKET-5960
+Summary: Page header isn't rendered for pages where URL has changed during render
+Description: "Due to the changes in WICKET-5309, a page is re-rendered when any of
+  the URL segments is modified during the request:\n\nFrom WebPageRenderer.java:\n\n{code}\n\t//
+  the url might have changed after page has been rendered (e.g. the\n\t// stateless
+  flag might have changed because stateful components\n\t// were added)\n\tfinal Url
+  afterRenderUrl = requestCycle\n\t\t.mapUrlFor(getRenderPageRequestHandler());\n\n\tif
+  (beforeRenderUrl.getSegments().equals(afterRenderUrl.getSegments()) == false)\n\t{\n\t\t//
+  the amount of segments is different - generated relative URLs\n\t\t// will not work,
+  we need to rerender the page. This can happen\n\t\t// with IRequestHandlers that
+  produce different URLs with\n\t\t// different amount of segments for stateless and
+  stateful pages\n\t\tresponse = renderPage(afterRenderUrl, requestCycle);\n\t}\n\n\tif
+  (currentUrl.equals(afterRenderUrl))\n{code}\n\nThe re-render causes the <head> section
+  to be empty because it was already rendered in the first try."

@@ -1,0 +1,6 @@
+---
+BugID: MATH-1269
+Summary: FastMath.exp may return NaN for non-NaN arguments
+Description: I have observed that FastMath.exp(709.8125) returns NaN. However, the
+  exponential function must never return NaN (if the argument is not NaN). The result
+  must always be non-negative or positive infinity.

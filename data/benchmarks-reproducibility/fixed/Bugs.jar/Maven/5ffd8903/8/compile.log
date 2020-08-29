@@ -1,0 +1,830 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache Maven 3.x
+[INFO] Maven Model
+[INFO] Maven Settings
+[INFO] Maven Artifact
+[INFO] Maven Plugin API
+[INFO] Maven Model Builder
+[INFO] Maven Core
+[INFO] Maven Compat
+[INFO] Maven Embedder
+[INFO] Maven Distribution
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Maven 3.x 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/1.0/maven-artifact-resolver-1.0.pom (6.0 kB at 20 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-3/maven-filtering-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-3/maven-filtering-1.0-beta-3.pom (5.5 kB at 30 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.5/maven-core-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.5/maven-core-2.0.5.pom (5.2 kB at 581 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.5/maven-plugin-parameter-documenter-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.5/maven-plugin-parameter-documenter-2.0.5.pom (1.8 kB at 228 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.5/maven-reporting-api-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.5/maven-reporting-api-2.0.5.pom (902 B at 100 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.5/maven-reporting-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.5/maven-reporting-2.0.5.pom (589 B at 16 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.5/maven-error-diagnostics-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.5/maven-error-diagnostics-2.0.5.pom (854 B at 13 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.5/maven-plugin-registry-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.5/maven-plugin-registry-2.0.5.pom (1.6 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.5/maven-plugin-api-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.5/maven-plugin-api-2.0.5.pom (605 B at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.5/maven-plugin-descriptor-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.5/maven-plugin-descriptor-2.0.5.pom (1.7 kB at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.5/maven-monitor-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.5/maven-monitor-2.0.5.pom (404 B at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0/maven-common-artifact-filters-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0/maven-common-artifact-filters-1.0.pom (2.0 kB at 288 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom (1.6 kB at 234 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom (1.4 kB at 17 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom (2.4 kB at 301 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom (1.3 kB at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom (1.2 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0/maven-core-2.0.pom (5.6 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom (1.4 kB at 172 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom (1.5 kB at 170 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom (1.1 kB at 123 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom (504 B at 50 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom (1.1 kB at 423 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom (812 B at 116 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom (1.3 kB at 2.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom (400 B at 44 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 214 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom (767 B at 194 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom (5.9 kB at 58 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-downloader/1.1/maven-downloader-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-downloader/1.1/maven-downloader-1.1.pom (1.8 kB at 182 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom (2.2 kB at 22 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (5.6 kB at 704 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.1.3/plexus-velocity-1.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/1.1.3/plexus-velocity-1.1.3.pom (976 B at 139 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.5/plexus-components-1.1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.5/plexus-components-1.1.5.pom (2.1 kB at 17 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-5/plexus-resources-1.0-alpha-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.0-alpha-5/plexus-resources-1.0-alpha-5.pom (1.4 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.5/maven-profile-2.0.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.5/maven-artifact-manager-2.0.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.5/maven-plugin-parameter-documenter-2.0.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.5/maven-reporting-api-2.0.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.5/maven-repository-metadata-2.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.5/maven-artifact-manager-2.0.5.jar (56 kB at 3.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.5/maven-error-diagnostics-2.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.5/maven-error-diagnostics-2.0.5.jar (14 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.5/maven-plugin-registry-2.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.5/maven-reporting-api-2.0.5.jar (9.9 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.5/maven-plugin-descriptor-2.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.5/maven-profile-2.0.5.jar (35 kB at 1.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.5/maven-repository-metadata-2.0.5.jar (25 kB at 683 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.5/maven-plugin-parameter-documenter-2.0.5.jar (21 kB at 565 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.5/maven-plugin-registry-2.0.5.jar (29 kB at 785 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.5/maven-plugin-descriptor-2.0.5.jar (37 kB at 925 kB/s)
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache-jar-resource-bundle/1.4/apache-jar-resource-bundle-1.4.jar (12 kB at 948 kB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven/3.0-SNAPSHOT/maven-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Model 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:java (standard) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom (1.5 kB at 242 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom (11 kB at 135 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-core/1.2/modello-core-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-core/1.2/modello-core-1.2.pom (1.6 kB at 224 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.3/plexus-build-api-0.0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.3/plexus-build-api-0.0.3.pom (2.3 kB at 330 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom (2.6 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom (2.0 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom (3.0 kB at 435 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom (2.0 kB at 283 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom (2.6 kB at 375 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom (1.9 kB at 308 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom (1.6 kB at 263 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom (1.9 kB at 278 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-converters/1.2/modello-plugin-converters-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-converters/1.2/modello-plugin-converters-1.2.pom (1.3 kB at 188 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugins/1.2/modello-plugins-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugins/1.2/modello-plugins-1.2.pom (1.6 kB at 222 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-java/1.2/modello-plugin-java-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-java/1.2/modello-plugin-java-1.2.pom (2.0 kB at 281 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-dom4j/1.2/modello-plugin-dom4j-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-dom4j/1.2/modello-plugin-dom4j-1.2.pom (1.3 kB at 164 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.2/modello-plugin-xml-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.2/modello-plugin-xml-1.2.pom (920 B at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jdom/1.2/modello-plugin-jdom-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-jdom/1.2/modello-plugin-jdom-1.2.pom (1.6 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-stax/1.2/modello-plugin-stax-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-stax/1.2/modello-plugin-stax-1.2.pom (2.4 kB at 302 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xdoc/1.2/modello-plugin-xdoc-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xdoc/1.2/modello-plugin-xdoc-1.2.pom (841 B at 120 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xpp3/1.2/modello-plugin-xpp3-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xpp3/1.2/modello-plugin-xpp3-1.2.pom (1.3 kB at 184 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xsd/1.2/modello-plugin-xsd-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xsd/1.2/modello-plugin-xsd-1.2.pom (1.2 kB at 9.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar (24 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar (29 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar (57 kB at 3.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.2/modello-plugin-xml-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar (49 kB at 2.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/modello/modello-plugin-xml/1.2/modello-plugin-xml-1.2.jar (15 kB at 749 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.jar (43 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar (35 kB at 496 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar (88 kB at 1.2 MB/s)
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-reader (standard) @ maven-model ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-writer (standard) @ maven-model ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-model ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-4/maven-filtering-1.0-beta-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-4/maven-filtering-1.0-beta-4.pom (4.7 kB at 582 kB/s)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.pom (624 B at 104 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.5.3/plexus-compiler-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.5.3/plexus-compiler-1.5.3.pom (1.5 kB at 208 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.pom (634 B at 127 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.pom (797 B at 114 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.5.3/plexus-compilers-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.5.3/plexus-compilers-1.5.3.pom (7.6 kB at 45 kB/s)
+[INFO] Compiling 46 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-model ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-model ---
+[INFO] Compiling 37 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.4.3/surefire-booter-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.4.3/surefire-booter-2.4.3.pom (2.0 kB at 254 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.3/surefire-api-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.3/surefire-api-2.4.3.pom (2.1 kB at 25 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.3/surefire-api-2.4.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.3/surefire-api-2.4.3.jar (516 kB at 5.9 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-model ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.3/maven-archiver-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.3/maven-archiver-2.3.pom (3.7 kB at 135 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-9/plexus-archiver-1.0-alpha-9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-9/plexus-archiver-1.0-alpha-9.pom (1.8 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-15/plexus-container-default-1.0-alpha-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-15/plexus-container-default-1.0-alpha-15.pom (1.7 kB at 244 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-15/plexus-containers-1.0-alpha-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-15/plexus-containers-1.0-alpha-15.pom (1.9 kB at 378 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-15/plexus-component-api-1.0-alpha-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-15/plexus-component-api-1.0-alpha-15.pom (948 B at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-6/plexus-classworlds-1.2-alpha-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-6/plexus-classworlds-1.2-alpha-6.pom (2.4 kB at 339 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.pom (1.3 kB at 184 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.pom (2.2 kB at 369 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-16/plexus-containers-1.0-alpha-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-16/plexus-containers-1.0-alpha-16.pom (1.9 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom (2.3 kB at 383 kB/s)
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/maven-model-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-model ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/target/maven-model-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-model/3.0-SNAPSHOT/maven-model-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-model/3.0-SNAPSHOT/maven-model-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Settings 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:java (standard) @ maven-settings ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-reader (standard) @ maven-settings ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-writer (standard) @ maven-settings ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-settings ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-settings ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-settings ---
+[INFO] Compiling 17 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-settings ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-settings ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-settings ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-settings ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/target/maven-settings-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-settings ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/target/maven-settings-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-settings/3.0-SNAPSHOT/maven-settings-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-settings/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-settings/3.0-SNAPSHOT/maven-settings-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Artifact 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-artifact ---
+[INFO] Compiling 27 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/target/classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-artifact ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom (17 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-cli/1.2/plexus-cli-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-cli/1.2/plexus-cli-1.2.pom (1.8 kB at 81 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-tools/1.0.8/plexus-tools-1.0.8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-tools/1.0.8/plexus-tools-1.0.8.pom (953 B at 23 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.pom (2.5 kB at 91 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.1/asm-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.1/asm-3.1.pom (278 B at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-parent/3.1/asm-parent-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-parent/3.1/asm-parent-3.1.pom (4.2 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.0/commons-logging-1.0.jar (22 kB at 2.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/1.0/commons-lang-1.0.jar (64 kB at 4.9 MB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-artifact ---
+[INFO] Compiling 3 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-artifact ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/target/maven-artifact-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-artifact ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/target/maven-artifact-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-artifact/3.0-SNAPSHOT/maven-artifact-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-artifact/3.0-SNAPSHOT/maven-artifact-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Plugin API 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:java (standard) @ maven-plugin-api ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/lifecycle.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-reader (standard) @ maven-plugin-api ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/lifecycle.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-writer (standard) @ maven-plugin-api ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/lifecycle.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-plugin-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-plugin-api ---
+[INFO] Compiling 25 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-plugin-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-plugin-api ---
+[INFO] Compiling 2 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-plugin-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-plugin-api ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/maven-plugin-api-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-plugin-api ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/target/maven-plugin-api-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-plugin-api/3.0-SNAPSHOT/maven-plugin-api-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-plugin-api/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-plugin-api/3.0-SNAPSHOT/maven-plugin-api-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Model Builder 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-model-builder ---
+[INFO] Compiling 86 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model-builder/target/classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-model-builder ---
+[INFO] Discovered 26 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 33 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-model-builder ---
+[INFO] Compiling 8 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model-builder/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-model-builder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-model-builder ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model-builder/target/maven-model-builder-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-model-builder ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model-builder/target/maven-model-builder-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-model-builder/3.0-SNAPSHOT/maven-model-builder-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-model-builder/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-model-builder/3.0-SNAPSHOT/maven-model-builder-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Core 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:java (standard) @ maven-core ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-reader (standard) @ maven-core ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-writer (standard) @ maven-core ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-core ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.0-beta-1:create (default) @ maven-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.2/maven-project-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.2/maven-project-2.0.2.pom (1.7 kB at 281 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.2/maven-profile-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.2/maven-profile-2.0.2.pom (1.5 kB at 242 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.2/maven-model-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.2/maven-model-2.0.2.pom (2.5 kB at 422 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.2/maven-settings-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.2/maven-settings-2.0.2.pom (1.4 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.2/maven-plugin-api-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.2/maven-plugin-api-2.0.2.pom (643 B at 92 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-api/1.0-beta-3/maven-scm-api-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-api/1.0-beta-3/maven-scm-api-1.0-beta-3.pom (591 B at 84 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm/1.0-beta-3/maven-scm-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm/1.0-beta-3/maven-scm-1.0-beta-3.pom (3.4 kB at 486 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.0-beta-3/maven-scm-manager-plexus-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.0-beta-3/maven-scm-manager-plexus-1.0-beta-3.pom (665 B at 95 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-managers/1.0-beta-3/maven-scm-managers-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-managers/1.0-beta-3/maven-scm-managers-1.0-beta-3.pom (857 B at 122 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.0-beta-3/maven-scm-provider-svnexe-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.0-beta-3/maven-scm-provider-svnexe-1.0-beta-3.pom (1.0 kB at 148 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.0-beta-3/maven-scm-providers-svn-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.0-beta-3/maven-scm-providers-svn-1.0-beta-3.pom (791 B at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers/1.0-beta-3/maven-scm-providers-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers/1.0-beta-3/maven-scm-providers-1.0-beta-3.pom (1.4 kB at 232 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.0-beta-3/maven-scm-provider-svn-commons-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.0-beta-3/maven-scm-provider-svn-commons-1.0-beta-3.pom (1.1 kB at 98 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/regexp/regexp/1.3/regexp-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/regexp/regexp/1.3/regexp-1.3.pom (145 B at 24 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.0-beta-3/maven-scm-provider-cvsexe-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.0-beta-3/maven-scm-provider-cvsexe-1.0-beta-3.pom (895 B at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.0-beta-3/maven-scm-providers-cvs-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.0-beta-3/maven-scm-providers-cvs-1.0-beta-3.pom (784 B at 131 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.0-beta-3/maven-scm-provider-cvs-commons-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.0-beta-3/maven-scm-provider-cvs-commons-1.0-beta-3.pom (1.3 kB at 261 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.0-beta-3/maven-scm-provider-starteam-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.0-beta-3/maven-scm-provider-starteam-1.0-beta-3.pom (460 B at 46 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.0-beta-3/maven-scm-provider-clearcase-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.0-beta-3/maven-scm-provider-clearcase-1.0-beta-3.pom (1.1 kB at 132 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.0-beta-3/maven-scm-provider-perforce-1.0-beta-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.0-beta-3/maven-scm-provider-perforce-1.0-beta-3.pom (629 B at 126 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.2/maven-profile-2.0.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.0-beta-3/maven-scm-provider-svn-commons-1.0-beta-3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.0-beta-3/maven-scm-provider-cvs-commons-1.0-beta-3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.0-beta-3/maven-scm-provider-svn-commons-1.0-beta-3.jar (28 kB at 2.5 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar (20 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.0-beta-3/maven-scm-provider-cvs-commons-1.0-beta-3.jar (46 kB at 3.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.2/maven-profile-2.0.2.jar (30 kB at 1.5 MB/s)
+[INFO] Storing buildNumber: NON-CANONICAL_2020-03-14_16-31_jmcampos at timestamp: 1584228688627
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-core ---
+[INFO] Compiling 297 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-core ---
+[INFO] Discovered 56 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 211 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-core ---
+[INFO] Compiling 60 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-core ---
+[INFO] Discovered 3 component descriptors(s)
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-core ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/maven-core-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-core ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/target/maven-core-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-core/3.0-SNAPSHOT/maven-core-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-core/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-core/3.0-SNAPSHOT/maven-core-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Compat 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:java (standard) @ maven-compat ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/profiles.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/paramdoc.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-reader (standard) @ maven-compat ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/profiles.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/paramdoc.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- modello-maven-plugin:1.2:xpp3-writer (standard) @ maven-compat ---
+[INFO] outputDirectory: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/profiles.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] Working on model: src/main/mdo/paramdoc.mdo
+[INFO] Generating current version: 1.0.0
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-compat ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-compat ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-compat ---
+[INFO] Compiling 143 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-compat ---
+[INFO] Discovered 35 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-compat ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 156 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-compat ---
+[INFO] Compiling 70 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/test-classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-compat ---
+[INFO] Discovered 12 component descriptors(s)
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-compat ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-compat ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/maven-compat-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-compat ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/target/maven-compat-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-compat/3.0-SNAPSHOT/maven-compat-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-compat/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-compat/3.0-SNAPSHOT/maven-compat-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Embedder 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-embedder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-embedder ---
+[INFO] Compiling 9 source files to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-embedder/target/classes
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-embedder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-embedder ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-embedder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.2:test (default-test) @ maven-embedder ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.4.2/surefire-booter-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.4.2/surefire-booter-2.4.2.pom (2.0 kB at 291 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.2/surefire-api-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.2/surefire-api-2.4.2.pom (2.1 kB at 177 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.2/surefire-api-2.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar (21 kB at 2.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar (18 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar (30 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar (51 kB at 4.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar (7.6 kB at 506 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar (10 kB at 641 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.jar (25 kB at 788 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.4.2/surefire-api-2.4.2.jar (506 kB at 12 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-embedder ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-embedder/target/maven-embedder-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-embedder ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-embedder/target/maven-embedder-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-embedder/3.0-SNAPSHOT/maven-embedder-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-embedder/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-embedder/3.0-SNAPSHOT/maven-embedder-3.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Distribution 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ apache-maven ---
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (test-compile) @ apache-maven ---
+[INFO] Compiling 1 source file to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/apache-maven/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (test) @ apache-maven ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.2-beta-5:single (create-distro) @ apache-maven ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.1/maven-common-artifact-filters-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.1/maven-common-artifact-filters-1.1.pom (2.8 kB at 346 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.7/plexus-interpolation-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.7/plexus-interpolation-1.7.pom (2.9 kB at 581 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-12/plexus-archiver-1.0-alpha-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-12/plexus-archiver-1.0-alpha-12.pom (1.6 kB at 262 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-4/plexus-io-1.0-alpha-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-4/plexus-io-1.0-alpha-4.pom (1.2 kB at 199 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom (2.7 kB at 532 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom (3.0 kB at 379 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-2/maven-filtering-1.0-beta-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-2/maven-filtering-1.0-beta-2.pom (4.0 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.6/plexus-interpolation-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.6/plexus-interpolation-1.6.pom (2.9 kB at 484 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-active-collections/1.0-beta-2/plexus-active-collections-1.0-beta-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-active-collections/1.0-beta-2/plexus-active-collections-1.0-beta-2.pom (2.8 kB at 464 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.4/maven-plugin-api-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.4/maven-plugin-api-2.0.4.pom (643 B at 107 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom (12 kB at 231 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom (1.8 kB at 307 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom (1.6 kB at 325 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom (2.7 kB at 452 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom (1.6 kB at 324 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom (1.4 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom (1.5 kB at 248 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom (765 B at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4/maven-archiver-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4/maven-archiver-2.4.pom (3.4 kB at 381 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-11/plexus-archiver-1.0-alpha-11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-11/plexus-archiver-1.0-alpha-11.pom (1.8 kB at 258 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-3/plexus-io-1.0-alpha-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-3/plexus-io-1.0-alpha-3.pom (1.4 kB at 52 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0-alpha-2/maven-repository-builder-1.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0-alpha-2/maven-repository-builder-1.0-alpha-2.pom (3.2 kB at 538 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0-alpha-1/maven-common-artifact-filters-1.0-alpha-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.0-alpha-1/maven-common-artifact-filters-1.0-alpha-1.pom (1.8 kB at 360 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.jar (30 kB at 3.8 MB/s)
+[INFO] Reading assembly descriptor: src/main/assembly/bin.xml
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'junit:junit'
+
+[INFO] Building zip: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/apache-maven/target/apache-maven-3.0-SNAPSHOT-bin.zip
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'junit:junit'
+
+[INFO] Building tar : /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/apache-maven/target/apache-maven-3.0-SNAPSHOT-bin.tar.gz
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ apache-maven ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/apache-maven/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/apache-maven/3.0-SNAPSHOT/apache-maven-3.0-SNAPSHOT.pom
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/apache-maven/target/apache-maven-3.0-SNAPSHOT-bin.zip to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/apache-maven/3.0-SNAPSHOT/apache-maven-3.0-SNAPSHOT-bin.zip
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/apache-maven/target/apache-maven-3.0-SNAPSHOT-bin.tar.gz to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/apache-maven/3.0-SNAPSHOT/apache-maven-3.0-SNAPSHOT-bin.tar.gz
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Apache Maven 3.x ................................... SUCCESS [01:10 min]
+[INFO] Maven Model ........................................ SUCCESS [  9.513 s]
+[INFO] Maven Settings ..................................... SUCCESS [  0.762 s]
+[INFO] Maven Artifact ..................................... SUCCESS [  2.022 s]
+[INFO] Maven Plugin API ................................... SUCCESS [ 13.887 s]
+[INFO] Maven Model Builder ................................ SUCCESS [  2.045 s]
+[INFO] Maven Core ......................................... SUCCESS [ 46.950 s]
+[INFO] Maven Compat ....................................... SUCCESS [ 19.325 s]
+[INFO] Maven Embedder ..................................... SUCCESS [  1.645 s]
+[INFO] Maven Distribution ................................. SUCCESS [  5.759 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:52 min
+[INFO] Finished at: 2020-03-14T16:32:41-07:00
+[INFO] Final Memory: 112M/2586M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Artifact 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-artifact ---
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-artifact ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-artifact ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ maven-artifact ---
+[INFO] Building jar: /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/target/maven-artifact-3.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.2:install (default-install) @ maven-artifact ---
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/target/maven-artifact-3.0-SNAPSHOT.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-artifact/3.0-SNAPSHOT/maven-artifact-3.0-SNAPSHOT.jar
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/maven-artifact/pom.xml to /boom/scratch/tmp-rta/Bugs.jar_Maven_5ffd8903_java-8/.m2/org/apache/maven/maven-artifact/3.0-SNAPSHOT/maven-artifact-3.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.154 s
+[INFO] Finished at: 2020-03-14T16:32:45-07:00
+[INFO] Final Memory: 27M/981M
+[INFO] ------------------------------------------------------------------------

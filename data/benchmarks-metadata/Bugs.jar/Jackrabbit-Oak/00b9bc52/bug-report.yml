@@ -1,0 +1,9 @@
+---
+BugID: OAK-3377
+Summary: Two spaces in SQL2 fulltext search -> error
+Description: "Execute the following SQL2 query (eg, in crx/de's query tool)\nSELECT
+  * FROM [nt:unstructured] AS c WHERE (CONTAINS(c.[jcr:title], 'a  b') AND ISDESCENDANTNODE(c,
+  '/content'))\n(note there are 2 spaces between \"a\" and \"b\")\nResult: java.lang.IllegalArgumentException:
+  Invalid expression: 'a b'\n\nIf there is only 1 space between a and b, there is
+  no error. \n\nPer jsr-283, fulltext expressions should be able to have strings of
+  whitespace."

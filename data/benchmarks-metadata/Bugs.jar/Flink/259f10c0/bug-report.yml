@@ -1,0 +1,31 @@
+---
+BugID: FLINK-1167
+Summary: CompilerException caused by NullPointerException
+Description: "Run into it during working on my code. Seems not caused by my plan,
+  or anyway the compiler should have a NullPointer isssue:\n\norg.apache.flink.compiler.CompilerException:
+  An error occurred while translating the optimized plan to a nephele JobGraph: Error
+  translating node 'Union \"Union\" : UNION [[ GlobalProperties [partitioning=HASH_PARTITIONED,
+  on fields [0]] ]] [[ LocalProperties [ordering=null, grouped=null, unique=null]
+  ]]': null\n\tat org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.postVisit(NepheleJobGraphGenerator.java:543)\n\tat
+  org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.postVisit(NepheleJobGraphGenerator.java:95)\n\tat
+  org.apache.flink.compiler.plan.DualInputPlanNode.accept(DualInputPlanNode.java:170)\n\tat
+  org.apache.flink.compiler.plan.SingleInputPlanNode.accept(SingleInputPlanNode.java:196)\n\tat
+  org.apache.flink.compiler.plan.SingleInputPlanNode.accept(SingleInputPlanNode.java:196)\n\tat
+  org.apache.flink.compiler.plan.OptimizedPlan.accept(OptimizedPlan.java:165)\n\tat
+  org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.compileJobGraph(NepheleJobGraphGenerator.java:163)\n\tat
+  org.apache.flink.client.program.Client.getJobGraph(Client.java:218)\n\tat org.apache.flink.client.program.Client.run(Client.java:290)\n\tat
+  org.apache.flink.client.program.Client.run(Client.java:285)\n\tat org.apache.flink.client.program.Client.run(Client.java:230)\n\tat
+  org.apache.flink.client.CliFrontend.executeProgram(CliFrontend.java:347)\n\tat org.apache.flink.client.CliFrontend.run(CliFrontend.java:334)\n\tat
+  org.apache.flink.client.CliFrontend.parseParameters(CliFrontend.java:1001)\n\tat
+  org.apache.flink.client.CliFrontend.main(CliFrontend.java:1025)\nCaused by: org.apache.flink.compiler.CompilerException:
+  Error translating node 'Union \"Union\" : UNION [[ GlobalProperties [partitioning=HASH_PARTITIONED,
+  on fields [0]] ]] [[ LocalProperties [ordering=null, grouped=null, unique=null]
+  ]]': null\n\tat org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.preVisit(NepheleJobGraphGenerator.java:338)\n\tat
+  org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.preVisit(NepheleJobGraphGenerator.java:95)\n\tat
+  org.apache.flink.compiler.plan.DualInputPlanNode.accept(DualInputPlanNode.java:162)\n\tat
+  org.apache.flink.compiler.plan.WorksetIterationPlanNode.acceptForStepFunction(WorksetIterationPlanNode.java:196)\n\tat
+  org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.postVisit(NepheleJobGraphGenerator.java:398)\n\t...
+  14 more\nCaused by: java.lang.NullPointerException\n\tat org.apache.flink.runtime.operators.util.TaskConfig.setDriver(TaskConfig.java:307)\n\tat
+  org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.createDualInputVertex(NepheleJobGraphGenerator.java:793)\n\tat
+  org.apache.flink.compiler.plantranslate.NepheleJobGraphGenerator.preVisit(NepheleJobGraphGenerator.java:286)\n\t...
+  18 more\n"

@@ -1,0 +1,15 @@
+---
+BugID: CAMEL-6607
+Summary: Tokenize XML does not support child elements with names similar to their
+  parent
+Description: |-
+  This XML will not split on Trip, as Trip has a child which starts with Trip
+  <Trip>
+  <Triptype>
+  </Triptype>
+  </Trip>
+
+  The bug was introduced in https://issues.apache.org/jira/browse/CAMEL-6004
+  I believe the regex in TokenXMLExpressionIterator needs to be fixed
+
+  see enclosed test

@@ -1,0 +1,10 @@
+---
+BugID: WICKET-3514
+Summary: SimpleTree example not working with CryptoMapper
+Description: "Adding the following lines to WicketExampleApplication.java causes the
+  SimpleTree example to break. There are no expand icons anymore and there is no way
+  to expand the tree. Even the expand link will not work.\n\nAdd to WicketExampleApplication.java
+  \n\nIRequestMapper cryptoMapper = new CryptoMapper(getRootRequestMapper(), this);\nsetRootRequestMapper(cryptoMapper);\n\n\nComment
+  out in WicketExampleApplication.java \n\n//getSecuritySettings().setCryptFactory(new
+  ClassCryptFactory(NoCrypt.class, ISecuritySettings.DEFAULT_ENCRYPTION_KEY));\n\nWithout
+  the CryptoMapper everythings works fine.\n\n\n"

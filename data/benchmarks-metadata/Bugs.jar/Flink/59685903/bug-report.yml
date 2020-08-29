@@ -1,0 +1,9 @@
+---
+BugID: FLINK-2968
+Summary: Windowed fold operation fails because the initial value was not serialized
+Description: "The windowed fold operation currently fails because the initial value
+  was not serialized. The reason for this is that the fold operation is realized as
+  a {{WindowFunction}} within an {{AbstractUdfStreamOperator}} and does not get the
+  output type information forwarded (which is necessary for the serialization). \n\nThe
+  solution is to let the {{AbstractUdfStreamOperator}} forward the output type information
+  to the {{WindowFunction}} if it implements the {{OutputTypeConfigurable}} interface."

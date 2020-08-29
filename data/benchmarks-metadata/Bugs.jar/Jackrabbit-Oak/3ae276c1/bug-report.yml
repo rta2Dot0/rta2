@@ -1,0 +1,7 @@
+---
+BugID: OAK-1874
+Summary: 'Indexes: re-index automatically when adding an index'
+Description: |-
+  When adding an index via import of content, the index is not automatically re-built. This is problematic, because subsequent queries will return no data because of that. Currently, the only way to re-index is to set the "reindex" property to "true".
+
+  I suggest that indexes are automatically re-indexes if the hidden child node (":data" I believe) is missing. This is in addition to the "reindex" property.

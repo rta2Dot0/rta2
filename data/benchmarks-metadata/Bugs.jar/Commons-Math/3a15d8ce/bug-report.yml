@@ -1,0 +1,50 @@
+---
+BugID: MATH-367
+Summary: AbstractRealVector.sparseIterator fails when vector has exactly one non-zero
+  entry
+Description: "The following program:\n===\nimport java.util.Iterator;\nimport org.apache.commons.math.linear.*;\n\npublic
+  class SparseIteratorTester\n{\n    public static void main(String[] args) {\n        double
+  vdata[] = { 0.0, 1.0, 0.0 };\n        RealVector v = new ArrayRealVector(vdata);\n
+  \       Iterator<RealVector.Entry> iter = v.sparseIterator();\n        while(iter.hasNext())
+  {\n            RealVector.Entry entry = iter.next();\n            System.out.printf(\"%d:
+  %f\\n\", entry.getIndex(), entry.getValue());\n        }   \n    }       \n} \n===\ngenerates
+  this output:\n\n1: 1.000000\nException in thread \"main\" java.lang.ArrayIndexOutOfBoundsException:
+  -1\n\tat org.apache.commons.math.linear.ArrayRealVector.getEntry(ArrayRealVector.java:995)\n\tat
+  org.apache.commons.math.linear.AbstractRealVector$EntryImpl.getValue(AbstractRealVector.java:850)\n\tat
+  test.SparseIteratorTester.main(SparseIteratorTester.java:13)\n===\n\nThis patch
+  fixes it, and simplifies AbstractRealVector.SparseEntryIterator  (sorry, i don't
+  see any form entry for attaching a file)\n===\nIndex: src/main/java/org/apache/commons/math/linear/AbstractRealVector.java\n===================================================================\n---
+  src/main/java/org/apache/commons/math/linear/AbstractRealVector.java\t(revision
+  936985)\n+++ src/main/java/org/apache/commons/math/linear/AbstractRealVector.java\t(working
+  copy)\n@@ -18,6 +18,7 @@\n package org.apache.commons.math.linear;\n \n import java.util.Iterator;\n+import
+  java.util.NoSuchElementException;\n \n import org.apache.commons.math.FunctionEvaluationException;\n
+  import org.apache.commons.math.MathRuntimeException;\n@@ -875,40 +876,25 @@\n         /**
+  Dimension of the vector. */\n         private final int dim;\n \n-        /** Temporary
+  entry (reused on each call to {@link #next()}. */\n-        private EntryImpl tmp
+  = new EntryImpl();\n-\n-        /** Current entry. */\n+        /** Last entry returned
+  by #next(). */\n         private EntryImpl current;\n \n-        /** Next entry.
+  */\n+        /** Next entry for #next() to return. */\n         private EntryImpl
+  next;\n \n         /** Simple constructor. */\n         protected SparseEntryIterator()
+  {\n             dim = getDimension();\n             current = new EntryImpl();\n-
+  \           if (current.getValue() == 0) {\n-                advance(current);\n-
+  \           }\n-            if(current.getIndex() >= 0){\n-                // There
+  is at least one non-zero entry\n-                next = new EntryImpl();\n-                next.setIndex(current.getIndex());\n+
+  \           next = new EntryImpl();\n+            if(next.getValue() == 0)\n                 advance(next);\n-
+  \           } else {\n-                // The vector consists of only zero entries,
+  so deny having a next\n-                current = null;\n-            }\n         }\n
+  \n-        /** Advance an entry up to the next non null one.\n+        /** Advance
+  an entry up to the next nonzero value.\n          * @param e entry to advance\n
+  \         */\n         protected void advance(EntryImpl e) {\n-            if (e
+  == null) {\n-                return;\n-            }\n             do {\n                 e.setIndex(e.getIndex()
+  + 1);\n             } while (e.getIndex() < dim && e.getValue() == 0);\n@@ -919,22
+  +905,17 @@\n \n         /** {@inheritDoc} */\n         public boolean hasNext()
+  {\n-            return current != null;\n+            return next.getIndex() >=
+  0;\n         }\n \n         /** {@inheritDoc} */\n         public Entry next() {\n-
+  \           tmp.setIndex(current.getIndex());\n-            if (next != null) {\n-
+  \               current.setIndex(next.getIndex());\n-                advance(next);\n-
+  \               if (next.getIndex() < 0) {\n-                    next = null;\n-
+  \               }\n-            } else {\n-                current = null;\n-            }\n-
+  \           return tmp;\n+            int index = next.getIndex();\n+            if(index
+  < 0)\n+                throw new NoSuchElementException();\n+            current.setIndex(index);\n+
+  \           advance(next);\n+            return current;\n         }\n \n         /**
+  {@inheritDoc} */\n"

@@ -1,0 +1,288 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Proxy 1.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-core/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-project/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-fate/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-start/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-trace/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-minicluster/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-server/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-examples-simple/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/accumulo/accumulo-test/1.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.1.0:verify (verify-sorted-pom) @ accumulo-proxy ---
+[INFO] Verifying file /scratch/tmp-rta/Bugs.jar_Accumulo_8ec4cb84_java-8/proxy/pom.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-mvn) @ accumulo-proxy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ accumulo-proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ accumulo-proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Accumulo_8ec4cb84_java-8/proxy/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ accumulo-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ accumulo-proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ accumulo-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ accumulo-proxy ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Accumulo_8ec4cb84_java-8/proxy/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 3.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 117 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 288 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.accumulo.proxy.SimpleTest
+Tests run: 11, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 65.546 sec <<< FAILURE!
+testUnknownWriter(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 10.011 sec  <<< ERROR!
+java.lang.Exception: test timed out after 10000 milliseconds
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:127)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+	at org.apache.thrift.transport.TFramedTransport.readFrame(TFramedTransport.java:129)
+	at org.apache.thrift.transport.TFramedTransport.read(TFramedTransport.java:101)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+	at org.apache.thrift.protocol.TCompactProtocol.readByte(TCompactProtocol.java:601)
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:470)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_createTable(AccumuloProxy.java:688)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.createTable(AccumuloProxy.java:672)
+	at org.apache.accumulo.proxy.SimpleTest.testUnknownWriter(SimpleTest.java:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+tableNotFound(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 9.999 sec  <<< ERROR!
+java.lang.Exception: test timed out after 10000 milliseconds
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:336)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:127)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+	at org.apache.thrift.transport.TFramedTransport.readFrame(TFramedTransport.java:129)
+	at org.apache.thrift.transport.TFramedTransport.read(TFramedTransport.java:101)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+	at org.apache.thrift.protocol.TCompactProtocol.readByte(TCompactProtocol.java:601)
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:470)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_addConstraint(AccumuloProxy.java:432)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.addConstraint(AccumuloProxy.java:417)
+	at org.apache.accumulo.proxy.SimpleTest.tableNotFound(SimpleTest.java:459)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+testUnknownScanner(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 10.003 sec  <<< ERROR!
+java.lang.Exception: test timed out after 10000 milliseconds
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:336)
+	at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:127)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+	at org.apache.thrift.transport.TFramedTransport.readFrame(TFramedTransport.java:129)
+	at org.apache.thrift.transport.TFramedTransport.read(TFramedTransport.java:101)
+	at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+	at org.apache.thrift.protocol.TCompactProtocol.readByte(TCompactProtocol.java:601)
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:470)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_createTable(AccumuloProxy.java:688)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.createTable(AccumuloProxy.java:672)
+	at org.apache.accumulo.proxy.SimpleTest.testUnknownScanner(SimpleTest.java:636)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+testTableOperations(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 4.825 sec  <<< ERROR!
+org.apache.thrift.TApplicationException: createTable failed: out of sequence response
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:76)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_createTable(AccumuloProxy.java:688)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.createTable(AccumuloProxy.java:672)
+	at org.apache.accumulo.proxy.SimpleTest.testTableOperations(SimpleTest.java:983)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testInstanceOperations(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 0.006 sec  <<< ERROR!
+org.apache.thrift.protocol.TProtocolException: Expected protocol id ffffff82 but got 3c
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:472)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_getTabletServers(AccumuloProxy.java:1747)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.getTabletServers(AccumuloProxy.java:1734)
+	at org.apache.accumulo.proxy.SimpleTest.testInstanceOperations(SimpleTest.java:730)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+security(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 0.002 sec  <<< ERROR!
+org.apache.thrift.protocol.TProtocolException: Expected protocol id ffffff82 but got 18
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:472)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_createLocalUser(AccumuloProxy.java:1945)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.createLocalUser(AccumuloProxy.java:1930)
+	at org.apache.accumulo.proxy.SimpleTest.security(SimpleTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+testDelete(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 0.002 sec  <<< ERROR!
+org.apache.thrift.protocol.TProtocolException: Expected protocol id ffffff82 but got 5a
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:472)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_createTable(AccumuloProxy.java:688)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.createTable(AccumuloProxy.java:672)
+	at org.apache.accumulo.proxy.SimpleTest.testDelete(SimpleTest.java:707)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+testExists(org.apache.accumulo.proxy.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.apache.thrift.protocol.TProtocolException: Expected protocol id ffffff82 but got 6f
+	at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:472)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:69)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.recv_createTable(AccumuloProxy.java:688)
+	at org.apache.accumulo.proxy.thrift.AccumuloProxy$Client.createTable(AccumuloProxy.java:672)
+	at org.apache.accumulo.proxy.SimpleTest.testExists(SimpleTest.java:616)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+Running org.apache.accumulo.proxy.TestProxyTableOperations
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.443 sec
+Running org.apache.accumulo.proxy.TestProxyReadWrite
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.056 sec
+Running org.apache.accumulo.proxy.TestProxySecurityOperations
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.apache.accumulo.proxy.TestProxyInstanceOperations
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+
+Results :
+
+Tests in error: 
+  testUnknownWriter(org.apache.accumulo.proxy.SimpleTest): test timed out after 10000 milliseconds
+  tableNotFound(org.apache.accumulo.proxy.SimpleTest): test timed out after 10000 milliseconds
+  testUnknownScanner(org.apache.accumulo.proxy.SimpleTest): test timed out after 10000 milliseconds
+  testTableOperations(org.apache.accumulo.proxy.SimpleTest): createTable failed: out of sequence response
+  testInstanceOperations(org.apache.accumulo.proxy.SimpleTest): Expected protocol id ffffff82 but got 3c
+  security(org.apache.accumulo.proxy.SimpleTest): Expected protocol id ffffff82 but got 18
+  testDelete(org.apache.accumulo.proxy.SimpleTest): Expected protocol id ffffff82 but got 5a
+  testExists(org.apache.accumulo.proxy.SimpleTest): Expected protocol id ffffff82 but got 6f
+
+Tests run: 34, Failures: 0, Errors: 8, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:33 min
+[INFO] Finished at: 2020-03-13T15:59:41-07:00
+[INFO] Final Memory: 23M/981M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project accumulo-proxy: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bugs.jar_Accumulo_8ec4cb84_java-8/proxy/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

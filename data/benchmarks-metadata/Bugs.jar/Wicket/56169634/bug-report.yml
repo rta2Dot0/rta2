@@ -1,0 +1,14 @@
+---
+BugID: WICKET-5056
+Summary: Page mount with an optional named parameter overtakes a mount with more specific
+  path
+Description: |-
+  See the discussion in http://markmail.org/thread/sgpiku27ah2tmcim
+
+  Having:
+    mountPage("/all/sindex",Page1.class);
+    mountPage("/all/#{exp}", Page2.class);
+
+  Request to /all/sindex will be handled by Page2.
+
+  Compatibility score for optional parameters should be lower than mandatory parameters which should be lower than exact value.

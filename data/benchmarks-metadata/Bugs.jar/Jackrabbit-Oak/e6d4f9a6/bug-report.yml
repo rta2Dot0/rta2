@@ -1,0 +1,9 @@
+---
+BugID: OAK-2427
+Summary: XPath to SQL-2 conversion fails due to escaping error
+Description: "The problem is that the comment is not properly escaped (a C-style comment),
+  so that \"*/\" in the XPath query accidentally ends the comment in the SQL-2 query.\n\nThe
+  following query can't be converted to SQL-2, because it contains \"*/\":\n\n{noformat}\n/jcr:root/etc//*[@type
+  = 'product' \nand ((@size = 'M' or */@size= 'M' or */*/@size = 'M' \nor */*/*/@size
+  = 'M' or */*/*/*/@size = 'M' or */*/*/*/*/@size = 'M'))]\n{noformat}\n\nI think
+  this was introduced by OAK-2354 \nhttp://svn.apache.org/viewvc?view=revision&amp;revision=1645616\n"

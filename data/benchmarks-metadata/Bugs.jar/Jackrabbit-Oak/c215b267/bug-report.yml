@@ -1,0 +1,7 @@
+---
+BugID: OAK-1932
+Summary: TarMK compaction can create mixed segments
+Description: As described in http://markmail.org/message/ujkqdlthudaortxf, commits
+  that occur while the compaction operation is running can make the compacted segments
+  contain references to older data segments, which prevents old data from being reclaimed
+  during cleanup.

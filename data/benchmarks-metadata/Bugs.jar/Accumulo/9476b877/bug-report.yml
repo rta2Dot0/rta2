@@ -1,0 +1,17 @@
+---
+BugID: ACCUMULO-1192
+Summary: '"du" on a table without files does not report'
+Description: |
+  {noformat}
+  shell> createtable t
+  shell> du t
+  shell>
+  {noformat}
+
+  expected:
+
+  {noformat}
+  shell> du t
+               0 t
+  shell>
+  {noformat}

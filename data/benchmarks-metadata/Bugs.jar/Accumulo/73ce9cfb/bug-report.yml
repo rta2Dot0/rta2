@@ -1,0 +1,20 @@
+---
+BugID: ACCUMULO-3718
+Summary: not possible to create a Mutation object from scala w/o some extra helper
+  code
+Description: "issue: \n\nit's not possible to create a Mutation object from scala
+  without employing a standalone java jar wrapper. the preferred method for creating
+  the object has you do it in two stages: create with table row, then employ Mutation.put()
+  to populate the object with the actual mutation data. when you do this in scala,
+  you get a\n\njava.lang.IllegalStateException: Can not add to mutation after serializing
+  it at org.apache.accumulo.core.data.Mutation.put(Mutation.java:168) at org.apache.accumulo.core.data.Mutation.put(Mutation.java:163)
+  at org.apache.accumulo.core.data.Mutation.put(Mutation.java:211)\n\nerror. I *think*
+  this has something to do with the byte array going out of scope in Scala but somehow
+  not in Java. If you concat the operations (constuctor().put(data, data, ...) you
+  don't run into the error, but scala sees a Unit return type, so you can't actually
+  add the mutation to a BatchWriter. The only way I was able to get around this was
+  to create a stand-alone jar with a method that created then returned a populated
+  mutation object. \n\nI wasn't sure whether or not to call this a bug or an enhancement.
+  given that you probably want Accumulo to play nice with Scala I decided to call
+  it a bug. \n\nbelow is a link to the stack overflow thread I created whilst figuring
+  all this out: \n\nhttp://stackoverflow.com/questions/29497547/odd-error-when-populating-accumulo-1-6-mutation-object-via-spark-notebook/29527189#29527189\n\n\n"

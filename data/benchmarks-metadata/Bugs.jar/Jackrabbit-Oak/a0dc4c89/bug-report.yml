@@ -1,0 +1,11 @@
+---
+BugID: OAK-2345
+Summary: Diff reads too many nodes
+Description: "DocumentNodeStore.diffManyChildren() may read too many nodes when there
+  is an inactive cluster node with an old _lastRev on the root document. This is a
+  regression introduced with the fix for OAK-2232.\n\nThe fix assumes an inactive
+  cluster node does not have a revision range with an old revision seen at a current
+  timestamp. The DocumentNodeStore will in fact purge revisions from the range in
+  the RevisionComparator after an hour. But on startup the first background read may
+  populate the RevisionComparator with a revision, which is potentially very old (e.g.
+  if the clusterId is not used anymore). "

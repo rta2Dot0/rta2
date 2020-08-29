@@ -1,0 +1,34 @@
+---
+BugID: WICKET-208
+Summary: Fixing AjaxTimerBehaviorTest
+Description: |-
+  This is an attempt to fix failing testcase:
+
+  target/surefire-reports/wicket.ajax.AjaxTimerBehaviorTest.txt
+  -------------------------------------------------------------------------------
+  Test set: wicket.ajax.AjaxTimerBehaviorTest
+  -------------------------------------------------------------------------------
+  Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.113 sec <<< FAILURE!
+  testAddToAjaxUpdate(wicket.ajax.AjaxTimerBehaviorTest)  Time elapsed: 0.063 sec  <<< FAILURE!
+  junit.framework.AssertionFailedError: There should be 1 and only 1 script in the markup for this behavior,but 0 were found exp
+  ected:<1> but was:<0>
+          at junit.framework.Assert.fail(Assert.java:47)
+          at junit.framework.Assert.failNotEquals(Assert.java:282)
+          at junit.framework.Assert.assertEquals(Assert.java:64)
+          at junit.framework.Assert.assertEquals(Assert.java:201)
+          at wicket.ajax.AjaxTimerBehaviorTest.validateTimerScript(AjaxTimerBehaviorTest.java:178)
+          at wicket.ajax.AjaxTimerBehaviorTest.validate(AjaxTimerBehaviorTest.java:143)
+          at wicket.ajax.AjaxTimerBehaviorTest.testAddToAjaxUpdate(AjaxTimerBehaviorTest.java:99)
+
+  testAddToWebPage(wicket.ajax.AjaxTimerBehaviorTest)  Time elapsed: 0.026 sec  <<< FAILURE!
+  junit.framework.AssertionFailedError: There should be 1 and only 1 script in the markup for this behavior,but 0 were found exp
+  ected:<1> but was:<0>
+          at junit.framework.Assert.fail(Assert.java:47)
+          at junit.framework.Assert.failNotEquals(Assert.java:282)
+          at junit.framework.Assert.assertEquals(Assert.java:64)
+          at junit.framework.Assert.assertEquals(Assert.java:201)
+          at wicket.ajax.AjaxTimerBehaviorTest.validateTimerScript(AjaxTimerBehaviorTest.java:178)
+          at wicket.ajax.AjaxTimerBehaviorTest.validate(AjaxTimerBehaviorTest.java:155)
+          at wicket.ajax.AjaxTimerBehaviorTest.testAddToWebPage(AjaxTimerBehaviorTest.java:127)
+
+  The attached patch properly handles the case when the callback script is added in body onload.  Also, AbstractAjaxTimerBehavior needs to handle AjaxRequestTarget properly, because adding a body onload has no effect in an ajax request.

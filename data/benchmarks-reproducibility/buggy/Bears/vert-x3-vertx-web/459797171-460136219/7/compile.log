@@ -1,0 +1,635 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-dependencies/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.release: "centos"
+[INFO] os.detected.release.version: 7
+[INFO] os.detected.release.like."centos": true
+[INFO] os.detected.release.like."rhel: true
+[INFO] os.detected.release.like.fedora": true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] vertx-web-parent
+[INFO] vertx-web-common
+[INFO] vertx-web
+[INFO] vertx-web-client
+[INFO] vertx-template-engines
+[INFO] vertx-web-templ-jade
+[INFO] vertx-web-templ-mvel
+[INFO] vertx-web-templ-handlebars
+[INFO] vertx-web-templ-thymeleaf
+[INFO] vertx-web-templ-freemarker
+[INFO] vertx-web-templ-pebble
+[INFO] vertx-web-templ-rocker
+[INFO] vertx-web-api-contract
+[INFO] vertx-web-api-service
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-parent 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-core/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-codegen/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom (3.0 kB at 2.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom (22 kB at 4.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom (3.8 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom (1.6 kB at 396 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom (5.9 kB at 4.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom (7.9 kB at 565 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom (5.0 kB at 452 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom (7.8 kB at 4.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.pom (266 B at 33 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-parent/3.3.1/asm-parent-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-parent/3.3.1/asm-parent-3.3.1.pom (4.3 kB at 759 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.0/maven-core-3.1.0.pom (6.9 kB at 630 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.pom (1.8 kB at 141 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.pom (2.3 kB at 226 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.pom (1.0 kB at 169 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.pom (1.9 kB at 189 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.pom (2.5 kB at 206 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.pom (3.5 kB at 294 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom (1.7 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom (1.8 kB at 176 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom (3.3 kB at 335 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.pom (3.5 kB at 390 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom (1.6 kB at 232 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom (17 kB at 826 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar (44 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar (202 kB at 4.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.0/maven-settings-builder-3.1.0.jar (41 kB at 901 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar (30 kB at 602 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar (47 kB at 849 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.0/maven-aether-provider-3.1.0.jar (60 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar (18 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar (202 kB at 2.9 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar (159 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar (145 kB at 2.0 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar (61 kB at 817 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4.2/plexus-classworlds-2.4.2.jar (47 kB at 618 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar (134 kB at 1.3 MB/s)
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (add-source) @ vertx-web-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 829 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 144 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 235 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 370 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 114 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 669 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 767 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 391 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 17 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 136 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 71 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 102 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 90 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 271 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 51 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 606 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 184 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 173 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 309 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 42 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 133 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 21 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 43 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 21 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 590 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom (4.7 kB at 670 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/22/maven-shared-components-22.pom (5.1 kB at 731 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom (4.2 kB at 520 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4.0 kB at 670 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (1.8 kB at 293 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (12 kB at 516 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 29 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom (1.7 kB at 247 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom (21 kB at 342 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom (5.6 kB at 698 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 82 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 3.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 6.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 8.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 3.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 8.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 4.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 2.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 5.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 1.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar (54 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 11 MB/s)
+[INFO] Source directory: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/src/main/generated added.
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ vertx-web-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 62 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 538 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 694 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (4.3 kB at 621 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (4.6 kB at 655 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (5.3 kB at 592 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (4.9 kB at 89 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (1.9 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 308 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (5.3 kB at 761 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (4.3 kB at 533 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 4.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (86 kB at 6.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (426 kB at 18 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (100 kB at 2.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (154 kB at 3.8 MB/s)
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:test-jar-no-fork (attach-sources) @ vertx-web-parent ---
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:test-jar (attach-test-jar) @ vertx-web-parent ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/target/vertx-web-parent-3.6.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.1.0:single (package-sources) @ vertx-web-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/vertx/vertx-ext-resources/34/vertx-ext-resources-34.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/vertx/vertx-ext-resources/34/vertx-ext-resources-34.pom (1.2 kB at 146 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 806 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 711 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.9.0/maven-artifact-transfer-0.9.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.9.0/maven-artifact-transfer-0.9.0.pom (7.6 kB at 845 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.0/maven-common-artifact-filters-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.0/maven-common-artifact-filters-3.0.0.pom (4.8 kB at 687 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom (2.7 kB at 52 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.5/slf4j-parent-1.7.5.pom (12 kB at 227 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom (2.6 kB at 375 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.5/plexus-archiver-3.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.5/plexus-archiver-3.5.pom (4.8 kB at 601 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/5.0/plexus-5.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/5.0/plexus-5.0.pom (21 kB at 688 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.0.0/plexus-io-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.0.0/plexus-io-3.0.0.pom (4.5 kB at 650 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.14/commons-compress-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.14/commons-compress-1.14.pom (13 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.6/xz-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.6/xz-1.6.pom (1.9 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom (5.7 kB at 947 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (3.2 kB at 458 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom (8.4 kB at 239 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.2.0/maven-archiver-3.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.2.0/maven-archiver-3.2.0.pom (4.3 kB at 615 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.2.0/maven-shared-utils-3.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.2.0/maven-shared-utils-3.2.0.pom (4.9 kB at 701 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/io/vertx/vertx-ext-resources/34/vertx-ext-resources-34.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.14/commons-compress-1.14.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.6/xz-1.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/io/vertx/vertx-ext-resources/34/vertx-ext-resources-34.jar (3.1 kB at 349 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar (26 kB at 2.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.6/xz-1.6.jar (103 kB at 6.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.14/commons-compress-1.14.jar (530 kB at 20 MB/s)
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/target/vertx-web-parent-3.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.1.0:single (package-docs) @ vertx-web-parent ---
+[INFO] Assemblies have been skipped per configuration of the skipAssembly parameter.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ vertx-web-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4.0 kB at 674 kB/s)
+[INFO] Installing /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/pom.xml to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/.m2/io/vertx/vertx-web-parent/3.6.0-SNAPSHOT/vertx-web-parent-3.6.0-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/target/vertx-web-parent-3.6.0-SNAPSHOT-tests.jar to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/.m2/io/vertx/vertx-web-parent/3.6.0-SNAPSHOT/vertx-web-parent-3.6.0-SNAPSHOT-tests.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/target/vertx-web-parent-3.6.0-SNAPSHOT-sources.jar to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/.m2/io/vertx/vertx-web-parent/3.6.0-SNAPSHOT/vertx-web-parent-3.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-common 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-common ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-web-common/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-auth-common/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-auth/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-bridge-common/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-auth-jwt/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-jwt/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-auth-oauth2/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-auth-htdigest/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-unit/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-auth-shiro/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-client 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-client ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-template-engines 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-template-engines ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-template-engines ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (add-source) @ vertx-template-engines ---
+[INFO] Source directory: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-template-engines/src/main/generated added.
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ vertx-template-engines ---
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:test-jar-no-fork (attach-sources) @ vertx-template-engines ---
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:test-jar (attach-test-jar) @ vertx-template-engines ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-template-engines/target/vertx-template-engines-3.6.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.1.0:single (package-sources) @ vertx-template-engines ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-template-engines/target/vertx-template-engines-3.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.1.0:single (package-docs) @ vertx-template-engines ---
+[INFO] Assemblies have been skipped per configuration of the skipAssembly parameter.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ vertx-template-engines ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-template-engines/pom.xml to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/.m2/io/vertx/vertx-template-engines/3.6.0-SNAPSHOT/vertx-template-engines-3.6.0-SNAPSHOT.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-template-engines/target/vertx-template-engines-3.6.0-SNAPSHOT-tests.jar to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/.m2/io/vertx/vertx-template-engines/3.6.0-SNAPSHOT/vertx-template-engines-3.6.0-SNAPSHOT-tests.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-template-engines/target/vertx-template-engines-3.6.0-SNAPSHOT-sources.jar to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/.m2/io/vertx/vertx-template-engines/3.6.0-SNAPSHOT/vertx-template-engines-3.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-jade 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-web/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-jade ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-jade ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-mvel 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-mvel ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-mvel ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-handlebars 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-handlebars ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-handlebars ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-thymeleaf 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-thymeleaf ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-thymeleaf ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-freemarker 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-freemarker ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-freemarker ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-pebble 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-pebble ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-pebble ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-templ-rocker 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-templ-rocker ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-templ-rocker ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-api-contract 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-web-client/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-service-proxy/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-api-contract ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-api-contract ---
+[ERROR] error on execute: use -X to have details 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-api-service 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-web-api-contract/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-api-service ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-api-service ---
+[INFO] skipped
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (add-source) @ vertx-web-api-service ---
+[INFO] Source directory: /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-web-api-service/src/main/generated added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ vertx-web-api-service ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.pom (6.5 kB at 930 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4.0 kB at 809 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (1.0 kB at 206 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 1.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 1.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar (155 kB at 9.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 442 kB/s)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ vertx-web-api-service ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.2/plexus-java-0.9.2.pom (2.4 kB at 406 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.2/plexus-languages-0.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.2/plexus-languages-0.9.2.pom (2.3 kB at 380 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.pom (1.9 kB at 97 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_BETA/asm-parent-6.0_BETA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_BETA/asm-parent-6.0_BETA.pom (5.5 kB at 916 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.pom (16 kB at 299 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.2/plexus-compiler-api-2.8.2.pom (867 B at 144 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.2/plexus-compiler-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.2/plexus-compiler-2.8.2.pom (4.9 kB at 697 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 443 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.2/plexus-compiler-manager-2.8.2.pom (692 B at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.2/plexus-compiler-javac-2.8.2.pom (771 B at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.2/plexus-compilers-2.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.2/plexus-compilers-2.8.2.pom (1.3 kB at 168 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_BETA/asm-6.0_BETA.jar (56 kB at 3.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M7/qdox-2.0-M7.jar (315 kB at 15 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (222 kB at 7.7 MB/s)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /bam/scratch/tmp-rta/Bears_vert-x3-vertx-web_459797171-460136219_java-7/vertx-web-api-service/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] vertx-web-parent ................................... SUCCESS [02:39 min]
+[INFO] vertx-web-common ................................... FAILURE [  0.241 s]
+[INFO] vertx-web .......................................... FAILURE [  3.039 s]
+[INFO] vertx-web-client ................................... FAILURE [  0.046 s]
+[INFO] vertx-template-engines ............................. SUCCESS [  0.110 s]
+[INFO] vertx-web-templ-jade ............................... FAILURE [  0.413 s]
+[INFO] vertx-web-templ-mvel ............................... FAILURE [  0.060 s]
+[INFO] vertx-web-templ-handlebars ......................... FAILURE [  0.057 s]
+[INFO] vertx-web-templ-thymeleaf .......................... FAILURE [  0.064 s]
+[INFO] vertx-web-templ-freemarker ......................... FAILURE [  0.050 s]
+[INFO] vertx-web-templ-pebble ............................. FAILURE [  0.092 s]
+[INFO] vertx-web-templ-rocker ............................. FAILURE [  0.056 s]
+[INFO] vertx-web-api-contract ............................. FAILURE [  0.722 s]
+[INFO] vertx-web-api-service .............................. FAILURE [  1.601 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:51 min
+[INFO] Finished at: 2020-03-12T03:18:40-07:00
+[INFO] Final Memory: 40M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-common: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-client: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-jade: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-mvel: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-handlebars: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-thymeleaf: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-freemarker: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-pebble: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-templ-rocker: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-api-contract: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project vertx-web-api-service: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :vertx-web-common
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-dependencies/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-web-client 3.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-web-common/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-web-common/3.6.0-SNAPSHOT/vertx-web-common-3.6.0-SNAPSHOT.pom
+[WARNING] The POM for io.vertx:vertx-web-common:jar:3.6.0-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-unit/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-core/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/io/vertx/vertx-codegen/3.6.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-web-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.2.0:process (generate-sources) @ vertx-web-client ---
+[ERROR] error on execute: use -X to have details 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 27.675 s
+[INFO] Finished at: 2020-03-12T03:19:11-07:00
+[INFO] Final Memory: 30M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:3.2.0:process (generate-sources) on project vertx-web-client: Error executing: java.lang.UnsupportedClassVersionError: io/vertx/codegen/CodeGenProcessor : Unsupported major.minor version 52.0 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

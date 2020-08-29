@@ -1,0 +1,31 @@
+---
+BugID: OAK-1926
+Summary: UnmergedBranch state growing with empty BranchCommit leading to performance
+  degradation
+Description: "In some cluster deployment cases it has been seen that in memory state
+  of UnmergedBranches contains large number of empty commits. For e.g. in  one of
+  of the runs there were 750 entries in the UnmergedBranches and each Branch had empty
+  branch commits.\n\nIf there are large number of UnmergedBranches then read performance
+  would degrade as for determining revision validity currently logic scans all branches\n\nBelow
+  is some part of UnmergedBranch state\n\n{noformat}\nBranch 1\n1 -> br146d2edb7a7-0-1
+  (true) (revision: \"br146d2edb7a7-0-1\", clusterId: 1, time: \"2014-06-25 05:08:52.903\",
+  branch: true)\n2 -> br146d2f0450b-0-1 (true) (revision: \"br146d2f0450b-0-1\", clusterId:
+  1, time: \"2014-06-25 05:11:40.171\", branch: true)\nBranch 2\n1 -> br146d2ef1d08-0-1
+  (true) (revision: \"br146d2ef1d08-0-1\", clusterId: 1, time: \"2014-06-25 05:10:24.392\",
+  branch: true)\nBranch 3\n1 -> br146d2ed26ca-0-1 (true) (revision: \"br146d2ed26ca-0-1\",
+  clusterId: 1, time: \"2014-06-25 05:08:15.818\", branch: true)\n2 -> br146d2edfd0e-0-1
+  (true) (revision: \"br146d2edfd0e-0-1\", clusterId: 1, time: \"2014-06-25 05:09:10.670\",
+  branch: true)\nBranch 4\n1 -> br146d2ecd85b-0-1 (true) (revision: \"br146d2ecd85b-0-1\",
+  clusterId: 1, time: \"2014-06-25 05:07:55.739\", branch: true)\nBranch 5\n1 -> br146d2ec21a0-0-1
+  (true) (revision: \"br146d2ec21a0-0-1\", clusterId: 1, time: \"2014-06-25 05:07:08.960\",
+  branch: true)\n2 -> br146d2ec8eca-0-1 (true) (revision: \"br146d2ec8eca-0-1\", clusterId:
+  1, time: \"2014-06-25 05:07:36.906\", branch: true)\nBranch 6\n1 -> br146d2eaf159-1-1
+  (true) (revision: \"br146d2eaf159-1-1\", clusterId: 1, time: \"2014-06-25 05:05:51.065\",
+  counter: 1, branch: true)\nBranch 7\n1 -> br146d2e9a513-0-1 (true) (revision: \"br146d2e9a513-0-1\",
+  clusterId: 1, time: \"2014-06-25 05:04:26.003\", branch: true)\n{noformat}\n\n[~mreutegg]
+  Suggested that these branch might be for those revision which have resulted in a
+  collision and upon checking it indeed appears to be the case  (value true in brackets
+  above indicate that). Further given the age of such revision it looks like they
+  get populated upon startup itself\n\n*Fix*\n* Need to check why we need to populate
+  the UnermgedBranch\n* Possibly implement some purge job which would remove such
+  stale entries \n\n"

@@ -1,0 +1,15 @@
+---
+BugID: CAMEL-7167
+Summary: 'AbstractListAggregationStrategy : at the end of the split, the body is not
+  replaced by the agregated list'
+Description: "Using a class that extends AbstractListAggregationStrategy to rebuild
+  a List after the completion of the split cause the body not to be replaced by the
+  agregated list at the end of the split.\n\nIn other words (AbstractListAggregationStrategy.onCompletion(Exchange
+  exchange) is never called.\n\n\nHere is what I do :\n\nfrom(HANDLE_A_LIST)//\n            .split(body(),
+  new ListAggregationStrategy())// body is an arrayList of String\n            .to(\"log:foo\")//\n
+  \           .end()// end split\n            // the body is a string instead of a
+  List\n            .end()// end route\n\n   \nclass ListAggregationStrategy extends
+  AbstractListAggregationStrategy<String>\n    {\n\n        @Override\n        public
+  String getValue(Exchange exchange)\n        {\n            return exchange.getIn().getBody();\n
+  \       }\n    }\n\nAs workaround, I use .setBody(property(Exchange.GROUPED_EXCHANGE))
+  after the end of the split."

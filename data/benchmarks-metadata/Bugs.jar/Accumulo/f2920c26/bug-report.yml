@@ -1,0 +1,13 @@
+---
+BugID: ACCUMULO-2487
+Summary: Value implementation provides conflicting statements
+Description: |-
+  The javadoc for the no-arg constructor for {{Value}} states that it "Creates a zero-size sequence." However, the implementation of get will error in this case.
+  {code}
+  public byte[] get() {
+      if (this.value == null) {
+        throw new IllegalStateException("Uninitialized. Null constructor " + "called w/o accompanying readFields invocation");
+      }
+  {code}
+
+  Either we need to change the javadoc to be more explicit or change the behaviour of various accessors in the class. I would consider both solutions to be breaking of the API contract since we are changing what clients can expect from us.

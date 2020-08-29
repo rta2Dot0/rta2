@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5759
+Summary: AjaxRequestAttributes extra parameters aren't properly handled in getCallbackFunction()
+Description: "extra parameters of an Ajax behaviour can be accessed by getRequest().getRequestParameters().getParameterValue(key)\n\nbut
+  if one uses getCallbackFunction() of an AbstractDefaultAjaxBehavior, these parameters
+  get screwed and can no longer be accessed in the same manner. \n\nthe problem seems
+  to be the merge in attrs.ep = Wicket.merge(attrs.ep, params);\n"

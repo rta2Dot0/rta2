@@ -1,0 +1,11 @@
+---
+BugID: LOG4J2-113
+Summary: StructuredDataFilter defines "pairs" as attribute instead of element
+Description: |
+  org.apache.logging.log4j.core.filter.StructuredDataFilter method createFilter defines parameter "pairs" as follows:
+
+  @PluginAttr("pairs") KeyValuePair[] pairs
+
+  It should have been:
+
+  @PluginElement("pairs") KeyValuePair[] pairs

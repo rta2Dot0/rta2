@@ -1,0 +1,13 @@
+---
+BugID: OAK-313
+Summary: Trailing slash not removed for simple path in JCR to Oak path conversion
+Description: |
+  While converting from JCR path to Oak path the trailing slashes are not removed for simple paths. They are removed for complex path
+
+  {code}
+  assertEquals("/oak-foo:bar/oak-quu:qux",npMapper.getOakPath("/foo:bar/quu:qux/"));
+  assertEquals("/a/b/c",npMapper.getOakPath("/a/b/c/"));
+      }
+  {code}
+
+  Of the two cases above the first one passes while the second one fails

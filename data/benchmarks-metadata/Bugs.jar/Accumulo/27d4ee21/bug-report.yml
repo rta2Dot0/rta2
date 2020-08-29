@@ -1,0 +1,15 @@
+---
+BugID: ACCUMULO-3424
+Summary: Token class option always requires token property
+Description: |-
+  In testing out ACCUMULO-2815, I attempted to manually provide a KerberosToken to authenticate myself and then launch the shell, but ran into an issue. The KerberosToken (in its current state) needs no options: it's wholly functional on its own.
+
+  {{accumulo shell -tc org.apache.accumulo.core.client.security.tokens.KerberosToken}}  gives an error
+
+  {noformat}
+  2014-12-16 11:41:09,712 [shell.Shell] ERROR: com.beust.jcommander.ParameterException: Must supply either both or neither of '--tokenClass' and '--tokenProperty'
+  {noformat}
+
+  And providing an empty option just prints the help message {{accumulo shell -tc org.apache.accumulo.core.client.security.tokens.KerberosToken -l ""}}
+
+  I'm guessing the latter is just how the JCommander DynamicParameter is implemented, but I don't see a reason why every authentication *must* have some properties provided to it.

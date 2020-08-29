@@ -1,0 +1,11 @@
+---
+BugID: WICKET-5131
+Summary: Problems with cookies disabled when using 301/302 and also 303 (even with
+  cookies)
+Description: "As mentioned in the mailing list by Martin, i open this as a bug...\n\nIts
+  not possible to use 303 as redirect (SC_SEE_OTHER) because thats not supported,
+  only 302 and 301 are supported but this is defined in RFC HTTP 1.1 from 1997. \n\n301
+  will add the Location header - which works as expected when disabling cookies. But
+  a 302 (which is what i prefer) will redirect to the same page because the Location
+  header is missing. When i enable cookies, its working.\n\nExample can be found here:
+  https://github.com/olze/WicketRedirect"

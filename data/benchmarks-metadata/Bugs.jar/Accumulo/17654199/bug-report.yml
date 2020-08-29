@@ -1,0 +1,11 @@
+---
+BugID: ACCUMULO-3077
+Summary: File never picked up for replication
+Description: |-
+  I was running some tests and noticed that a single file was getting ignored. The logs were warning that the Status message that was written to {{accumulo.metadata}} didn't have a createdTime on the Status record.
+
+  The odd part is that all other Status messages had a createdTime and were successfully replicated. Looking at the writes from the TabletServer logs, the expected record *was* written by the TabletServer, and writing a test with the full series of Status records written does net the correct Status (which was different than what was observed in the actual table).
+
+  Looking into it, the log which was subject to this error was the first WAL that was used when the instance was started. Because the table configurations are lazily configured when they are actually used, I believe that the StatusCombiner that is set on {{accumulo.metadata}} was not seen by the TabletServer, and the VersioningIterator "ate" the first record.
+
+  I need to come up with a way that I can be sure that all tservers will have seen the Combiner set on accumulo.metadata before any data is written to it to avoid losing a record like this.

@@ -1,0 +1,11 @@
+---
+BugID: WICKET-5603
+Summary: OnChangeAjaxBehavior attached to DropDownChoice produces two Ajax requests
+  in Chrome v35
+Description: "I have a DropDownChoice with attached OnChangeAjaxBehavior, like this:\n{code:borderStyle=solid}\nnew
+  DropDownChoice<>(\"dd\", new Model<>(), Arrays.asList( \"First\", \"Second\"))\n
+  \   .add( new OnChangeAjaxBehavior() {\n        @Override\n        protected void
+  onUpdate(AjaxRequestTarget target) {\n            System.out.println( \"update\"
+  );\n        }\n});\n{code}\n\nWhen selecting any of drop down options, two Ajax
+  requests being generated.\nIt behaves OK in IE, FF and Chrome v34, only Chrome v35
+  is affected \n "

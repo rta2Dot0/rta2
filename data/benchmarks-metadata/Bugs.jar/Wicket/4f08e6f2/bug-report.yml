@@ -1,0 +1,9 @@
+---
+BugID: WICKET-4345
+Summary: CryptoMapper does not work for applications having a home page that needs
+  query parameters
+Description: "CryptoMapper.decryptUrl() should not return null for requests like http://myhost/MyApplication/app/?param=xx
+  \n\nAs a possible fix one can replace\n\nif (encryptedUrl.getSegments().isEmpty()
+  && encryptedUrl.getQueryParameters().isEmpty()) {\n           return encryptedUrl;\n}\n\nwith
+  \n\nif (encryptedUrl.getSegments().isEmpty()) {\n           return encryptedUrl;\n}\n\nbut
+  I suspect that the original test is intended to answer to another use case... "

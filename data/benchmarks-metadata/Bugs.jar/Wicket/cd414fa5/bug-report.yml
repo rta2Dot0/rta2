@@ -1,0 +1,12 @@
+---
+BugID: WICKET-5572
+Summary: Dequeueing problem when there is TransparentWebMarkupContainer around <wicket:child/>
+Description: |-
+  While testing 7.0.0-M1 release I've found an issue with wicket-bootstrap's sample application.
+
+  Here is a minified version of it that reproduces the problem.
+  The two important things are:
+  - a TransparentWebMarkupContainer (TWMC) is attached to <html> tag in the base page
+  - the sub page is requested
+
+  It appears that dequeueing logic cannot find the closing tag of the TWMC and thinks that </wicket:child> is the closing tag.

@@ -1,0 +1,29 @@
+---
+BugID: CAMEL-8626
+Summary: Leaking exchangesInFlightKeys in ManagedRoute
+Description: |
+  Having a camel context with a single route:
+  {code}
+          onException(Throwable.class)
+                  .handled(true)
+                  .process(handleException()); // essentially  doing exchange.setException(someConvertedException);
+
+          from("direct:generalFlow")
+                  .routingSlip(property(GeneralFlowRoute.class.getName()));
+  {code}
+
+  started from Spring:
+  {code}
+      <camelContext id="flows" xmlns="http://camel.apache.org/schema/spring">
+          <template id="template" defaultEndpoint="direct:generalFlow"/>
+          <routeBuilder ref="generalFlow"/>
+      </camelContext>
+
+      <bean id="generalFlow" class="com.blabla.GeneralFlowRoute"/>
+  {code}
+
+  During performance test both exchangesInFlightKeys  and exchangesInFlightStartTimestamps are accumulating over time.
+
+  But if the test is run in one thread with debug - nothing is accumulated.
+
+  Issue found after migration from 2.14.1 to 2.15.1

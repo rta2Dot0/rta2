@@ -1,0 +1,13 @@
+---
+BugID: LOG4J2-268
+Summary: Berkeley (persistent) agent for FlumeAppender only works with MapMessages
+  (and thus not slf4j)
+Description: "If I try and use the persistent FlumeAppender with slf4j then I get
+  a NullPointerException in FlumePersistentManager.send because there is no GUID header.\n\n(My
+  repro here was using a copy of Flume modified to use log4j2 - while this particular
+  repro is exotic I'm confident that the general case detailed above will be very
+  common).\n\nThere is no GUID header because the FlumeEvent constructor only creates
+  one if the message is a MapMessage.\n\nIf the user is using slf4j then all messages
+  are PersistentMessages - and thus will cause this logging to fail.\n\nThe GUID is
+  required because it's used as a key in the BerkeleyDB storage.\n\nMy attempts at
+  a simple fix ran afoul of the key lookup from the headers in FlumePersisentManager.WriterThread.run(). "

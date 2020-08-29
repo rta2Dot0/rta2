@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-1518
+Summary: FileOperations expects RFile filenames to contain only 1 dot.
+Description: |-
+  If I attempt to create or read an RFile that contains more than 1 dot in the filename, FileOperations throws an IllegalArgumentException("File name " + name + " has no extension").
+  Please allow creation/import of RFiles that have more than 1 dot in the filename.

@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-3531
+Summary: scala - xpath not working together with choice/when
+Description: "When using the Scala DSL, xpath expressions inside when() do not work
+  as expected. As an example:\n{code:none}\n     \"direct:a\" ==> {\n     choice {\n
+  \       when (xpath(\"//hello\")) to (\"mock:english\")\n        when (xpath(\"//hallo\"))
+  {\n          to (\"mock:dutch\")\n          to (\"mock:german\")\n        } \n        otherwise
+  to (\"mock:french\")\n      }\n    }\n\n// Send messages\n\"direct:a\" ! (\"<hello/>\",
+  \"<hallo/>\", \"<hellos/>\")\n{code}\n\nHere we should receive 1 message in each
+  of the mocks. For whatever reason, all 3 messages go to mock:english. Similar routes
+  work as expected with the Java DSL. "

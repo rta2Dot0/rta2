@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-3474
+Summary: ProxyServer ignores value of isDeleted on ColumnUpdate
+Description: |-
+  The ProxyServer ignores the actual boolean value of the isDeleted flag on a ColumnUpdate.  If the isDeleted value is set, regardless of the actual boolean value, the ProxyServer marks the update as a delete.
+
+  The ProxyServer should be updated to check the value of the flag.

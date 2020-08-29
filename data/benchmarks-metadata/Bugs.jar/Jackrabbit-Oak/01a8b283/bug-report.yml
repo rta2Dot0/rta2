@@ -1,0 +1,22 @@
+---
+BugID: OAK-1655
+Summary: DataStoreBlobStore does not take into maxLastModifiedTime when fetching all
+  chunks
+Description: |-
+  Currently the {{DataStoreBlobStore}} has a pending TODO
+
+  {code}
+   @Override
+      public Iterator<String> getAllChunkIds(long maxLastModifiedTime) throws Exception {
+          //TODO Ignores the maxLastModifiedTime currently.
+          return Iterators.transform(delegate.getAllIdentifiers(), new Function<DataIdentifier, String>() {
+              @Nullable
+              @Override
+              public String apply(@Nullable DataIdentifier input) {
+                  return input.toString();
+              }
+          });
+      }
+  {code}
+
+  Due to this it currently returns all blobId. This would issue when new binary gets created while a blob gc is running as such binaries might be considered orphan and deleted

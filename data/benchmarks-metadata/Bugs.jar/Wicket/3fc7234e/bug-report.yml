@@ -1,0 +1,6 @@
+---
+BugID: WICKET-5345
+Summary: Url.canonical() breaks when there are two consecutive "parent" segments followed
+  by a normal segment
+Description: "assertEquals(\"a/d\", Url.parse(\"a/b/c/../../d\").canonical().getPath());
+  \n\nbreaks with :\nExpected :a/d\nActual   :a/b/../d"

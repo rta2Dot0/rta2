@@ -1,0 +1,9 @@
+---
+BugID: OAK-2434
+Summary: 'Lucene AND query with a complex OR phrase returns incorrect result '
+Description: |-
+  Queries like this {noformat}/jcr:root/content//element(*, test:Asset)[(jcr:contains(., 'cube')) and (jcr:contains(jcr:content/@foo, '"a" OR "b"'))]
+  {noformat} returns wrong results.
+
+  This get converted to {noformat}+:fulltext:cube full:jcr:content/foo:"a" full:jcr:content/foo:"b"
+  {noformat}

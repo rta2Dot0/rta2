@@ -1,0 +1,9 @@
+---
+BugID: OAK-1244
+Summary: Always create new UUID on ImportBehavior.IMPORT_UUID_CREATE_NEW
+Description: |-
+  The implementation should create a new UUID for each referenceable node even if there is no existing node with that UUID. This spec says:
+
+  bq.  Incoming nodes are assigned newly created identifiers upon addition to the workspace. As a result, identifier collisions never occur.
+
+  This will break backward compatibility, but is IMO the correct behavior and the only way to guarantee import of referenceable nodes does not fail in a concurrent import scenario. See OAK-1186 for more details.

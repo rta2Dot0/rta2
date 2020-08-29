@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-7016
+Summary: JMX - Update route from xml on route mbean should update current route only
+Description: |-
+  If you do not have id of the route in the XML then Camel thinks its a new route to be added. We should ensure we handle that, and only update current route as that is the intend of this operation.
+
+  If you want to add new routes use mbean operation on camelcontext instead.

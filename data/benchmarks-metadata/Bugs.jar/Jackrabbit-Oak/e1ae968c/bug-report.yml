@@ -1,0 +1,15 @@
+---
+BugID: OAK-926
+Summary: 'MongoMK: split documents when they are too large'
+Description: "Currently, the MongoMK stores all revisions of a node in the same document.
+  Once there are many revisions, the document gets very large.\n\nThe plan is to split
+  the document when it gets big.\n\nIt looks like this isn't just a \"nice to have\",
+  but also a problem for some use cases. Example stack trace:\n\n{code}\n21.07.2013
+  12:35:47.554 *ERROR* ...\nCaused by: java.lang.IllegalArgumentException: 'ok' should
+  never be null...\n\tat com.mongodb.CommandResult.ok(CommandResult.java:48)\n\tat
+  com.mongodb.DBCollection.findAndModify(DBCollection.java:375)\n\tat org.apache.jackrabbit.oak.plugins.mongomk.MongoDocumentStore.findAndModify(MongoDocumentStore.java:302)\n\t...
+  32 more\n{code}\n\nat the same time in the MongoDB log:\n\n{code}\nSun Jul 21 12:35:47.334
+  [conn7] warning: log line attempted (159k) over max size(10k), \nprinting beginning
+  and end ... \nAssertion: 10334:BSONObj size: 16795219 (0x53460001) is invalid. \nSize
+  must be between 0 and 16793600(16MB) \nFirst element: :childOrder: { r1400279f22d-0-1:
+  \"[]\", ...\n{code}\n"

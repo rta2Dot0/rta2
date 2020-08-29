@@ -1,0 +1,10 @@
+---
+BugID: ACCUMULO-1986
+Summary: Validity checks missing for readFields and Thrift deserialization
+Description: Classes in o.a.a.core.data (and potentially elsewhere) that support construction
+  from a Thrift object and/or population from a {{DataInput}} (via a {{readFields()}}
+  method) often lack data validity checks that the classes' constructors enforce.
+  The missing checks make it possible for an attacker to create invalid objects by
+  manipulating the bytes being read. The situation is analogous to the need to check
+  objects deserialized from their Java serialized form within the {{readObject()}}
+  method.

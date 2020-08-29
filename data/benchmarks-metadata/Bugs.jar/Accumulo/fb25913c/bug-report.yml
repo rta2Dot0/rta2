@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-1514
+Summary: AccumuloVFSClassloader incorrectly treats folders as folders of jar files
+Description: |
+  Specifying a directory of classes is incorrectly interpreted as a directory of jars in the general.dynamic.classpaths configuration property.
+
+  Example: adding a path such as *_$ACCUMULO_HOME/core/target/classes_* gets incorrectly interpreted as *_$ACCUMULO_HOME/core/target/classes/\*_* and evaluates to *_$ACCUMULO_HOME/core/target/classes/org_* and *_$ACCUMULO_HOME/core/target/classes/META-INF_*, but *NOT* to *_$ACCUMULO_HOME/core/target/classes_* as expected.

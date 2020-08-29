@@ -1,0 +1,10 @@
+---
+BugID: WICKET-4099
+Summary: SmartLinkLabel doesn't recognize already tagged links
+Description: "The SmartLinkLabel works as expected for the texts without <a>..</a>
+  tag. \nfor text like\nextensions @ http://www.wicketframework.org/wicket-extensions/index.html
+  are cool!!\nSmartLinkLabel generates the html - \nextensions @ <a href=\"http://www.wicketframework.org/wicket-extensions/index.html\">http://www.wicketframework.org/wicket-extensions/index.html</a>
+  are cool!!\n\nbut for the text like\nextensions @ <a href='http://www.wicketframework.org/wicket-extensions/index.html'>http://www.wicketframework.org/wicket-extensions/index.html</a>
+  are cool!!\nSmartLinkLabel generates the html - \nextensions @ <a href='<a href=\"http://www.wicketframework.org/wicket-extensions/index.html\">http://www.wicketframework.org/wicket-extensions/index.html</a>'><a
+  href=\"http://www.wicketframework.org/wicket-extensions/index.html\">http://www.wicketframework.org/wicket-extensions/index.html</a></a>
+  are cool!!\n\nI think this is a bug & needs a fix.\n"

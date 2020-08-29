@@ -1,0 +1,105 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.158-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wicket CDI Integration 7.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-core/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-parent/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-util/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/wicket/wicket-request/7.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ wicket-cdi ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wicket-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ wicket-cdi ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> clirr-maven-plugin:2.5:check (clirr-check) > compile @ wicket-cdi >>>
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ wicket-cdi ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wicket-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ wicket-cdi ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< clirr-maven-plugin:2.5:check (clirr-check) < compile @ wicket-cdi <<<
+[INFO] 
+[INFO] 
+[INFO] --- clirr-maven-plugin:2.5:check (clirr-check) @ wicket-cdi ---
+[INFO] Skipping execution
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.3.7:manifest (bundle-manifest) @ wicket-cdi ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ wicket-cdi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ wicket-cdi ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.2:test (default-test) @ wicket-cdi ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Wicket_8e518d88_java-7/wicket-cdi/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Concurrency config is parallel='none', perCoreThreadCount=true, threadCount=2, useUnlimitedThreads=false
+Running org.apache.wicket.cdi.ApacheLicenceHeaderTest
+log4j:WARN No appenders could be found for logger (org.apache.wicket.util.license.ApacheLicenseHeaderTestCase).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+
+org.apache.wicket.util.license.JavaScriptLicenseHeaderHandler failed. The following files(1) didn't have correct license header:
+NONE /scratch/tmp-rta/Bugs.jar_Wicket_8e518d88_java-7/wicket-cdi/project-config-maven-plugin.json
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.119 sec <<< FAILURE!
+Running org.apache.wicket.cdi.ComponentInjectorTest
+Mar 12, 2020 9:19:31 AM org.jboss.seam.conversation.spi.SeamConversationContextFactory create
+WARNING: No matching SeamConversationContext for store type interface javax.servlet.http.HttpServletRequest, using NOOP instance!
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.769 sec
+
+Results :
+
+Failed tests:   licenseHeaders(org.apache.wicket.cdi.ApacheLicenceHeaderTest): (..)
+
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.976 s
+[INFO] Finished at: 2020-03-12T09:19:32-07:00
+[INFO] Final Memory: 27M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.2:test (default-test) on project wicket-cdi: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bugs.jar_Wicket_8e518d88_java-7/wicket-cdi/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

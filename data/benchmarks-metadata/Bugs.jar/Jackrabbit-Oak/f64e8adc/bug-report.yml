@@ -1,0 +1,19 @@
+---
+BugID: OAK-1155
+Summary: PropertyIndex cost calculation is faulty
+Description: |-
+  The cost calculation can easily go out of bounds when it needs to estimate (whenever there are more than 100 nodes).
+  The high value it returns can be higher than the traversal index which has a max of 10M, but can be less smaller.
+
+
+  For example:
+    100 nodes in the index:
+    with a single level /content cost is 6250000
+    adding a second level /content/data cost jumps to 1.544804416E9
+
+    101 nodes in the index:
+    with a single level /content cost is 100
+    adding a second level /content/data stays at 100
+
+    100 nodes, 12 levels deep, cost is 2.147483647E9
+    101 nodes, 12 levels deep, cost is 6.7108864E7

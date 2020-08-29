@@ -1,0 +1,21 @@
+---
+BugID: FLINK-2812
+Summary: KeySelectorUtil.getSelectorForKeys and TypeExtractor.getKeySelectorTypes
+  are incompatible
+Description: "The following code snippet fails, because {{KeySelectorUtil.getSelectorForKeys}}
+  returns the base {{Tuple}} type.\n\n```java\nTypeInformation<Tuple2<Integer, Integer>>
+  typeInfo = TypeExtractor\n.getForObject(Tuple2.of(0, 0));\n\nExecutionConfig config
+  = new ExecutionConfig();\n\nKeySelector<Tuple2<Integer, Integer>, ?> keySelector
+  = KeySelectorUtil.getSelectorForKeys(\nnew Keys.ExpressionKeys<>(new int[]{0}, typeInfo),
+  typeInfo, config);\n\n// fails with InvalidTypesException\nTypeExtractor.getKeySelectorTypes(keySelector,
+  typeInfo); \n```\n\nHowever if I manually define the key selector as follows the
+  snippet works fine due to the key type being an integer.\n\n```java\nKeySelector<Tuple2<Integer,
+  Integer>, Integer> keySelector =\n\nnew KeySelector<Tuple2<Integer, Integer>, Integer>()
+  {\n\t@Override\n\tpublic Integer getKey(Tuple2<Integer, Integer> value) throws Exception
+  {\n\t\treturn value.f0;\n\t}\n};\n```\n\nThe error message looks like this:\norg.apache.flink.api.common.functions.InvalidTypesException:
+  Usage of class Tuple as a type is not allowed. Use a concrete subclass (e.g. Tuple1,
+  Tuple2, etc.) instead.\n\tat org.apache.flink.api.java.typeutils.TypeExtractor.createTypeInfoWithTypeHierarchy(TypeExtractor.java:401)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.privateCreateTypeInfo(TypeExtractor.java:379)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.getUnaryOperatorReturnType(TypeExtractor.java:279)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.getKeySelectorTypes(TypeExtractor.java:229)\n\tat
+  org.apache.flink.api.java.typeutils.TypeExtractor.getKeySelectorTypes(TypeExtractor.java:223)\n"

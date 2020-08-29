@@ -1,0 +1,9 @@
+---
+BugID: OAK-546
+Summary: 'Query: unexpected result on negative limit / offset'
+Description: |-
+  Currently, running a query with limit of -1 never returns any rows, the same as when using limit = 0.
+
+  Either the query engine should fail with a negative limit or offset (IllegalArgumentException), or it should ignore negative values (unlimited result rows for limit, probably no offset for offset = -1).
+
+  I would prefer IllegalArgumentException, but I can also live with -1 = unlimited, at least for "limit".

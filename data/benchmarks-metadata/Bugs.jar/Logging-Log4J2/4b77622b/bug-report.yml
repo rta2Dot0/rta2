@@ -1,0 +1,15 @@
+---
+BugID: LOG4J2-742
+Summary: XInclude not working with relative path
+Description: "When using XInclude in a log4j2 configuration, it uses the CWD of the
+  running application instead of the location of the log4j configuration as base.\nI.e.
+  running the application from within eclipse, the CWD of eclipse is used as base
+  for finding the document to be included.\n\nIMO, the problem is in XmlConfiguration:\n{code}\n
+  \           final InputStream configStream = configSource.getInputStream();\n            try
+  {\n                buffer = toByteArray(configStream);\n            } finally {\n
+  \               configStream.close();\n            }\n            final InputSource
+  source = new InputSource(new ByteArrayInputStream(buffer));\n            final Document
+  document = newDocumentBuilder().parse(source);\n{code}\nThere is no way the DOMParser
+  can know, where the base should be, because it is just parsing an InputStream and
+  has no file location. \n\nThe fix would be to add source.setSystemId(configSource.getLocation())
+  before parsing the document."

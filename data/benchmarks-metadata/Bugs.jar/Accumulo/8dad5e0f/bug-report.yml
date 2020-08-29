@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-633
+Summary: FirstEntryInRowIterator is broken and has no test
+Description: |-
+  In 1.4 and trunk, the iterator throws a NullPointerException when seeked.
+
+  In 1.3 the iterator runs, but there is a question as to what it should do when it is seeked to the middle of a row.  Currently, it returns the first key found within the range.  I believe this should be changed to ignore the remaining portion of that row and return the first key of the next row.  Should this change be made in 1.3, or should I leave it as is and just change it in 1.4 and greater?

@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4020
+Summary: ResourceMapper throws IllegalStateException when attempting to map a request
+  to a URL ending in a empty segment (directory)
+Description: "ResourceMapper.mapRequest() calls ResourceMapper.removeCachingDecoration()
+  which, throws IllegalStateException if the URL's last segment is an empty string.\n\nURLs
+  like: path/to/my/non/wicket/directory/ end in a empty segment. \n\nWe must change
+  the behaviour to not attempt to undecorate a URL ending in an empty segment."

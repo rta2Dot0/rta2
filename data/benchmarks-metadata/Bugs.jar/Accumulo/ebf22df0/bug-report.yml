@@ -1,0 +1,8 @@
+---
+BugID: ACCUMULO-414
+Summary: Make sure iterators handle deletion entries properly
+Description: In minor compaction scope and in non-full major compaction scopes the
+  iterator may see deletion entries. These entries should be preserved by all iterators
+  except ones that are strictly scan-time iterators that will never be configured
+  for the minc or majc scopes. Deletion entries are only removed during full major
+  compactions.

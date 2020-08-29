@@ -1,0 +1,18 @@
+---
+BugID: WICKET-3845
+Summary: support custom response headers in AbstractResource.ResourceResponse
+Description: |
+  I'm converting an application to Wicket 1.5 and I see some problems with resources.
+
+  There is a case I need to add headers (not present in ResourceResponse properties) and it looks ugly.
+
+  This is what I need to do:
+
+      @Override
+      protected void configureCache(ResourceResponse data, Attributes attributes)
+      {
+          super.configureCache(data, attributes);
+          ((WebResponse) attributes.getResponse()).setHeader("Accept-Ranges", "bytes");
+      }
+
+  It's a hack to use configureCache here, but this can't be added to setResponseHeaders, which seams a better apparent method name for it.

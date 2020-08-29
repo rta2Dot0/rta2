@@ -1,0 +1,19 @@
+---
+BugID: OAK-369
+Summary: missing support for relative path consisting of parent-element
+Description: |-
+  could not reopen OAK-95 -> cloning.
+  during testing of user-mgt api found that relpath consisting of a single parent element doesn't work (but used to):
+
+  {code}
+  @Test
+      public void getNode3() throws RepositoryException {
+          Node node = getNode("/foo");
+          Node root = node.getNode("..");
+          assertNotNull(root);
+          assertEquals("", root.getName());
+          assertTrue("/".equals(root.getPath()));
+      }
+  :
+
+  {code}

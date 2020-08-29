@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4391
+Summary: XsltOutputTransformerContainer incorrectly claims markup type "xsl"
+Description: |-
+  XsltOutputTransformerContainer return "xsl" from getMarkupType(), forcing is on all contained components.
+
+  If the components in org.apache.wicket.markup.outputTransformer.Page_1 are reordered (XsltOutputTransformerContainer coming first) the test fails because no markup for SimpleBorder can be found.

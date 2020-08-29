@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5082
+Summary: Ajax update renders parent/child JS in different order than initial Page
+  render
+Description: |-
+  See attached quickstart.  On initial page load, the child Javascripts are rendered and executed first, followed by the parent's JS - in this case a Datatables.net JS. Everything works fine.
+
+  However, if you click on a link in the DefaultDataTable, we trigger a DDT refresh via Ajax, and then you can see that the parent's JS is executed first, before the child JS - this causes a problem since the parent JS modifies the visible rows in the table and Wicket can no longer find some of the child rows.
+
+  I expected the order of JS contributions to be the same for initial page render and any Ajax updates.

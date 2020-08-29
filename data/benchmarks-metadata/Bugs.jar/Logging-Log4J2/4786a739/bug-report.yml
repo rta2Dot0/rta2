@@ -1,0 +1,31 @@
+---
+BugID: LOG4J2-1067
+Summary: ThrowableProxy getExtendedStackTraceAsString throws NPE on deserialized nested
+  exceptions
+Description: "In a similar vein to LOG4J2-914, I also am attempting to use log4j as
+  a daemon log server.  The fix for LOG4J2-914 only solved the NPE problem for one
+  dimensional exceptions. Nested exceptions also cause an NPE in the current implementation.
+  \ Here is a test/patch diff for the bug:\n\n{code}\n---\n .../org/apache/logging/log4j/core/impl/ThrowableProxy.java
+  \    |  2 +-\n .../org/apache/logging/log4j/core/impl/ThrowableProxyTest.java |
+  10 ++++++++++\n 2 files changed, 11 insertions(+), 1 deletion(-)\n\ndiff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/impl/ThrowableProxy.java
+  b/log4j-core/src/main/java/org/apache/logging/log4j/core/impl/ThrowableProxy.java\nindex
+  67d55ec..307de58 100644\n--- a/log4j-core/src/main/java/org/apache/logging/log4j/core/impl/ThrowableProxy.java\n+++
+  b/log4j-core/src/main/java/org/apache/logging/log4j/core/impl/ThrowableProxy.java\n@@
+  -207,7 +207,7 @@ public class ThrowableProxy implements Serializable {\n             return;\n
+  \        }\n         sb.append(\"Caused by: \").append(cause).append(EOL);\n-        this.formatElements(sb,
+  cause.commonElementCount, cause.getThrowable().getStackTrace(),\n+        this.formatElements(sb,
+  cause.commonElementCount, cause.getStackTrace(),\n                 cause.extendedStackTrace,
+  ignorePackages);\n         this.formatCause(sb, cause.causeProxy, ignorePackages);\n
+  \    }\ndiff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/impl/ThrowableProxyTest.java
+  b/log4j-core/src/test/java/org/apache/logging/log4j/core/impl/ThrowableProxyTest.java\nindex
+  7019aa2..6eb5dbc 100644\n--- a/log4j-core/src/test/java/org/apache/logging/log4j/core/impl/ThrowableProxyTest.java\n+++
+  b/log4j-core/src/test/java/org/apache/logging/log4j/core/impl/ThrowableProxyTest.java\n@@
+  -146,6 +146,16 @@ public class ThrowableProxyTest {\n \n         assertEquals(proxy.getExtendedStackTraceAsString(),
+  proxy2.getExtendedStackTraceAsString());\n     }\n+    \n+    @Test\n+    public
+  void testSerialization_getExtendedStackTraceAsStringWithNestedThrowable() throws
+  Exception {\n+        final Throwable throwable = new RuntimeException(new IllegalArgumentException(\"This
+  is a test\"));\n+        final ThrowableProxy proxy = new ThrowableProxy(throwable);\n+
+  \       final byte[] binary = serialize(proxy);\n+        final ThrowableProxy proxy2
+  = deserialize(binary);\n+\n+        assertEquals(proxy.getExtendedStackTraceAsString(),
+  proxy2.getExtendedStackTraceAsString());\n+    }\n \n     @Test\n     public void
+  testSerializationWithUnknownThrowable() throws Exception {\n-- \n{code}"

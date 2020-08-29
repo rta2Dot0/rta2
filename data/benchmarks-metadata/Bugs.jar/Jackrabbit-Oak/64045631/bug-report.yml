@@ -1,0 +1,6 @@
+---
+BugID: OAK-1320
+Summary: Inconsistent state in Mongo/KernelRootBuilder
+Description: The state of Kernel- and MongoRootBuilder may turn inconsistent when
+  a NodeStoreBranch.merge() performs a rebase followed by a failed merge on the underlying
+  storage. The head and base are not properly updated to reflect the successful rebase.

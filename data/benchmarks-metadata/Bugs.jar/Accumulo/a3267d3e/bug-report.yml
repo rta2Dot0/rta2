@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-3385
+Summary: DateLexicoder fails to correctly order dates prior to 1970
+Description: |-
+  DateLexicoder incorrectly orders dates before 1970 at the end of all other dates.
+
+  Therefore, the order was correct for all dates if the user only wrote dates before 1970, or only dates after 1970, but not if they did both.
+
+  The DateLexicoder should be fixed to store using a signed LongLexicoder internally, instead of the ULongLexicoder that it used before.

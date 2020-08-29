@@ -1,0 +1,419 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/rjust/projects/calling-bs/repair-them-all/RepairThemAll/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.132-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building flink-optimizer 0.9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.9-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.9-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.9-SNAPSHOT/flink-core-0.9-20161205.215030-537.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-core/0.9-SNAPSHOT/flink-core-0.9-20161205.215030-537.pom (4.4 kB at 13 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-include-yarn/0.9-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-include-yarn/0.9-SNAPSHOT/maven-metadata.xml (1.2 kB at 3.3 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-include-yarn/0.9-SNAPSHOT/flink-shaded-include-yarn-0.9-20170207.023947-352.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-include-yarn/0.9-SNAPSHOT/flink-shaded-include-yarn-0.9-20170207.023947-352.pom (2.6 kB at 7.5 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.9-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.9-SNAPSHOT/maven-metadata.xml (1.4 kB at 3.9 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.9-SNAPSHOT/flink-runtime-0.9-20160822.113426-532.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime/0.9-SNAPSHOT/flink-runtime-0.9-20160822.113426-532.pom (14 kB at 40 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.9-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.9-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.9-SNAPSHOT/flink-java-0.9-20160822.113236-535.pom
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-java/0.9-SNAPSHOT/flink-java-0.9-20160822.113236-535.pom (5.2 kB at 15 kB/s)
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.12.1:check (validate) @ flink-optimizer ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ flink-optimizer ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ flink-optimizer ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flink-optimizer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ flink-optimizer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 131 source files to /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/Optimizer.java:[353,48] DEFAULT_PARALLELISM_KEY_OLD in org.apache.flink.configuration.ConfigConstants has been deprecated
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[58,41] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: package org.apache.flink.runtime.jobgraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[113,31] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[121,22] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[583,69] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[743,17] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[816,17] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[860,17] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[874,17] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[942,17] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1048,31] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1049,31] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1503,25] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.TaskInChain
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1524,24] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.TaskInChain
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1528,49] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.TaskInChain
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1537,25] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.IterationDescriptor
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1554,41] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.IterationDescriptor
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1566,24] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.IterationDescriptor
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[160,55] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[163,50] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[201,22] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[205,22] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[254,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[325,41] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[441,41] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[451,31] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[483,41] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[529,33] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[659,25] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[786,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[795,38] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[819,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[819,54] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[905,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[906,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[910,39] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[925,42] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[973,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[974,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[978,39] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[993,42] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1189,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1210,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1210,52] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1234,17] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1234,63] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1241,53] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1264,25] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1264,79] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1273,69] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1314,23] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1346,31] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1346,60] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1383,33] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1383,72] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1390,62] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1408,33] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1408,74] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1415,64] cannot find symbol
+  symbol:   class AbstractJobVertex
+  location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[INFO] 58 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.588 s
+[INFO] Finished at: 2019-08-20T23:38:19-07:00
+[INFO] Final Memory: 36M/1427M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project flink-optimizer: Compilation failure: Compilation failure: 
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[58,41] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: package org.apache.flink.runtime.jobgraph
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[113,31] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[121,22] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[583,69] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[743,17] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[816,17] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[860,17] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[874,17] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[942,17] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1048,31] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1049,31] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1503,25] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.TaskInChain
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1524,24] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.TaskInChain
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1528,49] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.TaskInChain
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1537,25] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.IterationDescriptor
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1554,41] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.IterationDescriptor
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1566,24] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator.IterationDescriptor
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[160,55] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[163,50] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[201,22] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[205,22] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[254,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[325,41] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[441,41] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[451,31] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[483,41] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[529,33] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[659,25] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[786,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[795,38] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[819,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[819,54] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[905,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[906,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[910,39] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[925,42] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[973,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[974,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[978,39] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[993,42] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1189,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1210,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1210,52] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1234,17] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1234,63] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1241,53] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1264,25] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1264,79] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1273,69] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1314,23] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1346,31] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1346,60] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1383,33] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1383,72] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1390,62] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1408,33] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1408,74] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] /tmp/Nopol_Bugs.jar_Flink_adb321d6/flink-optimizer/src/main/java/org/apache/flink/optimizer/plantranslate/JobGraphGenerator.java:[1415,64] cannot find symbol
+[ERROR]   symbol:   class AbstractJobVertex
+[ERROR]   location: class org.apache.flink.optimizer.plantranslate.JobGraphGenerator
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

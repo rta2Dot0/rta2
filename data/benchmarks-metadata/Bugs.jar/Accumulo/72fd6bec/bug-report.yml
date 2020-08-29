@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-3150
+Summary: MiniAccumuloConfig doesn't set 0 for monitor log4j port
+Description: MonitorLoggingIT will fail on a host if the monitor is already running
+  because MAC doesn't configure itself to use an ephemeral port. We haven't really
+  noticed this because MAC doesn't start a monitor by default.

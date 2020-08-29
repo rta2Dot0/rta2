@@ -1,0 +1,14 @@
+---
+BugID: OAK-1959
+Summary: AsyncIndexUpdate unable to cope with missing checkpoint ref
+Description: |-
+  The async index uses a checkpoint reference stored under the _:async_ hidden node as a base for running the index diff.
+  It might happen that this reference is stale (pointing to checkpoints that no longer exist) so the async indexer logs a warning that it will reindex everything and will start its work.
+  The trouble is with the #mergeWithConcurrencyCheck which does not cope well with this scenario. Even if the ref checkpoint is null, it will throw a concurrent update exception which will be logged as a misleading debug log _Concurrent update detected in the async index update_.
+
+  Overall the code looks stuck in an endless reindexing loop.
+
+  {code}
+  *WARN* [pool-9-thread-1] org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate Failed to retrieve previously indexed checkpoint 569d8847-ebb6-4832-a55f-2b0b1a32ae71; re-running the initial async index update
+  *DEBUG* [pool-9-thread-1] org.apache.jackrabbit.oak.plugins.index.AsyncIndexUpdate Concurrent update detected in the async index update
+  {code}

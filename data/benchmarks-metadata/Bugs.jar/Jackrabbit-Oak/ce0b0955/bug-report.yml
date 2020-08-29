@@ -1,0 +1,7 @@
+---
+BugID: OAK-1369
+Summary: 'XPath queries: compatibility for missing @ in front of property names'
+Description: |-
+  XPath queries with conditions of the form {noformat}[id='test']{noformat} are not problematic. Jackrabbit 2.x interpreted such conditions as {noformat}[@id='test']{noformat}, and Oak currently interprets them as {noformat}[@id/* = 'test']{noformat}, as this is the expected behavior for conditions of the form {noformat}[jcr:contains(id, 'test')]{noformat}.
+
+  I believe the condition {noformat}[id='test']{noformat} is illegal, and it would be better to throw an exception instead, saying a @ is missing.

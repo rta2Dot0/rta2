@@ -1,0 +1,7 @@
+---
+BugID: WICKET-4511
+Summary: Stack overflow when render malformed html.
+Description: "Stack overflow when render malformed html.\n\nPlease, note that </HEAD>
+  element is inserted after </body>.\n\nHTML:\n<html>\n<head>\n<body>\nMalformed HTML\n</body>\n</head>\n</html>\n\nJava:\npackage
+  com.mycompany;\n\nimport org.apache.wicket.markup.html.WebPage;\npublic class Test1
+  extends WebPage {\n\tprivate static final long serialVersionUID = -4267477971499123852L;\n\n}\n\n\nThanks."

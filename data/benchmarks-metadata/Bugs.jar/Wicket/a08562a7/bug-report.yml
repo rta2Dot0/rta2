@@ -1,0 +1,17 @@
+---
+BugID: WICKET-3702
+Summary: 'wicket:border: inconsistency between add() and remove()'
+Description: |-
+  Assuming c1 is a Border and c2 is some component, the following sequence crashes with duplicate addition:
+
+  c1.add(c2);
+  c1.remove(c2);
+  c1.add(c2);
+
+  The reason for this is that remove() doesn't remove the object from the bodycontainer. The sequence can be made to work by changing the middle line to:
+
+  c1.getBodyContainer().remove(c2);
+
+  That remove() doesn't look the component from the same container as add() adds it to, seems to violate the principle of least astonishment. Unfortunately the Component structure manipulation API has more methods, such as swap(), size(), get(), etc. which are final, and can't be overridden by Border as they are. It could be best to force all users to use c1.getBodyContainer().add() instead of c1.add(), because consistent operation is probably easier to deal with in the long run than behavior that conforms to initial assumptions but has flaws elsewhere.
+
+  This ticket suggests removing the overload of add() and documenting the difference in migration guide.

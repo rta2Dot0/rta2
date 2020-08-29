@@ -1,0 +1,18 @@
+---
+BugID: WICKET-2624
+Summary: MethodGetAndSet.setValue uses wrong source to determine which type to convert
+  to when there's no setter
+Description: "MethodGetAndSet.setValue uses wrong source to determine which type to
+  convert to when there's no setter, resulting in exceptions like this:\norg.apache.wicket.WicketRuntimeException:
+  Error setting field: private int PropertyResolverTest$DirectFieldSetWithDifferentTypeThanGetter.value
+  on object: PropertyResolverTest$DirectFieldSetWithDifferentTypeThanGetter@396477d9\n\tat
+  org.apache.wicket.util.lang.PropertyResolver$MethodGetAndSet.setValue(PropertyResolver.java:1150)\n\tat
+  org.apache.wicket.util.lang.PropertyResolver$ObjectAndGetSetter.setValue(PropertyResolver.java:588)\n\tat
+  org.apache.wicket.util.lang.PropertyResolver.setValue(PropertyResolver.java:136)\n\tat
+  PropertyResolverTest.testDirectFieldSetWithDifferentTypeThanGetter(PropertyResolverTest.java:12)\n\nBug
+  is located in:\nconverted = converter.convert(value, getMethod.getReturnType());\n\nInstead,
+  it should read:\nconverted = converter.convert(value, type);\n\nTestcase attached.\n\nAdditional
+  thoughts:\nif (setMethod != null)\n{\n  type = getMethod.getReturnType();\n}\nThis
+  is really confusing (we check setMethod presence but get type from getMethod). Luckily,
+  this works as expected because in MethodGetAndSet.findSetter only methods with same
+  (or superclass) type as getter are returned.\n"

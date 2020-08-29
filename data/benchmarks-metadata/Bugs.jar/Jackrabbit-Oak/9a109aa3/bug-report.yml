@@ -1,0 +1,13 @@
+---
+BugID: OAK-4066
+Summary: Suggestion dictionary don't update after suggestUpdateFrequencyMinutes unless
+  something else causes index update
+Description: |-
+  Currently, suggestions building is tied at the end of indexing cycle. Along with that we check if diff between currTime and lastSugguestionBuildTime is more than {{suggestUpdateFrequencyMinutes}} before deciding to build suggestions or not.
+
+  This allows for suggestions not getting updated if:
+  * At T1 suggestions are built
+  * At T2 an index update takes place but suggestions aren't rebuilt because not enough time has passed since T1
+  * Now at T3 (after sufficient time), changes at T2 won't show up for suggestions until some other index change happens.
+
+  We should probably see track about last changes in index (at T2) and use that too while running indexing cycle at T3.

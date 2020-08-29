@@ -1,0 +1,21 @@
+---
+BugID: WICKET-5319
+Summary: CryptoMapper encrypts external URLs in ResourceReferences making the resources
+  inaccessible
+Description: "Short Description: \n\nCryptoMapper encrypts links to resources with
+  URLs of the form:\n - http://domain/path/script.js\n - /local/absolute/path/script.js\n\nAdditionally
+  there might be some inconsistencies in handling URLs in instances of ResourceReference.\n\nThe
+  problem occurs when JavaScript resources are included in the following way:\n\n@Override\npublic
+  void renderHead(IHeaderResponse response)\n{\n\tsuper.renderHead(response);\n\t\n\tUrlResourceReference
+  reference = new UrlResourceReference(Url.parse(\"http://domain/path/script.js\"));\n\tresponse.render(reference);\n}\n\nThe
+  resulting JavaScript links can't be loaded (404 is returned) when CryptoMapper is
+  used.\n\nThis is a minor problem, because the following always works for JavaScript
+  files not served by Wicket (\"external JavaScript files\"):\n\nresponse.render(new
+  StringHeaderItem(\"<script type=\\\"text/javascript\\\" src=\\\"//domain/myPath/manual.js\\\"></script>\");\n\n\nWays
+  to reproduce: \n\n  A code example for wicket-examples is attached (example.zip)\n
+  \ Local URLs:\n     http://localhost:8080/enc/index\n     http://localhost:8080/unenc/index\n\n\nPossible
+  fix: \n\n - disable encryption for URLs beginning with '/', '<schema>://' and '//'
+  and not served/filtered by Wicket\n\n (\n - define different reference classes for
+  external files and files served/filtered by Wicket, issue warnings when a wrong
+  URL type is supplied by the user or treat URLs beginning with '/', '<schema>://'
+  and '//' differently\n )\n\nThank you\n"

@@ -1,0 +1,21 @@
+---
+BugID: LOG4J2-107
+Summary: Nesting pattern layout options is broken
+Description: |-
+  This pattern:
+
+  {code:xml}
+  <PatternLayout pattern="%highlight{%d{dd MMM yyyy HH:mm:ss,SSS}{GMT+0} [%t] %-5level: %msg%n%throwable}" />
+  {code}
+
+  Incorrectly outputs:
+
+  {noformat}
+  02 Nov 2012 16:51:14,907{GMT+0 [main] FATAL: Fatal message.
+  }02 Nov 2012 16:51:14,910{GMT+0 [main] ERROR: Error message.
+  }02 Nov 2012 16:51:14,914{GMT+0 [main] WARN : Warning message.
+  }02 Nov 2012 16:51:14,917{GMT+0 [main] INFO : Information message.
+  }02 Nov 2012 16:51:14,920{GMT+0 [main] DEBUG: Debug message.
+  }02 Nov 2012 16:51:14,924{GMT+0 [main] TRACE: Trace message.
+  }02 Nov 2012 16:51:14,929{GMT+0 [main] ERROR: Error message.
+  {noformat}

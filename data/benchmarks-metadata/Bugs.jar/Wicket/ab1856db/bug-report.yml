@@ -1,0 +1,8 @@
+---
+BugID: WICKET-3644
+Summary: RequestCycleListenerCollection.onException should not throw an exception
+  when multiple listeners handle the exception
+Description: When multiple listeners handle the exception, RequestCycleListenerCollection
+  should simple take the first handler. The current approach makes it impossible to
+  add a listener that handles all exceptions and later add listeners for specific
+  exceptions. Simply removing the 'if (handlers.size() > 1)' should suffice.

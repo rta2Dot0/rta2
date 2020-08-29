@@ -1,0 +1,94 @@
+---
+BugID: LOG4J2-676
+Summary: 'Failed to write log event to CouchDB due to error: Connection pool shut
+  down'
+Description: "I'm trying to setup a NoSQL logger using Apache CouchDB. After logging
+  a single message, the logger fails with the following exception:\n\n{color: blue}\n
+  \ 2014-06-22 10:22:18,590 ERROR An exception occurred processing Appender databaseAppender
+  org.apache.logging.log4j.core.appender.AppenderLoggingException: Failed to write
+  log event to CouchDB due to error: Connection pool shut down\n\tat org.apache.logging.log4j.core.appender.db.nosql.couchdb.CouchDBConnection.insertObject(CouchDBConnection.java:57)\n\tat
+  org.apache.logging.log4j.core.appender.db.nosql.NoSQLDatabaseManager.writeInternal(NoSQLDatabaseManager.java:148)\n\tat
+  org.apache.logging.log4j.core.appender.db.AbstractDatabaseManager.write(AbstractDatabaseManager.java:159)\n\tat
+  org.apache.logging.log4j.core.appender.db.AbstractDatabaseAppender.append(AbstractDatabaseAppender.java:103)\n\tat
+  org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:97)\n\tat
+  org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:425)\n\tat
+  org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:406)\n\tat
+  org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:367)\n\tat
+  org.apache.logging.log4j.core.Logger.log(Logger.java:112)\n\tat org.apache.logging.log4j.spi.AbstractLogger.error(AbstractLogger.java:577)\n\tat
+  be.pw999.kbomap.controller.KboMapController.getJson(KboMapController.java:65)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:601)\n\tat org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)\n\tat
+  org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:125)\n\tat
+  org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:195)\n\tat
+  org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:91)\n\tat
+  org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:346)\n\tat
+  org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:341)\n\tat
+  org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:101)\n\tat
+  org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:224)\n\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)\n\tat
+  org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:315)\n\tat
+  org.glassfish.jersey.internal.Errors.process(Errors.java:297)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:267)\n\tat
+  org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)\n\tat
+  org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:198)\n\tat
+  org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:946)\n\tat
+  org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:323)\n\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:372)\n\tat
+  org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:335)\n\tat
+  org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:218)\n\tat
+  org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)\n\tat
+  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)\n\tat
+  org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)\n\tat
+  org.apache.logging.log4j.core.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:66)\n\tat
+  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)\n\tat
+  org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)\n\tat
+  org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)\n\tat
+  org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)\n\tat
+  org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)\n\tat
+  org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:673)\n\tat
+  com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)\n\tat
+  org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:357)\n\tat
+  org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:260)\n\tat
+  com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:188)\n\tat
+  org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:191)\n\tat
+  org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:168)\n\tat
+  org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:189)\n\tat
+  org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)\n\tat
+  org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:288)\n\tat
+  org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:206)\n\tat
+  org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:136)\n\tat
+  org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:114)\n\tat
+  org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)\n\tat
+  org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:838)\n\tat
+  org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:113)\n\tat
+  org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:115)\n\tat
+  org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:55)\n\tat
+  org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:135)\n\tat
+  org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:564)\n\tat
+  org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:544)\n\tat
+  java.lang.Thread.run(Thread.java:722)\nCaused by: java.lang.IllegalStateException:
+  Connection pool shut down\n\tat org.apache.http.util.Asserts.check(Asserts.java:34)\n\tat
+  org.apache.http.pool.AbstractConnPool.lease(AbstractConnPool.java:169)\n\tat org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection(PoolingHttpClientConnectionManager.java:217)\n\tat
+  org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:158)\n\tat
+  org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)\n\tat
+  org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)\n\tat org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)\n\tat
+  org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)\n\tat
+  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)\n\tat
+  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)\n\tat
+  org.lightcouch.CouchDbClientBase.executeRequest(CouchDbClientBase.java:409)\n\tat
+  org.lightcouch.CouchDbClientBase.put(CouchDbClientBase.java:517)\n\tat org.lightcouch.CouchDbClientBase.save(CouchDbClientBase.java:273)\n\tat
+  org.apache.logging.log4j.core.appender.db.nosql.couchdb.CouchDBConnection.insertObject(CouchDBConnection.java:51)\n\t...
+  66 more]]\n{color}\n\n\nThe log4j2.xml file is:\n{code:xml}\n<?xml version=\"1.0\"
+  encoding=\"UTF-8\"?>\n<Configuration status=\"info\">\n  <Appenders>\n    <NoSql
+  name=\"databaseAppender\">\n      <CouchDb databaseName=\"kbomaplog\" protocol=\"http\"
+  server=\"127.0.0.1\" port=\"5984\"\n               username=\"loguser\" password=\"meh\"
+  />\n    </NoSql>\n  </Appenders>\n  <Loggers>\n    <Root level=\"info\">\n      <AppenderRef
+  ref=\"databaseAppender\"/>\n    </Root>\n  </Loggers>\n</Configuration>\n{code}\n\n\nAnd
+  the piece of code I'm using to test is:\n{code}\n\tprivate Logger logger = LogManager.getLogger(KboMapController.class);\n\t\n\t/**\n\t
+  * Does nothing special. Returns a simple JSON object with a count of the code table
+  for testing purposes.\n\t * \n\t * @param id unused\n\t * @param test unused\n\t
+  * @return a JSON representation of the filled in {@link Enterprise} object.\n\t
+  */\n\t@GET\n\t@Produces(MediaType.APPLICATION_JSON)\n\t@Path(\"{id}/{test}\")\n\tpublic
+  Enterprise getJson(@PathParam(\"id\") String id, @PathParam(\"test\") String test)
+  {\n\t\ttry {\n\t\t\tlogger.error(\"whoaaaaaah\");\n\t\t\treturn new Enterprise(\"SUCCESS\",
+  \"COUNT=\" + dao.count());\n\t\t} catch (SQLException e) {\n\t\t\treturn new Enterprise(\"ERROR\",
+  e.getMessage());\n\t\t}\n\n\t}\n{code}\n\nThe same issue occurs when the logger
+  is {{static final}}"

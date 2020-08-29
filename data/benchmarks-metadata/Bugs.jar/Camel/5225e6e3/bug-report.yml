@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-3760
+Summary: ManagementNamingStrategy - Should normalize ObjectName to avoid using illegal
+  characters
+Description: "For example when using JMS in the loanbroaker example. There us a colon
+  in the JMS queue name which is invalid char in JMX.\n\n2011-03-06 08:26:55,859 [main
+  \          ] WARN  ManagedManagementStrategy      - Cannot check whether the managed
+  object is registered. This exception will be ignored.\njavax.management.MalformedObjectNameException:
+  Could not create ObjectName from: org.apache.camel:context=vesta.apache.org/camel-1,type=threadpools,name=JmsReplyManagerTimeoutChecker[queue2:parallelLoanRequestQueue].
+  Reason: javax.management.MalformedObjectNameException: Invalid character ':' in
+  value part of property\n\tat org.apache.camel.management.DefaultManagementNamingStrategy.createObjectName(DefaultManagementNamingStrategy.java:315)[camel-core-2.7-SNAPSHOT.jar:2.7-SNAPSHOT]\n\n\n"

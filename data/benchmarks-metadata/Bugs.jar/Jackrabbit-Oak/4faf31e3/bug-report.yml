@@ -1,0 +1,9 @@
+---
+BugID: OAK-3879
+Summary: 'Lucene index / compatVersion 2: search for ''abc!'' does not work'
+Description: "When using a Lucene fulltext index with compatVersion 2, then the following
+  query does not return any results. When using compatVersion 1, the correct result
+  is returned.\n\n{noformat}\nSELECT * FROM [nt:unstructured] AS c \nWHERE CONTAINS(c.[jcr:description],
+  'abc!') \nAND ISDESCENDANTNODE(c, '/content')\n{noformat}\n\nWith compatVersion
+  1 and 2, searching for just 'abc' works. Also, searching with '=' instead of 'contains'
+  works."

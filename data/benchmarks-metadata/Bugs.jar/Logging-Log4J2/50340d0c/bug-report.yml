@@ -1,0 +1,18 @@
+---
+BugID: LOG4J2-470
+Summary: Resolution of ${hostName} in log4j2.xml file only works after first reference
+Description: "I am using $\\{hostName} to include the hostname in the log file.  When
+  I use it it resolves to \"$\\{hostName}\" the first time it is referred to in the
+  log and then the proper hostname after that.\n\nExample configuration (comment out
+  the \"Properties\" section to duplicate):\n{code}\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Configuration
+  monitorInterval=\"60\"\tname=\"SMSLog4JConfiguration\"> <!-- add this to spit out
+  debug about configuration: 'status=\"debug\"'  -->\n\n\t<!-- This seems to be a
+  bug, but the $hostName seems to need to be referenced\n\t     once before it can
+  be used.  Maybe it gets correct in a future log4j2 release --> \n\t<Properties>\n\t\t<Property
+  name=\"theHostName\">${hostName}</Property>\n\t</Properties>\n\n\n\t<Appenders>\n\t\t<RollingFile
+  name=\"RollingFileAppender\" fileName=\"/applicationlogs/CTMSApplicationService-${hostName}.log\"\n\t\t\tfilePattern=\"/applicationlogs/${hostName}-%d{MM-dd-yyyy}-%i.log\">\n\t\t\t<Policies>\n\t\t\t\t<OnStartupTriggeringPolicy
+  />\n\t\t\t\t<TimeBasedTriggeringPolicy interval=\"24\" modulate=\"true\" />\n\t\t\t</Policies>\n\t\t\t<PatternLayout
+  pattern=\"[%d{ISO8601}] [%t] %-5level %logger{6} - %msg%n\" />\n\t\t</RollingFile>\n\t</Appenders>\n\t<Loggers>\n\t\t<!--
+  default for \"includeLocation\" is false, but I want to be clear -->\n\t\t<Root
+  level=\"debug\" includeLocation=\"false\">\n\t\t\t<AppenderRef ref=\"RollingFileAppender\"
+  />\n\t\t</Root>\n\t</Loggers>\n</Configuration>\n{code}"

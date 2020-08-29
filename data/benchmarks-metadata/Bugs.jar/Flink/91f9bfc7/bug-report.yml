@@ -1,0 +1,14 @@
+---
+BugID: FLINK-1458
+Summary: Interfaces and abstract classes are not valid types
+Description: "I don't know whether this is by design or is a bug, but I am having
+  trouble working with DataSet and traits in scala which is a major limitation.  A
+  simple example is shown below.  \n\nCompile time warning is 'Type Main.SimpleTrait
+  has no fields that are visible from Scala Type analysis. Falling back to Java Type
+  Analysis...'\n\nRun time error is 'Interfaces and abstract classes are not valid
+  types: interface Main$SimpleTrait'\n\nRegards, John\n\n\n val env = ExecutionEnvironment.getExecutionEnvironment\n\n
+  \ trait SimpleTrait {\n    def contains(x: String): Boolean\n  }\n\n  class SimpleClass
+  extends SimpleTrait {\n    def contains(x: String) = true\n  }\n\n  val data: DataSet[Double]
+  = env.fromElements(1.0, 2.0, 3.0, 4.0)\n\n  def f(data: DataSet[Double]): DataSet[SimpleTrait]
+  = {\n\n    data.mapPartition(iterator => {\n      Iterator(new SimpleClass)\n    })\n
+  \ }\n\n\n  val g = f(data)\n  g.print()\n\n\n  env.execute(\"Simple example\")"

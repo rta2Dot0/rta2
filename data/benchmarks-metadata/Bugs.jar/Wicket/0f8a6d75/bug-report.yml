@@ -1,0 +1,13 @@
+---
+BugID: WICKET-5706
+Summary: ResourceUtils.getLocaleFromFilename cannot handle filenames with classifiers
+Description: "When I try to get PathLocale with ResourceUtils, than get wrong values,
+  when the files contains '.' in name.\n\nExample: 'jquery.test.js' \nPathLocale.path=jquery,
+  PathLocale.locale = null\n\nor jquery.test_hu.js'.\nPathLocale.path=jquery, PathLocale.locale
+  = null\n\nThat's why I'd like to use \njquery.test_hu.js' as resource, the ResourceStreamLocator
+  try to find \njquery.test_hu_hu_HU.js, jquery.test_hu_hu.js, and after  jquery.test_hu.js.\nBecause
+  the \nResourceStreamLocator.locate\n\n\t\tPathLocale data = ResourceUtils.getLocaleFromFilename(path);\n\t\tif
+  ((data != null) && (data.locale != null))\n\t\t{\n\t\t\tpath = data.path;\n\t\t\tlocale
+  = data.locale;\n\t\t}\ndoesn't work in this case.\n\nShould change the \nResourceUtils\n\n\tpublic
+  static PathLocale getLocaleFromFilename(String path) {\n\t\tint pos = path.indexOf('.');\n----------------\nTo\n
+  \               int pos = path.lastIndexOf('.');"

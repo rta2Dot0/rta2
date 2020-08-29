@@ -1,0 +1,29 @@
+---
+BugID: OAK-3769
+Summary: QueryParse exception when fulltext search performed with term having '/'
+Description: "Running the below query, results in Exception pointed by [1]\n\n/jcr:root/content/dam//element(*,dam:Asset)[jcr:contains(jcr:content/metadata/@cq:tags,
+  'stockphotography:business/business_abstract')] order by @jcr:created descending\n\nAlso
+  if you remove the node at /oak:index/damAssetLucene/indexRules/dam:Asset/properties/cqTags
+  \ and re-index the /oak:index/damAssetLucene index, the query works.\n\nSeems '/'
+  is special character and needs to be escaped by Oak.\n\n[1]\n{noformat}\nCaused
+  by: org.apache.lucene.queryparser.flexible.core.QueryNodeParseException: Syntax
+  Error, cannot parse stockphotography\\:business/business_abstract: Lexical error
+  at line 1, column 45.  Encountered: <EOF> after : \"/business_abstract\" \nat org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.parse(StandardSyntaxParser.java:74)\nat
+  org.apache.lucene.queryparser.flexible.core.QueryParserHelper.parse(QueryParserHelper.java:250)\nat
+  org.apache.lucene.queryparser.flexible.standard.StandardQueryParser.parse(StandardQueryParser.java:168)\nat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex.tokenToQuery(LucenePropertyIndex.java:1260)\n...
+  138 common frames omitted\nCaused by: org.apache.lucene.queryparser.flexible.standard.parser.TokenMgrError:
+  Lexical error at line 1, column 45.  Encountered: <EOF> after : \"/business_abstract\"\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParserTokenManager.getNextToken(StandardSyntaxParserTokenManager.java:937)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.jj_scan_token(StandardSyntaxParser.java:945)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.jj_3R_4(StandardSyntaxParser.java:827)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.jj_3_2(StandardSyntaxParser.java:739)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.jj_2_2(StandardSyntaxParser.java:730)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.Clause(StandardSyntaxParser.java:318)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.ModClause(StandardSyntaxParser.java:303)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.ConjQuery(StandardSyntaxParser.java:234)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.DisjQuery(StandardSyntaxParser.java:204)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.Query(StandardSyntaxParser.java:166)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.TopLevelQuery(StandardSyntaxParser.java:147)\nat
+  org.apache.lucene.queryparser.flexible.standard.parser.StandardSyntaxParser.parse(StandardSyntaxParser.java:65)\n...
+  141 common frames omitted\n{noformat}"

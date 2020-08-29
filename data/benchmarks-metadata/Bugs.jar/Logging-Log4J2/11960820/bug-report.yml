@@ -1,0 +1,17 @@
+---
+BugID: LOG4J2-1046
+Summary: Circular Exception cause throws StackOverflowError
+Description: "If an exception with a circular-referenced exception (suppressed, or
+  otherwise) is logged, log4j will throw a StackOverflowError:\n{code:java}\n        Exception
+  e1 = new Exception();\n        Exception e2 = new Exception(e1);\n        e1.initCause(e2);\n
+  \       LogManager.getLogger().error(\"Error\", e1);\n{code}\n\nWill throw the following:\n{code:java}\njava.lang.StackOverflowError\n\tat
+  java.util.Vector.elementData(Vector.java:730)\n\tat java.util.Vector.elementAt(Vector.java:473)\n\tat
+  java.util.Stack.peek(Stack.java:103)\n\tat org.apache.logging.log4j.core.impl.ThrowableProxy.toExtendedStackTrace(ThrowableProxy.java:555)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:147)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:148)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:148)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:148)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:148)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:148)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.<init>(ThrowableProxy.java:148)\n
+  \       ...\n{code}\n"

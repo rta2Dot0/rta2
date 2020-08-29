@@ -1,0 +1,16 @@
+---
+BugID: WICKET-4121
+Summary: WizardStep$FormValidatorWrapper.isActiveStep(WizardStep.java) causes NullPointerException
+Description: |-
+  Using the Wizard with a nested WizardModel (see RecursiveWizardModel implementation at the attached quickstart application) causes a NullPointerException. I was able to run the same test application with wicket 1.4.18 without any problems.
+
+  Caused by: java.lang.NullPointerException
+          at org.apache.wicket.extensions.wizard.WizardStep$FormValidatorWrapper.isActiveStep(WizardStep.java:145)
+          at org.apache.wicket.extensions.wizard.WizardStep$FormValidatorWrapper.getDependentFormComponents(WizardStep.java:109)
+          at org.apache.wicket.markup.html.form.validation.FormValidatorAdapter.getDependentFormComponents(FormValidatorAdapter.java:47)
+          at org.apache.wicket.markup.html.form.Form.validateFormValidator(Form.java:1782)
+          at org.apache.wicket.markup.html.form.Form.validateFormValidators(Form.java:1828)
+          at org.apache.wicket.markup.html.form.Form.validate(Form.java:1706)
+          at org.apache.wicket.markup.html.form.Form.process(Form.java:773)
+          at org.apache.wicket.markup.html.form.Form.onFormSubmitted(Form.java:728)
+          at org.apache.wicket.markup.html.form.Form.onFormSubmitted(Form.java:670)

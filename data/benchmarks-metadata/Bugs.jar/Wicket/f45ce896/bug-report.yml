@@ -1,0 +1,25 @@
+---
+BugID: WICKET-5698
+Summary: WebApplication#unmount() unmounts the whole compound mapper if some of its
+  inner ones matches
+Description: "From dev@ mailing lists: http://markmail.org/message/wmdgbrhvrvaeygvr\n\nWebApplication.unmount()
+  calls getRootRequestMapperAsCompound(), and \ncalls unmount() on that.\n\ngetRootRequestMapperAsCompound()
+  checks if the root request mapper is a \ncompound, if not, wraps it in a compound,
+  sets the compound as root and \nreturns the compound.\n\nCompoundRequestMapper.unmount()
+  identifies which of the mappers added \ndirectly to the compound handle the url,
+  and removes them.\n\nThe problem:\nIf the original root mapper was a single wrapper,
+  or layer of wrappers, \nwith the actual mounted mapper wrapped some levels down,
+  then the whole \nwrapper is removed, not just the specific MountedMapper that is
+  wrapped. \nThis has the effect of removing every single mapper, leaving root mapper
+  \nas an empty compound.\n\nI would like to attempt to provide a patch to fix this,
+  but would like \nguidance on the approach. I have come up with three approaches:\n\n1.
+  Introduce interface IWrappedRequestMapper. This will be an interface \nwhich has
+  one method: IRequestMapper getWrappedRequestMapper(). We can \nthen have all wrapper
+  mappers implement this and work down the tree to \nfind the correct MountedMapper
+  (wicket 6) to remove.\n\n2. Have WebApplication hold a reference to a specific \nCompoundRequestMapper,
+  and have all mount()/unmount() operations add and \nremove from this mapper. This
+  compound would need to be added to the \ndefault list during init. This makes it
+  complicated to work out how to \ndo things like have CryptoMapper not apply to mounted
+  pages.\n\n3. Add method unmount() to IRequestMapper, so that wrappers can \ndelegate.
+  This obviously can only be done in wicket 7, but we're making \nmounting a problem
+  of every single request mapper, when not even \nApplication cares about mounting."

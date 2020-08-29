@@ -1,0 +1,6 @@
+---
+BugID: OAK-1761
+Summary: DocumentNodeStore does not make use of References while serializing Blob
+Description: 'The BlobSerializer in DocumentNodeStore does not make use of Blob references
+  which results in copying the blobs by value hence significantly slowing down any
+  migration '

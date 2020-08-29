@@ -1,0 +1,11 @@
+---
+BugID: MATH-801
+Summary: Quaternion not normalized after construction
+Description: "The use of the Rotation(Vector3D u1,Vector3D u2,Vector3D v1,Vector3D
+  v2) constructor with normalized angle can apparently lead to un-normalized quaternion.\nThis
+  case appeared to me with the following data :\nu1 = (0.9999988431610581, -0.0015210774290851095,
+  0.0)\nu2 = (0.0, 0.0, 1.0)\nand \nv1 = (0.9999999999999999, 0.0, 0.0)\nv2 = (0.0,
+  0.0, -1.0)\n\nThis lead to the following quaternion :\nq0 = 225783.35177064248\nq1
+  = 0.0\nq2 = 0.0\nq3 = -3.3684446110762543E-9\n\nI was expecting to have a normalized
+  quaternion, as input vector's are normalized. Does the quaternion shouldn't be normalized
+  ?\nI've joined the corresponding piece of code as JUnit Test case"

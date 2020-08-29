@@ -1,0 +1,9 @@
+---
+BugID: OAK-2642
+Summary: DocumentNodeStore.dispose() may leave repository in an inconsistent state
+Description: "The repository may become inconsistent when a commit happens while the
+  DocumentNodeStore is disposed. \n\nThe node store writes back pending _lastRevs
+  and then unset the active flag in the clusterNodes collection. It is possible a
+  commit gets through even after the _lastRevs had been updated and the active flag
+  is cleared. This means the missing _lastRev updates will not be recovered on a restart
+  or by another cluster node."

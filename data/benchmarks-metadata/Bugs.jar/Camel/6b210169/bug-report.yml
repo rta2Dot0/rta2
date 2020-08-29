@@ -1,0 +1,34 @@
+---
+BugID: CAMEL-6810
+Summary: 'Bean Component/BeanBinding: Body as InputStream parametr (specified as ${body}
+  in route)'
+Description: "I discovered following problem (which was already shortly discussed
+  in [Camel user forum|http://camel.465427.n5.nabble.com/Bean-component-Bean-Binding-Body-as-InputStream-parametr-specified-as-body-in-route-td5740656.ht]).\n\nI
+  have a \"streamBodyBindingBean\" bean with this method:\n{code}\npublic void bodyBinding(InputStream
+  in) throws IOException {\n  int byteCount = 0;\n  int c;\n  while((c = in.read())
+  != -1)\n    byteCount++;\n  System.out.println(\"ByteCount: \" + byteCount);\n}\n{code}\n\nAnd
+  this route:\n{code}\n<route id=\"\" trace=\"true\">\n  <from uri=\"direct://body-input-stream-binding-in\"/>\n
+  \ <to uri=\"bean://streamBodyBindingBean?method=bodyBinding(${body})\"/>\n  <!--
+  to uri=\"bean://isBodyBindingBean\"/--> \n  <to uri=\"mock://body-input-stream-binding-out\"/>\n</route>\n{code}\n\nAnd
+  here is a way how I send exchange from test stuff:\n{code}\nByteArrayInputStream
+  in = new ByteArrayInputStream(\n  \"Small body, which I want to bind as InputStream\".getBytes(\"UTF-8\")\n);\nExchange
+  exchange = createExchangeWithBody(in);\nexchange.setPattern(ExchangePattern.InOnly);\ntemplate.send(\"direct://body-input-stream-binding-in\",
+  exchange); \n{code}\n\nIn this case I got a sysout message: {{ByteCount: 0}}, but
+  when I used the commented variant in the route, I got expected result: {{ByteCount:
+  47\"}}.\n\nWhen I change the route and use bean component 2 times (both variant
+  of bean method invocation), then I got:\n\n{noformat}\n2013-10-01 12:26:37.259 DEBUG
+  {main} [SendProcessor] >>>> Endpoint[bean://isBodyBindingBean?method=bodyBinding%28%24%7Bbody%7D%29]
+  Exchange[Message: [Body is instance of org.apache.camel.StreamCache]]\nByteCount:
+  0\n2013-10-01 12:26:37.289 DEBUG {main} [SendProcessor] >>>> Endpoint[bean://isBodyBindingBean]
+  Exchange[Message: [Body is instance of org.apache.camel.StreamCache]]\nByteCount:
+  47\n2013-10-01 12:26:37.307 DEBUG {main} [SendProcessor] >>>> Endpoint[mock://body-input-stream-binding-out]
+  Exchange[Message: [Body is instance of org.apache.camel.StreamCache]] \n{noformat}\n\nThe
+  strange for me is {{MethodInfo}} class, line 526:\n{code}\n// the parameter value
+  was not already valid, but since the simple language have evaluated the expression\n//
+  which may change the parameterValue, so we have to check it again to see if its
+  now valid\nexp = exchange.getContext().getTypeConverter().convertTo(String.class,
+  parameterValue);\n// String values from the simple language is always valid\nif
+  (!valid) {\n  ...\n}\n{code}\n\nThe line after comment caused that my \"InputStream\"
+  is transformed into String, what can be a problem in case of \"big\" InputStream.\n\nI
+  know that I can use only second variant of \"bean method invocation\", which is
+  enough for my need, but I only want to point out to this situation."

@@ -1,0 +1,28 @@
+---
+BugID: CAMEL-6557
+Summary: AbstractListAggregationStrategy does not work with batch completion strategy
+Description: |-
+  When my aggregator extends AbstractListAggregationStrategy, I never get aggregator completions from the batch consumer.
+
+  If I change my aggregator to be something like:
+
+  {code}
+      Foo foo = newExchange.getIn().getBody(Foo.class);
+      List<Foo> list = null;
+      Exchange outExchange;
+      if (oldExchange == null) {
+        list = new LinkedList<Foo>();
+        list.add(foo);
+        newExchange.getIn().setBody(list);
+        outExchange = newExchange;
+      } else {
+        list = oldExchange.getIn().getBody(List.class);
+        list.add(foo);
+        outExchange = oldExchange;
+      }
+      return outExchange;
+  {code}
+
+  then it works fine.
+
+  I'm guessing this is has something to do with AbstractListAggregationStrategy messing with properties or wrapping the actual exchanges (since the batch completion is triggered based on Exchange.BATCH_SIZE property)

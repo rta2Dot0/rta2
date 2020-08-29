@@ -1,0 +1,13 @@
+---
+BugID: WICKET-5112
+Summary: Parantheses problem with UrlValidator
+Description: |-
+  One of our users got an error message when trying to add a new URL:
+
+  'http://en.wikipedia.org/wiki/Genus_(mathematics)' is not a valid URL
+
+  I just created very quickly a junit test and it fails:
+
+  String[] schemes = {"http"};
+  UrlValidator urlValidator = new UrlValidator(schemes);
+  assertTrue(urlValidator.isValid("http://en.wikipedia.org/wiki/Genus_(mathematics)"));

@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4030
+Summary: HeaderResponse.renderCSSReference does not render context path relative url,
+  but wicket filter url-pattern relative url
+Description: In an application with a wicket filter url-pattern different than /*,
+  if you use HeaderResponse.renderCSSReference(String url), where url is a context-path-relative
+  url (css/main.css, for example), the generated css link is not context relative,
+  but wicket url-pattern relative.

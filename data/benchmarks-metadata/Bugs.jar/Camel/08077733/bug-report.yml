@@ -1,0 +1,132 @@
+---
+BugID: CAMEL-9143
+Summary: Producers that implement the ServicePoolAware interface cause memory leak
+  due to JMX references
+Description: "h4. Description\n\nProducer instances that implement the ServicePoolAware
+  interface will leak memory if their route is stopped, with new producers being leaked
+  every time the route is started/stopped.\n\nKnown implementations that are affected
+  are RemoteFileProducer (ftp, sftp) and Mina2Producer.\n\nThis is due to the behaviour
+  that the SendProcessor which when the route is stopped it shuts down it's `producerCache`
+  instance.\n\n{code}\n    protected void doStop() throws Exception {\n        ServiceHelper.stopServices(producerCache,
+  producer);\n    }\n{code}\n\nthis in turn calls `stopAndShutdownService(pool)` which
+  will call stop on the SharedProducerServicePool instance which is a NOOP however
+  it also calls shutdown which effects a stop of the global pool (this stops all the
+  registered services and then clears the pool.\n\n{code}\n    protected void doStop()
+  throws Exception {\n        // when stopping we intend to shutdown\n        ServiceHelper.stopAndShutdownService(pool);\n
+  \       try {\n            ServiceHelper.stopAndShutdownServices(producers.values());\n
+  \       } finally {\n            // ensure producers are removed, and also from
+  JMX\n            for (Producer producer : producers.values()) {\n                getCamelContext().removeService(producer);\n
+  \           }\n        }\n        producers.clear();\n    }\n{code}\n\nHowever no
+  call to `context.removeService(Producer) is called for the entries from the pool
+  only those singleton instances that were in the `producers` map hence the JMX `ManagedProducer`
+  that is created when `doGetProducer` invokes {code}                getCamelContext().addService(answer,
+  false);\n{code} is never removed. \n\nSince the global pool is empty when the next
+  request to get a producer is called a new producer is created, jmx wrapper and all,
+  whilst the old instance remains orphaned retaining any objects that pertain to that
+  instance.\n\nOne workaround is for the producer to call {code}getEndpoint().getCamelContext().removeService(this){code}
+  in it's stop method, however this is fairly obscure and it would probably be better
+  to invoke removal of the producer when it is removed from the shared pool.\n\nAnother
+  issue of note is that when a route is shutdown that contains a SendProcessor due
+  to the shutdown invocation on the SharedProcessorServicePool the global pool is
+  cleared of `everything` and remains in `Stopped` state until another route starts
+  it (although it is still accessed and used whilst in the `Stopped` state).\n\nh4.
+  Impact\n\nFor general use where there is no dynamic creation or passivation of routes
+  this issue should be minimal, however in our use case where the routes are not static,
+  there is a certain amount of recreation of routes as customer endpoints change and
+  there is a need to passivate idle routes this causes a considerable memory leak
+  (via SFTP in particular).\n\nh4. Test Case\n{code}\npackage org.apache.camel.component;\n\nimport
+  com.google.common.util.concurrent.AtomicLongMap;\n\nimport org.apache.camel.CamelContext;\nimport
+  org.apache.camel.Consumer;\nimport org.apache.camel.Endpoint;\nimport org.apache.camel.Exchange;\nimport
+  org.apache.camel.Processor;\nimport org.apache.camel.Producer;\nimport org.apache.camel.Route;\nimport
+  org.apache.camel.Service;\nimport org.apache.camel.ServicePoolAware;\nimport org.apache.camel.ServiceStatus;\nimport
+  org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.impl.DefaultComponent;\nimport
+  org.apache.camel.impl.DefaultEndpoint;\nimport org.apache.camel.impl.DefaultProducer;\nimport
+  org.apache.camel.support.LifecycleStrategySupport;\nimport org.apache.camel.support.ServiceSupport;\nimport
+  org.apache.camel.test.junit4.CamelTestSupport;\nimport org.junit.Test;\n\nimport
+  java.util.Map;\n\nimport static com.google.common.base.Preconditions.checkNotNull;\n\n/**\n
+  * Test memory behaviour of producers using {@link ServicePoolAware} when using JMX.\n
+  */\npublic class ServicePoolAwareLeakyTest extends CamelTestSupport {\n\n  private
+  static final String LEAKY_SIEVE_STABLE = \"leaky://sieve-stable?plugged=true\";\n
+  \ private static final String LEAKY_SIEVE_TRANSIENT = \"leaky://sieve-transient?plugged=true\";\n\n\n
+  \ private static boolean isPatchApplied() {\n    return Boolean.parseBoolean(System.getProperty(\"patchApplied\",
+  \"false\"));\n  }\n\n  /**\n   * Component that provides leaks producers.\n   */\n
+  \ private static class LeakySieveComponent extends DefaultComponent {\n    @Override\n
+  \   protected Endpoint createEndpoint(String uri, String remaining, Map<String,
+  Object> parameters) throws Exception {\n      boolean plugged = \"true\".equalsIgnoreCase((String)
+  parameters.remove(\"plugged\"));\n      return new LeakySieveEndpoint(uri, isPatchApplied()
+  && plugged);\n    }\n  }\n\n  /**\n   * Endpoint that provides leaky producers.\n
+  \  */\n  private static class LeakySieveEndpoint extends DefaultEndpoint {\n\n    private
+  final String uri;\n    private final boolean plugged;\n\n    public LeakySieveEndpoint(String
+  uri, boolean plugged) {\n      this.uri = checkNotNull(uri, \"uri must not be null\");\n
+  \     this.plugged = plugged;\n    }\n\n    @Override\n    public Producer createProducer()
+  throws Exception {\n      return new LeakySieveProducer(this, plugged);\n    }\n\n
+  \   @Override\n    public Consumer createConsumer(Processor processor) throws Exception
+  {\n      throw new UnsupportedOperationException();\n    }\n\n    @Override\n    public
+  boolean isSingleton() {\n      return true;\n    }\n\n    @Override\n    protected
+  String createEndpointUri() {\n      return uri;\n    }\n  }\n\n  /**\n   * Leaky
+  producer - implements {@link ServicePoolAware}.\n   */\n  private static class LeakySieveProducer
+  extends DefaultProducer implements ServicePoolAware {\n\n    private final boolean
+  plugged;\n\n    public LeakySieveProducer(Endpoint endpoint, boolean plugged) {\n
+  \     super(endpoint);\n      this.plugged = plugged;\n    }\n\n    @Override\n
+  \   public void process(Exchange exchange) throws Exception {\n      // do nothing\n
+  \   }\n\n    @Override\n    protected void doStop() throws Exception {\n      super.doStop();\n\n
+  \     //noinspection ConstantConditions\n      if (plugged) {\n        // need to
+  remove self from services since we are ServicePoolAware this will not be handled
+  for us otherwise we\n        // leak memory\n        getEndpoint().getCamelContext().removeService(this);\n
+  \     }\n    }\n  }\n\n  @Override\n  protected boolean useJmx() {\n    // only
+  occurs when using JMX as the GC root for the producer is through a ManagedProducer
+  created by the\n    // context.addService() invocation\n    return true;\n  }\n\n
+  \ /**\n   * Returns true if verification of state should be performed during the
+  test as opposed to at the end.\n   */\n  public boolean isFailFast() {\n    return
+  false;\n  }\n\n  /**\n   * Returns true if during fast failure we should verify
+  that the service pool remains in the started state.\n   */\n  public boolean isVerifyProducerServicePoolRemainsStarted()
+  {\n    return false;\n  }\n\n  @Override\n  public boolean isUseAdviceWith() {\n
+  \   return true;\n  }\n\n  @Test\n  public void testForMemoryLeak() throws Exception
+  {\n    registerLeakyComponent();\n\n    final AtomicLongMap<String> references =
+  AtomicLongMap.create();\n\n    // track LeakySieveProducer lifecycle\n    context.addLifecycleStrategy(new
+  LifecycleStrategySupport() {\n      @Override\n      public void onServiceAdd(CamelContext
+  context, Service service, Route route) {\n        if (service instanceof LeakySieveProducer)
+  {\n          references.incrementAndGet(((LeakySieveProducer) service).getEndpoint().getEndpointKey());\n
+  \       }\n      }\n\n      @Override\n      public void onServiceRemove(CamelContext
+  context, Service service, Route route) {\n        if (service instanceof LeakySieveProducer)
+  {\n          references.decrementAndGet(((LeakySieveProducer) service).getEndpoint().getEndpointKey());\n
+  \       }\n      }\n    });\n\n    context.addRoutes(new RouteBuilder() {\n      @Override\n
+  \     public void configure() throws Exception {\n        from(\"direct:sieve-transient\")\n
+  \           .id(\"sieve-transient\")\n            .to(LEAKY_SIEVE_TRANSIENT);\n\n
+  \       from(\"direct:sieve-stable\")\n            .id(\"sieve-stable\")\n            .to(LEAKY_SIEVE_STABLE);\n
+  \     }\n    });\n\n    context.start();\n\n    for (int i = 0; i < 1000; i++) {\n
+  \     ServiceSupport service = (ServiceSupport) context.getProducerServicePool();\n
+  \     assertEquals(ServiceStatus.Started, service.getStatus());\n      if (isFailFast())
+  {\n        assertEquals(2, context.getProducerServicePool().size());\n        assertEquals(1,
+  references.get(LEAKY_SIEVE_TRANSIENT));\n        assertEquals(1, references.get(LEAKY_SIEVE_STABLE));\n
+  \     }\n\n      context.stopRoute(\"sieve-transient\");\n\n      if (isFailFast())
+  {\n        assertEquals(\"Expected no service references to remain\", 0, references.get(LEAKY_SIEVE_TRANSIENT));\n
+  \     }\n\n      if (isFailFast()) {\n        // looks like we cleared more than
+  just our route, we've stopped and cleared the global ProducerServicePool\n        //
+  since SendProcessor.stop() invokes ServiceHelper.stopServices(producerCache, producer);
+  which in turn invokes\n        // ServiceHelper.stopAndShutdownService(pool);.\n
+  \       //\n        // Whilst stop on the SharedProducerServicePool is a NOOP shutdown
+  is not and effects a stop of the pool.\n\n        if (isVerifyProducerServicePoolRemainsStarted())
+  {\n         assertEquals(ServiceStatus.Started, service.getStatus());\n        }\n
+  \       assertEquals(\"Expected one stable producer to remain pooled\", 1, context.getProducerServicePool().size());\n
+  \       assertEquals(\"Expected one stable producer to remain as service\", 1, references.get(LEAKY_SIEVE_STABLE));\n
+  \     }\n\n      // Send a body to verify behaviour of send producer after another
+  route has been stopped\n      sendBody(\"direct:sieve-stable\", \"\");\n\n      if
+  (isFailFast()) {\n        // shared pool is used despite being 'Stopped'\n        if
+  (isVerifyProducerServicePoolRemainsStarted()) {\n          assertEquals(ServiceStatus.Started,
+  service.getStatus());\n        }\n\n        assertEquals(\"Expected only stable
+  producer in pool\", 1, context.getProducerServicePool().size());\n        assertEquals(\"Expected
+  no references to transient producer\", 0, references.get(LEAKY_SIEVE_TRANSIENT));\n
+  \       assertEquals(\"Expected reference to stable producer\", 1, references.get(LEAKY_SIEVE_STABLE));\n
+  \     }\n\n      context.startRoute(\"sieve-transient\");\n\n      // ok, back to
+  normal\n      assertEquals(ServiceStatus.Started, service.getStatus());\n      if
+  (isFailFast()) {\n        assertEquals(\"Expected both producers in pool\", 2, context.getProducerServicePool().size());\n
+  \       assertEquals(\"Expected one transient producer as service\", 1, references.get(LEAKY_SIEVE_TRANSIENT));\n
+  \       assertEquals(\"Expected one stable producer as service\", 1, references.get(LEAKY_SIEVE_STABLE));\n
+  \     }\n    }\n\n    if (!isFailFast()) {\n      assertEquals(\"Expected both producers
+  in pool\", 2, context.getProducerServicePool().size());\n\n      // if not fixed
+  these will equal the number of iterations in the loop + 1\n      assertEquals(\"Expected
+  one transient producer as service\", 1, references.get(LEAKY_SIEVE_TRANSIENT));\n
+  \     assertEquals(\"Expected one stable producer as service\", 1, references.get(LEAKY_SIEVE_STABLE));\n
+  \   }\n  }\n\n  private void registerLeakyComponent() {\n    // register leaky component\n
+  \   context.addComponent(\"leaky\", new LeakySieveComponent());\n  }\n}\n{code}"

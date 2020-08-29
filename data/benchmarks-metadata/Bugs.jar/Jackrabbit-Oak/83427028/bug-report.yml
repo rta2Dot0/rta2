@@ -1,0 +1,13 @@
+---
+BugID: OAK-1020
+Summary: Property value converion ignores reisdual property definition
+Description: |-
+  Assume following node type which a property defined with type and a residual unnamed property also defined
+
+  {noformat}
+  [oak:foo]
+   - stringProp (String)
+   - * (undefined)
+  {noformat}
+
+  For such node type if a property {{stringProp}} is being set with a binary value then Oak converts it into a String property thereby causing binary stream to change. In JR2 conversion would not happen as conversion logic treats setting (stringProp,BINARY) as a residual property

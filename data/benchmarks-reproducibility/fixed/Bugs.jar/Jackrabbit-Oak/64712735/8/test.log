@@ -1,0 +1,97 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak upgrade 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-core/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/maven-metadata.xml (604 B at 1.8 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 2.7 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-jcr/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-upgrade ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-upgrade ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-upgrade ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_64712735_java-8/oak-upgrade/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-upgrade ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ oak-upgrade ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ oak-upgrade ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ oak-upgrade ---
+[INFO] Surefire report directory: /bam/scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_64712735_java-8/oak-upgrade/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 16 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 213 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 1.9 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.jackrabbit.oak.upgrade.TickerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running org.apache.jackrabbit.oak.upgrade.nodestate.FilteringNodeStateTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.338 sec
+Running org.apache.jackrabbit.oak.upgrade.nodestate.NodeStateCopierTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 sec
+Running org.apache.jackrabbit.oak.upgrade.RepositoryGroupMemberSplitUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 345.696 sec
+Running org.apache.jackrabbit.oak.upgrade.RepositoryGroupMemberUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 617.307 sec
+Running org.apache.jackrabbit.oak.upgrade.RepositorySidegradeTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.884 sec
+Running org.apache.jackrabbit.oak.upgrade.RepeatedRepositorySidegradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.609 sec
+Running org.apache.jackrabbit.oak.upgrade.RepeatedRepositoryUpgradeTest
+JVM seems rogue. Kill 54916!
+Terminate 54916!
+Kill 54916!
+Killed 54916! at /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+
+Results :
+
+Tests run: 54, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16:31 min
+[INFO] Finished at: 2020-03-14T17:24:09-07:00
+[INFO] Final Memory: 26M/1033M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project oak-upgrade: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test failed: The forked VM terminated without saying properly goodbye. VM crash or System.exit called ? -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException

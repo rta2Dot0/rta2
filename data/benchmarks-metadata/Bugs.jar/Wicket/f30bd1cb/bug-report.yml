@@ -1,0 +1,24 @@
+---
+BugID: WICKET-3455
+Summary: onremove() in RefreshingView.onPopulate
+Description: |
+  file a bug with a quickstart. onremove() should be called on all
+  removed components.
+
+  -igor
+
+  On Fri, Feb 18, 2011 at 5:38 AM, Benedikt Rothe <benedikt.rothe@qleo.de> wrote:
+  > > Hi
+  > >
+  > > Are the existing children of a RepeatingView/RefreshingView being informed,
+  > > when
+  > > the View is newly populated (RefreshingView.onPopulate).
+  > >
+  > > I'd like to clean some internal references in this case.
+  > > I tried:
+  > > - aChild.onRemove is not called in this situation
+  > > - aChild.setParent(null) is called. I treid to override setParent it. But
+  > > setParent is private.
+  > >
+  > > Any suggestions?
+  > > Benedikt

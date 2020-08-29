@@ -1,0 +1,13 @@
+---
+BugID: ACCUMULO-2520
+Summary: Garbage collector deleted everything when given bad input
+Description: "Patch v3 of the upgrade from ACCUMULO-2145 had a test that did the following
+  before upgrade.\n\n{noformat}\nroot@testUp> table !METADATA\nroot@testUp !METADATA>
+  grant Table.WRITE -u root \nroot@testUp !METADATA> insert ~del testDel test valueTest\n{noformat}\n\nThis
+  is a malformed delete entry.  Accumulo code should not delete such entries.  When
+  the 1.5.1 garbage collector saw this it did the following.\n\n{noformat}\n2014-03-20
+  18:20:05,359 [gc.SimpleGarbageCollector] DEBUG: Deleting /accumuloTest/tables\n2014-03-20
+  18:20:05,359 [gc.SimpleGarbageCollector] DEBUG: Deleting /accumuloTest/tables/!0/default_tablet/F0000009.rf\n2014-03-20
+  18:20:05,360 [gc.SimpleGarbageCollector] DEBUG: Deleting /accumuloTest/tables/!0/table_info/F000000b.rf\n{noformat}\n\nGC
+  should validate that delete entries are paths of the expected length.  I have confirmed
+  this bug exist in 1.5.1.  I am assuming it exist in 1.4 and 1.6 branches."

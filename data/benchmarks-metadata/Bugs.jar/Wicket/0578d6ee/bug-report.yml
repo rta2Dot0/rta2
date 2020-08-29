@@ -1,0 +1,10 @@
+---
+BugID: WICKET-2060
+Summary: Invalid javascript when setStripJavascriptCommentsAndWhitespace is enabled
+Description: |-
+  When setStripJavascriptCommentsAndWhitespace is enabled (for example in deployment mode), some javascript files get corrupted. For example, the following line (notice the 2 spaces after 'return')
+  return  this.__unbind__(type, fn);
+  is compacted to
+  return
+  this.__unbind__(type, fn);
+  which does not execute the unbind function.

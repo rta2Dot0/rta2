@@ -1,0 +1,7 @@
+---
+BugID: OAK-3411
+Summary: Inconsistent read on DocumentNodeStore startup
+Description: |-
+  This is a regression introduced with OAK-2929. On DocumentNodeStore startup the RevisionComparator of the local instance is initialized with the current _lastRev entries from the other cluster nodes. The external _lastRev entries are 'seenAt' the same revision, which means for those revisions the RevisionComparator will use the clusterId to compare them. This is also described in OAK-3388.
+
+  OAK-2929 changed the sequence of revisions to check for conflicts from StableRevisionComparator to RevisionComparator. This makes the conflict check susceptible to the RevisionComparison behaviour described in OAK-3388. Commits may be rejected with a conflict, when there isn't really a conflict.

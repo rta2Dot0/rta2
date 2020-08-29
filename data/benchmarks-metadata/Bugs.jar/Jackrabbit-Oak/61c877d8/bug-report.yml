@@ -1,0 +1,13 @@
+---
+BugID: OAK-1173
+Summary: NPE if checking for a non-existing node in version storage
+Description: "NPE If a tree given to CompiledPermissionImpl.getTreePermission() does
+  not have a primary type, e.g. for a \"hidden\" oak node:\n\n{noformat}\n\t  at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:191)\n\t
+  \ at org.apache.jackrabbit.oak.security.authorization.permission.CompiledPermissionImpl.getTreePermission(CompiledPermissionImpl.java:160)\n\t
+  \ at org.apache.jackrabbit.oak.security.authorization.permission.CompiledPermissionImpl$TreePermissionImpl.getChildPermission(CompiledPermissionImpl.java:443)\n\t
+  \ at org.apache.jackrabbit.oak.core.SecureNodeBuilder.getTreePermission(SecureNodeBuilder.java:352)\n\t
+  \ at org.apache.jackrabbit.oak.core.SecureNodeBuilder.exists(SecureNodeBuilder.java:129)\n\t
+  \ at org.apache.jackrabbit.oak.core.SecureNodeBuilder.hasChildNode(SecureNodeBuilder.java:271)\n\t
+  \ at org.apache.jackrabbit.oak.core.AbstractTree.getChildrenCount(AbstractTree.java:248)\n{noformat}\n\nThe
+  tree passed here to get the children count is: {{/jcr:system/jcr:versionStorage}}
+  and the child node not having a primary type is {{:index}}\n\n"

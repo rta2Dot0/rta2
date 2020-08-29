@@ -1,0 +1,20 @@
+---
+BugID: WICKET-5981
+Summary: Significant Performance Degradation From Wicket 6.20.0 to Wicket 7.0.0
+Description: "I am experiencing a significant performance degradation for component
+  adds in Wicket 7.0.0, once the component tree for a page gets reasonably large.\n\nThe
+  attached quick start can be used to reproduce the issue.  Please note that NUM_ROWS
+  is set to 10,000 to exaggerate the performance degradation as the size of the component
+  tree increases.  The same degradation (to a lesser extent) can be viewed with a
+  smaller NUM_ROWS variable.\n\nIn Wicket 6.20.0, as the size of the component tree
+  increases, the cost of add() remains relatively constant time-wise.  In Wicket 7.0.0,
+  a component add () is much more expensive (and actually makes our internal web application
+  unusable) with form submits taking more than two or three minutes to come back from
+  the server.\n\nHere's some timing examples.  \n\n=============================================================================================================\n\nNUM_ROWS
+  = 5000\nWicket 6.20.0 -> ~200 milliseconds of server side rendering (before browser
+  paints HTML).\nWicket 7.0.0 -> ~ 10 seconds of server side rendering\n\nNUM_ROWS
+  = 10000\nWicket 6.20.0 -> ~ 500 milliseconds of server side rendering\nWicket 7.0.0
+  -> ~ 40 seconds of server side rendering\n\n=============================================================================================================\n\nThe
+  attached quickstart can be used to reproduce the issue on your side.  My guess is
+  that this has to do with the new component queuing feature that was added as part
+  of Wicket 7.0.0."

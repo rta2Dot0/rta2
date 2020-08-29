@@ -1,0 +1,11 @@
+---
+BugID: WICKET-5476
+Summary: Ajax behavior on component with setRenderBodyOnly(true) don't get called
+  - improve warning
+Description: |-
+  When you put AJAX behavior on component with setRenderBodyOnly(true) and try to call it with callback script it won't get called and no error / warning is displayed. See attached quickstart sample. Just unzipp and run with: mvn jetty:run
+
+  Navigate browser to http://localhost:8080/
+  When you try to click on labels AJAX behavior should get called. But it won't. This kind of behavior is correct (i assume). But i think user should be warned that behavior can't be called. I think proper place is somewhere on server side? But I don't know where exactly put the warning.
+
+  Now only message is in Wicket Ajax Debug window - "Ajax request stopped because of precondition check". I had to debug wicket javascript to find what precondition check failed. Maybe more detailed message in default precondition check would be useful too?

@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4255
+Summary: bug in org.apache.wicket.validation.validator.UrlValidator
+Description: |-
+  Looks like there is a bug in UrlValidator. It validates URLs like "http://testhost.local/pages/index.php" as invalid.
+  But URL is valid! Try to execute "new java.net.URL("http://testhost.local/pages/index.php");" for example. It does not throws "MalformedURLException" because URL is valid.
+
+  In method: UrlValidator.isValidAuthority() there is code: "if (topLevel.length() < 2 || topLevel.length() > 4){return false;}" Looks like this "> 4" is a wrong constraint.

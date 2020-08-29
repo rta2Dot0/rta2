@@ -1,0 +1,10 @@
+---
+BugID: ACCUMULO-1505
+Summary: MockTable's addMutation does not check for empty mutation
+Description: "When calling addMutation or addMutations on a MockBatchWriter, the updates
+  stored in the mutation are iterated over then committed in the MockTable class.
+  \n\nWhen this occurs in the TabletServerBatchWriter (eventually called from the
+  BatchWriterImpl), however, the mutation size is first checked and if the mutation
+  size is 0, an IllegalArgumentException is thrown.\n\nIn practice, if you have code
+  that tries to submit an empty mutation to a BatchWriter, it will fail and throw
+  an exception in the real world, but this will not be caught in tests against MockAccumulo."

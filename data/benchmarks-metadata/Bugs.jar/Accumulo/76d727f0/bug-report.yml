@@ -1,0 +1,12 @@
+---
+BugID: ACCUMULO-209
+Summary: RegExFilter does not properly regex when using multi-byte characters
+Description: "The current RegExFilter class uses a ByteArrayBackedCharSequence to
+  set the data to match against. The ByteArrayBackedCharSequence contains a line of
+  code that prevents the matcher from properly matching multi-byte characters.\n\nLine
+  49 of ByteArrayBackedCharSequence.java is:\nreturn (char) (0xff & data[offset +
+  index]);                                                                                              \n\nThis
+  incorrectly casts a single byte from the byte array to a char, which is 2 bytes
+  in Java. This prevents the RegExFilter from properly performing Regular Expressions
+  on multi-byte character encoded values.\n\nA patch for the RegExFilter.java file
+  has been created and will be submitted."

@@ -1,0 +1,7 @@
+---
+BugID: OAK-1719
+Summary: Missing commit hooks in upgrade
+Description: There's a TODO in the RepositoryUpgrade class about missing commit hooks.
+  For example the PermissionHook isn't currently run as a part of the upgrade, which
+  breaks permission evaluation even though the actual ACL nodes are present after
+  the upgrade.

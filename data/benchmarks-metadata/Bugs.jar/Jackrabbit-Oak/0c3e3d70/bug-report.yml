@@ -1,0 +1,9 @@
+---
+BugID: OAK-1289
+Summary: Range check fails with IllegalArgumentException
+Description: "{{Range.includes()}} fails with IllegalArgumentException when provided
+  revision is from another cluster node:\n\n{noformat}\njava.lang.IllegalArgumentException:
+  Trying to compare revisions of different cluster ids: r142f43d2f0f-0-2 and r142f43d46fb-0-1\n\tat
+  org.apache.jackrabbit.oak.plugins.mongomk.Revision.compareRevisionTime(Revision.java:84)\n\tat
+  org.apache.jackrabbit.oak.plugins.mongomk.Range.includes(Range.java:55)\n{noformat}\n\nThe
+  IllegalArgumentException was introduced with OAK-1274."

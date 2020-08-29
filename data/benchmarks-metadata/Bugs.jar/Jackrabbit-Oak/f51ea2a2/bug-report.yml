@@ -1,0 +1,16 @@
+---
+BugID: OAK-2864
+Summary: XPath backwards compatibility issue with false() and true()
+Description: |-
+  In JR2 (actually CRX 2) both of the following queries for nodes with a
+  boolean property can be parsed, however only query (a) returns search
+  results.
+  {noformat}
+      (a) /jcr:root/test//*[@foo = true()]
+      (b) /jcr:root/test//*[@foo = true]
+  {noformat}
+
+  On Oak 1.2, query (a) results in an exception\[0\] and query (b) returns
+  search results.
+
+  See discussion at http://markmail.org/thread/kpews55jpdwm62ds

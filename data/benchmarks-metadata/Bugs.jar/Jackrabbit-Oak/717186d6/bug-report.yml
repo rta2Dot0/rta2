@@ -1,0 +1,32 @@
+---
+BugID: OAK-548
+Summary: Moving larger trees cause OutOfMemoryError
+Description: "{{LargeMoveTest.moveTest}} test runs out of heap space when moving roughly
+  100000 nodes (128M heap):\n\n{code}\njava.lang.OutOfMemoryError: Java heap space\n\tat
+  java.util.Arrays.copyOf(Arrays.java:2786)\n\tat java.lang.StringCoding.safeTrim(StringCoding.java:64)\n\tat
+  java.lang.StringCoding.access$300(StringCoding.java:34)\n\tat java.lang.StringCoding$StringEncoder.encode(StringCoding.java:251)\n\tat
+  java.lang.StringCoding.encode(StringCoding.java:272)\n\tat java.lang.String.getBytes(String.java:946)\n\tat
+  org.apache.jackrabbit.mk.util.IOUtils.writeString(IOUtils.java:84)\n\tat org.apache.jackrabbit.mk.store.BinaryBinding.writeMap(BinaryBinding.java:98)\n\tat
+  org.apache.jackrabbit.mk.model.ChildNodeEntriesMap.serialize(ChildNodeEntriesMap.java:196)\n\tat
+  org.apache.jackrabbit.mk.model.AbstractNode.serialize(AbstractNode.java:169)\n\tat
+  org.apache.jackrabbit.mk.persistence.InMemPersistence.writeNode(InMemPersistence.java:76)\n\tat
+  org.apache.jackrabbit.mk.store.DefaultRevisionStore.putNode(DefaultRevisionStore.java:276)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:568)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:563)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:563)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:563)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:563)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:563)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree$StagedNode.persist(StagedNodeTree.java:563)\n\tat
+  org.apache.jackrabbit.mk.model.StagedNodeTree.persist(StagedNodeTree.java:80)\n\tat
+  org.apache.jackrabbit.mk.model.CommitBuilder.doCommit(CommitBuilder.java:126)\n\tat
+  org.apache.jackrabbit.mk.model.CommitBuilder.doCommit(CommitBuilder.java:94)\n\tat
+  org.apache.jackrabbit.mk.core.MicroKernelImpl.commit(MicroKernelImpl.java:496)\n\tat
+  org.apache.jackrabbit.oak.kernel.KernelNodeStoreBranch.commit(KernelNodeStoreBranch.java:178)\n\tat
+  org.apache.jackrabbit.oak.kernel.KernelNodeStoreBranch.setRoot(KernelNodeStoreBranch.java:78)\n\tat
+  org.apache.jackrabbit.oak.core.RootImpl.purgePendingChanges(RootImpl.java:355)\n\tat
+  org.apache.jackrabbit.oak.core.RootImpl.commit(RootImpl.java:234)\n\tat org.apache.jackrabbit.oak.core.LargeMoveTest.moveTest(LargeMoveTest.java:78)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n{code}\n\nThis
+  is caused by the inefficient rebase implementation in oak-core as discussed at length
+  in OAK-464."

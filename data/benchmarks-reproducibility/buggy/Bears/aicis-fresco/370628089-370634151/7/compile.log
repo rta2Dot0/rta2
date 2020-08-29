@@ -1,0 +1,418 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] FRESCO parent pom
+[INFO] fresco-core
+[INFO] tools-master-pom
+[INFO] ot
+[INFO] mascot
+[INFO] fresco-protocol-suites-pom
+[INFO] fresco-spdz
+[INFO] fresco-spdz2k
+[INFO] fresco-tinytables
+[INFO] demos
+[INFO] demos-common
+[INFO] psi
+[INFO] aes
+[INFO] distance
+[INFO] sum
+[INFO] aggregation
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building FRESCO parent pom 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (default) @ master-pom ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom (1.5 kB at 2.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 295 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom (4.5 kB at 302 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom (2.8 kB at 167 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.10/maven-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.10/maven-2.0.10.pom (24 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom (2.2 kB at 203 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom (3.3 kB at 278 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (1.4 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom (2.1 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom (2.7 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom (2.3 kB at 165 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom (1.6 kB at 135 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom (2.0 kB at 224 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom (1.5 kB at 83 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom (1.6 kB at 54 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom (18 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom (1.6 kB at 122 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom (3.7 kB at 46 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (5.6 kB at 331 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom (2.2 kB at 158 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom (738 B at 53 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom (3.4 kB at 310 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom (7.8 kB at 388 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom (3.8 kB at 348 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom (6.1 kB at 556 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom (15 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom (3.0 kB at 372 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom (1.6 kB at 178 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom (2.4 kB at 222 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom (5.5 kB at 500 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0.pom (3.5 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.0/org.jacoco.core-0.8.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.0/org.jacoco.core-0.8.0.pom (2.3 kB at 234 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0/asm-6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0/asm-6.0.pom (1.9 kB at 149 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0/asm-parent-6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0/asm-parent-6.0.pom (5.5 kB at 183 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.pom (2.1 kB at 190 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.pom (2.1 kB at 231 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.pom (2.1 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0/asm-util-6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0/asm-util-6.0.pom (2.1 kB at 209 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.0/org.jacoco.report-0.8.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.0/org.jacoco.report-0.8.0.pom (1.9 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 801 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 258 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar (30 kB at 478 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.jar (158 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.jar (50 kB at 593 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.8.2/junit-4.8.2.jar (237 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar (305 kB at 3.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.jar (52 kB at 528 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.jar (15 kB at 152 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0/asm-6.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.jar (37 kB at 374 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.jar (48 kB at 430 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0/asm-6.0.jar (95 kB at 843 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0/asm-util-6.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.jar (77 kB at 667 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/6.0/asm-util-6.0.jar (71 kB at 584 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar (1.2 MB at 7.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/6.0/asm-analysis-6.0.jar (31 kB at 194 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (571 kB at 3.2 MB/s)
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:report (report) @ master-pom ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ master-pom ---
+[INFO] Installing /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/pom.xml to /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/.m2/dk/alexandra/fresco/master-pom/1.0.1-SNAPSHOT/master-pom-1.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-core 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (default) @ core ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom (601 B at 86 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (8.8 kB at 877 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.pom (624 B at 57 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.5.3/plexus-compiler-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.5.3/plexus-compiler-1.5.3.pom (1.5 kB at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.pom (634 B at 63 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.pom (797 B at 89 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.5.3/plexus-compilers-1.5.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.5.3/plexus-compilers-1.5.3.pom (7.6 kB at 166 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.5/plexus-utils-1.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.5/plexus-utils-1.0.5.pom (918 B at 92 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom (723 B at 72 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar (195 kB at 9.8 MB/s)
+[INFO] Compiling 264 source files to /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/core/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tools-master-pom 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ot 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building mascot 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-protocol-suites-pom 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (default) @ fresco-protocol-suites-pom ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:report (report) @ fresco-protocol-suites-pom ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ fresco-protocol-suites-pom ---
+[INFO] Installing /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/pom.xml to /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/.m2/dk/alexandra/fresco/fresco-protocol-suites-pom/1.0.1-SNAPSHOT/fresco-protocol-suites-pom-1.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-spdz 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-spdz2k 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-tinytables 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib/dk/alexandra/fresco/core/1.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib/dk/alexandra/fresco/core/1.0.1-SNAPSHOT/core-1.0.1-SNAPSHOT.jar
+[INFO] Downloading: file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib/dk/alexandra/fresco/core/1.0.1-SNAPSHOT/core-1.0.1-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building demos 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building demos-common 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building psi 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building aes 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building distance 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sum 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building aggregation 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] FRESCO parent pom .................................. SUCCESS [  3.584 s]
+[INFO] fresco-core ........................................ FAILURE [  1.133 s]
+[INFO] tools-master-pom ................................... FAILURE [  0.022 s]
+[INFO] ot ................................................. FAILURE [  0.041 s]
+[INFO] mascot ............................................. FAILURE [  0.015 s]
+[INFO] fresco-protocol-suites-pom ......................... SUCCESS [  0.319 s]
+[INFO] fresco-spdz ........................................ FAILURE [  0.014 s]
+[INFO] fresco-spdz2k ...................................... FAILURE [  0.010 s]
+[INFO] fresco-tinytables .................................. FAILURE [  1.004 s]
+[INFO] demos .............................................. FAILURE [  0.016 s]
+[INFO] demos-common ....................................... FAILURE [  0.028 s]
+[INFO] psi ................................................ FAILURE [  0.035 s]
+[INFO] aes ................................................ FAILURE [  0.017 s]
+[INFO] distance ........................................... FAILURE [  0.017 s]
+[INFO] sum ................................................ FAILURE [  0.016 s]
+[INFO] aggregation ........................................ FAILURE [  0.015 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.648 s
+[INFO] Finished at: 2020-03-12T03:09:59-07:00
+[INFO] Final Memory: 19M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile (default-compile) on project core: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal on project tools-master-pom: Could not resolve dependencies for project dk.alexandra.fresco:tools-master-pom:pom:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project ot: Could not resolve dependencies for project dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project mascot: Could not resolve dependencies for project dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project spdz: Could not resolve dependencies for project dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project spdz2k: Could not resolve dependencies for project dk.alexandra.fresco:spdz2k:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project tinytables: Could not resolve dependencies for project dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT in mvn-local-repo (file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib) -> [Help 2]
+[ERROR] Failed to execute goal on project demos: Could not resolve dependencies for project dk.alexandra.fresco:demos:pom:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project demos-common: Could not resolve dependencies for project dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:spdz:jar:tests:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:spdz:jar:tests:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project psi: Could not resolve dependencies for project dk.alexandra.fresco:psi:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project aes: Could not resolve dependencies for project dk.alexandra.fresco:aes:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project distance: Could not resolve dependencies for project dk.alexandra.fresco:distance:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project sum: Could not resolve dependencies for project dk.alexandra.fresco:sum:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] Failed to execute goal on project aggregation: Could not resolve dependencies for project dk.alexandra.fresco:aggregation:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:ot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:demos-common:jar:1.0.1-SNAPSHOT -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :core
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] fresco-protocol-suites-pom
+[INFO] fresco-spdz
+[INFO] fresco-spdz2k
+[INFO] fresco-tinytables
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-protocol-suites-pom 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (default) @ fresco-protocol-suites-pom ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] argLine set to empty
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:report (report) @ fresco-protocol-suites-pom ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ fresco-protocol-suites-pom ---
+[INFO] Installing /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/pom.xml to /scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/.m2/dk/alexandra/fresco/fresco-protocol-suites-pom/1.0.1-SNAPSHOT/fresco-protocol-suites-pom-1.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-spdz 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-spdz2k 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-tinytables 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib/dk/alexandra/fresco/core/1.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib/dk/alexandra/fresco/core/1.0.1-SNAPSHOT/core-1.0.1-SNAPSHOT.jar
+[INFO] Downloading: file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib/dk/alexandra/fresco/core/1.0.1-SNAPSHOT/core-1.0.1-SNAPSHOT-tests.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] fresco-protocol-suites-pom ......................... SUCCESS [  2.380 s]
+[INFO] fresco-spdz ........................................ FAILURE [  0.124 s]
+[INFO] fresco-spdz2k ...................................... FAILURE [  0.039 s]
+[INFO] fresco-tinytables .................................. FAILURE [  4.327 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.047 s
+[INFO] Finished at: 2020-03-12T03:10:09-07:00
+[INFO] Final Memory: 26M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project spdz: Could not resolve dependencies for project dk.alexandra.fresco:spdz:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:mascot:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 1]
+[ERROR] Failed to execute goal on project spdz2k: Could not resolve dependencies for project dk.alexandra.fresco:spdz2k:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 1]
+[ERROR] Failed to execute goal on project tinytables: Could not resolve dependencies for project dk.alexandra.fresco:tinytables:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT in mvn-local-repo (file:///scratch/tmp-rta/Bears_aicis-fresco_370628089-370634151_java-7/suite/tinytables/../../lib) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :spdz
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fresco-spdz2k 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.549 s
+[INFO] Finished at: 2020-03-12T03:10:13-07:00
+[INFO] Final Memory: 18M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project spdz2k: Could not resolve dependencies for project dk.alexandra.fresco:spdz2k:jar:1.0.1-SNAPSHOT: The following artifacts could not be resolved: dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT, dk.alexandra.fresco:core:jar:tests:1.0.1-SNAPSHOT: Could not find artifact dk.alexandra.fresco:core:jar:1.0.1-SNAPSHOT -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

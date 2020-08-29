@@ -1,0 +1,20 @@
+---
+BugID: WICKET-5569
+Summary: Unable to find markup for children of deeply nested IComponentResolvers during
+  Ajax response
+Description: |-
+  Component hierarchy: Page -> WebMarkupContainer -> IComponentResolver (that uses Page to resolve) and Page -> Panel.
+
+  Markup hierarchy: Page -> WebMarkupContainer -> IComponentResolver -> Panel.
+
+  When rendering whole page, it works, because it is markup driven. Wicket encounters ComponentTag for Panel and resolves the Panel using IComponentResolver, which retrieves the Panel from the Page.
+
+  When you add the Panel to an AjaxRequestTarget, the render is component driven. In order to render the Panel, we must retrieve the markup for the Panel from its parent MarkupContainer, which happens to be the Page.
+
+  Markup.java around line 230 skips to closing tags of ComponentTag, so when Page gets to the opening tag of the WebMarkupContainer, it skips to the closing tag of the WebMarkupContainer, and so passes over the ComponentTag for Panel without noticing it. There is actually another check, in DefaultMarkupSourcingStrategy, that tries to fetch from all the "transparent" components in the markup container, but this is not good enough, because in our example, the IComponentResolver is not actually a direct child of the Panel's parent, to it is never used to try find the markup.
+
+  One solution might be to traverse the tree, and attempt to find the markup from all IComponentResolving MarkupContainers, but we should be careful. I'm a bit concerned at how various parts of Wicket just assume that an IComponentResolver is transparent and resolves from its direct parent only.
+
+  If we do go down the route of traversing the tree to find IComponentResolvers, then try find the markup from each of them, we really should add a check in AbstractMarkupSourcingStrategy#searchMarkupInTransparentResolvers() to check that the Component that the IComponentResolver resolves for the markup id is the same component for which we are looking for markup.
+
+  This is a difficult one. I am working around it for the mean time, just recording the difficulty here. Will try make a patch when I can.

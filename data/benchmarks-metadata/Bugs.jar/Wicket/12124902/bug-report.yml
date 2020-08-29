@@ -1,0 +1,7 @@
+---
+BugID: WICKET-3646
+Summary: RequestHandler listeners are called with null handler
+Description: |-
+  When running RequestCycleListeners with WicketTester, they get called with null for the requesthandler in onScheduleHandler(). This is an artifact of the wicket tester requestcycle, which I think should normally not occur in Wicket processing. The parameters are not marked as optional, so it is IMO safe to assume that handler should never be null.
+
+  I propose to modify scheduleRequestHandlerAfterCurrent(IRequestHandler handler) to not invoke the listeners when the handler is null, but only to clear the current scheduled handler.

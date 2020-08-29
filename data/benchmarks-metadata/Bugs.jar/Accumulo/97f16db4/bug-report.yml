@@ -1,0 +1,15 @@
+---
+BugID: ACCUMULO-3383
+Summary: AccumuloVFSClassloader creates conflicting local cache directory names when
+  vfs.cache.dir property is set.
+Description: "When the vfs.cache.dir property is not set, the AccumuloVFSClassloader
+  will use java.io.tmpdir as a base directory for the local cache of jars and then
+  generate a unique directory name using a combination of the processid, hostname
+  and userid executing the JVM.\n\nWhen the vfs.cache.dir property is set, that value
+  is used as the base directory and  an attempt to generate a unique directory is
+  made using an AtomicInteger. This isn't suitable because for non-long lived processes,
+  this will always be 1 - and there's a good chance that directory already exists
+  and is owned by another user, and not writable to by the user in question. \n\nThis
+  leads to a failure of the invoked accumulo component to start.\n\nModify the behavior
+  of the unique directory creation when vfs.cache.dir is set so that it employs the
+  same mechanism for unique directory naming that is used when it is not set.\n"

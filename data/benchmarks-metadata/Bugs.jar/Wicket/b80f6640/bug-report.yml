@@ -1,0 +1,15 @@
+---
+BugID: WICKET-5853
+Summary: LongConverter converts some values greater than Long.MAX_VALUE
+Description: |-
+  Currently it's possible to submit some values via Long Textfield<Long> that are greater than Long.MAX_VALUE. This will produce converted input and model update with value of Long.MAX_VALUE
+
+  I'm not sure what the behavior should be - imho throwing ConversionException seems fair as the input isn't a valid Long.
+
+  The reason seems to be precision loss during Double.valueOf(input) execution while converting, and then comparing to Long.MAX_VALUE  using Long.doubleValue() in *AbstractNumberConverter*, which by casting leads to to the same precision loss and the numbers are seemingly equal during comparison of ranges.
+
+  Maybe using BigDecimals for parsing could help here.
+
+  The quickstart is available at [https://github.com/zeratul021/wicket-number-conversion].
+
+  For the fastest demonstration I extended Wicket's _longConversion()_ test-case in *ConvertersTest*: [https://github.com/zeratul021/wicket-number-conversion/blob/master/src/test/java/com/github/zeratul021/wicketnumberconversion/ConvertersTest.java#L300]

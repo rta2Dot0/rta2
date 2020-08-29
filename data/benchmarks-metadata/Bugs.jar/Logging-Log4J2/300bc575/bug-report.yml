@@ -1,0 +1,17 @@
+---
+BugID: LOG4J2-302
+Summary: NDCPatternConverter broken in beta7
+Description: "After an upgrade from version 2.0-beta4 to beta7 the NDCPatternConverter
+  writes an object-ID instead of the content of the NDC-stack. \n\nWe are using an
+  pattern with \"[%0.50x]\". In beta4 the resulting output looks like \"[cbi@CE03178]\"
+  which means username and machine. Now in beta7 it looks like \"[logging.log4j.spi.MutableThreadContextStack@875ef7]\".\n\nI
+  analysed the issue in NDCPatternConverter.format(...) method, where event.getContextStack()
+  is called and the result is passed to StringBuilder.append(...), which means, that
+  the toString()-method will be invoked. \nIn beta4 getContextStack() returns an instance
+  of ImmutableStack. This class inherits its toString() method from AbstractList,
+  where the elements of the collection will be formatted human-readable. \nNow in
+  beta7 there comes an instance of MutableThreadContextStack which isn't derived from
+  AbstractList but implements the Collection-Interface. The toString() method comes
+  from Object and returns the name of the class and an object-ID instead of the context
+  of the unterlying stack/collection.\n\nIn my opinion you just need to copy or derive
+  the toString() method from AbstractList to solve this issue. Thank you in advance!\n"

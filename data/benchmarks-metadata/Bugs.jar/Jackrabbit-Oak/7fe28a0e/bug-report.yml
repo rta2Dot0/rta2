@@ -1,0 +1,11 @@
+---
+BugID: OAK-185
+Summary: Trying to remove a missing property throws PathNotFoundException
+Description: |-
+  The following code snippet throws a {{PathNotFoundException}} if the "missing" property is not present.
+
+  {code:java}
+  node.setProperty("missing", (String) null);
+  {code}
+
+  A better way to handle such a case would be for the above statement to simply do nothing.

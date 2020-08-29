@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-4682
+Summary: When stopping CamelContext should not clear lifecycleStrategies, to make
+  restart safely possible
+Description: We should not clear the lifecycleStrategies on CamelContext when stop()
+  is invoked, as if we restart by invoking start(), the lifecycle strategies should
+  be in use again.

@@ -1,0 +1,10 @@
+---
+BugID: OAK-3412
+Summary: Node name having non space whitspace chars should not be allowed
+Description: |-
+  Due to the changes done in OAK-1174 node with non space whitespace chars like '\n', '\r' etc can be created. This is not desirable and also JR2 does not allow such node to be created so check must be added to prevent such a name from getting created.
+
+  As discussed in [1] this is regression due to usage of incorrect utility method as part of [2] the fix can be simply using a {{Character#isWhitespace}} instead of {{Character#isSpaceChar}}
+
+  [1] http://mail-archives.apache.org/mod_mbox/jackrabbit-oak-dev/201509.mbox/%3CCAHCW-mkkGtxkn%2B9xfXuvMTfgykewjMPsLwrVH%2B00%2BXaBQjA0sg%40mail.gmail.com%3E
+  [2] https://github.com/apache/jackrabbit-oak/commit/342809f7f04221782ca6bbfbde9392ec4ff441c2

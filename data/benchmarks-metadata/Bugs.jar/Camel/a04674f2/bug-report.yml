@@ -1,0 +1,18 @@
+---
+BugID: CAMEL-5826
+Summary: Apache Camel 2.9 Splitter with tokenize dont work with namespaces
+Description: |
+  when trying to tokenize a stream having namespaces, no tokens are produced with inheritNamespaceTagName property.
+
+  -------------------------------------------------------------------
+
+  <route id="hrp.connectorsCtxt.sddRcvFile2">
+  <from
+                             uri="file:C:\Temp\esb\sdd\in?recursive=true&amp;preMove=.processing&amp;move=../.processed" />
+                      <camel:split streaming="true">
+                             <tokenize token="suiviDemande" inheritNamespaceTagName="suivisDemandes" xml="true"/>
+                             <log message="${header.CamelSplitIndex} : ${in.body}" />
+                      </camel:split>
+               </route>
+
+  -------------------------------------------------------------------

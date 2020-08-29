@@ -1,0 +1,9 @@
+---
+BugID: OAK-2021
+Summary: XPath queries with certain combinations of "or" conditions don't use an index
+Description: |
+  XPath queries with the following conditions are not converted to "union" SQL-2 queries and therefore don't use an index:
+
+  {noformat}
+  /jcr:root/content//*[((@i = '1' or @i = '2') or (@s = 'x')) and (@t = 'a' or @t = 'b')]
+  {noformat}

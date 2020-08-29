@@ -1,0 +1,27 @@
+---
+BugID: LOG4J2-1153
+Summary: Unable to define only rootLogger in a properties file.
+Description: "I've changed the version of log4j2 from *2.3* to *2.4* in order to load
+  the  configuration via properties file. So i have converted the xml file, that defines
+  only {{<Root>}} in {{<Loggers>}} element, into a properties file. \nThis is a preview
+  of the xml file :\n{code:xml}\n  <Loggers>\n      <Root level=\"info\">\n         <AppenderRef
+  ref=\"ConsoleAppender\"/>\n     </Root>\n  </Loggers>\n{code}\nAnd this is a preview
+  of the properties file :\n\n{code}\nrootLogger.level = info\nrootLogger.appenderRefs
+  = console\nrootLogger.appenderRef.console.ref = ConsoleAppender\n{code}\n\nThis
+  configuration throw a null pointer exception :\n{noformat}Exception in thread \"main\"
+  java.lang.ExceptionInInitializerError\nCaused by: java.lang.NullPointerException\n\tat
+  org.apache.logging.log4j.core.config.properties.PropertiesConfigurationFactory.getConfiguration(PropertiesConfigurationFactory.java:132)\n\tat
+  org.apache.logging.log4j.core.config.properties.PropertiesConfigurationFactory.getConfiguration(PropertiesConfigurationFactory.java:44)\n\tat
+  org.apache.logging.log4j.core.config.ConfigurationFactory$Factory.getConfiguration(ConfigurationFactory.java:491)\n\tat
+  org.apache.logging.log4j.core.config.ConfigurationFactory$Factory.getConfiguration(ConfigurationFactory.java:461)\n\tat
+  org.apache.logging.log4j.core.config.ConfigurationFactory.getConfiguration(ConfigurationFactory.java:257)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:493)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:510)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.start(LoggerContext.java:199)\n\tat
+  org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:146)\n\tat
+  org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:41)\n\tat
+  org.apache.logging.log4j.LogManager.getContext(LogManager.java:264)\n\tat org.apache.log4j.Logger$PrivateManager.getContext(Logger.java:59)\n\tat
+  org.apache.log4j.Logger.getLogger(Logger.java:41)\n{noformat}\n\nIn order to make
+  this configuration work, i had to add the {{loggers}} component and fill the identifiers.
+  My question is why in xml file we can define only a root logger and it works fine,
+  and in a properties file it does not work ? \n "

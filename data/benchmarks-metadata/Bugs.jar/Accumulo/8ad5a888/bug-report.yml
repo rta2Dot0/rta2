@@ -1,0 +1,8 @@
+---
+BugID: ACCUMULO-193
+Summary: key.followingKey(PartialKey.ROW_COLFAM_COLQUAL_COLVIS) can produce a key
+  with an invalid COLVIS
+Description: Need a new algorithm for calculating the next biggest column visibility,
+  because tagging \0 to the end creates an invalid column visibility. We might be
+  able to minimize the timestamp for this (i.e. set timestamp to Long.MIN_VALUE, but
+  keep column and row elements the same).

@@ -1,0 +1,9 @@
+---
+BugID: OAK-1186
+Summary: Parallel execution of ConcurrentReadAccessControlledTreeTest fails with MongoMK
+Description: |-
+  The is caused by concurrent creation of test content and the conflict it creates in the index. Every Oak test instance tries to create {{/oak:index/nodetype/:index/nt%3Afile}}, but only one will succeed. AFAICS there are two options how to handle this:
+
+  - Implement conflict annotation (OAK-1185), though I'm not sure this will really work. On commit, the rebase happens first, when changes from the other Oak instance may not be visible yet. Then, the commit hook runs and perform another branch commit with the changes, which works fine. Only the last step fails, when MongoMK tries to merge the branch. This is the point when the conflict may be detected.
+
+  - Implement a retry logic in MongoMK/NS

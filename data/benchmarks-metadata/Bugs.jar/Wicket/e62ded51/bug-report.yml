@@ -1,0 +1,9 @@
+---
+BugID: WICKET-4519
+Summary: discrepancy between JavaDoc and code in MarkupContainer#visitChildren()
+Description: |-
+  The JavaDoc for  MarkupContainer#visitChildren() states that
+   "@param clazz The class of child to visit, or null to visit all children"
+
+  The parameter clazz is used to create a new ClassVisitFilter which in
+  its visitObject() does not check for clazz == null, leading to a NPE.

@@ -1,0 +1,23 @@
+---
+BugID: FLINK-3052
+Summary: Optimizer does not push properties out of bulk iterations
+Description: "Flink's optimizer should be able to reuse interesting properties from
+  outside the loop. In order to do that it is sometimes necessary to append a NoOp
+  node to the step function which recomputes the required properties.\n\nThis is currently
+  not working for {{BulkIterations}}, because the plans with the appended NoOp nodes
+  are not added to the overall list of candidates.\n\nThis not only leads to sub-optimal
+  plan selection but sometimes to the rejection of valid jobs. The following job,
+  for example, will be falsely rejected by flink.\n\n{code}\nExecutionEnvironment
+  env = ExecutionEnvironment.getExecutionEnvironment();\n\n\t\tDataSet<Tuple1<Long>>
+  input1 = env.generateSequence(1, 10).map(new MapFunction<Long, Tuple1<Long>>() {\n\t\t\t@Override\n\t\t\tpublic
+  Tuple1<Long> map(Long value) throws Exception {\n\t\t\t\treturn new Tuple1<>(value);\n\t\t\t}\n\t\t});\n\n\t\tDataSet<Tuple1<Long>>
+  input2 = env.generateSequence(1, 10).map(new MapFunction<Long, Tuple1<Long>>() {\n\t\t\t@Override\n\t\t\tpublic
+  Tuple1<Long> map(Long value) throws Exception {\n\t\t\t\treturn new Tuple1<>(value);\n\t\t\t}\n\t\t});\n\n\t\tDataSet<Tuple1<Long>>
+  distinctInput = input1.distinct();\n\n\t\tIterativeDataSet<Tuple1<Long>> iteration
+  = distinctInput.iterate(10);\n\n\t\tDataSet<Tuple1<Long>> iterationStep = iteration\n\t\t\t\t.coGroup(input2)\n\t\t\t\t.where(0)\n\t\t\t\t.equalTo(0)\n\t\t\t\t.with(new
+  CoGroupFunction<Tuple1<Long>, Tuple1<Long>, Tuple1<Long>>() {\n\t\t\t\t\t@Override\n\t\t\t\t\tpublic
+  void coGroup(\n\t\t\t\t\t\t\tIterable<Tuple1<Long>> first,\n\t\t\t\t\t\t\tIterable<Tuple1<Long>>
+  second,\n\t\t\t\t\t\t\tCollector<Tuple1<Long>> out) throws Exception {\n\t\t\t\t\t\tIterator<Tuple1<Long>>
+  it = first.iterator();\n\n\t\t\t\t\t\tif (it.hasNext()) {\n\t\t\t\t\t\t\tout.collect(it.next());\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t});\n\n\t\tDataSet<Tuple1<Long>>
+  iterationResult = iteration.closeWith(iterationStep);\n\n\t\titerationResult.output(new
+  DiscardingOutputFormat<Tuple1<Long>>());\n{code}"

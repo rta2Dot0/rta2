@@ -1,0 +1,108 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.132-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Cassandra Reaper server 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ cassandra-reaper ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/scratch/tmp-rta/Bears_thelastpickle-cassandra-reaper_364710673-365484062_java-8/src/server' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /scratch/tmp-rta/Bears_thelastpickle-cassandra-reaper_364710673-365484062_java-8/src/server
+[INFO] Storing buildNumber: d54227a at timestamp: 1584232177167
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ cassandra-reaper ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cassandra-reaper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 48 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ cassandra-reaper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.16:check (default) @ cassandra-reaper ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ cassandra-reaper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ cassandra-reaper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ cassandra-reaper ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.pom (3.3 kB at 728 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19/surefire-providers-2.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19/surefire-providers-2.19.pom (2.6 kB at 636 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.jar (76 kB at 2.2 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running io.cassandrareaper.resources.view.RepairRunStatusTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 sec - in io.cassandrareaper.resources.view.RepairRunStatusTest
+Running io.cassandrareaper.resources.view.RepairScheduleStatusTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.103 sec - in io.cassandrareaper.resources.view.RepairScheduleStatusTest
+Running io.cassandrareaper.resources.view.NodesStatusTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec - in io.cassandrareaper.resources.view.NodesStatusTest
+Running io.cassandrareaper.resources.RepairRunResourceTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.397 sec - in io.cassandrareaper.resources.RepairRunResourceTest
+Running io.cassandrareaper.resources.ClusterResourceTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.177 sec - in io.cassandrareaper.resources.ClusterResourceTest
+Running io.cassandrareaper.jmx.JmxConnectionsInitializerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 sec - in io.cassandrareaper.jmx.JmxConnectionsInitializerTest
+Running io.cassandrareaper.jmx.JmxAddressesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.cassandrareaper.jmx.JmxAddressesTest
+Running io.cassandrareaper.jmx.JmxProxyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.cassandrareaper.jmx.JmxProxyTest
+Running io.cassandrareaper.ReaperApplicationConfigurationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.555 sec - in io.cassandrareaper.ReaperApplicationConfigurationTest
+Running io.cassandrareaper.service.SegmentGeneratorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.cassandrareaper.service.SegmentGeneratorTest
+Running io.cassandrareaper.service.AutoSchedulingManagerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in io.cassandrareaper.service.AutoSchedulingManagerTest
+Running io.cassandrareaper.service.RepairRunnerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.097 sec - in io.cassandrareaper.service.RepairRunnerTest
+Running io.cassandrareaper.service.ClusterRepairSchedulerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.cassandrareaper.service.ClusterRepairSchedulerTest
+Running io.cassandrareaper.service.HeartTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.519 sec - in io.cassandrareaper.service.HeartTest
+Running io.cassandrareaper.service.SegmentRunnerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.246 sec - in io.cassandrareaper.service.SegmentRunnerTest
+Running io.cassandrareaper.service.SnapshotManagerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.cassandrareaper.service.SnapshotManagerTest
+Running io.cassandrareaper.service.RepairManagerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.cassandrareaper.service.RepairManagerTest
+Running io.cassandrareaper.service.RepairRunServiceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.cassandrareaper.service.RepairRunServiceTest
+Running io.cassandrareaper.service.RingRangeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.cassandrareaper.service.RingRangeTest
+Running io.cassandrareaper.core.ClusterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.cassandrareaper.core.ClusterTest
+Running io.cassandrareaper.AssertionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.cassandrareaper.AssertionTest
+
+Results :
+
+Tests run: 110, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 51.028 s
+[INFO] Finished at: 2020-03-14T17:30:26-07:00
+[INFO] Final Memory: 42M/1506M
+[INFO] ------------------------------------------------------------------------

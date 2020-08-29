@@ -1,0 +1,16 @@
+---
+BugID: WICKET-5891
+Summary: Parsing of ChinUnionPay credit card should use the first 6 characters
+Description: "User report:\n\nA China UnionPay number has to start with 622 (622126-622925)
+  and has to have a length between 16 and 19. The source code of CreditCardValidator
+  is:\n\n  220   \tprivate boolean isChinaUnionPay(String creditCardNumber)\n  221
+  \  \t{\n  222   \t\tcardId = CreditCardValidator.INVALID;\n  223   \t\tboolean returnValue
+  = false;\n  224   \n  225   \t\tif ((creditCardNumber.length() >= 16 && creditCardNumber.length()
+  <= 19) &&\n  226   \t\t\t(creditCardNumber.startsWith(\"622\")))\n  227   \t\t{\n
+  \ 228   \t\t\tint firstDigits = Integer.parseInt(creditCardNumber.substring(0, 5));\n
+  \ 229   \t\t\tif (firstDigits >= 622126 && firstDigits <= 622925)\n  230   \t\t\t{\n
+  \ 231   \t\t\t\tcardId = CreditCardValidator.CHINA_UNIONPAY;\n  232   \t\t\t\treturnValue
+  = true;\n  233   \t\t\t}\n  234   \t\t}\n  235   \n  236   \t\treturn returnValue;\n
+  \ 237   \t}\nThe problem is on the line 228 because the substring returns the first
+  5 digits and it is compared to 6 digits, so \"firstDigits\" is always < than 622126.
+  The fix is to do #substring(0, 6)."

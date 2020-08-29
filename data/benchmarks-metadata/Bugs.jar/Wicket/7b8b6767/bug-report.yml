@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5783
+Summary: Multiple events in AjaxEventBehavior with prefix 'on'
+Description: "if multiple events are used and one starts with \"on\", it only works
+  if it is the first one, because of:\n\n{code}\n\t\tif (event.startsWith(\"on\"))\n\t\t{\n\t\t\tevent
+  = event.substring(2);\n\t\t}\n{code}\n\nWhy are events possible to start with \"on\"
+  ? \n\nIs this legacy? Perhaps should be removed for Wicket 7 ?\n"

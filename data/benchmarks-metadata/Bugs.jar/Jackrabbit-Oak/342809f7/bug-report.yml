@@ -1,0 +1,6 @@
+---
+BugID: OAK-1174
+Summary: Inconsistent handling of invalid names/paths
+Description: "Passing an invalid name to a JCR method might or might not throw a {{RepositoryException}}
+  depending on whether name re-mappings exist or not:\n\n{code}\nsession.itemExists(\"/jcr:cont]ent\");\n{code}\n\nreturns
+  {{false}} if no name re-mappings exist but throws a {{RepositoryException}} otherwise. "

@@ -1,0 +1,7 @@
+---
+BugID: WICKET-3333
+Summary: Links with multiple parameters are wrongly generated
+Description: |-
+  If you have a PageParameters, with multiple params, then the resulting link will be something like this /url?id=123&amp;sid=456, so for some reason the & sign is encoded to &amp; which will result in the following parameters on the receiving page:
+  id=[123], amp;sid=[456]
+  See the attached quickstart for example.

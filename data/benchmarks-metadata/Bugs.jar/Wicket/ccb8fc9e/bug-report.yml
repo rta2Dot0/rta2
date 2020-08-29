@@ -1,0 +1,9 @@
+---
+BugID: WICKET-4520
+Summary: Inline enclosure doesn't work if wicket:message attribute is used on the
+  same tag
+Description: "Markup like:\n\n        <div wicket:enclosure=\"child\" wicket:message=\"title:something\">\n\t
+  \       <div>Inner div\n\t\t        <span wicket:id=\"child\">Blah</span>\n\t        </div>\n
+  \       </div>\n\ndoesn't work (Inner div is visible, no matter whether 'child'
+  is visible or not) because the auto component created for wicket:message breaks
+  somehow wicket:enclosure.\n"

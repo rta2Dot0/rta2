@@ -1,0 +1,20 @@
+---
+BugID: WICKET-4777
+Summary: JavaScriptReference escapes given URL
+Description: "\nwhile trying to integrate gmaps3 in our webapp i had issues with the
+  wicketstuff-gmap3 stuff ( - we need a client-id for our request) ...\n\nso i have:\n{noformat}\npublic
+  static final String GMAP_API_URL = \"%s://maps.google.com/maps/api/js?v=3&sensor=%s&client-id=%s\";\n\nresponse.render(JavaScriptHeaderItem.forUrl(String.format(GMAP_API_URL,
+  schema, sensor, clientid)));\n{noformat}\n\nthe rendered result of this is:\n{noformat}\n<script
+  type=\"text/javascript\" src=\"http://maps.google.com/maps/api/js?v=3&amp;sensor=false&amp;client-id=....\"></script>\n{noformat}\n\nso
+  the requestparameters are encoded\n\nwhich is happening in the JavaScriptUtils Helper:\n{noformat}\npublic
+  static void writeJavaScriptUrl(final Response response, final CharSequence url,
+  final String id, boolean defer, String charset)\n{\n        response.write(\"<script
+  type=\\\"text/javascript\\\" \");\n        if (id != null)\n        {\n            response.write(\"id=\\\"\"
+  + Strings.escapeMarkup(id) + \"\\\" \");\n        }\n        if (defer)\n        {\n
+  \           response.write(\"defer=\\\"defer\\\" \");\n        }\n        if (charset
+  != null)\n        {\n            response.write(\"charset=\\\"\" + Strings.escapeMarkup(charset)
+  + \"\\\" \");\n        }\n        response.write(\"src=\\\"\");\n        response.write(Strings.escapeMarkup(url));\n
+  \       response.write(\"\\\"></script>\");\n        response.write(\"\\n\");\n}\n{noformat}\nbut
+  ... is this right to escape the url?\n\nwhen i open the above mentioned script,
+  google tells me i have no parameter \"sensor\" ... which i can understand as ther
+  is only a parameter amp ... "

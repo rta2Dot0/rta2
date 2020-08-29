@@ -1,0 +1,8 @@
+---
+BugID: WICKET-5085
+Summary: InlineEnclosure are piling up on each render
+Description: "InlineEnclosureHandler#resolve() uses an auto-incremented id for its
+  resolved InlineEnclosure, \n\nOn the next render, a new instance will be resolved,
+  since the id of the already resolved InlineEnclosure does not match the id in the
+  markup.\n\nBut InlineEnclosures are not removed after render as other auto-components,
+  thus all instances pile up in the owning container of the markup.\n"

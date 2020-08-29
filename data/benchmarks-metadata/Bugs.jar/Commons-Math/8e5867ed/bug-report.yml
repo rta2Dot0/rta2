@@ -1,0 +1,9 @@
+---
+BugID: MATH-1070
+Summary: Incorrect rounding of float
+Description: "package org.apache.commons.math3.util \nexample of usage of round functions
+  of Precision class:\n\nPrecision.round(0.0f, 2, BigDecimal.ROUND_UP) = 0.01\nPrecision.round((float)0.0,
+  2, BigDecimal.ROUND_UP) = 0.01\nPrecision.round((float) 0.0, 2) = 0.0\nPrecision.round(0.0,
+  2, BigDecimal.ROUND_UP) = 0.0\n\nSeems the reason is usage of extending float to
+  double inside round functions and getting influence of memory trash as value.\n\nI
+  think, same problem will be found at usage of other round modes.\n"

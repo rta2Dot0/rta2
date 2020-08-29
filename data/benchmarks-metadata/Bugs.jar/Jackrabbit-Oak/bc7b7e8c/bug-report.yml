@@ -1,0 +1,15 @@
+---
+BugID: OAK-1348
+Summary: ACE merging not behaving correctly if not using managed principals
+Description: "{{org.apache.jackrabbit.api.security.JackrabbitAccessControlList#addEntry()}}
+  does not work correctly, if the given principal is not retrieved from the PrincipalManager.\n\nException:\n{noformat}\nCaused
+  by: org.apache.jackrabbit.oak.api.CommitFailedException: OakAccessControl0013: Duplicate
+  ACE found in policy\n\tat org.apache.jackrabbit.oak.security.authorization.accesscontrol.AccessControlValidator.accessViolation(AccessControlValidator.java:278)\n\tat
+  org.apache.jackrabbit.oak.security.authorization.accesscontrol.AccessControlValidator.checkValidPolicy(AccessControlValidator.java:188)\n{noformat}\n\nthis
+  used to work in jackrabbit 2.x.\n\nthe problem is probably in {{org.apache.jackrabbit.oak.security.authorization.accesscontrol.ACL#internalAddEntry}}
+  where the principals are \"equalled\" instead of comparing their names.\n\nnote,
+  that adding an ACE with such a principal works, just the merging/overwriting detection
+  doesn't.\n\ntest:\n{code}\n  Principal p1 = new Principal() { getName(){return \"foo\"}};\n
+  \ Principal p2 = new Principal() { getName(){return \"foo\"}};\n  acl.addEntry(p1,
+  privileges, true);\n  acl.addEntry(p2, privileges, false);\n  ...\n  save(); //
+  throws\n{code}"

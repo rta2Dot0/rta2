@@ -1,0 +1,10 @@
+---
+BugID: LOG4J2-143
+Summary: MessagePatternConverter throws a NullPointerException if the log message
+  is null
+Description: |-
+  If the application does
+
+  logger.debug(msg)
+
+  where the value of msg is null MessagePatternConverter will get a NullPointerException.

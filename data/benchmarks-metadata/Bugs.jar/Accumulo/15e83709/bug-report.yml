@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-3242
+Summary: Consolidate ZK code WRT retries
+Description: |-
+  A couple of general ZK things that should be fixed up:
+
+  # Multiple means of automatic retrying of recoverable ZooKeeper errors through use of an InvocationHandler and a Proxy around IZooReader(Writer)
+  # Encapsulate retry logic
+  # Switch over callers to use the retrying instance instead of the non-retrying instance

@@ -1,0 +1,11 @@
+---
+BugID: WICKET-3721
+Summary: The Url's query parameters are not properly URL encoded
+Description: |-
+  If page parameter has a value with special characters like ' then it is rendered as it is in the produced markup and is only XML encoded but never URL encoded.
+  This causes broken html for example in the case when a Link is attached to a non- a|area|link tag:
+
+
+  <html><body><span wicket:id="link" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href=&#039;bookmarkable/org.apache.wicket.MockPageWithLink?urlEscapeNeeded=someone&#039;s+ba+parameter&#039;; } ;return false"></span></body></html>
+
+  Notice that &#039; after 'someone' closes the location.href string too early and breaks the app.

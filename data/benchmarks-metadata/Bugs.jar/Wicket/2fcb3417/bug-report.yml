@@ -1,0 +1,12 @@
+---
+BugID: WICKET-4664
+Summary: Url#getQueryString(charset) method returns quesrystring with "?" prefixed
+  to it
+Description: "i have just pointed out 6.0.0-beta3/6.x but it must be same in 1.5.x
+  too ,afaik \"?\" is not considered part of querystring ,\"?\" is considered separator
+  see http://tools.ietf.org/html/rfc3986#section-3\nthis method is used in Url#toString()
+  too which can be easily fixed but it may be used at other places too so i don't
+  know if removing \"?\" will break things now.\n\nso how things break currently\nRequestUtils.decodeParameters(url.getQueryString(),parameters);\ndecodeparameters
+  will considered first key to be \"?key\" \nso may be requestutils#decodeparameters
+  method should strip away \"?\" if it's present in the query string before populating
+  pageparameters\n\nthanks!\n\n\n"

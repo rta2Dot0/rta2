@@ -1,0 +1,16 @@
+---
+BugID: WICKET-2172
+Summary: PageParameters construced with keyValuePairs does not handle array values
+Description: |-
+  The PageParameters constructor that takes a "keyValuePairs" argument does
+  not convert repeated keys into an array of values.  For example:
+
+  {code}
+  // specify three comma delimited values for the "a" parameters
+  PageParameters parameters = new PageParameters("a=1,a=2,a=3");
+  String[] a = parameters.getStringArray("a");
+  assertEquals(3, a.length); // fails because a.length == 1
+  {code}
+
+  Issue first described on the user's list:
+  http://www.nabble.com/PageParameters-with-String-array-question-to22540294.html

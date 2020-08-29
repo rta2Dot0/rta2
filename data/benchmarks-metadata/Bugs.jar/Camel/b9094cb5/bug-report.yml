@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-3878
+Summary: Stopping a route should not stop context scoped error handler
+Description: |-
+  When stopping a route using .stopRoute from CamelContext or JMX etc. then the error handler should not be stopped if its a context scoped error handler, as it would be re-used.
+
+  We should defer stopping those resources till Camel is shutting down.

@@ -1,0 +1,12 @@
+---
+BugID: WICKET-2181
+Summary: Bounds error in PageableListView#getCurrentPage()
+Description: |-
+  In the getCurrentPage() method of class PageableListView, the following code:
+
+  while ((currentPage * rowsPerPage) > getList().size())
+  {
+             currentPage--;
+  }
+
+  checks if "first cell if out of range". However, the index of that first cell is (currentPage * rowsPerPage), and then the comparison with getList().size() should use a ">=" instead a ">".

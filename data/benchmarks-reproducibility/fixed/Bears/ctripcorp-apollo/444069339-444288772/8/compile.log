@@ -1,0 +1,1786 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apollo
+[INFO] Apollo BuildTools
+[INFO] Apollo Core
+[INFO] Apollo Client
+[INFO] Apollo Common
+[INFO] Apollo Biz
+[INFO] Apollo ConfigService
+[INFO] Apollo AdminService
+[INFO] Apollo Open Api
+[INFO] Apollo Portal
+[INFO] Apollo Assembly
+[INFO] Apollo Demo
+[INFO] Apollo Mock Server
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.1/maven-plugin-api-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.1/maven-plugin-api-3.1.1.pom (3.4 kB at 6.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.1/maven-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.1/maven-3.1.1.pom (22 kB at 52 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.1/maven-model-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.1/maven-model-3.1.1.pom (4.1 kB at 460 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.1/maven-artifact-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.1/maven-artifact-3.1.1.pom (2.0 kB at 246 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.pom (4.8 kB at 230 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M5/sisu-plexus-0.0.0.M5.pom (13 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom (5.4 kB at 150 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom (2.0 kB at 218 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom (965 B at 19 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 781 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 273 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.pom (2.5 kB at 315 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M5/sisu-inject-0.0.0.M5.pom (14 kB at 933 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 431 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.1/maven-core-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.1.1/maven-core-3.1.1.pom (7.3 kB at 559 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.1/maven-settings-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.1.1/maven-settings-3.1.1.pom (2.2 kB at 362 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.pom (2.6 kB at 433 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (1.0 kB at 172 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.pom (2.2 kB at 31 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.pom (2.8 kB at 351 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.1/maven-aether-provider-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.1/maven-aether-provider-3.1.1.pom (4.1 kB at 682 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom (1.7 kB at 217 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.pom (1.8 kB at 293 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.pom (3.3 kB at 418 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom (5.0 kB at 173 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.5.1/jackson-databind-2.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.5.1/jackson-databind-2.5.1.pom (5.9 kB at 651 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.5/jackson-parent-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.5/jackson-parent-2.5.pom (7.8 kB at 325 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/18/oss-parent-18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/18/oss-parent-18.pom (19 kB at 443 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.pom (1.2 kB at 174 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.1/jackson-core-2.5.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.1/jackson-core-2.5.1.pom (4.8 kB at 154 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/joda-time/joda-time/2.7/joda-time-2.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/joda-time/joda-time/2.7/joda-time-2.7.pom (29 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom (5.7 kB at 333 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom (7.7 kB at 366 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/intellij/annotations/12.0/annotations-12.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/intellij/annotations/12.0/annotations-12.0.pom (1.6 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/4.0.0.201506090130-r/org.eclipse.jgit-4.0.0.201506090130-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/4.0.0.201506090130-r/org.eclipse.jgit-4.0.0.201506090130-r.pom (6.3 kB at 791 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/4.0.0.201506090130-r/org.eclipse.jgit-parent-4.0.0.201506090130-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/4.0.0.201506090130-r/org.eclipse.jgit-parent-4.0.0.201506090130-r.pom (26 kB at 2.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.pom (3.2 kB at 87 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom (4.3 kB at 109 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom (4.1 kB at 314 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.pom (6.0 kB at 143 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.1.3/httpcomponents-client-4.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.1.3/httpcomponents-client-4.1.3.pom (12 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/5/project-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/5/project-5.pom (23 kB at 828 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.pom (7.4 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.1.4/httpcomponents-core-4.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.1.4/httpcomponents-core-4.1.4.pom (9.8 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.pom (10 kB at 404 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom (2.7 kB at 77 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom (12 kB at 422 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.pom (2.7 kB at 333 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.12/slf4j-parent-1.7.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.12/slf4j-parent-1.7.12.pom (12 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.12/slf4j-simple-1.7.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.12/slf4j-simple-1.7.12.pom (1.4 kB at 160 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.1.1/maven-repository-metadata-3.1.1.jar (25 kB at 933 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M5/org.eclipse.sisu.plexus-0.0.0.M5.jar (197 kB at 3.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.1/maven-aether-provider-3.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.1.1/maven-settings-builder-3.1.1.jar (42 kB at 729 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 5.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.1.1/maven-model-builder-3.1.1.jar (160 kB at 2.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M5/org.eclipse.sisu.inject-0.0.0.M5.jar (291 kB at 4.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.1.1/maven-aether-provider-3.1.1.jar (60 kB at 876 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/0.9.0.M2/aether-spi-0.9.0.M2.jar (18 kB at 253 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.jar (62 kB at 812 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.1/jackson-core-2.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.jar (50 kB at 647 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.jar (40 kB at 504 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar (134 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/0.9.0.M2/aether-impl-0.9.0.M2.jar (145 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar (125 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.1/jackson-core-2.5.1.jar (230 kB at 2.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (61 kB at 607 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar (181 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar (264 kB at 2.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.jar (58 kB at 544 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar (353 kB at 3.1 MB/s)
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 556 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 286 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 895 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 85 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 97 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 34 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 354 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 176 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 150 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 418 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 797 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 666 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 910 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 381 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 947 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 235 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 317 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 130 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 536 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 494 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 552 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 59 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 168 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 83 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (4.3 kB at 334 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (4.6 kB at 655 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom (10 kB at 484 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom (48 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (5.3 kB at 761 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 688 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (4.9 kB at 182 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 638 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 kB at 630 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 220 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (1.9 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 256 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (5.3 kB at 888 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 8.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 7.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 502 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 3.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 3.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (4.3 kB at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (154 kB at 2.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (426 kB at 6.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 840 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (100 kB at 1.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (86 kB at 703 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 834 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 1.9 MB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4.0 kB at 809 kB/s)
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo/1.1.1/apollo-1.1.1.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo BuildTools 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (copy-resources) @ apollo-buildtools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-buildtools ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:00:34-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/target/classes/git.properties ] (for module  Apollo BuildTools )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-buildtools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-buildtools ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 830 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_ALPHA/asm-6.0_ALPHA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.0_ALPHA/asm-6.0_ALPHA.pom (1.9 kB at 277 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_ALPHA/asm-parent-6.0_ALPHA.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/6.0_ALPHA/asm-parent-6.0_ALPHA.pom (5.5 kB at 687 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.1/plexus-compiler-api-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.1/plexus-compiler-api-2.8.1.pom (893 B at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.1/plexus-compiler-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.1/plexus-compiler-2.8.1.pom (5.0 kB at 626 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 295 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.1/plexus-compiler-manager-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.1/plexus-compiler-manager-2.8.1.pom (713 B at 89 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.1/plexus-compiler-javac-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.1/plexus-compiler-javac-2.8.1.pom (794 B at 113 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.1/plexus-compilers-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.1/plexus-compilers-2.8.1.pom (1.4 kB at 231 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (222 kB at 7.9 MB/s)
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-buildtools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-buildtools ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-buildtools ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (1.6 kB at 326 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (228 kB at 9.1 MB/s)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-buildtools ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/target/apollo-buildtools-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-buildtools ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/target/apollo-buildtools-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-buildtools ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/target/apollo-buildtools-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-buildtools/1.1.1/apollo-buildtools-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-buildtools/1.1.1/apollo-buildtools-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-buildtools/target/apollo-buildtools-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-buildtools/1.1.1/apollo-buildtools-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Core 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-core ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:00:36-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/classes/git.properties ] (for module  Apollo Core )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 55 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/main/java/com/ctrip/framework/apollo/tracer/internals/cat/CatTransaction.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/main/java/com/ctrip/framework/apollo/tracer/internals/cat/CatTransaction.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/test/java/com/ctrip/framework/apollo/tracer/TracerTest.java: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/test/java/com/ctrip/framework/apollo/tracer/TracerTest.java uses unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/src/test/java/com/ctrip/framework/apollo/tracer/TracerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-core ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/apollo-core-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-core ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/apollo-core-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-core ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/apollo-core-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-core/1.1.1/apollo-core-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-core/1.1.1/apollo-core-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-core/target/apollo-core-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-core/1.1.1/apollo-core-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Client 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-client ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:00:38-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/classes/git.properties ] (for module  Apollo Client )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 6 resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 75 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/src/test/java/com/ctrip/framework/apollo/internals/RemoteConfigRepositoryTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/src/test/java/com/ctrip/framework/apollo/internals/RemoteConfigRepositoryTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-client ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-client ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/apollo-client-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-client ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/apollo-client-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-client ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/apollo-client-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-client/1.1.1/apollo-client-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-client/1.1.1/apollo-client-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-client/target/apollo-client-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-client/1.1.1/apollo-client-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Common 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-common ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:00:39-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/classes/git.properties ] (for module  Apollo Common )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 55 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/src/main/java/com/ctrip/framework/apollo/common/customize/LoggingCustomizer.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/src/main/java/com/ctrip/framework/apollo/common/customize/LoggingCustomizer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-common ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/apollo-common-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-common ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/apollo-common-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-common ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/apollo-common-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-common/1.1.1/apollo-common-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-common/1.1.1/apollo-common-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-common/target/apollo-common-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-common/1.1.1/apollo-common-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Biz 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-biz ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:00:42-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/classes/git.properties ] (for module  Apollo Biz )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-biz ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/src/main/resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/src/main/resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-biz ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 63 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-biz ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-biz ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-biz ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-biz ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/apollo-biz-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-biz ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/apollo-biz-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-biz ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/apollo-biz-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-biz/1.1.1/apollo-biz-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-biz/1.1.1/apollo-biz-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-biz/target/apollo-biz-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-biz/1.1.1/apollo-biz-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo ConfigService 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-configservice ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:01:18-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/classes/git.properties ] (for module  Apollo ConfigService )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-configservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-configservice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/main/java/com/ctrip/framework/apollo/configservice/ConfigServiceAutoConfiguration.java: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/main/java/com/ctrip/framework/apollo/configservice/ConfigServiceAutoConfiguration.java uses or overrides a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/main/java/com/ctrip/framework/apollo/configservice/ConfigServiceAutoConfiguration.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-configservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-configservice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/test/java/com/ctrip/framework/apollo/configservice/controller/NotificationControllerTest.java: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/test/java/com/ctrip/framework/apollo/configservice/controller/NotificationControllerTest.java uses or overrides a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/test/java/com/ctrip/framework/apollo/configservice/controller/NotificationControllerTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/test/java/com/ctrip/framework/apollo/configservice/controller/NotificationControllerV2Test.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/src/test/java/com/ctrip/framework/apollo/configservice/controller/NotificationControllerV2Test.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-configservice ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-configservice ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/apollo-configservice-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-configservice ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/apollo-configservice-1.1.1-sources.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.3.5.RELEASE:repackage (default) @ apollo-configservice ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/1.3.5.RELEASE/spring-boot-loader-tools-1.3.5.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/1.3.5.RELEASE/spring-boot-loader-tools-1.3.5.RELEASE.pom (4.3 kB at 6.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.2.6.RELEASE/spring-core-4.2.6.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.2.6.RELEASE/spring-core-4.2.6.RELEASE.pom (2.5 kB at 311 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom (4.3 kB at 480 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.pom (4.1 kB at 695 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.1/maven-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.1/maven-3.2.1.pom (23 kB at 7.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.1/maven-model-builder-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.1/maven-model-builder-3.2.1.pom (2.8 kB at 351 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.1/maven-repository-metadata-3.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.1/maven-repository-metadata-3.2.1.pom (2.2 kB at 3.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom (1.8 kB at 262 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom (29 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom (2.0 kB at 133 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom (2.1 kB at 265 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom (3.4 kB at 2.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (5.0 kB at 557 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom (4.1 kB at 515 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom (2.7 kB at 1.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom (11 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 257 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.pom (22 kB at 10 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.2/maven-shade-plugin-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/2.2/maven-shade-plugin-2.2.pom (7.8 kB at 872 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4.0 kB at 2.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 116 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 424 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 9.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (1.8 kB at 196 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (12 kB at 11 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.pom (417 B at 154 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.pom (406 B at 203 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom (2.2 kB at 274 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.pom (7.5 kB at 3.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.pom (9.7 kB at 3.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/3/commons-parent-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/3/commons-parent-3.pom (12 kB at 2.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom (264 B at 29 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom (4.4 kB at 966 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.pom (417 B at 56 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.pom (404 B at 120 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.pom (415 B at 293 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.pom (409 B at 109 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.2.6.RELEASE/spring-core-4.2.6.RELEASE.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.jar (173 kB at 9.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (170 kB at 6.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.jar (136 kB at 4.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.8/maven-project-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.8/maven-project-2.0.8.jar (117 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.8/maven-profile-2.0.8.jar (35 kB at 707 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.8/maven-artifact-manager-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.2.6.RELEASE/spring-core-4.2.6.RELEASE.jar (1.1 MB at 514 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.8/maven-plugin-registry-2.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.jar (31 kB at 14 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.8/maven-artifact-manager-2.0.8.jar (57 kB at 27 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.8/maven-plugin-registry-2.0.8.jar (29 kB at 14 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.jar (147 kB at 69 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.1/maven-aether-provider-3.2.1.jar (61 kB at 29 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar (74 kB at 35 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (53 kB at 25 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar (22 kB at 10.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar (38 kB at 18 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/0.7/jdependency-0.7.jar (12 kB at 5.5 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.jar (490 kB at 226 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar (378 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar (153 kB at 71 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.jar (18 kB at 8.3 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar (88 kB at 40 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.jar (37 kB at 17 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar (285 kB at 51 kB/s)
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.6:single (default) @ apollo-configservice ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.0.1/plexus-archiver-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.0.1/plexus-archiver-3.0.1.pom (5.8 kB at 643 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.6/plexus-io-2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.6/plexus-io-2.6.pom (3.9 kB at 564 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.3/snappy-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.3/snappy-0.3.pom (14 kB at 1.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.pom (2.7 kB at 380 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom (2.2 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom (10.0 kB at 5.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom (601 B at 100 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (8.8 kB at 1.9 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.0/maven-shared-io-1.0.pom (3.0 kB at 433 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.2/plexus-utils-1.2.pom (767 B at 73 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.5/plexus-1.0.5.pom (5.9 kB at 10 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.3/maven-filtering-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.3/maven-filtering-1.3.pom (6.2 kB at 775 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.18/plexus-utils-3.0.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.18/plexus-utils-3.0.18.pom (3.4 kB at 566 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom (3.8 kB at 544 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0/maven-repository-builder-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-repository-builder/1.0/maven-repository-builder-1.0.pom (4.6 kB at 651 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom (5.1 kB at 851 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 kB at 20 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 kB at 42 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.4/maven-artifact-2.0.4.pom (765 B at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom (12 kB at 3.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.4/maven-artifact-manager-2.0.4.pom (1.4 kB at 170 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.4/maven-repository-metadata-2.0.4.pom (1.5 kB at 186 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.4/maven-project-2.0.4.pom (1.8 kB at 184 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.4/maven-settings-2.0.4.pom (1.6 kB at 232 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.4/maven-model-2.0.4.pom (2.7 kB at 3.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.4/maven-profile-2.0.4.pom (1.6 kB at 308 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4.0 kB at 1.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.3/snappy-0.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 1.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 1.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 kB at 3.7 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.3/snappy-0.3.jar (49 kB at 406 kB/s)
+[INFO] Reading assembly descriptor: src/assembly/assembly-descriptor.xml
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /config
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[INFO] Building zip: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/apollo-configservice-1.1.1-github.zip
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-configservice ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/apollo-configservice-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-configservice/1.1.1/apollo-configservice-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-configservice/1.1.1/apollo-configservice-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/apollo-configservice-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-configservice/1.1.1/apollo-configservice-1.1.1-sources.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-configservice/target/apollo-configservice-1.1.1-github.zip to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-configservice/1.1.1/apollo-configservice-1.1.1.zip
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo AdminService 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-adminservice ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:08:26-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/classes/git.properties ] (for module  Apollo AdminService )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-adminservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-adminservice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-adminservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-adminservice ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/src/test/java/com/ctrip/framework/apollo/adminservice/aop/NamespaceLockTest.java: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/src/test/java/com/ctrip/framework/apollo/adminservice/aop/NamespaceLockTest.java uses unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/src/test/java/com/ctrip/framework/apollo/adminservice/aop/NamespaceLockTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-adminservice ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-adminservice ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-adminservice ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-sources.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.3.5.RELEASE:repackage (default) @ apollo-adminservice ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.6:single (default) @ apollo-adminservice ---
+[INFO] Reading assembly descriptor: src/assembly/assembly-descriptor.xml
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /config
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[INFO] Building zip: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-github.zip
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-adminservice ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1-sources.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-github.zip to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1.zip
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Open Api 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-openapi ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:08:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/classes/git.properties ] (for module  Apollo Open Api )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-openapi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/src/main/resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/src/main/resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-openapi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-openapi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-openapi ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-openapi ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-openapi ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/apollo-openapi-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-openapi ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/apollo-openapi-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-openapi ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/apollo-openapi-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-openapi/1.1.1/apollo-openapi-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-openapi/1.1.1/apollo-openapi-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-openapi/target/apollo-openapi-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-openapi/1.1.1/apollo-openapi-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Portal 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-portal ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:08:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/classes/git.properties ] (for module  Apollo Portal )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-portal ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 172 resources
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-portal ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 171 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/main/java/com/ctrip/framework/apollo/portal/spi/configuration/AuthConfiguration.java: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/main/java/com/ctrip/framework/apollo/portal/spi/configuration/AuthConfiguration.java uses or overrides a deprecated API.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/main/java/com/ctrip/framework/apollo/portal/spi/configuration/AuthConfiguration.java: Recompile with -Xlint:deprecation for details.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/main/java/com/ctrip/framework/apollo/portal/spi/ctrip/CtripEmailService.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/main/java/com/ctrip/framework/apollo/portal/spi/ctrip/CtripEmailService.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-portal ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-portal ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/test-classes
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/test/java/com/ctrip/framework/apollo/openapi/util/ConsumerAuditUtilTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/src/test/java/com/ctrip/framework/apollo/openapi/util/ConsumerAuditUtilTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-portal ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-portal ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/apollo-portal-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-portal ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/apollo-portal-1.1.1-sources.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.3.5.RELEASE:repackage (default) @ apollo-portal ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.6:single (default) @ apollo-portal ---
+[INFO] Reading assembly descriptor: src/assembly/assembly-descriptor.xml
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /config
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[INFO] Building zip: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/apollo-portal-1.1.1-github.zip
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-portal ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/apollo-portal-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-portal/1.1.1/apollo-portal-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-portal/1.1.1/apollo-portal-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/apollo-portal-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-portal/1.1.1/apollo-portal-1.1.1-sources.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-portal/target/apollo-portal-1.1.1-github.zip to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-portal/1.1.1/apollo-portal-1.1.1.zip
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Assembly 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-assembly ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:08:34-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/classes/git.properties ] (for module  Apollo Assembly )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-assembly ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-assembly ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-assembly ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-assembly ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-assembly ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-assembly ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/apollo-assembly-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-assembly ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/apollo-assembly-1.1.1-sources.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.3.5.RELEASE:repackage (default) @ apollo-assembly ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-assembly ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/apollo-assembly-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-assembly/1.1.1/apollo-assembly-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-assembly/1.1.1/apollo-assembly-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-assembly/target/apollo-assembly-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-assembly/1.1.1/apollo-assembly-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Demo 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-demo ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:08:52-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/target/classes/git.properties ] (for module  Apollo Demo )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-demo ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-demo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-demo ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/target/apollo-demo-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-demo ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/target/apollo-demo-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-demo ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/target/apollo-demo-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-demo/1.1.1/apollo-demo-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-demo/1.1.1/apollo-demo-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-demo/target/apollo-demo-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-demo/1.1.1/apollo-demo-1.1.1-sources.jar
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo Mock Server 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-mockserver ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:09:09-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Writing properties file to [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/classes/git.properties ] (for module  Apollo Mock Server )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-mockserver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/src/main/resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/src/main/resources
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/src/main/config
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/src/main/config
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-mockserver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-mockserver ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-mockserver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-mockserver ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-mockserver ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/apollo-mockserver-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-mockserver ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/apollo-mockserver-1.1.1-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-mockserver ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/apollo-mockserver-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-mockserver/1.1.1/apollo-mockserver-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-mockserver/1.1.1/apollo-mockserver-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-mockserver/target/apollo-mockserver-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-mockserver/1.1.1/apollo-mockserver-1.1.1-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Apollo ............................................. SUCCESS [ 11.026 s]
+[INFO] Apollo BuildTools .................................. SUCCESS [  1.958 s]
+[INFO] Apollo Core ........................................ SUCCESS [  1.903 s]
+[INFO] Apollo Client ...................................... SUCCESS [  1.720 s]
+[INFO] Apollo Common ...................................... SUCCESS [  0.997 s]
+[INFO] Apollo Biz ......................................... SUCCESS [ 37.899 s]
+[INFO] Apollo ConfigService ............................... SUCCESS [07:08 min]
+[INFO] Apollo AdminService ................................ SUCCESS [  3.346 s]
+[INFO] Apollo Open Api .................................... SUCCESS [  0.499 s]
+[INFO] Apollo Portal ...................................... SUCCESS [  3.555 s]
+[INFO] Apollo Assembly .................................... SUCCESS [ 17.420 s]
+[INFO] Apollo Demo ........................................ SUCCESS [ 17.634 s]
+[INFO] Apollo Mock Server ................................. SUCCESS [ 19.918 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 09:06 min
+[INFO] Finished at: 2020-03-14T18:09:28-07:00
+[INFO] Final Memory: 113M/1617M
+[INFO] ------------------------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apollo AdminService 1.1.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ apollo-adminservice ---
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - dotGitDirectory /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.git
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.branch master
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --always = true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --dirty = -dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - --abbrev = 7
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Created map: [ {} ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - HEAD is [ c52b6347f54c34dba1e0c244150d56d1e3855ac9 ] 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Repo is in dirty state [ false ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id c52b6347f54c34dba1e0c244150d56d1e3855ac9
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.abbrev c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.dirty true
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.name jose
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.user.email zecapistolas@gmail.com
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.full init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.message.short init
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.time 2020-03-14T17:50:30-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.remote.origin.url null
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.tags 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.name 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Tag refs [ [] ]
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.closest.tag.commit.count 
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.time 2020-03-14T18:09:33-0700
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.version 1.1.1
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.build.host bam.cs.washington.edu
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - git.commit.id.describe-short c52b634
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.host
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.dirty
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.remote.origin.url
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe-short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.email
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.full
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.version
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.message.short
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.abbrev
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.branch
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.closest.tag.commit.count
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id.describe
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.id
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.tags
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.build.time
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - found property git.commit.user.name
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Reading exising properties file [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/classes/git.properties ] (for module  Apollo AdminService )...
+[INFO] pl.project13.maven.git.log.MavenLoggerBridge - Properties file [ /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/classes/git.properties ] is up-to-date (for module  Apollo AdminService )...
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ apollo-adminservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ apollo-adminservice ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ apollo-adminservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ apollo-adminservice ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ apollo-adminservice ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ apollo-adminservice ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1.jar
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ apollo-adminservice ---
+[INFO] Building jar: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-sources.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.3.5.RELEASE:repackage (default) @ apollo-adminservice ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.6:single (default) @ apollo-adminservice ---
+[INFO] Reading assembly descriptor: src/assembly/assembly-descriptor.xml
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /config
+[WARNING] The assembly descriptor contains a filesystem-root relative reference, which is not cross platform compatible /
+[INFO] Building zip: /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-github.zip
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ apollo-adminservice ---
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/pom.xml to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1.pom
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-sources.jar to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1-sources.jar
+[INFO] Installing /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/apollo-adminservice/target/apollo-adminservice-1.1.1-github.zip to /bam/scratch/tmp-rta/Bears_ctripcorp-apollo_444069339-444288772_java-8/.m2/com/ctrip/framework/apollo/apollo-adminservice/1.1.1/apollo-adminservice-1.1.1.zip
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 25.923 s
+[INFO] Finished at: 2020-03-14T18:09:57-07:00
+[INFO] Final Memory: 49M/1237M
+[INFO] ------------------------------------------------------------------------

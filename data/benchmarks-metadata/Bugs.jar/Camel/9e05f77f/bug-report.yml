@@ -1,0 +1,46 @@
+---
+BugID: CAMEL-4513
+Summary: simple predicate fails to introspect the exception in an onException clause
+  using onWhen
+Description: |-
+  The bug occured in the 2.6.0 version of Camel I'm using. I haven't test it against the latest version but I've checked the sources and it doesn't seem to have change since.
+
+  Given a camel route, with a onException clause like this :
+
+  {code}
+  this.onException(MyException.class)
+      .onWhen(simple("${exception.myExceptionInfo.aValue} == true"))
+      ...
+  {code}
+
+  MyException is a customed exception like this :
+
+  {code:title=MyException.java}
+  public class MyException extends Exception {
+     ....
+     public MyExceptionInfo getMyExceptionInfo() {
+       ...
+     }
+  }
+  {code}
+
+  What I've observed is that when BeanExpression.OgnlInvokeProcessor.process iterate through the methods to calls, it does :
+  {code}
+                  // only invoke if we have a method name to use to invoke
+                  if (methodName != null) {
+                      InvokeProcessor invoke = new InvokeProcessor(holder, methodName);
+                      invoke.process(resultExchange);
+
+                      // check for exception and rethrow if we failed
+                      if (resultExchange.getException() != null) {
+                          throw new RuntimeBeanExpressionException(exchange, beanName, methodName, resultExchange.getException());
+                      }
+
+                      result = invoke.getResult();
+                  }
+  {code}
+
+  It successfully invoke the method : invoke.process(resultExchange);
+  But it checks for exception in the exchange. Since we are in an exception clause, there is an actual exception (thrown by the application, but unrelated with the expression language search) and it fails
+
+  There is a simple workaround for that : writing his own predicate class to test wanted conditions

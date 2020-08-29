@@ -1,0 +1,12 @@
+---
+BugID: OAK-1784
+Summary: Async index update persists conflict markers
+Description: "A long running test I performed yesterday failed with a FileNotFoundException
+  in the lucene index. After analyzing the issue it turned  out the async index update
+  persisted a conflict markers introduced by a rebase call. So far I'm not able to
+  reproduce it with a more simple test setup and after a shorter time (the initial
+  test failed after 10 hours). Given the way the async index update work, there shouldn't
+  be any conflicts, because it's the only component writing into this location of
+  the repository. \n\nAs an immediate workaround, I'd like to add the AnnotatingConflictHandler
+  & ConflictValidator combo to the merge call to make sure a commit with conflict
+  markers does not get persisted."

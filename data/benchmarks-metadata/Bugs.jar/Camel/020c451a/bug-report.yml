@@ -1,0 +1,21 @@
+---
+BugID: CAMEL-6447
+Summary: endChoice() has no effect in nested choice definition
+Description: "I just upgraded from 2.10.4 to 2.11.0 and noticed that nested choice
+  definitions started acting strangely. For example:\n\n{code:java}\n            .choice()\n
+  \               .when(header(Exchange.EXCEPTION_CAUGHT).isNotNull())\n                    //
+  1\n                    .setBody(exceptionMessage().append(SystemUtils.LINE_SEPARATOR).append(exceptionStackTrace()))\n
+  \                   .choice()\n                        .when(header(HEADER_CONTROLLER_ID).isNotNull())\n
+  \                           // 1a\n                            .setHeader(Exchange.FILE_NAME,
+  simple(AUDIT_CONTROLLER_FAILED_FILENAME + \".error.log\"))\n                            .to(ENDPOINT_AUDIT_DIR)\n
+  \                       .otherwise()\n                            // 1b\n                            .setHeader(Exchange.FILE_NAME,
+  simple(AUDIT_FAILED_FILENAME + \".error.log\"))\n                            .to(ENDPOINT_AUDIT_DIR)\n
+  \                           // INSERTING .end() here solves the issue\n                        .endChoice()\n
+  \                   .log(LoggingLevel.WARN, \"DLQ written: ${in.header.CamelExceptionCaught}\"\n
+  \               .otherwise()\n                    // 2\n                    .log(LoggingLevel.WARN,
+  \"DLQ written\" + MESSAGE_LOG_FORMAT)\n                .end()\n{code}\n\nI have
+  a test that is supposed to go through 1 and 1a. However it now passes through 1
+  and 2!\nIt looks like the endChoice() in 1b has no effect and the otherwise() in
+  2 is executed instead of 1b. Inserting and end() statement as shown seems to solve
+  the issue, but it looks suspicious.\n\nIt's probably a regression introduced by
+  the fix for CAMEL-5953, but I'm not 100% sure. "

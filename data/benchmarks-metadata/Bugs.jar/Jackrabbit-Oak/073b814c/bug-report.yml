@@ -1,0 +1,16 @@
+---
+BugID: OAK-1674
+Summary: Node isNew() is false in case the node is removed and added in same commit
+Description: |-
+  When you remove a Node /path/a transiently and add one add /path/a again.
+  The transiently added Node isNew() check will be false.
+  {code}
+  root.getNode(name).remove();
+  Node newNode = root.addNode(name);
+  nowNode.isNew() => false
+  {code}
+
+  The API says
+  {quote}
+  Returns true if this is a new item, meaning that it exists only in transient storage on the Session and has not yet been saved. Within a transaction, isNew on an Item may return false (because the item has been saved) even if that Item is not in persistent storage (because the transaction has not yet been committed)....
+  {quote}

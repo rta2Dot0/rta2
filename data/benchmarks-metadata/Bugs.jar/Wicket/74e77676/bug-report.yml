@@ -1,0 +1,14 @@
+---
+BugID: WICKET-5094
+Summary: ISecuritySettings#getEnforceMounts(true) prevents access to *all* non-mounted
+  bookmarkable pages
+Description: |-
+  ISecuritySettings#setEnforceMounts(true) is meant to be used to prevent access to mounted-pages via BookmarkableMapper, e.g. when Page1.class is mounted:
+
+     http://localhost:8080/niceurl/a/nice/path/to/the/first/page
+
+  ... then the following url will not be accepted:
+
+     http://localhost:8080/niceurl/wicket/bookmarkable/org.apache.wicket.examples.niceurl.Page1
+
+  But starting with Wicket 1.5.x access to *all* non-mounted pages via BookmarkableMapper is prevented, i.e. no url "http://localhost:8080/niceurl/wicket/bookmarkable/*" is matched.

@@ -1,0 +1,9 @@
+---
+BugID: WICKET-4923
+Summary: CryptoMapper ignores original queryString parameters
+Description: "When an AjaxRequest with parameters (e.g.: Autocomplete.getChoices())
+  arrives and CryptoMapper decrypts it, original queryString parameters dissapears.\n\nDebugging
+  CryptoMapper, I've checked that this method:\nprivate Url decryptUrl(final Request
+  request, final Url encryptedUrl) {\n        ...\n}\n\nreceives querystrings parameters
+  (on field url.parameter from \"request\" parameter) and the new Url returned by
+  the method never adds them to its own list. "

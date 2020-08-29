@@ -1,0 +1,76 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Artifact Manager 2.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/maven-repository-metadata/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/maven/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/maven-artifact/2.1-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-artifact-manager ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-artifact-manager ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-artifact-manager ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-artifact-manager ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven-artifact-manager ---
+[INFO] Surefire report directory: /boom/scratch/tmp-rta/Bugs.jar_Maven_b92af0e4_java-8/maven-artifact-manager/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.pom (1.7 kB at 344 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 5.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.12.4/surefire-junit3-2.12.4.jar (26 kB at 1.0 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.maven.artifact.deployer.ArtifactDeployerTest
+[INFO] Retrieving previous metadata from test
+[INFO] Uploading repository metadata for: 'artifact org.apache.maven:artifact'
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.715 sec
+Running org.apache.maven.artifact.installer.ArtifactInstallerTest
+[INFO] Installing /boom/scratch/tmp-rta/Bugs.jar_Maven_b92af0e4_java-8/maven-artifact-manager/src/test/resources/artifact-install/artifact-1.0.jar to /boom/scratch/tmp-rta/Bugs.jar_Maven_b92af0e4_java-8/maven-artifact-manager/target/test-classes/repositories/installer/local-repository/org.apache.maven/jars/artifact-1.0.jar
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running org.apache.maven.artifact.manager.DefaultWagonManagerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec
+Running org.apache.maven.artifact.resolver.ArtifactResolverTest
+[WARNING] *** CHECKSUM FAILED - Error retrieving checksum file for org.apache.maven/jars/l-1.0.jar - IGNORING
+[WARNING] *** CHECKSUM FAILED - Error retrieving checksum file for org.apache.maven/jars/b-1.0.jar - IGNORING
+[WARNING] *** CHECKSUM FAILED - Error retrieving checksum file for org.apache.maven/jars/j-1.0.jar - IGNORING
+[WARNING] *** CHECKSUM FAILED - Error retrieving checksum file for org.apache.maven/jars/i-1.0.jar - IGNORING
+[WARNING] Unable to get resource from repository test (file:///boom/scratch/tmp-rta/Bugs.jar_Maven_b92af0e4_java-8/maven-artifact-manager/target/test-classes/repositories/resolver/remote-repository)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.266 sec
+Running org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadataTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec
+
+Results :
+
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 17.428 s
+[INFO] Finished at: 2020-03-14T22:52:45-07:00
+[INFO] Final Memory: 18M/1018M
+[INFO] ------------------------------------------------------------------------

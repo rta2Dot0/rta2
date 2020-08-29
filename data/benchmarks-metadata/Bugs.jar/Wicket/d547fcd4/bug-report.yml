@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5966
+Summary: ResourceUtils.getLocaleFromFilename can't handle minimized resources well
+Description: |-
+  I think the ResourceUtils.getLocaleFromFilename(String path) has the order of locale and minimization wrong:
+  It currently parses: File.min_Lang_Coun_Var.ext while the typical convention is File_Lang_Coun_Var.min.ext
+  Surely considering the ResourceUtils.getMinifiedName() method which does work according to convention.

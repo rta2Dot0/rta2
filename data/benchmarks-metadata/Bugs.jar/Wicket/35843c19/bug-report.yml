@@ -1,0 +1,22 @@
+---
+BugID: WICKET-4494
+Summary: HtmlHandler wrongly handles tags not requiring closed tags if the markup
+  does not have "top" level tag
+Description: "Hi, \n\nI have custom component (extends MarkupContainer implements
+  IMarkupCacheKeyProvider, IMarkupResourceStreamProvider) which fetches its HTML markup
+  from database. \nFollowing HTML markup: \n\n<img alt=\"\" src=\"logo.png\"> \n<br>Some
+  text \n<br>Some more text \n\ncauses following error: \n\n2012-04-12 10:52:53,012
+  [http-8080-6] ERROR: Unexpected error occurred \nUnable to find close tag for: '<img
+  alt=\"logo\" src=\"logo.png\">' in org.apache.wicket.util.resource.StringResourceStream@3d7e16fc
+  \n MarkupStream: [unknown] \n        at org.apache.wicket.markup.MarkupFragment.<init>(MarkupFragment.java:127)
+  \n        at org.apache.wicket.markup.MarkupStream.getMarkupFragment(MarkupStream.java:485)
+  \n        at org.apache.wicket.MarkupContainer.autoAdd(MarkupContainer.java:244)
+  \n        at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1421)
+  \n        at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1596)
+  \n        at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1571)
+  \n        at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1525)
+  \n\nI think the problem is that org.apache.wicket.markup.parser.filter.HtmlHandler
+  does not handle such markup correctly. It does not call ComponentTag.setHasNoCloseTag(true)
+  for the img tag. Such call is missing in postProcess() method. I think that this
+  problem can be fixed by inserting: \n\ntop.setHasNoCloseTag(true); \n\nafter line
+  80 in HtmlHandler.java file. \n\n\nMichal"

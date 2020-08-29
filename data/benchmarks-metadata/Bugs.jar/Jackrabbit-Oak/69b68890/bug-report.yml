@@ -1,0 +1,9 @@
+---
+BugID: OAK-1363
+Summary: TokenLoginModule does not set userId on auth info
+Description: |-
+  the token login module does not set the userid in the authinfo (because it does not know it). and the LoginModuleImpl does not overwrite the AuthInfo if it already exists.
+
+  the consequence: {{Session.getUserID()}} returns {{NULL}} for logins that create a token.
+
+  I think that the authinfos should be added even if they already exist. and all users of the public credentials need to be aware that authinfos can exist that are not complete.

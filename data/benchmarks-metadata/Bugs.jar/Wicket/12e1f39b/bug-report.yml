@@ -1,0 +1,8 @@
+---
+BugID: WICKET-2552
+Summary: CreditCardValidator accepts invalid inputs
+Description: "(1) The onValidate() method of the CreditCardValidator class returns
+  true for invalid inputs with null or unicode character such as 4\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0.
+  \n(2) Also there is no length check on the input, therefore even invalid length
+  inputs such as 9845 are accepted. \n(3) There is no check for invalid issuer identifier,
+  i.e.,  840898920205250 is accepted, where 84XXXX is not a valid issuer identifier"

@@ -1,0 +1,17 @@
+---
+BugID: WICKET-1897
+Summary: StatelessForm submitted to the wrong page
+Description: |-
+  I made a small application to reproduce the problem. You can download it from http://aditsu.net/wickettest.zip , I'll try to attach it too.
+  Dependencies: jetty 6, wicket 1.4-m3, slf4j, log4j
+  Steps to reproduce:
+  1. Run the test.Start class
+  2. Open http://localhost:8080 in a browser
+  3. Open http://localhost:8080/page2 in a new tab
+  4. Go to the first tab and click submit
+
+  Result:
+
+  WicketRuntimeException: unable to find component with path form on stateless page [Page class = test.Page2, id = 0, version = 0]
+
+  It looks like the 2 pages are created with the same id in 2 different pagemaps, but when I submit the form, it goes to the second pagemap and finds the second page (with no form on it).

@@ -1,0 +1,22 @@
+---
+BugID: ACCUMULO-1730
+Summary: ColumnVisibility parse tree nodes do not have correct location offsets for
+  AND and OR nodes
+Description: |-
+  Trying to do some transformations on visibility strings and running into issues working with the parse tree:
+
+  Clojure 1.5.1
+  user=> (import [org.apache.accumulo.core.security ColumnVisibility])
+  org.apache.accumulo.core.security.ColumnVisibility
+  user=> (def vis (ColumnVisibility. "(W)|(U|V)"))
+  #'user/vis
+  user=> (.getTermStart (first (.getChildren (.getParseTree vis))))
+  1
+  user=> (.getTermEnd (first (.getChildren (.getParseTree vis))))
+  2
+  user=> (.getTermStart (second (.getChildren (.getParseTree vis))))
+  0
+  user=> (.getTermEnd (second (.getChildren (.getParseTree vis))))
+  8
+
+  Shouldn't those last two be 5 and 8?

@@ -1,0 +1,7 @@
+---
+BugID: OAK-2528
+Summary: Entries in _commitRoot not purged
+Description: Entries in _commitRoot are not purged or moved to previous documents
+  if there are no changes with those revisions. Usually there is always a change associated
+  with a _commitRoot, but in some cases it may happen that the only update on the
+  document is for non-revisioned data like the _children flag.

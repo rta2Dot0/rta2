@@ -1,0 +1,13 @@
+---
+BugID: WICKET-4841
+Summary: Return error code 400 when an Ajax request has no base url set in header/request
+  parameters.
+Description: "Hello,\n\ncurrently we've got a problem with faked ajax requests. these
+  ajax \nrequests misses some parameters, but the wicket-ajax header flag is set.
+  \nSo ServletWebRequest throws an exception:\n\njava.lang.IllegalStateException:
+  Current ajax request is missing the base url header or parameter\n         at org.apache.wicket.util.lang.Checks.notNull(Checks.java:38)\n
+  \        at org.apache.wicket.protocol.http.servlet.ServletWebRequest.getClientUrl(ServletWebRequest.java:171)\n
+  \        at org.apache.wicket.request.UrlRenderer.<init>(UrlRenderer.java:59)\n\n\nThese
+  faked requests are so massive, that our application is no longer \nmonitorable.
+  Our workaround rejects these requests via apache config. \n\nInstead of logging
+  an exception, in deployment mode wicket should log a warning and reject the request"

@@ -1,0 +1,53 @@
+---
+BugID: WICKET-3618
+Summary: 'IllegalStateException: Header was already written to response!'
+Description: |-
+  Getting this error for no apparent reason, the code works fine on wicket 1.4.17. Code example with error is attached.
+
+  Click on the 'click here' link to see the error occur in the console, below is part of the stack trace.
+
+
+  ERROR - DefaultExceptionMapper     - Unexpected error occurred
+  java.lang.IllegalStateException: Header was already written to response!
+          at org.apache.wicket.protocol.http.HeaderBufferingWebResponse.checkHeader(HeaderBufferingWebResponse.java:62)
+          at org.apache.wicket.protocol.http.HeaderBufferingWebResponse.setDateHeader(HeaderBufferingWebResponse.java:131)
+
+          at org.apache.wicket.protocol.http.BufferedWebResponse$SetDateHeaderAction.invoke(BufferedWebResponse.java:241)
+          at org.apache.wicket.protocol.http.BufferedWebResponse.writeTo(BufferedWebResponse.java:487)
+          at org.apache.wicket.request.handler.render.WebPageRenderer.respond(WebPageRenderer.java:225)
+          at org.apache.wicket.request.handler.RenderPageRequestHandler.respond(RenderPageRequestHandler.java:139)
+          at org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:715)
+          at org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:63)
+          at org.apache.wicket.request.cycle.RequestCycle.executeExceptionRequestHandler(RequestCycle.java:274)
+          at org.apache.wicket.request.cycle.RequestCycle.executeExceptionRequestHandler(RequestCycle.java:283)
+          at org.apache.wicket.request.cycle.RequestCycle.executeExceptionRequestHandler(RequestCycle.java:283)
+          at org.apache.wicket.request.cycle.RequestCycle.executeExceptionRequestHandler(RequestCycle.java:283)
+          at org.apache.wicket.request.cycle.RequestCycle.executeExceptionRequestHandler(RequestCycle.java:283)
+          at org.apache.wicket.request.cycle.RequestCycle.executeExceptionRequestHandler(RequestCycle.java:283)
+          at org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:227)
+          at org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:253)
+          at org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:138)
+          at org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:194)
+          at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1323)
+          at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:474)
+          at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:119)
+          at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:517)
+          at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+          at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:935)
+          at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:404)
+          at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:184)
+          at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:870)
+          at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+          at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:247)
+          at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:151)
+          at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+          at org.eclipse.jetty.server.Server.handle(Server.java:346)
+          at org.eclipse.jetty.server.HttpConnection.handleRequest(HttpConnection.java:596)
+          at org.eclipse.jetty.server.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:1051)
+          at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:592)
+          at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:214)
+          at org.eclipse.jetty.server.HttpConnection.handle(HttpConnection.java:426)
+          at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:241)
+          at org.eclipse.jetty.server.ssl.SslSocketConnector$SslConnectorEndPoint.run(SslSocketConnector.java:646)
+          at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:528)
+          at java.lang.Thread.run(Thread.java:619)

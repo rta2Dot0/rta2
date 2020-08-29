@@ -1,0 +1,8 @@
+---
+BugID: WICKET-2882
+Summary: Dynamically adding component via an IComponentResolver fails within an enclosure
+  for versions after 1.4.1
+Description: |-
+  We have been using an IComponentResolver implementation for a long time to allow the inclusion of certain panels to be determined by the markup. Some panels are included inside enclosures and some are not. Both cases worked fine in wicket 1.4.1 but in versions 1.4.2 and later a 'Tag expected' error occurs if the component is wrapped inside a wicket enclosure.
+
+  A quickstart example has been included to demonstrate the problem.

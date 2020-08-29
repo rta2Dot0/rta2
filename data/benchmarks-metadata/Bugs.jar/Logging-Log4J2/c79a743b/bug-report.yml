@@ -1,0 +1,9 @@
+---
+BugID: LOG4J2-101
+Summary: Attribute "format" for SyslogAppender is mandatory
+Description: |-
+  In the SyslogAppender the configuration attribute "Format" must be present, otherwise a NullPointerException is thrown in method "createAppender" when the following statement is executed:
+
+  if (format.equalsIgnoreCase(RFC5424))
+
+  The fix is simply to add a check so the "equalsIgnoreCase" is called only if the format variable isn't Null.

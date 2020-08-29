@@ -1,0 +1,80 @@
+---
+BugID: WICKET-5662
+Summary: '@SpringBean(name="something", required=false) still throws org.springframework.beans.factory.NoSuchBeanDefinitionException:
+  No bean named ''something'' is defined'
+Description: "Example:\n\n{code}\npublic class TwitterLoginLink extends StatelessLink<Void>
+  {\n\t\t\t\n\t@SpringBean(name=\"twitterMgr\", required=false)\n\tprivate TwitterManager
+  twitterMgr;\n{code}\n\nstill throws:\n\n{code}\norg.springframework.beans.factory.NoSuchBeanDefinitionException:
+  No bean named 'twitterMgr' is defined\nat org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:641)\nat
+  org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1159)\nat
+  org.springframework.beans.factory.support.AbstractBeanFactory.isSingleton(AbstractBeanFactory.java:418)\nat
+  org.springframework.context.support.AbstractApplicationContext.isSingleton(AbstractApplicationContext.java:1002)\nat
+  org.apache.wicket.spring.SpringBeanLocator.isSingletonBean(SpringBeanLocator.java)\nat
+  org.apache.wicket.spring.injection.annot.AnnotProxyFieldValueFactory.getFieldValue(AnnotProxyFieldValueFactory.java:141)\nat
+  org.apache.wicket.injection.Injector.inject(Injector.java:111)\nat org.apache.wicket.spring.injection.annot.SpringComponentInjector.inject(SpringComponentInjector.java:124)\nat
+  org.apache.wicket.spring.injection.annot.SpringComponentInjector.onInstantiation(SpringComponentInjector.java:130)\nat
+  org.apache.wicket.application.ComponentInstantiationListenerCollection$1.notify(ComponentInstantiationListenerCollection.java:38)\nat
+  org.apache.wicket.application.ComponentInstantiationListenerCollection$1.notify(ComponentInstantiationListenerCollection.java:34)\nat
+  org.apache.wicket.util.listener.ListenerCollection.notify(ListenerCollection.java:80)\nat
+  org.apache.wicket.application.ComponentInstantiationListenerCollection.onInstantiation(ComponentInstantiationListenerCollection.java:33)\nat
+  org.apache.wicket.Component.<init>(Component.java:686)\nat org.apache.wicket.MarkupContainer.<init>(MarkupContainer.java:121)\nat
+  org.apache.wicket.markup.html.WebMarkupContainer.<init>(WebMarkupContainer.java:52)\nat
+  org.apache.wicket.markup.html.link.AbstractLink.<init>(AbstractLink.java:57)\nat
+  org.apache.wicket.markup.html.link.AbstractLink.<init>(AbstractLink.java:44)\nat
+  org.apache.wicket.markup.html.link.Link.<init>(Link.java:105)\nat org.apache.wicket.markup.html.link.StatelessLink.<init>(StatelessLink.java:42)\nat
+  org.soluvas.web.login.twitter.TwitterLoginLink.<init>(TwitterLoginLink.java:40)\nat
+  org.soluvas.web.login.DedicatedLoginPanel$FormSignIn.<init>(DedicatedLoginPanel.java:90)\nat
+  org.soluvas.web.login.DedicatedLoginPanel.onInitialize(DedicatedLoginPanel.java:58)\nat
+  org.apache.wicket.Component.fireInitialize(Component.java:876)\nat org.apache.wicket.MarkupContainer$3.component(MarkupContainer.java:967)\nat
+  org.apache.wicket.MarkupContainer$3.component(MarkupContainer.java:963)\nat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:144)\nat
+  org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:123)\nat org.apache.wicket.util.visit.Visits.visitChildren(Visits.java:192)\nat
+  org.apache.wicket.MarkupContainer.visitChildren(MarkupContainer.java:875)\nat org.apache.wicket.MarkupContainer.internalInitialize(MarkupContainer.java:962)\nat
+  org.apache.wicket.Page.isPageStateless(Page.java:463)\nat org.apache.wicket.core.request.mapper.AbstractBookmarkableMapper.getPageInfo(AbstractBookmarkableMapper.java:447)\nat
+  org.apache.wicket.core.request.mapper.AbstractBookmarkableMapper.mapHandler(AbstractBookmarkableMapper.java:391)\nat
+  org.apache.wicket.core.request.mapper.MountedMapper.mapHandler(MountedMapper.java:395)\nat
+  org.apache.wicket.request.mapper.CompoundRequestMapper.mapHandler(CompoundRequestMapper.java:215)\nat
+  org.apache.wicket.request.cycle.RequestCycle.mapUrlFor(RequestCycle.java:429)\nat
+  org.apache.wicket.request.handler.render.WebPageRenderer.respond(WebPageRenderer.java:273)\nat
+  org.apache.wicket.core.request.handler.RenderPageRequestHandler.respond(RenderPageRequestHandler.java:175)\nat
+  org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:862)\nat
+  org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:64)\nat
+  org.apache.wicket.request.cycle.RequestCycle.execute(RequestCycle.java:261)\nat
+  org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:218)\nat
+  org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:289)\nat
+  org.apache.wicket.protocol.http.WicketFilter.processRequestCycle(WicketFilter.java:259)\nat
+  org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:201)\nat
+  org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:282)\nat
+  org.soluvas.web.site.SecuredWicketAtmosphereHandler$CustomFilterChain.doFilter(SecuredWicketAtmosphereHandler.java:199)\nat
+  org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)\nat
+  org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)\nat
+  org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)\nat
+  org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)\nat
+  org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)\nat
+  org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)\nat
+  org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)\nat
+  org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)\nat
+  org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)\nat
+  org.soluvas.web.site.SecuredWicketAtmosphereHandler$CustomFilterChain.doFilter(SecuredWicketAtmosphereHandler.java:199)\nat
+  org.soluvas.web.site.SecuredWicketAtmosphereHandler$CustomFilterChain.invokeFilterChain(SecuredWicketAtmosphereHandler.java:185)\nat
+  org.soluvas.web.site.SecuredWicketAtmosphereHandler.onRequest(SecuredWicketAtmosphereHandler.java:91)\nat
+  org.atmosphere.cpr.AsynchronousProcessor.action(AsynchronousProcessor.java:187)\nat
+  org.atmosphere.cpr.AsynchronousProcessor.suspended(AsynchronousProcessor.java:98)\nat
+  org.atmosphere.container.Tomcat7CometSupport.service(Tomcat7CometSupport.java:96)\nat
+  org.atmosphere.cpr.AtmosphereFramework.doCometSupport(AtmosphereFramework.java:1809)\nat
+  org.atmosphere.cpr.AtmosphereServlet.event(AtmosphereServlet.java:255)\nat org.apache.catalina.core.ApplicationFilterChain.internalDoFilterEvent(ApplicationFilterChain.java:484)\nat
+  org.apache.catalina.core.ApplicationFilterChain.doFilterEvent(ApplicationFilterChain.java:377)\nat
+  org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)\nat
+  org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:123)\nat
+  org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java)\nat
+  org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)\nat
+  org.apache.catalina.core.StandardHostValve.__invoke(StandardHostValve.java:171)\nat
+  org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java)\nat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)\nat
+  org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)\nat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)\nat
+  org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)\nat
+  org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1023)\nat
+  org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:589)\nat
+  org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:1810)\nat
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\nat
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\nat
+  java.lang.Thread.run(Thread.java:745)\n{code}\n\nWorkaround:\n\n{code}\n    @Autowire(required=false)\n
+  \   private TwitterManager twitterMgr;\n{code}\n"

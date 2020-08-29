@@ -1,0 +1,10 @@
+---
+BugID: MATH-309
+Summary: nextExponential parameter check bug - patch supplied
+Description: "Index: src/main/java/org/apache/commons/math/random/RandomDataImpl.java\n===================================================================\n---
+  src/main/java/org/apache/commons/math/random/RandomDataImpl.java\t(revision 830102)\n+++
+  src/main/java/org/apache/commons/math/random/RandomDataImpl.java\t(working copy)\n@@
+  -462,7 +462,7 @@\n      * @return the random Exponential value\n      */\n     public
+  double nextExponential(double mean) {\n-        if (mean < 0.0) {\n+        if (mean
+  <= 0.0) {\n             throw MathRuntimeException.createIllegalArgumentException(\n
+  \                  \"mean must be positive ({0})\", mean);\n         }"

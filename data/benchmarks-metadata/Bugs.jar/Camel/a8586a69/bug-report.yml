@@ -1,0 +1,15 @@
+---
+BugID: CAMEL-5154
+Summary: Simple language - OGNL - Invoking explicit method with no parameters should
+  not cause ambiguous exception for overloaded methods
+Description: |
+  If you want to invoke a method on a bean which is overloaded, such as a String with toUpperCase having
+  - toUpperCase()
+  - toUpperCase(Locale)
+
+  Then if you specify this in a simple ognl expression as follows
+  {code}
+  ${body.toUpperCase()}
+  {code}
+
+  Then Camel bean component should pick the no-parameter method as specified.

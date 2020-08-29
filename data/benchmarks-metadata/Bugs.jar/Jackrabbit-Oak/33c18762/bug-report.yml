@@ -1,0 +1,9 @@
+---
+BugID: OAK-3079
+Summary: LastRevRecoveryAgent can update _lastRev of children but not the root
+Description: |-
+  As mentioned in [OAK-2131|https://issues.apache.org/jira/browse/OAK-2131?focusedCommentId=14616391&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-14616391] there can be a situation wherein the LastRevRecoveryAgent updates some nodes in the tree but not the root. This seems to happen due to OAK-2131's change in the Commit.applyToCache (where paths to update are collected via tracker.track): in that code, paths which are non-root and for which no content has changed (and mind you, a content change includes adding _deleted, which happens by default for nodes with children) are not 'tracked', ie for those the _lastRev is not update by subsequent backgroundUpdate operations - leaving them 'old/out-of-date'. This seems correct as per description/intention of OAK-2131 where the last revision can be determined via the commitRoot of the parent. But it has the effect that the LastRevRecoveryAgent then finds those intermittent nodes to be updated while as the root has already been updated (which is at first glance non-intuitive).
+
+  I'll attach a test case to reproduce this.
+
+  Perhaps this is a bug, perhaps it's ok. [~mreutegg] wdyt?

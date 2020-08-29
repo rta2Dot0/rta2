@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-844
+Summary: VisibilityFilter does not catch BadArgumentException
+Description: If an invalid column visibility makes it into the system, then the VisibilityFilter
+  may not handle it properly.   The accept method handles VisibilityParseException,
+  but some of the parse code throws a BadArgumentException which is not handled.

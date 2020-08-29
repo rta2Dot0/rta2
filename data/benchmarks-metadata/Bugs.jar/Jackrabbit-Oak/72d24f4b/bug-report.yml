@@ -1,0 +1,15 @@
+---
+BugID: OAK-2649
+Summary: IndexCopier might create empty files in case of error occuring while copying
+Description: |-
+  On some of the setups following logs are seen
+  {noformat}
+  error.log:12.03.2015 03:53:59.785 *WARN* [pool-5-thread-90] org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier Found local copy for _2uv.cfs in MMapDirectory@/mnt/installation/crx-quickstart/repository/index/e5a943cdec3000bd8ce54924fd2070ab5d1d35b9ecf530963a3583d43bf28293/1 lockFactory=NativeFSLockFactory@/mnt/installation/crx-quickstart/repository/index/e5a943cdec3000bd8ce54924fd2070ab5d1d35b9ecf530963a3583d43bf28293/1 but size of local 0 differs from remote 1070972. Content would be read from remote file only
+  error.log:12.03.2015 03:54:02.883 *WARN* [pool-5-thread-125] org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier Found local copy for _2rr.si in MMapDirectory@/mnt/installation/crx-quickstart/repository/index/43b36b107f8ce7e162c15b22508aa457ff6ae0083ed3e12d14a7dab67f886def/1 lockFactory=NativeFSLockFactory@/mnt/installation/crx-quickstart/repository/index/43b36b107f8ce7e162c15b22508aa457ff6ae0083ed3e12d14a7dab67f886def/1 but size of local 0 differs from remote 240. Content would be read from remote file only
+  error.log:12.03.2015 03:54:03.467 *WARN* [pool-5-thread-132] org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier Found local copy for _2ro_3.del in MMapDirectory@/mnt/installation/crx-quickstart/repository/index/43b36b107f8ce7e162c15b22508aa457ff6ae0083ed3e12d14a7dab67f886def/1 lockFactory=NativeFSLockFactory@/mnt/installation/crx-quickstart/repository/index/43b36b107f8ce7e162c15b22508aa457ff6ae0083ed3e12d14a7dab67f886def/1 but size of local 0 differs from remote 42. Content would be read from remote file only
+  error.log:12.03.2015 03:54:03.737 *WARN* [pool-5-thread-135] org.apache.jackrabbit.oak.plugins.index.lucene.IndexCopier Found local copy for _2rm_2.del in MMapDirectory@/mnt/installation/crx-quickstart/repository/index/43b36b107f8ce7e162c15b22508aa457ff6ae0083ed3e12d14a7dab67f886def/1 lockFactory=NativeFSLockFactory@/mnt/installation/crx-quickstart/repository/index/43b36b107f8ce7e162c15b22508aa457ff6ae0083ed3e12d14a7dab67f886def/1 but size of local 0 differs from remote 35. Content would be read from remote file only
+  {noformat}
+
+  They indicate that copier has created files of size 0. Looking at the code flow this can happen in case while starting copying some error occurs in between. {{org.apache.lucene.store.Directory#copy}} do take care of removing the file in case of error but that is done only for IOException and not for other cases.
+
+  As a fix the logic should ensure that local file gets deleted if the copy was not successful

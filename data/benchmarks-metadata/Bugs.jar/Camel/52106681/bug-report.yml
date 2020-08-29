@@ -1,0 +1,15 @@
+---
+BugID: CAMEL-3791
+Summary: Camel should reset the stream cache if the useOriginalInMessage option is
+  true
+Description: "{code}\n--- src/main/java/org/apache/camel/processor/RedeliveryErrorHandler.java\t(revision
+  1083672)\n+++ src/main/java/org/apache/camel/processor/RedeliveryErrorHandler.java\t(working
+  copy)\n@@ -591,18 +591,23 @@\n         // is the a failure processor to process
+  the Exchange\n         if (processor != null) {\n \n-            // reset cached
+  streams so they can be read again\n-            MessageHelper.resetStreamCache(exchange.getIn());\n-\n
+  \            // prepare original IN body if it should be moved instead of current
+  body\n             if (data.useOriginalInMessage) {\n                 if (log.isTraceEnabled())
+  {\n                     log.trace(\"Using the original IN message instead of current\");\n
+  \                }\n                 Message original = exchange.getUnitOfWork().getOriginalInMessage();\n
+  \                exchange.setIn(original);\n             }\n\n+            // reset
+  cached streams so they can be read again\n+            MessageHelper.resetStreamCache(exchange.getIn());\n{code}"

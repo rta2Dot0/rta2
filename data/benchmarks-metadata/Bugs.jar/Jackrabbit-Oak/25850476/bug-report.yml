@@ -1,0 +1,55 @@
+---
+BugID: OAK-3099
+Summary: Revision GC fails when split documents with very long paths are present
+Description: |-
+  My company is using the MongoDB microkernel with Oak, and we've noticed that the daily revision GC is failing with errors like this:
+  {code}
+  13.07.2015 13:06:16.261 *ERROR* [pool-7-thread-1-Maintenance Queue(com/adobe/granite/maintenance/job/RevisionCleanupTask)] org.apache.jackrabbit.oak.management.ManagementOperation Revision garbage collection failed
+  java.lang.IllegalArgumentException: 13:h113f9d0fe7ac0f87fa06397c37b9ffd4b372eeb1ec93e0818bb4024a32587820
+  at org.apache.jackrabbit.oak.plugins.document.Revision.fromString(Revision.java:236)
+  at org.apache.jackrabbit.oak.plugins.document.SplitDocumentCleanUp.disconnect(SplitDocumentCleanUp.java:84)
+  at org.apache.jackrabbit.oak.plugins.document.SplitDocumentCleanUp.disconnect(SplitDocumentCleanUp.java:56)
+  at org.apache.jackrabbit.oak.plugins.document.VersionGCSupport.deleteSplitDocuments(VersionGCSupport.java:53)
+  at org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.collectSplitDocuments(VersionGarbageCollector.java:117)
+  at org.apache.jackrabbit.oak.plugins.document.VersionGarbageCollector.gc(VersionGarbageCollector.java:105)
+  at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService$2.run(DocumentNodeStoreService.java:511)
+  at org.apache.jackrabbit.oak.spi.state.RevisionGC$1.call(RevisionGC.java:68)
+  at org.apache.jackrabbit.oak.spi.state.RevisionGC$1.call(RevisionGC.java:64)
+  at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+  at java.lang.Thread.run(Thread.java:745)
+  {code}
+
+  I've narrowed the issue down to the disconnect(NodeDocument) method of the [SplitDocumentCleanUp class|https://svn.apache.org/repos/asf/jackrabbit/oak/trunk/oak-core/src/main/java/org/apache/jackrabbit/oak/plugins/document/SplitDocumentCleanUp.java]. The method always tries to extract the path of the node from its ID, but this won't work for documents whose path is very long because those documents will have the hash of their path in the ID.
+
+  I believe this code should fix the issue, but I haven't had a chance to actually try it:
+  {code}
+      private void disconnect(NodeDocument splitDoc) {
+          String mainId = Utils.getIdFromPath(splitDoc.getMainPath());
+          NodeDocument doc = store.find(NODES, mainId);
+          if (doc == null) {
+              LOG.warn("Main document {} already removed. Split document is {}",
+                      mainId, splitId);
+              return;
+          }
+          String path = splitDoc.getPath();
+          int slashIdx = path.lastIndexOf('/');
+          int height = Integer.parseInt(path.substring(slashIdx + 1));
+          Revision rev = Revision.fromString(
+                  path.substring(path.lastIndexOf('/', slashIdx - 1) + 1, slashIdx));
+          doc = doc.findPrevReferencingDoc(rev, height);
+          if (doc == null) {
+              LOG.warn("Split document {} not referenced anymore. Main document is {}",
+                      splitId, mainId);
+              return;
+          }
+          // remove reference
+          if (doc.getSplitDocType() == INTERMEDIATE) {
+              disconnectFromIntermediate(doc, rev);
+          } else {
+              markStaleOnMain(doc, rev, height);
+          }
+      }
+  {code}
+  By using getPath(), the code should automatically use either the ID or the _path property, whichever is right for the document.

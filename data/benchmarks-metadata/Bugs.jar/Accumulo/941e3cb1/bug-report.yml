@@ -1,0 +1,9 @@
+---
+BugID: ACCUMULO-1732
+Summary: Resolve table name to table id once in Accumulo input format
+Description: "AccumuloInputFormat (and I suspect AccumuloOutputFormat) sends the table
+  name to each mapper.  The mapper uses this table name to create a scanner.  In the
+  case of the following events a map reduce job could read from two different table
+  ids.   \n\n # start M/R job reading table A\n # rename table A (tableId=1) to table
+  C\n # rename table B (tableId=2) to table A\n\nIf the input format passed table
+  id 1 to the mappers, then the renames would not cause a problem."

@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5770
+Summary: PageParametersEncoder should not decode parameters with no name
+Description: |-
+  From dev@ mailing list: http://markmail.org/message/khuc2v37aakzyfth
+
+  PageParametersEncoder should ignore query parameters like "&=&" and "&=value" because they make no sene and lead to exceptions later at PageParameters#add() call.

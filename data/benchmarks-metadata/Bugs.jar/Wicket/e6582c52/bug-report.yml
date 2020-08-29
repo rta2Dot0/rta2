@@ -1,0 +1,13 @@
+---
+BugID: WICKET-4488
+Summary: URL with a previous page version ignores requested page based on mount path
+Description: |-
+  See discussion on http://mail-archives.apache.org/mod_mbox/wicket-users/201203.mbox/browser
+
+  With 2 mounts /page1 and /page2 to stateful pages and the following sequence:
+  1-With a new session, user visits "/page1". Displayed URL is "/page1?0"
+  2-Whatever, without expiring session
+  3-User requests URL "/page2?0" because it was bookmarked, received via email, etc.
+  4-Rendered page is "/page1?0" which was stored in the page map. The actual URL displayed is "/wicket/bookmarkable/com.mycompany.Page1?0"
+
+  If a requested page id exists but does not match the page class mounted on the actual requested url, Wicket should not use the old page version. This is very counter-intuitive for users having bookmarks to stateful pages or exchanging links.

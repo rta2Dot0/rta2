@@ -1,0 +1,19 @@
+---
+BugID: LOG4J2-914
+Summary: 'ThrowableProxy.getExtendedStackTraceAsString causes NullPointerException '
+Description: "I'm trying to write a poc with Log4j 2.1, where distributed processes
+  are logging to a remote server. The server is currently running the bundled TcpSocketServer.createSerializedSocketServer
+  with a custom layout plugin. \n\nA process is logging an exception. I can then see
+  in the custom layout plugin at the log server that the LogEvent doesn't contain
+  a thrown, but that it contains a thrownProxy. So far so good. I'm then trying to
+  get hold of a String representation of the message + stacktrace. I thought that
+  I would be able to e.g invoke ThrowableProxy.getExtendedStackTraceAsString(), but
+  that causes a NullPointerException since the throwable in the ThrowableProxy also
+  is null after deserialization. Looks like ThrowableProxy assumes that throwable
+  isn't null in a few methods. \n\nThe exception that is logged by the client process
+  is a simple new Exception(\"A message\");\n\nThe pom.xml that I'm using:\n{code:xml}\n<dependency>\n\t<groupId>org.apache.logging.log4j</groupId>\n\t<artifactId>log4j-api</artifactId>\n\t<version>2.1</version>\n</dependency>\n<dependency>\n\t<groupId>org.apache.logging.log4j</groupId>\n\t<artifactId>log4j-core</artifactId>\n\t<version>2.1</version>\n</dependency>\n<dependency>\n\t<groupId>com.lmax</groupId>\n\t<artifactId>disruptor</artifactId>\n\t<version>3.3.0</version>\n</dependency>\n{code}\nThe
+  stacktrace that I get in the server:\n{code}\n2014-12-05 14:30:44,601 ERROR An exception
+  occurred processing Appender XXXXX java.lang.NullPointerException\n\tat org.apache.logging.log4j.core.impl.ThrowableProxy.getExtendedStackTraceAsString(ThrowableProxy.java:340)\n\tat
+  org.apache.logging.log4j.core.impl.ThrowableProxy.getExtendedStackTraceAsString(ThrowableProxy.java:323)\n{code}\nWorkaround:\nTo
+  invoke ThrowableProxy. getExtendedStackTrace() and format the stacktrace + message
+  with my own format methods.\n"

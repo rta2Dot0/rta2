@@ -1,0 +1,31 @@
+---
+BugID: FLINK-1930
+Summary: NullPointerException in vertex-centric iteration
+Description: "Hello to my Squirrels,\n\nI came across this exception when having a
+  vertex-centric iteration output followed by a group by. \nI'm not sure if what is
+  causing it, since I saw this error in a rather large pipeline, but I managed to
+  reproduce it with [this code example | https://github.com/vasia/flink/commit/1b7bbca1a6130fbcfe98b4b9b43967eb4c61f309]
+  and a sufficiently large dataset, e.g. [this one | http://snap.stanford.edu/data/com-DBLP.html]
+  (I'm running this locally).\nIt seems like a null Buffer in RecordWriter.\n\nThe
+  exception message is the following:\n\nException in thread \"main\" org.apache.flink.runtime.client.JobExecutionException:
+  Job execution failed.\nat org.apache.flink.runtime.jobmanager.JobManager$anonfun$receiveWithLogMessages$1.applyOrElse(JobManager.scala:319)\nat
+  scala.runtime.AbstractPartialFunction$mcVL$sp.apply$mcVL$sp(AbstractPartialFunction.scala:33)\nat
+  scala.runtime.AbstractPartialFunction$mcVL$sp.apply(AbstractPartialFunction.scala:33)\nat
+  scala.runtime.AbstractPartialFunction$mcVL$sp.apply(AbstractPartialFunction.scala:25)\nat
+  org.apache.flink.runtime.ActorLogMessages$anon$1.apply(ActorLogMessages.scala:37)\nat
+  org.apache.flink.runtime.ActorLogMessages$anon$1.apply(ActorLogMessages.scala:30)\nat
+  scala.PartialFunction$class.applyOrElse(PartialFunction.scala:118)\nat org.apache.flink.runtime.ActorLogMessages$anon$1.applyOrElse(ActorLogMessages.scala:30)\nat
+  akka.actor.Actor$class.aroundReceive(Actor.scala:465)\nat org.apache.flink.runtime.jobmanager.JobManager.aroundReceive(JobManager.scala:94)\nat
+  akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)\nat akka.actor.ActorCell.invoke(ActorCell.scala:487)\nat
+  akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)\nat akka.dispatch.Mailbox.run(Mailbox.scala:221)\nat
+  akka.dispatch.Mailbox.exec(Mailbox.scala:231)\nat scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)\nat
+  scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)\nat
+  scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)\nat scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)\nCaused
+  by: java.lang.NullPointerException\nat org.apache.flink.runtime.io.network.api.serialization.SpanningRecordSerializer.setNextBuffer(SpanningRecordSerializer.java:93)\nat
+  org.apache.flink.runtime.io.network.api.writer.RecordWriter.emit(RecordWriter.java:92)\nat
+  org.apache.flink.runtime.operators.shipping.OutputCollector.collect(OutputCollector.java:65)\nat
+  org.apache.flink.runtime.iterative.task.IterationHeadPactTask.streamSolutionSetToFinalOutput(IterationHeadPactTask.java:405)\nat
+  org.apache.flink.runtime.iterative.task.IterationHeadPactTask.run(IterationHeadPactTask.java:365)\nat
+  org.apache.flink.runtime.operators.RegularPactTask.invoke(RegularPactTask.java:360)\nat
+  org.apache.flink.runtime.execution.RuntimeEnvironment.run(RuntimeEnvironment.java:221)\nat
+  java.lang.Thread.run(Thread.java:745)"

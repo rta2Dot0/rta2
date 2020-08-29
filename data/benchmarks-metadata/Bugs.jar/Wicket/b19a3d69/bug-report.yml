@@ -1,0 +1,35 @@
+---
+BugID: WICKET-4610
+Summary: WicketTester.assertRedirectUrl always fails because it always thinks the
+  redirect was null
+Description: |
+  I have a page which always redirects.
+
+  When I write a test for this page, tester.assertRedirectUrl(...) always fails with the assertion failure showing that the redirect URL was null.
+
+  The page does redirect when running the application for real and I have stepped through in the debugger when running the test and it goes all the way to the HttpServletResponse.sendRedirect call.
+
+  However, in the same debugging session, tester.getLastResponse().getRedirectLocation() == null
+
+  Cut-down example follows.
+
+
+  public class AlwaysRedirectPage extends WebPage
+  {
+      public AlwaysRedirectPage()
+      {
+          // redirects to another web server on the same computer
+          throw new RedirectToUrlException("http://localhost:4333/");
+      }
+  }
+
+  public class TestAlwaysRedirectPage
+  {
+      @Test
+      public void test()
+      {
+          WicketTester tester = new WicketTester();
+          tester.startPage(AlwaysRedirectPage.class);
+          tester.assertRedirectUrl("http://localhost:4333/");
+      }
+  }

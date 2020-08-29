@@ -1,0 +1,8 @@
+---
+BugID: OAK-3511
+Summary: 'Test failure: CompactionMapTest.removeSome'
+Description: "Said test fails sporadically:\n\n{noformat}\nat org.junit.Assert.assertNull(Assert.java:562)\nat
+  org.apache.jackrabbit.oak.plugins.segment.CompactionMapTest.removeSome(CompactionMapTest.java:156)\n{noformat}\n\nThis
+  is a regression introduced with OAK-3501: the {{recent}} map gets not cleared when
+  {{segmentIdMap}} is empty. This can happen when a recent key is removed again while
+  there are no other changes. "

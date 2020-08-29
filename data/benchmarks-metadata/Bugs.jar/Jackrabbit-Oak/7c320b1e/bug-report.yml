@@ -1,0 +1,7 @@
+---
+BugID: OAK-2389
+Summary: issues with JsopBuilder.encode and .escape
+Description: |-
+  1) escape() escapes many characters that do not need to be escaped (>127)
+
+  2) encode() does not encode many control characters that would need to be escaped when read through a JSON parser.

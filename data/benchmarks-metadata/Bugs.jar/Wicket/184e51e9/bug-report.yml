@@ -1,0 +1,10 @@
+---
+BugID: WICKET-5147
+Summary: WicketTester MockHttpRequest.getCookies very slow / OutOfMemory
+Description: "\nWe have an extensive set of WicketTester tests. Recently, the wicket
+  RELEASE in the maven repository changed to 6.7.0. After the new version, our tests
+  got very slow.\n\nWhen profiling, I discovered that the MockHttpRequest.getCookies()
+  was taking up a lot of time. Also, tests failed because of OutOfMemory exceptions.
+  My guess is that somehow a lot of objects are created at such speeds that the GC
+  cannot clean them\n\nI will investigate further, but switching back to 6.6.0 solved
+  the issue. \n\n[Edit]\nThe tests are run with TestNG and using 'mvn test'"

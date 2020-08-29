@@ -1,0 +1,7 @@
+---
+BugID: MATH-899
+Summary: A random crash of MersenneTwister random generator
+Description: "There is a very small probability that MersenneTwister generator gives
+  a following error: \njava.lang.ArrayIndexOutOfBoundsException: 624\nin MersenneTwister.java
+  line 253\nThe error is completely random and its probability is about 1e-8.\n\nUPD:
+  The problem most probably arises only in multy-thread mode."

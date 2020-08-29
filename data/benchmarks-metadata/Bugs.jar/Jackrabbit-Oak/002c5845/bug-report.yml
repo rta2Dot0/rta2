@@ -1,0 +1,7 @@
+---
+BugID: OAK-4359
+Summary: 'Lucene index / compatVersion 2: search for ''a=b=c'' does not work'
+Description: |-
+  Similar to OAK-3879, we need to escape '=' (althoug lucene [escape()|https://github.com/apache/lucene-solr/blob/releases/lucene-solr/4.7.1/lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java#L988] apparently doesn't escape it).
+
+  Due to this searching for {{a=b=c}} throws parse exception from lucene query parser. Also, searching for {{a=b}} gives incorrect result.

@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4686
+Summary: MountMapper does not support correctly parameter placeholders
+Description: "Package mounting doesn't support parameter placeholders. The problem
+  seems to be inside MountMapper which should wrap PackageMapper and take care of
+  substituting placeholders with their actual value. \nMore precisely this class doesn't
+  read parameter values from PageParameters and it's not very clear to me how it tries
+  to read these values.\nDoes anybody have some hints about this class?"

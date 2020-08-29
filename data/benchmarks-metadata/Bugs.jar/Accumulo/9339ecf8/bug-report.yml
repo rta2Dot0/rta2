@@ -1,0 +1,12 @@
+---
+BugID: ACCUMULO-3634
+Summary: AuthenticationTokenSecretManager might delete key while ZooAuthenticationKeyWatcher
+  enumerates existing keys
+Description: |-
+  Noticed the following race condition.
+
+  The secret manager (in the master) on startup will enumerate the old keys used for creating delegation tokens and delete the keys that are expired.
+
+  At the same time, the watcher (in each tserver) might see some updates to these keys and update the secret manager. There's a race condition there that the watcher might try to read a key that the secret manager just deleted.
+
+  Need to catch the NoNodeException in the watcher and just accept that it's ok if one of these children are deleted to avoid a scary error in the monitor.

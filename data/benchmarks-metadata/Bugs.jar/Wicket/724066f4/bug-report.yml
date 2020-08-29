@@ -1,0 +1,12 @@
+---
+BugID: WICKET-5497
+Summary: NPE in JsonUtils when the value is null
+Description: |-
+  Most part of org.apache.wicket.ajax.json.JsonUtils.asArray(Map<String, Object> map) is trying carefully avoid null value. But there is following line
+
+  else if (value.getClass().isArray())
+
+  which cause NPE in case of empty value for some key.
+
+
+  P.S. Will provide patch.

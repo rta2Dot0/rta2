@@ -1,0 +1,18 @@
+---
+BugID: OAK-3013
+Summary: SQL2 query with union, limit and offset can return invalid results
+Description: |
+  when using order, limit and offset and a SQL2 query that contains an union of two subqueries that have common results can return invalid results
+
+  Example: assuming content tree /test/a/b/c/d/e exists
+  {code:sql}
+  SELECT [jcr:path] FROM [nt:base] AS a WHERE ISDESCENDANTNODE(a, '/test') UNION SELECT [jcr:path] FROM [nt:base] AS a WHERE ISDESCENDANTNODE(a, '/test')" ORDER BY [jcr:path]
+  {code}
+  with limit=3 and offset 2 returns only one row ( instead of 3 )
+
+  the correct result set is
+  {noformat}
+  /test/a/b/c
+  /test/a/b/c/d
+  /test/a/b/c/d/e
+  {noformat}

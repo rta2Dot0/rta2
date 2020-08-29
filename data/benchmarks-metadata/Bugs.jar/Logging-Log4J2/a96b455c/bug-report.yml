@@ -1,0 +1,18 @@
+---
+BugID: LOG4J2-1025
+Summary: Custom java.util.logging.Level gives null Log4j Level and causes NPE
+Description: "I use a 3rd party library which uses custom non-standard java.util.logging.Level.\n\nThe
+  Log4j JUL adapter will emit log event with level set to null in that case, which
+  causes NullPointerException in a Log4j filter further on.\n\nThis is not acceptable.
+  When encountering an unrecognised JUL Level, the JUL adapter should either: \n-
+  emit some default Log4j Level\n- throw an Exception with a clear error message immediately\n-
+  silently discard the log event\n- discard the log event and log a warning to the
+  StatusLogger\n\n{code}\n java.lang.NullPointerException\n        at org.apache.logging.log4j.Level.isMoreSpecificThan(Level.java:163)\n
+  \       at org.apache.logging.log4j.core.filter.BurstFilter.filter(BurstFilter.java:129)\n
+  \       at org.apache.logging.log4j.core.filter.BurstFilter.filter(BurstFilter.java:101)\n
+  \       at org.apache.logging.log4j.core.Logger$PrivateConfig.filter(Logger.java:295)\n
+  \       at org.apache.logging.log4j.core.Logger.isEnabled(Logger.java:122)\n        at
+  org.apache.logging.log4j.spi.ExtendedLoggerWrapper.isEnabled(ExtendedLoggerWrapper.java:87)\n
+  \       at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:699)\n
+  \       at org.apache.logging.log4j.jul.WrappedLogger.log(WrappedLogger.java:50)\n
+  \       at org.apache.logging.log4j.jul.ApiLogger.log(ApiLogger.java:106)\n{code}"

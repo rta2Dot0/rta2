@@ -1,0 +1,8 @@
+---
+BugID: WICKET-3719
+Summary: Component's markup cannot be found in Ajax requests if the parent is transparent
+Description: "When TransparentWebMarkupContainer is used an inner markup container
+  cannot find its markup on Ajax updates.\nThe problem seems to be caused by the fact
+  that ComponentResolvers#resolve() is not executed and since there is transparent
+  container involved Markup.find(String) cannot find the markup for non-transparent
+  markup containers.\nI'll commit a disabled test case that shows the problem. "

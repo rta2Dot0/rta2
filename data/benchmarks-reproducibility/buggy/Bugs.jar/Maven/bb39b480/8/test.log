@@ -1,0 +1,92 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Model Builder 3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven-model/3.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/maven/maven/3.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.1:process (default) @ maven-model-builder ---
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:resources (default-resources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ maven-model-builder ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-metadata (default) @ maven-model-builder ---
+[INFO] Discovered 26 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.2:testResources (default-testResources) @ maven-model-builder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ maven-model-builder ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.4:generate-test-metadata (default) @ maven-model-builder ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ maven-model-builder ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.pom (1.5 kB at 4.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.4.3/surefire-providers-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.4.3/surefire-providers-2.4.3.pom (1.7 kB at 63 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit/2.4.3/surefire-junit-2.4.3.jar (15 kB at 53 kB/s)
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Maven_bb39b480_java-8/maven-model-builder/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.maven.model.interpolation.StringSearchModelInterpolatorTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.798 sec
+Running org.apache.maven.model.profile.activation.JdkVersionProfileActivatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec
+Running org.apache.maven.model.validation.DefaultModelValidatorTest
+Tests run: 35, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.402 sec <<< FAILURE!
+Running org.apache.maven.model.profile.activation.PropertyProfileActivatorTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec
+Running org.apache.maven.model.path.DefaultUrlNormalizerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+
+Results :
+
+Failed tests: 
+  testDuplicatePlugin(org.apache.maven.model.validation.DefaultModelValidatorTest)
+  testDuplicatePluginExecution(org.apache.maven.model.validation.DefaultModelValidatorTest)
+
+Tests run: 83, Failures: 2, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.096 s
+[INFO] Finished at: 2020-03-13T13:11:36-07:00
+[INFO] Final Memory: 22M/1023M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.4.3:test (default-test) on project maven-model-builder: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /scratch/tmp-rta/Bugs.jar_Maven_bb39b480_java-8/maven-model-builder/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

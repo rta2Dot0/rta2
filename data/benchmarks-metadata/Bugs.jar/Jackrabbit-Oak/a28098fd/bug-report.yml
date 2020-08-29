@@ -1,0 +1,7 @@
+---
+BugID: OAK-2238
+Summary: Session.getItem violates JCR Spec
+Description: |-
+  Session.getItem(path) is supposed to first return a node for the given path, and if no node is found return a property.  The oak implementation returns this in the opposite order.
+
+  see attached patch for a possible fix.

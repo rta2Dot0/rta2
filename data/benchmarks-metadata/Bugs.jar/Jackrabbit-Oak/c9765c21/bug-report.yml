@@ -1,0 +1,8 @@
+---
+BugID: OAK-4432
+Summary: 'Ignore files in the root directory of the FileDataStore in #getAllIdentifiers'
+Description: "The call to OakFileDataStore#getAllIdentifiers should ignore the the
+  files directly at the root of the DataStore (These files are used for SharedDataStore
+  etc). This does not cause any functional problems but leads to logging warning in
+  the logs. \nThere is already a check but it fails when the data store root is specified
+  as a relative path."

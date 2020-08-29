@@ -1,0 +1,39 @@
+---
+BugID: CAMEL-3709
+Summary: interceptFrom and from(Endpoint) don't work together
+Description: "When using interceptFrom(String) together with from(Endpoint), the below
+  Exception occurs during the routes building process. Looking at RoutesDefinition.java:217
+  reveals, that the FromDefintion just created has no URI. That causes the comparison
+  to all the interceptFroms' URIs to fail. As far as I can tell, the way to fix this
+  would be to add {{setUri(myEndpoint.getEndpointUri())}} in the constructor {{FromDefinition(Endpoint
+  endpoint)}}.\n\nBelow the stack trace, there is a unit test that demonstrates the
+  issue. Until it if fixed, it can be easily circumvented by adding the commented-out
+  line, and then change to {{from(\"myEndpoint\")}}.\n{code}\norg.apache.camel.ResolveEndpointFailedException:
+  Failed to resolve endpoint: null due to: null\n\tat org.apache.camel.util.EndpointHelper.matchEndpoint(EndpointHelper.java:109)\n\tat
+  org.apache.camel.model.RoutesDefinition.route(RoutesDefinition.java:217)\n\tat org.apache.camel.model.RoutesDefinition.from(RoutesDefinition.java:167)\n\tat
+  org.apache.camel.builder.RouteBuilder.from(RouteBuilder.java:101)\n\tat dk.mobilethink.adc2.endpoint.UnsetUriTest$1.configure(UnsetUriTest.java:18)\n\tat
+  org.apache.camel.builder.RouteBuilder.checkInitialized(RouteBuilder.java:318)\n\tat
+  org.apache.camel.builder.RouteBuilder.configureRoutes(RouteBuilder.java:273)\n\tat
+  org.apache.camel.builder.RouteBuilder.addRoutesToCamelContext(RouteBuilder.java:259)\n\tat
+  org.apache.camel.impl.DefaultCamelContext.addRoutes(DefaultCamelContext.java:612)\n\tat
+  org.apache.camel.test.CamelTestSupport.setUp(CamelTestSupport.java:111)\n\tat junit.framework.TestCase.runBare(TestCase.java:132)\n\tat
+  org.apache.camel.test.TestSupport.runBare(TestSupport.java:65)\n\tat junit.framework.TestResult$1.protect(TestResult.java:110)\n\tat
+  junit.framework.TestResult.runProtected(TestResult.java:128)\n\tat junit.framework.TestResult.run(TestResult.java:113)\n\tat
+  junit.framework.TestCase.run(TestCase.java:124)\n\tat junit.framework.TestSuite.runTest(TestSuite.java:232)\n\tat
+  junit.framework.TestSuite.run(TestSuite.java:227)\n\tat org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)\n\tat
+  org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)\n\tat
+  org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)\nCaused
+  by: java.lang.NullPointerException\n\tat org.apache.camel.util.UnsafeUriCharactersEncoder.encode(UnsafeUriCharactersEncoder.java:56)\n\tat
+  org.apache.camel.util.URISupport.normalizeUri(URISupport.java:162)\n\tat org.apache.camel.util.EndpointHelper.matchEndpoint(EndpointHelper.java:107)\n\t...
+  24 more\n{code}\n\n{code}\npackage dk.mobilethink.adc2.endpoint;\n\nimport org.apache.camel.Endpoint;\nimport
+  org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.test.CamelTestSupport;\n\npublic
+  class UnsetUriTest extends CamelTestSupport {\n\t@Override\n\tprotected RouteBuilder
+  createRouteBuilder() throws Exception {\n\n\t\treturn new RouteBuilder() {\n\t\t\tpublic
+  void configure() throws Exception {\n\t\t\t\tinterceptFrom(\"URI1\").to(\"irrelevantURI\");\n\n\t\t\t\tEndpoint
+  myEndpoint = getContext().getComponent(\"direct\").createEndpoint(\"ignoredURI\");\n\t\t\t\t\n//\t\t\t\tgetContext().addEndpoint(\"myEndpoint\",
+  myEndpoint);\n\t\t\t\tfrom(myEndpoint)\n\t\t\t\t\t.inOnly(\"log:foo\");\n\t\t\t}\n\t\t};\n\t}\n\n\tpublic
+  void testNothing() { }\n}\n{code}\n"

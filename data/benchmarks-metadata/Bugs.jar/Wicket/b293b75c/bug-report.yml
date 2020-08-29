@@ -1,0 +1,11 @@
+---
+BugID: WICKET-3065
+Summary: HomePageMapper ignores request to '/' with query string parameters
+Description: "Issue a request to http://host:port/contextpath/?something\nWicket will
+  log an error message like:\nERROR - RequestCycle               - Unable to execute
+  request. No suitable RequestHandler found. URL=?something\n\nI think the reason
+  is in HomePageMapper which maps to the configured home page only if there are no
+  query parameters.\n\nHomePageMapper.java:\n{code}\npublic IRequestHandler mapRequest(Request
+  request)\n\t{\n\t\tif (request.getUrl().getSegments().size() == 0 &&\n\t\t\trequest.getUrl().getQueryParameters().size()
+  == 0)\n\t\t{\n\t\t\treturn new RenderPageRequestHandler(new PageProvider(getContext().getHomePageClass()));\n\t\t}\n\t\telse\n\t\t{\n\t\t\treturn
+  null;\n\t\t}\n\t}\n{code}"

@@ -1,0 +1,17 @@
+---
+BugID: LOG4J2-293
+Summary: classloader URI scheme broken or insufficient when using Log4jContextListener
+Description: |-
+  I'm trying to migrate to Log4j2, and things looked promising when I spotted Log4jContextListener.
+
+  However, there are too many holes.
+
+  Firstly, I tried using classpath: as a scheme, and nothing blew up, so I assumed I'd got it right.
+
+  Then I *looked at the code* (which shouldn't be how we find out) and eventually discovered some code relating to a 'classloader' scheme.
+
+  Still silent failure.  It seems that the classpath is not being searched, perhaps just the WAR classloader, not the JARs in WEB-INF/lib.
+
+  Next I tried omitting the / (i.e. using classloader:log4j2.xml) and got a NullPointerException.
+
+  Can you please document what schemes are supported and what you expect them to do, and *not fail silently* when a configuration file is specified, but nothing happens.

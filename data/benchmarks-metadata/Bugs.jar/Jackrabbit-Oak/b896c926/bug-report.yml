@@ -1,0 +1,9 @@
+---
+BugID: OAK-509
+Summary: Item names starting with '{X}' cause RepositoryException
+Description: |-
+  The exception is RepositoryException: Invalid name or path: {0} foo
+
+  E.g. for an item named '{0} foo'.
+
+  I guess oak-jcr tries to interpret it as a name in expanded form but does not find a namespace uri for '0'. IIRC these names are valid in Jackrabbit 2.x.

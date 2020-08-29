@@ -1,0 +1,8 @@
+---
+BugID: OAK-1614
+Summary: Oak Analyzer can't tokenize chinese phrases
+Description: |-
+  It looks like the _WhitespaceTokenizer_ cannot properly split Chinese phrases, for example '美女衬衫'.
+  I could not find a reference to this issue other than LUCENE-5096.
+
+  The fix is to switch to the _ClassicTokenizer_ which seems better equipped for this kind of task.

@@ -1,0 +1,9 @@
+---
+BugID: WICKET-2839
+Summary: ajax not working due to bugs in resource handling
+Description: |-
+  A couple of bugs were found that were preventing .js resources to be returned to the client correctly. One bug was returning the jar file size as the content length of the resource if it is in a jar file. The other was copying past a source buffer into the response.
+
+  After fixing these bugs, the ajax functions in the trunk seems to be working.
+
+  A patch is provided. Test cases included.

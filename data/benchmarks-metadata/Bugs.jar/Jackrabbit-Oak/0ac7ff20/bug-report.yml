@@ -1,0 +1,9 @@
+---
+BugID: OAK-2260
+Summary: TarMK Cold Standby can corrupt bulk segments
+Description: 'There''s a race condition on the segment transfer code that may introduce
+  corrupted binary segments on the secondary instance. What can happen during the
+  head sync phase is that the master may send the head segment twice which will make
+  the client receive&store the second segment thinking it''s a different one.
+
+'

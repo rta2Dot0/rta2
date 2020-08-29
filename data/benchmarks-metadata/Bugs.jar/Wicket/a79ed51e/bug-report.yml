@@ -1,0 +1,13 @@
+---
+BugID: WICKET-5486
+Summary: WebPageRenderer should honor RedirectPolicy.ALWAYS_REDIRECT more consistently
+Description: "In WebPageRenderer shouldPreserveClientUrl() currently has precedence
+  over RedirectPolicy.ALWAYS_REDIRECT.\n\nThis can lead to confusion or unexpected
+  behavior when RedirectPolicy.ALWAYS_REDIRECT is explicitely set, but for some reason
+  shouldPreserveClientUrl() returns true and thus no redirect is performed due to
+  the logic in WebPageRenderer.\n\nA fix for this particular problem could be implemented
+  in \nWebPageRenderer as of Wicket 6.12.0 by changing line 211 to:\n\n                ||
+  (shouldPreserveClientUrl && getRedirectPolicy() != RedirectPolicy.ALWAYS_REDIRECT))
+  //\n\n\nNote that this problem is slightly related to WICKET-5484. Both fixes combined
+  the line could look like this:\n\n                || (shouldPreserveClientUrl &&
+  !isAjax && getRedirectPolicy() != RedirectPolicy.ALWAYS_REDIRECT)) //\n\n"

@@ -1,0 +1,7 @@
+---
+BugID: OAK-4353
+Summary: IndexOutOfBoundsException in FileStore.writeStream
+Description: "When writing streams of specific length I get \n{code}\njava.lang.IndexOutOfBoundsException\nat
+  java.nio.Buffer.checkIndex(Buffer.java:538)\nat java.nio.HeapByteBuffer.getInt(HeapByteBuffer.java:359)\nat
+  org.apache.jackrabbit.oak.segment.Segment.getGcGen(Segment.java:318)\nat org.apache.jackrabbit.oak.segment.file.FileStore.writeSegment(FileStore.java:1371)\nat
+  org.apache.jackrabbit.oak.segment.SegmentWriter$SegmentWriteOperation.internalWriteStream(SegmentWriter.java:661)\n{code}\n"

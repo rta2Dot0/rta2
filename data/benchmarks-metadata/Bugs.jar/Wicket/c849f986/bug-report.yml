@@ -1,0 +1,25 @@
+---
+BugID: WICKET-2621
+Summary: Ajax buttons inside ModalWindows don't submit properly
+Description: "I have a ModalWindow that contains an IndicatingAjaxButton. When I click
+  the button, I get a big Java error complaining that the form submit wasn't multipart.\n\nDigging
+  into the javascript in wicket-ajax.js, I found this from line 1102 in the method
+  handleMultipart\n\n{code}\nmultipart=multipart||form.enctype==\"multipart/form-data\";\n\nif
+  (multipart==false) {\n     // nothing to handle\n    return false;\n }\n{code}\n\nWhen
+  this executed, multipart was false, and enctype was \"\" and therefore the submit
+  aborted. This may be the cause.\n\nHere's the Java stacktrace\n\n{noformat}\njava.lang.IllegalStateException:
+  ServletRequest does not contain multipart content\n\tat org.apache.wicket.protocol.http.servlet.MultipartServletWebRequest.<init>(MultipartServletWebRequest.java:113)\n\tat
+  org.apache.wicket.protocol.http.servlet.MultipartServletWebRequest.<init>(MultipartServletWebRequest.java:83)\n\tat
+  org.apache.wicket.extensions.ajax.markup.html.form.upload.MultipartRequest.<init>(MultipartRequest.java:41)\n\tat
+  org.apache.wicket.extensions.ajax.markup.html.form.upload.UploadWebRequest.newMultipartWebRequest(UploadWebRequest.java:66)\n\tat
+  org.apache.wicket.markup.html.form.Form.handleMultiPart(Form.java:1651)\n\tat org.apache.wicket.markup.html.form.Form.onFormSubmitted(Form.java:850)\n\tat
+  org.apache.wicket.ajax.form.AjaxFormSubmitBehavior.onEvent(AjaxFormSubmitBehavior.java:135)\n\tat
+  org.apache.wicket.ajax.AjaxEventBehavior.respond(AjaxEventBehavior.java:177)\n\tat
+  org.apache.wicket.ajax.AbstractDefaultAjaxBehavior.onRequest(AbstractDefaultAjaxBehavior.java:299)\n\tat
+  org.apache.wicket.request.target.component.listener.BehaviorRequestTarget.processEvents(BehaviorRequestTarget.java:119)\n\tat
+  org.apache.wicket.request.AbstractRequestCycleProcessor.processEvents(AbstractRequestCycleProcessor.java:92)\n\tat
+  org.apache.wicket.RequestCycle.processEventsAndRespond(RequestCycle.java:1250)\n\tat
+  org.apache.wicket.RequestCycle.step(RequestCycle.java:1329)\n\tat org.apache.wicket.RequestCycle.steps(RequestCycle.java:1428)\n\tat
+  org.apache.wicket.RequestCycle.request(RequestCycle.java:545)\n\tat org.apache.wicket.protocol.http.WicketFilter.doGet(WicketFilter.java:479)\n\tat
+  org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:312)\n\tat
+  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)\n{noformat}"

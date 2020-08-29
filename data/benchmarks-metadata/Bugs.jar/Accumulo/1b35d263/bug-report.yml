@@ -1,0 +1,32 @@
+---
+BugID: ACCUMULO-3218
+Summary: ZooKeeperInstance only uses first ZooKeeper in list of quorum
+Description: |-
+  Had tests running which had a quorum of 3 ZooKeeper servers. One appears to have died and the test was then unable to connect to the Accumulo shell, hanging on trying to connect to ZooKeeper.
+
+  There was no client.conf file present, so a ClientConfiguration was constructed from accumulo-site.xml.
+
+  {code}
+  this.zooKeepers = clientConf.get(ClientProperty.INSTANCE_ZK_HOST);
+  {code}
+
+  When the commons configuration AbstractConfiguration class is used with the get() method, only the first element in the value is returned, as the implementation treats the other items as a list because of the default separator of a comma.
+
+  It's easily reproduced with the following:
+
+  {code}
+      ZooKeeperInstance inst = new ZooKeeperInstance("accumulo", "localhost,127.0.0.1");
+      System.out.println(inst.getZooKeepers());
+  {code}
+
+  The above will print
+
+  {noformat}
+  localhost
+  {noformat}
+
+  instead of the expected
+
+  {noformat}
+  localhost,127.0.0.1
+  {noformat}

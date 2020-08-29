@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4578
+Summary: Link always causes Page to become stateful, regardless of visibility
+Description: "Despite the changes made in WICKET-4468 , an invisible Link still causes
+  a Page to become stateful. \n\nThe problem seems to be that Component#isStateless
+  does this before even checking the visibility: \n\n\t\tif (!getStatelessHint())\n\t\t{\n\t\t\treturn
+  false;\n\t\t}\n\n\n... and Link#getStatelessHint() just contains just \"return false\"
+  . "

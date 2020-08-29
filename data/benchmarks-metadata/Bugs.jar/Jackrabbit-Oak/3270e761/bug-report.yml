@@ -1,0 +1,62 @@
+---
+BugID: OAK-479
+Summary: Adding a node to a node that doesn't accept children doesn't fail with ConstraintViolationException
+Description: "More node type fun!\n\nI ran into this via the tck test {{org.apache.jackrabbit.test.api.query.SaveTest#testConstraintViolationException}}.\n\nIt
+  seems adding a node to a node that doesn't accept children (like for example {{nt:query}})
+  fails with a {{RepositoryException}} that wraps a {{CommitFailedException}} with
+  a message along the lines of: {{Cannot add node 'q2' at /q1}}, further wrapping
+  a weird-looking {{RepositoryException: No matching node definition found for org.apache.jackrabbit.oak.plugins.nodetype.ValidatingNodeTypeManager@257f1b}}\n\nWhile
+  this seems ok enough, the tck test expects a {{ConstraintViolationException}}, so
+  that's why I created this bug.\n\n\nI'll attach a test case shortly.\n\nTrace \n{code}\njavax.jcr.RepositoryException\n\tat
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)\n\tat
+  java.lang.reflect.Constructor.newInstance(Constructor.java:513)\n\tat org.apache.jackrabbit.oak.api.CommitFailedException.throwRepositoryException(CommitFailedException.java:57)\n\tat
+  org.apache.jackrabbit.oak.jcr.SessionDelegate.save(SessionDelegate.java:244)\n\tat
+  org.apache.jackrabbit.oak.jcr.SessionImpl.save(SessionImpl.java:283)\n\tat org.apache.jackrabbit.oak.jcr.nodetype.NodeTypeTest.illegalAddNode(NodeTypeTest.java:39)\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)\n\tat
+  org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)\n\tat
+  org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)\n\tat
+  org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)\n\tat
+  org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)\n\tat
+  org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)\n\tat
+  org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)\n\tat
+  org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)\n\tat
+  org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)\n\tat
+  org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)\n\tat
+  org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:300)\n\tat
+  org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)\n\tat
+  org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)\n\tat
+  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)\nCaused
+  by: org.apache.jackrabbit.oak.api.CommitFailedException: Cannot add node 'q2' at
+  /q1\n\tat org.apache.jackrabbit.oak.plugins.nodetype.TypeValidator.childNodeAdded(TypeValidator.java:134)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.CompositeValidator.childNodeAdded(CompositeValidator.java:68)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook$ValidatorDiff.childNodeAdded(ValidatingHook.java:155)\n\tat
+  org.apache.jackrabbit.oak.spi.state.AbstractNodeState.compareAgainstBaseState(AbstractNodeState.java:157)\n\tat
+  org.apache.jackrabbit.oak.kernel.KernelNodeState.compareAgainstBaseState(KernelNodeState.java:243)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook$ValidatorDiff.validate(ValidatingHook.java:110)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook$ValidatorDiff.validate(ValidatingHook.java:101)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook$ValidatorDiff.childNodeAdded(ValidatingHook.java:157)\n\tat
+  org.apache.jackrabbit.oak.plugins.memory.ModifiedNodeState$3.childNodeAdded(ModifiedNodeState.java:292)\n\tat
+  org.apache.jackrabbit.oak.spi.state.AbstractNodeState.compareAgainstBaseState(AbstractNodeState.java:157)\n\tat
+  org.apache.jackrabbit.oak.kernel.KernelNodeState.compareAgainstBaseState(KernelNodeState.java:243)\n\tat
+  org.apache.jackrabbit.oak.plugins.memory.ModifiedNodeState.compareAgainstBaseState(ModifiedNodeState.java:269)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook$ValidatorDiff.validate(ValidatingHook.java:110)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook$ValidatorDiff.validate(ValidatingHook.java:101)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.ValidatingHook.processCommit(ValidatingHook.java:73)\n\tat
+  org.apache.jackrabbit.oak.spi.commit.CompositeHook.processCommit(CompositeHook.java:59)\n\tat
+  org.apache.jackrabbit.oak.kernel.KernelNodeStoreBranch.merge(KernelNodeStoreBranch.java:127)\n\tat
+  org.apache.jackrabbit.oak.core.RootImpl$2.run(RootImpl.java:239)\n\tat org.apache.jackrabbit.oak.core.RootImpl$2.run(RootImpl.java:1)\n\tat
+  java.security.AccessController.doPrivileged(Native Method)\n\tat javax.security.auth.Subject.doAs(Subject.java:337)\n\tat
+  org.apache.jackrabbit.oak.core.RootImpl.commit(RootImpl.java:234)\n\tat org.apache.jackrabbit.oak.jcr.SessionDelegate.save(SessionDelegate.java:241)\n\t...
+  27 more\nCaused by: javax.jcr.RepositoryException: No matching node definition found
+  for org.apache.jackrabbit.oak.plugins.nodetype.ValidatingNodeTypeManager@257f1b\n\tat
+  org.apache.jackrabbit.oak.plugins.nodetype.ReadOnlyNodeTypeManager.getDefinition(ReadOnlyNodeTypeManager.java:406)\n\tat
+  org.apache.jackrabbit.oak.plugins.nodetype.TypeValidator$EffectiveNodeType.getDefinition(TypeValidator.java:302)\n\tat
+  org.apache.jackrabbit.oak.plugins.nodetype.TypeValidator$EffectiveNodeType.checkAddChildNode(TypeValidator.java:249)\n\tat
+  org.apache.jackrabbit.oak.plugins.nodetype.TypeValidator.childNodeAdded(TypeValidator.java:127)\n\t...
+  49 more\n{code}\n\n"

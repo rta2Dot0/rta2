@@ -1,0 +1,67 @@
+---
+BugID: OAK-2442
+Summary: NoSuchElementException thrown by NodeDocument
+Description: |-
+  Following error is seen with latest 1.0.9-SNAPSHOT builds on some system
+
+  {noformat}
+  Caused by: java.util.NoSuchElementException: null
+          at java.util.TreeMap.key(TreeMap.java:1221)
+          at java.util.TreeMap.firstKey(TreeMap.java:285)
+          at java.util.Collections$UnmodifiableSortedMap.firstKey(Collections.java:1549)
+          at com.google.common.collect.ForwardingSortedMap.firstKey(ForwardingSortedMap.java:73)
+          at org.apache.jackrabbit.oak.plugins.document.NodeDocument.getNodeAtRevision(NodeDocument.java:819)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.readNode(DocumentNodeStore.java:930)
+  {noformat}
+
+  Most likely the above occurs because a {{TreeMap}} associated with some key in NodeDocument is empty.
+
+  {noformat}
+  23.01.2015 01:57:23.308 *WARN* [pool-11-thread-5]org.apache.jackrabbit.oak.plugins.observation.NodeObserver Error whiledispatching observation eventscom.google.common.util.concurrent.UncheckedExecutionException:com.google.common.util.concurrent.UncheckedExecutionException:java.util.NoSuchElementException
+          at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2199)
+          at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+          at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4721)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.getChildren(DocumentNodeStore.java:731)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.diffImpl(DocumentNodeStore.java:1666)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.access$200(DocumentNodeStore.java:105)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore$7.call(DocumentNodeStore.java:1260)
+          at org.apache.jackrabbit.oak.plugins.document.MongoDiffCache.getChanges(MongoDiffCache.java:88)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.diffChildren(DocumentNodeStore.java:1255)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeState.compareAgainstBaseState(DocumentNodeState.java:260)
+          at org.apache.jackrabbit.oak.plugins.observation.EventGenerator$Continuation.run(EventGenerator.java:172)
+          at org.apache.jackrabbit.oak.plugins.observation.EventGenerator.generate(EventGenerator.java:118)
+          at org.apache.jackrabbit.oak.plugins.observation.NodeObserver.contentChanged(NodeObserver.java:156)
+          at org.apache.jackrabbit.oak.spi.commit.BackgroundObserver$1$1.call(BackgroundObserver.java:117)
+          at org.apache.jackrabbit.oak.spi.commit.BackgroundObserver$1$1.call(BackgroundObserver.java:111)
+          at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+          at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+          at java.lang.Thread.run(Thread.java:744)
+  Caused by: com.google.common.util.concurrent.UncheckedExecutionException:java.util.NoSuchElementException
+          at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2199)
+          at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+          at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4721)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.getNode(DocumentNodeStore.java:704)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.readChildren(DocumentNodeStore.java:786)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore$4.call(DocumentNodeStore.java:734)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore$4.call(DocumentNodeStore.java:731)
+          at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4724)
+          at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3522)
+          at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2315)
+          at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2278)
+          at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2193)        ... 18 common frames omitted
+  Caused by: java.util.NoSuchElementException: null
+          at java.util.TreeMap.key(TreeMap.java:1221)
+          at java.util.TreeMap.firstKey(TreeMap.java:285)
+          at java.util.Collections$UnmodifiableSortedMap.firstKey(Collections.java:1549)
+          at com.google.common.collect.ForwardingSortedMap.firstKey(ForwardingSortedMap.java:73)
+          at org.apache.jackrabbit.oak.plugins.document.NodeDocument.getNodeAtRevision(NodeDocument.java:819)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore.readNode(DocumentNodeStore.java:930)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore$3.call(DocumentNodeStore.java:707)
+          at org.apache.jackrabbit.oak.plugins.document.DocumentNodeStore$3.call(DocumentNodeStore.java:704)
+          at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4724)
+          at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3522)
+          at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2315)
+          at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2278)
+          at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2193)
+  {noformat}

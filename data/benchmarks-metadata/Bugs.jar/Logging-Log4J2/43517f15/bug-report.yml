@@ -1,0 +1,93 @@
+---
+BugID: LOG4J2-965
+Summary: System.out no longer works after the Console appender and JANSI are initialized
+Description: |-
+  h3. Demonstration
+
+  The underlining project demonstrate the bug.
+
+  The project's build.gradle file:
+
+  {code:title=build.gradle}
+  apply plugin: 'java'
+
+  version = '1.0'
+
+  repositories {
+      mavenCentral()
+  }
+
+  def log4j2Version = '2.2'
+  def log4j2GroupId = "org.apache.logging.log4j"
+
+  dependencies {
+      compile log4j2GroupId + ':log4j-core:' + log4j2Version
+      compile log4j2GroupId + ":log4j-jcl:" + log4j2Version
+      compile log4j2GroupId + ":log4j-slf4j-impl:" + log4j2Version
+      compile 'org.fusesource.jansi:jansi:1.11'
+  }
+  {code}
+
+  A log4j2.xml in classpath:
+
+  {code:title=log4j2.xml}
+  <?xml version="1.0" encoding="UTF-8"?>
+  <Configuration status="WARN">
+      <Appenders>
+          <File name="root" fileName="${sys:user.home}/logs/windowsbug.log">
+              <PatternLayout>
+                  <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+              </PatternLayout>
+          </File>
+      </Appenders>
+      <Loggers>
+          <Root level="info">
+              <AppenderRef ref="root"/>
+          </Root>
+      </Loggers>
+  </Configuration>
+  {code}
+
+  And the main class:
+
+  {code:title=Log4j2WindowsBug.java}
+  import org.slf4j.LoggerFactory;
+
+  /**
+   * @author khotyn 15/3/2 下午8:17
+   */
+  public class Log4j2WindowsBug {
+
+      public static void main(String[] args) {
+          System.out.println("Able to print on Windows");
+          LoggerFactory.getLogger(Log4j2WindowsBug.class);
+          System.out.println("Unable to print on Windows");
+      }
+  }
+  {code}
+
+  The output of the demo under Windows is:
+
+  {code}
+  Able to print on Windows
+  {code}
+
+  The third line did not print to Windows console.
+
+  h3. Reason
+
+  It seems that log4j2 will wrapper System.out to WindowsAnsiOutputStream if jansi is available in classpath. And in OutputStreamManager's close method, the wrapper WindowsAnsiOutputStream is not considered, and cause the underling System.out closed.
+
+  {code:title=OutputStreamManager.java}
+      protected synchronized void close() {
+          final OutputStream stream = os; // access volatile field only once per method
+          if (stream == System.out || stream == System.err) {
+              return;
+          }
+          try {
+              stream.close();
+          } catch (final IOException ex) {
+              LOGGER.error("Unable to close stream " + getName() + ". " + ex);
+          }
+      }
+  {code}

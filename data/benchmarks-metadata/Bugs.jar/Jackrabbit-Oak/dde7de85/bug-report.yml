@@ -1,0 +1,6 @@
+---
+BugID: OAK-1467
+Summary: Commit.rollback() may remove changes from other commit
+Description: Commit.rollback() removes documents it previously created. With concurrent
+  commits it may happen that this method removes documents some other commit modified
+  in the meantime.

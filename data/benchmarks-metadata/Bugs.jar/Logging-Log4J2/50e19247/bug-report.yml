@@ -1,0 +1,41 @@
+---
+BugID: LOG4J2-139
+Summary: NPE while using SocketAppender
+Description: "I try to use the SocketAppender and get the following ERROR/NPE:\n\n2013-01-06
+  00:54:14,024 DEBUG Generated plugins in 0.000032000 seconds\n2013-01-06 00:54:14,044
+  DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout
+  for element PatternLayout with params(pattern=\"%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}
+  --- %msg%n\", Configuration(/Users/jhuxhorn/Documents/Projects/huxi/lilith/sandbox/log4j2-sandbox/build/resources/main/log4j2.xml),
+  null, charset=\"null\")\n2013-01-06 00:54:14,045 DEBUG Generated plugins in 0.000029000
+  seconds\n2013-01-06 00:54:14,049 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender
+  for element Console with params(PatternLayout(%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}
+  --- %msg%n), null, target=\"SYSTEM_OUT\", name=\"Console\", suppressExceptions=\"null\")\n2013-01-06
+  00:54:14,049 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.SerializedLayout
+  for element SerializedLayout\n2013-01-06 00:54:14,052 DEBUG Calling createAppender
+  on class org.apache.logging.log4j.core.appender.SocketAppender for element Socket
+  with params(host=\"localhost\", port=\"4560\", protocol=\"null\", reconnectionDelay=\"null\",
+  name=\"Socket\", immediateFlush=\"null\", suppressExceptions=\"null\", SerializedLayout(org.apache.logging.log4j.core.layout.SerializedLayout@5cc4211b),
+  null)\n2013-01-06 00:54:14,054 ERROR Unable to invoke method createAppender in class
+  org.apache.logging.log4j.core.appender.SocketAppender for element Socket java.lang.reflect.InvocationTargetException\n\tat
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:601)\n\tat org.apache.logging.log4j.core.config.BaseConfiguration.createPluginObject(BaseConfiguration.java:711)\n\tat
+  org.apache.logging.log4j.core.config.BaseConfiguration.createConfiguration(BaseConfiguration.java:477)\n\tat
+  org.apache.logging.log4j.core.config.BaseConfiguration.createConfiguration(BaseConfiguration.java:469)\n\tat
+  org.apache.logging.log4j.core.config.BaseConfiguration.doConfigure(BaseConfiguration.java:156)\n\tat
+  org.apache.logging.log4j.core.config.BaseConfiguration.start(BaseConfiguration.java:114)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.setConfiguration(LoggerContext.java:251)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:267)\n\tat
+  org.apache.logging.log4j.core.LoggerContext.start(LoggerContext.java:134)\n\tat
+  org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:75)\n\tat
+  org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:30)\n\tat
+  org.apache.logging.log4j.LogManager.getLogger(LogManager.java:165)\n\tat org.apache.logging.log4j.LogManager.getLogger(LogManager.java:174)\n\tat
+  de.huxhorn.lilith.sandbox.Log4j2Sandbox.main(Log4j2Sandbox.java:43)\nCaused by:
+  java.lang.NullPointerException\n\tat org.apache.logging.log4j.core.appender.SocketAppender.createSocketManager(SocketAppender.java:95)\n\tat
+  org.apache.logging.log4j.core.appender.SocketAppender.createAppender(SocketAppender.java:86)\n\t...
+  17 more\n\n2013-01-06 00:54:14,056 ERROR Null object returned for Socket in appenders\n\n\nMy
+  configuration looks like this:\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<configuration
+  status=\"debug\">\n\t<appenders>\n\t\t<Console name=\"Console\" target=\"SYSTEM_OUT\">\n\t\t\t<PatternLayout
+  pattern=\"%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} --- %msg%n\"/>\n\t\t</Console>\n\t\t<Socket
+  name=\"Socket\" host=\"localhost\" port=\"4560\">\n\t\t\t<SerializedLayout />\n\t\t</Socket>\n\t</appenders>\n\t<loggers>\n\t\t<root
+  level=\"all\">\n\t\t\t<appender-ref ref=\"Console\"/>\n\t\t\t<appender-ref ref=\"Socket\"/>\n\t\t</root>\n\t</loggers>\n</configuration>\n"

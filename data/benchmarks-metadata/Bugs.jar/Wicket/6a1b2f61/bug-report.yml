@@ -1,0 +1,11 @@
+---
+BugID: WICKET-4717
+Summary: StringValidator.exactLength has wrong variable in ErrorMessage
+Description: "In error message for StringValidator.exactLength is variable ${exact}
+  , but in StringValidator.decorate is added variable length to map and not exact.
+  \n\nException when is error message interpolate for show in feedback.\n\nCaused
+  by: java.lang.IllegalArgumentException: Value of variable [[exact]] could not be
+  resolved while interpolating [['${label}' is not exactly ${exact} characters long.]]\n\nproperty
+  from application.\nStringValidator.exact='${label}' is not exactly ${exact} characters
+  long.\n\nWhen I added same property in my own properties and change exact to length,
+  it works."

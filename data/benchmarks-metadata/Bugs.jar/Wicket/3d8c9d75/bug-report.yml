@@ -1,0 +1,35 @@
+---
+BugID: WICKET-2961
+Summary: Adding a component in Component#onInitialize() leads to StackOverflowError
+Description: |-
+  Adding a component in Page#onInitialize() leads to StackOverflowError:
+
+   at org.apache.wicket.MarkupContainer.addedComponent(MarkupContainer.java:978)
+       at org.apache.wicket.MarkupContainer.add(MarkupContainer.java:168)
+       at org.apache.wicket.examples.WicketExamplePage.onInitialize(WicketExamplePage.java:67)
+       at org.apache.wicket.Component.initialize(Component.java:970)
+       at org.apache.wicket.MarkupContainer.initialize(MarkupContainer.java:992)
+       at org.apache.wicket.Page.componentAdded(Page.java:1130)
+       at org.apache.wicket.MarkupContainer.addedComponent(MarkupContainer.java:978)
+       at org.apache.wicket.MarkupContainer.add(MarkupContainer.java:168)
+       at org.apache.wicket.examples.WicketExamplePage.onInitialize(WicketExamplePage.java:67)
+       at org.apache.wicket.Component.initialize(Component.java:970)
+       at org.apache.wicket.MarkupContainer.initialize(MarkupContainer.java:992)
+       at org.apache.wicket.Page.componentAdded(Page.java:1130)
+       at org.apache.wicket.MarkupContainer.addedComponent(MarkupContainer.java:978)
+       at org.apache.wicket.MarkupContainer.add(MarkupContainer.java:168)
+       at org.apache.wicket.examples.WicketExamplePage.onInitialize(WicketExamplePage.java:67)
+       at org.apache.wicket.Component.initialize(Component.java:970)
+       at org.apache.wicket.MarkupContainer.initialize(MarkupContainer.java:992)
+       at org.apache.wicket.Page.componentAdded(Page.java:1130)
+       at org.apache.wicket.MarkupContainer.addedComponent(MarkupContainer.java:978)
+       at org.apache.wicket.MarkupContainer.add(MarkupContainer.java:168)
+       at org.apache.wicket.examples.WicketExamplePage.onInitialize(WicketExamplePage.java:67)
+       at org.apache.wicket.Component.initialize(Component.java:970)
+       at org.apache.wicket.MarkupContainer.initialize(MarkupContainer.java:992)
+       at org.apache.wicket.Page.componentAdded(Page.java:1130)
+       at org.apache.wicket.MarkupContainer.addedComponent(MarkupContainer.java:978)
+       at org.apache.wicket.MarkupContainer.add(MarkupContainer.java:168)
+       at org.apache.wicket.examples.WicketExamplePage.onInitialize(WicketExamplePage.java:67)
+       at org.apache.wicket.Component.initialize(Component.java:970)
+  ...

@@ -1,0 +1,56 @@
+---
+BugID: WICKET-3836
+Summary: regression on strategy to integrate cas authentication
+Description: |
+  yes, It happens in org.apache.wicket.request.handler.PageProvider.getPageInstance() ,
+  but not for the WelcomePage, but the redirection page (RedirectPage).
+  the CASPageAuthorizationStrategy as we are not authentified a org.apache.wicket.RestartResponseAtInterceptPageException with in parameter an instance of RedirectPage.
+  On the second call of PageProvider.getPageInstance, the pageId is of 0, an all other parameters are nulls.
+
+  The run seems quite different on 1.5-RC4.2 version - There is only one call of the method PageProvider.getPageInstance() and it come after the CASPageAuthorizationStrategy.isPageAuthorized
+
+  Le 27/06/2011 11:24, Martin Grigorov a écrit :
+  > Put a breakpoint in
+  > org.apache.wicket.request.handler.PageProvider.getPageInstance() and
+  > see what happens.
+  > It seems the test tries to retrieve a page from the page store by id
+  > but there is no such.
+  >
+  > On Mon, Jun 27, 2011 at 12:20 PM, Thomas Franconville
+  > <tfranconville@tetraedge.com>  wrote:
+  >> Hi,
+  >>
+  >> Upgrading wicket from 1.5-RC4.2 to 1.5-RC5.1  make my Junit Test down with
+  >> the error 'Page expired'
+  >>
+  >> /**
+  >>   * Simple test using the WicketTester
+  >>   */
+  >> public class TestHomePage
+  >> {
+  >>     private WicketTester tester;
+  >>
+  >>     @Before
+  >>     public void setUp()
+  >>     {
+  >>         tester = new WicketTester(new MyApplication());
+  >>     }
+  >>
+  >>     @Test
+  >>     public void homepageRendersSuccessfully()
+  >>     {
+  >>         //start and render the test page
+  >>         tester.startPage(WelcomePage.class);
+  >>
+  >>         //assert rendered page class
+  >>         tester.assertRenderedPage(RedirectPage.class);
+  >>     }
+  >> }
+  >>
+  >> My application use a CASPageAuthorizationStrategy inspired of
+  >> http://www.lunikon.net/2009/11/24/integrating-cas-and-wicket/
+  >>
+  >>
+  >> Kind Regards
+  >>
+  >> Thomas

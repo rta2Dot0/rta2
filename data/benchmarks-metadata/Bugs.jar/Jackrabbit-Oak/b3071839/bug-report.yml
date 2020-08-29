@@ -1,0 +1,17 @@
+---
+BugID: OAK-2359
+Summary: read is inefficient when there are many split documents
+Description: "As reported in OAK-2358 there is a potential problem with revisionGC
+  not cleaning up split documents properly (in 1.0.8.r1644758 at least). \n\nAs a
+  side-effect, having many garbage-revisions renders the diffImpl algorithm to become
+  very slow - normally it would take only a few millis, but with nodes that have many
+  split-documents I can see diffImpl take hundres of millis, sometimes up to a few
+  seconds. Which causes the observation dequeuing to be slower than the rate in which
+  observation events are enqueued, which results in observation queue never being
+  cleaned up and event handling being delayed more and more.\n\nAdding some logging
+  showed that diffImpl would often read many split-documents, which supports the assumption
+  that the revisionGC not cleaning up revisions has the diffImpl-slowness as a side-effect.
+  Having said that - diffImpl should probably still be able to run fast, since all
+  the revisions it should look at should be in the main document, not in split documents.\n\nI
+  dont have a test case handy for this at the moment unfortunately - if more is coming
+  up, I'll add more details here."

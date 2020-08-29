@@ -1,0 +1,7 @@
+---
+BugID: ACCUMULO-1312
+Summary: Don't cache credentials in client-side Connector
+Description: |
+  AuthenticationToken objects are Destroyable. However, this cannot be exercised properly in the client code, because the Connector immediately serializes the credentials and stores them as long as the Connector lives.
+
+  It should be possible to destroy a token after creating a Connector, and thereby forcing any further RPC calls initiated by that Connector to fail to authenticate. This means that serialization on the client side to a TCredentials object needs to occur just before the RPC call.

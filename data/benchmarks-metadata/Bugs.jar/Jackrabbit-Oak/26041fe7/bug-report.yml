@@ -1,0 +1,8 @@
+---
+BugID: OAK-1727
+Summary: Cross foreign cluster revision comparison may be wrong
+Description: Running one of the access control related benchmarks concurrently on
+  a MongoDB may result in strange conflicts even when DocumentNodeStore retries the
+  commit. The root cause may be a wrong revision comparison when both revision to
+  compare are from a foreign cluster node and one of them is not withing the known
+  seen-at revision ranges.

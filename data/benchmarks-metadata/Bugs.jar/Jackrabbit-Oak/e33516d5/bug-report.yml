@@ -1,0 +1,15 @@
+---
+BugID: OAK-4397
+Summary: DefaultSyncContext.syncMembership may sync group of a foreign IDP
+Description: |-
+  With the following scenario the {{DefaultSyncContext.syncMembership}} may end up synchronizing (i.e. updating) a group defined by an foreign IDP and even add the user to be synchronized as a new member:
+
+  - configuration with different IDPs
+  - foreign IDP synchronizes a given external group 'groupA' => rep:externalID points to foreign-IDP (e.g. rep:externalId = 'groupA;foreignIDP')
+  - my-IDP contains a group with the same ID (but obviously with a different rep:externalID) and user that has declared group membership pointing to 'groupA' from my IDP
+
+  if synchronizing my user first the groupA will be created with a rep:externalId = 'groupA;myIDP'.
+  however, if the group has been synced before by the foreignIDP the code fails to verify that an existing group 'groupA' really belongs to the same IDP and thus may end up synchronizing the group and updating it's members.
+
+  IMHO that's a critical issue as it violates the IDP boundaries.
+  the fix is pretty trivial as it only requires testing for the IDP of the existing group as we do it in other places (even in the same method).

@@ -1,0 +1,21 @@
+---
+BugID: MATH-1148
+Summary: MonotoneChain handling of collinear points drops low points in a near-column
+Description: "This code\n{code}\nval points = List(\n  new Vector2D(\n    16.078200000000184,\n
+  \   -36.52519999989808\n  ),\n  new Vector2D(\n    19.164300000000186,\n    -36.52519999989808\n
+  \ ),\n  new Vector2D(\n    19.1643,\n    -25.28136477910407\n  ),\n  new Vector2D(\n
+  \   19.1643,\n    -17.678400000004157\n  )\n)\nnew hull.MonotoneChain().generate(points.asJava)\n{code}\n\nresults
+  in the exception:\n{code}\norg.apache.commons.math3.exception.ConvergenceException:
+  illegal state: convergence failed\n\tat org.apache.commons.math3.geometry.euclidean.twod.hull.AbstractConvexHullGenerator2D.generate(AbstractConvexHullGenerator2D.java:106)\n\tat
+  org.apache.commons.math3.geometry.euclidean.twod.hull.MonotoneChain.generate(MonotoneChain.java:50)\n\tat
+  .<init>(<console>:13)\n\tat .<clinit>(<console>)\n\tat .<init>(<console>:11)\n\tat
+  .<clinit>(<console>)\n\tat $print(<console>)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native
+  Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\n\tat
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\n\tat
+  java.lang.reflect.Method.invoke(Method.java:597)\n\tat scala.tools.nsc.interpreter.IMain$ReadEvalPrint.call(IMain.scala:704)\n\tat
+  scala.tools.nsc.interpreter.IMain$Request$$anonfun$14.apply(IMain.scala:920)\n\tat
+  scala.tools.nsc.interpreter.Line$$anonfun$1.apply$mcV$sp(Line.scala:43)\n\tat scala.tools.nsc.io.package$$anon$2.run(package.scala:25)\n\tat
+  java.lang.Thread.run(Thread.java:662)\n{code}\n\nThis will be tricky to fix. Not
+  only is the point (19.164300000000186, -36.52519999989808) is being dropped incorrectly,
+  but any point dropped in one hull risks creating a kink when combined with the other
+  hull.\n\n"

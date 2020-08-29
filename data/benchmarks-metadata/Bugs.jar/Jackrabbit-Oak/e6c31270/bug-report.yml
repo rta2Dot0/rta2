@@ -1,0 +1,8 @@
+---
+BugID: OAK-395
+Summary: Inconsistency in Node#setProperty in case of null value
+Description: "Setting a null value to a single valued property will result\nin 'null'
+  being returned while executing the same on a multivalued\nproperty will return the
+  removed property.\n\njr2 returned the removed property in both cases as far as i
+  \nremember and i would suggest that we don't change that behavior. in\nparticular
+  since the specification IMO doesn't allow to return\nnull-values for these methods."

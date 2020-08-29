@@ -1,0 +1,15 @@
+---
+BugID: WICKET-3563
+Summary: Interaction betwen IAjaxRegionMarkupIdProvider, renderPlaceholderTag and
+  visibility
+Description: "I've just discovered what I think is a bug with\nIAjaxRegionMarkupIdProvider.
+  We are using it on a Behavior that provides\na border to form components (label,
+  mandatory marker, etc), which for\nthe most part works great.\n\nWe have encountered
+  a problem when toggling the visibility of a form\ncomponent with this behavior via
+  ajax. \n\nThe component is first sent out visible and the markup is all correct.\n\nA
+  change elsewhere on the page causes the component to be set to not\nvisible and
+  redrawn via ajax. The ajax response contains a tag with a\nmarkupid generated via
+  renderPlaceholderTag. This does not take into\naccount the  IAjaxRegionMarkupIdProvider
+  behaviour.\n\nAnother change happens on the page causing the component to become\nvisible,
+  and the ajax replace can't happen because the component with\nthe correct markupId
+  is not present.\n"

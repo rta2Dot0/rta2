@@ -1,0 +1,33 @@
+---
+BugID: WICKET-2065
+Summary: Generated urls for mounted pages contain redundant trailing "/"
+Description: |-
+  Is it OK (i.e. "by design" as opposed to "by mistake") that the urls generated for the mounted pages end up with the "/"?
+
+  Provided that there's a page that expects single parameter (here: "content")...
+  public class HelpPage extends WebPage {
+  public HelpPage(PageParameters p) {
+  super(p);
+  add(new DynamicContentPanel("contentPanel", new Model<String>(p.getString("content"))));
+  }
+  }
+
+  ...and it is mounted in the Application#init()
+  mount(new BookmarkablePageRequestTargetUrlCodingStrategy("help", HelpPage.class, null));
+
+  ...and further referred to somewhere else as:
+  add(new BookmarkablePageLink("helpPage", HelpPage.class, new PageParameters("content=a")));
+
+  the url in the generated markup is in the following form:
+  http://localhost:8080/dummy-web/help/content/a/;jsessionid=11624C6125F8DF4867E3218676D79A29
+
+  While IMHO it should read:
+  http://localhost:8080/dummy-web/help/content/a;jsessionid=11624C6125F8DF4867E3218676D79A29
+
+  It looks even more awkward when there are more parameters and part of them is encoded as a query string:
+  http://localhost:8080/dummy-web/help/content/a/?param2=value2/;jsessionid=11624C6125F8DF4867E3218676D79A29
+
+  The page parameter for both cases is resolved correctly by the HelpPage's constructor, so it seems that even though there's an extra "/" at the end of the url it gets omitted.
+  Then why bother generating it?
+
+  I stumbled upon an issue https://issues.apache.org/jira/browse/WICKET-765. Apart from the compatibility with wicket 1.2 I see no rationale for trailing "/". Looking at implementations of IRequestTargetUrlCodingStrategy I come to the conclusion the the "append("/")" is being overused and redundant especially when it is preceded by the following code which makes sure that the "/" is in place before adding another parameter.

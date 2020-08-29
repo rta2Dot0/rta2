@@ -1,0 +1,13 @@
+---
+BugID: OAK-238
+Summary: 'ValueFactory: Missing identifier validation when creating (weak)reference
+  value from String'
+Description: "the JCR specification mandates validation of the identifier during\nvalue
+  conversion from STRING to REFERENCE or WEAK_REFERENCE:\n\n<quote from 3.6.4.1 From
+  STRING To)>\nREFERENCE or WEAKREFERENCE: If the string is a syntactically valid
+  \nidentifier, according to the implementation, it is converted directly, otherwise
+  a \nValueFormatException is thrown. The identifier is not required to be that of
+  an \nexisting node in the current workspace. \n<end_quote>\n\nthe current ValueFactory
+  implementation in oak-jcr lacks that validation:\ncreating a REFERENCE or WEAKREFERENCE
+  value using\nValueFactory#createValue(String, int) succeeds even if the specified
+  string\nisn't a valid referenceable node identifier.\n\n"

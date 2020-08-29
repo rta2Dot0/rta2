@@ -1,0 +1,12 @@
+---
+BugID: OAK-2355
+Summary: TarMK Cold Standby expose standby read timeout value
+Description: |+
+  Running into a read timeout on the standby instance logs some uncaught error:
+  {code}
+  org.apache.jackrabbit.oak.plugins.segment.standby.client.SegmentLoaderHandler Exception caught, closing channel.
+  io.netty.handler.timeout.ReadTimeoutException: null
+  {code}
+
+  I'm not sure how/if I need to fix this, the sync process will pickup again, but we can expose the timeout value, so if the network connection is known to be poor, a client can increase the timeout to work around this issue.
+

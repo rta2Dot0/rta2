@@ -1,0 +1,18 @@
+---
+BugID: WICKET-5359
+Summary: org.apache.wicket.util.string.StringValue#equals broken
+Description: |
+  The #equals implementation for org.apache.wicket.util.string.StringValue is broken. The following throws an exception instead of just printing 'false':
+
+  StringValue val = StringValue.valueOf("bla", Locale.FRANCE);
+  StringValue val2 = StringValue.valueOf("bla", Locale.CANADA);
+  System.out.println(val.equals(val2));
+
+
+  This part of #equals
+  Objects.isEqual(locale, stringValue.locale)
+
+  should probably be replaced with something like
+  (locale == stringValue.locale || (locale != null && locale.equals(stringValue.locale))
+
+  -> Objects.isEqual is not suitable to determine equality of Locale

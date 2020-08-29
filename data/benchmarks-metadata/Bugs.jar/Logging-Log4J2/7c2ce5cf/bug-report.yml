@@ -1,0 +1,8 @@
+---
+BugID: LOG4J2-385
+Summary: Unable to roll log files monthly
+Description: Attempting to use FastRollingFile appender and configure log file rollover
+  to occur monthly.  When {{filePattern="logs/app-%d\{yyyy-MM}.log.gz"}} is used,
+  at application startup an archive file is created immediately (app-2013-01.log.gz)
+  even if no log previously existed.  A log file is created, but only a single entry
+  is made into the log.

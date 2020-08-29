@@ -1,0 +1,7 @@
+---
+BugID: OAK-3123
+Summary: NPE in RecordIdMap
+Description: "{{RecordIdMap}} is not properly guarded against NPEs when calling accessors
+  on an empty map (which is represented by {{keys == null}}. \n\n{noformat}\ntestRecordIdMap(org.apache.jackrabbit.oak.plugins.segment.RecordIdMapTest)
+  \ Time elapsed: 0.019 sec  <<< ERROR!\njava.lang.NullPointerException\nat org.apache.jackrabbit.oak.plugins.segment.RecordIdMap.size(RecordIdMap.java:100)\nat
+  org.apache.jackrabbit.oak.plugins.segment.RecordIdMapTest.testRecordIdMap(RecordIdMapTest.java:64)\n{noformat}"

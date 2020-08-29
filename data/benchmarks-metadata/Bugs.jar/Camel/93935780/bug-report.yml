@@ -1,0 +1,17 @@
+---
+BugID: CAMEL-5432
+Summary: Dynamically added SEDA-route is not working
+Description: "Dynamically removing and adding a SEDA-route creates a not working route
+  in Camel 2.10.0.\nIt is working in 2.9.2.\n\nTest-Code:\n{code}\npublic class DynamicRouteTest
+  extends CamelTestSupport {\n\n    @Override\n    protected RouteBuilder createRouteBuilder()
+  throws Exception {\n        return new RouteBuilder() {\n\n            @Override\n
+  \           public void configure() throws Exception {\n                from(\"seda:in\").id(\"sedaToMock\").to(\"mock:out\");\n
+  \           }\n        };\n    }\n    \n    @Test\n    public void testDynamicRoute()
+  throws Exception {\n        MockEndpoint out = getMockEndpoint(\"mock:out\");\n
+  \       out.expectedMessageCount(1);\n        \n        template.sendBody(\"seda:in\",
+  \"Test Message\");\n        \n        out.assertIsSatisfied();\n        \n        CamelContext
+  camelContext = out.getCamelContext();\n        camelContext.stopRoute(\"sedaToMock\");\n
+  \       camelContext.removeRoute(\"sedaToMock\");\n        \n        camelContext.addRoutes(createRouteBuilder());\n
+  \       out.reset();\n        out.expectedMessageCount(1);\n        \n        template.sendBody(\"seda:in\",
+  \"Test Message\");\n        \n        out.assertIsSatisfied();\n        \n    }\n}
+  \n\n{code}"

@@ -1,0 +1,8 @@
+---
+BugID: OAK-2174
+Summary: Non-blocking reindexing doesn't finish properly
+Description: The non blocking reindexer needs to run at least 2 cycles before setting
+  the index definition back to synchronous mode. Currently it is too eager to mark
+  the status as 'done' which confuses the _PropertyIndexAsyncReindex_ mbean into thinking
+  the indexing is over and so skipping the final round that is supposed to do the
+  switch back to sync mode.

@@ -1,0 +1,8 @@
+---
+BugID: WICKET-4738
+Summary: DownloadLink doesn't wrap the String model used for file name nor does it
+  detach
+Description: "Component DownloadLink doesn't call method wrap of class Component on
+  parameter fileNameModel. This causes models like StringResourceModel to not resolve
+  resource bundles correctly.\nSee the discussion here: http://stackoverflow.com/questions/12196533/how-to-use-wicket-stringresourcemodel-in-downloadlink\n\nThe
+  patch seems quite trivial. \n\nDetachment is also missing."

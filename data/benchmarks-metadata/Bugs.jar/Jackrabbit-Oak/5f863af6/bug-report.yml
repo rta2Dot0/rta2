@@ -1,0 +1,18 @@
+---
+BugID: OAK-3324
+Summary: Evaluation with restriction is not consistent with parent ACLs
+Description: |
+  consider the following ACL setup:
+
+  {noformat}
+  testuser allow rep:read,rep:write      /testroot
+  testuser deny  jcr:removeNode /testroot/a  glob=*/c
+  testuser allow jcr:removeNode /testroot/a  glob=*/b
+  {noformat}
+
+  now: {{hasPermission(/tesroot/a/b/c, jcr:removeNode) == false}} but the user is still able to delete the node.
+
+  * if we change the order of the ACEs with the restriction, it works (i.e. the user can't delete)
+  * if we use direct ACLs on the respective nodes, it works
+
+  I think this is a bug...but I'm not sure if {{hasPermission}} is wrong, or the check during node deletion.

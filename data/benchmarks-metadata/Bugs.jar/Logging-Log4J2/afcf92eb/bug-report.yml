@@ -1,0 +1,10 @@
+---
+BugID: LOG4J2-114
+Summary: StructuredDataMessage is incorrectly validating value length instead of key
+  length
+Description: |-
+  During execution of method SLF4JLogger.log, the following exception is thrown during creation of the StructuredMessage with a key longer than 32 characters.
+
+  java.lang.IllegalArgumentException: Structured data values are limited to 32 characters. key: memo value: This is a very long test memo to demonstrate the issue
+
+  The validation should be on key length and not the value length.

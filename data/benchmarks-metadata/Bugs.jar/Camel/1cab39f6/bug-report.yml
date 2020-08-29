@@ -1,0 +1,13 @@
+---
+BugID: CAMEL-9340
+Summary: FileIdempotentRepository fails to create fileStore when no path is specified
+Description: "I create a FileIdempotentRepository like this:\n\n{code}\n.idempotentConsumer(fileIdempotentRepository(new
+  File('ids'))) {\n    it.in.body.id\n}\n{code}\n\nI get an error, and I traced it
+  to:\n{noformat}\nCaused by: java.lang.NullPointerException: null\n\tat org.apache.camel.processor.idempotent.mpotentRepository.loadStore(FileIdempotentRepository.java:293)
+  ~[camel-core-2.16.0.jar:2.16.0]\n\tat org.apache.camel.processor.idempotent.FileIdempotentRepository.doStart(FileIdempotentRepository.java:328)
+  ~[camel-core-2.16.0.jar:2.16.0]\n{noformat}\n\nThe FileIdempotentRepository is trying
+  to create the parent directory of the file that was specified for the file store.
+  If a path to the file is not specified, then getParentFile() returns null. Calling
+  .mkdirs() on that bombs.\n\nThis route works the second time it runs because then
+  the file exists. It also works if I specify my file name as \"./ids\" instead of
+  \"ids\"."

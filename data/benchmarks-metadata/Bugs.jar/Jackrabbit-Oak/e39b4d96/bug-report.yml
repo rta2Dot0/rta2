@@ -1,0 +1,11 @@
+---
+BugID: OAK-1024
+Summary: Full-text search on the traversing index fails if the condition contains
+  a slash
+Description: "A full-text search on the traversing index falls back to a sort of manual
+  evaluation of results. \nThis is handled by the _FullTextTerm_ class, and it appears
+  that it passes the constraint text through a cleanup process where it strips most
+  of the characters that are neither _Character.isLetterOrDigit(c)_ not in the list
+  _+-:&_\n\nI'm not exactly sure where this list comes from, but I see the '/' character
+  is missing which causes a certain type of query to fail.\n\nExample:\n{code}\n//*[jcr:contains(.,
+  'text/plain')]\n{code}\n\n"

@@ -1,0 +1,6 @@
+---
+BugID: ACCUMULO-3475
+Summary: Shell.config()'s return value is ignored.
+Description: "{{Shell.config()}} returns a boolean which is true if there was an error
+  configuring the shell, but the value is never observed. This can result in other
+  unintended errors (like trying to use the ConsoleReader member when it's not initialized)."

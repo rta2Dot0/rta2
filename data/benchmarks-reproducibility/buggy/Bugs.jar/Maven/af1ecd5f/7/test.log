@@ -1,0 +1,114 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /boom/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Artifact 3.2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-bytecode-version) @ maven-artifact ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (ban-known-bad-maven-versions) @ maven-artifact ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.10:check (check) @ maven-artifact ---
+[INFO] 51 implicit excludes (use -debug for more details).
+[INFO] Exclude: src/test/resources*/**
+[INFO] Exclude: src/test/projects/**
+[INFO] Exclude: src/test/remote-repo/**
+[INFO] Exclude: **/*.odg
+[INFO] Exclude: bootstrap/**
+[INFO] Exclude: README.bootstrap.txt
+[INFO] Exclude: .repository/**
+[INFO] 34 resources included (use -debug for more details)
+Warning:  org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+Compiler warnings:
+  WARNING:  'org.apache.xerces.jaxp.SAXParserImpl: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.'
+Warning:  org.apache.xerces.parsers.SAXParser: Feature 'http://javax.xml.XMLConstants/feature/secure-processing' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://javax.xml.XMLConstants/property/accessExternalDTD' is not recognized.
+Warning:  org.apache.xerces.parsers.SAXParser: Property 'http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit' is not recognized.
+[INFO] Rat check: Summary of files. Unapproved: 1 unknown: 1 generated: 0 approved: 33 licence.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ maven-artifact ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.10:check (check-java-1.6-compat) @ maven-artifact ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-artifact ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /tmp/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ maven-artifact ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-test-metadata (default) @ maven-artifact ---
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ maven-artifact ---
+[INFO] Surefire report directory: /tmp/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.16/surefire-junit3-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.16/surefire-junit3-2.16.pom (1.7 kB at 3.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.16/surefire-providers-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.16/surefire-providers-2.16.pom (2.4 kB at 12 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.16/surefire-junit3-2.16.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/2.16/surefire-junit3-2.16.jar (26 kB at 112 kB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.maven.artifact.versioning.ComparableVersionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in org.apache.maven.artifact.versioning.ComparableVersionTest
+Running org.apache.maven.artifact.versioning.DefaultArtifactVersionTest
+Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec <<< FAILURE! - in org.apache.maven.artifact.versioning.DefaultArtifactVersionTest
+testNonNumericVersionRepresentationReturnsANumberFormatException(org.apache.maven.artifact.versioning.DefaultArtifactVersionTest)  Time elapsed: 0.005 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: We expect a NumberFormatException to be thrown.
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at org.apache.maven.artifact.versioning.DefaultArtifactVersionTest.testNonNumericVersionRepresentationReturnsANumberFormatException(DefaultArtifactVersionTest.java:204)
+
+Running org.apache.maven.artifact.versioning.VersionRangeTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in org.apache.maven.artifact.versioning.VersionRangeTest
+
+Results :
+
+Failed tests: 
+  org.apache.maven.artifact.versioning.DefaultArtifactVersionTest#testNonNumericVersionRepresentationReturnsANumberFormatException AssertionFailedError
+
+Tests run: 22, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.980 s
+[INFO] Finished at: 2020-03-09T09:58:30-07:00
+[INFO] Final Memory: 26M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.16:test (default-test) on project maven-artifact: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /tmp/Bugs.jar_Maven_af1ecd5f_java-7/maven-artifact/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

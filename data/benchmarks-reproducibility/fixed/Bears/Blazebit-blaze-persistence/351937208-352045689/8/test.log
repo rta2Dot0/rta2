@@ -1,0 +1,345 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.blazebit:blaze-persistence-core-testsuite:jar:1.2.0-SNAPSHOT
+[WARNING] 'profiles.profile[datanucleus-4].dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.datanucleus:datanucleus-jpa-query:jar -> version ${version.datanucleus.jpa-4} vs ${version.datanucleus.jpa-5} @ com.blazebit:blaze-persistence-core-testsuite:[unknown-version], /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/pom.xml, line 1579, column 29
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: ${project.groupId}:blaze-persistence-integration-datanucleus-5.1:jar -> duplicate declaration of version ${project.version} @ com.blazebit:blaze-persistence-parent:[unknown-version], /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/parent/pom.xml, line 234, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blazebit Persistence Core Testsuite 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-java-version) @ blaze-persistence-core-testsuite ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven-version) @ blaze-persistence-core-testsuite ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create-timestamp (get-build-timestamp) @ blaze-persistence-core-testsuite ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (get-scm-revision) @ blaze-persistence-core-testsuite ---
+[INFO] Executing: /bin/sh -c cd '/bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite
+[INFO] Storing buildNumber: b93335bf0159b3b7af4baa1cdbf118c09773456e at timestamp: 1584231006064
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (check-license) @ blaze-persistence-core-testsuite ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-source (add-source) @ blaze-persistence-core-testsuite ---
+[INFO] Source directory: /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate added.
+[INFO] Source directory: /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/target/generated-sources/metamodel added.
+[INFO] 
+[INFO] --- maven-processor-plugin:3.3.2:process (process) @ blaze-persistence-core-testsuite ---
+[INFO] diagnostic: Note: Hibernate JPA 2 Static-Metamodel Generator 5.2.9.Final
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ blaze-persistence-core-testsuite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ blaze-persistence-core-testsuite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 189 source files to /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub2.java:[19,33] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassBase.java:[19,33] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddable.java:[19,33] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub2.java:[20,33] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub1.java:[19,33] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub1.java:[20,33] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub2.java:[69,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub2.java:[96,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub2.java:[110,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassBase.java:[99,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassBase.java:[125,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassBase.java:[139,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddable.java:[58,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddable.java:[85,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddable.java:[99,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub2.java:[86,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub2.java:[133,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub2.java:[158,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub1.java:[69,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub1.java:[96,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassEmbeddableSub1.java:[110,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub1.java:[86,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub1.java:[133,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[WARNING] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/hibernate/com/blazebit/persistence/testsuite/treat/entity/TablePerClassSub1.java:[158,6] org.hibernate.annotations.ForeignKey in org.hibernate.annotations has been deprecated
+[INFO] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/java/com/blazebit/persistence/testsuite/treat/entity/SingleTableBase.java: Some input files use unchecked or unsafe operations.
+[INFO] /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/main/java/com/blazebit/persistence/testsuite/treat/entity/SingleTableBase.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.0.0:add-test-source (add-test-source-hibernate) @ blaze-persistence-core-testsuite ---
+[INFO] Test Source directory: /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/src/test/hibernate added.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ blaze-persistence-core-testsuite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ blaze-persistence-core-testsuite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ blaze-persistence-core-testsuite ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+log4j:WARN No appenders could be found for logger (org.jboss.logging).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Running com.blazebit.persistence.testsuite.EmbeddableSimpleTest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Mar 14, 2020 5:10:30 PM com.blazebit.persistence.impl.CriteriaBuilderConfigurationProviderImpl createConfiguration
+INFO: Blaze-Persistence version: Blaze-Persistence 'Ink' 1.2.0-SNAPSHOT
+Mar 14, 2020 5:10:30 PM com.blazebit.annotation.AnnotationUtils <clinit>
+WARNING: Stereotype annotation can not be found, skipping annotation inheritance via stereotype.
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.988 sec - in com.blazebit.persistence.testsuite.EmbeddableSimpleTest
+Running com.blazebit.persistence.testsuite.JoinOnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.972 sec - in com.blazebit.persistence.testsuite.JoinOnTest
+Running com.blazebit.persistence.testsuite.treat.builder.SelectOneToManyListTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 12, Time elapsed: 12.233 sec - in com.blazebit.persistence.testsuite.treat.builder.SelectOneToManyListTest
+Running com.blazebit.persistence.testsuite.treat.builder.SelectOneToManyInverseSetTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 7.422 sec - in com.blazebit.persistence.testsuite.treat.builder.SelectOneToManyInverseSetTest
+Running com.blazebit.persistence.testsuite.treat.builder.SelectManyToManyMapValueTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 12, Time elapsed: 4.738 sec - in com.blazebit.persistence.testsuite.treat.builder.SelectManyToManyMapValueTest
+Running com.blazebit.persistence.testsuite.treat.builder.SelectManyToOneTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 12, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.treat.builder.SelectManyToOneTest
+Running com.blazebit.persistence.testsuite.treat.builder.JoinManyToManyMapValueTest
+Tests run: 108, Failures: 0, Errors: 0, Skipped: 24, Time elapsed: 12.546 sec - in com.blazebit.persistence.testsuite.treat.builder.JoinManyToManyMapValueTest
+Running com.blazebit.persistence.testsuite.treat.builder.SelectManyToManyMapKeyTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 36, Time elapsed: 1.619 sec - in com.blazebit.persistence.testsuite.treat.builder.SelectManyToManyMapKeyTest
+Running com.blazebit.persistence.testsuite.treat.builder.RootTreatTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.blazebit.persistence.testsuite.treat.builder.RootTreatTest
+Running com.blazebit.persistence.testsuite.treat.builder.JoinOneToManyInverseSetTest
+Tests run: 108, Failures: 0, Errors: 0, Skipped: 8, Time elapsed: 10.727 sec - in com.blazebit.persistence.testsuite.treat.builder.JoinOneToManyInverseSetTest
+Running com.blazebit.persistence.testsuite.treat.builder.JoinManyToOneTest
+Tests run: 108, Failures: 0, Errors: 0, Skipped: 26, Time elapsed: 12.434 sec - in com.blazebit.persistence.testsuite.treat.builder.JoinManyToOneTest
+Running com.blazebit.persistence.testsuite.treat.builder.JoinOneToManyListTest
+Tests run: 108, Failures: 0, Errors: 0, Skipped: 24, Time elapsed: 12.347 sec - in com.blazebit.persistence.testsuite.treat.builder.JoinOneToManyListTest
+Running com.blazebit.persistence.testsuite.HavingTest
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.193 sec - in com.blazebit.persistence.testsuite.HavingTest
+Running com.blazebit.persistence.testsuite.SizeTransformationTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.987 sec - in com.blazebit.persistence.testsuite.SizeTransformationTest
+Running com.blazebit.persistence.testsuite.TupleTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in com.blazebit.persistence.testsuite.TupleTest
+Running com.blazebit.persistence.testsuite.PaginationTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.525 sec - in com.blazebit.persistence.testsuite.PaginationTest
+Running com.blazebit.persistence.testsuite.SelectNewObjectBuilderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in com.blazebit.persistence.testsuite.SelectNewObjectBuilderTest
+Running com.blazebit.persistence.testsuite.DeletePolymorphicTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.DeletePolymorphicTest
+Running com.blazebit.persistence.testsuite.EntitySchemaInTableAnnotationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in com.blazebit.persistence.testsuite.EntitySchemaInTableAnnotationTest
+Running com.blazebit.persistence.testsuite.CollectionJoinTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 sec - in com.blazebit.persistence.testsuite.CollectionJoinTest
+Running com.blazebit.persistence.testsuite.CollectionRoleUpdateTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.401 sec - in com.blazebit.persistence.testsuite.CollectionRoleUpdateTest
+Running com.blazebit.persistence.testsuite.MultipleJoinTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.413 sec - in com.blazebit.persistence.testsuite.MultipleJoinTest
+Running com.blazebit.persistence.testsuite.QueryResultCachingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec - in com.blazebit.persistence.testsuite.QueryResultCachingTest
+Running com.blazebit.persistence.testsuite.OrderByTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.72 sec - in com.blazebit.persistence.testsuite.OrderByTest
+Running com.blazebit.persistence.testsuite.OptimizedKeysetPaginationTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.461 sec - in com.blazebit.persistence.testsuite.OptimizedKeysetPaginationTest
+Running com.blazebit.persistence.testsuite.OptimizedKeysetPaginationRowValueConstructorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.OptimizedKeysetPaginationRowValueConstructorTest
+Running com.blazebit.persistence.testsuite.Issue227Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.Issue227Test
+Running com.blazebit.persistence.testsuite.SelectPolymorphicTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.SelectPolymorphicTest
+Running com.blazebit.persistence.testsuite.DateExtractTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.DateExtractTest
+Running com.blazebit.persistence.testsuite.SelectNewTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.SelectNewTest
+Running com.blazebit.persistence.testsuite.KeysetPaginationPage1EdgeCaseFallbackTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.KeysetPaginationPage1EdgeCaseFallbackTest
+Running com.blazebit.persistence.testsuite.KeysetPaginationTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.KeysetPaginationTest
+Running com.blazebit.persistence.testsuite.DistinctTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec - in com.blazebit.persistence.testsuite.DistinctTest
+Running com.blazebit.persistence.testsuite.EntityEqualityGeneralTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.EntityEqualityGeneralTest
+Running com.blazebit.persistence.testsuite.Issue521Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.Issue521Test
+Running com.blazebit.persistence.testsuite.TablePerClassTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.TablePerClassTest
+Running com.blazebit.persistence.testsuite.Issue336HibernateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.Issue336HibernateTest
+Running com.blazebit.persistence.testsuite.UpdateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.UpdateTest
+Running com.blazebit.persistence.testsuite.OptimizedKeysetPaginationPage1EdgeCaseFallbackTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.OptimizedKeysetPaginationPage1EdgeCaseFallbackTest
+Running com.blazebit.persistence.testsuite.Issue519Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.Issue519Test
+Running com.blazebit.persistence.testsuite.IsNullTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.IsNullTest
+Running com.blazebit.persistence.testsuite.InsertTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.InsertTest
+Running com.blazebit.persistence.testsuite.JpqlFunctionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.JpqlFunctionTest
+Running com.blazebit.persistence.testsuite.LessTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.LessTest
+Running com.blazebit.persistence.testsuite.SelectTest
+Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.512 sec - in com.blazebit.persistence.testsuite.SelectTest
+Running com.blazebit.persistence.testsuite.UpdatePolymorphicTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.UpdatePolymorphicTest
+Running com.blazebit.persistence.testsuite.ImplicitNamingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec - in com.blazebit.persistence.testsuite.ImplicitNamingTest
+Running com.blazebit.persistence.testsuite.ParameterAPITest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.552 sec - in com.blazebit.persistence.testsuite.ParameterAPITest
+Running com.blazebit.persistence.testsuite.BetweenTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.BetweenTest
+Running com.blazebit.persistence.testsuite.KeysetPaginationNullsTest
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.KeysetPaginationNullsTest
+Running com.blazebit.persistence.testsuite.EmbeddableComplexTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.EmbeddableComplexTest
+Running com.blazebit.persistence.testsuite.LimitTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.LimitTest
+Running com.blazebit.persistence.testsuite.CTETest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.CTETest
+Running com.blazebit.persistence.testsuite.SingleValuedAssociationOneToOneTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.SingleValuedAssociationOneToOneTest
+Running com.blazebit.persistence.testsuite.MultipleFromTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in com.blazebit.persistence.testsuite.MultipleFromTest
+Running com.blazebit.persistence.testsuite.EmbeddableIdComplexTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.212 sec - in com.blazebit.persistence.testsuite.EmbeddableIdComplexTest
+Running com.blazebit.persistence.testsuite.EntityInValuesClauseTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.EntityInValuesClauseTest
+Running com.blazebit.persistence.testsuite.OuterFunctionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.OuterFunctionTest
+Running com.blazebit.persistence.testsuite.EnumTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.EnumTest
+Running com.blazebit.persistence.testsuite.SubqueryTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.SubqueryTest
+Running com.blazebit.persistence.testsuite.ValuesClauseTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.ValuesClauseTest
+Running com.blazebit.persistence.testsuite.GroupByTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.GroupByTest
+Running com.blazebit.persistence.testsuite.EntityNullnessGeneralTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.EntityNullnessGeneralTest
+Running com.blazebit.persistence.testsuite.InheritanceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.InheritanceTest
+Running com.blazebit.persistence.testsuite.EqTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.EqTest
+Running com.blazebit.persistence.testsuite.EntityJoinTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.EntityJoinTest
+Running com.blazebit.persistence.testsuite.DateDiffTest
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in com.blazebit.persistence.testsuite.DateDiffTest
+testTimestampWithTimestampDiff(com.blazebit.persistence.testsuite.DateDiffTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<2>
+	at com.blazebit.persistence.testsuite.DateDiffTest.testTimestampWithTimestampDiff(DateDiffTest.java:190)
+
+testDateWithParameterDiff(com.blazebit.persistence.testsuite.DateDiffTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<2>
+	at com.blazebit.persistence.testsuite.DateDiffTest.testDateWithParameterDiff(DateDiffTest.java:342)
+
+testTimestampWithParameterDiff(com.blazebit.persistence.testsuite.DateDiffTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<2>
+	at com.blazebit.persistence.testsuite.DateDiffTest.testTimestampWithParameterDiff(DateDiffTest.java:283)
+
+testDateWithDateDiff(com.blazebit.persistence.testsuite.DateDiffTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<2>
+	at com.blazebit.persistence.testsuite.DateDiffTest.testDateWithDateDiff(DateDiffTest.java:148)
+
+Running com.blazebit.persistence.testsuite.JoinTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.JoinTest
+Running com.blazebit.persistence.testsuite.InTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.412 sec - in com.blazebit.persistence.testsuite.InTest
+Running com.blazebit.persistence.testsuite.ElementCollectionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 sec - in com.blazebit.persistence.testsuite.ElementCollectionTest
+Running com.blazebit.persistence.testsuite.OptimizedKeysetPaginationNullsTest
+Tests run: 118, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.876 sec - in com.blazebit.persistence.testsuite.OptimizedKeysetPaginationNullsTest
+Running com.blazebit.persistence.testsuite.SingleValuedAssociationManyToOneTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec - in com.blazebit.persistence.testsuite.SingleValuedAssociationManyToOneTest
+Running com.blazebit.persistence.testsuite.TreatTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.TreatTest
+Running com.blazebit.persistence.testsuite.DeleteTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.DeleteTest
+Running com.blazebit.persistence.testsuite.CollectionRoleDeleteTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.CollectionRoleDeleteTest
+Running com.blazebit.persistence.testsuite.LikeTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.LikeTest
+Running com.blazebit.persistence.testsuite.PaginationEmbeddedIdTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.PaginationEmbeddedIdTest
+Running com.blazebit.persistence.testsuite.ComplexExpressionTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.ComplexExpressionTest
+Running com.blazebit.persistence.testsuite.EntityEqualityNoRewriteToIdTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.blazebit.persistence.testsuite.EntityEqualityNoRewriteToIdTest
+Running com.blazebit.persistence.testsuite.FunctionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.FunctionTest
+Running com.blazebit.persistence.testsuite.RawTypesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.blazebit.persistence.testsuite.RawTypesTest
+Running com.blazebit.persistence.testsuite.MultipleJoinComplexExpressionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in com.blazebit.persistence.testsuite.MultipleJoinComplexExpressionTest
+Running com.blazebit.persistence.testsuite.SingleValuedAssociationOneToOneJoinTableTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.35 sec - in com.blazebit.persistence.testsuite.SingleValuedAssociationOneToOneJoinTableTest
+Running com.blazebit.persistence.testsuite.JpqlMacroTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 sec - in com.blazebit.persistence.testsuite.JpqlMacroTest
+Running com.blazebit.persistence.testsuite.PolymorphicPropertyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec - in com.blazebit.persistence.testsuite.PolymorphicPropertyTest
+Running com.blazebit.persistence.testsuite.CollectionRoleInsertTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 sec - in com.blazebit.persistence.testsuite.CollectionRoleInsertTest
+Running com.blazebit.persistence.testsuite.GreaterTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.846 sec - in com.blazebit.persistence.testsuite.GreaterTest
+Running com.blazebit.persistence.testsuite.CaseWhenTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.687 sec - in com.blazebit.persistence.testsuite.CaseWhenTest
+Running com.blazebit.persistence.testsuite.PolymorphicJoinTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec - in com.blazebit.persistence.testsuite.PolymorphicJoinTest
+Running com.blazebit.persistence.testsuite.GroupConcatTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.248 sec - in com.blazebit.persistence.testsuite.GroupConcatTest
+Running com.blazebit.persistence.testsuite.SetOperationTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.324 sec - in com.blazebit.persistence.testsuite.SetOperationTest
+Running com.blazebit.persistence.testsuite.IsEmptyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 sec - in com.blazebit.persistence.testsuite.IsEmptyTest
+Running com.blazebit.persistence.testsuite.AdvancedQueryCachingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in com.blazebit.persistence.testsuite.AdvancedQueryCachingTest
+Running com.blazebit.persistence.testsuite.ArrayExpressionTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.573 sec - in com.blazebit.persistence.testsuite.ArrayExpressionTest
+Running com.blazebit.persistence.testsuite.IsMemberOfTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 sec - in com.blazebit.persistence.testsuite.IsMemberOfTest
+Running com.blazebit.persistence.testsuite.WhereTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 2.228 sec - in com.blazebit.persistence.testsuite.WhereTest
+
+Results :
+
+Failed tests: 
+  DateDiffTest.testDateWithDateDiff:148 expected:<1> but was:<2>
+  DateDiffTest.testDateWithParameterDiff:342 expected:<1> but was:<2>
+  DateDiffTest.testTimestampWithParameterDiff:283 expected:<1> but was:<2>
+  DateDiffTest.testTimestampWithTimestampDiff:190 expected:<1> but was:<2>
+
+Tests run: 1731, Failures: 4, Errors: 0, Skipped: 168
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:52 min
+[INFO] Finished at: 2020-03-14T17:12:57-07:00
+[INFO] Final Memory: 40M/1466M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project blaze-persistence-core-testsuite: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /bam/scratch/tmp-rta/Bears_Blazebit-blaze-persistence_351937208-352045689_java-8/core/testsuite/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,11 @@
+---
+BugID: CAMEL-3757
+Summary: Auto mock endpoints should strip parameters to avoid confusing when accessing
+  the mocked endpoint
+Description: |-
+  If you use mocking existing endpoints, which is detailed here
+  http://camel.apache.org/mock.html
+
+  We should stip parameters of the mocked endpoint, eg {{file:xxxx?noop=true}}. eg so the mocked endpoint would be {{mock:file:xxxx}} without any of the parameters.
+
+  Otherwise the mock endpoint expects those parameters is part of the mock endpoint and will fail creating the mock endpoint.

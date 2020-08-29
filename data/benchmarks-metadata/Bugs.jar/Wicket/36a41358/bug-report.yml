@@ -1,0 +1,14 @@
+---
+BugID: WICKET-2337
+Summary: IndexOutOfBoundsException when PropertyResolver is using an invalid list
+  index
+Description: "When using  PropertyResolver.getValue(\"myList[1]\", myBean),  the PropertyResolver$ListGetSet.getValue()
+  (line 762) unconditionally does:\nreturn ((List)object).get(index);\nwhich throws
+  an   java.lang.IndexOutOfBoundsException: Index: 1, Size: 1  if the backing list
+  contains only one element (at index 0).\nShouldn't the implementation rather return
+  null like with every other property not found? Like when using \"bla.bli.blo\" as
+  a lookup string and there is no bla field and no getBla() method?\n\nSo this method
+  should rather be:\n\norg.apache.wicket.util.lang.PropertyResolver$ListGetSet.getValue():\n\n\t\t/**\n\t\t
+  * @see org.apache.wicket.util.lang.PropertyResolver.IGetAndSet#getValue(java.lang.Object)\n\t\t
+  */\n\t\tpublic Object getValue(Object object)\n\t\t{\n\t\t\tList list = (List) object;\n\t\t\tif
+  (index >= list.size()) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\treturn list.get(index);\n\t\t}"

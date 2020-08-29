@@ -1,0 +1,10 @@
+---
+BugID: OAK-782
+Summary: 'MemoryNodeBuilder.setNode() loses property values '
+Description: |-
+  {code}
+  builder.setNode("a", nodeA);
+  builder.child("a").setProperty(...);
+  {code}
+
+  After the 2nd line executed, properties initially present on {{nodeA}} are gone on {{builder.getNodeState()}}.

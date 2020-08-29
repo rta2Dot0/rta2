@@ -1,0 +1,10 @@
+---
+BugID: LOG4J2-813
+Summary: MarkerManager Log4jMarker.hasParents() returns opposite of correct result
+Description: "Log4JMarker.hasParents() will return false when the marker has parents,
+  and true when it has none. \n\nThe javadoc in the Marker interface indicates it
+  should function the other way around: \n{quote}\n\"Indicates whether this Marker
+  has references to any other Markers.  Return true if the Marker has parent Markers\"\n{quote}\n\nThe
+  code for the implementation (that I could find) demonstrates that it would function
+  in the opposite way as it is described in that javadoc: \n{code}\n@Override \npublic
+  boolean hasParents() { \n     return this.parents == null; \n}\n{code}"

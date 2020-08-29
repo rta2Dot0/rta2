@@ -1,0 +1,9 @@
+---
+BugID: OAK-537
+Summary: The Property2Index eagerly and unnecessarily fetches all data
+Description: |
+  Currently, the Property2Index (as well as the PropertyIndex and the NodeTypeIndex) loads all paths into a hash set. This is even the case for the getCost operation, which should be fast and therefore not load too much data.
+
+  This strategy can cause ouf-of-memory if the result is too big. Also, loading all data is not necessary unless the user reads all rows.
+
+  Instead, the index should only load data on demand. Also, the getCost operation should only estimate the number of read nodes, and not actually read the data.

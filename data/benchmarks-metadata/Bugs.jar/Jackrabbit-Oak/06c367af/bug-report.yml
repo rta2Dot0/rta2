@@ -1,0 +1,12 @@
+---
+BugID: OAK-4300
+Summary: Cost per entry for Lucene index of type v1 should be higher than that of
+  v2
+Description: |-
+  Currently default cost per entry for Lucene index of type
+  # v1 - which uses query time aggregation
+  # v2 - which uses index time aggregation
+
+  Are same. However given that query time aggregation would require more effort it should result in a higher cost per entry.
+
+  This fact impacts the result in cases like OAK-2081 (see last few comments) where with usage of limits both index are currently considered equals

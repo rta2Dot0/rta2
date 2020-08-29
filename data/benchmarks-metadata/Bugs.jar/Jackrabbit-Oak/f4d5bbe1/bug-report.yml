@@ -1,0 +1,6 @@
+---
+BugID: OAK-2308
+Summary: Incorrect recovery of _lastRev for branch commit
+Description: The recovery process for _lastRevs is incorrect for branch commits. It
+  propagates the revision of the commit to the branch up to the root node instead
+  of the revision of the merge for the changes.

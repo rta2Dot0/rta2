@@ -1,0 +1,346 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oak upgrade 1.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-core/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-parent/1.4-SNAPSHOT/maven-metadata.xml (604 B at 1.7 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-commons/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.1 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-blob/1.4-SNAPSHOT/maven-metadata.xml (1.4 kB at 4.3 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/jackrabbit/oak-jcr/1.4-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (pre-unit-test) @ oak-upgrade ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] test.opts.coverage set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.4:process (default) @ oak-upgrade ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ oak-upgrade ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_64712735_java-8/oak-upgrade/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ oak-upgrade ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ oak-upgrade ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ oak-upgrade ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ oak-upgrade ---
+[INFO] Surefire report directory: /scratch/tmp-rta/Bugs.jar_Jackrabbit-Oak_64712735_java-8/oak-upgrade/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 2.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 147 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 1.2 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.jackrabbit.oak.upgrade.IncludeExcludeUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 88.206 sec
+Running org.apache.jackrabbit.oak.upgrade.TickerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.apache.jackrabbit.oak.upgrade.CopyVersionHistorySidegradeTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 46.013 sec
+Running org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest
+Tests run: 10, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 166.925 sec <<< FAILURE!
+onlyReferenced(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest)  Time elapsed: 10.959 sec  <<< ERROR!
+javax.jcr.RepositoryException: Failed to copy content
+	at org.apache.jackrabbit.oak.upgrade.RepositoryUpgrade.copy(RepositoryUpgrade.java:469)
+	at org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest.performCopy(CopyVersionHistoryTest.java:229)
+	at org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest.onlyReferenced(CopyVersionHistoryTest.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.IllegalStateException: Unable to access child node 33
+	at org.apache.jackrabbit.oak.upgrade.JackrabbitNodeState.getChildNode(JackrabbitNodeState.java:306)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionHistoryUtil.getVersionHistoryNodeState(VersionHistoryUtil.java:44)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionCopier.copyVersionHistory(VersionCopier.java:84)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionableEditor.copyVersionHistory(VersionableEditor.java:143)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionableEditor.childNodeAdded(VersionableEditor.java:118)
+	at org.apache.jackrabbit.oak.spi.commit.CompositeEditor.childNodeAdded(CompositeEditor.java:108)
+	at org.apache.jackrabbit.oak.spi.commit.EditorDiff.childNodeAdded(EditorDiff.java:116)
+	at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:161)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeState.compareAgainstBaseState(MemoryNodeState.java:126)
+	at org.apache.jackrabbit.oak.spi.commit.EditorDiff.childNodeAdded(EditorDiff.java:125)
+	at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:161)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeState.compareAgainstBaseState(MemoryNodeState.java:126)
+	at org.apache.jackrabbit.oak.spi.commit.EditorDiff.process(EditorDiff.java:52)
+	at org.apache.jackrabbit.oak.spi.commit.EditorHook.processCommit(EditorHook.java:55)
+	at org.apache.jackrabbit.oak.upgrade.RepositoryUpgrade$LoggingCompositeHook.processCommit(RepositoryUpgrade.java:878)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeStore$MemoryNodeStoreBranch.merge(MemoryNodeStore.java:286)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeStore.merge(MemoryNodeStore.java:131)
+	at org.apache.jackrabbit.oak.upgrade.RepositoryUpgrade.copy(RepositoryUpgrade.java:465)
+	... 35 more
+Caused by: org.apache.jackrabbit.core.state.ItemStateException: failed to read bundle (stacktrace on DEBUG log level): 6d4109ba-77d2-40a8-adf9-0a05e34920e0: java.sql.SQLException: Data source is closed
+	at org.apache.jackrabbit.core.persistence.pool.BundleDbPersistenceManager.loadBundle(BundleDbPersistenceManager.java:902)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.jackrabbit.oak.upgrade.BundleLoader.loadBundle(BundleLoader.java:62)
+	at org.apache.jackrabbit.oak.upgrade.JackrabbitNodeState.createChildNodeState(JackrabbitNodeState.java:360)
+	at org.apache.jackrabbit.oak.upgrade.JackrabbitNodeState.getChildNode(JackrabbitNodeState.java:303)
+	... 52 more
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1362)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper.getConnection(ConnectionHelper.java:439)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper.reallyExec(ConnectionHelper.java:392)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper$3.call(ConnectionHelper.java:379)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper$3.call(ConnectionHelper.java:375)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper$RetryManager.doTry(ConnectionHelper.java:543)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper.exec(ConnectionHelper.java:375)
+	at org.apache.jackrabbit.core.persistence.pool.BundleDbPersistenceManager.loadBundle(BundleDbPersistenceManager.java:885)
+	... 58 more
+
+onlyReferenced(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest)  Time elapsed: 10.96 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest.closeRepository(CopyVersionHistoryTest.java:240)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:36)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+onlyReferencedAfterDate(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest)  Time elapsed: 0.816 sec  <<< ERROR!
+javax.jcr.RepositoryException: Failed to copy content
+	at org.apache.jackrabbit.oak.upgrade.RepositoryUpgrade.copy(RepositoryUpgrade.java:469)
+	at org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest.performCopy(CopyVersionHistoryTest.java:229)
+	at org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest.onlyReferencedAfterDate(CopyVersionHistoryTest.java:163)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.IllegalStateException: Unable to access child node 33
+	at org.apache.jackrabbit.oak.upgrade.JackrabbitNodeState.getChildNode(JackrabbitNodeState.java:306)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionHistoryUtil.getVersionHistoryNodeState(VersionHistoryUtil.java:44)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionCopier.copyVersionHistory(VersionCopier.java:84)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionableEditor.copyVersionHistory(VersionableEditor.java:143)
+	at org.apache.jackrabbit.oak.upgrade.version.VersionableEditor.childNodeAdded(VersionableEditor.java:118)
+	at org.apache.jackrabbit.oak.spi.commit.CompositeEditor.childNodeAdded(CompositeEditor.java:108)
+	at org.apache.jackrabbit.oak.spi.commit.EditorDiff.childNodeAdded(EditorDiff.java:116)
+	at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:161)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeState.compareAgainstBaseState(MemoryNodeState.java:126)
+	at org.apache.jackrabbit.oak.spi.commit.EditorDiff.childNodeAdded(EditorDiff.java:125)
+	at org.apache.jackrabbit.oak.plugins.memory.EmptyNodeState.compareAgainstEmptyState(EmptyNodeState.java:161)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeState.compareAgainstBaseState(MemoryNodeState.java:126)
+	at org.apache.jackrabbit.oak.spi.commit.EditorDiff.process(EditorDiff.java:52)
+	at org.apache.jackrabbit.oak.spi.commit.EditorHook.processCommit(EditorHook.java:55)
+	at org.apache.jackrabbit.oak.upgrade.RepositoryUpgrade$LoggingCompositeHook.processCommit(RepositoryUpgrade.java:878)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeStore$MemoryNodeStoreBranch.merge(MemoryNodeStore.java:286)
+	at org.apache.jackrabbit.oak.plugins.memory.MemoryNodeStore.merge(MemoryNodeStore.java:131)
+	at org.apache.jackrabbit.oak.upgrade.RepositoryUpgrade.copy(RepositoryUpgrade.java:465)
+	... 35 more
+Caused by: org.apache.jackrabbit.core.state.ItemStateException: failed to read bundle (stacktrace on DEBUG log level): 6d4109ba-77d2-40a8-adf9-0a05e34920e0: java.sql.SQLException: Data source is closed
+	at org.apache.jackrabbit.core.persistence.pool.BundleDbPersistenceManager.loadBundle(BundleDbPersistenceManager.java:902)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.jackrabbit.oak.upgrade.BundleLoader.loadBundle(BundleLoader.java:62)
+	at org.apache.jackrabbit.oak.upgrade.JackrabbitNodeState.createChildNodeState(JackrabbitNodeState.java:360)
+	at org.apache.jackrabbit.oak.upgrade.JackrabbitNodeState.getChildNode(JackrabbitNodeState.java:303)
+	... 52 more
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1362)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper.getConnection(ConnectionHelper.java:439)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper.reallyExec(ConnectionHelper.java:392)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper$3.call(ConnectionHelper.java:379)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper$3.call(ConnectionHelper.java:375)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper$RetryManager.doTry(ConnectionHelper.java:543)
+	at org.apache.jackrabbit.core.util.db.ConnectionHelper.exec(ConnectionHelper.java:375)
+	at org.apache.jackrabbit.core.persistence.pool.BundleDbPersistenceManager.loadBundle(BundleDbPersistenceManager.java:885)
+	... 58 more
+
+onlyReferencedAfterDate(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest)  Time elapsed: 0.817 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest.closeRepository(CopyVersionHistoryTest.java:240)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:36)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running org.apache.jackrabbit.oak.upgrade.RepeatedRepositoryUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 95.503 sec
+Running org.apache.jackrabbit.oak.upgrade.CopyNodeTypesUpgradeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.701 sec
+Running org.apache.jackrabbit.oak.upgrade.PrivilegeUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.853 sec
+Running org.apache.jackrabbit.oak.upgrade.nodestate.NodeStateCopierTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+Running org.apache.jackrabbit.oak.upgrade.nodestate.FilteringNodeStateTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec
+Running org.apache.jackrabbit.oak.upgrade.RepeatedRepositorySidegradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.822 sec
+Running org.apache.jackrabbit.oak.upgrade.UpgradeFromTwoSourcesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.232 sec
+Running org.apache.jackrabbit.oak.upgrade.blob.LengthCachingDataStoreTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 sec
+Running org.apache.jackrabbit.oak.upgrade.RepositoryGroupMemberSplitUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.114 sec
+Running org.apache.jackrabbit.oak.upgrade.RepositoryGroupMemberUpgradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.346 sec
+Running org.apache.jackrabbit.oak.upgrade.IncludeExcludeSidegradeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.861 sec
+Running org.apache.jackrabbit.oak.upgrade.RepositoryUpgradeTest
+JVM seems rogue. Kill 70833!
+Terminate 70833!
+Killed 70833! at /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre/bin/java line 73.
+
+Results :
+
+Tests in error: 
+  onlyReferenced(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest): Failed to copy content
+  onlyReferenced(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest)
+  onlyReferencedAfterDate(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest): Failed to copy content
+  onlyReferencedAfterDate(org.apache.jackrabbit.oak.upgrade.CopyVersionHistoryTest)
+
+Tests run: 83, Failures: 0, Errors: 4, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:48 min
+[INFO] Finished at: 2020-03-13T13:49:49-07:00
+[INFO] Final Memory: 26M/1040M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project oak-upgrade: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test failed: The forked VM terminated without saying properly goodbye. VM crash or System.exit called ? -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException

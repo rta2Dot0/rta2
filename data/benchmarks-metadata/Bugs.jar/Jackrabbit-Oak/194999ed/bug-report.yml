@@ -1,0 +1,7 @@
+---
+BugID: OAK-3333
+Summary: SplitOperations purges _commitRoot entries too eagerly
+Description: |-
+  OAK-2528 introduced purging of _commitRoot entries without associated local changes on the document. Those _commitRoot entries are created when a child nodes is added and the _children flag is touched on the parent.
+
+  The purge operation is too eager and removes all such entries, which may result in an undetected hierarchy conflict.

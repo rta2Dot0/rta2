@@ -1,0 +1,28 @@
+---
+BugID: CAMEL-4542
+Summary: Can't find splitter bean in registry using multiple camel contexts with "vm"
+  endpoint
+Description: "The splitter component can use a bean with a \"split method\". It seems
+  that this \"split bean\" is handled as expression and resolved lately using Camel
+  Context from current exchange.\n\nIf I send an exchange using a separate CamelContext
+  (\"client\")\n\n<camelContext id=\"client\" xmlns=\"http://camel.apache.org/schema/spring\">\n</camelContext>\n\nto
+  a route defined in another CamelContext (\"server\") using in-memory transport like
+  \"direct\" or \"vm\"\n\n<camelContext id=\"server\" xmlns=\"http://camel.apache.org/schema/spring\">\n\n
+  \  <route id=\"route02\" trace=\"false\" streamCache=\"false\">\n     <from uri=\"vm:route02\"/>\n
+  \    <split>\n       <method bean   =\"stringLineSplitter\" method=\"split\"/>\n
+  \      <log    message=\"before sending: ${body}\"/>\n       <inOut  uri    =\"vm:route04\"/>\n
+  \      <log    message=\"after sending\"/>\n     </split>\n     <to uri=\"mock:route02\"/>\n
+  \  </route>\n\n</camelContext>\n\nthe test fails with \n\n\"Cannot find class: stringLineSplitter\"
+  (Camel 2.8.0). \n\"org.apache.camel.NoSuchBeanException - No bean could be found
+  in the registry for: stringLineSplitter\" (Camel 2.9-SNAPSHOT)\n\nIf I understood
+  Camel right it fails\nbecause it tries to resolve this bean based on client Camel
+  Context\nwhich is still set at the current exchange send from \"client\" to \"server\"
+  but it\ndoesn't contain the bean.\n\nIf I send an exchange using same \"client\"
+  CamelContext to another route in\n\"server\" CamelContext involving \"external\"
+  components like \"jms\" (ActiveMQ)\n\n<camelContext id=\"server\" xmlns=\"http://camel.apache.org/schema/spring\">\n\n
+  \  <route id=\"route03\" trace=\"false\" streamCache=\"false\">\n     <from uri=\"jms:queue:route03\"/>\n
+  \    <split>\n       <method bean   =\"stringLineSplitter\" method=\"split\"/>\n
+  \      <log    message=\"before sending: ${body}\"/>\n       <inOut  uri    =\"vm:route04\"/>\n
+  \      <log    message=\"after sending\"/>\n     </split>\n     <to uri=\"mock:route03\"/>\n
+  \  </route>\n\n</camelContext>\n\nthe test passed successfully. It seems that \"jms\"
+  component creates a\nnew exchange using \"server\" CamelContext.\n"

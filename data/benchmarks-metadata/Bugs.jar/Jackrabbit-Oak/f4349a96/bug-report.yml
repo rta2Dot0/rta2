@@ -1,0 +1,29 @@
+---
+BugID: OAK-3424
+Summary: ClusterNodeInfo does not pick an existing entry on startup
+Description: |
+  When the {{DocumentNodeStore}} starts up, it attempts to find an entry that matches the current instance (which is defined by something based on network interface address and the current working directory).
+
+  However, an additional check is done when the cluster lease end time hasn't been reached, in which case the entry is skipped (assuming it belongs to a different instance), and the scan continues. When no other entry is found, a new one is created.
+
+  So why would we *ever* consider instances with matching instance information to be different? As far as I can tell the answer is: for unit testing.
+
+  But...
+
+  With the current assignment very weird things can happen, and I believe I see exactly this happening in a customer problem I'm investigating. The sequence is:
+
+  1) First system startup, cluster node id 1 is assigned
+
+  2) System crashes or was crashed
+
+  3) System restarts within the lease time (120s?), a new cluster node id is assigned
+
+  4) System shuts down, and gets restarted after a longer interval: cluster id 1 is used again, and system starts {{MissingLastRevRecovery}}, despite the previous shutdown having been clean
+
+  So what we see is that the system starts up with varying cluster node ids, and recovery processes may run with no correlation to what happened before.
+
+  Proposal:
+
+  a) Make {{ClusterNodeInfo.createInstance()}} much more verbose, so that the default system log contains sufficient information to understand why a certain cluster node id was picked.
+
+  b) Drop the logic that skips entries with non-expired leases, so that we get a one-to-one relation between instance ids and cluster node ids. For the unit tests that currently rely on this logic, switch to APIs where the test setup picks the cluster node id.

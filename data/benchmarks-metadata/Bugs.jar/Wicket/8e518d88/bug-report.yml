@@ -1,0 +1,13 @@
+---
+BugID: WICKET-5226
+Summary: CDI integration fails in Glassfish 4.0 with WELD-000070
+Description: "When CDI is configured in the Application and a page has a non-static
+  inner class the page throws exception, regardless of whether there are any injected
+  fields.\n\nCaused by: org.jboss.weld.exceptions.DefinitionException: WELD-000070
+  Simple bean [EnhancedAnnotatedTypeImpl] private  class com.inversebit.HomePage$AForm
+  cannot be a non-static inner class\n\tat org.jboss.weld.injection.producer.BasicInjectionTarget.checkType(BasicInjectionTarget.java:81)\n\tat
+  org.jboss.weld.injection.producer.BasicInjectionTarget.<init>(BasicInjectionTarget.java:69)\n\tat
+  org.jboss.weld.injection.producer.BeanInjectionTarget.<init>(BeanInjectionTarget.java:52)\n\tat
+  org.jboss.weld.manager.InjectionTargetFactoryImpl.createInjectionTarget(InjectionTargetFactoryImpl.java:95)\n\tat
+  org.jboss.weld.manager.InjectionTargetFactoryImpl.createInjectionTarget(InjectionTargetFactoryImpl.java:78)\n\t...
+  65 more\n"

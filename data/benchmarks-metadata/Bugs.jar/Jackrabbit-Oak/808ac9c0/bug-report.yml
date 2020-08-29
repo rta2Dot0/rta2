@@ -1,0 +1,8 @@
+---
+BugID: OAK-1432
+Summary: 'Query: use "union" for complex XPath queries that use multiple "or"'
+Description: "The following XPath query is converted to a union, however there is
+  still an \"or\" in the converted query, which means the query still can't use all
+  indexes and has to traverse the whole repository:\n\n{noformat}\n/jcr:root/a/b//element(*,
+  nt:unstructured)[(\n(@sling:resourceType = 'x' \nor @sling:resourceType = 'dam/collection')
+  \nor @sling:resourceSuperType = 'dam/collection')] \n{noformat}"

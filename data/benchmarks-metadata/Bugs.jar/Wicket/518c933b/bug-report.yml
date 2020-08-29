@@ -1,0 +1,11 @@
+---
+BugID: WICKET-5114
+Summary: Url#toString(StringMode.FULL) throws exception if a segment contains two
+  dots
+Description: |+
+  When invoking toString(StringMode.FULL) for a URL like
+  /mountPoint/whatever.../
+  an IllegalStateException is thrown with message: Cannot render this url in FULL mode because it has a `..` segment: /mountPoint/whatever.../
+
+  The method does not actually check for `..` segments but rather checks whether path.contains("..")
+

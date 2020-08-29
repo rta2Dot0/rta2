@@ -1,0 +1,522 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.8.0_181/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building flink-streaming-java 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-core/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-core/1.0-SNAPSHOT/maven-metadata.xml (988 B at 2.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-parent/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-parent/1.0-SNAPSHOT/maven-metadata.xml (605 B at 1.8 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-annotations/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-annotations/1.0-SNAPSHOT/maven-metadata.xml (995 B at 3.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop2/1.0-SNAPSHOT/maven-metadata.xml (786 B at 2.4 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-shaded-hadoop/1.0-SNAPSHOT/maven-metadata.xml (612 B at 1.8 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime_2.10/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-runtime_2.10/1.0-SNAPSHOT/maven-metadata.xml (996 B at 3.0 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-java/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-java/1.0-SNAPSHOT/maven-metadata.xml (988 B at 2.3 kB/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-clients_2.10/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-clients_2.10/1.0-SNAPSHOT/maven-metadata.xml (996 B at 123 B/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-optimizer_2.10/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-optimizer_2.10/1.0-SNAPSHOT/maven-metadata.xml (998 B at 595 B/s)
+[INFO] Downloading: http://repository.apache.org/snapshots/org/apache/flink/flink-test-utils_2.10/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.apache.org/snapshots/org/apache/flink/flink-test-utils_2.10/1.0-SNAPSHOT/maven-metadata.xml (999 B at 85 B/s)
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.16:check (validate) @ flink-streaming-java_2.10 ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ flink-streaming-java_2.10 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ flink-streaming-java_2.10 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flink-streaming-java_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ flink-streaming-java_2.10 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 216 source files to /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/target/classes
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/operators/AbstractUdfStreamOperator.java:[187,108] unchecked cast
+  required: org.apache.flink.streaming.api.operators.OutputTypeConfigurable<OUT>
+  found:    F
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/KeyedStream.java:[135,119] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<T,R>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<R>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/CoGroupedStreams.java:[345,32] unchecked conversion
+  required: java.lang.Class<org.apache.flink.streaming.api.datastream.CoGroupedStreams.TaggedUnion<T1,T2>>
+  found:    java.lang.Class
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/util/FieldAccessor.java:[125,66] unchecked method invocation: method getInfoFor in class org.apache.flink.api.common.typeinfo.BasicTypeInfo is applied to given types
+  required: java.lang.Class<X>
+  found: java.lang.Class
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/util/FieldAccessor.java:[125,107] unchecked conversion
+  required: java.lang.Class<X>
+  found:    java.lang.Class
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/operators/windowing/EvictingWindowOperator.java:[72,48] unchecked method invocation: method evict in interface org.apache.flink.streaming.api.windowing.evictors.Evictor is applied to given types
+  required: java.lang.Iterable<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<T>>,int,W
+  found: java.lang.Iterable,int,W
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/operators/windowing/EvictingWindowOperator.java:[72,49] unchecked conversion
+  required: java.lang.Iterable<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<T>>
+  found:    java.lang.Iterable
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/functions/source/FromElementsFunction.java:[64,55] Possible heap pollution from parameterized vararg type T
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/operators/windowing/EvictingNonKeyedWindowOperator.java:[66,48] unchecked method invocation: method evict in interface org.apache.flink.streaming.api.windowing.evictors.Evictor is applied to given types
+  required: java.lang.Iterable<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<T>>,int,W
+  found: java.lang.Iterable,int,W
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/operators/windowing/EvictingNonKeyedWindowOperator.java:[66,49] unchecked conversion
+  required: java.lang.Iterable<org.apache.flink.streaming.runtime.streamrecord.StreamRecord<T>>
+  found:    java.lang.Iterable
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ flink-streaming-java_2.10 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ flink-streaming-java_2.10 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 116 source files to /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/target/test-classes
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[72,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[91,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[114,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[138,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[164,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[189,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[215,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowTranslationTest.java:[242,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/TimeWindowTranslationTest.java:[64,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/TimeWindowTranslationTest.java:[83,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/TimeWindowTranslationTest.java:[108,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/TimeWindowTranslationTest.java:[126,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorTest.java:[435,64] unchecked call to Factory(org.apache.flink.api.common.functions.ReduceFunction<T>) as a member of the raw type org.apache.flink.streaming.runtime.operators.windowing.buffers.PreAggregatingHeapWindowBuffer.Factory
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/StreamExecutionEnvironmentTest.java:[130,68] unchecked cast
+  required: org.apache.flink.streaming.api.functions.source.SourceFunction<T>
+  found:    capture#1 of ?
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/graph/StreamGraphGeneratorTest.java:[256,39] unchecked method invocation: method collect in interface org.apache.flink.util.Collector is applied to given types
+  required: T
+  found: org.apache.flink.streaming.runtime.streamrecord.StreamRecord
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/graph/StreamGraphGeneratorTest.java:[256,40] unchecked conversion
+  required: T
+  found:    org.apache.flink.streaming.runtime.streamrecord.StreamRecord
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/graph/StreamGraphGeneratorTest.java:[261,39] unchecked method invocation: method collect in interface org.apache.flink.util.Collector is applied to given types
+  required: T
+  found: org.apache.flink.streaming.runtime.streamrecord.StreamRecord
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/graph/StreamGraphGeneratorTest.java:[261,40] unchecked conversion
+  required: T
+  found:    org.apache.flink.streaming.runtime.streamrecord.StreamRecord
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/DataStreamTest.java:[762,72] unchecked call to <OUT>map(org.apache.flink.streaming.api.functions.co.CoMapFunction<IN1,IN2,OUT>) as a member of the raw type org.apache.flink.streaming.api.datastream.ConnectedStreams
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/DataStreamTest.java:[775,30] unchecked method invocation: method addSink in class org.apache.flink.streaming.api.datastream.DataStream is applied to given types
+  required: org.apache.flink.streaming.api.functions.sink.SinkFunction<T>
+  found: org.apache.flink.streaming.util.NoOpSink
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/DataStreamTest.java:[775,31] unchecked conversion
+  required: org.apache.flink.streaming.api.functions.sink.SinkFunction<T>
+  found:    org.apache.flink.streaming.util.NoOpSink
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/AllWindowTranslationTest.java:[69,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/AllWindowTranslationTest.java:[92,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/AllWindowTranslationTest.java:[117,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/AllWindowTranslationTest.java:[141,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/AllWindowTranslationTest.java:[166,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/AllWindowTranslationTest.java:[192,203] unchecked cast
+  required: org.apache.flink.streaming.api.transformations.OneInputTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>,org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+  found:    org.apache.flink.streaming.api.transformations.StreamTransformation<org.apache.flink.api.java.tuple.Tuple2<java.lang.String,java.lang.Integer>>
+[WARNING] /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/NonKeyedWindowOperatorTest.java:[403,64] unchecked call to Factory(org.apache.flink.api.common.functions.ReduceFunction<T>) as a member of the raw type org.apache.flink.streaming.runtime.operators.windowing.buffers.PreAggregatingHeapWindowBuffer.Factory
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ flink-streaming-java_2.10 ---
+[INFO] Surefire report directory: /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom (2.5 kB at 18 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom (2.5 kB at 182 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar (68 kB at 2.2 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldFromTupleTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.streaming.api.operators.StreamCounterTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.partitioner.ShufflePartitionerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.operators.StreamProjectTest
+Running org.apache.flink.streaming.api.operators.co.CoStreamFlatMapTest
+Running org.apache.flink.streaming.api.streamtask.StreamIterationHeadTest
+Running org.apache.flink.streaming.runtime.partitioner.ForwardPartitionerTest
+Running org.apache.flink.streaming.api.functions.windowing.delta.extractor.ArrayFromTupleTest
+Running org.apache.flink.streaming.api.operators.FoldWindowFunctionTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.streaming.api.functions.sink.SocketClientSinkTest
+Running org.apache.flink.streaming.api.operators.StreamFilterTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.streaming.api.functions.PrintSinkFunctionTest
+Running org.apache.flink.streaming.runtime.operators.windowing.AggregatingAlignedProcessingTimeWindowOperatorTest
+Running org.apache.flink.streaming.runtime.streamrecord.StreamRecordSerializerTest
+Running org.apache.flink.streaming.api.graph.SlotAllocationTest
+Running org.apache.flink.streaming.runtime.io.BufferSpillerTest
+Running org.apache.flink.streaming.runtime.partitioner.GlobalPartitionerTest
+Running org.apache.flink.streaming.api.operators.StreamGroupedFoldTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.456 sec - in org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldFromTupleTest
+Running org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldFromArrayTest
+Running org.apache.flink.streaming.runtime.io.BarrierTrackerTest
+Running org.apache.flink.streaming.runtime.tasks.StreamTaskTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.operators.StreamMapTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.io.BarrierBufferTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.operators.windowing.KeyMapPutTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.graph.TranslationTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.operators.windowing.EvictingWindowOperatorTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.operators.windowing.WindowOperatorTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.PartitionerTest
+Running org.apache.flink.streaming.api.operators.co.CoStreamMapTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.streaming.runtime.io.BarrierBufferMassiveRandomTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.util.TypeInformationSerializationSchemaTest
+Running org.apache.flink.streaming.api.complex.ComplexIntegrationTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.collector.OutputSelectorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.streaming.api.collector.OutputSelectorTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.SourceFunctionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.streaming.api.SourceFunctionTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.operators.windowing.KeyMapPutIfAbsentTest
+Running org.apache.flink.streaming.api.StreamExecutionEnvironmentTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Running org.apache.flink.streaming.api.DataStreamTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.operators.windowing.EvictingNonKeyedWindowOperatorTest
+Running org.apache.flink.streaming.util.FieldAccessorTest
+Running org.apache.flink.streaming.api.operators.co.SelfConnectionTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 sec - in org.apache.flink.streaming.runtime.operators.windowing.WindowOperatorTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.TypeFillTest
+Running org.apache.flink.streaming.util.keys.ArrayKeySelectorTest
+Running org.apache.flink.streaming.api.windowing.deltafunction.CosineDistanceTest
+Running org.apache.flink.streaming.api.collector.DirectedOutputTest
+Running org.apache.flink.streaming.api.functions.FromElementsFunctionTest
+Running org.apache.flink.streaming.api.functions.windowing.delta.extractor.ConcatenatedExtractTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.apache.flink.streaming.util.keys.ArrayKeySelectorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.streaming.api.windowing.deltafunction.CosineDistanceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.flink.streaming.util.FieldAccessorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in org.apache.flink.streaming.api.functions.windowing.delta.extractor.ConcatenatedExtractTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldsFromTupleTest
+Running org.apache.flink.streaming.api.AggregationFunctionTest
+Running org.apache.flink.streaming.api.ChainedRuntimeContextTest
+Running org.apache.flink.streaming.runtime.partitioner.RebalancePartitionerTest
+Running org.apache.flink.streaming.api.operators.StreamFlatMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldsFromTupleTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.streaming.api.operators.StreamFlatMapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.apache.flink.streaming.runtime.partitioner.RebalancePartitionerTest
+Running org.apache.flink.streaming.runtime.operators.windowing.NonKeyedWindowOperatorTest
+Running org.apache.flink.streaming.api.OutputSplitterTest
+Running org.apache.flink.streaming.api.functions.source.SocketTextStreamFunctionTest
+Running org.apache.flink.streaming.runtime.partitioner.HashPartitionerTest
+Running org.apache.flink.streaming.api.graph.StreamingJobGraphGeneratorTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.graph.StreamGraphGeneratorTest
+Running org.apache.flink.streaming.runtime.operators.windowing.AccumulatingAlignedProcessingTimeWindowOperatorTest
+Running org.apache.flink.streaming.runtime.tasks.SourceStreamTaskTest
+Running org.apache.flink.streaming.graph.StreamingJobGraphGeneratorNodeHashTest
+Running org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldsFromArrayTest
+Running org.apache.flink.streaming.api.windowing.deltafunction.EuclideanDistanceTest
+Running org.apache.flink.streaming.runtime.operators.windowing.AllWindowTranslationTest
+Running org.apache.flink.streaming.api.streamtask.StreamVertexTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.IterateTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.236 sec - in org.apache.flink.streaming.runtime.io.BarrierBufferTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.io.SpilledBufferOrEventSequenceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.flink.streaming.api.operators.co.CoStreamMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.flink.streaming.runtime.operators.windowing.EvictingWindowOperatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.846 sec - in org.apache.flink.streaming.api.operators.co.CoStreamFlatMapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 sec - in org.apache.flink.streaming.api.operators.StreamMapTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.037 sec - in org.apache.flink.streaming.runtime.io.BarrierTrackerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.034 sec - in org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldFromArrayTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.027 sec - in org.apache.flink.streaming.api.operators.StreamGroupedFoldTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.001 sec - in org.apache.flink.streaming.api.graph.SlotAllocationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.019 sec - in org.apache.flink.streaming.runtime.partitioner.GlobalPartitionerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in org.apache.flink.streaming.api.graph.StreamingJobGraphGeneratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.957 sec - in org.apache.flink.streaming.api.functions.PrintSinkFunctionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.999 sec - in org.apache.flink.streaming.runtime.streamrecord.StreamRecordSerializerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.929 sec - in org.apache.flink.streaming.api.functions.sink.SocketClientSinkTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.944 sec - in org.apache.flink.streaming.api.operators.StreamFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.891 sec - in org.apache.flink.streaming.api.operators.FoldWindowFunctionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.streaming.runtime.partitioner.ShufflePartitionerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 sec - in org.apache.flink.streaming.api.operators.StreamCounterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.877 sec - in org.apache.flink.streaming.api.functions.windowing.delta.extractor.ArrayFromTupleTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.824 sec - in org.apache.flink.streaming.runtime.partitioner.ForwardPartitionerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in org.apache.flink.streaming.runtime.partitioner.HashPartitionerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec - in org.apache.flink.streaming.api.windowing.deltafunction.EuclideanDistanceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec - in org.apache.flink.streaming.api.graph.StreamGraphGeneratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec - in org.apache.flink.streaming.api.functions.windowing.delta.extractor.FieldsFromArrayTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.flink.streaming.runtime.io.SpilledBufferOrEventSequenceTest
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.api.CoStreamTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Running org.apache.flink.streaming.runtime.operators.windowing.WindowTranslationTest
+Running org.apache.flink.streaming.api.functions.source.FileMonitoringFunctionTest
+Running org.apache.flink.streaming.runtime.operators.windowing.KeyMapTest
+Running org.apache.flink.streaming.api.operators.StreamGroupedReduceTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in org.apache.flink.streaming.runtime.operators.windowing.NonKeyedWindowOperatorTest
+Running org.apache.flink.streaming.runtime.partitioner.BroadcastPartitionerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.flink.streaming.runtime.partitioner.BroadcastPartitionerTest
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 sec - in org.apache.flink.streaming.graph.StreamingJobGraphGeneratorNodeHashTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in org.apache.flink.streaming.api.operators.StreamGroupedReduceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 sec - in org.apache.flink.streaming.util.TypeInformationSerializationSchemaTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec - in org.apache.flink.streaming.api.functions.source.SocketTextStreamFunctionTest
+Running org.apache.flink.streaming.runtime.tasks.StreamTaskAsyncCheckpointTest
+Running org.apache.flink.streaming.runtime.io.StreamRecordWriterTest
+Running org.apache.flink.streaming.runtime.operators.StreamTaskTimerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 sec - in org.apache.flink.streaming.runtime.operators.windowing.EvictingNonKeyedWindowOperatorTest
+Running org.apache.flink.streaming.runtime.tasks.OneInputStreamTaskTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.391 sec - in org.apache.flink.streaming.api.AggregationFunctionTest
+Running org.apache.flink.streaming.runtime.tasks.TwoInputStreamTaskTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.507 sec - in org.apache.flink.streaming.api.functions.source.FileMonitoringFunctionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.897 sec - in org.apache.flink.streaming.api.streamtask.StreamIterationHeadTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.008 sec - in org.apache.flink.streaming.runtime.operators.windowing.TimeWindowTranslationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.223 sec - in org.apache.flink.streaming.graph.TranslationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.009 sec - in org.apache.flink.streaming.runtime.operators.windowing.WindowTranslationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.97 sec - in org.apache.flink.streaming.api.StreamExecutionEnvironmentTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.796 sec - in org.apache.flink.streaming.runtime.io.StreamRecordWriterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.1 sec - in org.apache.flink.streaming.api.TypeFillTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.241 sec - in org.apache.flink.streaming.api.ChainedRuntimeContextTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.337 sec - in org.apache.flink.streaming.api.DataStreamTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.346 sec - in org.apache.flink.streaming.api.functions.FromElementsFunctionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.402 sec - in org.apache.flink.streaming.runtime.operators.windowing.AllWindowTranslationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.359 sec - in org.apache.flink.streaming.api.operators.co.SelfConnectionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.334 sec - in org.apache.flink.streaming.api.CoStreamTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.097 sec - in org.apache.flink.streaming.runtime.tasks.StreamTaskAsyncCheckpointTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.386 sec - in org.apache.flink.streaming.api.collector.DirectedOutputTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.472 sec - in org.apache.flink.streaming.api.operators.StreamProjectTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.421 sec - in org.apache.flink.streaming.api.OutputSplitterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.496 sec - in org.apache.flink.streaming.api.streamtask.StreamVertexTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.807 sec - in org.apache.flink.streaming.runtime.io.BufferSpillerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.89 sec - in org.apache.flink.streaming.api.PartitionerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.505 sec - in org.apache.flink.streaming.runtime.operators.StreamTaskTimerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.646 sec - in org.apache.flink.streaming.runtime.tasks.OneInputStreamTaskTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.741 sec - in org.apache.flink.streaming.runtime.tasks.TwoInputStreamTaskTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.141 sec - in org.apache.flink.streaming.runtime.operators.windowing.KeyMapPutIfAbsentTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.264 sec - in org.apache.flink.streaming.runtime.tasks.SourceStreamTaskTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.873 sec - in org.apache.flink.streaming.runtime.operators.windowing.KeyMapPutTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.807 sec - in org.apache.flink.streaming.runtime.operators.windowing.KeyMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.962 sec - in org.apache.flink.streaming.runtime.io.BarrierBufferMassiveRandomTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.871 sec - in org.apache.flink.streaming.runtime.operators.windowing.AccumulatingAlignedProcessingTimeWindowOperatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 8.26 sec - in org.apache.flink.streaming.api.complex.ComplexIntegrationTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.7 sec - in org.apache.flink.streaming.runtime.operators.windowing.AggregatingAlignedProcessingTimeWindowOperatorTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.179 sec - in org.apache.flink.streaming.api.IterateTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 60.162 sec <<< FAILURE! - in org.apache.flink.streaming.runtime.tasks.StreamTaskTest
+testEarlyCanceling(org.apache.flink.streaming.runtime.tasks.StreamTaskTest)  Time elapsed: 60.134 sec  <<< FAILURE!
+java.lang.AssertionError: Task did not cancel
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertFalse(Assert.java:64)
+	at org.apache.flink.streaming.runtime.tasks.StreamTaskTest.testEarlyCanceling(StreamTaskTest.java:112)
+
+
+Results :
+
+Failed tests: 
+  StreamTaskTest.testEarlyCanceling:112 Task did not cancel
+
+Tests run: 243, Failures: 1, Errors: 0, Skipped: 5
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 04:26 min
+[INFO] Finished at: 2020-03-13T22:28:13-07:00
+[INFO] Final Memory: 41M/1113M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project flink-streaming-java_2.10: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /bam/scratch/tmp-rta/Bugs.jar_Flink_8fc7e7af_java-8/flink-streaming-java/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

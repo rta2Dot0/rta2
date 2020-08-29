@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5138
+Summary: Wicket does not correctly handle http OPTIONS requests
+Description: |-
+  currently these requests cause regular processing (page rendering), when in fact they should have a special response.
+
+  rendering the page in OPTIONS causes renderCount to be incremented and this messes with the subsequent request to the same url via a GET or POST

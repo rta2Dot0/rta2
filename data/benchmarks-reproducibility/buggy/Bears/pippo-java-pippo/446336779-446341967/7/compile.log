@@ -1,0 +1,2556 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Pippo Parent
+[INFO] Pippo Core
+[INFO] Pippo Server Parent
+[INFO] Pippo Jetty
+[INFO] Pippo Template Parent
+[INFO] Pippo Freemarker
+[INFO] Pippo Content Type Parent
+[INFO] Pippo Gson
+[INFO] Pippo
+[INFO] Pippo Quickstart Archetype
+[INFO] Pippo Test
+[INFO] Pippo Session Parent
+[INFO] Pippo Session
+[INFO] Pippo Session Cookie
+[INFO] Pippo Session Ehcache2
+[INFO] Pippo Session Ehcache3
+[INFO] Pippo Session Hazelcast
+[INFO] Pippo Session Infinispan
+[INFO] Pippo Session JCache
+[INFO] Pippo Session JDBC
+[INFO] Pippo Session Jedis
+[INFO] Pippo Session MongoDB
+[INFO] Pippo Session Spymemcached
+[INFO] Pippo Session Xmemcached
+[INFO] Pippo Metrics Parent
+[INFO] Pippo Metrics
+[INFO] Pippo Metrics Graphite
+[INFO] Pippo Metrics InfluxDB
+[INFO] Pippo Metrics Librato
+[INFO] Pippo Metrics Prometheus
+[INFO] Pippo Groovy
+[INFO] Pippo Jade
+[INFO] Pippo Pebble
+[INFO] Pippo Trimou
+[INFO] Pippo Velocity
+[INFO] Pippo CSV
+[INFO] Pippo Fastjson
+[INFO] Pippo Jackson
+[INFO] Pippo JAXB
+[INFO] Pippo SnakeYAML
+[INFO] Pippo XStream
+[INFO] Pippo Tjws
+[INFO] Pippo Tomcat
+[INFO] Pippo Undertow
+[INFO] Pippo Controller Parent
+[INFO] Pippo Controller
+[INFO] Pippo Guice
+[INFO] Pippo Spring
+[INFO] Pippo Weld
+[INFO] Pippo Css Parent
+[INFO] Pippo Less4j
+[INFO] Pippo Sass
+[INFO] Pippo Security Parent
+[INFO] Pippo Pac4j
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.3/maven-archiver-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.3/maven-archiver-2.3.pom (3.7 kB at 2.1 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom (723 B at 1.3 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (8.8 kB at 418 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0/maven-model-2.0.pom (2.4 kB at 784 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0/maven-project-2.0.pom (1.6 kB at 2.8 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0/maven-profile-2.0.pom (1.4 kB at 888 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.pom (1.3 kB at 15 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.pom (1.2 kB at 5.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-9/plexus-archiver-1.0-alpha-9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-9/plexus-archiver-1.0-alpha-9.pom (1.8 kB at 128 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.9/plexus-components-1.1.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.9/plexus-components-1.1.9.pom (2.4 kB at 2.4 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-15/plexus-container-default-1.0-alpha-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-15/plexus-container-default-1.0-alpha-15.pom (1.7 kB at 347 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-15/plexus-containers-1.0-alpha-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-15/plexus-containers-1.0-alpha-15.pom (1.9 kB at 172 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-15/plexus-component-api-1.0-alpha-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-15/plexus-component-api-1.0-alpha-15.pom (948 B at 2.0 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-6/plexus-classworlds-1.2-alpha-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-6/plexus-classworlds-1.2-alpha-6.pom (2.4 kB at 103 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.pom (1.3 kB at 469 B/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.pom (2.2 kB at 222 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-16/plexus-containers-1.0-alpha-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-16/plexus-containers-1.0-alpha-16.pom (1.9 kB at 157 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom (2.3 kB at 191 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.pom (5.8 kB at 525 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (1.8 kB at 147 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (12 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 218 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom (7.8 kB at 647 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom (3.8 kB at 382 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.pom (2.4 kB at 264 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom (17 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.jar (12 kB at 340 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar (30 kB at 684 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (571 kB at 5.5 MB/s)
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.4.1/maven-archiver-2.4.1.pom (4.0 kB at 494 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0/plexus-archiver-1.0.pom (1.6 kB at 230 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (5.2 kB at 868 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/1.0/plexus-io-1.0.pom (1.2 kB at 175 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.2/plexus-archiver-2.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.2/plexus-archiver-2.1.2.pom (3.8 kB at 419 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.2/plexus-utils-3.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.2/plexus-utils-3.0.2.pom (2.5 kB at 45 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom (1.7 kB at 248 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.1/plexus-utils-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.1/plexus-utils-3.0.1.pom (2.5 kB at 359 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar (58 kB at 3.4 MB/s)
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/pippo-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Core 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom (867 B at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom (3.8 kB at 480 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3.0 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom (692 B at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom (688 B at 115 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom (1.2 kB at 96 kB/s)
+[INFO] Compiling 102 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-core/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Server Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-server-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-server-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-server-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-server-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-server-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-server-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-server-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-server-parent/1.12.0-SNAPSHOT/pippo-server-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Jetty 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 242 B/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-jetty ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-jetty ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-jetty/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-jetty ---
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-jetty/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Template Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-template-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-template-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-template-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-template-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-template-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-template-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-template-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-template-parent/1.12.0-SNAPSHOT/pippo-template-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Freemarker 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-freemarker ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-freemarker ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-freemarker ---
+[INFO] Compiling 8 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pippo-freemarker/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Content Type Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-content-type-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-content-type-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-content-type-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-content-type-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-content-type-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-content-type-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-content-type-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-content-type-parent/1.12.0-SNAPSHOT/pippo-content-type-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Gson 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-gson ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-gson ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-gson/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-gson ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-gson/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-jetty/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-jetty/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 4.9 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-freemarker/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-freemarker/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 2.0 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-gson/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-gson/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 2.2 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo/1.12.0-SNAPSHOT/pippo-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Quickstart Archetype 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (663 B at 55 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/maven-metadata.xml
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/maven-metadata.xml (749 B at 83 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-quickstart ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ pippo-quickstart ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.pom (5.8 kB at 524 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/16/maven-shared-components-16.pom (9.2 kB at 1.1 MB/s)
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ pippo-quickstart ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/src/test/resources
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/src/test/java
+[INFO] 
+[INFO] --- maven-archetype-plugin:2.3:jar (default-jar) @ pippo-quickstart ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-catalog/2.3/archetype-catalog-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-catalog/2.3/archetype-catalog-2.3.pom (1.9 kB at 173 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-models/2.3/archetype-models-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-models/2.3/archetype-models-2.3.pom (2.8 kB at 9.7 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom (3.8 kB at 381 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-descriptor/2.3/archetype-descriptor-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-descriptor/2.3/archetype-descriptor-2.3.pom (1.9 kB at 192 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-registry/2.3/archetype-registry-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-registry/2.3/archetype-registry-2.3.pom (1.9 kB at 212 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-common/2.3/archetype-common-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/archetype/archetype-common/2.3/archetype-common-2.3.pom (16 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/sourceforge/jchardet/jchardet/1.0/jchardet-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/sourceforge/jchardet/jchardet/1.0/jchardet-1.0.pom (1.3 kB at 121 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom (6.8 kB at 846 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/jdom/jdom/1.0/jdom-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/jdom/jdom/1.0/jdom-1.0.pom (1.2 kB at 117 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.1.1/maven-invoker-2.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.1.1/maven-invoker-2.1.1.pom (5.6 kB at 464 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 kB at 1.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.pom (726 B at 81 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.0-alpha-6/plexus-interactivity-1.0-alpha-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.0-alpha-6/plexus-interactivity-1.0-alpha-6.pom (1.1 kB at 107 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/1.8.3/groovy-1.8.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/1.8.3/groovy-1.8.3.pom (32 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 79 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom (264 B at 33 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom (4.4 kB at 544 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.pom (415 B at 42 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.pom (404 B at 40 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.pom (409 B at 45 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.pom (417 B at 38 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-script-interpreter/1.0/maven-script-interpreter-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-script-interpreter/1.0/maven-script-interpreter-1.0.pom (3.8 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.1/ant-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.1/ant-1.8.1.pom (8.8 kB at 733 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.1/ant-parent-1.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.1/ant-parent-1.8.1.pom (4.3 kB at 428 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/net/sourceforge/jchardet/jchardet/1.0/jchardet-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/jdom/jdom/1.0/jdom-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/net/sourceforge/jchardet/jchardet/1.0/jchardet-1.0.jar (27 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/jdom/jdom/1.0/jdom-1.0.jar (153 kB at 7.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 453 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar (314 kB at 11 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-7/plexus-classworlds-1.2-alpha-7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 272 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.jar (12 kB at 337 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-api/1.0-alpha-16/plexus-component-api-1.0-alpha-16.jar (33 kB at 753 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-7/plexus-classworlds-1.2-alpha-7.jar (43 kB at 927 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-commons/3.2/asm-commons-3.2.jar (33 kB at 704 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.jar (43 kB at 904 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.1/ant-1.8.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-tree/3.2/asm-tree-3.2.jar (22 kB at 421 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-util/3.2/asm-util-3.2.jar (37 kB at 677 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/asm/asm-analysis/3.2/asm-analysis-3.2.jar (18 kB at 333 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar (445 kB at 7.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.1/ant-1.8.1.jar (1.5 MB at 13 MB/s)
+[INFO] Building archetype jar: /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/target/pippo-quickstart-1.12.0-SNAPSHOT
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-quickstart ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-quickstart >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-quickstart ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-quickstart <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-quickstart ---
+[INFO] Building jar: /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/target/pippo-quickstart-1.12.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-archetype-plugin:2.3:integration-test (default-integration-test) @ pippo-quickstart ---
+[WARNING] No Archetype IT projects: root 'projects' directory not found.
+[INFO] 
+[INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ pippo-quickstart ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 208 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 243 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 447 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 261 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 156 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 648 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 978 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 400 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 364 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 922 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.10.0/maven-artifact-transfer-0.10.0.pom (12 kB at 826 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/31/maven-shared-components-31.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/31/maven-shared-components-31.pom (5.1 kB at 393 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/31/maven-parent-31.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/31/maven-parent-31.pom (43 kB at 3.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 737 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 188 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 222 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 114 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 595 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 241 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 250 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 225 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 139 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 966 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 229 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 462 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 218 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 806 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 622 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.pom (14 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 2.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 6.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 4.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (222 kB at 6.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 323 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 8.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 860 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar (61 kB at 842 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar (335 kB at 4.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar (164 kB at 1.9 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 862 kB/s)
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/target/pippo-quickstart-1.12.0-SNAPSHOT.jar to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-quickstart/1.12.0-SNAPSHOT/pippo-quickstart-1.12.0-SNAPSHOT.jar
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-quickstart/1.12.0-SNAPSHOT/pippo-quickstart-1.12.0-SNAPSHOT.pom
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/maven-archetypes/quickstart/target/pippo-quickstart-1.12.0-SNAPSHOT-sources.jar to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-quickstart/1.12.0-SNAPSHOT/pippo-quickstart-1.12.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-archetype-plugin:2.3:update-local-catalog (default-update-local-catalog) @ pippo-quickstart ---
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Test 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-test ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-test/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-test ---
+[INFO] Compiling 3 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-test/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-session-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-session-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-session-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-session-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-session-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-session-parent/1.12.0-SNAPSHOT/pippo-session-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session ---
+[INFO] Compiling 18 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Cookie 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-session/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-session/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 6.7 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-cookie ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-cookie ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-cookie/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-cookie ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-cookie/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Ehcache2 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-ehcache2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-ehcache2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache2/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-ehcache2 ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache2/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Ehcache3 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-ehcache3 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-ehcache3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache3/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-ehcache3 ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache3/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Hazelcast 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-hazelcast ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-hazelcast ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-hazelcast/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-hazelcast ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-hazelcast/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Infinispan 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-infinispan ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-infinispan ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-infinispan/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-infinispan ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-infinispan/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session JCache 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-jcache ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-jcache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jcache/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-jcache ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jcache/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session JDBC 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-jdbc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jdbc/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-jdbc ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jdbc/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Jedis 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-jedis ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-jedis ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jedis/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-jedis ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jedis/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session MongoDB 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-mongodb ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-mongodb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-mongodb/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-mongodb ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-mongodb/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Spymemcached 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-spymemcached ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-spymemcached ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-spymemcached/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-spymemcached ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-spymemcached/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Xmemcached 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-xmemcached ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-xmemcached ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-xmemcached/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-xmemcached ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-xmemcached/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Metrics Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-metrics-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-metrics-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-metrics-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-metrics-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-metrics-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-metrics-parent/1.12.0-SNAPSHOT/pippo-metrics-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Metrics 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-metrics ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-metrics ---
+[INFO] Compiling 13 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Metrics Graphite 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-metrics/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-metrics/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 2.7 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics-graphite ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-metrics-graphite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-graphite/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-metrics-graphite ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-graphite/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Metrics InfluxDB 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics-influxdb ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-metrics-influxdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-influxdb/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-metrics-influxdb ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-influxdb/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Metrics Librato 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics-librato ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-metrics-librato ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-librato/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-metrics-librato ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-librato/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Metrics Prometheus 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-metrics-prometheus ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-metrics-prometheus ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-prometheus/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-metrics-prometheus ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-metrics-parent/pippo-metrics-prometheus/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Groovy 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-groovy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-groovy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-groovy ---
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pippo-groovy/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Jade 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-jade ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-jade ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-jade ---
+[INFO] Compiling 3 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pippo-jade/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Pebble 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-pebble ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-pebble ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-pebble ---
+[INFO] Compiling 11 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pippo-pebble/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Trimou 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-trimou ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-trimou ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-trimou ---
+[INFO] Compiling 8 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pippo-trimou/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Velocity 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-velocity ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-velocity ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-velocity ---
+[INFO] Compiling 4 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-template-parent/pippo-velocity/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo CSV 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-csv ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-csv ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-csv/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-csv ---
+[INFO] Compiling 3 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-csv/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Fastjson 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-fastjson ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-fastjson ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-fastjson/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-fastjson ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-fastjson/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Jackson 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-jackson ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-jackson ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-jackson/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-jackson ---
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-jackson/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo JAXB 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-jaxb ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-jaxb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-jaxb/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-jaxb ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-jaxb/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo SnakeYAML 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-snakeyaml ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-snakeyaml ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-snakeyaml/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-snakeyaml ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-snakeyaml/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo XStream 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-xstream ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-xstream ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-xstream/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-xstream ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-content-type-parent/pippo-xstream/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Tjws 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-tjws ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-tjws ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-tjws/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-tjws ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-tjws/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Tomcat 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-tomcat ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-tomcat ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-tomcat/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-tomcat ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-tomcat/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Undertow 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-undertow ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-undertow ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-undertow/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-undertow ---
+[INFO] Compiling 5 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-server-parent/pippo-undertow/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Controller Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-controller-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-controller-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-controller-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-controller-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-controller-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-controller-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-controller-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-controller-parent/1.12.0-SNAPSHOT/pippo-controller-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Controller 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-controller ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-controller ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-controller/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-controller ---
+[INFO] Compiling 44 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-controller/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Guice 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-controller/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-controller/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 6.3 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-guice ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-guice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-guice/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-guice ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-guice/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Spring 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-spring ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-spring/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-spring ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-spring/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Weld 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-test/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-test/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 3.9 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-undertow/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-undertow/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 6.3 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-weld ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-weld ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-weld/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-weld ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-controller-parent/pippo-weld/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Css Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-css-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-css-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-css-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-css-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-css-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-css-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-css-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-css-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-css-parent/1.12.0-SNAPSHOT/pippo-css-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Less4j 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-less4j ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-less4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-css-parent/pippo-less4j/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-less4j ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-css-parent/pippo-less4j/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Sass 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-sasscompiler ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-sasscompiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-css-parent/pippo-sasscompiler/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-sasscompiler ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-css-parent/pippo-sasscompiler/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Security Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-security-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-security-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-security-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-security-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-security-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-security-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-security-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-security-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-security-parent/1.12.0-SNAPSHOT/pippo-security-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Pac4j 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-pac4j ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-pac4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-security-parent/pippo-pac4j/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-pac4j ---
+[INFO] Compiling 7 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-security-parent/pippo-pac4j/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Pippo Parent ....................................... SUCCESS [ 43.061 s]
+[INFO] Pippo Core ......................................... FAILURE [  0.599 s]
+[INFO] Pippo Server Parent ................................ SUCCESS [  0.026 s]
+[INFO] Pippo Jetty ........................................ FAILURE [  5.163 s]
+[INFO] Pippo Template Parent .............................. SUCCESS [  0.019 s]
+[INFO] Pippo Freemarker ................................... FAILURE [  0.042 s]
+[INFO] Pippo Content Type Parent .......................... SUCCESS [  0.018 s]
+[INFO] Pippo Gson ......................................... FAILURE [  0.024 s]
+[INFO] Pippo .............................................. SUCCESS [  1.477 s]
+[INFO] Pippo Quickstart Archetype ......................... SUCCESS [  3.269 s]
+[INFO] Pippo Test ......................................... FAILURE [  0.069 s]
+[INFO] Pippo Session Parent ............................... SUCCESS [  0.020 s]
+[INFO] Pippo Session ...................................... FAILURE [  0.089 s]
+[INFO] Pippo Session Cookie ............................... FAILURE [  0.207 s]
+[INFO] Pippo Session Ehcache2 ............................. FAILURE [  0.030 s]
+[INFO] Pippo Session Ehcache3 ............................. FAILURE [  0.020 s]
+[INFO] Pippo Session Hazelcast ............................ FAILURE [  0.025 s]
+[INFO] Pippo Session Infinispan ........................... FAILURE [  0.075 s]
+[INFO] Pippo Session JCache ............................... FAILURE [  0.020 s]
+[INFO] Pippo Session JDBC ................................. FAILURE [  0.035 s]
+[INFO] Pippo Session Jedis ................................ FAILURE [  0.033 s]
+[INFO] Pippo Session MongoDB .............................. FAILURE [  0.039 s]
+[INFO] Pippo Session Spymemcached ......................... FAILURE [  0.034 s]
+[INFO] Pippo Session Xmemcached ........................... FAILURE [  0.024 s]
+[INFO] Pippo Metrics Parent ............................... SUCCESS [  0.018 s]
+[INFO] Pippo Metrics ...................................... FAILURE [  0.030 s]
+[INFO] Pippo Metrics Graphite ............................. FAILURE [  0.478 s]
+[INFO] Pippo Metrics InfluxDB ............................. FAILURE [  0.027 s]
+[INFO] Pippo Metrics Librato .............................. FAILURE [  0.039 s]
+[INFO] Pippo Metrics Prometheus ........................... FAILURE [  0.432 s]
+[INFO] Pippo Groovy ....................................... FAILURE [  0.036 s]
+[INFO] Pippo Jade ......................................... FAILURE [  0.055 s]
+[INFO] Pippo Pebble ....................................... FAILURE [  0.031 s]
+[INFO] Pippo Trimou ....................................... FAILURE [  0.055 s]
+[INFO] Pippo Velocity ..................................... FAILURE [  0.033 s]
+[INFO] Pippo CSV .......................................... FAILURE [  0.026 s]
+[INFO] Pippo Fastjson ..................................... FAILURE [  0.018 s]
+[INFO] Pippo Jackson ...................................... FAILURE [  0.048 s]
+[INFO] Pippo JAXB ......................................... FAILURE [  0.014 s]
+[INFO] Pippo SnakeYAML .................................... FAILURE [  0.020 s]
+[INFO] Pippo XStream ...................................... FAILURE [  0.022 s]
+[INFO] Pippo Tjws ......................................... FAILURE [  0.018 s]
+[INFO] Pippo Tomcat ....................................... FAILURE [  0.030 s]
+[INFO] Pippo Undertow ..................................... FAILURE [  0.043 s]
+[INFO] Pippo Controller Parent ............................ SUCCESS [  0.016 s]
+[INFO] Pippo Controller ................................... FAILURE [  0.019 s]
+[INFO] Pippo Guice ........................................ FAILURE [  0.224 s]
+[INFO] Pippo Spring ....................................... FAILURE [  0.029 s]
+[INFO] Pippo Weld ......................................... FAILURE [  0.551 s]
+[INFO] Pippo Css Parent ................................... SUCCESS [  0.016 s]
+[INFO] Pippo Less4j ....................................... FAILURE [  0.030 s]
+[INFO] Pippo Sass ......................................... FAILURE [  0.020 s]
+[INFO] Pippo Security Parent .............................. SUCCESS [  0.018 s]
+[INFO] Pippo Pac4j ........................................ FAILURE [  0.027 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 57.673 s
+[INFO] Finished at: 2020-03-12T02:53:29-07:00
+[INFO] Final Memory: 39M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-core: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-jetty: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-freemarker: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-gson: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-test: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-cookie: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-ehcache2: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-ehcache3: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-hazelcast: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-infinispan: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-jcache: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-jdbc: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-jedis: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-mongodb: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-spymemcached: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-xmemcached: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-metrics: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-metrics-graphite: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-metrics-influxdb: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-metrics-librato: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-metrics-prometheus: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-groovy: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-jade: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-pebble: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-trimou: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-velocity: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-csv: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-fastjson: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-jackson: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-jaxb: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-snakeyaml: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-xstream: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-tjws: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-tomcat: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-undertow: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-controller: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-guice: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-spring: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-weld: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-less4j: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-sasscompiler: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-pac4j: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :pippo-core
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Pippo Session Parent
+[INFO] Pippo Session
+[INFO] Pippo Session Cookie
+[INFO] Pippo Session Ehcache2
+[INFO] Pippo Session Ehcache3
+[INFO] Pippo Session Hazelcast
+[INFO] Pippo Session Infinispan
+[INFO] Pippo Session JCache
+[INFO] Pippo Session JDBC
+[INFO] Pippo Session Jedis
+[INFO] Pippo Session MongoDB
+[INFO] Pippo Session Spymemcached
+[INFO] Pippo Session Xmemcached
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Parent 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8:jar (default) @ pippo-session-parent ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2:jar (default) > generate-sources @ pippo-session-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2:jar (default) < generate-sources @ pippo-session-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:2.2:jar (default) @ pippo-session-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ pippo-session-parent ---
+[INFO] Installing /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pom.xml to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/.m2/ro/pippo/pippo-session-parent/1.12.0-SNAPSHOT/pippo-session-parent-1.12.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 1.4 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/pippo-core-1.12.0-20181027.182241-1.pom
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/pippo-core-1.12.0-20181027.182241-1.pom (1.8 kB at 11 kB/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/maven-metadata.xml (599 B at 3.4 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session ---
+[INFO] Compiling 18 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Cookie 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-session/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-session/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 6.2 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-cookie ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-cookie ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-cookie/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-cookie ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-cookie/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Ehcache2 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-ehcache2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-ehcache2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache2/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-ehcache2 ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache2/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Ehcache3 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-ehcache3 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-ehcache3 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache3/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-ehcache3 ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-ehcache3/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Hazelcast 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-hazelcast ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-hazelcast ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-hazelcast/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-hazelcast ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-hazelcast/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Infinispan 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-infinispan ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-infinispan ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-infinispan/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-infinispan ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-infinispan/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session JCache 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-jcache ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-jcache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jcache/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-jcache ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jcache/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session JDBC 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-jdbc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-jdbc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jdbc/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-jdbc ---
+[INFO] Compiling 1 source file to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jdbc/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Jedis 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-jedis ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-jedis ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jedis/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-jedis ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-jedis/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session MongoDB 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-mongodb ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-mongodb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-mongodb/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-mongodb ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-mongodb/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Spymemcached 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-spymemcached ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-spymemcached ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-spymemcached/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-spymemcached ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-spymemcached/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session Xmemcached 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session-xmemcached ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session-xmemcached ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-xmemcached/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session-xmemcached ---
+[INFO] Compiling 2 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session-xmemcached/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Pippo Session Parent ............................... SUCCESS [  1.834 s]
+[INFO] Pippo Session ...................................... FAILURE [  1.969 s]
+[INFO] Pippo Session Cookie ............................... FAILURE [  0.223 s]
+[INFO] Pippo Session Ehcache2 ............................. FAILURE [  0.039 s]
+[INFO] Pippo Session Ehcache3 ............................. FAILURE [  0.029 s]
+[INFO] Pippo Session Hazelcast ............................ FAILURE [  0.034 s]
+[INFO] Pippo Session Infinispan ........................... FAILURE [  0.293 s]
+[INFO] Pippo Session JCache ............................... FAILURE [  0.032 s]
+[INFO] Pippo Session JDBC ................................. FAILURE [  0.118 s]
+[INFO] Pippo Session Jedis ................................ FAILURE [  0.102 s]
+[INFO] Pippo Session MongoDB .............................. FAILURE [  0.118 s]
+[INFO] Pippo Session Spymemcached ......................... FAILURE [  0.066 s]
+[INFO] Pippo Session Xmemcached ........................... FAILURE [  0.032 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.318 s
+[INFO] Finished at: 2020-03-12T02:53:38-07:00
+[INFO] Final Memory: 25M/1238M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-cookie: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-ehcache2: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-ehcache3: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-hazelcast: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-infinispan: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-jcache: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-jdbc: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-jedis: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-mongodb: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-spymemcached: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session-xmemcached: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :pippo-session
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.125-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pippo Session 1.12.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-core/1.12.0-SNAPSHOT/maven-metadata.xml (1.2 kB at 102 B/s)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: https://oss.sonatype.org/content/repositories/snapshots/ro/pippo/pippo-parent/1.12.0-SNAPSHOT/maven-metadata.xml (599 B at 2.2 kB/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pippo-session ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pippo-session ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ pippo-session ---
+[INFO] Compiling 18 source files to /scratch/tmp-rta/Bears_pippo-java-pippo_446336779-446341967_java-7/pippo-session-parent/pippo-session/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Failure executing javac, but could not parse the error:
+javac: invalid target release: 1.8
+Usage: javac <options> <source files>
+use -help for a list of possible options
+
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 13.883 s
+[INFO] Finished at: 2020-03-12T02:53:56-07:00
+[INFO] Final Memory: 27M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project pippo-session: Compilation failure
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: invalid target release: 1.8
+[ERROR] Usage: javac <options> <source files>
+[ERROR] use -help for a list of possible options
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

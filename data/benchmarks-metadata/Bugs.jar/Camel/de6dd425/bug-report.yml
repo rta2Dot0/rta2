@@ -1,0 +1,23 @@
+---
+BugID: CAMEL-5796
+Summary: The combination of the transacted DSL together with the <setHeader> or <setBody>
+  prohibits to resolve the properties properly.
+Description: |
+  Given the property {{myKey}} defined as:
+  {code}
+  myKey=myValue
+  {code}
+
+  Then consider the following trivial route:
+  {code:xml}
+  <route>
+    <from uri="activemq:queue:okay" />
+      <transacted />
+      <setHeader headerName="myHeader">
+        <constant>{{myKey}}</constant>
+      </setHeader>
+    <to uri="mock:test" />
+  </route>
+  {code}
+
+  Because of the usage of the {{transacted}} DSL the property placeholder {{{{myKey}}}} will not be resolved to {{myValue}} properly. This behaviour would disappear if you would remove the {{transacted}} DSL. And I'm observing the same behaviour using the {{setBody}} DSL as well.

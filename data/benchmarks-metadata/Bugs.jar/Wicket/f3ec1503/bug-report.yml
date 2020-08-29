@@ -1,0 +1,12 @@
+---
+BugID: WICKET-4679
+Summary: XmlPullParser doesn't parse correctly attributes with complex namespace
+Description: |-
+  Having a markup like:
+  <a class="addthis_button_google_plusone_badge" g:plusone:size="smallbadge"  g:plusone:href="https://plus.google.com/25252/"></a> causes XmlPullParser to throw the following exception:
+
+  java.text.ParseException: Same attribute found twice: g:plusone (line 19, column 100)
+       at org.apache.wicket.markup.parser.XmlPullParser.parseTagText(XmlPullParser.java:673)
+       at org.apache.wicket.markup.parser.XmlPullParser.next(XmlPullParser.java:294)
+       at org.apache.wicket.markup.parser.filter.RootMarkupFilter.nextElement(RootMarkupFilter.java:58)
+  .....

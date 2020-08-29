@@ -1,0 +1,13 @@
+---
+BugID: WICKET-5442
+Summary: TimeOfDay.valueOf(Calendar, Time) and TimeOfDay.valueOf(Time) incorrectly
+  use 12-hour clock
+Description: |-
+  TimeOfDay.valueOf(Calendar, Time) is implemented as:
+      return militaryTime(time.getHour(calendar), time.getMinute(calendar), time.getSecond(calendar));
+
+  This is flawed because Time.getHour() is implemented as:
+      return get(calendar, Calendar.HOUR);
+  and Calendar.HOUR is for the 12-hour clock. The result is that TimeOfDay.valueOf(Calendar, Time) incorrectly only returns 12-hour results, not 24-hour results. This affects TimeOfDay.valueOf(Time) as well since it is implemented in terms of the previously-named method.
+
+  One fix would be to change Time.getHour() to use Calendar.HOUR_OF_DAY. Since Time doesn't have an am/pm indicator this seems reasonable. An alternate, more localized fix would be to change TimeOfDay.valueOf(Calendar, Time) to call time.get(Calendar.HOUR_OF_DAY) to get the hour value.

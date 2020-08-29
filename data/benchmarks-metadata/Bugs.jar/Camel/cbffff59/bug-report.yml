@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-4011
+Summary: type converters should return NULL for Double.NaN values instead of 0
+Description: |
+  see this discussion...http://camel.465427.n5.nabble.com/XPath-for-an-Integer-td4422095.html
+
+  Update the ObjectConverter.toXXX() methods to check for Double.NaN and return NULL instead of relying on Number.intValue()

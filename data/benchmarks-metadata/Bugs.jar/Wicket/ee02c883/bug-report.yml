@@ -1,0 +1,20 @@
+---
+BugID: WICKET-4997
+Summary: Mounted bookmarkable Page not recreated on Session Expiry
+Description: "With the default true of org.apache.wicket.settings.IPageSettings#getRecreateMountedPagesAfterExpiry()
+  PageExpiryException is thrown when a Link on a page is clicked.\n\nI find it very
+  useful and in fact indispensible to rely on RecreateMountedPagesAfterExpiry especially
+  on logout links.\n\nBut it doesn't seem to work for me in 6.4.0. I think this is
+  because Link#getUrl() calls Component#utlFor() which requires a stateless page for
+  this to work:\n\n\t\tif (page.isPageStateless())\n\t\t{\n\t\t\thandler = new BookmarkableListenerInterfaceRequestHandler(provider,
+  listener);\n\t\t}\n\t\telse\n\t\t{\n\t\t\thandler = new ListenerInterfaceRequestHandler(provider,
+  listener);\n\t\t}\n\nWith a stateless page a url is:\n\nhttp://localhost:8080/wicket/HomePage?-1.ILinkListener-toolBar-signout\n\nWith
+  a non stateless but bookmarkable page a url is:\n\nhttp://localhost:8080/wicket/page?1-1.ILinkListener-toolBar-signout\n\nSo
+  I guess that a stateful page cannot be recovered because after session expiry Wicket
+  cannot find out what the page is. It is not coded in the URL.\n\nLooking at the
+  semantics of UrlFor(), I thought this might be a bug and I copied and changed the
+  code in my Link subclass from\n\n//\t\tif (page.isPageStateless()) {\nto:\n        if
+  (page.isBookmarkable()) {\n\t\t\nIt works as expected but I don't know whether it
+  would break other things if implemented in Wicket.\n\nI guess I am not the only
+  one who needs recovery for bookmarkable pages in this way. Would it be possible
+  to change Wicket to fix this so it becomes possible?"

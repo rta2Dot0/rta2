@@ -1,0 +1,8 @@
+---
+BugID: OAK-3872
+Summary: "[RDB] Updated blob still deleted even if deletion interval lower"
+Description: "If an existing blob is uploaded again, the timestamp of the existing
+  entry is updated in the meta table. Subsequently if a call to delete (RDBBlobStore#countDeleteChunks)
+  is made with {{maxLastModifiedTime}} parameter of less than the updated time above,
+  the entry in the meta table is not touched but the data table entry is wiped out.
+  \n\nRefer https://github.com/apache/jackrabbit-oak/blob/trunk/oak-core/src/main/java/org/apache/jackrabbit/oak/plugins/document/rdb/RDBBlobStore.java#L510\n"

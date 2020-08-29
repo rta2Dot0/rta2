@@ -1,0 +1,20 @@
+---
+BugID: LOG4J2-392
+Summary: Intermittent errors with appenders
+Description: "I intermittently receive following errors after upgrading to beta 8.
+  EVERYTHING was working well with beta 6:\n* 1st error (happens most frequently)\n2013-09-05
+  10:48:37,722 ERROR Attempted to append to non-started appender LogFile\n\n* 2nd
+  error:\n2013-09-05 10:49:38,268 ERROR Attempted to append to non-started appender
+  LogFile\n2013-09-05 10:49:38,268 ERROR Unable to write to stream log/ui-selenium-tests.log
+  for appender LogFile\n2013-09-05 10:49:38,269 ERROR An exception occurred processing
+  Appender LogFile org.apache.logging.log4j.core.appender.AppenderRuntimeException:
+  Error writing to RandomAccessFile log/ui-selenium-tests.log\n\tat org.apache.logging.log4j.core.appender.rolling.FastRollingFileManager.flush(FastRollingFileManager.java:108)\n\tat
+  org.apache.logging.log4j.core.appender.rolling.FastRollingFileManager.write(FastRollingFileManager.java:89)\n\tat
+  org.apache.logging.log4j.core.appender.OutputStreamManager.write(OutputStreamManager.java:129)\n\tat
+  org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:115)\n\tat
+  org.apache.logging.log4j.core.appender.FastRollingFileAppender.append(FastRollingFileAppender.java:97)\n\tat
+  org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:102)\n\tat
+  org.apache.logging.log4j.core.appender.AsyncAppender$AsyncThread.run(AsyncAppender.java:228)\nCaused
+  by: java.io.IOException: Write error\n\tat java.io.RandomAccessFile.writeBytes(Native
+  Method)\n\tat java.io.RandomAccessFile.write(Unknown Source)\n\tat org.apache.logging.log4j.core.appender.rolling.FastRollingFileManager.flush(FastRollingFileManager.java:105)\n\t...
+  6 more\n"

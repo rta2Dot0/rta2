@@ -1,0 +1,876 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Feign (Parent)
+[INFO] Feign Core
+[INFO] Feign Gson
+[INFO] Feign JAX-RS
+[INFO] Feign Apache HttpClient
+[INFO] Feign Hystrix
+[INFO] Feign Jackson
+[INFO] Feign Jackson JAXB
+[INFO] Feign JAXB
+[INFO] Feign JAX-RS 2
+[INFO] Feign OkHttp
+[INFO] Feign Ribbon
+[INFO] Feign SAX
+[INFO] Feign SLF4J
+[INFO] Feign Reactive Wrappers
+[INFO] GitHub Example
+[INFO] Wikipedia Example
+[INFO] Feign Java 8
+[INFO] Feign Mock
+[INFO] Feign Benchmark (JMH)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign (Parent) 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 7.2 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 324 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 62 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 95 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 93 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 96 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 598 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 448 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 571 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 780 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 325 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 947 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 209 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 148 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 152 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 536 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 322 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 321 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 176 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 139 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 227 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 206 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 284 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 45 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.pom (5.1 kB at 146 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.10/plexus-languages-0.9.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.10/plexus-languages-0.9.10.pom (4.1 kB at 460 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.pom (2.9 kB at 489 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom (11 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.pom (16 kB at 248 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.pom (867 B at 108 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.4/plexus-compiler-2.8.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.4/plexus-compiler-2.8.4.pom (6.0 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 332 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 383 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.pom (692 B at 99 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.pom (771 B at 110 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.4/plexus-compilers-2.8.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.4/plexus-compilers-2.8.4.pom (1.3 kB at 192 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 4.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 3.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 266 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.9 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 709 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 912 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 1.6 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 6.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.jar (111 kB at 1.4 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar (317 kB at 3.6 MB/s)
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.pom (1.8 kB at 257 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.pom (6.2 kB at 690 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.6.1.201501031845-r/org.eclipse.jgit-parent-3.6.1.201501031845-r.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit-parent/3.6.1.201501031845-r/org.eclipse.jgit-parent-3.6.1.201501031845-r.pom (24 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.pom (3.2 kB at 324 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom (4.8 kB at 78 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom (4.3 kB at 74 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom (4.1 kB at 215 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.pom (6.0 kB at 88 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.1.3/httpcomponents-client-4.1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.1.3/httpcomponents-client-4.1.3.pom (12 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/5/project-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/5/project-5.pom (23 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.pom (7.4 kB at 672 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.1.4/httpcomponents-core-4.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.1.4/httpcomponents-core-4.1.4.pom (9.8 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.pom (10 kB at 276 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.pom (3.0 kB at 380 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.1.0/maven-3.1.0.pom (22 kB at 807 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.pom (3.8 kB at 423 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.pom (1.6 kB at 109 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.pom (5.9 kB at 737 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.0.0.M2a/sisu-plexus-0.0.0.M2a.pom (7.9 kB at 1.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.pom (5.4 kB at 538 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/10.0.1/guava-parent-10.0.1.pom (2.0 kB at 245 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0.pom (10 kB at 236 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.1.0/guice-parent-3.1.0.pom (11 kB at 377 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.pom (5.0 kB at 994 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.0.0.M2a/sisu-inject-0.0.0.M2a.pom (7.8 kB at 601 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (3.9 kB at 555 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/3.0-alpha-2/maven-project-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/3.0-alpha-2/maven-project-3.0-alpha-2.pom (3.3 kB at 471 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-2/maven-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-2/maven-3.0-alpha-2.pom (21 kB at 822 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0-alpha-2/maven-model-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0-alpha-2/maven-model-3.0-alpha-2.pom (3.5 kB at 502 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (1.4 kB at 287 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.pom (2.9 kB at 582 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.pom (1.4 kB at 176 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-beta-3.0.5/plexus-containers-1.0-beta-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-beta-3.0.5/plexus-containers-1.0-beta-3.0.5.pom (4.1 kB at 685 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.4/plexus-classworlds-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.4/plexus-classworlds-1.4.pom (4.7 kB at 424 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.0/plexus-2.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.0/plexus-2.0.0.pom (8.0 kB at 797 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.pom (1.5 kB at 242 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.0-beta-3.0.5/plexus-component-annotations-1.0-beta-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.0-beta-3.0.5/plexus-component-annotations-1.0-beta-3.0.5.pom (602 B at 67 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.pom (906 B at 151 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-4/wagon-1.0-beta-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-4/wagon-1.0-beta-4.pom (10 kB at 806 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2.0 kB at 151 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.pom (1.3 kB at 60 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.pom (1.5 kB at 90 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.pom (2.9 kB at 240 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.pom (1.7 kB at 211 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.4/maven-settings-3.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.4/maven-settings-3.0.4.pom (1.8 kB at 153 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.4/maven-3.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.4/maven-3.0.4.pom (22 kB at 1.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom (2.9 kB at 289 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.4/maven-settings-builder-3.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.4/maven-settings-builder-3.0.4.pom (2.3 kB at 205 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.pom (2.6 kB at 523 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.1.3.RELEASE/spring-parent-3.1.3.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-parent/3.1.3.RELEASE/spring-parent-3.1.3.RELEASE.pom (8.7 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.pom (2.5 kB at 420 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/mycila/mycila-xmltool/4.4.ga/mycila-xmltool-4.4.ga.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/mycila/mycila-xmltool/4.4.ga/mycila-xmltool-4.4.ga.pom (2.8 kB at 57 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.pom (12 kB at 283 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/33/commons-parent-33.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/33/commons-parent-33.pom (53 kB at 3.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/mycila/license-maven-plugin-git/3.0/license-maven-plugin-git-3.0.jar (12 kB at 722 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar (125 kB at 5.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar (254 kB at 8.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar (181 kB at 5.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.4/commons-codec-1.4.jar (58 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar (353 kB at 8.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar (52 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar (202 kB at 4.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.1.0/maven-model-3.1.0.jar (164 kB at 3.3 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar (47 kB at 811 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar (202 kB at 3.4 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.jar (35 kB at 522 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar (357 kB at 5.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/3.6.1.201501031845-r/org.eclipse.jgit-3.6.1.201501031845-r.jar (2.0 MB at 26 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0-alpha-2/maven-compat-3.0-alpha-2.jar (238 kB at 3.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-4/wagon-provider-api-1.0-beta-4.jar (52 kB at 696 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/stax/stax-api/1.0.1/stax-api-1.0.1.jar (27 kB at 327 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.5/plexus-container-default-1.0-beta-3.0.5.jar (209 kB at 2.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.3/model-builder-1.3.jar (36 kB at 400 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar (1.5 MB at 16 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-2/maven-project-builder-3.0-alpha-2.jar (169 kB at 1.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.jar (53 kB at 553 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.jar (502 kB at 5.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar (108 kB at 1.1 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/wstx-asl/3.2.6/wstx-asl-3.2.6.jar (520 kB at 4.9 MB/s)
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.17:check (default) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0-beta/asm-7.0-beta.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0-beta/asm-7.0-beta.pom (2.9 kB at 295 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer/1.17/animal-sniffer-1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer/1.17/animal-sniffer-1.17.pom (2.3 kB at 288 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/java-boot-classpath-detector/1.17/java-boot-classpath-detector-1.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/java-boot-classpath-detector/1.17/java-boot-classpath-detector-1.17.pom (2.5 kB at 309 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 163 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 707 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 496 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.pom (28 kB at 3.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom (68 kB at 5.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0-beta/asm-7.0-beta.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.jar (4.2 kB at 156 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (9.8 kB at 362 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (11 kB at 420 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 kB at 475 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/7.0-beta/asm-7.0-beta.jar (114 kB at 3.8 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 kB at 1.2 MB/s)
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java18/1.0/java18-1.0.signature
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/signature/java18/1.0/java18-1.0.signature (2.0 MB at 10.0 MB/s)
+[INFO] 
+[INFO] --- maven-bundle-plugin:4.0.0:manifest (bundle-manifest) @ parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom (1.4 kB at 236 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/4.0.0/biz.aQute.bndlib-4.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/4.0.0/biz.aQute.bndlib-4.0.0.pom (1.4 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom (5.9 kB at 736 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/2.1/felix-parent-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/2.1/felix-parent-2.1.pom (9.7 kB at 508 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom (193 B at 28 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.pom (7.3 kB at 609 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock-parent/3.4/easymock-parent-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock-parent/3.4/easymock-parent-3.4.pom (17 kB at 2.1 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.pom (2.5 kB at 59 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.2/objenesis-parent-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.2/objenesis-parent-2.2.pom (17 kB at 719 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom (3.3 kB at 364 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom (463 B at 58 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.0/maven-core-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.0/maven-core-2.2.0.pom (11 kB at 1.6 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.pom (2.0 kB at 391 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.pom (1.9 kB at 185 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.0/maven-reporting-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.0/maven-reporting-2.2.0.pom (1.4 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.pom (1.7 kB at 244 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.pom (1.5 kB at 243 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.pom (2.1 kB at 344 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.pom (1.3 kB at 180 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom (4.3 kB at 720 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (5.0 kB at 716 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom (4.1 kB at 588 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom (2.7 kB at 221 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom (11 kB at 1.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 308 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (3.2 kB at 641 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom (8.4 kB at 133 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom (2.2 kB at 547 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.jar (22 kB at 1.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.jar (53 kB at 3.8 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar (35 kB at 1.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.jar (49 kB at 1.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.jar (87 kB at 2.7 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.jar (9.8 kB at 296 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar (614 kB at 18 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.jar (474 kB at 12 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.jar (26 kB at 675 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.jar (13 kB at 325 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.jar (80 kB at 2.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.jar (12 kB at 281 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.jar (156 kB at 3.5 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.jar (30 kB at 560 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.jar (10 kB at 194 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.jar (39 kB at 714 kB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar (65 kB at 1.2 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (170 kB at 3.0 MB/s)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar (143 kB at 2.2 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar (378 kB at 5.3 MB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar (74 kB at 895 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar (62 kB at 657 kB/s)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (571 kB at 5.4 MB/s)
+[WARNING] Error injecting: org.apache.felix.bundleplugin.ManifestPlugin
+java.lang.UnsupportedClassVersionError: aQute/bnd/osgi/Analyzer : Unsupported major.minor version 52.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClassFromSelf(ClassRealm.java:401)
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:42)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2595)
+	at java.lang.Class.getDeclaredConstructors(Class.java:1914)
+	at com.google.inject.spi.InjectionPoint.forConstructorOf(InjectionPoint.java:245)
+	at com.google.inject.internal.ConstructorBindingImpl.create(ConstructorBindingImpl.java:100)
+	at com.google.inject.internal.InjectorImpl.createUninitializedBinding(InjectorImpl.java:661)
+	at com.google.inject.internal.InjectorImpl.createJustInTimeBinding(InjectorImpl.java:885)
+	at com.google.inject.internal.InjectorImpl.createJustInTimeBindingRecursive(InjectorImpl.java:808)
+	at com.google.inject.internal.InjectorImpl.getJustInTimeBinding(InjectorImpl.java:285)
+	at com.google.inject.internal.InjectorImpl.getBindingOrThrow(InjectorImpl.java:217)
+	at com.google.inject.internal.InjectorImpl.getProviderOrThrow(InjectorImpl.java:1009)
+	at com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1041)
+	at com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1004)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054)
+	at org.eclipse.sisu.space.AbstractDeferredClass.get(AbstractDeferredClass.java:48)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:53)
+	at com.google.inject.internal.ProviderInternalFactory$1.call(ProviderInternalFactory.java:65)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:115)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:133)
+	at com.google.inject.internal.ProvisionListenerStackCallback.provision(ProvisionListenerStackCallback.java:68)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:63)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:45)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	at org.eclipse.sisu.inject.Guice4$1.get(Guice4.java:162)
+	at org.eclipse.sisu.inject.LazyBeanEntry.getValue(LazyBeanEntry.java:81)
+	at org.eclipse.sisu.plexus.LazyPlexusBean.getValue(LazyPlexusBean.java:51)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.apache.maven.plugin.internal.DefaultMavenPluginManager.getConfiguredMojo(DefaultMavenPluginManager.java:519)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:121)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:154)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:146)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:117)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:81)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:309)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:194)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:107)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:993)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:345)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Core 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ feign-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ feign-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/core/target/classes
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Gson 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign JAX-RS 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Apache HttpClient 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Hystrix 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Jackson 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Jackson JAXB 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign JAXB 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign JAX-RS 2 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign OkHttp 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Ribbon 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign SAX 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign SLF4J 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Reactive Wrappers 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GitHub Example 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wikipedia Example 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Java 8 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ feign-java8 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/java8/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ feign-java8 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:check (default) @ feign-java8 ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.17:check (default) @ feign-java8 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-bundle-plugin:4.0.0:manifest (bundle-manifest) @ feign-java8 ---
+[WARNING] Error injecting: org.apache.felix.bundleplugin.ManifestPlugin
+java.lang.UnsupportedClassVersionError: aQute/bnd/osgi/Analyzer : Unsupported major.minor version 52.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClassFromSelf(ClassRealm.java:401)
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:42)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2595)
+	at java.lang.Class.getDeclaredConstructors(Class.java:1914)
+	at com.google.inject.spi.InjectionPoint.forConstructorOf(InjectionPoint.java:245)
+	at com.google.inject.internal.ConstructorBindingImpl.create(ConstructorBindingImpl.java:100)
+	at com.google.inject.internal.InjectorImpl.createUninitializedBinding(InjectorImpl.java:661)
+	at com.google.inject.internal.InjectorImpl.createJustInTimeBinding(InjectorImpl.java:885)
+	at com.google.inject.internal.InjectorImpl.createJustInTimeBindingRecursive(InjectorImpl.java:808)
+	at com.google.inject.internal.InjectorImpl.getJustInTimeBinding(InjectorImpl.java:285)
+	at com.google.inject.internal.InjectorImpl.getBindingOrThrow(InjectorImpl.java:217)
+	at com.google.inject.internal.InjectorImpl.getProviderOrThrow(InjectorImpl.java:1009)
+	at com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1041)
+	at com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1004)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054)
+	at org.eclipse.sisu.space.AbstractDeferredClass.get(AbstractDeferredClass.java:48)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:53)
+	at com.google.inject.internal.ProviderInternalFactory$1.call(ProviderInternalFactory.java:65)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:115)
+	at com.google.inject.internal.ProvisionListenerStackCallback$Provision.provision(ProvisionListenerStackCallback.java:133)
+	at com.google.inject.internal.ProvisionListenerStackCallback.provision(ProvisionListenerStackCallback.java:68)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:63)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:45)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	at org.eclipse.sisu.inject.Guice4$1.get(Guice4.java:162)
+	at org.eclipse.sisu.inject.LazyBeanEntry.getValue(LazyBeanEntry.java:81)
+	at org.eclipse.sisu.plexus.LazyPlexusBean.getValue(LazyPlexusBean.java:51)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.apache.maven.plugin.internal.DefaultMavenPluginManager.getConfiguredMojo(DefaultMavenPluginManager.java:519)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:121)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:154)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:146)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:117)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:81)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:309)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:194)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:107)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:993)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:345)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:191)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Mock 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Benchmark (JMH) 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Feign (Parent) ..................................... FAILURE [ 14.666 s]
+[INFO] Feign Core ......................................... FAILURE [  0.304 s]
+[INFO] Feign Gson ......................................... FAILURE [  0.009 s]
+[INFO] Feign JAX-RS ....................................... FAILURE [  0.008 s]
+[INFO] Feign Apache HttpClient ............................ FAILURE [  0.019 s]
+[INFO] Feign Hystrix ...................................... FAILURE [  0.036 s]
+[INFO] Feign Jackson ...................................... FAILURE [  0.005 s]
+[INFO] Feign Jackson JAXB ................................. FAILURE [  0.027 s]
+[INFO] Feign JAXB ......................................... FAILURE [  0.005 s]
+[INFO] Feign JAX-RS 2 ..................................... FAILURE [  0.049 s]
+[INFO] Feign OkHttp ....................................... FAILURE [  0.007 s]
+[INFO] Feign Ribbon ....................................... FAILURE [  0.025 s]
+[INFO] Feign SAX .......................................... FAILURE [  0.005 s]
+[INFO] Feign SLF4J ........................................ FAILURE [  0.009 s]
+[INFO] Feign Reactive Wrappers ............................ FAILURE [  0.013 s]
+[INFO] GitHub Example ..................................... FAILURE [  0.022 s]
+[INFO] Wikipedia Example .................................. FAILURE [  0.005 s]
+[INFO] Feign Java 8 ....................................... FAILURE [  0.589 s]
+[INFO] Feign Mock ......................................... FAILURE [  0.006 s]
+[INFO] Feign Benchmark (JMH) .............................. FAILURE [  0.064 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.296 s
+[INFO] Finished at: 2020-03-12T02:56:18-07:00
+[INFO] Final Memory: 25M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.felix:maven-bundle-plugin:4.0.0:manifest (bundle-manifest) on project parent: Execution bundle-manifest of goal org.apache.felix:maven-bundle-plugin:4.0.0:manifest failed: An API incompatibility was encountered while executing org.apache.felix:maven-bundle-plugin:4.0.0:manifest: java.lang.UnsupportedClassVersionError: aQute/bnd/osgi/Analyzer : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.felix:maven-bundle-plugin:4.0.0
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/felix/maven-bundle-plugin/4.0.0/maven-bundle-plugin-4.0.0.jar
+[ERROR] urls[1] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar
+[ERROR] urls[2] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/biz/aQute/bnd/biz.aQute.bndlib/4.0.0/biz.aQute.bndlib-4.0.0.jar
+[ERROR] urls[3] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar
+[ERROR] urls[4] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/easymock/easymock/3.4/easymock-3.4.jar
+[ERROR] urls[5] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/objenesis/objenesis/2.2/objenesis-2.2.jar
+[ERROR] urls[6] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar
+[ERROR] urls[7] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar
+[ERROR] urls[8] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[ERROR] urls[9] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[ERROR] urls[10] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.jar
+[ERROR] urls[11] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[ERROR] urls[12] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/junit/junit/4.12/junit-4.12.jar
+[ERROR] urls[13] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[ERROR] urls[14] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[ERROR] urls[15] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[ERROR] urls[16] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[ERROR] urls[17] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[18] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[19] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar
+[ERROR] urls[20] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[ERROR] urls[21] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[ERROR] urls[22] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar
+[ERROR] urls[23] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[ERROR] urls[24] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[ERROR] urls[25] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+[ERROR] urls[26] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.jar
+[ERROR] urls[27] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[ERROR] urls[28] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[ERROR] urls[29] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar
+[ERROR] urls[30] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar
+[ERROR] urls[31] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+[ERROR] urls[32] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+[ERROR] urls[33] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+[ERROR] urls[34] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+[ERROR] urls[35] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+[ERROR] urls[36] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+[ERROR] urls[37] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[ERROR] urls[38] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/oro/oro/2.0.8/oro-2.0.8.jar
+[ERROR] urls[39] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+[ERROR] urls[40] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[ERROR] urls[41] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+[ERROR] urls[42] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+[ERROR] urls[43] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+[ERROR] urls[44] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+[ERROR] urls[45] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/jdom/jdom/1.1/jdom-1.1.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project feign-core: Fatal error compiling: invalid target release: 1.8 -> [Help 2]
+[ERROR] Failed to execute goal on project feign-gson: Could not resolve dependencies for project io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-jaxrs: Could not resolve dependencies for project io.github.openfeign:feign-jaxrs:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-httpclient: Could not resolve dependencies for project io.github.openfeign:feign-httpclient:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT, io.github.openfeign:feign-jaxrs:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-hystrix: Could not resolve dependencies for project io.github.openfeign:feign-hystrix:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT, io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-jackson: Could not resolve dependencies for project io.github.openfeign:feign-jackson:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-jackson-jaxb: Could not resolve dependencies for project io.github.openfeign:feign-jackson-jaxb:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-jaxb: Could not resolve dependencies for project io.github.openfeign:feign-jaxb:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-jaxrs2: Could not resolve dependencies for project io.github.openfeign:feign-jaxrs2:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-jaxrs:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT, io.github.openfeign:feign-jaxrs:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-okhttp: Could not resolve dependencies for project io.github.openfeign:feign-okhttp:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-ribbon: Could not resolve dependencies for project io.github.openfeign:feign-ribbon:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-sax: Could not resolve dependencies for project io.github.openfeign:feign-sax:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-slf4j: Could not resolve dependencies for project io.github.openfeign:feign-slf4j:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-core:jar:tests:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-reactive-wrappers: Could not resolve dependencies for project io.github.openfeign:feign-reactive-wrappers:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-jackson:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-okhttp:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-jaxrs:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-example-github: Could not resolve dependencies for project io.github.openfeign:feign-example-github:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-example-wikipedia: Could not resolve dependencies for project io.github.openfeign:feign-example-wikipedia:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal org.apache.felix:maven-bundle-plugin:4.0.0:manifest (bundle-manifest) on project feign-java8: Execution bundle-manifest of goal org.apache.felix:maven-bundle-plugin:4.0.0:manifest failed: An API incompatibility was encountered while executing org.apache.felix:maven-bundle-plugin:4.0.0:manifest: java.lang.UnsupportedClassVersionError: aQute/bnd/osgi/Analyzer : Unsupported major.minor version 52.0
+[ERROR] -----------------------------------------------------
+[ERROR] realm =    plugin>org.apache.felix:maven-bundle-plugin:4.0.0
+[ERROR] strategy = org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy
+[ERROR] urls[0] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/felix/maven-bundle-plugin/4.0.0/maven-bundle-plugin-4.0.0.jar
+[ERROR] urls[1] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar
+[ERROR] urls[2] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/biz/aQute/bnd/biz.aQute.bndlib/4.0.0/biz.aQute.bndlib-4.0.0.jar
+[ERROR] urls[3] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar
+[ERROR] urls[4] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/easymock/easymock/3.4/easymock-3.4.jar
+[ERROR] urls[5] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/objenesis/objenesis/2.2/objenesis-2.2.jar
+[ERROR] urls[6] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar
+[ERROR] urls[7] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar
+[ERROR] urls[8] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[ERROR] urls[9] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[ERROR] urls[10] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.jar
+[ERROR] urls[11] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[ERROR] urls[12] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/junit/junit/4.12/junit-4.12.jar
+[ERROR] urls[13] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[ERROR] urls[14] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[ERROR] urls[15] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[ERROR] urls[16] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[ERROR] urls[17] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[ERROR] urls[18] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[ERROR] urls[19] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar
+[ERROR] urls[20] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[ERROR] urls[21] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[ERROR] urls[22] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar
+[ERROR] urls[23] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[ERROR] urls[24] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[ERROR] urls[25] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+[ERROR] urls[26] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.jar
+[ERROR] urls[27] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[ERROR] urls[28] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+[ERROR] urls[29] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar
+[ERROR] urls[30] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar
+[ERROR] urls[31] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+[ERROR] urls[32] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-site-renderer/1.0/doxia-site-renderer-1.0.jar
+[ERROR] urls[33] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-core/1.0/doxia-core-1.0.jar
+[ERROR] urls[34] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+[ERROR] urls[35] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+[ERROR] urls[36] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+[ERROR] urls[37] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[ERROR] urls[38] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/oro/oro/2.0.8/oro-2.0.8.jar
+[ERROR] urls[39] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-decoration-model/1.0/doxia-decoration-model-1.0.jar
+[ERROR] urls[40] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[ERROR] urls[41] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-apt/1.0/doxia-module-apt-1.0.jar
+[ERROR] urls[42] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-fml/1.0/doxia-module-fml-1.0.jar
+[ERROR] urls[43] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-xdoc/1.0/doxia-module-xdoc-1.0.jar
+[ERROR] urls[44] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/apache/maven/doxia/doxia-module-xhtml/1.0/doxia-module-xhtml-1.0.jar
+[ERROR] urls[45] = file:/bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/.m2/org/jdom/jdom/1.1/jdom-1.1.jar
+[ERROR] Number of foreign imports: 1
+[ERROR] import: Entry[import  from realm ClassRealm[maven.api, parent: null]]
+[ERROR] 
+[ERROR] -----------------------------------------------------
+[ERROR] -> [Help 1]
+[ERROR] Failed to execute goal on project feign-mock: Could not resolve dependencies for project io.github.openfeign:feign-mock:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-gson:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] Failed to execute goal on project feign-benchmark: Could not resolve dependencies for project io.github.openfeign:feign-benchmark:jar:10.1.0-SNAPSHOT: The following artifacts could not be resolved: io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-okhttp:jar:10.1.0-SNAPSHOT, io.github.openfeign:feign-jackson:jar:10.1.0-SNAPSHOT: Could not find artifact io.github.openfeign:feign-core:jar:10.1.0-SNAPSHOT -> [Help 3]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginContainerException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] [Help 3] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[INFO] Build failures were ignored.
+Picked up JAVA_TOOL_OPTIONS: -XX:CICompilerCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -Djdk.net.URLClassPath.disableClassPathURLCheck=true 
+Picked up _JAVA_OPTIONS: -Djdk.net.URLClassPath.disableClassPathURLCheck=true
+Apache Maven 3.5.0 (Red Hat 3.5.0-4.3)
+Maven home: /opt/rh/rh-maven35/root/usr/share/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /bam/scratch/jmcampos/RTA/repair_them_all_framework/jdks/jdk1.7.0_80/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.14.147-1.el7.retpoline.x86_64", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Feign Core 10.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ feign-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ feign-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /bam/scratch/tmp-rta/Bears_OpenFeign-feign_454179734-454278346_java-7/core/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.475 s
+[INFO] Finished at: 2020-03-12T02:56:23-07:00
+[INFO] Final Memory: 24M/982M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project feign-core: Fatal error compiling: invalid target release: 1.8 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

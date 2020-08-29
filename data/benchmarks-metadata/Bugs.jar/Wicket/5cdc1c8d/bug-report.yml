@@ -1,0 +1,20 @@
+---
+BugID: WICKET-5578
+Summary: Stateless/Statefull pages - incorrect behaviour
+Description: |-
+  Please advise how to do in following situation or confirm that's a bug and should be fixed.
+
+  There is a page (login page) with stateless form. That page has lots of common components (menu and etc.). There are some stateful components in the components tree that are visible only for signed in users: but once user isn't signed in - that components are hidden. That's why page is becoming "stateless" (no visible components) and form prepared correspondingly. But when form data is submitted: during obtaining of form component to process request - wicket thinks that page actually is stateful. As a result - the page is recreated and fully rendered - instead of processing of the form.
+
+  There is a workaround: setStatelessHint(false). But imho reason is a little bit another:
+  1) After construction of page: page is stateful - because of some stateful components are in the tree.
+  2) After initialization of page: page is still stateful - because there are that stateful components
+  3) After configuration of page (method onConfigure) - page is becoming stateless - because all stateful components marked as invisible.
+  4) Form has been rendered as stateless - with no version number is in the URL.
+  5) Page can'be reconstructed correctly because of p.1 and p.2
+
+  I think that stateless flag should be precalculated right after initialization step and should be changed due to some stuff in "configuration" methods.
+
+  What do you think?
+
+  Will provide "quick start" in near future!

@@ -1,0 +1,7 @@
+---
+BugID: CAMEL-6779
+Summary: 'StaxConverter: encoding problems for XMLEventReader and XMLStreamReader'
+Description: |-
+  StaxConverter creates XMLEventReader and XMLStreamReader always with a specified encoding. However, the encoding of the data the readers should read is not always known. Therefore exceptions occur.
+
+  The solution is easy: The encoding should not be set so that the readers can determine the encoding.

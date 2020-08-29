@@ -1,0 +1,13 @@
+---
+BugID: OAK-1035
+Summary: 'Property Index: cost calculation is wrong (zero) when searching for many
+  values'
+Description: "Currently, for queries of the form \n\n{code}\nselect * from [nt:unstructured]
+  where type = 'xyz'\n{code}\n\nthe node type index is used in some cases, even if
+  there is an index on the property \"type\". The reason is that the cost for the
+  node type index is 0 due to a bug. The node type index internally uses the property
+  index on the property \"jcr:primaryType\", and asks for the cost using all possible
+  children node types of \"nt:unstructured\". The returned cost is 0 because of this
+  bug. The cost estimation is an extrapolation of the number of entries for the first
+  3 values. It is currently coded as:\n\n{code}\ncount = count / size / i;\n{code}\n\nwhen
+  in fact it should be written as:\n\n{code}\ncount = count * size / i;\n{code}\n"

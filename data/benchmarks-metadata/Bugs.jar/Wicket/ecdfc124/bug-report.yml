@@ -1,0 +1,7 @@
+---
+BugID: WICKET-5484
+Summary: WebPageRenderer must not render full page in Ajax requests
+Description: |-
+  WebPageRenderer renders the full page when WebRequest#shouldPreserveClientUrl() is true or RedirectStrategy.NEVER_REDIRECT is configured.
+
+  For Ajax request this means that wicket-ajax-js will not be able to parse the HTML response.

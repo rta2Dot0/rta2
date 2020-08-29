@@ -1,0 +1,13 @@
+---
+BugID: WICKET-2609
+Summary: EnumChoiceRenderer misbehaves with anonymous enum classes
+Description: |-
+  Please find attached testcase reproducing the problem.
+
+  Proper fix is to do
+  return object.getDeclaringClass().getSimpleName() + "." + object.name()
+
+  instead of
+  return object.getClass().getSimpleName() + "." + object.name()
+
+  in EnumChoiceRenderer.resourceKey

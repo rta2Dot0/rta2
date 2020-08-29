@@ -1,0 +1,8 @@
+---
+BugID: CAMEL-3428
+Summary: DefaultCamelContext.getEndpoint(String name, Class<T> endpointType) throws
+  Nullpointer for unknown endpoint
+Description: "The method getEndpoint throws an NullPointerException when it's called
+  with an unknown endpoint name:\n\njava.lang.NullPointerException\n\tat org.apache.camel.impl.DefaultCamelContext.getEndpoint(DefaultCamelContext.java:480)\n\tat
+  org.apache.camel.impl.DefaultCamelContextTest.testGetEndPointByTypeUnknown(DefaultCamelContextTest.java:95)\n\nThe
+  patch is attached.\n"

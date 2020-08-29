@@ -1,0 +1,10 @@
+---
+BugID: ACCUMULO-1051
+Summary: Authorizations has inconsistent serialization
+Description: |-
+  The same set of authorizations may not serialize to the same value each time, if specified in a different order when constructed (like new Authorizations("a", "b") and new Authorizations("b", "a")), because serialization reproducibility depends on the insert order in the underlying HashSet.
+
+  So, one could get the following to happen:
+  {code:java}
+  true == auths1.equals(auths2) && !auths1.serialize().equals(auths2.serialize());
+  {code}

@@ -1,0 +1,9 @@
+---
+BugID: MATH-891
+Summary: SpearmansCorrelation fails when using NaturalRanking together with NaNStrategy.REMOVED
+Description: |-
+  As reported by Martin Rosellen on the users mailinglist:
+
+  Using a NaturalRanking with a REMOVED NaNStrategy can result in an exception when NaN are contained in the input arrays.
+
+  The current implementation just removes the NaN values where they occur, without taken care to remove the corresponding values in the other array.

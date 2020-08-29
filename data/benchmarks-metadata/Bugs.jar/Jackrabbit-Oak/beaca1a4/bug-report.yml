@@ -1,0 +1,26 @@
+---
+BugID: OAK-2439
+Summary: IndexPlanner returning plan for queries involving jcr:score
+Description: "Consider a query like \n\n{noformat}\n/jcr:root//element(*, cq:Taggable)[
+  (@cq:tags = 'geometrixx-outdoors:activity/biking' or @cq:tags = '/etc/tags/geometrixx-outdoors/activity/biking')
+  ] order by @jcr:score descending\n\n{noformat}\n\nAnd a seemingly non related index
+  like\n\n{noformat}\n/oak:index/assetType\n  ...\n  - type = \"lucene\"\n  + indexRules\n
+  \   + nt:base\n      + properties\n        + assetType\n          - propertyIndex
+  = true\n          - name = \"assetType\"\n{noformat}\n\nThen currently {{IndexPlanner}}
+  would return a plan because even when it cannot evaluate any of property restrictions
+  because it thinks it can sort on {{jcr:score}}. This later results in an exception
+  like\n\n{noformat}\n14.01.2015 16:16:35.866 *ERROR* [0:0:0:0:0:0:0:1 [1421248595863]
+  POST /bin/tagcommand HTTP/1.1] org.apache.sling.engine.impl.SlingRequestProcessorImpl
+  service: Uncaught Throwable\njava.lang.IllegalStateException: No query created for
+  filter Filter(query=select [jcr:path], [jcr:score], * from [cq:Taggable] as a where
+  [cq:tags] in('geometrixx-outdoors:activity/swimming', '/etc/tags/geometrixx-outdoors/activity/swimming')
+  and isdescendantnode(a, '/') order by [jcr:score] desc /* xpath: /jcr:root//element(*,
+  cq:Taggable)[ (@cq:tags = 'geometrixx-outdoors:activity/swimming' or @cq:tags =
+  '/etc/tags/geometrixx-outdoors/activity/swimming') ] order by @jcr:score descending
+  */, path=//*, property=[cq:tags=in(geometrixx-outdoors:activity/swimming, /etc/tags/geometrixx-outdoors/activity/swimming)])\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex.getQuery(LucenePropertyIndex.java:505)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex.access$200(LucenePropertyIndex.java:158)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex$1.loadDocs(LucenePropertyIndex.java:303)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex$1.computeNext(LucenePropertyIndex.java:261)\n\tat
+  org.apache.jackrabbit.oak.plugins.index.lucene.LucenePropertyIndex$1.computeNext(LucenePropertyIndex.java:253)\n\tat
+  com.google.common.collect.AbstractIterator.tryToComputeNext(AbstractIterator.java:143)\n{noformat}"

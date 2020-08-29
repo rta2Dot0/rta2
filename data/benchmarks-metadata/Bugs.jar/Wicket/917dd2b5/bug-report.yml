@@ -1,0 +1,11 @@
+---
+BugID: WICKET-5019
+Summary: 'Handling of NO_MINIFIED_NAME in PackageResourceReference#internalGetMinifiedName()   '
+Description: "The Value NO_MINIFIED_NAME is not handled correctly as entry in the
+  MINIFIED_NAMES_CACHE in PackageResourceReference#internalGetMinifiedName()   \n\n\tprivate
+  String internalGetMinifiedName()\n\t{\n\t\tString minifiedName = MINIFIED_NAMES_CACHE.get(this);\n\t\tif
+  (minifiedName != null && minifiedName != NO_MINIFIED_NAME)\n\t\t{                                                        ^^^^^^^\n\t\t\treturn
+  minifiedName;\n                }\n                ...\n\nYou should remove the condition
+  \"minifiedName != NO_MINIFIED_NAME\" here to leverage the \nMINIFIED_NAMES_CACHE
+  for NO_MINIFIED_NAME cache entries. Otherwise you always run into the resource resolving
+  code if there is no minified resource.\n "

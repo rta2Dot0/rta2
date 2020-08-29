@@ -1,0 +1,6 @@
+---
+BugID: OAK-4036
+Summary: LuceneIndexProviderService may miss on registering PreExtractedTextProvider
+Description: "{{LuceneIndexProviderService}} has an optional dependency on {{PreExtractedTextProvider}}.
+  In such a case it can happen that bind for the provided is invoked before the activate
+  is called. In such a case the provider would not be registered."

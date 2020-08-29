@@ -1,0 +1,6 @@
+---
+BugID: WICKET-3884
+Summary: Null model for AttributeAppender should not render empty attribute
+Description: I can't think of a reason this would be valid, but passing in null model
+  renders <span class="">Test</span>.  If previous and new attribute are both null,
+  the component should render cleanly like <span>Test</span>.

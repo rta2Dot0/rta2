@@ -1,0 +1,21 @@
+---
+BugID: CAMEL-7275
+Summary: Using doTry .. doCatch with recipient list should not trigger error handler
+  during recipient list work
+Description: |-
+  When you have a route like this
+
+  {code}
+                  from("direct:start")
+                      .doTry()
+                          .recipientList(constant("direct:foo")).end()
+                      .doCatch(Exception.class)
+                          .to("mock:catch")
+                          .transform().constant("doCatch")
+                      .end()
+                      .to("mock:result");
+  {code}
+
+  Then if an exception was thrown it should be catch by doCatch
+
+  A similar route with to instead works as expected.

@@ -1,0 +1,7 @@
+---
+BugID: OAK-614
+Summary: AssertionError in MemoryNodeBuilder
+Description: "{code}\n    NodeBuilder root = ...\n    NodeBuilder child = root.child(\"new\");\n\n
+  \   root.removeNode(\"new\");\n    child.getChildNodeCount();\n{code}\n\nThe last
+  line throws an {{AssertionError}} when no node named \"new\" existed initially.
+  It throws an {{IllegalStateException}} as expected otherwise. "

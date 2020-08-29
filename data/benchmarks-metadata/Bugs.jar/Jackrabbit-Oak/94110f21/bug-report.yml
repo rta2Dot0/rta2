@@ -1,0 +1,7 @@
+---
+BugID: OAK-3792
+Summary: Provide Simple Exception Name in Credentials Attribute for PW Expiry
+Description: currently upon encountering a pw history exception while changing the
+  password of a user, the credential attribute is set with the FQ class name, instead
+  of the simple name. this requires consumers (e.g. sling) to use oak package names
+  instead of a simple class name to react to the situation.

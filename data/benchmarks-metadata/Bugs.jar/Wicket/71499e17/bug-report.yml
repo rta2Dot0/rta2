@@ -1,0 +1,7 @@
+---
+BugID: WICKET-3297
+Summary: UrlAttributes are encoded incorrectly when style is null but variation is
+  not
+Description: |-
+  AbstractResourceReferenceMapper.encodeResourceReferenceAttributes() method generates the same "-foo" output for these two different inputs: {locale = null, style = "foo", variation = null} and {locale = null, style = null, variation = "foo"}.
+  For the second input it should generate "--foo" (double dash prefix).

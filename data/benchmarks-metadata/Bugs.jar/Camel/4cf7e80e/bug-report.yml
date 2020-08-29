@@ -1,0 +1,9 @@
+---
+BugID: CAMEL-5357
+Summary: URI normalization - Should detect already percent encoded values
+Description: |-
+  If an uri has a percent encoded value, eg using %20, %25 etc, then the normalization logic in Camel should detect this and keep the value as is.
+
+  Currently it would end up double encoding %25, that becomes %2525, and so forth.
+
+  Its the code in UnsafeUriCharactersEncoder that has the bug
